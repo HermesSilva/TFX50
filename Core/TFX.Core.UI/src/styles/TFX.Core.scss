@@ -1,0 +1,229 @@
+@import "Variables.scss";
+@import "XCalendar.scss";
+@import "XEditor.scss";
+@import "XMenu.scss";
+@import "XTabControl.scss";
+@import "XStage.scss";
+@import "XDataGridEditor.scss";
+@import "XTable.scss";
+
+html {
+    min-height: 100%;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    margin: 0px;
+    border: none;
+    background-color: var(--bg);
+}
+
+body {
+    display: block;
+    margin: var(--body-margin);
+    min-height: var(--body-mh);
+    min-width: var(--body-mw);
+}
+
+html {
+    scrollbar-face-color: var(--sb-face);
+    scrollbar-base-color: var(--sb-base);
+    scrollbar-3dlight-color: var(--sb-3dlight);
+    scrollbar-highlight-color: var(--sb-highlight);
+    scrollbar-track-color: var(--sb-track);
+    scrollbar-arrow-color: var(--sb-arrow);
+    scrollbar-shadow-color: var(--sb-shadow);
+}
+
+::-webkit-scrollbar {
+    width: var(--webkit-sb-w);
+    height: var(--webkit-sb-h);
+}
+
+::-webkit-scrollbar-button {
+    background-color: var(--wk-button);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--wk-track);
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: var(--wk-track-piece);
+}
+
+::-webkit-scrollbar-thumb {
+    height: var(--wk-thumb);
+    background-color: var(--wk-thumb-color);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: var(--wk-corner);
+}
+
+::-webkit-resizer {
+    background-color: var(--wk-resizer);
+}
+
+.InputContainer {
+    position: absolute;
+    display: block;
+    background-color: transparent;
+}
+
+.InputTitle {
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    left: 1px;
+    top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.MainDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: var(--body-mh);
+    min-width: var(--body-mw);
+}
+
+.XBaseInput {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    padding-right: 32px;
+    right: 0;
+    left: 0;
+    outline: none;
+}
+
+.XBaseButtonInput {
+    @extend .XBaseInput;
+}
+
+.XLookupButton {
+    position: absolute;
+    right: 3px;
+    top: 23PX;
+    bottom: 3px;
+    width: 28px;
+    background-color: var(--bg-XLookupButton);
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 3px;
+    text-align: center;
+    align-content: space-around;
+
+    &:hover {
+        background-color: var(--bg-hv-XLookupButton);
+    }
+}
+
+.XLookupButton::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    bottom: 6px;
+    right: 6px;
+    background-color: #333;
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
+
+.XDropDown {
+    position: absolute;
+    background: white;
+    border: 3px solid #ccc;
+    width: 300px;
+    height: 250px;
+    z-index: 99999;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.XDropDownGrid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+}
+
+.XDropDownGrid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+}
+
+.XDialog {
+    position: absolute;
+    height: 250px;
+    width: 350px;
+    left: calc((100% - 350px)/2);
+    top: calc((100% - 250px)/4);
+    background-color: #abc;
+    border: solid 3px #8eadcb;
+}
+
+.XDialogCaption {
+    position: absolute;
+    height: 35px;
+    width: 100%;
+    background-color: #2266a97c;
+    pointer-events: none;
+}
+
+.XDialogContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #a4891e31;
+    overflow: hidden;
+}
+
+.XDialogTitle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-left: 7px;
+    top: 5px;
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+.XButtonBar {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    bottom: 0px;
+    text-align: end;
+    background-color: #2266a97c;
+}
+
+
+.XDialogButton {
+    display: inline-block;
+    text-align: center;
+    min-width: 83px;
+    height: calc(100% - 10px);
+    margin: 6px;
+    background: #98b7d5;
+    border: 1px solid #999;
+    vertical-align: top;
+    white-space: normal;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.XDialogButton::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}

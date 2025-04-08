@@ -1,0 +1,199 @@
+@import url(Variables.scss);
+@import url(TFX.Core.scss);
+
+.Error {
+    background-color: #ffcccc;
+}
+
+.XDataLoockupEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    padding-right: 32px;
+    height: calc(100% - 34px);
+    width: calc(100% - 41px);
+    top: 20px;
+    outline: none;
+}
+
+.XDataLoockupEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XDatePickerEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    padding-right: 32px;
+    height: calc(100% - 34px);
+    width: calc(100% - 41px);
+    top: 20px;
+    outline: none;
+}
+.XDatePickerEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XMemoEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+}
+.XMemoEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XNormalEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+}
+.XNormalEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XIntegerEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+    text-align: right;    
+}
+.XIntegerEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XDecimalEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+    text-align: right;
+}
+.XDecimalEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XEMailEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+    text-align: right;
+}
+
+.XEMailEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XPhoneEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+    text-align: right;
+}
+
+.XPhoneEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XDataGridEditor {
+    position: absolute;
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+    text-align: right;
+    overflow: hidden;
+}
+
+.XDataGridEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XButtonEditor {
+    position: absolute;
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+    text-align: right;
+    overflow: hidden;
+}
+
+.XButtonEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}

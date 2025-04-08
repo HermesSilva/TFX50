@@ -1,0 +1,25 @@
+{
+  "compileOnSave": true,
+  "noEmitOnError": false,
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "./**/*.d.ts",
+    "./**/*.js"
+  ],
+  "compilerOptions": {
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "outFile": "../../../TFX-Core/TFX.Core.Service/wwwroot/static/js/LauncherID.js",
+    "target": "es6",
+    "module": "system",
+    "strict": false,
+    "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": true,
+    "composite": true,
+    "allowSyntheticDefaultImports": true
+  }
+}
