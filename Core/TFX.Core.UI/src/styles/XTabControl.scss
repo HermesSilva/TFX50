@@ -1,0 +1,143 @@
+@import url(Variables.scss);
+@import url(TFX.Core.scss);
+
+.XTabControl {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    border-right: 1px solid #999;
+}
+
+.XTabControlHeader {
+    display: flex;
+    gap: 4px;
+    margin-bottom: -1px;
+    height: 34px;
+    padding-left: 10px;
+    white-space: nowrap;
+    max-width: calc(100% - 62px);
+    overflow: hidden;
+}
+
+.XTabControlButton {
+    padding: 8px 16px;
+    border: 1px solid #a9a9a9;
+    border-bottom: none;
+    background: #a9a7a7;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    transition: background 0.2s;
+    position: relative;
+    top: 4px;
+    z-index: 99;
+    height: 11px;
+}
+
+.XTabControlButton:hover {
+    background: #e0e0e0;
+}
+
+.XTabControlButton.Active {
+    background: white;
+    font-weight: bold;
+    top: 0;
+    z-index: 99;
+    height: 17px;
+}
+
+
+
+.XTabControlButtonL {
+    padding: 7px 16px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #a9a7a7;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+    top: 1px;
+    z-index: 99;
+    height: 17px;
+}
+
+.XTabControlButtonL:hover {
+    background: #e0e0e0;
+}
+
+.XTabControlButtonL.Active {
+    background: white;
+    font-weight: bold;
+}
+
+
+
+.XTabControlContainer {
+    border: 1px solid blue;
+    padding: 16px;
+    border-radius: 0 4px 4px 4px;
+    min-height: 150px;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.XTabControlTab {
+    position: absolute;
+    /*display: none;*/
+    background: white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.XTabControlTab.Active {
+    display: block;
+}
+
+.XTabControlButtonList {
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.XTabControlButtonList:hover {
+    background: #e2e1e1;
+}
+
+.XTabControlDropdown {
+    position: fixed;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    width: 273px;
+    right: 5px;
+    top: 87px;
+}
+
+.XTabControlDropdown-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.XTabControlDropdown-item:hover {
+    background: #f0f0f0;
+}
+
+.tab-buttons {
+    position: relative;
+    padding-right: 40px;
+    overflow-x: hidden;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XEnvironmentVariable Name="EnvironmentVariables" ID="558ED7DA-6600-4CFD-80E9-65D95C484373">
+  <XVariable ID="9CC44EEE-F51A-445B-9C7A-6B7EA3A04E66" Name="SQL_SERVER_TFX">
+    <XValues>
+      <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+    </XValues>
+  </XVariable>
+  <XValues />
+</XEnvironmentVariable>

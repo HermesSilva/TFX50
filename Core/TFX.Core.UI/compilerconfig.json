@@ -1,0 +1,10 @@
+﻿[
+  {
+    "inputFile": "src/styles/TFX.Core.scss",
+    "outputFile": "wwwroot/css/TFX.Core.css"
+  }
+  //{
+  //  "inputFile": "src/styles/XCalendar.scss",
+  //  "outputFile": "wwwroot/css/XCalendar.css"
+  //}
+]
