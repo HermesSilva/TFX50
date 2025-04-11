@@ -5,6 +5,7 @@
     "target": "ES2018",
     "module": "system",
     "outFile": "./wwwroot/js/TFX.Core.js",
+    "sourceRoot": "./",
     "declaration": true,
     "strict": true,
     "sourceMap": true,

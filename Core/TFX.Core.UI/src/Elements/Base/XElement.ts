@@ -29,6 +29,7 @@
             pOwner.AddChildren(this);
     }
 
+
     public HTML: HTMLElement;
     public Element: HTMLElement | null;
     Owner: XElement | HTMLElement | null;
@@ -52,6 +53,11 @@
             p = p.Owner;
         }
         return <T>null;
+    }
+
+    GetOwnerOrSelf(pContext: XIElement): XISplashable
+    {
+        throw new Error("Method not implemented.");
     }
 
     GetDialogContainer(): XIDialogContainer

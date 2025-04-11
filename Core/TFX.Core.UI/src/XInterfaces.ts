@@ -1,4 +1,15 @@
 ﻿interface XMouseEvent { (pArg: MouseEvent): void; }
+interface XISplashable
+{
+    BeginWait():void;
+
+    EndWait(): void;
+
+    ShowError(pError: any): void;
+
+    LastSplash: any;
+}
+
 interface Element
 {
     Owner: XElement | null;
@@ -6,6 +17,10 @@ interface Element
 interface XIElement
 {
     Owner: XElement | HTMLElement | null;
+    HTML: HTMLElement;
+    IsVisible: boolean;
+    OrderIndex: number;
+    GetOwnerOrSelf(pContext: XIElement): XISplashable;
 }
 
 interface XIDialog
@@ -38,12 +53,6 @@ interface Window
 
     InitializeMap: any;
     CITHook: any;
-}
-interface XIElement
-{
-    HTML: HTMLElement;
-    IsVisible: boolean;
-    OrderIndex: number;
 }
 
 interface XIEditor extends XIElement
