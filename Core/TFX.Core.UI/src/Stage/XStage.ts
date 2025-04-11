@@ -21,15 +21,33 @@ class XStage extends XDiv
         this.Menu.OnResize = () => this.MenuResize();
         this.TabControl = new XStageTabControl(this);
         this.TabControl.Dropdown.HTML.classList.add("Main");
+        this.Loaded();
     }
-
     Menu: XMenu;
     TopBar: XTopBar;
     TabControl: XStageTabControl;
-    
+
     override SizeChanged()
     {
         this.MenuResize();
+    }
+
+    Loaded()
+    {
+        var clt = new XHttpClient(this, "Access/Login");
+        clt.OnLoad = this.LoadCallBack;
+        clt.OnError = this.ErroCallBack;
+        var data: any = new Object();
+        data.Login = "teste";
+        clt.SendAsync(data);
+    }
+
+    ErroCallBack(pData: JSON, pCallData: any, pEvent: ProgressEvent)
+    {
+    }
+
+    LoadCallBack(pData: JSON, pCallData: any, pEvent: ProgressEvent)
+    {
     }
 
     MenuResize()

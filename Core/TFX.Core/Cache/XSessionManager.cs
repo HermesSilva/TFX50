@@ -6,6 +6,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
+using TFX.Core.Exceptions;
 using TFX.Core.IDs.Model;
 using TFX.Core.Interfaces;
 
@@ -27,6 +28,8 @@ namespace TFX.Core.Cache
             var usrsse = _LoginService.GetUser(pLogin.Login);
             if (usrsse.Session != null)
                 return usrsse.Session;
+            if (usrsse.User == null)
+                throw new XUnconformity("Uauário ou senha inválido.");
             var ret = _LoginService.DoLogin(pHttpContext, usrsse.User);
             return ret;
         }

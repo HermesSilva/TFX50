@@ -6,6 +6,7 @@
 /// <reference path="src/XSort.ts" />
 /// <reference path="src/Utils/XUtils.ts" />
 /// <reference path="src/XTypes.ts" />
+/// <reference path="src/Objects/XExceptions.ts" />
 
 /// <reference path="src/Elements/Base/XElement.ts" />
 /// <reference path="src/XPopupManager.ts" />
@@ -19,6 +20,10 @@
 /// <reference path="src/Elements/Base/XPopupElement.ts" />
 /// <reference path="src/Elements/Base/XDropDownElement.ts" />
 /// <reference path="src/Elements/Base/XBaseLoockupInput.ts" />
+
+/// <reference path="src/Net/XHttpClient.ts" />
+/// <reference path="src/Net/XServiceBroker.ts" />
+
 
 /// <reference path="src/Elements/XMenu.ts" />
 /// <reference path="src/Elements/Base/XTable.ts" />

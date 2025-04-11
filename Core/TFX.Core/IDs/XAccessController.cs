@@ -28,12 +28,12 @@ namespace TFX.Core.IDs
         }
 
         [HttpPost, Route("Login")]
-        public IActionResult Login(XUserLogin pLogin)
+        public IActionResult Login([FromBody] XUserLogin pLogin)
         {
-            var session = XSessionManager.DoLogin(HttpContext, pLogin);
-            if (session == null)
-                return Unauthorized(XDefault.Unauthorized());
-            return Ok(session);
+            //var session = XSessionManager.DoLogin(HttpContext, pLogin);
+            //if (session == null)
+            //    return Unauthorized(XDefault.Unauthorized());
+            return Ok(new XUserSession());
         }
 
         [HttpPost, Route("HealthCheck")]
