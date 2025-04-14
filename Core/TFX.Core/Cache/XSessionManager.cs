@@ -23,14 +23,14 @@ namespace TFX.Core.Cache
             _LoginService.RefreshCache();
         }
 
-        public static XUserSession DoLogin(HttpContext pHttpContext, XUserLogin pLogin)
+        public static XUserSession DoLogin(XUserLogin pLogin)
         {
             var usrsse = _LoginService.GetUser(pLogin.Login);
             if (usrsse.Session != null)
                 return usrsse.Session;
             if (usrsse.User == null)
                 throw new XUnconformity("Uauário ou senha inválido.");
-            var ret = _LoginService.DoLogin(pHttpContext, usrsse.User);
+            var ret = _LoginService.DoLogin(usrsse.User);
             return ret;
         }
 

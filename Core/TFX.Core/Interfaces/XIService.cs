@@ -1,9 +1,14 @@
 using System;
+using System.Threading;
 
 using Microsoft.Extensions.DependencyInjection;
 
 namespace TFX.Core.Interfaces
 {
+    public interface XICancelable
+    {
+        void SetCancellationToken(CancellationToken pCancellationToken);
+    }
     public interface XIScoped
     {
     }
@@ -13,15 +18,15 @@ namespace TFX.Core.Interfaces
         void Initialize(IServiceCollection pServices);
     }
 
-    public interface XIService 
-	{
-		Guid ID
-		{
-			get;
-		}
-		string Name
-		{
-			get;
+    public interface XIService : XICancelable
+    {
+        Guid ID
+        {
+            get;
+        }
+        string Name
+        {
+            get;
         }
         bool LoadAll
         {
@@ -32,11 +37,11 @@ namespace TFX.Core.Interfaces
         void GracefullyClose();
     }
 
-	public interface XIJobService : XIService
-	{
-	}
+    public interface XIJobService : XIService
+    {
+    }
 
-	public interface XIJobRabbitMQService : XIJobService 
-	{
-	}
+    public interface XIJobRabbitMQService : XIJobService
+    {
+    }
 }

@@ -113,7 +113,7 @@ namespace TFX.Core
         public static int GetActiveConnections() => _ActiveConnections;
     }
 
-    public class XDBContext : DbContext
+    public class XDBContext : DbContext, XICancelable
     {
         public XDBContext(DbContextOptions pOptions, XITenantProvider pTenantProvider, XISharedTransaction pSharedTransaction)
                 : base(pOptions)
@@ -142,9 +142,7 @@ namespace TFX.Core
             get; set;
         }
 
-
         protected List<XOnModelCreating> ToExecute = new List<XOnModelCreating>();
-
         private string _Host;
         private string _DataBase;
         private string _User;
@@ -155,6 +153,7 @@ namespace TFX.Core
         public readonly XISharedTransaction SharedTransaction;
         public readonly XITenantProvider TenantProvider;
         private List<Type> _RemoveFromTenant = new List<Type>();
+        protected CancellationToken CancellationToken;
 
         protected void RemoveFromTenant<T>()
         {
@@ -579,6 +578,11 @@ namespace TFX.Core
         private string GetTennatID()
         {
             return TenantProvider.GetTenantID(ByPassTenant);
+        }
+
+        public void SetCancellationToken(CancellationToken pCancellationToken)
+        {
+            CancellationToken = pCancellationToken;
         }
     }
 }
