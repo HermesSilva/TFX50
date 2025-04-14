@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
@@ -11,29 +12,14 @@ using Microsoft.AspNetCore.Http;
 using TFX.Core.Cache;
 using TFX.Core.IDs.Model;
 using TFX.Core.Interfaces;
+using TFX.Core.Services;
 
 namespace TFX.Core.IDs
 {
-	public class XLoginService : XILoginService
+	public class XLoginService :XService, XILoginService
     {
-		public Guid ID => throw new NotImplementedException();
 
-		public string Name => throw new NotImplementedException();
-
-		public void Dispose()
-		{
-		}
-        public bool LoadAll
-        {
-            get;
-            set;
-        }
-
-        public virtual void GracefullyClose()
-        {
-        }
-
-        public XUserSession DoLogin(HttpContext pHttpContext, XUser pUser)
+        public XUserSession DoLogin(XUser pUser)
         {
             var session = XSessionCache.GetSession(pUser.ID.Value);
             if (session != null)
@@ -62,8 +48,8 @@ namespace TFX.Core.IDs
                     ClaimsPrincipal cp = new ClaimsPrincipal(new ClaimsIdentity(claims, XDefault.JWTKey));
                     AuthenticationProperties ap = new AuthenticationProperties();
                     ap.ExpiresUtc = DateTime.UtcNow.AddMinutes(20);
-                    var task = pHttpContext.SignInAsync(XDefault.JWTKey, cp, ap);
-                    task.Wait();
+                    //var task = pHttpContext.SignInAsync(XDefault.JWTKey, cp, ap);
+                    //task.Wait();
                     XSessionCache.AddSession(res, true);
                     return res;
                 }

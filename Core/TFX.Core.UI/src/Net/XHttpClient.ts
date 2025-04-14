@@ -6,10 +6,11 @@ class XHttpClient
     private _Url: string;
     private _Data?: any;
     private _Context: any;
+    private _Timeout: number = 0;
     public Method: string;
-    public OnLoad?: (pData: JSON, pCallData: any, pEvent: ProgressEvent) => void;
-    public OnError?: (pError: any, pCallData: any, pEvent: ProgressEvent) => void;
-    public OnProgress?: (pEvent: ProgressEvent, pCallData: any) => void;
+    public OnLoad?: (pData: JSON, pCallData: any | null, pEvent: ProgressEvent | null) => void;
+    public OnError?: (pError: Error, pCallData: any | null, pEvent: ProgressEvent | null) => void;
+    public OnProgress?: (pEvent: ProgressEvent, pCallData: any | null) => void;
 
     constructor(pContex: any, pUrl: string, pData: any = null)
     {
@@ -18,6 +19,11 @@ class XHttpClient
         this.Method = "POST";
         this._Data = pData;
         this._Xhr = new XMLHttpRequest();
+    }
+    public SetTimeout(pMilliseconds: number): this
+    {
+        this._Timeout = pMilliseconds;
+        return this;
     }
 
     public SetData(pData: any): this
@@ -36,6 +42,7 @@ class XHttpClient
     {
         if (pData != null)
             this._Data = pData;
+        this._Xhr.timeout = this._Timeout;
         this._Xhr.open(this.Method, this._Url, true);
         this._Xhr.responseType = 'json';
         try
@@ -44,16 +51,18 @@ class XHttpClient
                 throw new Error("XHR not initialized");
 
             this.SetupCommonHeaders();
+            this._Xhr.ontimeout = (pEvent) =>
+                this.OnError?.apply(this._Context, [new Error('Request timeout'), this._Data, pEvent]);
 
             this._Xhr.onload = (pEvent) =>
             {
                 if (this._Xhr.status >= 200 && this._Xhr.status < 300)
                     this.OnLoad?.apply(this._Context, [this._Xhr.response, this._Data, pEvent]);
                 else
-                    this.OnError?.apply(this._Context, [this._Xhr, this._Data, pEvent]);
+                    this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response +"]"), this._Data, pEvent]);
             };
 
-            this._Xhr.onerror = (pEvent) => this.OnError?.apply(this._Context, [pEvent, this._Data, pEvent]);
+            this._Xhr.onerror = (pEvent) => this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._Data, pEvent]);
 
             if (this.OnProgress)
                 this._Xhr.onprogress = (pEvent) => this.OnProgress?.apply(this._Context, [pEvent, this._Data]);
@@ -62,35 +71,7 @@ class XHttpClient
         }
         catch (pError)
         {
-            this.OnError?.apply(this._Context, [pError, this._Data, <any>null]);
-        }
-    }
-
-    public Send(pData: any = null): void
-    {
-        this._Xhr.open(this.Method, this._Url, false);
-        this._Xhr.responseType = 'json';
-        if (pData != null)
-            this._Data = pData;
-        try
-        {
-            if (this._Xhr.readyState !== XMLHttpRequest.OPENED)
-                throw new Error("XHR not initialized");
-            this.SetupCommonHeaders();
-            this._Xhr.onload = (pEvent) =>
-            {
-                if (this._Xhr.status >= 200 && this._Xhr.status < 300)
-                    this.OnLoad?.apply(this._Context, [this._Xhr.response, this._Data, pEvent]);
-                else
-                    this.OnError?.apply(this._Context, [this._Xhr, this._Data, pEvent]);
-            };
-            this._Xhr.onerror = (pEvent) => this.OnError?.apply(this._Context, [pEvent, this._Data, pEvent]);
-            const JsonData = JSON.stringify(this._Data);
-            this._Xhr.send(JsonData);
-        }
-        catch (pError)
-        {
-            this.OnError?.apply(this._Context, [pError, this._Data, <any>null]);
+            this.OnError?.apply(this._Context, [<Error>pError, this._Data, <any>null]);
         }
     }
 
@@ -109,5 +90,6 @@ class XHttpClient
     public Abort(): void
     {
         this._Xhr.abort();
+        this.OnError?.apply(this._Context, [new Error('Request aborted'), this._Data, null]);
     }
 }

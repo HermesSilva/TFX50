@@ -28,7 +28,7 @@ namespace StressTest
         {
             _Start = DateTime.Now.Ticks;
             Console.WriteLine("Carregando Usuários");
-            var svc = new XLoginService();
+            using var svc = new XLoginService();
             svc.RefreshCache();
             Thread.Sleep(5_000);
             Do(0);

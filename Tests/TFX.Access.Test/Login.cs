@@ -78,7 +78,7 @@ namespace TAF.Access.Test
 
             var context = new DefaultHttpContext();
             context.RequestServices = scop.ServiceProvider;
-            var session = XSessionManager.DoLogin(context, null);
+            var session = XSessionManager.DoLogin(null);
             Assert.True(XSessionManager.CheckLogin(context));
         }
 

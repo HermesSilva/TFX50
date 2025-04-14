@@ -17,28 +17,15 @@ using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading;
 
 namespace TFX.Core.Access.Service
 {
-    public class XLoginService : XILoginService
+    public class XLoginService : XService, XILoginService
     {
         private XCacheUser _Users = new XCacheUser();
 
-        public Guid ID
-        {
-            get; set;
-        }
-
-        public string Name
-        {
-            get; set;
-        }
-        public bool LoadAll
-        {
-            get;
-            set;
-        }
-        public XUserSession DoLogin(HttpContext pHttpContext, XUser pUser)
+        public XUserSession DoLogin(XUser pUser)
         {
             var session = XSessionCache.GetSession(pUser.SessionID);
             if (session != null)

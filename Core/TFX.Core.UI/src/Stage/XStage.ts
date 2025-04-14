@@ -40,13 +40,18 @@ class XStage extends XDiv
         var data: any = new Object();
         data.Login = "teste";
         clt.SendAsync(data);
+        //setTimeout(() =>
+        //{
+        //    clt.Abort();
+        //    console.log("abortado");
+        //}, 5000);
     }
 
-    ErroCallBack(pData: JSON, pCallData: any, pEvent: ProgressEvent)
+    ErroCallBack(pError: Error, pCallData: any | null, pEvent: ProgressEvent | null)
     {
     }
 
-    LoadCallBack(pData: JSON, pCallData: any, pEvent: ProgressEvent)
+    LoadCallBack(pData: JSON, pCallData: any | null, pEvent: ProgressEvent | null)
     {
     }
 

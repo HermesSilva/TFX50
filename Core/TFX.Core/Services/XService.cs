@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using System.Reflection;
+using System.Threading;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -11,36 +13,50 @@ using TFX.Core.Model;
 
 namespace TFX.Core.Services
 {
-	public abstract class XService : XIService, IDisposable
-	{
-		private static IServiceScope _Scope;
+    public abstract class XService : XIService, IDisposable
+    {
+        private static IServiceScope _Scope;
+        public void SetCancellationToken(CancellationToken pCancellationToken)
+        {
+            CancellationToken = pCancellationToken;
+            var fields = GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
 
-		public static void Initialize(IServiceScope pScope)
-		{
-			_Scope = pScope;
-		}
+            foreach (var field in fields.Where(f => typeof(XICancelable).IsAssignableFrom(f.FieldType)))
+                if (field.GetValue(this) is XICancelable cancelable)
+                    cancelable.SetCancellationToken(pCancellationToken);
+        }
 
-		public static SVC GetService<SVC>() where SVC : XIService
-		{
-			return _Scope.ServiceProvider.GetRequiredService<SVC>();
-		}
+        public static void Initialize(IServiceScope pScope)
+        {
+            _Scope = pScope;
+        }
 
-		public XService(XService pOwner)
-		{
-			Owner = pOwner;
-			Logger = pOwner?.Logger;
-		}
+        public static SVC GetService<SVC>() where SVC : XIService
+        {
+            return _Scope.ServiceProvider.GetRequiredService<SVC>();
+        }
 
-		public XService(ILogger<XService> pLogger)
-		{
-			Logger = pLogger;
-		}
+        public XService()
+        {
+        }
 
-		protected XDBContext ProtectedContext;
-		protected internal readonly ILogger<XService> Logger;
-		private bool _Dispoded;
+        public XService(XService pOwner)
+        {
+            Owner = pOwner;
+            Logger = pOwner?.Logger;
+        }
 
-		public virtual string Name => GetType().Name;
+        public XService(ILogger<XService> pLogger)
+        {
+            Logger = pLogger;
+        }
+
+        protected XDBContext ProtectedContext;
+        protected internal readonly ILogger<XService> Logger;
+        private bool _Dispoded;
+        protected CancellationToken CancellationToken;
+
+        public virtual string Name => GetType().Name;
 
         public bool LoadAll
         {
@@ -49,67 +65,67 @@ namespace TFX.Core.Services
         }
 
         public virtual Guid ID
-		{
-			get;
-		}
-		public virtual Type ConfigType
-		{
-			get;
-		}
+        {
+            get;
+        }
+        public virtual Type ConfigType
+        {
+            get;
+        }
 
         public virtual void GracefullyClose()
         {
         }
         public XService Owner
-		{
-			get;
-		}
+        {
+            get;
+        }
 
-		public EntityState GetState(XServiceDataTuple pTuple, params XIDataField[] pFields)
-		{
-			if (pTuple.State.In(XTupleState.Deleted, XTupleState.Added))
-				return (EntityState)pTuple.State;
+        public EntityState GetState(XServiceDataTuple pTuple, params XIDataField[] pFields)
+        {
+            if (pTuple.State.In(XTupleState.Deleted, XTupleState.Added))
+                return (EntityState)pTuple.State;
 
-			if (pFields.IsEmpty())
-				return EntityState.Detached;
+            if (pFields.IsEmpty())
+                return EntityState.Detached;
 
-			foreach (XIDataField field in pFields)
-				if (field.State == XFieldState.Modified)
-					return EntityState.Modified;
+            foreach (XIDataField field in pFields)
+                if (field.State == XFieldState.Modified)
+                    return EntityState.Modified;
 
-			return EntityState.Unchanged;
-		}
+            return EntityState.Unchanged;
+        }
 
-		public bool HasChanges(XServiceDataTuple pTuple, params XIDataField[] pFields)
-		{
-			return pTuple.State.In(XTupleState.Deleted, XTupleState.Added) || pFields.IsFull() && pFields.Any(f => f.State == XFieldState.Modified);
-		}
+        public bool HasChanges(XServiceDataTuple pTuple, params XIDataField[] pFields)
+        {
+            return pTuple.State.In(XTupleState.Deleted, XTupleState.Added) || pFields.IsFull() && pFields.Any(f => f.State == XFieldState.Modified);
+        }
 
-		protected virtual XDBContext CreateContext(XDBContext pOwner)
-		{
-			return ProtectedContext;
-		}
+        protected virtual XDBContext CreateContext(XDBContext pOwner)
+        {
+            return ProtectedContext;
+        }
 
-		public virtual TContext GetContext<TContext>() where TContext : XDBContext
-		{
-			if (ProtectedContext == null)
-				ProtectedContext = CreateContext(Owner?.ProtectedContext);
-			if (Owner?.ProtectedContext != null && Owner?.ProtectedContext.Database.CurrentTransaction != null)
-				ProtectedContext.Database.UseTransaction(Owner?.ProtectedContext.Database.CurrentTransaction.GetDbTransaction());
-			return (TContext)ProtectedContext;
-		}
+        public virtual TContext GetContext<TContext>() where TContext : XDBContext
+        {
+            if (ProtectedContext == null)
+                ProtectedContext = CreateContext(Owner?.ProtectedContext);
+            if (Owner?.ProtectedContext != null && Owner?.ProtectedContext.Database.CurrentTransaction != null)
+                ProtectedContext.Database.UseTransaction(Owner?.ProtectedContext.Database.CurrentTransaction.GetDbTransaction());
+            return (TContext)ProtectedContext;
+        }
 
-		public void Dispose()
-		{
-			Dispose(true);
-		}
+        public void Dispose()
+        {
+            Dispose(true);
+        }
 
-		protected virtual void Dispose(bool pDispoded)
-		{
-			if (_Dispoded || Owner != null)
-				return;
-			_Dispoded = true;
-			ProtectedContext?.Dispose();
-		}
-	}
+        protected virtual void Dispose(bool pDispoded)
+        {
+            if (_Dispoded || Owner != null)
+                return;
+            _Dispoded = true;
+            ProtectedContext?.Dispose();
+        }
+    }
 }
