@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Http;
 
@@ -8,7 +9,7 @@ namespace TFX.Core.Interfaces
 {
     public interface XILoginService : XIService
     {
-        XUserSession DoLogin(XUser pUser);
+        Task<XUserSession> DoLogin(XUser pUser);
         (XUser User, XUserSession Session) GetUser(string pLogin);
         void RefreshCache(Dictionary<string, XUser> pUsers = null);
     }

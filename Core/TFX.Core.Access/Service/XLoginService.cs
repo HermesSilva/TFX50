@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace TFX.Core.Access.Service
 {
@@ -25,8 +26,15 @@ namespace TFX.Core.Access.Service
     {
         private XCacheUser _Users = new XCacheUser();
 
-        public XUserSession DoLogin(XUser pUser)
+        public async Task<XUserSession> DoLogin(XUser pUser)
         {
+            var cnt = 1;
+            while (!CancellationToken.IsCancellationRequested)
+            {
+                await Task.Delay(1000);
+                XConsole.Debug(cnt++);
+            }
+            return null;
             var session = XSessionCache.GetSession(pUser.SessionID);
             if (session != null)
                 return session;

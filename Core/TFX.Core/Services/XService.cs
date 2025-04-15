@@ -8,23 +8,15 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using TFX.Core.Data;
 using TFX.Core.Interfaces;
 using TFX.Core.Model;
 
 namespace TFX.Core.Services
 {
-    public abstract class XService : XIService, IDisposable
+    public abstract class XService : XUseContext, IDisposable
     {
         private static IServiceScope _Scope;
-        public void SetCancellationToken(CancellationToken pCancellationToken)
-        {
-            CancellationToken = pCancellationToken;
-            var fields = GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
-
-            foreach (var field in fields.Where(f => typeof(XICancelable).IsAssignableFrom(f.FieldType)))
-                if (field.GetValue(this) is XICancelable cancelable)
-                    cancelable.SetCancellationToken(pCancellationToken);
-        }
 
         public static void Initialize(IServiceScope pScope)
         {
@@ -54,8 +46,7 @@ namespace TFX.Core.Services
         protected XDBContext ProtectedContext;
         protected internal readonly ILogger<XService> Logger;
         private bool _Dispoded;
-        protected CancellationToken CancellationToken;
-
+       
         public virtual string Name => GetType().Name;
 
         public bool LoadAll

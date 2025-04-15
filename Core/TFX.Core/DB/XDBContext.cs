@@ -18,6 +18,8 @@ using Microsoft.Extensions.DependencyInjection;
 using TFX.Core.Exceptions;
 using TFX.Core.Interfaces;
 using TFX.Core.Identity;
+using TFX.Core.Data;
+using TFX.Core.IDs.Model;
 
 namespace TFX.Core
 {
@@ -113,7 +115,7 @@ namespace TFX.Core
         public static int GetActiveConnections() => _ActiveConnections;
     }
 
-    public class XDBContext : DbContext, XICancelable
+    public class XDBContext : DbContext, XIUseContext
     {
         public XDBContext(DbContextOptions pOptions, XITenantProvider pTenantProvider, XISharedTransaction pSharedTransaction)
                 : base(pOptions)
@@ -153,7 +155,8 @@ namespace TFX.Core
         public readonly XISharedTransaction SharedTransaction;
         public readonly XITenantProvider TenantProvider;
         private List<Type> _RemoveFromTenant = new List<Type>();
-        protected CancellationToken CancellationToken;
+        private CancellationToken _CancellationToken;
+        private XUserSession _Session;
 
         protected void RemoveFromTenant<T>()
         {
@@ -580,9 +583,19 @@ namespace TFX.Core
             return TenantProvider.GetTenantID(ByPassTenant);
         }
 
-        public void SetCancellationToken(CancellationToken pCancellationToken)
+        protected XUserSession Session => _Session;
+        protected CancellationToken CancellationToken => _CancellationToken;
+
+        public virtual void SetContextData(CancellationToken pCancellationToken, XUserSession pSession)
         {
-            CancellationToken = pCancellationToken;
+            _CancellationToken = pCancellationToken;
+            _Session = pSession;
+            this.InternalSetContext(pCancellationToken, pSession);
+            CancellationToken.Register(OnCancel);
+        }
+
+        protected virtual void OnCancel()
+        {
         }
     }
 }
