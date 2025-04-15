@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
@@ -16,11 +17,12 @@ using TFX.Core.Services;
 
 namespace TFX.Core.IDs
 {
-	public class XLoginService :XService, XILoginService
+    public class XLoginService : XService, XILoginService
     {
 
-        public XUserSession DoLogin(XUser pUser)
+        public async Task<XUserSession> DoLogin(XUser pUser)
         {
+
             var session = XSessionCache.GetSession(pUser.ID.Value);
             if (session != null)
                 return session;

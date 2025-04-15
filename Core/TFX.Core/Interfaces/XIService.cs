@@ -3,12 +3,15 @@ using System.Threading;
 
 using Microsoft.Extensions.DependencyInjection;
 
+using TFX.Core.IDs.Model;
+
 namespace TFX.Core.Interfaces
 {
-    public interface XICancelable
+    public interface XIUseContext
     {
-        void SetCancellationToken(CancellationToken pCancellationToken);
+        void SetContextData(CancellationToken pCancellationToken, XUserSession pSession);      
     }
+
     public interface XIScoped
     {
     }
@@ -18,7 +21,7 @@ namespace TFX.Core.Interfaces
         void Initialize(IServiceCollection pServices);
     }
 
-    public interface XIService : XICancelable
+    public interface XIService : XIUseContext
     {
         Guid ID
         {

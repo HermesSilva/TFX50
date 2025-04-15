@@ -5,6 +5,7 @@ class XStage extends XDiv
     static Instance: XStage;
 
 
+
     static Run()
     {
         window.onmousedown = (arg) => XPopupManager.HideAll(arg);
@@ -21,11 +22,14 @@ class XStage extends XDiv
         this.Menu.OnResize = () => this.MenuResize();
         this.TabControl = new XStageTabControl(this);
         this.TabControl.Dropdown.HTML.classList.add("Main");
+        if (XStage.SessionID == null)
+            XStage.SessionID = crypto.randomUUID();
         this.Loaded();
     }
     Menu: XMenu;
     TopBar: XTopBar;
     TabControl: XStageTabControl;
+    static SessionID: string | any = null;
 
     override SizeChanged()
     {
@@ -35,6 +39,7 @@ class XStage extends XDiv
     Loaded()
     {
         var clt = new XHttpClient(this, "Access/Login");
+        clt.SetHeader("SessionID", XStage.SessionID);
         clt.OnLoad = this.LoadCallBack;
         clt.OnError = this.ErroCallBack;
         var data: any = new Object();

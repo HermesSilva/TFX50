@@ -30,7 +30,7 @@ namespace TFX.Core.Cache
                 return usrsse.Session;
             if (usrsse.User == null)
                 throw new XUnconformity("Uauário ou senha inválido.");
-            var ret = _LoginService.DoLogin(usrsse.User);
+            var ret = _LoginService.DoLogin(usrsse.User).Result;
             return ret;
         }
 
