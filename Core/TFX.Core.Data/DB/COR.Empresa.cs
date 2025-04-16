@@ -11,6 +11,10 @@ namespace TFX.Core.Data.DB
 {
     public class CORxEmpresa : XEntity
     {
+        [MaxLength(14)]
+        [Required()]
+        public String CNPJ {get; set;}
+
         [Display(Name = "Agregado")]
         [Required()]
         public Guid CORxAgregadoID {get; set;}

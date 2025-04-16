@@ -25,6 +25,10 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Estado")]
             [Required()]
             public Int16 CORxStatusID {get; set;}
+            [Display(Name = "CPF ou CNPJ")]
+            [MaxLength(14)]
+            [Required()]
+            public String CPFCNPJ {get; set;}
             public _CORxPessoa CORxPessoa {get; set;}
             public _CORxStatus CORxStatus {get; set;}
             public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
@@ -62,6 +66,7 @@ namespace TFX.Core.Data.DB
             [MaxLength(50)]
             [Required()]
             public String Titulo {get; set;}
+            public List<_CORxRecursoDireito> CORxRecursoDireito {get; set;} = new List<_CORxRecursoDireito>();
         }
 
         #endregion _CORxDireitos
@@ -70,6 +75,9 @@ namespace TFX.Core.Data.DB
 
         internal class _CORxEmpresa
         {
+            [MaxLength(14)]
+            [Required()]
+            public String CNPJ {get; set;}
             [Display(Name = "Agregado")]
             [Required()]
             public Guid CORxAgregadoID {get; set;}
@@ -132,6 +140,85 @@ namespace TFX.Core.Data.DB
 
         #endregion _CORxPessoa
 
+        #region _CORxRecurso
+
+        internal class _CORxRecurso
+        {
+            public Boolean IsPKEmpty => Object.Equals(CORxRecursoID, typeof(Guid).GetDefault());
+            [Display(Name = "Recurso")]
+            [Required()]
+            public Guid? CORxRecursoID {get; set;}
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            public List<_CORxRecursoTemplate> CORxRecursoTemplate {get; set;} = new List<_CORxRecursoTemplate>();
+            public List<_CORxRecursoDireito> CORxRecursoDireito {get; set;} = new List<_CORxRecursoDireito>();
+        }
+
+        #endregion _CORxRecurso
+
+        #region _CORxRecursoDireito
+
+        internal class _CORxRecursoDireito
+        {
+            [Display(Name = "Direitos")]
+            [Required()]
+            public Int16 CORxDireitosID {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CORxRecursoDireitoID, typeof(Guid).GetDefault());
+            [Display(Name = "Direitos por Recurso")]
+            [Required()]
+            public Guid? CORxRecursoDireitoID {get; set;}
+            [Display(Name = "Recurso")]
+            [Required()]
+            public Guid CORxRecursoID {get; set;}
+            public _CORxRecurso CORxRecurso {get; set;}
+            public _CORxDireitos CORxDireitos {get; set;}
+            public List<_CORxRecursoTemplateDireito> CORxRecursoTemplateDireito {get; set;} = new List<_CORxRecursoTemplateDireito>();
+        }
+
+        #endregion _CORxRecursoDireito
+
+        #region _CORxRecursoTemplate
+
+        internal class _CORxRecursoTemplate
+        {
+            [Display(Name = "Recurso")]
+            [Required()]
+            public Guid CORxRecursoID {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CORxRecursoTemplateID, typeof(Guid).GetDefault());
+            [Display(Name = "Conjunto de Recursos")]
+            [Required()]
+            public Guid? CORxRecursoTemplateID {get; set;}
+            [MaxLength(50)]
+            [Required()]
+            public String Template {get; set;}
+            public _CORxRecurso CORxRecurso {get; set;}
+            public List<_CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate {get; set;} = new List<_CORxUsuarioRecursoTemplate>();
+            public List<_CORxRecursoTemplateDireito> CORxRecursoTemplateDireito {get; set;} = new List<_CORxRecursoTemplateDireito>();
+        }
+
+        #endregion _CORxRecursoTemplate
+
+        #region _CORxRecursoTemplateDireito
+
+        internal class _CORxRecursoTemplateDireito
+        {
+            [Display(Name = "Direitos por Recurso")]
+            [Required()]
+            public Guid CORxRecursoDireitoID {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CORxRecursoTemplateDireitoID, typeof(Guid).GetDefault());
+            [Display(Name = "Direito de Recurso por Template")]
+            [Required()]
+            public Guid? CORxRecursoTemplateDireitoID {get; set;}
+            [Display(Name = "Conjunto de Recursos")]
+            [Required()]
+            public Guid CORxRecursoTemplateID {get; set;}
+            public _CORxRecursoTemplate CORxRecursoTemplate {get; set;}
+            public _CORxRecursoDireito CORxRecursoDireito {get; set;}
+        }
+
+        #endregion _CORxRecursoTemplateDireito
+
         #region _CORxStatus
 
         internal class _CORxStatus
@@ -173,9 +260,30 @@ namespace TFX.Core.Data.DB
             [Required()]
             public String EMail {get; set;}
             public _CORxPessoa CORxPessoa {get; set;}
+            public List<_CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate {get; set;} = new List<_CORxUsuarioRecursoTemplate>();
         }
 
         #endregion _CORxUsuario
+
+        #region _CORxUsuarioRecursoTemplate
+
+        internal class _CORxUsuarioRecursoTemplate
+        {
+            [Display(Name = "Conjunto de Recursos")]
+            [Required()]
+            public Guid CORxRecursoTemplateID {get; set;}
+            [Display(Name = "Usuário")]
+            [Required()]
+            public Guid CORxUsuarioID {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CORxUsuarioRecursoTemplateID, typeof(Guid).GetDefault());
+            [Display(Name = "Templates por Usuário")]
+            [Required()]
+            public Guid? CORxUsuarioRecursoTemplateID {get; set;}
+            public _CORxUsuario CORxUsuario {get; set;}
+            public _CORxRecursoTemplate CORxRecursoTemplate {get; set;}
+        }
+
+        #endregion _CORxUsuarioRecursoTemplate
 
 
         protected TFXCoreDataContext(DbContextOptions pOptions)
@@ -195,8 +303,13 @@ namespace TFX.Core.Data.DB
         internal DbSet<_CORxEmpresa> CORxEmpresa{get; set;}
         internal DbSet<_CORxEmpresaGrupo> CORxEmpresaGrupo{get; set;}
         internal DbSet<_CORxPessoa> CORxPessoa{get; set;}
+        internal DbSet<_CORxRecurso> CORxRecurso{get; set;}
+        internal DbSet<_CORxRecursoDireito> CORxRecursoDireito{get; set;}
+        internal DbSet<_CORxRecursoTemplate> CORxRecursoTemplate{get; set;}
+        internal DbSet<_CORxRecursoTemplateDireito> CORxRecursoTemplateDireito{get; set;}
         internal DbSet<_CORxStatus> CORxStatus{get; set;}
         internal DbSet<_CORxUsuario> CORxUsuario{get; set;}
+        internal DbSet<_CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate{get; set;}
         protected override void OnModelCreating(ModelBuilder pBuilder)
         {
             ConfigureCORxAgregado(pBuilder);
@@ -204,8 +317,13 @@ namespace TFX.Core.Data.DB
             ConfigureCORxEmpresa(pBuilder);
             ConfigureCORxEmpresaGrupo(pBuilder);
             ConfigureCORxPessoa(pBuilder);
+            ConfigureCORxRecurso(pBuilder);
+            ConfigureCORxRecursoDireito(pBuilder);
+            ConfigureCORxRecursoTemplate(pBuilder);
+            ConfigureCORxRecursoTemplateDireito(pBuilder);
             ConfigureCORxStatus(pBuilder);
             ConfigureCORxUsuario(pBuilder);
+            ConfigureCORxUsuarioRecursoTemplate(pBuilder);
         }
 
         private void ConfigureCORxAgregado(ModelBuilder pBuilder)
@@ -216,6 +334,7 @@ namespace TFX.Core.Data.DB
                 
                 ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
                 ett.ToTable("CORxAgregado");
 
                 ett.HasOne(d => d.CORxPessoa)
@@ -258,6 +377,7 @@ namespace TFX.Core.Data.DB
                 ett.Property(d => d.CORxEmpresaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CNPJ).HasColumnType(GetDBType("String", 14));
                 ett.ToTable("CORxEmpresa");
 
                 ett.HasOne(d => d.CORxPessoa)
@@ -333,6 +453,95 @@ namespace TFX.Core.Data.DB
             });
         }
 
+        private void ConfigureCORxRecurso(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxRecurso>(ett =>
+            {
+                ett.HasKey(e => e.CORxRecursoID).HasName("PK_CORxRecurso");
+                
+                ett.Property(d => d.CORxRecursoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
+                ett.ToTable("CORxRecurso");
+            });
+        }
+
+        private void ConfigureCORxRecursoDireito(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxRecursoDireito>(ett =>
+            {
+                ett.HasKey(e => e.CORxRecursoDireitoID).HasName("PK_CORxRecursoDireito");
+                
+                ett.Property(d => d.CORxRecursoDireitoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxRecursoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxDireitosID).HasColumnType(GetDBType("Int16"));
+                ett.ToTable("CORxRecursoDireito");
+
+                ett.HasOne(d => d.CORxDireitos)
+                   .WithMany(p => p.CORxRecursoDireito)
+                   .HasForeignKey(d => d.CORxDireitosID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_2BBF2707C62C4B4A80B9A3FE91C2D5B3");
+
+                ett.HasOne(d => d.CORxRecurso)
+                   .WithMany(p => p.CORxRecursoDireito)
+                   .HasForeignKey(d => d.CORxRecursoID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_8642F0512C404418A0C5B1C586A11496");
+
+                ett.HasIndex(d => d.CORxRecursoID).HasDatabaseName("IX_8642F0512C404418A0C5B1C586A11496");
+                ett.HasIndex(d => d.CORxDireitosID).HasDatabaseName("IX_2BBF2707C62C4B4A80B9A3FE91C2D5B3");
+            });
+        }
+
+        private void ConfigureCORxRecursoTemplate(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxRecursoTemplate>(ett =>
+            {
+                ett.HasKey(e => e.CORxRecursoTemplateID).HasName("PK_CORxRecursoTemplate");
+                
+                ett.Property(d => d.CORxRecursoTemplateID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxRecursoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Template).HasColumnType(GetDBType("String", 50));
+                ett.ToTable("CORxRecursoTemplate");
+
+                ett.HasOne(d => d.CORxRecurso)
+                   .WithMany(p => p.CORxRecursoTemplate)
+                   .HasForeignKey(d => d.CORxRecursoID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_CA7AE4A659F94B55AE8D02FC25FBE69F");
+
+                ett.HasIndex(d => d.CORxRecursoID).HasDatabaseName("IX_CA7AE4A659F94B55AE8D02FC25FBE69F");
+            });
+        }
+
+        private void ConfigureCORxRecursoTemplateDireito(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxRecursoTemplateDireito>(ett =>
+            {
+                ett.HasKey(e => e.CORxRecursoTemplateDireitoID).HasName("PK_CORxRecursoTemplateDireito");
+                
+                ett.Property(d => d.CORxRecursoTemplateDireitoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxRecursoTemplateID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxRecursoDireitoID).HasColumnType(GetDBType("Guid"));
+                ett.ToTable("CORxRecursoTemplateDireito");
+
+                ett.HasOne(d => d.CORxRecursoDireito)
+                   .WithMany(p => p.CORxRecursoTemplateDireito)
+                   .HasForeignKey(d => d.CORxRecursoDireitoID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_413AF556566D4C86868658231BC10E05");
+
+                ett.HasOne(d => d.CORxRecursoTemplate)
+                   .WithMany(p => p.CORxRecursoTemplateDireito)
+                   .HasForeignKey(d => d.CORxRecursoTemplateID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_998C84A533E14063A4E30498D27B1762");
+
+                ett.HasIndex(d => d.CORxRecursoTemplateID).HasDatabaseName("IX_998C84A533E14063A4E30498D27B1762");
+                ett.HasIndex(d => d.CORxRecursoDireitoID).HasDatabaseName("IX_413AF556566D4C86868658231BC10E05");
+            });
+        }
+
         private void ConfigureCORxStatus(ModelBuilder pBuilder)
         {
             pBuilder.Entity<_CORxStatus>(ett =>
@@ -363,6 +572,34 @@ namespace TFX.Core.Data.DB
                    .HasConstraintName("FK_F3E4CFF511294AD5884ACAC97FDE96C4");
 
                 ett.HasIndex(d => d.CORxUsuarioID).HasDatabaseName("IX_F3E4CFF511294AD5884ACAC97FDE96C4");
+            });
+        }
+
+        private void ConfigureCORxUsuarioRecursoTemplate(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxUsuarioRecursoTemplate>(ett =>
+            {
+                ett.HasKey(e => e.CORxUsuarioRecursoTemplateID).HasName("PK_CORxUsuarioRecursoTemplate");
+                
+                ett.Property(d => d.CORxUsuarioRecursoTemplateID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxUsuarioID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxRecursoTemplateID).HasColumnType(GetDBType("Guid"));
+                ett.ToTable("CORxUsuarioRecursoTemplate");
+
+                ett.HasOne(d => d.CORxRecursoTemplate)
+                   .WithMany(p => p.CORxUsuarioRecursoTemplate)
+                   .HasForeignKey(d => d.CORxRecursoTemplateID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_4B924243B5C649B99E8BABAA4C17A5E2");
+
+                ett.HasOne(d => d.CORxUsuario)
+                   .WithMany(p => p.CORxUsuarioRecursoTemplate)
+                   .HasForeignKey(d => d.CORxUsuarioID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_D3EBA1E15D7E4EF4A84A2EC9053EB6C6");
+
+                ett.HasIndex(d => d.CORxUsuarioID).HasDatabaseName("IX_D3EBA1E15D7E4EF4A84A2EC9053EB6C6");
+                ett.HasIndex(d => d.CORxRecursoTemplateID).HasDatabaseName("IX_4B924243B5C649B99E8BABAA4C17A5E2");
             });
         }
     }

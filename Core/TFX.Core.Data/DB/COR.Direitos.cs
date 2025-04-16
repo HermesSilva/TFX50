@@ -41,5 +41,6 @@ namespace TFX.Core.Data.DB
         [Required()]
         public String Titulo {get; set;}
 
+        public List<CORxRecursoDireito> CORxRecursoDireito {get; set;} = new List<CORxRecursoDireito>();
     }
 }

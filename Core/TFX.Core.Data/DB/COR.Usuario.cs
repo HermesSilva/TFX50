@@ -22,5 +22,6 @@ namespace TFX.Core.Data.DB
         public String EMail {get; set;}
 
         public CORxPessoa CORxPessoa {get; set;}
+        public List<CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate {get; set;} = new List<CORxUsuarioRecursoTemplate>();
     }
 }
