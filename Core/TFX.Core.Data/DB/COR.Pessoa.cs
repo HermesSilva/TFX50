@@ -22,5 +22,6 @@ namespace TFX.Core.Data.DB
 
         public List<CORxAgregado> CORxAgregado {get; set;} = new List<CORxAgregado>();
         public List<CORxEmpresa> CORxEmpresa {get; set;} = new List<CORxEmpresa>();
+        public List<CORxUsuario> CORxUsuario {get; set;} = new List<CORxUsuario>();
     }
 }
