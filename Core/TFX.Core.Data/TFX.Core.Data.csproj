@@ -12,13 +12,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="TFX.Core.dsmdl">
-	    <Generator>XDASEGenerator</Generator>
-	    <LastGenOutput>TFX.Core.Module.cs</LastGenOutput>
-	  </Content>
-	</ItemGroup>
-
-	<ItemGroup>
         <PackageReference Include="AspNetCore.Scalar" Version="1.1.8" />
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.2.0" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
@@ -43,9 +36,53 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\TFX.Core\TFX.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="DB\COR.Agregado.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="DB\COR.Direitos.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Empresa.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.EmpresaGrupo.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Pessoa.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Status.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\CORModel.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
 	  <Compile Update="TFX.Core.Module.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>TFX.Core.dsmdl</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="TFX.Core.Data.Module.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>TFX.Core.Data.dsmdl</DependentUpon>
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	  </Compile>
@@ -55,6 +92,17 @@
 	    <DependentUpon>TFX.Core.dsmdl</DependentUpon>
 	    <Visible>False</Visible>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="DB\COR.dsorm">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>COR.cs</LastGenOutput>
+	  </None>
+	  <None Update="TFX.Core.Data.dsmdl">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>TFX.Core.Data.Module.cs</LastGenOutput>
+	  </None>
 	</ItemGroup>
 
 

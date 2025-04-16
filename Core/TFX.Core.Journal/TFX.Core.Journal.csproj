@@ -1,0 +1,124 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<RootNamespace>TFX.Core</RootNamespace>
+		<MyType>DASE</MyType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="STX.Core.dsmdl" />
+	  <None Remove="TFX.Core.dsmdl" />
+	  <None Remove="TFX.Core.Journal.dsmdl" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="TFX.Core.Journal.dsmdl">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>TFX.Core.Journal.Module.cs</LastGenOutput>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+        <PackageReference Include="AspNetCore.Scalar" Version="1.1.8" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.2.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
+
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\TFX.Core.Data\TFX.Core.Data.csproj" />
+	  <ProjectReference Include="..\TFX.Core\TFX.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="DB\COR.Agregado.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="DB\COR.Direitos.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Empresa.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.EmpresaGrupo.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Pessoa.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Status.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\CORModel.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="STX.Core.Module.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>STX.Core.dsmdl</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="TFX.Core.Data.Module.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>TFX.Core.Data.dsmdl</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="TFX.Core.Journal.Module.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>TFX.Core.Journal.dsmdl</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="TFX.Core.Module.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>TFX.Core.dsmdl</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="DB\COR.dsorm">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>COR.cs</LastGenOutput>
+	  </None>
+	  <None Update="TFX.Core.Data.dsmdl">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>TFX.Core.Data.Module.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+
+</Project>

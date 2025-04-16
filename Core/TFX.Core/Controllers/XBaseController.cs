@@ -128,7 +128,7 @@ namespace TFX.Core.Controllers
         {
             Stopwatch stp = pContext.HttpContext.Items["Stopwatch"] as Stopwatch;
             stp?.Stop();
-            Console.WriteLine($"Ellapsed {stp?.Elapsed.TotalMilliseconds.ToString("#,##0.0")}ms {pContext.HttpContext.Request.Path}");
+            XConsole.Warn($"Ellapsed {stp?.Elapsed.TotalMilliseconds.ToString("#,##0.0")}ms {pContext.HttpContext.Request.Path}");
         }
     }
 

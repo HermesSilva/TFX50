@@ -31,7 +31,7 @@ public class CustomControllerFeatureProvider : IApplicationFeatureProvider<Contr
 {
     public void PopulateFeature(IEnumerable<ApplicationPart> parts, ControllerFeature feature)
     {
-        var assemblys = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("Sittax") || a.FullName.StartsWith("STX")).ToList();
+        var assemblys = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("Sittax") || a.FullName.StartsWith("TFX")).ToList();
         foreach (var assembly in assemblys)
         {
 

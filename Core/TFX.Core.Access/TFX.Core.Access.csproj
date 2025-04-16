@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="STX.Core.Access.dsmdl" />
+    <None Remove="TFX.Core.Access.dsmdl" />
     <None Remove="TFX.Core.Access.dsmdl" />
     <None Remove="TAF.Access.dsmdl" />
   </ItemGroup>
@@ -50,9 +50,9 @@
     <Compile Update="Properties\AssemblyInfo.cs">
       <Visible>True</Visible>
     </Compile>
-    <Compile Update="STX.Core.Access.Module.cs">
+    <Compile Update="TFX.Core.Access.Module.cs">
       <Visible>False</Visible>
-      <DependentUpon>STX.Core.Access.dsmdl</DependentUpon>
+      <DependentUpon>TFX.Core.Access.dsmdl</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
