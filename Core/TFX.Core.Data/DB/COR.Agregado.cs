@@ -20,6 +20,11 @@ namespace TFX.Core.Data.DB
         [Required()]
         public Int16 CORxStatusID {get; set;}
 
+        [Display(Name = "CPF ou CNPJ")]
+        [MaxLength(14)]
+        [Required()]
+        public String CPFCNPJ {get; set;}
+
         public CORxPessoa CORxPessoa {get; set;}
         public CORxStatus CORxStatus {get; set;}
         public List<CORxEmpresa> CORxEmpresa {get; set;} = new List<CORxEmpresa>();
