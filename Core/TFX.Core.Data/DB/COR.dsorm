@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XORMDesigner ID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" Name="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">DB</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">552B8941-358D-402E-9A37-9439EE57A609</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">EC5B774A-5D2C-4A81-BAAE-524126BC89F4|66B30A74-CFE9-461D-AC0E-C4E2CA2CD4B1|1CACFC5F-4C5A-49AD-B295-D1FF06A56732|BFF62452-6D68-4A52-B7B2-61D01583572B|87C09FB0-A40B-45BA-9C46-94B8673FA97D|77E918AD-18E9-43D3-8C1B-7CD683F71092|129D4402-7C07-49C2-A9F0-85E7C5AAA82E|E6723601-A00A-4711-A716-CB783046D114|5B5B8808-E539-44AB-9108-471909928DF4|2A913985-1E4F-4C09-9826-8F6149379541</XData>
+  </XValues>
+  <XORMTable Name="CORxStatus" ID="C819571D-25DF-4B56-B72C-482081863EC8">
+    <XValues>
+      <XData Name="ViewSize" ID="C61C1C4F-575D-4D38-A0A0-B517D7BFEAC0" Type="Size">{Width=118.946666666667;Height=48}</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=126;Y=73;Width=118.946666666667;Height=48}</XData>
+      <XData Name="ServerID" ID="BDEEF13F-F93F-46EF-B418-9F43232537AB" Type="Guid">F2103A2B-9534-4CAA-9D4E-039D9B7F5347</XData>
+      <XData Name="PKID" ID="4B2D51C5-A2DA-4171-9526-12E08D71C52B" Type="Guid">7AA893EB-00DB-4A54-BA22-F5305641E93F</XData>
+      <XData Name="TupleID" ID="59D70EF9-7A70-44E1-ADA0-F1A6A658F848" Type="Guid">030A9962-485F-4157-9714-BF0E10852FB6</XData>
+      <XData Name="PKTypeID" ID="8F3E9777-A802-4A9F-B5B5-0D5D568E0365" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Status</XLanguage>
+      </XData>
+      <XData Name="IsCached" ID="A2A30CA8-F97A-4B64-9518-9D2F9300AB3F" Type="Boolean">true</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=165;G=42;B=42}</XData>
+    </XValues>
+    <XORMPKField ID="CCB31403-051F-4157-A670-C8FDB209C315" Name="CORxStatusID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Status</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+      </XValues>
+    </XORMPKField>
+    <XORMField Name="Status" ID="57E3DAD0-A51E-4E7D-A9F0-A4A7C685749F">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=24;Width=110.946666666667;Height=21}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Status</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">20</XData>
+        <XData Name="IsFace" ID="D02DF54D-34C0-4AB5-A0E8-17BD1E09E921" Type="Boolean">true</XData>
+      </XValues>
+    </XORMField>
+    <XORMDataSet Name="T" ID="A66A6A9B-FCE4-489B-AE5F-C8CD09346E24">
+      <XORMDataTuple ID="3EAAAE9B-8F73-495C-A9AD-C528498F1787">
+        <XFieldValue ID="FF3E5778-7033-4A46-BDB7-200E35413203" FieldID="CCB31403-051F-4157-A670-C8FDB209C315">0</XFieldValue>
+        <XFieldValue ID="676C7B7B-BB16-4737-B7AD-AC3CBD2249AB" FieldID="57E3DAD0-A51E-4E7D-A9F0-A4A7C685749F">Inatoivo</XFieldValue>
+      </XORMDataTuple>
+      <XORMDataTuple ID="51124EB0-4334-4D3A-BC72-84B842BAD95C">
+        <XFieldValue ID="E5E96C9E-DC94-43B6-BAE7-CAFDFCB7437E" FieldID="CCB31403-051F-4157-A670-C8FDB209C315">1</XFieldValue>
+        <XFieldValue ID="7FEFB8E1-082B-4637-B28D-3B0BDC40BB97" FieldID="57E3DAD0-A51E-4E7D-A9F0-A4A7C685749F">Ativo</XFieldValue>
+      </XORMDataTuple>
+    </XORMDataSet>
+  </XORMTable>
+  <XORMTable Name="CORxDireitos" ID="5F2F0D8B-73E3-4DE8-BA01-9E20DD2F1C43">
+    <XValues>
+      <XData Name="ViewSize" ID="C61C1C4F-575D-4D38-A0A0-B517D7BFEAC0" Type="Size">{Width=127.703333333333;Height=69}</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=353;Y=76;Width=127.703333333333;Height=69}</XData>
+      <XData Name="ServerID" ID="BDEEF13F-F93F-46EF-B418-9F43232537AB" Type="Guid">DE46324B-16D3-49F2-90E6-5D47A2E24CA2</XData>
+      <XData Name="PKID" ID="4B2D51C5-A2DA-4171-9526-12E08D71C52B" Type="Guid">2B098F51-82E9-46B0-9A23-136CAD6368DF</XData>
+      <XData Name="TupleID" ID="59D70EF9-7A70-44E1-ADA0-F1A6A658F848" Type="Guid">78D49696-992F-4DEC-9E5E-49A566A6B702</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Direitos</XLanguage>
+      </XData>
+      <XData Name="PKTypeID" ID="8F3E9777-A802-4A9F-B5B5-0D5D568E0365" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=165;G=42;B=42}</XData>
+    </XValues>
+    <XORMPKField ID="85D04633-B097-49AB-9564-94076D25BBC0" Name="CORxDireitosID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Direitos</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+      </XValues>
+    </XORMPKField>
+    <XORMField Name="Direito" ID="E31B8597-42EA-4D0E-A488-E95731BADAEC">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=24;Width=119.703333333333;Height=21}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Direito</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">50</XData>
+      </XValues>
+    </XORMField>
+    <XORMField Name="Titulo" ID="61AF84AE-E5CA-4FD4-9DF3-D6EB194069D4">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=45;Width=119.703333333333;Height=21}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Título</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">50</XData>
+      </XValues>
+    </XORMField>
+    <XORMDataSet Name="T" ID="2E865363-9374-4555-90AC-5769AFE89059">
+      <XORMDataTuple ID="110911D0-BE73-46FB-BDBE-FD057356BD46">
+        <XFieldValue ID="974324AA-FB9A-47E6-8BFC-B57D09E34684" FieldID="85D04633-B097-49AB-9564-94076D25BBC0">0</XFieldValue>
+        <XFieldValue ID="010DB8D3-2A29-4EC1-AA11-EA73055AE893" FieldID="E31B8597-42EA-4D0E-A488-E95731BADAEC">NA</XFieldValue>
+        <XFieldValue ID="D61F585F-8989-4B2D-A713-6519C98AB646" FieldID="61AF84AE-E5CA-4FD4-9DF3-D6EB194069D4">NA</XFieldValue>
+      </XORMDataTuple>
+      <XORMDataTuple ID="C392B182-0F99-4E12-B421-AC6A03752205">
+        <XFieldValue ID="37C8030E-246D-4C32-8157-512F5A3E14AD" FieldID="85D04633-B097-49AB-9564-94076D25BBC0">1</XFieldValue>
+        <XFieldValue ID="868657D3-4109-4BE2-916C-78268FC70780" FieldID="E31B8597-42EA-4D0E-A488-E95731BADAEC">Visualizar</XFieldValue>
+        <XFieldValue ID="48444792-192E-432D-AFAB-E1DCB86AFA4A" FieldID="61AF84AE-E5CA-4FD4-9DF3-D6EB194069D4">Visualizar</XFieldValue>
+      </XORMDataTuple>
+      <XORMDataTuple ID="8B703679-5EF7-4790-A27C-B8629C851115">
+        <XFieldValue ID="D4B6EFCD-2E42-414F-BC38-D8F025BED93B" FieldID="85D04633-B097-49AB-9564-94076D25BBC0">2</XFieldValue>
+        <XFieldValue ID="9CC70128-9DA3-49FA-BB99-D6EFAB59A178" FieldID="E31B8597-42EA-4D0E-A488-E95731BADAEC">Inserir</XFieldValue>
+        <XFieldValue ID="BB7CAB2A-A3EE-4839-A10E-2F6D35E78E6C" FieldID="61AF84AE-E5CA-4FD4-9DF3-D6EB194069D4">Inserir</XFieldValue>
+      </XORMDataTuple>
+      <XORMDataTuple ID="FF12F6D7-C3AA-4FA5-9301-AB4386CB5455">
+        <XFieldValue ID="938A7B7A-CCCF-4829-8F3F-4F8522AE166E" FieldID="85D04633-B097-49AB-9564-94076D25BBC0">3</XFieldValue>
+        <XFieldValue ID="2A0BEC1D-6A05-41D5-B112-DADE97916020" FieldID="E31B8597-42EA-4D0E-A488-E95731BADAEC">Alterar</XFieldValue>
+        <XFieldValue ID="F539E7A8-460C-404B-B477-E0C80EAC390D" FieldID="61AF84AE-E5CA-4FD4-9DF3-D6EB194069D4">Alterar</XFieldValue>
+      </XORMDataTuple>
+      <XORMDataTuple ID="8A6D29AB-865E-4C82-9D49-7055877C23C5">
+        <XFieldValue ID="0233711E-3D3F-40E3-A143-94DF51EF690E" FieldID="85D04633-B097-49AB-9564-94076D25BBC0">4</XFieldValue>
+        <XFieldValue ID="36D66856-0BCB-4958-A0B2-1529912E7E1D" FieldID="E31B8597-42EA-4D0E-A488-E95731BADAEC">Inativar</XFieldValue>
+        <XFieldValue ID="9580C183-112B-4CF1-8238-016EF2A9682D" FieldID="61AF84AE-E5CA-4FD4-9DF3-D6EB194069D4">Inativar</XFieldValue>
+      </XORMDataTuple>
+      <XORMDataTuple ID="8998D41D-7144-4126-A4AD-01D377B240BE">
+        <XFieldValue ID="5928D7E1-F88D-4CE9-B7C1-8CECE77BB29C" FieldID="85D04633-B097-49AB-9564-94076D25BBC0">5</XFieldValue>
+        <XFieldValue ID="B7E8C54A-9E41-49F8-A7CF-A12BF0D09BDE" FieldID="E31B8597-42EA-4D0E-A488-E95731BADAEC">Apagar</XFieldValue>
+        <XFieldValue ID="789C34C4-2A5F-4FF5-A47C-D7FA0086EE83" FieldID="61AF84AE-E5CA-4FD4-9DF3-D6EB194069D4">Apagar</XFieldValue>
+      </XORMDataTuple>
+    </XORMDataSet>
+  </XORMTable>
+  <XORMTable Name="CORxPessoa" ID="223507E8-705D-4F07-B8F0-994458869CF6">
+    <XValues>
+      <XData Name="ViewSize" ID="C61C1C4F-575D-4D38-A0A0-B517D7BFEAC0" Type="Size">{Width=122.713333333333;Height=48}</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=622;Y=120;Width=122.713333333333;Height=48}</XData>
+      <XData Name="ServerID" ID="BDEEF13F-F93F-46EF-B418-9F43232537AB" Type="Guid">2EB09CA3-A749-4C1B-AA17-34D841B6BCB4</XData>
+      <XData Name="PKID" ID="4B2D51C5-A2DA-4171-9526-12E08D71C52B" Type="Guid">FB362943-1A65-4347-A018-ED3801E2EE8F</XData>
+      <XData Name="TupleID" ID="59D70EF9-7A70-44E1-ADA0-F1A6A658F848" Type="Guid">21006550-A7A1-4B6E-B78C-18CE75AABB19</XData>
+      <XData Name="PKTypeID" ID="8F3E9777-A802-4A9F-B5B5-0D5D568E0365" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Pessoa</XLanguage>
+      </XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=255;B=255}</XData>
+    </XValues>
+    <XORMPKField ID="3A339F18-904B-48E7-A48E-921A2305B6F1" Name="CORxPessoaID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Pessoa</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      </XValues>
+    </XORMPKField>
+    <XORMField Name="Nome" ID="02425730-A729-4484-B64D-F2F64B9E0200">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=24;Width=114.713333333333;Height=21}</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Nome</XLanguage>
+        </XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">180</XData>
+      </XValues>
+    </XORMField>
+  </XORMTable>
+  <XORMTable Name="CORxAgregado" ID="739A89F1-C544-40B7-B384-D41F8387324C">
+    <XValues>
+      <XData Name="ViewSize" ID="C61C1C4F-575D-4D38-A0A0-B517D7BFEAC0" Type="Size">{Width=139.363333333333;Height=27}</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=386;Y=268;Width=139.363333333333;Height=27}</XData>
+      <XData Name="ServerID" ID="BDEEF13F-F93F-46EF-B418-9F43232537AB" Type="Guid">61A17A9C-F600-4676-9675-67D3384905D6</XData>
+      <XData Name="PKID" ID="4B2D51C5-A2DA-4171-9526-12E08D71C52B" Type="Guid">3A36B8B8-0665-4D7C-8FE6-225BF1876986</XData>
+      <XData Name="TupleID" ID="59D70EF9-7A70-44E1-ADA0-F1A6A658F848" Type="Guid">1F7682D1-2A55-4953-BECE-C3497586995B</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Agregado</XLanguage>
+      </XData>
+      <XData Name="PKTypeID" ID="8F3E9777-A802-4A9F-B5B5-0D5D568E0365" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=255;B=255}</XData>
+      <XData Name="UseState" ID="04C4A96C-B8C1-4EB3-8F56-72766FCE1823" Type="Boolean">true</XData>
+    </XValues>
+    <XORMPKField ID="C1FDEFF6-3328-4B5C-9B6B-AEE4C74755CE" Name="CORxAgregadoID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Agregado</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      </XValues>
+    </XORMPKField>
+  </XORMTable>
+  <XORMReference ID="D129F242-2308-4A40-BDB3-C6BF6BC16ABD">
+    <XValues>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="223507E8-705D-4F07-B8F0-994458869CF6" Text="CORxPessoa" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">223507E8-705D-4F07-B8F0-994458869CF6</XLinkedShape>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="739A89F1-C544-40B7-B384-D41F8387324C" Text="CORxAgregado" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">739A89F1-C544-40B7-B384-D41F8387324C</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=525;Y=281.5}|{X=573.5;Y=281.5}|{X=573.5;Y=144}|{X=622;Y=144}</XData>
+      <XData Name="IndexID" ID="12E927CE-24EF-4DC0-93CF-E702064EB5A1" Type="Guid">1A15428F-9800-45DD-8AA3-5E24EBBB2BA1</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=255;B=255}</XData>
+    </XValues>
+  </XORMReference>
+  <XORMTable Name="CORxEmpresa" ID="3AD380CA-7C2E-4B3F-A9CF-64657217DBE4">
+    <XValues>
+      <XData Name="ViewSize" ID="C61C1C4F-575D-4D38-A0A0-B517D7BFEAC0" Type="Size">{Width=150.97;Height=48}</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=712;Y=383;Width=150.97;Height=48}</XData>
+      <XData Name="ServerID" ID="BDEEF13F-F93F-46EF-B418-9F43232537AB" Type="Guid">FA942654-B49E-413E-9A31-052F5CCC5A8A</XData>
+      <XData Name="PKID" ID="4B2D51C5-A2DA-4171-9526-12E08D71C52B" Type="Guid">7141C7A9-85F0-4E41-BF38-6305E40D36F3</XData>
+      <XData Name="TupleID" ID="59D70EF9-7A70-44E1-ADA0-F1A6A658F848" Type="Guid">918A2FAD-111D-4F30-B797-5FF1F1AAB5FD</XData>
+      <XData Name="PKTypeID" ID="8F3E9777-A802-4A9F-B5B5-0D5D568E0365" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Empresa</XLanguage>
+      </XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=100;G=149;B=237}</XData>
+      <XData Name="UseState" ID="04C4A96C-B8C1-4EB3-8F56-72766FCE1823" Type="Boolean">true</XData>
+    </XValues>
+    <XORMPKField ID="71E25BE1-68E6-4A40-829E-F20DA234B20C" Name="CORxEmpresaID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Empresa</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      </XValues>
+    </XORMPKField>
+    <XORMFKField ID="F7D52B81-FF72-47C4-BD3C-1F83D5FB8653" Name="CORxAgregadoID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Agregado</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=24;Width=142.97;Height=21}</XData>
+        <XData Name="IsFK" ID="7CBD471F-E1F2-4A36-B0FC-A962000DF07F" Type="Boolean">true</XData>
+      </XValues>
+    </XORMFKField>
+  </XORMTable>
+  <XORMReference ID="751AAA01-BDC6-48D8-A2B8-DA03E5758339">
+    <XValues>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="223507E8-705D-4F07-B8F0-994458869CF6" Text="CORxPessoa" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">223507E8-705D-4F07-B8F0-994458869CF6</XLinkedShape>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="3AD380CA-7C2E-4B3F-A9CF-64657217DBE4" Text="CORxEmpresa" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">3AD380CA-7C2E-4B3F-A9CF-64657217DBE4</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=712;Y=407}|{X=683.5;Y=407}|{X=683.5;Y=168}</XData>
+      <XData Name="IndexID" ID="12E927CE-24EF-4DC0-93CF-E702064EB5A1" Type="Guid">C3F8E3FE-7355-40EF-99ED-9517475D6A49</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=255;B=255}</XData>
+    </XValues>
+  </XORMReference>
+  <XORMReference ID="4F443AC8-9532-46C1-9887-C496C4CB7DCC">
+    <XValues>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="739A89F1-C544-40B7-B384-D41F8387324C" Text="CORxAgregado" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">739A89F1-C544-40B7-B384-D41F8387324C</XLinkedShape>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="F7D52B81-FF72-47C4-BD3C-1F83D5FB8653" Text="" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">F7D52B81-FF72-47C4-BD3C-1F83D5FB8653</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=715;Y=417.5}|{X=620;Y=417.5}|{X=620;Y=281.5}|{X=525;Y=281.5}</XData>
+      <XData Name="IndexID" ID="12E927CE-24EF-4DC0-93CF-E702064EB5A1" Type="Guid">89970B9D-A41C-4D6A-AC3A-968F1581C20A</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=255;B=255}</XData>
+    </XValues>
+  </XORMReference>
+  <XORMTable Name="CORxEmpresaGrupo" ID="8BCAB131-3AB6-4F1D-BE92-661BCB040145">
+    <XValues>
+      <XData Name="ViewSize" ID="C61C1C4F-575D-4D38-A0A0-B517D7BFEAC0" Type="Size">{Width=165.226666666667;Height=90}</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=513;Y=514;Width=165.226666666667;Height=90}</XData>
+      <XData Name="ServerID" ID="BDEEF13F-F93F-46EF-B418-9F43232537AB" Type="Guid">4888E583-D788-48FC-A857-2D76A348B5BE</XData>
+      <XData Name="PKID" ID="4B2D51C5-A2DA-4171-9526-12E08D71C52B" Type="Guid">7BB6C804-3019-4685-85A4-AF8B5975B0B2</XData>
+      <XData Name="TupleID" ID="59D70EF9-7A70-44E1-ADA0-F1A6A658F848" Type="Guid">9FEB93A6-A328-4FFA-AD05-9A049B5A4D27</XData>
+      <XData Name="PKTypeID" ID="8F3E9777-A802-4A9F-B5B5-0D5D568E0365" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Grupo de Empresas</XLanguage>
+      </XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=100;G=149;B=237}</XData>
+      <XData Name="UseState" ID="04C4A96C-B8C1-4EB3-8F56-72766FCE1823" Type="Boolean">true</XData>
+    </XValues>
+    <XORMPKField ID="372E985B-2CE0-458C-8D18-BC59C4DA3CBA" Name="CORxEmpresaGrupoID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Grupo de Empresas</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      </XValues>
+    </XORMPKField>
+    <XORMFKField ID="72876CC6-5D30-49B9-A071-A2576CEBF675" Name="CORxAgregadoID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Agregado</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=24;Width=157.226666666667;Height=21}</XData>
+        <XData Name="IsFK" ID="7CBD471F-E1F2-4A36-B0FC-A962000DF07F" Type="Boolean">true</XData>
+      </XValues>
+    </XORMFKField>
+    <XORMFKField ID="810BEC6C-FED3-4F2B-BFFC-A081E133496C" Name="CORxEmpresaID">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Empresa</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=45;Width=157.226666666667;Height=21}</XData>
+        <XData Name="IsFK" ID="7CBD471F-E1F2-4A36-B0FC-A962000DF07F" Type="Boolean">true</XData>
+      </XValues>
+    </XORMFKField>
+    <XORMField Name="Grupo" ID="092AF940-9E92-4712-9F9B-7CBA1589F9B3">
+      <XValues>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=66;Width=157.226666666667;Height=21}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Grupo</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      </XValues>
+    </XORMField>
+  </XORMTable>
+  <XORMReference ID="6F15186E-1CAA-4452-9286-0D8634F9D6F3">
+    <XValues>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="739A89F1-C544-40B7-B384-D41F8387324C" Text="CORxAgregado" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">739A89F1-C544-40B7-B384-D41F8387324C</XLinkedShape>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="72876CC6-5D30-49B9-A071-A2576CEBF675" Text="" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">72876CC6-5D30-49B9-A071-A2576CEBF675</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=516;Y=548.5}|{X=455.5;Y=548.5}|{X=455.5;Y=295}</XData>
+      <XData Name="IndexID" ID="12E927CE-24EF-4DC0-93CF-E702064EB5A1" Type="Guid">1CAE0D15-5F71-44DC-A7C0-A6D535856E1F</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=255;B=255}</XData>
+    </XValues>
+  </XORMReference>
+  <XORMReference ID="0392DD25-ED2D-4C20-9696-C72A0858FF3F">
+    <XValues>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="3AD380CA-7C2E-4B3F-A9CF-64657217DBE4" Text="CORxEmpresa" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">3AD380CA-7C2E-4B3F-A9CF-64657217DBE4</XLinkedShape>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="810BEC6C-FED3-4F2B-BFFC-A081E133496C" Text="" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="COR" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">810BEC6C-FED3-4F2B-BFFC-A081E133496C</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=673;Y=569.5}|{X=787.5;Y=569.5}|{X=787.5;Y=431}</XData>
+      <XData Name="IndexID" ID="12E927CE-24EF-4DC0-93CF-E702064EB5A1" Type="Guid">9FCBA698-7BAD-4A7E-9019-968DCFB45635</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=100;G=149;B=237}</XData>
+    </XValues>
+  </XORMReference>
+</XORMDesigner>
