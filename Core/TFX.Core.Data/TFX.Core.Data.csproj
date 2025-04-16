@@ -48,7 +48,6 @@
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>COR.dsorm</DependentUpon>
-	    <Visible>False</Visible>
 	  </Compile>
 	  <Compile Update="DB\COR.Direitos.cs">
 	    <Visible>False</Visible>
@@ -67,6 +66,10 @@
 	    <DependentUpon>COR.dsorm</DependentUpon>
 	  </Compile>
 	  <Compile Update="DB\COR.Status.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Usuario.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>COR.dsorm</DependentUpon>
 	  </Compile>

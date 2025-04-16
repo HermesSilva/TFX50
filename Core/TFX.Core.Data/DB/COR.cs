@@ -22,7 +22,11 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Agregado")]
             [Required()]
             public Guid? CORxAgregadoID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
             public _CORxPessoa CORxPessoa {get; set;}
+            public _CORxStatus CORxStatus {get; set;}
             public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
             public List<_CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<_CORxEmpresaGrupo>();
         }
@@ -73,8 +77,12 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Empresa")]
             [Required()]
             public Guid? CORxEmpresaID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
             public _CORxPessoa CORxPessoa {get; set;}
             public _CORxAgregado CORxAgregado {get; set;}
+            public _CORxStatus CORxStatus {get; set;}
             public List<_CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<_CORxEmpresaGrupo>();
         }
 
@@ -94,10 +102,14 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Empresa")]
             [Required()]
             public Guid CORxEmpresaID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
             [Required()]
             public Guid Grupo {get; set;}
             public _CORxAgregado CORxAgregado {get; set;}
             public _CORxEmpresa CORxEmpresa {get; set;}
+            public _CORxStatus CORxStatus {get; set;}
         }
 
         #endregion _CORxEmpresaGrupo
@@ -115,6 +127,7 @@ namespace TFX.Core.Data.DB
             public String Nome {get; set;}
             public List<_CORxAgregado> CORxAgregado {get; set;} = new List<_CORxAgregado>();
             public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
+            public List<_CORxUsuario> CORxUsuario {get; set;} = new List<_CORxUsuario>();
         }
 
         #endregion _CORxPessoa
@@ -140,9 +153,29 @@ namespace TFX.Core.Data.DB
             [MaxLength(20)]
             [Required()]
             public String Status {get; set;}
+            public List<_CORxAgregado> CORxAgregado {get; set;} = new List<_CORxAgregado>();
+            public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
+            public List<_CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<_CORxEmpresaGrupo>();
         }
 
         #endregion _CORxStatus
+
+        #region _CORxUsuario
+
+        internal class _CORxUsuario
+        {
+            public Boolean IsPKEmpty => Object.Equals(CORxUsuarioID, typeof(Guid).GetDefault());
+            [Display(Name = "Usuário")]
+            [Required()]
+            public Guid? CORxUsuarioID {get; set;}
+            [Display(Name = "E-Mails")]
+            [MaxLength(80)]
+            [Required()]
+            public String EMail {get; set;}
+            public _CORxPessoa CORxPessoa {get; set;}
+        }
+
+        #endregion _CORxUsuario
 
 
         protected TFXCoreDataContext(DbContextOptions pOptions)
@@ -163,6 +196,7 @@ namespace TFX.Core.Data.DB
         internal DbSet<_CORxEmpresaGrupo> CORxEmpresaGrupo{get; set;}
         internal DbSet<_CORxPessoa> CORxPessoa{get; set;}
         internal DbSet<_CORxStatus> CORxStatus{get; set;}
+        internal DbSet<_CORxUsuario> CORxUsuario{get; set;}
         protected override void OnModelCreating(ModelBuilder pBuilder)
         {
             ConfigureCORxAgregado(pBuilder);
@@ -171,6 +205,7 @@ namespace TFX.Core.Data.DB
             ConfigureCORxEmpresaGrupo(pBuilder);
             ConfigureCORxPessoa(pBuilder);
             ConfigureCORxStatus(pBuilder);
+            ConfigureCORxUsuario(pBuilder);
         }
 
         private void ConfigureCORxAgregado(ModelBuilder pBuilder)
@@ -180,6 +215,7 @@ namespace TFX.Core.Data.DB
                 ett.HasKey(e => e.CORxAgregadoID).HasName("PK_CORxAgregado");
                 
                 ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
                 ett.ToTable("CORxAgregado");
 
                 ett.HasOne(d => d.CORxPessoa)
@@ -188,7 +224,14 @@ namespace TFX.Core.Data.DB
                    .OnDelete(DeleteBehavior.Restrict)
                    .HasConstraintName("FK_D129F24223084A40BDB3C6BF6BC16ABD");
 
+                ett.HasOne(d => d.CORxStatus)
+                   .WithMany(p => p.CORxAgregado)
+                   .HasForeignKey(d => d.CORxStatusID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_04BE7F3F33664F8187708FB8EEE44BB9");
+
                 ett.HasIndex(d => d.CORxAgregadoID).HasDatabaseName("IX_D129F24223084A40BDB3C6BF6BC16ABD");
+                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_04BE7F3F33664F8187708FB8EEE44BB9");
             });
         }
 
@@ -214,6 +257,7 @@ namespace TFX.Core.Data.DB
                 
                 ett.Property(d => d.CORxEmpresaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
                 ett.ToTable("CORxEmpresa");
 
                 ett.HasOne(d => d.CORxPessoa)
@@ -228,8 +272,15 @@ namespace TFX.Core.Data.DB
                    .OnDelete(DeleteBehavior.Restrict)
                    .HasConstraintName("FK_4F443AC8953246C19887C496C4CB7DCC");
 
+                ett.HasOne(d => d.CORxStatus)
+                   .WithMany(p => p.CORxEmpresa)
+                   .HasForeignKey(d => d.CORxStatusID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_3D11CC2230A34B7293C66F8733789E1F");
+
                 ett.HasIndex(d => d.CORxEmpresaID).HasDatabaseName("IX_751AAA01BDC648D8A2B8DA03E5758339");
                 ett.HasIndex(d => d.CORxAgregadoID).HasDatabaseName("IX_4F443AC8953246C19887C496C4CB7DCC");
+                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_3D11CC2230A34B7293C66F8733789E1F");
             });
         }
 
@@ -243,6 +294,7 @@ namespace TFX.Core.Data.DB
                 ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxEmpresaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Grupo).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
                 ett.ToTable("CORxEmpresaGrupo");
 
                 ett.HasOne(d => d.CORxEmpresa)
@@ -257,8 +309,15 @@ namespace TFX.Core.Data.DB
                    .OnDelete(DeleteBehavior.Restrict)
                    .HasConstraintName("FK_6F15186E1CAA445292860D8634F9D6F3");
 
+                ett.HasOne(d => d.CORxStatus)
+                   .WithMany(p => p.CORxEmpresaGrupo)
+                   .HasForeignKey(d => d.CORxStatusID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_0F3626E1A65A4611BDB2E747CA5A9893");
+
                 ett.HasIndex(d => d.CORxAgregadoID).HasDatabaseName("IX_6F15186E1CAA445292860D8634F9D6F3");
                 ett.HasIndex(d => d.CORxEmpresaID).HasDatabaseName("IX_0392DD25ED2D4C209696C72A0858FF3F");
+                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_0F3626E1A65A4611BDB2E747CA5A9893");
             });
         }
 
@@ -284,6 +343,26 @@ namespace TFX.Core.Data.DB
                 ett.Property(d => d.Status).HasColumnType(GetDBType("String", 20));
                 ett.ToTable("CORxStatus");
                 ett.HasData(_CORxStatus.XDefault.SeedData);
+            });
+        }
+
+        private void ConfigureCORxUsuario(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxUsuario>(ett =>
+            {
+                ett.HasKey(e => e.CORxUsuarioID).HasName("PK_CORxUsuario");
+                
+                ett.Property(d => d.CORxUsuarioID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMail).HasColumnType(GetDBType("String", 80));
+                ett.ToTable("CORxUsuario");
+
+                ett.HasOne(d => d.CORxPessoa)
+                   .WithMany()
+                   .HasForeignKey(d => d.CORxUsuarioID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_F3E4CFF511294AD5884ACAC97FDE96C4");
+
+                ett.HasIndex(d => d.CORxUsuarioID).HasDatabaseName("IX_F3E4CFF511294AD5884ACAC97FDE96C4");
             });
         }
     }

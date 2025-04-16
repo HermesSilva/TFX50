@@ -16,7 +16,12 @@ namespace TFX.Core.Data.DB
         [Required()]
         public Guid? CORxAgregadoID {get; set;}
 
+        [Display(Name = "Estado")]
+        [Required()]
+        public Int16 CORxStatusID {get; set;}
+
         public CORxPessoa CORxPessoa {get; set;}
+        public CORxStatus CORxStatus {get; set;}
         public List<CORxEmpresa> CORxEmpresa {get; set;} = new List<CORxEmpresa>();
         public List<CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<CORxEmpresaGrupo>();
     }

@@ -32,5 +32,8 @@ namespace TFX.Core.Data.DB
         [Required()]
         public String Status {get; set;}
 
+        public List<CORxAgregado> CORxAgregado {get; set;} = new List<CORxAgregado>();
+        public List<CORxEmpresa> CORxEmpresa {get; set;} = new List<CORxEmpresa>();
+        public List<CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<CORxEmpresaGrupo>();
     }
 }
