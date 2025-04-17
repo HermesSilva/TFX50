@@ -16,11 +16,22 @@ namespace TFX.Core.Data.DB
         [Required()]
         public Guid? CORxRecursoID {get; set;}
 
+        [Display(Name = "Tipo de Recurso")]
+        [Required()]
+        public Int16 CORxRecursoTipoID {get; set;}
+
         [MaxLength(128)]
         [Required()]
         public String Nome {get; set;}
 
+        [Display(Name = "Título")]
+        [MaxLength(80)]
+        [Required()]
+        public String Titulo {get; set;}
+
+        public CORxRecursoTipo CORxRecursoTipo {get; set;}
         public List<CORxRecursoTemplate> CORxRecursoTemplate {get; set;} = new List<CORxRecursoTemplate>();
         public List<CORxRecursoDireito> CORxRecursoDireito {get; set;} = new List<CORxRecursoDireito>();
+        public List<CORxMenuItem> CORxMenuItem {get; set;} = new List<CORxMenuItem>();
     }
 }
