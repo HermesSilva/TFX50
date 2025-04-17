@@ -62,6 +62,18 @@
 	    <Visible>False</Visible>
 	    <DependentUpon>COR.dsorm</DependentUpon>
 	  </Compile>
+	  <Compile Update="DB\COR.Favorito.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Menu.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.MenuItem.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
 	  <Compile Update="DB\COR.Pessoa.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>COR.dsorm</DependentUpon>
@@ -82,6 +94,10 @@
 	    <Visible>False</Visible>
 	    <DependentUpon>COR.dsorm</DependentUpon>
 	  </Compile>
+	  <Compile Update="DB\COR.RecursoTipo.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
 	  <Compile Update="DB\COR.Status.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>COR.dsorm</DependentUpon>
@@ -97,6 +113,24 @@
 	  <Compile Update="DB\CORModel.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.Controller.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.DataSet.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.Rule.cs">
+	    <Visible>True</Visible>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.Service.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	    <Visible>False</Visible>
 	  </Compile>
 	  <Compile Update="TFX.Core.Module.cs">
 	    <Visible>False</Visible>
@@ -122,6 +156,10 @@
 	  <None Update="DB\COR.dsorm">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>COR.cs</LastGenOutput>
+	  </None>
+	  <None Update="Servicos\Usuario.dssvc">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>Usuario.Service.cs</LastGenOutput>
 	  </None>
 	  <None Update="TFX.Core.Data.dsmdl">
 	    <Generator>XDASEGenerator</Generator>
