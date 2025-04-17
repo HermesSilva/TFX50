@@ -23,5 +23,6 @@ namespace TFX.Core.Data.DB
 
         public CORxPessoa CORxPessoa {get; set;}
         public List<CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate {get; set;} = new List<CORxUsuarioRecursoTemplate>();
+        public List<CORxFavorito> CORxFavorito {get; set;} = new List<CORxFavorito>();
     }
 }

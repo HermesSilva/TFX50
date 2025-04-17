@@ -33,5 +33,15 @@ namespace TFX.Core.Data.DB
             public const string sAlterar = @"Alterar";
             public const Int16 Alterar = (Int16)3;
         }
+
+        public static class CORxRecursoTipo
+        {
+            public const string sAplicacao_de_UI = @"Aplicação de UI";
+            public const Int16 Aplicacao_de_UI = (Int16)1;
+            public const string sNA = @"NA";
+            public const Int16 NA = (Int16)0;
+            public const string sWeb_API = @"Web API";
+            public const Int16 Web_API = (Int16)2;
+        }
     }
 }
