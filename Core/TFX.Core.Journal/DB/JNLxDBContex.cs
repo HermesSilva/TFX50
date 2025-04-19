@@ -3,8 +3,6 @@ using System.Data.Common;
 
 using Microsoft.EntityFrameworkCore;
 
-using Sittax.Domain.Core;
-
 using TFX.Core;
 using TFX.Core.Exceptions;
 

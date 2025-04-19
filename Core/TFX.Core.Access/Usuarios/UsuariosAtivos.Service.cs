@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Http;
 using System.Data;
 using TFX.Core.Lzma;
 using TFX.Core.Identity;
+using System.Text;
 using TFX.Core.Access.Usuarios.Rules;
 using TFX.Core.Access.Usuarios;
 using TFX.Core.Access.DB;
@@ -178,20 +179,21 @@ namespace TFX.Core.Access.Usuarios
                 return;
             foreach (UsuariosAtivosTuple stpl in pDataSet.Tuples)
             {
+                var sb = new StringBuilder();
                 var TAFxUsuariotpl = new TAFxUsuario();
                 stpl.EntityTuple = TAFxUsuariotpl;
                 if (stpl.TAFxUsuarioID.Value != Guid.Empty)
                     TAFxUsuariotpl.TAFxUsuarioID = stpl.TAFxUsuarioID.Value;
                 TAFxUsuariotpl.Login = stpl.Login.Value;
                 TAFxUsuariotpl.CORxEstadoID = stpl.CORxEstadoID.Value;
-                var sb = TAFxUsuariotpl.Validate();
-                if (sb.Length > 0)
-                    throw new Exception(sb.ToString());
+                TAFxUsuariotpl.Validate(sb );
                 ctx.TAFxUsuario.Add(TAFxUsuariotpl);
                 if (!TAFxUsuariotpl.IsPKEmpty)
                     ctx.Entry(TAFxUsuariotpl).State = EntityState.Modified;
                 else
                     ctx.Entry(TAFxUsuariotpl).State = EntityState.Added;
+                if (sb.Length > 0)
+                    throw new Exception(sb.ToString());
             }
         }
     }

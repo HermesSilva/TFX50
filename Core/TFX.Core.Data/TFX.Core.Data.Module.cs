@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
+using TFX.Core.Data.Servicos;
 
 namespace TFX.Core.Data
 {
@@ -10,6 +11,8 @@ namespace TFX.Core.Data
     {
         public override void Initialize(IServiceCollection pServices)
         {
+            pServices.AddTransient<IUsuarioService, UsuarioService>();
+            pServices.AddDbContext<UsuarioService.DBContext>();
         }
     }
 }

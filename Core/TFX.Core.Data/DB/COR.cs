@@ -16,7 +16,7 @@ namespace TFX.Core.Data.DB
     {
         #region _CORxAgregado
 
-        internal class _CORxAgregado
+        public class _CORxAgregado
         {
             public Boolean IsPKEmpty => Object.Equals(CORxAgregadoID, typeof(Guid).GetDefault());
             [Display(Name = "Agregado")]
@@ -39,7 +39,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxDireitos
 
-        internal class _CORxDireitos
+        public class _CORxDireitos
         {
             public class XDefault
             {
@@ -73,7 +73,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxEmpresa
 
-        internal class _CORxEmpresa
+        public class _CORxEmpresa
         {
             [MaxLength(14)]
             [Required()]
@@ -98,7 +98,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxEmpresaGrupo
 
-        internal class _CORxEmpresaGrupo
+        public class _CORxEmpresaGrupo
         {
             [Display(Name = "Agregado")]
             [Required()]
@@ -124,7 +124,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxFavorito
 
-        internal class _CORxFavorito
+        public class _CORxFavorito
         {
             public Boolean IsPKEmpty => Object.Equals(CORxFavoritoID, typeof(Guid).GetDefault());
             [Display(Name = "Favoritos")]
@@ -147,7 +147,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxMenu
 
-        internal class _CORxMenu
+        public class _CORxMenu
         {
             public Boolean IsPKEmpty => Object.Equals(CORxMenuID, typeof(Guid).GetDefault());
             [Display(Name = "Menu")]
@@ -167,7 +167,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxMenuItem
 
-        internal class _CORxMenuItem
+        public class _CORxMenuItem
         {
             [Display(Name = "Menu")]
             [Required()]
@@ -191,7 +191,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxPessoa
 
-        internal class _CORxPessoa
+        public class _CORxPessoa
         {
             public Boolean IsPKEmpty => Object.Equals(CORxPessoaID, typeof(Guid).GetDefault());
             [Display(Name = "Pessoa")]
@@ -209,7 +209,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxRecurso
 
-        internal class _CORxRecurso
+        public class _CORxRecurso
         {
             public Boolean IsPKEmpty => Object.Equals(CORxRecursoID, typeof(Guid).GetDefault());
             [Display(Name = "Recurso")]
@@ -235,7 +235,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxRecursoDireito
 
-        internal class _CORxRecursoDireito
+        public class _CORxRecursoDireito
         {
             [Display(Name = "Direitos")]
             [Required()]
@@ -256,7 +256,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxRecursoTemplate
 
-        internal class _CORxRecursoTemplate
+        public class _CORxRecursoTemplate
         {
             [Display(Name = "Recurso")]
             [Required()]
@@ -277,7 +277,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxRecursoTemplateDireito
 
-        internal class _CORxRecursoTemplateDireito
+        public class _CORxRecursoTemplateDireito
         {
             [Display(Name = "Direitos por Recurso")]
             [Required()]
@@ -297,7 +297,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxRecursoTipo
 
-        internal class _CORxRecursoTipo
+        public class _CORxRecursoTipo
         {
             public class XDefault
             {
@@ -324,7 +324,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxStatus
 
-        internal class _CORxStatus
+        public class _CORxStatus
         {
             public class XDefault
             {
@@ -352,7 +352,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxUsuario
 
-        internal class _CORxUsuario
+        public class _CORxUsuario
         {
             public Boolean IsPKEmpty => Object.Equals(CORxUsuarioID, typeof(Guid).GetDefault());
             [Display(Name = "Usuário")]
@@ -371,7 +371,7 @@ namespace TFX.Core.Data.DB
 
         #region _CORxUsuarioRecursoTemplate
 
-        internal class _CORxUsuarioRecursoTemplate
+        public class _CORxUsuarioRecursoTemplate
         {
             [Display(Name = "Conjunto de Recursos")]
             [Required()]

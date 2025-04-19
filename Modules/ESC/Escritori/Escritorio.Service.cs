@@ -19,14 +19,15 @@ using System.Data;
 using TFX.Core.Lzma;
 using TFX.Core.Identity;
 using System.Text;
-using TFX.Core.Data.Servicos.Rules;
-using TFX.Core.Data.Servicos;
+using TFX.ESC.Core.Escritori.Rules;
+using TFX.ESC.Core.Escritori;
 using TFX.Core.Data.DB;
+using TFX.ESC.Core.DB;
 
-namespace TFX.Core.Data.Servicos
+namespace TFX.ESC.Core.Escritori
 {
-    [XGuid("53F17DAC-4376-4424-8454-0866B122BFDB", typeof(IUsuarioService))]
-    public class UsuarioService : XService, IUsuarioService
+    [XGuid("94D6CBB1-BC80-448E-B38D-56FA234CD41E", typeof(IEscritorioService))]
+    public class EscritorioService : XService, IEscritorioService
     {
         public class DBContext : XDBContext
         {
@@ -35,19 +36,10 @@ namespace TFX.Core.Data.Servicos
             {
             }
 
-            public DbSet<CORxUsuario> CORxUsuario{get; set;}
             public DbSet<CORxPessoa> CORxPessoa{get; set;}
+            public DbSet<ESCxEscritorio> ESCxEscritorio{get; set;}
+            public DbSet<CORxAgregado> CORxAgregado{get; set;}
 
-            private void ConfigureCORxUsuario(ModelBuilder pBuilder)
-            {
-                pBuilder.Entity<CORxUsuario>(ett =>
-                {
-                    ett.HasKey(e => e.CORxUsuarioID).HasName("PK_CORxUsuario");
-                    
-                    ett.Property(d => d.EMail).HasColumnType(GetDBType("String", 80));
-                    ett.ToTable("CORxUsuario");
-                });
-            }
             private void ConfigureCORxPessoa(ModelBuilder pBuilder)
             {
                 pBuilder.Entity<CORxPessoa>(ett =>
@@ -59,11 +51,32 @@ namespace TFX.Core.Data.Servicos
                     ett.ToTable("CORxPessoa");
                 });
             }
+            private void ConfigureESCxEscritorio(ModelBuilder pBuilder)
+            {
+                pBuilder.Entity<ESCxEscritorio>(ett =>
+                {
+                    ett.HasKey(e => e.ESCxEscritorioID).HasName("PK_ESCxEscritorio");
+                    
+                    ett.ToTable("ESCxEscritorio");
+                });
+            }
+            private void ConfigureCORxAgregado(ModelBuilder pBuilder)
+            {
+                pBuilder.Entity<CORxAgregado>(ett =>
+                {
+                    ett.HasKey(e => e.CORxAgregadoID).HasName("PK_CORxAgregado");
+                    
+                    ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                    ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
+                    ett.ToTable("CORxAgregado");
+                });
+            }
 
             protected override void OnModelCreating(ModelBuilder pBuilder)
             {
-                ConfigureCORxUsuario(pBuilder);
                 ConfigureCORxPessoa(pBuilder);
+                ConfigureESCxEscritorio(pBuilder);
+                ConfigureCORxAgregado(pBuilder);
                 base.OnModelCreating(pBuilder);
             }
 
@@ -75,9 +88,9 @@ namespace TFX.Core.Data.Servicos
             }
         }
 
-        public abstract class BaseINFUsuarioServiceRule : XServiceINFRule<UsuarioService, UsuarioTuple>
+        public abstract class BaseINFEscritorioServiceRule : XServiceINFRule<EscritorioService, EscritorioTuple>
         {
-            public BaseINFUsuarioServiceRule(UsuarioService pService)
+            public BaseINFEscritorioServiceRule(EscritorioService pService)
                 : base(pService)
             {
             }
@@ -97,19 +110,19 @@ namespace TFX.Core.Data.Servicos
 
         }
 
-        public UsuarioService(ILogger<XService> pLogger, DBContext pContext)
+        public EscritorioService(ILogger<XService> pLogger, DBContext pContext)
                :base(pLogger)
         {
-            Rule = new UsuarioRule(this);
-            _INFRule = new INFUsuarioServiceRule(this);
+            Rule = new EscritorioRule(this);
+            _INFRule = new INFEscritorioServiceRule(this);
             Context = pContext;
             _INFRule.SetContext(Context);
         }
 
-        internal XIServiceRule<UsuarioTuple, UsuarioTuple> Rule;
-        private INFUsuarioServiceRule _INFRule;
+        internal XIServiceRule<EscritorioTuple, EscritorioTuple> Rule;
+        private INFEscritorioServiceRule _INFRule;
 
-        public override Guid ID => new Guid("53F17DAC-4376-4424-8454-0866B122BFDB");
+        public override Guid ID => new Guid("94D6CBB1-BC80-448E-B38D-56FA234CD41E");
 
         public DBContext Context
         {
@@ -120,13 +133,14 @@ namespace TFX.Core.Data.Servicos
         {
             Context.Commit();
         }
-        public IQueryable<UsuarioTuple> ExecuteQuery(UsuarioFilter pFilter)
+        public IQueryable<EscritorioTuple> ExecuteQuery(EscritorioFilter pFilter)
         {
             var ctx = Context;
             var query = from CORxPessoa in ctx.CORxPessoa
-                        join CORxUsuario in ctx.CORxUsuario on CORxPessoa.CORxPessoaID equals CORxUsuario.CORxUsuarioID
+                        join CORxAgregado in ctx.CORxAgregado on CORxPessoa.CORxPessoaID equals CORxAgregado.CORxAgregadoID
+                        join ESCxEscritorio in ctx.ESCxEscritorio on CORxAgregado.CORxAgregadoID equals ESCxEscritorio.ESCxEscritorioID
                         
-                        select new {CORxUsuario, CORxPessoa};
+                        select new {CORxPessoa, ESCxEscritorio, CORxAgregado};
             query = _INFRule.GetWhere(query);
 
 
@@ -147,24 +161,25 @@ namespace TFX.Core.Data.Servicos
                     query = query.Take(75);
             }
 
-            var qry = query.Select(q => new UsuarioTuple(q.CORxUsuario.EMail,
-                             q.CORxPessoa.CORxPessoaID,
-                             q.CORxPessoa.Nome));
+            var qry = query.Select(q => new EscritorioTuple(q.CORxAgregado.CPFCNPJ,
+                                q.CORxAgregado.CORxStatusID,
+                                q.CORxPessoa.Nome,
+                                q.CORxPessoa.CORxPessoaID));
             return qry;
         }
 
-        public UsuarioDataSet Execute(UsuarioFilter pFilter)
+        public EscritorioDataSet Execute(EscritorioFilter pFilter)
         {
             _INFRule.InternalBeforeExecute();
             var qry = ExecuteQuery(pFilter);
             var tuples = qry.ToList();
             tuples = Rule.InternalAfterSelect(tuples);
             _INFRule.InternalAfterExecute(tuples);
-            var dataset = new UsuarioDataSet { Tuples = tuples };
+            var dataset = new EscritorioDataSet { Tuples = tuples };
             return dataset;
         }
 
-        public object Flush(UsuarioDataSet pDataSet)
+        public object Flush(EscritorioDataSet pDataSet)
         {
             if (pDataSet?.Tuples.Count == 0)
                 throw new XUnconformity("Não é permitido Flush sem Tuplas.");
@@ -173,7 +188,7 @@ namespace TFX.Core.Data.Servicos
             {
                 Rule?.InternalBeforeFlush(pDataSet.Tuples);
 
-                SetUsuarioValues(ctx, pDataSet);
+                SetEscritorioValues(ctx, pDataSet);
                 ctx.SaveChanges();
 
                 Rule?.InternalAfterFlush(pDataSet.Tuples);
@@ -183,24 +198,36 @@ namespace TFX.Core.Data.Servicos
             }
         }
 
-        private void SetUsuarioValues(DBContext ctx, UsuarioDataSet pDataSet)
+        private void SetEscritorioValues(DBContext ctx, EscritorioDataSet pDataSet)
         {
             if (pDataSet == null || pDataSet.Tuples == null)
                 return;
-            foreach (UsuarioTuple stpl in pDataSet.Tuples)
+            foreach (EscritorioTuple stpl in pDataSet.Tuples)
             {
                 var sb = new StringBuilder();
-                var CORxUsuariotpl = new CORxUsuario();
-                stpl.EntityTuple = CORxUsuariotpl;
-                if (stpl.CORxPessoaID.Value != Guid.Empty)
-                    CORxUsuariotpl.CORxUsuarioID = stpl.CORxPessoaID.Value;
-                CORxUsuariotpl.EMail = stpl.EMail.Value;
-                CORxUsuariotpl.Validate(sb );
-                ctx.CORxUsuario.Add(CORxUsuariotpl);
-                if (!CORxUsuariotpl.IsPKEmpty)
-                    ctx.Entry(CORxUsuariotpl).State = EntityState.Modified;
+                var ESCxEscritoriotpl = new ESCxEscritorio();
+                stpl.EntityTuple = ESCxEscritoriotpl;
+                if (stpl.CORxAgregadoID.Value != Guid.Empty)
+                    ESCxEscritoriotpl.ESCxEscritorioID = stpl.CORxAgregadoID.Value;
+                ESCxEscritoriotpl.Validate(sb );
+                ctx.ESCxEscritorio.Add(ESCxEscritoriotpl);
+                if (!ESCxEscritoriotpl.IsPKEmpty)
+                    ctx.Entry(ESCxEscritoriotpl).State = EntityState.Modified;
                 else
-                    ctx.Entry(CORxUsuariotpl).State = EntityState.Added;
+                    ctx.Entry(ESCxEscritoriotpl).State = EntityState.Added;
+
+                var CORxAgregadotpl = new CORxAgregado();
+                stpl.EntityTuple = CORxAgregadotpl;
+                if (stpl.ESCxEscritorioID.Value != Guid.Empty)
+                    CORxAgregadotpl.CORxAgregadoID = stpl.ESCxEscritorioID.Value;
+                CORxAgregadotpl.CORxStatusID = stpl.CORxStatusID.Value;
+                CORxAgregadotpl.CPFCNPJ = stpl.CPFCNPJ.Value;
+                CORxAgregadotpl.Validate(sb );
+                ctx.CORxAgregado.Add(CORxAgregadotpl);
+                if (!CORxAgregadotpl.IsPKEmpty)
+                    ctx.Entry(CORxAgregadotpl).State = EntityState.Modified;
+                else
+                    ctx.Entry(CORxAgregadotpl).State = EntityState.Added;
 
                 var CORxPessoatpl = new CORxPessoa();
                 stpl.EntityTuple = CORxPessoatpl;

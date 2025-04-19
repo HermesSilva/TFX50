@@ -1,0 +1,238 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<RootNamespace>TFX.Core</RootNamespace>
+		<MyType>DASE</MyType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="TFX.Core.dsmdl" />
+	  <None Remove="TFX.Core.dsmdl" />
+	  <None Remove="TFX.ESC.Core.dsmdl" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="TFX.ESC.Core.dsmdl">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>TFX.ESC.Core.Module.cs</LastGenOutput>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+        <PackageReference Include="AspNetCore.Scalar" Version="1.1.8" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.2.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
+
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Core\TFX.Core.Data\TFX.Core.Data.csproj" />
+	  <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="DB\COR.Agregado.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="DB\COR.Direitos.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Empresa.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.EmpresaGrupo.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Favorito.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Menu.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.MenuItem.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Pessoa.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Recurso.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.RecursoDireito.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.RecursoTemplate.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.RecursoTemplateDireito.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.RecursoTipo.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Status.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.Usuario.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\COR.UsuarioRecursoTemplate.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\CORModel.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>COR.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\ESC.Contabilista.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>ESC.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\ESC.COntabilistaEscritorio.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>ESC.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\ESC.Empresa.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>ESC.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\ESC.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ESC.dsorm</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="DB\ESC.Escritorio.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>ESC.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="DB\ESCModel.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>ESC.dsorm</DependentUpon>
+	  </Compile>
+	  <Compile Update="Escritori\Escritorio.Controller.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Escritorio.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Escritori\Escritorio.DataSet.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Escritorio.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Escritori\Escritorio.Rule.cs">
+	    <Visible>True</Visible>
+	    <DependentUpon>Escritorio.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Escritori\Escritorio.Service.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Escritorio.dssvc</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.Controller.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.DataSet.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.Rule.cs">
+	    <Visible>True</Visible>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario.Service.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="TFX.Core.Module.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>TFX.Core.dsmdl</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="TFX.Core.Data.Module.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>TFX.Core.Data.dsmdl</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="TFX.Core.Module.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>TFX.Core.dsmdl</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="TFX.ESC.Core.Module.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>TFX.ESC.Core.dsmdl</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="DB\COR.dsorm">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>COR.cs</LastGenOutput>
+	  </None>
+	  <None Update="DB\ESC.dsorm">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>ESC.cs</LastGenOutput>
+	  </None>
+	  <None Update="Escritori\Escritorio.dssvc">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>Escritorio.Service.cs</LastGenOutput>
+	  </None>
+	  <None Update="Servicos\Usuario.dssvc">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>Usuario.Service.cs</LastGenOutput>
+	  </None>
+	  <None Update="TFX.Core.Data.dsmdl">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>TFX.Core.Data.Module.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+
+</Project>
