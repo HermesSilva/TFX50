@@ -9,36 +9,37 @@ using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TFX.Core.Data;
-using TFX.Core.Access.Usuarios;
-using TFX.Core.Access.Usuarios.Rules;
-using TFX.Core.Access.DB;
+using TFX.ESC.Core.Escritori;
+using TFX.ESC.Core.Escritori.Rules;
+using TFX.Core.Data.DB;
+using TFX.ESC.Core.DB;
 
-namespace TFX.Core.Access.Usuarios
+namespace TFX.ESC.Core.Escritori
 {
-    [Route("UsuariosAtivos")]
+    [Route("Escritorio")]
     [ApiController]
-    public class UsuariosAtivosController : XController
+    public class EscritorioController : XController
     {
-        public abstract class BaseINFUsuariosAtivosControllerRule : XControllerINFRule<UsuariosAtivosController>
+        public abstract class BaseINFEscritorioControllerRule : XControllerINFRule<EscritorioController>
         {
-            public BaseINFUsuariosAtivosControllerRule(UsuariosAtivosController pController)
+            public BaseINFEscritorioControllerRule(EscritorioController pController)
                 :base(pController)
             {
             }
         }
 
-        public UsuariosAtivosController(IUsuariosAtivosService pService, ILogger<XController> pLogger)
+        public EscritorioController(IEscritorioService pService, ILogger<XController> pLogger)
                :base(pLogger)
         {
             Service = pService;
-            _Rule = new INFUsuariosAtivosControllerRule(this);
+            _Rule = new INFEscritorioControllerRule(this);
         }
 
-        internal readonly IUsuariosAtivosService Service;
-        private readonly INFUsuariosAtivosControllerRule _Rule;
+        internal readonly IEscritorioService Service;
+        private readonly INFEscritorioControllerRule _Rule;
 
         [HttpPost("Execute")]
-        public IActionResult Execute([FromBody] UsuariosAtivosFilter pFilter)
+        public IActionResult Execute([FromBody] EscritorioFilter pFilter)
         {
             try
             {
@@ -52,8 +53,8 @@ namespace TFX.Core.Access.Usuarios
         }
 
         [HttpPost("Flush")]
-        [XEndpointDescription(typeof(TAFxUsuario))]
-        public IActionResult Flush([FromBody] UsuariosAtivosDataSet pDataSet)
+        [XEndpointDescription(typeof(CORxAgregado), typeof(CORxPessoa), typeof(ESCxEscritorio))]
+        public IActionResult Flush([FromBody] EscritorioDataSet pDataSet)
         {
             try
             {

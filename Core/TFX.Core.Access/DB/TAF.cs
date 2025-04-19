@@ -16,7 +16,7 @@ namespace TFX.Core.Access.DB
     {
         #region _TAFxUsuario
 
-        internal class _TAFxUsuario
+        public class _TAFxUsuario
         {
             public class XDefault
             {

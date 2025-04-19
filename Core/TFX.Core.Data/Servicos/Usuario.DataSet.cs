@@ -57,7 +57,6 @@ namespace TFX.Core.Data.Servicos
         public UsuarioFilter()
         {
         }
-
         public String Nome {get;set;}
         public String EMail {get;set;}
     }

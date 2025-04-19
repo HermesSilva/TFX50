@@ -52,9 +52,9 @@ namespace TFX.Core
             return sb;
         }
 
-        public StringBuilder Validate()
+        public void Validate(StringBuilder pBuilder)
         {
-            var sb = new StringBuilder();
+            
             foreach (var ppt in GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.Default))
             {
                 var rq = ppt.GetCustomAttribute<RequiredAttribute>();
@@ -64,15 +64,14 @@ namespace TFX.Core
                 if (rq != null)
                 {
                     if (ppt.PropertyType == typeof(String) && vlr.AsString().IsEmpty())
-                        sb.AppendLine($"Erro: O campo {disp.AsQuoted()} não pode ser nulo.");
+                        pBuilder.AppendLine($"Erro: O campo {disp.AsQuoted()} não pode ser nulo.");
                 }
                 if (len > 0 && vlr.AsString().SafeLength() > len)
-                    sb.AppendLine($"Erro: O tamanho do conteudo do campo {disp.AsQuoted()} não pode ser maior que {len} caractéres.");
+                    pBuilder.AppendLine($"Erro: O tamanho do conteudo do campo {disp.AsQuoted()} não pode ser maior que {len} caractéres.");
             }
-
-            return sb;
         }
     }
+
     public class XTenantEntity : XEntity
     {
         [Display(Name = "CPF/CNPJ")]
