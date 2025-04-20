@@ -152,6 +152,7 @@ namespace TFX.Core.Controllers
             private set;
         }
 
+        [ApiExplorerSettings(IgnoreApi = true)]
         public void SetContextData(CancellationToken pCancellationToken, XUserSession pSession)
         {
             CancellationToken = pCancellationToken;
