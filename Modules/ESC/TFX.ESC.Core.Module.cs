@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
+using TFX.ESC.Core.Escritori;
 
 namespace TFX.ESC.Core
 {
@@ -10,6 +11,8 @@ namespace TFX.ESC.Core
     {
         public override void Initialize(IServiceCollection pServices)
         {
+            pServices.AddTransient<IEscritorioService, EscritorioService>();
+            pServices.AddDbContext<EscritorioService.DBContext>();
         }
     }
 }

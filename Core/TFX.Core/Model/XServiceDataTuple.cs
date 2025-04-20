@@ -55,7 +55,6 @@ namespace TFX.Core.Model
     }
     public class XServiceDataTuple : XDataTuple
     {
-        public XEntity EntityTuple;
         public Boolean IsReadOnly
         {
             get; set;

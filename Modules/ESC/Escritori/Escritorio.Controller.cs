@@ -53,7 +53,7 @@ namespace TFX.ESC.Core.Escritori
         }
 
         [HttpPost("Flush")]
-        [XEndpointDescription(typeof(CORxAgregado), typeof(CORxPessoa), typeof(ESCxEscritorio))]
+        [XEndpointDescription(typeof(EscritorioService.CORxAgregado), typeof(EscritorioService.CORxPessoa), typeof(EscritorioService.ESCxEscritorio))]
         public IActionResult Flush([FromBody] EscritorioDataSet pDataSet)
         {
             try

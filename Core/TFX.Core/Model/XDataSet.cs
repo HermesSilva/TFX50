@@ -21,13 +21,7 @@ namespace TFX.Core.Model
                 ttpl.Assign((XDataTuple)stpl);
             }
         }
-        public void AssignBack(XDataSet<T> pSource)
-        {
-            foreach (XServiceDataTuple stpl in pSource.Tuples)
-            {
-                stpl.Assign(stpl.EntityTuple);
-            }
-        }
+
         public T AddTuple()
         {
             var tpl = new T();
