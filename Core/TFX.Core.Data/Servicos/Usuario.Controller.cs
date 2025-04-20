@@ -52,7 +52,7 @@ namespace TFX.Core.Data.Servicos
         }
 
         [HttpPost("Flush")]
-        [XEndpointDescription(typeof(CORxPessoa), typeof(CORxUsuario))]
+        [XEndpointDescription(typeof(UsuarioService.CORxPessoa), typeof(UsuarioService.CORxUsuario))]
         public IActionResult Flush([FromBody] UsuarioDataSet pDataSet)
         {
             try

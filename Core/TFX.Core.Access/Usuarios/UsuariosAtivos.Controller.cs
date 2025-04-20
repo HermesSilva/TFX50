@@ -52,7 +52,7 @@ namespace TFX.Core.Access.Usuarios
         }
 
         [HttpPost("Flush")]
-        [XEndpointDescription(typeof(TAFxUsuario))]
+        [XEndpointDescription(typeof(UsuariosAtivosService.TAFxUsuario))]
         public IActionResult Flush([FromBody] UsuariosAtivosDataSet pDataSet)
         {
             try

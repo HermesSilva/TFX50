@@ -21,14 +21,57 @@ using TFX.Core.Identity;
 using System.Text;
 using TFX.ESC.Core.Escritori.Rules;
 using TFX.ESC.Core.Escritori;
-using TFX.Core.Data.DB;
-using TFX.ESC.Core.DB;
 
 namespace TFX.ESC.Core.Escritori
 {
     [XGuid("94D6CBB1-BC80-448E-B38D-56FA234CD41E", typeof(IEscritorioService))]
     public class EscritorioService : XService, IEscritorioService
     {
+        public class CORxPessoa : XEntity
+        {
+            public Boolean IsPKEmpty => Object.Equals(CORxPessoaID, typeof(Guid).GetDefault());
+            [Display(Name = "Pessoa")]
+            [Required()]
+            public Guid? CORxPessoaID {get; set;}
+
+            [MaxLength(180)]
+            [Required()]
+            public String Nome {get; set;}
+
+
+            public List<CORxAgregado> CORxAgregado {get; set;} = new List<CORxAgregado>();
+        }
+        public class ESCxEscritorio : XEntity
+        {
+            public Boolean IsPKEmpty => Object.Equals(ESCxEscritorioID, typeof(Guid).GetDefault());
+            [Display(Name = "Escritório")]
+            [Required()]
+            public Guid? ESCxEscritorioID {get; set;}
+
+
+            public CORxAgregado CORxAgregado {get; set;}
+        }
+        public class CORxAgregado : XEntity
+        {
+            public Boolean IsPKEmpty => Object.Equals(CORxAgregadoID, typeof(Guid).GetDefault());
+            [Display(Name = "Agregado")]
+            [Required()]
+            public Guid? CORxAgregadoID {get; set;}
+
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+
+            [Display(Name = "CPF ou CNPJ")]
+            [MaxLength(14)]
+            [Required()]
+            public String CPFCNPJ {get; set;}
+
+
+            public List<ESCxEscritorio> ESCxEscritorio {get; set;} = new List<ESCxEscritorio>();
+
+            public CORxPessoa CORxPessoa {get; set;}
+        }
         public class DBContext : XDBContext
         {
             public DBContext(DbContextOptions<DBContext> pOptions, XITenantProvider pTenantProvider, XISharedTransaction pSharedTransaction)
@@ -40,37 +83,47 @@ namespace TFX.ESC.Core.Escritori
             public DbSet<ESCxEscritorio> ESCxEscritorio{get; set;}
             public DbSet<CORxAgregado> CORxAgregado{get; set;}
 
-            private void ConfigureCORxPessoa(ModelBuilder pBuilder)
+        private void ConfigureCORxPessoa(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CORxPessoa>(ett =>
             {
-                pBuilder.Entity<CORxPessoa>(ett =>
-                {
-                    ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
-                    
-                    ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
-                    ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
-                    ett.ToTable("CORxPessoa");
-                });
-            }
-            private void ConfigureESCxEscritorio(ModelBuilder pBuilder)
+                ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
+
+                ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.ToTable("CORxPessoa");
+            });
+        }
+        private void ConfigureESCxEscritorio(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<ESCxEscritorio>(ett =>
             {
-                pBuilder.Entity<ESCxEscritorio>(ett =>
-                {
-                    ett.HasKey(e => e.ESCxEscritorioID).HasName("PK_ESCxEscritorio");
-                    
-                    ett.ToTable("ESCxEscritorio");
-                });
-            }
-            private void ConfigureCORxAgregado(ModelBuilder pBuilder)
+                ett.HasKey(e => e.ESCxEscritorioID).HasName("PK_ESCxEscritorio");
+
+                ett.Property(d => d.ESCxEscritorioID).HasColumnType(GetDBType("Guid"));
+                ett.ToTable("ESCxEscritorio");
+                ett.HasOne(d => d.CORxAgregado)
+                   .WithMany(p => p.ESCxEscritorio)
+                   .HasForeignKey(d => d.ESCxEscritorioID)
+                   .OnDelete(DeleteBehavior.Restrict);
+            });
+        }
+        private void ConfigureCORxAgregado(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CORxAgregado>(ett =>
             {
-                pBuilder.Entity<CORxAgregado>(ett =>
-                {
-                    ett.HasKey(e => e.CORxAgregadoID).HasName("PK_CORxAgregado");
-                    
-                    ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
-                    ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
-                    ett.ToTable("CORxAgregado");
-                });
-            }
+                ett.HasKey(e => e.CORxAgregadoID).HasName("PK_CORxAgregado");
+
+                ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
+                ett.ToTable("CORxAgregado");
+                ett.HasOne(d => d.CORxPessoa)
+                   .WithMany(p => p.CORxAgregado)
+                   .HasForeignKey(d => d.CORxAgregadoID)
+                   .OnDelete(DeleteBehavior.Restrict);
+            });
+        }
 
             protected override void OnModelCreating(ModelBuilder pBuilder)
             {
@@ -164,7 +217,9 @@ namespace TFX.ESC.Core.Escritori
             var qry = query.Select(q => new EscritorioTuple(q.CORxAgregado.CPFCNPJ,
                                 q.CORxAgregado.CORxStatusID,
                                 q.CORxPessoa.Nome,
-                                q.CORxPessoa.CORxPessoaID));
+                                q.CORxPessoa.CORxPessoaID,
+                                q.CORxAgregado.CORxAgregadoID,
+                                q.ESCxEscritorio.ESCxEscritorioID));
             return qry;
         }
 
@@ -192,7 +247,6 @@ namespace TFX.ESC.Core.Escritori
                 ctx.SaveChanges();
 
                 Rule?.InternalAfterFlush(pDataSet.Tuples);
-                pDataSet.AssignBack(pDataSet);
 
                 return XEndPointMessage.Ok;
             }
@@ -206,10 +260,9 @@ namespace TFX.ESC.Core.Escritori
             {
                 var sb = new StringBuilder();
                 var ESCxEscritoriotpl = new ESCxEscritorio();
-                stpl.EntityTuple = ESCxEscritoriotpl;
-                if (stpl.CORxAgregadoID.Value != Guid.Empty)
-                    ESCxEscritoriotpl.ESCxEscritorioID = stpl.CORxAgregadoID.Value;
-                ESCxEscritoriotpl.Validate(sb );
+                if (stpl.ESCxEscritorioID.Value != Guid.Empty)
+                    ESCxEscritoriotpl.ESCxEscritorioID = stpl.ESCxEscritorioID.Value;
+                ESCxEscritoriotpl.Validate(sb);
                 ctx.ESCxEscritorio.Add(ESCxEscritoriotpl);
                 if (!ESCxEscritoriotpl.IsPKEmpty)
                     ctx.Entry(ESCxEscritoriotpl).State = EntityState.Modified;
@@ -217,12 +270,11 @@ namespace TFX.ESC.Core.Escritori
                     ctx.Entry(ESCxEscritoriotpl).State = EntityState.Added;
 
                 var CORxAgregadotpl = new CORxAgregado();
-                stpl.EntityTuple = CORxAgregadotpl;
-                if (stpl.ESCxEscritorioID.Value != Guid.Empty)
-                    CORxAgregadotpl.CORxAgregadoID = stpl.ESCxEscritorioID.Value;
+                if (stpl.CORxAgregadoID.Value != Guid.Empty)
+                    CORxAgregadotpl.CORxAgregadoID = stpl.CORxAgregadoID.Value;
                 CORxAgregadotpl.CORxStatusID = stpl.CORxStatusID.Value;
                 CORxAgregadotpl.CPFCNPJ = stpl.CPFCNPJ.Value;
-                CORxAgregadotpl.Validate(sb );
+                CORxAgregadotpl.Validate(sb);
                 ctx.CORxAgregado.Add(CORxAgregadotpl);
                 if (!CORxAgregadotpl.IsPKEmpty)
                     ctx.Entry(CORxAgregadotpl).State = EntityState.Modified;
@@ -230,16 +282,17 @@ namespace TFX.ESC.Core.Escritori
                     ctx.Entry(CORxAgregadotpl).State = EntityState.Added;
 
                 var CORxPessoatpl = new CORxPessoa();
-                stpl.EntityTuple = CORxPessoatpl;
                 if (stpl.CORxPessoaID.Value != Guid.Empty)
                     CORxPessoatpl.CORxPessoaID = stpl.CORxPessoaID.Value;
                 CORxPessoatpl.Nome = stpl.Nome.Value;
-                CORxPessoatpl.Validate(sb );
+                CORxPessoatpl.Validate(sb);
                 ctx.CORxPessoa.Add(CORxPessoatpl);
                 if (!CORxPessoatpl.IsPKEmpty)
                     ctx.Entry(CORxPessoatpl).State = EntityState.Modified;
                 else
                     ctx.Entry(CORxPessoatpl).State = EntityState.Added;
+                ESCxEscritoriotpl.CORxAgregado = CORxAgregadotpl;
+                CORxAgregadotpl.CORxPessoa = CORxPessoatpl;
                 if (sb.Length > 0)
                     throw new Exception(sb.ToString());
             }

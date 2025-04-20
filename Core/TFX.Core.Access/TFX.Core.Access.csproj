@@ -39,10 +39,6 @@
       <DependentUpon>TAF.dsorm</DependentUpon>
       <Visible>False</Visible>
     </Compile>
-    <Compile Update="DB\TAF.Usuario.cs">
-      <Visible>False</Visible>
-      <DependentUpon>TAF.dsorm</DependentUpon>
-    </Compile>
     <Compile Update="DB\TAFModel.cs">
       <Visible>False</Visible>
       <DependentUpon>TAF.dsorm</DependentUpon>

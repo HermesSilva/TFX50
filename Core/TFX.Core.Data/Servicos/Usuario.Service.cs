@@ -21,13 +21,41 @@ using TFX.Core.Identity;
 using System.Text;
 using TFX.Core.Data.Servicos.Rules;
 using TFX.Core.Data.Servicos;
-using TFX.Core.Data.DB;
 
 namespace TFX.Core.Data.Servicos
 {
     [XGuid("53F17DAC-4376-4424-8454-0866B122BFDB", typeof(IUsuarioService))]
     public class UsuarioService : XService, IUsuarioService
     {
+        public class CORxUsuario : XEntity
+        {
+            public Boolean IsPKEmpty => Object.Equals(CORxUsuarioID, typeof(Guid).GetDefault());
+            [Display(Name = "Usuário")]
+            [Required()]
+            public Guid? CORxUsuarioID {get; set;}
+
+            [Display(Name = "E-Mails")]
+            [MaxLength(80)]
+            [Required()]
+            public String EMail {get; set;}
+
+
+            public CORxPessoa CORxPessoa {get; set;}
+        }
+        public class CORxPessoa : XEntity
+        {
+            public Boolean IsPKEmpty => Object.Equals(CORxPessoaID, typeof(Guid).GetDefault());
+            [Display(Name = "Pessoa")]
+            [Required()]
+            public Guid? CORxPessoaID {get; set;}
+
+            [MaxLength(180)]
+            [Required()]
+            public String Nome {get; set;}
+
+
+            public List<CORxUsuario> CORxUsuario {get; set;} = new List<CORxUsuario>();
+        }
         public class DBContext : XDBContext
         {
             public DBContext(DbContextOptions<DBContext> pOptions, XITenantProvider pTenantProvider, XISharedTransaction pSharedTransaction)
@@ -38,27 +66,32 @@ namespace TFX.Core.Data.Servicos
             public DbSet<CORxUsuario> CORxUsuario{get; set;}
             public DbSet<CORxPessoa> CORxPessoa{get; set;}
 
-            private void ConfigureCORxUsuario(ModelBuilder pBuilder)
+        private void ConfigureCORxUsuario(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CORxUsuario>(ett =>
             {
-                pBuilder.Entity<CORxUsuario>(ett =>
-                {
-                    ett.HasKey(e => e.CORxUsuarioID).HasName("PK_CORxUsuario");
-                    
-                    ett.Property(d => d.EMail).HasColumnType(GetDBType("String", 80));
-                    ett.ToTable("CORxUsuario");
-                });
-            }
-            private void ConfigureCORxPessoa(ModelBuilder pBuilder)
+                ett.HasKey(e => e.CORxUsuarioID).HasName("PK_CORxUsuario");
+
+                ett.Property(d => d.CORxUsuarioID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMail).HasColumnType(GetDBType("String", 80));
+                ett.ToTable("CORxUsuario");
+                ett.HasOne(d => d.CORxPessoa)
+                   .WithMany(p => p.CORxUsuario)
+                   .HasForeignKey(d => d.CORxUsuarioID)
+                   .OnDelete(DeleteBehavior.Restrict);
+            });
+        }
+        private void ConfigureCORxPessoa(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CORxPessoa>(ett =>
             {
-                pBuilder.Entity<CORxPessoa>(ett =>
-                {
-                    ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
-                    
-                    ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
-                    ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
-                    ett.ToTable("CORxPessoa");
-                });
-            }
+                ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
+
+                ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.ToTable("CORxPessoa");
+            });
+        }
 
             protected override void OnModelCreating(ModelBuilder pBuilder)
             {
@@ -177,7 +210,6 @@ namespace TFX.Core.Data.Servicos
                 ctx.SaveChanges();
 
                 Rule?.InternalAfterFlush(pDataSet.Tuples);
-                pDataSet.AssignBack(pDataSet);
 
                 return XEndPointMessage.Ok;
             }
@@ -191,11 +223,10 @@ namespace TFX.Core.Data.Servicos
             {
                 var sb = new StringBuilder();
                 var CORxUsuariotpl = new CORxUsuario();
-                stpl.EntityTuple = CORxUsuariotpl;
                 if (stpl.CORxPessoaID.Value != Guid.Empty)
                     CORxUsuariotpl.CORxUsuarioID = stpl.CORxPessoaID.Value;
                 CORxUsuariotpl.EMail = stpl.EMail.Value;
-                CORxUsuariotpl.Validate(sb );
+                CORxUsuariotpl.Validate(sb);
                 ctx.CORxUsuario.Add(CORxUsuariotpl);
                 if (!CORxUsuariotpl.IsPKEmpty)
                     ctx.Entry(CORxUsuariotpl).State = EntityState.Modified;
@@ -203,16 +234,16 @@ namespace TFX.Core.Data.Servicos
                     ctx.Entry(CORxUsuariotpl).State = EntityState.Added;
 
                 var CORxPessoatpl = new CORxPessoa();
-                stpl.EntityTuple = CORxPessoatpl;
                 if (stpl.CORxPessoaID.Value != Guid.Empty)
                     CORxPessoatpl.CORxPessoaID = stpl.CORxPessoaID.Value;
                 CORxPessoatpl.Nome = stpl.Nome.Value;
-                CORxPessoatpl.Validate(sb );
+                CORxPessoatpl.Validate(sb);
                 ctx.CORxPessoa.Add(CORxPessoatpl);
                 if (!CORxPessoatpl.IsPKEmpty)
                     ctx.Entry(CORxPessoatpl).State = EntityState.Modified;
                 else
                     ctx.Entry(CORxPessoatpl).State = EntityState.Added;
+                CORxUsuariotpl.CORxPessoa = CORxPessoatpl;
                 if (sb.Length > 0)
                     throw new Exception(sb.ToString());
             }

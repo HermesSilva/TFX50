@@ -21,13 +21,27 @@ using TFX.Core.Identity;
 using System.Text;
 using TFX.Core.Access.Usuarios.Rules;
 using TFX.Core.Access.Usuarios;
-using TFX.Core.Access.DB;
 
 namespace TFX.Core.Access.Usuarios
 {
     [XGuid("961B7E48-A442-4096-80DF-B65F8C459754", typeof(IUsuariosAtivosService))]
     public class UsuariosAtivosService : XService, IUsuariosAtivosService
     {
+        public class TAFxUsuario : XEntity
+        {
+            [Display(Name = "Ativo")]
+            [Required()]
+            public Int16 CORxEstadoID {get; set;}
+
+            [Required()]
+            public String Login {get; set;}
+
+            public Boolean IsPKEmpty => Object.Equals(TAFxUsuarioID, typeof(Guid).GetDefault());
+            [Display(Name = "Usuários")]
+            [Required()]
+            public Guid? TAFxUsuarioID {get; set;}
+
+        }
         public class DBContext : XDBContext
         {
             public DBContext(DbContextOptions<DBContext> pOptions, XITenantProvider pTenantProvider, XISharedTransaction pSharedTransaction)
@@ -37,18 +51,18 @@ namespace TFX.Core.Access.Usuarios
 
             public DbSet<TAFxUsuario> TAFxUsuario{get; set;}
 
-            private void ConfigureTAFxUsuario(ModelBuilder pBuilder)
+        private void ConfigureTAFxUsuario(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<TAFxUsuario>(ett =>
             {
-                pBuilder.Entity<TAFxUsuario>(ett =>
-                {
-                    ett.HasKey(e => e.TAFxUsuarioID).HasName("PK_TAFxUsuario");
-                    
-                    ett.Property(d => d.TAFxUsuarioID).HasColumnType(GetDBType("Guid"));
-                    ett.Property(d => d.Login).HasColumnType(GetDBType("String"));
-                    ett.Property(d => d.CORxEstadoID).HasColumnType(GetDBType("Int16"));
-                    ett.ToTable("TAFxUsuario");
-                });
-            }
+                ett.HasKey(e => e.TAFxUsuarioID).HasName("PK_TAFxUsuario");
+
+                ett.Property(d => d.TAFxUsuarioID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Login).HasColumnType(GetDBType("String"));
+                ett.Property(d => d.CORxEstadoID).HasColumnType(GetDBType("Int16"));
+                ett.ToTable("TAFxUsuario");
+            });
+        }
 
             protected override void OnModelCreating(ModelBuilder pBuilder)
             {
@@ -167,7 +181,6 @@ namespace TFX.Core.Access.Usuarios
                 ctx.SaveChanges();
 
                 Rule?.InternalAfterFlush(pDataSet.Tuples);
-                pDataSet.AssignBack(pDataSet);
 
                 return XEndPointMessage.Ok;
             }
@@ -181,12 +194,11 @@ namespace TFX.Core.Access.Usuarios
             {
                 var sb = new StringBuilder();
                 var TAFxUsuariotpl = new TAFxUsuario();
-                stpl.EntityTuple = TAFxUsuariotpl;
                 if (stpl.TAFxUsuarioID.Value != Guid.Empty)
                     TAFxUsuariotpl.TAFxUsuarioID = stpl.TAFxUsuarioID.Value;
                 TAFxUsuariotpl.Login = stpl.Login.Value;
                 TAFxUsuariotpl.CORxEstadoID = stpl.CORxEstadoID.Value;
-                TAFxUsuariotpl.Validate(sb );
+                TAFxUsuariotpl.Validate(sb);
                 ctx.TAFxUsuario.Add(TAFxUsuariotpl);
                 if (!TAFxUsuariotpl.IsPKEmpty)
                     ctx.Entry(TAFxUsuariotpl).State = EntityState.Modified;
