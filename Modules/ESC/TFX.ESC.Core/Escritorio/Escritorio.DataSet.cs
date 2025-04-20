@@ -15,7 +15,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
 
-namespace TFX.ESC.Core.Escritori
+namespace TFX.ESC.Core.Escritorio
 {
     public class EscritorioTuple : XServiceDataTuple
     {

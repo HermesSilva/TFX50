@@ -19,6 +19,7 @@ namespace Launcher
     public class Program
     {
         public static WebApplication App;
+        public static bool IsAsync;
 
         public static void Main(string[] args)
         {
@@ -46,7 +47,10 @@ namespace Launcher
             App.UseStaticFiles();
             App.AddScalar();
             XSessionManager.Initialize(App.Services);
-            App.Run("http://+:7000");
+            if (IsAsync)
+                App.RunAsync("http://+:7000");
+            else
+                App.Run("http://+:7000");
         }
 
 
