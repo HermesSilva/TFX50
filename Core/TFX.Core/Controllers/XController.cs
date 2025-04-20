@@ -13,7 +13,7 @@ namespace TFX.Core.Controllers
 {
 
 
-    [XAuthorizeFilter]
+    //[XAuthorizeFilter]
     public abstract class XController : XBaseController
     {
 

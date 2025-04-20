@@ -72,7 +72,7 @@ namespace TFX.Core.IDs
 
         public void RefreshCache(Dictionary<string, XUser> pUsers = null)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
