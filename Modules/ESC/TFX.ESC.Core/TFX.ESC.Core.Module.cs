@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
-using TFX.ESC.Core.Escritori;
+using TFX.ESC.Core.Escritorio;
 
 namespace TFX.ESC.Core
 {

@@ -21,31 +21,31 @@
 
 	<ItemGroup>
         <PackageReference Include="AspNetCore.Scalar" Version="1.1.8" />
-        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.2.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="8.1.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
 
-        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.2" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.7" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="9.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Core\TFX.Core.Data\TFX.Core.Data.csproj" />
-	  <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
+	  <ProjectReference Include="..\..\..\Core\TFX.Core.Data\TFX.Core.Data.csproj" />
+	  <ProjectReference Include="..\..\..\Core\TFX.Core\TFX.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -133,19 +133,19 @@
 	    <Visible>False</Visible>
 	    <DependentUpon>ESC.dsorm</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritori\Escritorio.Controller.cs">
+	  <Compile Update="Escritorio\Escritorio.Controller.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritori\Escritorio.DataSet.cs">
+	  <Compile Update="Escritorio\Escritorio.DataSet.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritori\Escritorio.Rule.cs">
+	  <Compile Update="Escritorio\Escritorio.Rule.cs">
 	    <Visible>True</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritori\Escritorio.Service.cs">
+	  <Compile Update="Escritorio\Escritorio.Service.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
@@ -204,7 +204,7 @@
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>ESC.cs</LastGenOutput>
 	  </None>
-	  <None Update="Escritori\Escritorio.dssvc">
+	  <None Update="Escritorio\Escritorio.dssvc">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>Escritorio.Service.cs</LastGenOutput>
 	  </None>
