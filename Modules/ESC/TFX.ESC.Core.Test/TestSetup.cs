@@ -5,9 +5,9 @@ using TFX.Core.Test.Setup;
 
 namespace TFX.ESC.Core.Test
 {
-    public class ESCTestSetup : XBaseTest
+    public class TestSetup : XBaseTest
     {
-        public ESCTestSetup(XServerSidePrepare pPrepare)
+        public TestSetup(XServerSidePrepare pPrepare)
             : base(pPrepare)
         {
         }
