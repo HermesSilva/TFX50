@@ -29,7 +29,7 @@ namespace TFX.ESC.Core.Escritorio
     {
         public class CORxPessoa : XEntity
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxPessoaID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
             public Guid? CORxPessoaID {get; set;}
@@ -43,7 +43,7 @@ namespace TFX.ESC.Core.Escritorio
         }
         public class ESCxEscritorio : XEntity
         {
-            public Boolean IsPKEmpty => Object.Equals(ESCxEscritorioID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !ESCxEscritorioID.HasValue;
             [Display(Name = "Escritório")]
             [Required()]
             public Guid? ESCxEscritorioID {get; set;}
@@ -53,7 +53,7 @@ namespace TFX.ESC.Core.Escritorio
         }
         public class CORxAgregado : XEntity
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxAgregadoID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxAgregadoID.HasValue;
             [Display(Name = "Agregado")]
             [Required()]
             public Guid? CORxAgregadoID {get; set;}
@@ -71,6 +71,23 @@ namespace TFX.ESC.Core.Escritorio
             public List<ESCxEscritorio> ESCxEscritorio {get; set;} = new List<ESCxEscritorio>();
 
             public CORxPessoa CORxPessoa {get; set;}
+
+            public CORxStatus CORxStatus {get; set;}
+        }
+        public class CORxStatus : XEntity
+        {
+            public Boolean IsPKEmpty => Object.Equals(CORxStatusID, typeof(Int16).GetDefault());
+            [Display(Name = "Status")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 CORxStatusID {get; set;}
+
+            [MaxLength(20)]
+            [Required()]
+            public String Status {get; set;}
+
+
+            public List<CORxAgregado> CORxAgregado {get; set;} = new List<CORxAgregado>();
         }
         public class DBContext : XDBContext
         {
@@ -82,6 +99,7 @@ namespace TFX.ESC.Core.Escritorio
             public DbSet<CORxPessoa> CORxPessoa{get; set;}
             public DbSet<ESCxEscritorio> ESCxEscritorio{get; set;}
             public DbSet<CORxAgregado> CORxAgregado{get; set;}
+            public DbSet<CORxStatus> CORxStatus{get; set;}
 
         private void ConfigureCORxPessoa(ModelBuilder pBuilder)
         {
@@ -122,6 +140,21 @@ namespace TFX.ESC.Core.Escritorio
                    .WithMany(p => p.CORxAgregado)
                    .HasForeignKey(d => d.CORxAgregadoID)
                    .OnDelete(DeleteBehavior.Restrict);
+                ett.HasOne(d => d.CORxStatus)
+                   .WithMany(p => p.CORxAgregado)
+                   .HasForeignKey(d => d.CORxStatusID)
+                   .OnDelete(DeleteBehavior.Restrict);
+            });
+        }
+        private void ConfigureCORxStatus(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CORxStatus>(ett =>
+            {
+                ett.HasKey(e => e.CORxStatusID).HasName("PK_CORxStatus");
+
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.Status).HasColumnType(GetDBType("String", 20));
+                ett.ToTable("CORxStatus");
             });
         }
 
@@ -130,6 +163,7 @@ namespace TFX.ESC.Core.Escritorio
                 ConfigureCORxPessoa(pBuilder);
                 ConfigureESCxEscritorio(pBuilder);
                 ConfigureCORxAgregado(pBuilder);
+                ConfigureCORxStatus(pBuilder);
                 base.OnModelCreating(pBuilder);
             }
 
@@ -191,9 +225,10 @@ namespace TFX.ESC.Core.Escritorio
             var ctx = Context;
             var query = from CORxPessoa in ctx.CORxPessoa
                         join CORxAgregado in ctx.CORxAgregado on CORxPessoa.CORxPessoaID equals CORxAgregado.CORxAgregadoID
+                        join CORxStatus in ctx.CORxStatus on CORxAgregado.CORxStatusID equals CORxStatus.CORxStatusID
                         join ESCxEscritorio in ctx.ESCxEscritorio on CORxAgregado.CORxAgregadoID equals ESCxEscritorio.ESCxEscritorioID
                         
-                        select new {CORxPessoa, ESCxEscritorio, CORxAgregado};
+                        select new {CORxPessoa, ESCxEscritorio, CORxAgregado, CORxStatus};
             query = _INFRule.GetWhere(query);
 
 
@@ -219,7 +254,8 @@ namespace TFX.ESC.Core.Escritorio
                                 q.CORxPessoa.Nome,
                                 q.CORxPessoa.CORxPessoaID,
                                 q.CORxAgregado.CORxAgregadoID,
-                                q.ESCxEscritorio.ESCxEscritorioID));
+                                q.ESCxEscritorio.ESCxEscritorioID,
+                                q.CORxStatus.Status));
             return qry;
         }
 
@@ -260,7 +296,7 @@ namespace TFX.ESC.Core.Escritorio
             {
                 var sb = new StringBuilder();
                 var ESCxEscritoriotpl = new ESCxEscritorio();
-                if (stpl.ESCxEscritorioID.Value != Guid.Empty)
+                if (stpl.ESCxEscritorioID.Value != null)
                     ESCxEscritoriotpl.ESCxEscritorioID = stpl.ESCxEscritorioID.Value;
                 ESCxEscritoriotpl.Validate(sb);
                 ctx.ESCxEscritorio.Add(ESCxEscritoriotpl);
@@ -270,7 +306,7 @@ namespace TFX.ESC.Core.Escritorio
                     ctx.Entry(ESCxEscritoriotpl).State = EntityState.Added;
 
                 var CORxAgregadotpl = new CORxAgregado();
-                if (stpl.CORxAgregadoID.Value != Guid.Empty)
+                if (stpl.CORxAgregadoID.Value != null)
                     CORxAgregadotpl.CORxAgregadoID = stpl.CORxAgregadoID.Value;
                 CORxAgregadotpl.CORxStatusID = stpl.CORxStatusID.Value;
                 CORxAgregadotpl.CPFCNPJ = stpl.CPFCNPJ.Value;
@@ -282,7 +318,7 @@ namespace TFX.ESC.Core.Escritorio
                     ctx.Entry(CORxAgregadotpl).State = EntityState.Added;
 
                 var CORxPessoatpl = new CORxPessoa();
-                if (stpl.CORxPessoaID.Value != Guid.Empty)
+                if (stpl.CORxPessoaID.Value != null)
                     CORxPessoatpl.CORxPessoaID = stpl.CORxPessoaID.Value;
                 CORxPessoatpl.Nome = stpl.Nome.Value;
                 CORxPessoatpl.Validate(sb);

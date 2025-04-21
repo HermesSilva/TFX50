@@ -24,7 +24,7 @@ namespace TFX.ESC.Core.Escritorio
             Initialize();
         }
 
-        public EscritorioTuple(String pCPFCNPJ, Int16 pCORxStatusID, String pNome, Guid? pCORxPessoaID, Guid? pCORxAgregadoID, Guid? pESCxEscritorioID)
+        public EscritorioTuple(String pCPFCNPJ, Int16 pCORxStatusID, String pNome, Guid? pCORxPessoaID, Guid? pCORxAgregadoID, Guid? pESCxEscritorioID, String pStatus)
             : this()
         {
             CPFCNPJ.Value = pCPFCNPJ;
@@ -33,6 +33,7 @@ namespace TFX.ESC.Core.Escritorio
             CORxPessoaID.Value = pCORxPessoaID;
             CORxAgregadoID.Value = pCORxAgregadoID;
             ESCxEscritorioID.Value = pESCxEscritorioID;
+            Status.Value = pStatus;
         }
 
         public override void Initialize()
@@ -43,27 +44,21 @@ namespace TFX.ESC.Core.Escritorio
             CORxPessoaID = new XGuidNullableDataField();
             CORxAgregadoID = new XGuidNullableDataField();
             ESCxEscritorioID = new XGuidNullableDataField();
+            Status = new XStringDataField();
         }
 
-        [MaxLength(14)]
-        [Required()]
         [Display(Name = "CPF ou CNPJ")]
         public XStringDataField CPFCNPJ {get;set;}
-        [Required()]
         [Display(Name = "Estado")]
         public XInt16DataField CORxStatusID {get;set;}
-        [MaxLength(180)]
-        [Required()]
         public XStringDataField Nome {get;set;}
-        [Required()]
         [Display(Name = "Pessoa")]
         public XGuidNullableDataField CORxPessoaID {get;set;}
-        [Required()]
         [Display(Name = "Agregado")]
         public XGuidNullableDataField CORxAgregadoID {get;set;}
-        [Required()]
         [Display(Name = "Escritório")]
         public XGuidNullableDataField ESCxEscritorioID {get;set;}
+        public XStringDataField Status {get;set;}
     }
 
     public class EscritorioFilter : XFilter

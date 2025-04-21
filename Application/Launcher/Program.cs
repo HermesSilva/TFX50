@@ -14,6 +14,7 @@ using TFX.Core.Controllers;
 using TFX.Core.Identity;
 using TFX.Core.IDs;
 using TFX.Core.Interfaces;
+using TFX.ESC.Core;
 namespace Launcher
 {
     public class Program
@@ -33,9 +34,10 @@ namespace Launcher
 
             builder.Services.ConfigureServices();
             builder.Services.AddSingleton<XILoginService, XLoginService>();
+            builder.Services.AddSingleton<XResponseWrapperFilter>();
             builder.Services.AddScoped<XITenantProvider, XTenantProvider>();
             builder.Services.AddScoped<XISharedTransaction, XSharedTransaction>();
-
+            Console.WriteLine(typeof(TFXESCCoreModule).FullName);
             builder.AddDependencies();
             App = builder.Build();
             XEnvironment.Services = App.Services;

@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
@@ -97,12 +98,17 @@ public static class XServiceExtensions
         pServices.AddControllers();
         pServices.AddEndpointsApiExplorer();
         pServices.AddSwaggerGen();
-        pServices.AddControllers().AddJsonOptions(js => { js.JsonSerializerOptions.PropertyNamingPolicy = null; });
-        pServices.AddControllers().ConfigureApiBehaviorOptions(options =>
+        pServices.AddControllers(options =>
         {
-            options.InvalidModelStateResponseFactory = context => { return new BadRequestObjectResult(XMLResponse.BadJSon); };
-
+            options.Filters.Add<XResponseWrapperFilter>();
+        }).ConfigureApiBehaviorOptions(options =>
+        {
+            options.InvalidModelStateResponseFactory = context =>
+            {
+                return new BadRequestObjectResult(XResponse.BadJSon);
+            };
         }).AddJsonOptions(options => { options.JsonSerializerOptions.PropertyNamingPolicy = null; });
+
 
         pServices.AddRouting();
         pServices.AddAuthentication(XDefault.JWTKey)

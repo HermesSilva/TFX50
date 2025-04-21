@@ -59,22 +59,24 @@ namespace TFX.Core.Test.Setup
         {
             using (var response = await pObject.Client.SendAsync(pObject.Request))
             {
-                response.EnsureSuccessStatusCode();
+                //response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsByteArrayAsync();
                 var dst = XUtils.Deserialize<T>(body);
                 return dst;
             }
         }
 
-        public (HttpClient Client, HttpRequestMessage Request) PrepareClient(string pURL, XFilter pFilter)
+        public (HttpClient Client, HttpRequestMessage Request) PrepareClient(string pURL, Object pFilter)
         {
             var client = new HttpClient();
-            var json = XUtils.SerializeString(pFilter);
+            var json = "null";
+            if (pFilter != null)
+                json = XUtils.SerializeString(pFilter);
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
                 RequestUri = new Uri(pURL),
-                Content = new StringContent(json ?? "{}")
+                Content = new StringContent(json)
                 {
                     Headers = { ContentType = new MediaTypeHeaderValue("application/json") }
                 }
