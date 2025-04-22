@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using TFX.Core.Controllers;
 using TFX.Core.Services;
 
-namespace TFX.Core.Access.Usuarios.Rules
+namespace TFX.Core.Access.UsuariosAtivos.Rules
 {
     public class INFUsuariosAtivosServiceRule : UsuariosAtivosService.BaseINFUsuariosAtivosServiceRule
     {

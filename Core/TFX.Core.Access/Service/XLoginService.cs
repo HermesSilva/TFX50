@@ -5,7 +5,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-using TFX.Core.Access.Usuarios;
 using TFX.Core.Cache;
 using TFX.Core.Exceptions;
 using TFX.Core.IDs.Model;
@@ -19,6 +18,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading;
 using System.Threading.Tasks;
+using TFX.Core.Access.UsuariosAtivos;
 
 namespace TFX.Core.Access.Service
 {

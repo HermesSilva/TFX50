@@ -43,5 +43,11 @@ namespace TFX.Core.Data.DB
             public const string sWeb_API = @"Web API";
             public const Int16 Web_API = (Int16)2;
         }
+
+        public static class CORxMenu
+        {
+            public const string sSistema = @"Sistema";
+            public static Guid Sistema = new Guid("A0194FB8-9893-48C5-BD2B-7626A82B3DA3");
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TFX.Core.Lzma;
+using TFX.Core.Data.DB;
 
 namespace TFX.Core.Access.DB
 {
@@ -22,20 +23,18 @@ namespace TFX.Core.Access.DB
             {
                 private static Dictionary<Guid, _TAFxUsuario> _SeedData = new Dictionary<Guid, _TAFxUsuario>()
                 {
-                    [new Guid("EBA53C9E-C110-4CA3-96FD-420DC75207B1")] = new _TAFxUsuario { TAFxUsuarioID = new Guid("EBA53C9E-C110-4CA3-96FD-420DC75207B1"), Login = @"Administrador", CORxEstadoID = (Int16)1 },
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _TAFxUsuario { TAFxUsuarioID = new Guid("00000000-0000-0000-0000-000000000000"), Login = @"NA", CORxEstadoID = (Int16)0 }
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _TAFxUsuario { TAFxUsuarioID = new Guid("00000000-0000-0000-0000-000000000000"), Login = @"Administrador" },
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _TAFxUsuario { TAFxUsuarioID = new Guid("00000000-0000-0000-0000-000000000000"), Login = @"NA" }
                 };
                 public static _TAFxUsuario[] SeedData => _SeedData.Values.ToArray();
             }
-            [Display(Name = "Ativo")]
-            [Required()]
-            public Int16 CORxEstadoID {get; set;}
             [Required()]
             public String Login {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(TAFxUsuarioID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !TAFxUsuarioID.HasValue;
             [Display(Name = "Usuários")]
             [Required()]
             public Guid? TAFxUsuarioID {get; set;}
+            public TFXCoreDataContext._CORxPessoa CORxPessoa {get; set;}
         }
 
         #endregion _TAFxUsuario
@@ -67,8 +66,15 @@ namespace TFX.Core.Access.DB
                 
                 ett.Property(d => d.TAFxUsuarioID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Login).HasColumnType(GetDBType("String"));
-                ett.Property(d => d.CORxEstadoID).HasColumnType(GetDBType("Int16"));
                 ett.ToTable("TAFxUsuario");
+
+                ett.HasOne(d => d.CORxPessoa)
+                   .WithMany()
+                   .HasForeignKey(d => d.TAFxUsuarioID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_32B68984BA104469A724F9BD32665523");
+
+                ett.HasIndex(d => d.TAFxUsuarioID).HasDatabaseName("IX_32B68984BA104469A724F9BD32665523");
                 ett.HasData(_TAFxUsuario.XDefault.SeedData);
             });
         }
