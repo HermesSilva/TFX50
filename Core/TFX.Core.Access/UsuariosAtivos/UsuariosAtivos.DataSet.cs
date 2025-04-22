@@ -15,7 +15,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
 
-namespace TFX.Core.Access.Usuarios
+namespace TFX.Core.Access.UsuariosAtivos
 {
     public class UsuariosAtivosTuple : XServiceDataTuple
     {
@@ -24,29 +24,25 @@ namespace TFX.Core.Access.Usuarios
             Initialize();
         }
 
-        public UsuariosAtivosTuple(Guid? pTAFxUsuarioID, String pLogin, Int16 pCORxEstadoID)
+        public UsuariosAtivosTuple(Guid? pTAFxUsuarioID, String pLogin, String pNome)
             : this()
         {
             TAFxUsuarioID.Value = pTAFxUsuarioID;
             Login.Value = pLogin;
-            CORxEstadoID.Value = pCORxEstadoID;
+            Nome.Value = pNome;
         }
 
         public override void Initialize()
         {
             TAFxUsuarioID = new XGuidNullableDataField();
             Login = new XStringDataField();
-            CORxEstadoID = new XInt16DataField();
+            Nome = new XStringDataField();
         }
 
-        [Required()]
         [Display(Name = "Usuários")]
         public XGuidNullableDataField TAFxUsuarioID {get;set;}
-        [Required()]
         public XStringDataField Login {get;set;}
-        [Required()]
-        [Display(Name = "Ativo")]
-        public XInt16DataField CORxEstadoID {get;set;}
+        public XStringDataField Nome {get;set;}
     }
 
     public class UsuariosAtivosFilter : XFilter
@@ -55,19 +51,12 @@ namespace TFX.Core.Access.Usuarios
         public UsuariosAtivosFilter()
         {
         }
-
-        public UsuariosAtivosFilter(Int16 pCORxEstadoID, String pLogin)
-        {
-            CORxEstadoID = pCORxEstadoID;
-            Login = pLogin;
-        }
-        public Int16? CORxEstadoID {get;set;}
+        public String Nome {get;set;}
         public String Login {get;set;}
     }
     public static class FRMUsuariosAtivosFilter
     {
-        public static readonly XFRMField CORxEstadoID = new XFRMField(new Guid("A744F75F-F6BD-4FC1-8FA8-0E67BF4EBA0F"), "CORxEstadoID");
-        public static readonly XFRMField Login = new XFRMField(new Guid("2B842CCA-DB72-459B-A155-A741B8ABED45"), "Login");
+        public static readonly XFRMField Nome = new XFRMField(new Guid("168443C3-D05D-4587-8C82-E3D4DEAE3A46"), "Nome");
     }
 
     public class UsuariosAtivosRequest : XRequest

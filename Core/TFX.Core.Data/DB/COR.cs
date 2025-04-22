@@ -18,7 +18,7 @@ namespace TFX.Core.Data.DB
 
         public class _CORxAgregado
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxAgregadoID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxAgregadoID.HasValue;
             [Display(Name = "Agregado")]
             [Required()]
             public Guid? CORxAgregadoID {get; set;}
@@ -81,7 +81,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Agregado")]
             [Required()]
             public Guid CORxAgregadoID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CORxEmpresaID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxEmpresaID.HasValue;
             [Display(Name = "Empresa")]
             [Required()]
             public Guid? CORxEmpresaID {get; set;}
@@ -103,7 +103,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Agregado")]
             [Required()]
             public Guid CORxAgregadoID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CORxEmpresaGrupoID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxEmpresaGrupoID.HasValue;
             [Display(Name = "Grupo de Empresas")]
             [Required()]
             public Guid? CORxEmpresaGrupoID {get; set;}
@@ -126,7 +126,7 @@ namespace TFX.Core.Data.DB
 
         public class _CORxFavorito
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxFavoritoID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxFavoritoID.HasValue;
             [Display(Name = "Favoritos")]
             [Required()]
             public Guid? CORxFavoritoID {get; set;}
@@ -149,7 +149,15 @@ namespace TFX.Core.Data.DB
 
         public class _CORxMenu
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxMenuID, typeof(Guid).GetDefault());
+            public class XDefault
+            {
+                private static Dictionary<Guid, _CORxMenu> _SeedData = new Dictionary<Guid, _CORxMenu>()
+                {
+                    [new Guid("A0194FB8-9893-48C5-BD2B-7626A82B3DA3")] = new _CORxMenu { CORxMenuID = new Guid("A0194FB8-9893-48C5-BD2B-7626A82B3DA3"), Menu = @"Sistema", Icone = null }
+                };
+                public static _CORxMenu[] SeedData => _SeedData.Values.ToArray();
+            }
+            public Boolean IsPKEmpty => !CORxMenuID.HasValue;
             [Display(Name = "Menu")]
             [Required()]
             public Guid? CORxMenuID {get; set;}
@@ -172,7 +180,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Menu")]
             [Required()]
             public Guid CORxMenuID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CORxMenuItemID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxMenuItemID.HasValue;
             [Display(Name = "Item de Menu")]
             [Required()]
             public Guid? CORxMenuItemID {get; set;}
@@ -193,7 +201,7 @@ namespace TFX.Core.Data.DB
 
         public class _CORxPessoa
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxPessoaID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
             public Guid? CORxPessoaID {get; set;}
@@ -211,7 +219,7 @@ namespace TFX.Core.Data.DB
 
         public class _CORxRecurso
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxRecursoID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxRecursoID.HasValue;
             [Display(Name = "Recurso")]
             [Required()]
             public Guid? CORxRecursoID {get; set;}
@@ -240,7 +248,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Direitos")]
             [Required()]
             public Int16 CORxDireitosID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CORxRecursoDireitoID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxRecursoDireitoID.HasValue;
             [Display(Name = "Direitos por Recurso")]
             [Required()]
             public Guid? CORxRecursoDireitoID {get; set;}
@@ -261,7 +269,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Recurso")]
             [Required()]
             public Guid CORxRecursoID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CORxRecursoTemplateID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxRecursoTemplateID.HasValue;
             [Display(Name = "Conjunto de Recursos")]
             [Required()]
             public Guid? CORxRecursoTemplateID {get; set;}
@@ -282,7 +290,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Direitos por Recurso")]
             [Required()]
             public Guid CORxRecursoDireitoID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CORxRecursoTemplateDireitoID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxRecursoTemplateDireitoID.HasValue;
             [Display(Name = "Direito de Recurso por Template")]
             [Required()]
             public Guid? CORxRecursoTemplateDireitoID {get; set;}
@@ -354,7 +362,7 @@ namespace TFX.Core.Data.DB
 
         public class _CORxUsuario
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxUsuarioID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxUsuarioID.HasValue;
             [Display(Name = "Usuário")]
             [Required()]
             public Guid? CORxUsuarioID {get; set;}
@@ -379,7 +387,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Usuário")]
             [Required()]
             public Guid CORxUsuarioID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CORxUsuarioRecursoTemplateID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxUsuarioRecursoTemplateID.HasValue;
             [Display(Name = "Templates por Usuário")]
             [Required()]
             public Guid? CORxUsuarioRecursoTemplateID {get; set;}
@@ -592,6 +600,7 @@ namespace TFX.Core.Data.DB
                 ett.Property(d => d.Menu).HasColumnType(GetDBType("String", 50));
                 ett.Property(d => d.Icone).HasColumnType(GetDBType("String", 25));
                 ett.ToTable("CORxMenu");
+                ett.HasData(_CORxMenu.XDefault.SeedData);
             });
         }
 

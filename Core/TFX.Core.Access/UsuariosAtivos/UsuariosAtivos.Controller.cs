@@ -9,11 +9,12 @@ using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TFX.Core.Data;
-using TFX.Core.Access.Usuarios;
-using TFX.Core.Access.Usuarios.Rules;
+using TFX.Core.Access.UsuariosAtivos;
+using TFX.Core.Access.UsuariosAtivos.Rules;
+using TFX.Core.Data.DB;
 using TFX.Core.Access.DB;
 
-namespace TFX.Core.Access.Usuarios
+namespace TFX.Core.Access.UsuariosAtivos
 {
     [Route("UsuariosAtivos")]
     [ApiController]
@@ -52,7 +53,7 @@ namespace TFX.Core.Access.Usuarios
         }
 
         [HttpPost("Flush")]
-        [XEndpointDescription(typeof(UsuariosAtivosService.TAFxUsuario))]
+        [XEndpointDescription(typeof(UsuariosAtivosService.CORxPessoa), typeof(UsuariosAtivosService.TAFxUsuario))]
         public IActionResult Flush([FromBody] UsuariosAtivosDataSet pDataSet)
         {
             try

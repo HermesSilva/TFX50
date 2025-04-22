@@ -22,7 +22,7 @@ namespace TFX.ESC.Core.DB
             [MaxLength(15)]
             [Required()]
             public String CRC {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(ESCxContabilistaID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !ESCxContabilistaID.HasValue;
             [Display(Name = "Contabilista")]
             [Required()]
             public Guid? ESCxContabilistaID {get; set;}
@@ -37,7 +37,7 @@ namespace TFX.ESC.Core.DB
 
         public class _ESCxContabilistaEscritorio
         {
-            public Boolean IsPKEmpty => Object.Equals(ESCxContabilistaEscritorioID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !ESCxContabilistaEscritorioID.HasValue;
             [Display(Name = "Contabilistas por Escritório")]
             [Required()]
             public Guid? ESCxContabilistaEscritorioID {get; set;}
@@ -60,7 +60,7 @@ namespace TFX.ESC.Core.DB
             [Display(Name = "Contabilista")]
             [Required()]
             public Guid ESCxContabilistaID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(ESCxEmpresaID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !ESCxEmpresaID.HasValue;
             [Display(Name = "Empresa")]
             [Required()]
             public Guid? ESCxEmpresaID {get; set;}
@@ -74,7 +74,7 @@ namespace TFX.ESC.Core.DB
 
         public class _ESCxEscritorio
         {
-            public Boolean IsPKEmpty => Object.Equals(ESCxEscritorioID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !ESCxEscritorioID.HasValue;
             [Display(Name = "Escritório")]
             [Required()]
             public Guid? ESCxEscritorioID {get; set;}

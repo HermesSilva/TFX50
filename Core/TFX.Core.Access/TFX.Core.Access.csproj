@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TFX.Core.Data\TFX.Core.Data.csproj" />
     <ProjectReference Include="..\TFX.Core\TFX.Core.csproj" />
   </ItemGroup>
 
@@ -58,21 +59,27 @@
       <DependentUpon>TFX.Core.Access.dsmdl</DependentUpon>
       <Visible>False</Visible>
     </Compile>
-    <Compile Update="Usuarios\UsuariosAtivos.Controller.cs">
+    <Compile Update="UsuariosAtivos\UsuariosAtivos.Controller.cs">
       <Visible>False</Visible>
       <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
     </Compile>
-    <Compile Update="Usuarios\UsuariosAtivos.Rule.cs">
+    <Compile Update="UsuariosAtivos\UsuariosAtivos.Rule.cs">
       <Visible>True</Visible>
       <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
     </Compile>
-    <Compile Update="Usuarios\UsuariosAtivos.Service.cs">
+    <Compile Update="UsuariosAtivos\UsuariosAtivos.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UsuariosAtivos.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Update="UsuariosAtivos\UsuariosAtivos.Service.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
       <Visible>False</Visible>
     </Compile>
-    <Compile Update="Usuarios\UsuariosAtivos.DataSet.cs">
+    <Compile Update="UsuariosAtivos\UsuariosAtivos.DataSet.cs">
       <Visible>False</Visible>
       <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
     </Compile>
@@ -83,7 +90,11 @@
       <Generator>XDASEGenerator</Generator>
       <LastGenOutput>TAF.cs</LastGenOutput>
     </None>
-    <None Update="Usuarios\UsuariosAtivos.dssvc">
+    <None Update="UsuariosAtivos\UsuariosAtivos.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>UsuariosAtivos.cs</LastGenOutput>
+    </None>
+    <None Update="UsuariosAtivos\UsuariosAtivos.dssvc">
       <Generator>XDASEGenerator</Generator>
       <LastGenOutput>UsuariosAtivos.Service.cs</LastGenOutput>
     </None>

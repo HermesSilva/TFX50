@@ -20,11 +20,6 @@ namespace TFX.Core
             ValidoEm = new[] { XEnvironment.Read("JWT_EMISSOR", "https://tootega.com.br") };
         }
 
-        public static string Unauthorized()
-        {
-            return "Acesso não autorizado";
-        }
-
         public const String FullDateTimeFormat = "yyyy-MM-dd HH:mm:ss.FFFFFFF";
         public static DateTime NullDateTime = new DateTime(1753, 1, 1, 0, 0, 0, 1);
         public static Boolean ForceDebugTime = false;

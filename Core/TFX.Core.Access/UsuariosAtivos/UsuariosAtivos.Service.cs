@@ -19,28 +19,40 @@ using System.Data;
 using TFX.Core.Lzma;
 using TFX.Core.Identity;
 using System.Text;
-using TFX.Core.Access.Usuarios.Rules;
-using TFX.Core.Access.Usuarios;
+using TFX.Core.Access.UsuariosAtivos.Rules;
+using TFX.Core.Access.UsuariosAtivos;
 
-namespace TFX.Core.Access.Usuarios
+namespace TFX.Core.Access.UsuariosAtivos
 {
     [XGuid("961B7E48-A442-4096-80DF-B65F8C459754", typeof(IUsuariosAtivosService))]
     public class UsuariosAtivosService : XService, IUsuariosAtivosService
     {
         public class TAFxUsuario : XEntity
         {
-            [Display(Name = "Ativo")]
-            [Required()]
-            public Int16 CORxEstadoID {get; set;}
-
             [Required()]
             public String Login {get; set;}
 
-            public Boolean IsPKEmpty => Object.Equals(TAFxUsuarioID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !TAFxUsuarioID.HasValue;
             [Display(Name = "Usuários")]
             [Required()]
             public Guid? TAFxUsuarioID {get; set;}
 
+
+            public CORxPessoa CORxPessoa {get; set;}
+        }
+        public class CORxPessoa : XEntity
+        {
+            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
+            [Display(Name = "Pessoa")]
+            [Required()]
+            public Guid? CORxPessoaID {get; set;}
+
+            [MaxLength(180)]
+            [Required()]
+            public String Nome {get; set;}
+
+
+            public List<TAFxUsuario> TAFxUsuario {get; set;} = new List<TAFxUsuario>();
         }
         public class DBContext : XDBContext
         {
@@ -50,6 +62,7 @@ namespace TFX.Core.Access.Usuarios
             }
 
             public DbSet<TAFxUsuario> TAFxUsuario{get; set;}
+            public DbSet<CORxPessoa> CORxPessoa{get; set;}
 
         private void ConfigureTAFxUsuario(ModelBuilder pBuilder)
         {
@@ -59,14 +72,29 @@ namespace TFX.Core.Access.Usuarios
 
                 ett.Property(d => d.TAFxUsuarioID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Login).HasColumnType(GetDBType("String"));
-                ett.Property(d => d.CORxEstadoID).HasColumnType(GetDBType("Int16"));
                 ett.ToTable("TAFxUsuario");
+                ett.HasOne(d => d.CORxPessoa)
+                   .WithMany(p => p.TAFxUsuario)
+                   .HasForeignKey(d => d.TAFxUsuarioID)
+                   .OnDelete(DeleteBehavior.Restrict);
+            });
+        }
+        private void ConfigureCORxPessoa(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CORxPessoa>(ett =>
+            {
+                ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
+
+                ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.ToTable("CORxPessoa");
             });
         }
 
             protected override void OnModelCreating(ModelBuilder pBuilder)
             {
                 ConfigureTAFxUsuario(pBuilder);
+                ConfigureCORxPessoa(pBuilder);
                 base.OnModelCreating(pBuilder);
             }
 
@@ -127,17 +155,16 @@ namespace TFX.Core.Access.Usuarios
         {
             var ctx = Context;
             var query = from TAFxUsuario in ctx.TAFxUsuario
+                        join CORxPessoa in ctx.CORxPessoa on TAFxUsuario.TAFxUsuarioID equals CORxPessoa.CORxPessoaID
                         
-                        select new {TAFxUsuario};
+                        select new {TAFxUsuario, CORxPessoa};
             query = _INFRule.GetWhere(query);
 
 
             if (pFilter != null)
             {
-                if (pFilter.CORxEstadoID.HasValue)
-                    query = query.Where(q => q.TAFxUsuario.CORxEstadoID == pFilter.CORxEstadoID);
-                if (!pFilter.Login.IsEmpty())
-                    query = query.Where(q => q.TAFxUsuario.Login == pFilter.Login);
+                if (!pFilter.Nome.IsEmpty())
+                    query = query.Where(q => q.CORxPessoa.Nome == pFilter.Nome);
             }
 
             if (!LoadAll)
@@ -153,7 +180,7 @@ namespace TFX.Core.Access.Usuarios
 
             var qry = query.Select(q => new UsuariosAtivosTuple(q.TAFxUsuario.TAFxUsuarioID,
                                     q.TAFxUsuario.Login,
-                                    q.TAFxUsuario.CORxEstadoID));
+                                    q.CORxPessoa.Nome));
             return qry;
         }
 
@@ -193,17 +220,28 @@ namespace TFX.Core.Access.Usuarios
             foreach (UsuariosAtivosTuple stpl in pDataSet.Tuples)
             {
                 var sb = new StringBuilder();
+                var CORxPessoatpl = new CORxPessoa();
+                if (stpl.TAFxUsuarioID.Value != null)
+                    CORxPessoatpl.CORxPessoaID = stpl.TAFxUsuarioID.Value;
+                CORxPessoatpl.Nome = stpl.Nome.Value;
+                CORxPessoatpl.Validate(sb);
+                ctx.CORxPessoa.Add(CORxPessoatpl);
+                if (!CORxPessoatpl.IsPKEmpty)
+                    ctx.Entry(CORxPessoatpl).State = EntityState.Modified;
+                else
+                    ctx.Entry(CORxPessoatpl).State = EntityState.Added;
+
                 var TAFxUsuariotpl = new TAFxUsuario();
-                if (stpl.TAFxUsuarioID.Value != Guid.Empty)
+                if (stpl.TAFxUsuarioID.Value != null)
                     TAFxUsuariotpl.TAFxUsuarioID = stpl.TAFxUsuarioID.Value;
                 TAFxUsuariotpl.Login = stpl.Login.Value;
-                TAFxUsuariotpl.CORxEstadoID = stpl.CORxEstadoID.Value;
                 TAFxUsuariotpl.Validate(sb);
                 ctx.TAFxUsuario.Add(TAFxUsuariotpl);
                 if (!TAFxUsuariotpl.IsPKEmpty)
                     ctx.Entry(TAFxUsuariotpl).State = EntityState.Modified;
                 else
                     ctx.Entry(TAFxUsuariotpl).State = EntityState.Added;
+                TAFxUsuariotpl.CORxPessoa = CORxPessoatpl;
                 if (sb.Length > 0)
                     throw new Exception(sb.ToString());
             }

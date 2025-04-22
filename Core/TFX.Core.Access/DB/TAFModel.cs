@@ -13,7 +13,7 @@ namespace TFX.Core.Access.DB
         public static class TAFxUsuario
         {
             public const string sAdministrador = @"Administrador";
-            public static Guid Administrador = new Guid("EBA53C9E-C110-4CA3-96FD-420DC75207B1");
+            public static Guid Administrador = new Guid("00000000-0000-0000-0000-000000000000");
             public const string sNA = @"NA";
             public static Guid NA = new Guid("00000000-0000-0000-0000-000000000000");
         }

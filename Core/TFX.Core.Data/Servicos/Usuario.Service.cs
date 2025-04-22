@@ -29,7 +29,7 @@ namespace TFX.Core.Data.Servicos
     {
         public class CORxUsuario : XEntity
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxUsuarioID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxUsuarioID.HasValue;
             [Display(Name = "Usuário")]
             [Required()]
             public Guid? CORxUsuarioID {get; set;}
@@ -44,7 +44,7 @@ namespace TFX.Core.Data.Servicos
         }
         public class CORxPessoa : XEntity
         {
-            public Boolean IsPKEmpty => Object.Equals(CORxPessoaID, typeof(Guid).GetDefault());
+            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
             public Guid? CORxPessoaID {get; set;}
@@ -223,7 +223,7 @@ namespace TFX.Core.Data.Servicos
             {
                 var sb = new StringBuilder();
                 var CORxUsuariotpl = new CORxUsuario();
-                if (stpl.CORxPessoaID.Value != Guid.Empty)
+                if (stpl.CORxPessoaID.Value != null)
                     CORxUsuariotpl.CORxUsuarioID = stpl.CORxPessoaID.Value;
                 CORxUsuariotpl.EMail = stpl.EMail.Value;
                 CORxUsuariotpl.Validate(sb);
@@ -234,7 +234,7 @@ namespace TFX.Core.Data.Servicos
                     ctx.Entry(CORxUsuariotpl).State = EntityState.Added;
 
                 var CORxPessoatpl = new CORxPessoa();
-                if (stpl.CORxPessoaID.Value != Guid.Empty)
+                if (stpl.CORxPessoaID.Value != null)
                     CORxPessoatpl.CORxPessoaID = stpl.CORxPessoaID.Value;
                 CORxPessoatpl.Nome = stpl.Nome.Value;
                 CORxPessoatpl.Validate(sb);

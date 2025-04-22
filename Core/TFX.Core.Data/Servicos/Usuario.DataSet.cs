@@ -39,15 +39,10 @@ namespace TFX.Core.Data.Servicos
             Nome = new XStringDataField();
         }
 
-        [MaxLength(80)]
-        [Required()]
         [Display(Name = "E-Mails")]
         public XStringDataField EMail {get;set;}
-        [Required()]
         [Display(Name = "Pessoa")]
         public XGuidNullableDataField CORxPessoaID {get;set;}
-        [MaxLength(180)]
-        [Required()]
         public XStringDataField Nome {get;set;}
     }
 
