@@ -2,13 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TFX.Core.Controllers;
 using TFX.Core.Services;
-using TFX.Core.Data.Servicos;
 
-namespace TFX.Core.Data.Servicos.Rules
+namespace TFX.Core.Data.Servicos.Menu.Rules
 {
-    public class UsuarioRule : BaseUsuarioRule
+    public class INFMenuServiceRule : MenuService.BaseINFMenuServiceRule
     {
-        public UsuarioRule(XService pService)
+        public INFMenuServiceRule(MenuService pService)
                :base(pService)
         {
         }

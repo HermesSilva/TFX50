@@ -50,19 +50,49 @@
 	    <Visible>False</Visible>
 	    <DependentUpon>COR.dsorm</DependentUpon>
 	  </Compile>
-	  <Compile Update="Servicos\Usuario.Controller.cs">
+	  <Compile Update="Servicos\Menu\Menu.Controller.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Menu.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Menu\Menu.DataSet.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Menu.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Menu\Menu.Rule.cs">
+	    <Visible>True</Visible>
+	    <DependentUpon>Menu.dssvc</DependentUpon>
+	  </Compile>
+	  <Compile Update="Servicos\Menu\Menu.Service.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Menu.dssvc</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario\Usuario.Controller.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>Usuario.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Servicos\Usuario.DataSet.cs">
+	  <Compile Update="Servicos\Usuario\Usuario.DataSet.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>Usuario.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Servicos\Usuario.Rule.cs">
+	  <Compile Update="Servicos\Usuario\Usuario.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Usuario.dssam</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario\Usuario.Rule.cs">
 	    <Visible>True</Visible>
 	    <DependentUpon>Usuario.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Servicos\Usuario.Service.cs">
+	  <Compile Update="Servicos\Usuario\Usuario.Service.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>Usuario.dssvc</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	  <Compile Update="Servicos\Usuario\Usuario.SVC.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Usuario.dssvc</DependentUpon>
@@ -93,7 +123,15 @@
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>COR.cs</LastGenOutput>
 	  </None>
-	  <None Update="Servicos\Usuario.dssvc">
+	  <None Update="Servicos\Menu\Menu.dssvc">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>Menu.Service.cs</LastGenOutput>
+	  </None>
+	  <None Update="Servicos\Usuario\Usuario.dssam">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>Usuario.cs</LastGenOutput>
+	  </None>
+	  <None Update="Servicos\Usuario\Usuario.dssvc">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>Usuario.Service.cs</LastGenOutput>
 	  </None>

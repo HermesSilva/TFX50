@@ -15,7 +15,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
 
-namespace TFX.Core.Data.Servicos
+namespace TFX.Core.Data.Servicos.Usuario
 {
     public class UsuarioTuple : XServiceDataTuple
     {

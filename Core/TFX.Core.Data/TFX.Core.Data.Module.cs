@@ -3,7 +3,8 @@ using System;
 using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
-using TFX.Core.Data.Servicos;
+using TFX.Core.Data.Servicos.Menu;
+using TFX.Core.Data.Servicos.Usuario;
 
 namespace TFX.Core.Data
 {
@@ -11,6 +12,8 @@ namespace TFX.Core.Data
     {
         public override void Initialize(IServiceCollection pServices)
         {
+            pServices.AddTransient<IMenuService, MenuService>();
+            pServices.AddDbContext<MenuService.DBContext>();
             pServices.AddTransient<IUsuarioService, UsuarioService>();
             pServices.AddDbContext<UsuarioService.DBContext>();
         }

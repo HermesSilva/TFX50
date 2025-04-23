@@ -6,4 +6,7 @@
     <XData Name="NameSpace" ID="AA8B388C-17CD-48A6-8162-24E891354696" Type="String">TFX.Core.Data</XData>
     <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String"></XData>
   </XValues>
+  <XNameSpace Name="TFX.Core.Data" ID="80D057D9-A6EE-4BA5-B341-C763508091A5">
+    <XValues />
+  </XNameSpace>
 </XModule>
