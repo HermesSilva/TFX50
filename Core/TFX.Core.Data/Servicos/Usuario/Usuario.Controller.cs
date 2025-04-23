@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TFX.Core.Data;
-using TFX.Core.Data.Servicos;
-using TFX.Core.Data.Servicos.Rules;
+using TFX.Core.Data.Servicos.Usuario;
+using TFX.Core.Data.Servicos.Usuario.Rules;
 using TFX.Core.Data.DB;
 
-namespace TFX.Core.Data.Servicos
+namespace TFX.Core.Data.Servicos.Usuario
 {
     [Route("Usuario")]
     [ApiController]
@@ -37,8 +37,8 @@ namespace TFX.Core.Data.Servicos
         internal readonly IUsuarioService Service;
         private readonly INFUsuarioControllerRule _Rule;
 
-        [HttpPost("Execute")]
-        public IActionResult Execute([FromBody] UsuarioFilter pFilter)
+        [HttpPost("Lista")]
+        public IActionResult Lista([FromBody] UsuarioFilter pFilter)
         {
             try
             {

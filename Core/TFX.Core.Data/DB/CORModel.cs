@@ -34,6 +34,14 @@ namespace TFX.Core.Data.DB
             public const Int16 Alterar = (Int16)3;
         }
 
+        public static class CORxRecurso
+        {
+            public const string sNA = @"NA";
+            public static Guid NA = new Guid("00000000-0000-0000-0000-000000000000");
+            public const string sUsuario = @"Usuario";
+            public static Guid Usuario = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C");
+        }
+
         public static class CORxRecursoTipo
         {
             public const string sAplicacao_de_UI = @"Aplicação de UI";
@@ -48,6 +56,12 @@ namespace TFX.Core.Data.DB
         {
             public const string sSistema = @"Sistema";
             public static Guid Sistema = new Guid("A0194FB8-9893-48C5-BD2B-7626A82B3DA3");
+        }
+
+        public static class CORxMenuItem
+        {
+            public const string sCadastro_de_Usuarios = @"Cadastro de Usuários";
+            public static Guid Cadastro_de_Usuarios = new Guid("23ACD023-5CE5-412C-BECF-FD4D58DC680B");
         }
     }
 }

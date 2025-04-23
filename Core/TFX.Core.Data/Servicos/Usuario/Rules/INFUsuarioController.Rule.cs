@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using TFX.Core.Controllers;
 using TFX.Core.Services;
 
-namespace TFX.Core.Data.Servicos.Rules
+namespace TFX.Core.Data.Servicos.Usuario.Rules
 {
     public class INFUsuarioControllerRule : UsuarioController.BaseINFUsuarioControllerRule
     {

@@ -4,7 +4,7 @@ using TFX.Core.Model;
 using TFX.Core.Test.Setup;
 using TFX.Core.Data.Test;
 
-namespace TFX.Core.Data.Servicos.Test
+namespace TFX.Core.Data.Servicos.Usuario.Test
 {
     public class UsuarioTest : TestSetup
     {

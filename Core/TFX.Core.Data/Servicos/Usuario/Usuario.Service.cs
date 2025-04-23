@@ -19,10 +19,10 @@ using System.Data;
 using TFX.Core.Lzma;
 using TFX.Core.Identity;
 using System.Text;
-using TFX.Core.Data.Servicos.Rules;
-using TFX.Core.Data.Servicos;
+using TFX.Core.Data.Servicos.Usuario.Rules;
+using TFX.Core.Data.Servicos.Usuario;
 
-namespace TFX.Core.Data.Servicos
+namespace TFX.Core.Data.Servicos.Usuario
 {
     [XGuid("53F17DAC-4376-4424-8454-0866B122BFDB", typeof(IUsuarioService))]
     public class UsuarioService : XService, IUsuarioService
