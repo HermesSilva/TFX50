@@ -840,6 +840,7 @@
         </XData>
         <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
         <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">25</XData>
+        <XData Name="IsRequired" ID="6DF729B6-538E-4622-AB5C-8FE1E62618A3" Type="Boolean">false</XData>
       </XValues>
     </XORMField>
     <XORMDataSet Name="T" ID="FADF414D-0902-4541-A034-D4DF07F4FFCC">

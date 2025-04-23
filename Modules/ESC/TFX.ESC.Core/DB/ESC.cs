@@ -9,12 +9,66 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TFX.Core.Lzma;
-using TFX.Core.Data.DB;
 
 namespace TFX.ESC.Core.DB
 {
     public class TFXESCCoreContext : XDBContext
     {
+        #region _CORxAgregado
+
+        public class _CORxAgregado
+        {
+            public Boolean IsPKEmpty => !CORxAgregadoID.HasValue;
+            [Display(Name = "Agregado")]
+            [Required()]
+            public Guid? CORxAgregadoID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            [Display(Name = "CPF ou CNPJ")]
+            [MaxLength(14)]
+            [Required()]
+            public String CPFCNPJ {get; set;}
+        }
+
+        #endregion _CORxAgregado
+
+        #region _CORxEmpresa
+
+        public class _CORxEmpresa
+        {
+            [MaxLength(14)]
+            [Required()]
+            public String CNPJ {get; set;}
+            [Display(Name = "Agregado")]
+            [Required()]
+            public Guid CORxAgregadoID {get; set;}
+            public Boolean IsPKEmpty => !CORxEmpresaID.HasValue;
+            [Display(Name = "Empresa")]
+            [Required()]
+            public Guid? CORxEmpresaID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+        }
+
+        #endregion _CORxEmpresa
+
+        #region _CORxPessoa
+
+        public class _CORxPessoa
+        {
+            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
+            [Display(Name = "Pessoa")]
+            [Required()]
+            public Guid? CORxPessoaID {get; set;}
+            [MaxLength(180)]
+            [Required()]
+            public String Nome {get; set;}
+        }
+
+        #endregion _CORxPessoa
+
         #region _ESCxContabilista
 
         public class _ESCxContabilista
@@ -26,7 +80,7 @@ namespace TFX.ESC.Core.DB
             [Display(Name = "Contabilista")]
             [Required()]
             public Guid? ESCxContabilistaID {get; set;}
-            public TFXCoreDataContext._CORxPessoa CORxPessoa {get; set;}
+            public _CORxPessoa CORxPessoa {get; set;}
             public List<_ESCxContabilistaEscritorio> ESCxContabilistaEscritorio {get; set;} = new List<_ESCxContabilistaEscritorio>();
             public List<_ESCxEmpresa> ESCxEmpresa {get; set;} = new List<_ESCxEmpresa>();
         }
@@ -64,7 +118,7 @@ namespace TFX.ESC.Core.DB
             [Display(Name = "Empresa")]
             [Required()]
             public Guid? ESCxEmpresaID {get; set;}
-            public TFXCoreDataContext._CORxEmpresa CORxEmpresa {get; set;}
+            public _CORxEmpresa CORxEmpresa {get; set;}
             public _ESCxContabilista ESCxContabilista {get; set;}
         }
 
@@ -78,7 +132,7 @@ namespace TFX.ESC.Core.DB
             [Display(Name = "Escritório")]
             [Required()]
             public Guid? ESCxEscritorioID {get; set;}
-            public TFXCoreDataContext._CORxAgregado CORxAgregado {get; set;}
+            public _CORxAgregado CORxAgregado {get; set;}
             public List<_ESCxContabilistaEscritorio> ESCxContabilistaEscritorio {get; set;} = new List<_ESCxContabilistaEscritorio>();
         }
 
@@ -103,10 +157,53 @@ namespace TFX.ESC.Core.DB
         internal DbSet<_ESCxEscritorio> ESCxEscritorio{get; set;}
         protected override void OnModelCreating(ModelBuilder pBuilder)
         {
+            ConfigureCORxAgregado(pBuilder);
+            ConfigureCORxEmpresa(pBuilder);
+            ConfigureCORxPessoa(pBuilder);
             ConfigureESCxContabilista(pBuilder);
             ConfigureESCxContabilistaEscritorio(pBuilder);
             ConfigureESCxEmpresa(pBuilder);
             ConfigureESCxEscritorio(pBuilder);
+        }
+
+        private void ConfigureCORxAgregado(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxAgregado>(ett =>
+            {
+                ett.HasKey(e => e.CORxAgregadoID).HasName("PK_CORxAgregado");
+                
+                ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
+                ett.ToTable("CORxAgregado");
+            });
+
+        }
+
+        private void ConfigureCORxEmpresa(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxEmpresa>(ett =>
+            {
+                ett.HasKey(e => e.CORxEmpresaID).HasName("PK_CORxEmpresa");
+                
+                ett.Property(d => d.CORxEmpresaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CNPJ).HasColumnType(GetDBType("String", 14));
+                ett.ToTable("CORxEmpresa");
+            });
+        }
+
+        private void ConfigureCORxPessoa(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxPessoa>(ett =>
+            {
+                ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
+                
+                ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.ToTable("CORxPessoa");
+            });
         }
 
         private void ConfigureESCxContabilista(ModelBuilder pBuilder)

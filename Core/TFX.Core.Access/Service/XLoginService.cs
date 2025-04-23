@@ -18,7 +18,6 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading;
 using System.Threading.Tasks;
-using TFX.Core.Access.UsuariosAtivos;
 
 namespace TFX.Core.Access.Service
 {
@@ -91,17 +90,17 @@ namespace TFX.Core.Access.Service
         {
             if (pUsers == null)
             {
-                using (var scope = XEnvironment.Services.CreateScope())
-                {
-                    var svc = scope.ServiceProvider.GetRequiredService<IUsuariosAtivosService>();
+                //using (var scope = XEnvironment.Services.CreateScope())
+                //{
+                //    var svc = scope.ServiceProvider.GetRequiredService<IUsuariosAtivosService>();
 
-                    pUsers = new Dictionary<string, XUser>();
-                    var dst = svc.Execute(null);
-                    foreach (var item in dst.Tuples)
-                    {
-                        pUsers.Add(item.Login.Value, new XUser { ID = item.TAFxUsuarioID.Value, Login = item.Login.Value });
-                    }
-                }
+                //    pUsers = new Dictionary<string, XUser>();
+                //    var dst = svc.Execute(null);
+                //    foreach (var item in dst.Tuples)
+                //    {
+                //        pUsers.Add(item.Login.Value, new XUser { ID = item.TAFxUsuarioID.Value, Login = item.Login.Value });
+                //    }
+                //}
             }
             lock (_Users)
                 _Users.Swap(pUsers);
