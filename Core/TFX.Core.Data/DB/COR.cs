@@ -163,7 +163,6 @@ namespace TFX.Core.Data.DB
             public Guid? CORxMenuID {get; set;}
             [Display(Name = "Ícone")]
             [MaxLength(25)]
-            [Required()]
             public String Icone {get; set;}
             [MaxLength(50)]
             [Required()]
@@ -598,7 +597,7 @@ namespace TFX.Core.Data.DB
                 
                 ett.Property(d => d.CORxMenuID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Menu).HasColumnType(GetDBType("String", 50));
-                ett.Property(d => d.Icone).HasColumnType(GetDBType("String", 25));
+                ett.Property(d => d.Icone).HasColumnType(GetDBType("String", 25)).IsRequired(false);
                 ett.ToTable("CORxMenu");
                 ett.HasData(_CORxMenu.XDefault.SeedData);
             });

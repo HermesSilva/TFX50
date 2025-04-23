@@ -34,16 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="DB\TAF.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>TAF.dsorm</DependentUpon>
-      <Visible>False</Visible>
-    </Compile>
-    <Compile Update="DB\TAFModel.cs">
-      <Visible>False</Visible>
-      <DependentUpon>TAF.dsorm</DependentUpon>
-    </Compile>
     <Compile Update="Properties\AssemblyInfo.cs">
       <Visible>True</Visible>
     </Compile>
@@ -59,45 +49,6 @@
       <DependentUpon>TFX.Core.Access.dsmdl</DependentUpon>
       <Visible>False</Visible>
     </Compile>
-    <Compile Update="UsuariosAtivos\UsuariosAtivos.Controller.cs">
-      <Visible>False</Visible>
-      <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
-    </Compile>
-    <Compile Update="UsuariosAtivos\UsuariosAtivos.Rule.cs">
-      <Visible>True</Visible>
-      <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
-    </Compile>
-    <Compile Update="UsuariosAtivos\UsuariosAtivos.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UsuariosAtivos.dssam</DependentUpon>
-      <Visible>False</Visible>
-    </Compile>
-    <Compile Update="UsuariosAtivos\UsuariosAtivos.Service.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
-      <Visible>False</Visible>
-    </Compile>
-    <Compile Update="UsuariosAtivos\UsuariosAtivos.DataSet.cs">
-      <Visible>False</Visible>
-      <DependentUpon>UsuariosAtivos.dssvc</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="DB\TAF.dsorm">
-      <Generator>XDASEGenerator</Generator>
-      <LastGenOutput>TAF.cs</LastGenOutput>
-    </None>
-    <None Update="UsuariosAtivos\UsuariosAtivos.dssam">
-      <Generator>XDASEGenerator</Generator>
-      <LastGenOutput>UsuariosAtivos.cs</LastGenOutput>
-    </None>
-    <None Update="UsuariosAtivos\UsuariosAtivos.dssvc">
-      <Generator>XDASEGenerator</Generator>
-      <LastGenOutput>UsuariosAtivos.Service.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
 </Project>

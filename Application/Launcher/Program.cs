@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Text.Json;
 
 using Microsoft.AspNetCore.Builder;
@@ -11,10 +12,12 @@ using Microsoft.Extensions.Hosting;
 using TFX.Core;
 using TFX.Core.Cache;
 using TFX.Core.Controllers;
+using TFX.Core.Data.DB;
 using TFX.Core.Identity;
 using TFX.Core.IDs;
 using TFX.Core.Interfaces;
 using TFX.ESC.Core;
+using TFX.ESC.Core.DB;
 namespace Launcher
 {
     public class Program
@@ -37,6 +40,11 @@ namespace Launcher
             builder.Services.AddSingleton<XResponseWrapperFilter>();
             builder.Services.AddScoped<XITenantProvider, XTenantProvider>();
             builder.Services.AddScoped<XISharedTransaction, XSharedTransaction>();
+
+            builder.Services.AddDbContext<TFXCoreDataContext>();
+            builder.Services.AddDbContext<TFXESCCoreContext>();
+
+
             Console.WriteLine(typeof(TFXESCCoreModule).FullName);
             builder.AddDependencies();
             App = builder.Build();

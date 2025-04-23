@@ -3,7 +3,6 @@ using System;
 using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
-using TFX.Core.Access.UsuariosAtivos;
 
 namespace TFX.Core.Access
 {
@@ -11,8 +10,6 @@ namespace TFX.Core.Access
     {
         public override void Initialize(IServiceCollection pServices)
         {
-            pServices.AddTransient<IUsuariosAtivosService, UsuariosAtivosService>();
-            pServices.AddDbContext<UsuariosAtivosService.DBContext>();
         }
     }
 }
