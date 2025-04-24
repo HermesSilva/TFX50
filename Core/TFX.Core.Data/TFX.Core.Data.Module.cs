@@ -12,6 +12,7 @@ namespace TFX.Core.Data
     {
         public override void Initialize(IServiceCollection pServices)
         {
+            Apps.Add(Usuario.gCID, new Usuario());
             pServices.AddTransient<IMenuService, MenuService>();
             pServices.AddDbContext<MenuService.DBContext>();
             pServices.AddTransient<IUsuarioService, UsuarioService>();

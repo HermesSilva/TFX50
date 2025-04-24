@@ -71,13 +71,33 @@ namespace TFX.Core.Model.FRM
         {
         }
 
-        public Boolean IsLineForm;
-        public Int32 MinRows;
-        public Guid ConfigCID;
-        public Boolean ConfigPKFilter;
-        public Boolean CompanyFilter;
-        public XFRMStyle Style = XFRMStyle.Normal;
-        public event XValidateAction ValidateAction;
-        public XFRMType FRMType = XFRMType.None;
+        public Boolean IsLineForm
+        {
+            get; set;
+        }
+        public Int32 MinRows
+        {
+            get; set;
+        }
+        public Guid ConfigCID
+        {
+            get; set;
+        }
+        public Boolean ConfigPKFilter
+        {
+            get; set;
+        }
+        public Boolean CompanyFilter
+        {
+            get; set;
+        }
+        public XFRMStyle Style
+        {
+            get; set;
+        }
+        public XFRMType FRMType
+        {
+            get; set;
+        }
     }
 }

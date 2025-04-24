@@ -18,38 +18,121 @@ namespace TFX.Core.Model.APP
 
     public class XAddButton : XObject
     {
-        public Int32 ServiceID;
-        public String IconURL;
-        public String AskMessage;
-        public String Hint;
-        public Boolean AllRecords;
-        public XPAMActionView ActionType;
-        public Int16[] Rights = new Int16[] { 1 };
+        public Int32 ServiceID
+        {
+            get; set;
+        }
+        public String IconURL
+        {
+            get; set;
+        }
+        public String AskMessage
+        {
+            get; set;
+        }
+        public String Hint
+        {
+            get; set;
+        }
+        public Boolean AllRecords
+        {
+            get; set;
+        }
+        public XPAMActionView ActionType
+        {
+            get; set;
+        }
+        public Guid[] Rights
+        {
+            get; set;
+        }
     }
     public class XAPPModel : XContainerObject
     {
-        public Guid DataSourceID;
-        public Boolean FLushAtStep;
-        public Size Size;
+        public Guid DataSourceID
+        {
+            get; set;
+        }
+        public Boolean FLushAtStep
+        {
+            get; set;
+        }
+        public Size Size
+        {
+            get; set;
+        }
         private Dictionary<Guid, XAPPStep> Steps = new Dictionary<Guid, XAPPStep>();
-        public Boolean HasDetail;
-        public Guid SearchServiceID;
-        public Guid SearchPKID;
-        public Guid[] SubjectFields;
-        public String SubjectTitle;
-        public Guid MainViewID;
-        public Int16 MainMenuID;
-        public Int16 PlatformID;
-        public Boolean IsSystem;
-        public Guid ConfigFormID;
-        public Boolean IsDisabled;
-        public Int16[] Rights;
-        public String Icon;
-        public Int16 GroupID;
-        public Int32 AppTypeID = 0;
-        public Int16[] UseTypeID = new Int16[0];
-        public Boolean OnlyHolding = false;
-        public Boolean FreeForUsers = false;
-        private Boolean _IsReadOnly = false;
+        public Boolean HasDetail
+        {
+            get; set;
+        }
+        public Guid SearchServiceID
+        {
+            get; set;
+        }
+        public Guid SearchPKID
+        {
+            get; set;
+        }
+        public Guid[] SubjectFields
+        {
+            get; set;
+        }
+        public String SubjectTitle
+        {
+            get; set;
+        }
+        public Guid MainViewID
+        {
+            get; set;
+        }
+        public Int16 MainMenuID
+        {
+            get; set;
+        }
+        public Int16 PlatformID
+        {
+            get; set;
+        }
+        public Boolean IsSystem
+        {
+            get; set;
+        }
+        public Guid ConfigFormID
+        {
+            get; set;
+        }
+        public Boolean IsDisabled
+        {
+            get; set;
+        }
+        public Int16[] Rights
+        {
+            get; set;
+        }
+        public String Icon
+        {
+            get; set;
+        }
+        public Int16 GroupID
+        {
+            get; set;
+        }
+        public Int32 AppTypeID
+        {
+            get; set;
+        }
+        public Int16[] UseTypeID
+        {
+            get; set;
+        }
+        public Boolean OnlyHolding
+        {
+            get; set;
+        }
+        public Boolean FreeForUsers
+        {
+            get; set;
+        }
     }
 }
