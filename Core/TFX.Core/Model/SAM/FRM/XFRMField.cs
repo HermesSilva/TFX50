@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using TFX.Core.Data;
 using TFX.Core.DB;
 
@@ -72,7 +73,7 @@ namespace TFX.Core.Model.FRM
 
     public class XFRMField : XContainerObject
     {
-       
+
         public XFRMField()
         {
         }
@@ -92,65 +93,238 @@ namespace TFX.Core.Model.FRM
         }
 
         public XGeneratorInfo GeneratorInfo = new XGeneratorInfo();
-        public Guid DataSourceID;
-        public Int32 Location;
-        public Guid EditorCID;
-        public Object DefaultValue;
-        public Boolean IsNullable;
-        public Boolean AllowEmpty;
-        public Int32 RowCount;
-        public Int32 ColCount;
-        public Guid OwnerID;
-        public Guid ParentID;
-        public Guid[] TargetDisplayFieldID;
-        public Guid[] SourceDisplayFieldID;
-        public Guid[] TargetFilterFieldID;
-        public Guid[] SourceFilterFieldID;
-
-        public Guid GridFormCID;
-        public Guid RowsServiceID;
-        public Guid ColsServiceID;
-        public Boolean JustifyHeight;
-        public Boolean IsRequired;
-        public Guid[] AdditionalFieldsID;
-        public Guid[] AdditionalDataFieldsID;
-        public Int32 Order;
-        public XFRMModel Model;
-        public Boolean IsFreeSearch;
-        public String Mask;
-        public Guid LookupPKFieldID;
-        public Boolean FormImplace;
-        public Boolean IsReadOnly;
-        public Guid FormFieldID;
-        public Int32 TypeID;
-        public Int32 Length;
-        public Int32 Scale;
-        public Guid PAMID;
-        public Guid SourceFieldID;
-        public Boolean AutoLoad;
-        public Guid RowFieldID;
-        public Boolean ForceRW;
-        public Int32[] FilterData;
-        public XFRMFieldFilterType FilterType;
-        public Boolean CanInsert;
-        public Boolean CanUpdate;
-        public XOperator Operator;
-        public Boolean FilterInative;
-        public Guid SearchServiceID;
-        public Guid SearchPKFieldID;
-        public Int32[] SearchFilterFieldsID;
-        public String ValueMath;
-        public String FontColor;
-        public XFontStyle FontStyle;
-        public Boolean ShowFooter;
-        public String[] ValueItems;
-        public Boolean IsAnswer;
-        public Boolean AllowMultiSelect;
-        public Boolean NewLine;
-        public Int32 FontSize = 13;
-        public Guid ViewSAM;
-        public Boolean IsHidden;
-        public Boolean AllwaysPrint;
+        public Guid DataSourceID
+        {
+            get; set;
+        }
+        public Int32 Location
+        {
+            get; set;
+        }
+        public Guid EditorCID
+        {
+            get; set;
+        }
+        public Object DefaultValue
+        {
+            get; set;
+        }
+        public Boolean IsNullable
+        {
+            get; set;
+        }
+        public Boolean AllowEmpty
+        {
+            get; set;
+        }
+        public Int32 RowCount
+        {
+            get; set;
+        }
+        public Int32 ColCount
+        {
+            get; set;
+        }
+        public Guid OwnerID
+        {
+            get; set;
+        }
+        public Guid ParentID
+        {
+            get; set;
+        }
+        public Guid[] TargetDisplayFieldID
+        {
+            get; set;
+        }
+        public Guid[] SourceDisplayFieldID
+        {
+            get; set;
+        }
+        public Guid[] TargetFilterFieldID
+        {
+            get; set;
+        }
+        public Guid[] SourceFilterFieldID
+        {
+            get; set;
+        }
+        public Guid GridFormCID
+        {
+            get; set;
+        }
+        public Guid RowsServiceID
+        {
+            get; set;
+        }
+        public Guid ColsServiceID
+        {
+            get; set;
+        }
+        public Boolean JustifyHeight
+        {
+            get; set;
+        }
+        public Boolean IsRequired
+        {
+            get; set;
+        }
+        public Guid[] AdditionalFieldsID
+        {
+            get; set;
+        }
+        public Guid[] AdditionalDataFieldsID
+        {
+            get; set;
+        }
+        public Int32 Order
+        {
+            get; set;
+        }
+        public XFRMModel Model
+        {
+            get; set;
+        }
+        public Boolean IsFreeSearch
+        {
+            get; set;
+        }
+        public String Mask
+        {
+            get; set;
+        }
+        public Guid LookupPKFieldID
+        {
+            get; set;
+        }
+        public Boolean FormImplace
+        {
+            get; set;
+        }
+        public Boolean IsReadOnly
+        {
+            get; set;
+        }
+        public Guid FormFieldID
+        {
+            get; set;
+        }
+        public Int32 TypeID
+        {
+            get; set;
+        }
+        public Int32 Length
+        {
+            get; set;
+        }
+        public Int32 Scale
+        {
+            get; set;
+        }
+        public Guid PAMID
+        {
+            get; set;
+        }
+        public Guid SourceFieldID
+        {
+            get; set;
+        }
+        public Boolean AutoLoad
+        {
+            get; set;
+        }
+        public Guid RowFieldID
+        {
+            get; set;
+        }
+        public Boolean ForceRW
+        {
+            get; set;
+        }
+        public Int32[] FilterData
+        {
+            get; set;
+        }
+        public XFRMFieldFilterType FilterType
+        {
+            get; set;
+        }
+        public Boolean CanInsert
+        {
+            get; set;
+        }
+        public Boolean CanUpdate
+        {
+            get; set;
+        }
+        public XOperator Operator
+        {
+            get; set;
+        }
+        public Boolean FilterInative
+        {
+            get; set;
+        }
+        public Guid SearchServiceID
+        {
+            get; set;
+        }
+        public Guid SearchPKFieldID
+        {
+            get; set;
+        }
+        public Int32[] SearchFilterFieldsID
+        {
+            get; set;
+        }
+        public String ValueMath
+        {
+            get; set;
+        }
+        public String FontColor
+        {
+            get; set;
+        }
+        public XFontStyle FontStyle
+        {
+            get; set;
+        }
+        public Boolean ShowFooter
+        {
+            get; set;
+        }
+        public String[] ValueItems
+        {
+            get; set;
+        }
+        public Boolean IsAnswer
+        {
+            get; set;
+        }
+        public Boolean AllowMultiSelect
+        {
+            get; set;
+        }
+        public Boolean NewLine
+        {
+            get; set;
+        }
+        public Int32 FontSize
+        {
+            get; set;
+        }
+        public Guid ViewSAM
+        {
+            get; set;
+        }
+        public Boolean IsHidden
+        {
+            get; set;
+        }
+        public Boolean AllwaysPrint
+        {
+            get; set;
+        }
         public List<String> Rules = new List<String>();
 
         public virtual Object Value
