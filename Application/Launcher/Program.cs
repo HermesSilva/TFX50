@@ -30,7 +30,7 @@ namespace Launcher
             var builder = WebApplication.CreateBuilder(new WebApplicationOptions
             {
                 Args = args,
-                WebRootPath = "/Tootega/Source/Access-POC/App/Launchers/WebUI/dist/ef6-angular-poc"
+                ContentRootPath = "/Tootega/Source/TFX50/Core/TFX.Core.UI"
             });
             builder.Services.UseOpenApi();
 
