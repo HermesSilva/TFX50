@@ -37,6 +37,7 @@ type XChangeHandler<T> = (Object: T, OldValue: any, NewValue: any) => void;
 
 class XEventManager
 {
+
     private static _CallOnce = new Array<XCallOnce>();
 
     static TrackChange<T extends object, K extends keyof T>(pObjeto: T, pPropriedade: K, pOnChange: XChangeHandler<T>)
@@ -89,27 +90,36 @@ class XEventManager
         observer.observe(pContext.HTML, pConfig);
     }
 
+    static Remove(pElement: HTMLElement)
+    {
+        if (pElement.Handlers)
+        {
+            for (var i = 0; i < pElement.Handlers.length; i++)
+            {
+                var em = pElement.Handlers[i];
+                console.log("removendo -> " + em.Event + '  ' + em.Method);
+                pElement.removeEventListener(em.Event, em.Method);
+            }
+        }
+        for (var i = 0; i < pElement.childNodes.length; i++)
+            this.Remove(<HTMLElement>pElement.childNodes[i])
+    }
+
     static AddEvent(pContext: any, pElement: HTMLElement, pEvent: XEventType, pMethod: any, pCheckSource: boolean = false)
     {
         var elm: any = pElement;
         if (elm.Method == null)
             elm.Method = new Object();
-        XEventManager.RemoveEvent(pContext, pElement, pEvent);
-        elm.Method[pContext.UUID + "-" + pEvent] = (arg: any) =>
-        {
-            XEventManager.Call(pContext, pMethod, pElement, pCheckSource, arg);
-        }
-        pElement.addEventListener(pEvent, elm.Method[pContext.UUID + "-" + pEvent]);
+        if (pElement.Handlers == null)
+            pElement.Handlers = new XArray<EventMethod>();
+
+        var method = (arg: any) => XEventManager.Call(pContext, pMethod, pElement, pCheckSource, arg);
+        elm.Method[pContext.UUID + "-" + pEvent] = method;
+        pElement.removeEventListener(pEvent, method);
+        pElement.Handlers.Add({ Event: pEvent, Method: method });
+        pElement.addEventListener(pEvent, method);
     }
 
-    static RemoveEvent(pContext: any, pElement: any, pEvent: string)
-    {
-        if (pElement.Method != null && pElement.Method[pContext.UUID + "-" + pEvent] != null)
-        {
-            pElement.removeEventListener(pEvent, pElement.Method[pContext.UUID + "-" + pEvent]);
-            pElement.Method[pContext.UUID + "-" + pEvent] = null;
-        }
-    }
 
     static Call(pCallScope: any, pEvent: any, pHTM: any, pCheckSource: boolean, pArg: any)
     {

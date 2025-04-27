@@ -57,9 +57,10 @@
 
     Free()
     {
+        XEventManager.Remove(this.HTML);
         if (this.Owner instanceof XElement)
             this.Owner.Children.Remove(this);
-        this.HTML.parentNode?.removeChild(this.HTML);
+        this.HTML.remove();
     }
 
     GetOwnerOrSelf(pContext: XIElement): XISplashable
