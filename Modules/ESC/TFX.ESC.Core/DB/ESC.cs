@@ -175,9 +175,8 @@ namespace TFX.ESC.Core.DB
                 ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
-                ett.ToTable("CORxAgregado");
+                ett.ToTable("CORxAgregado", t => t.ExcludeFromMigrations());
             });
-
         }
 
         private void ConfigureCORxEmpresa(ModelBuilder pBuilder)
@@ -190,7 +189,7 @@ namespace TFX.ESC.Core.DB
                 ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.CNPJ).HasColumnType(GetDBType("String", 14));
-                ett.ToTable("CORxEmpresa");
+                ett.ToTable("CORxEmpresa", t => t.ExcludeFromMigrations());
             });
         }
 
@@ -202,7 +201,7 @@ namespace TFX.ESC.Core.DB
                 
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
-                ett.ToTable("CORxPessoa");
+                ett.ToTable("CORxPessoa", t => t.ExcludeFromMigrations());
             });
         }
 

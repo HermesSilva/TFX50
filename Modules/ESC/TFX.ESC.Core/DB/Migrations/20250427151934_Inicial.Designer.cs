@@ -12,7 +12,7 @@ using TFX.ESC.Core.DB;
 namespace TFX.Core.DB.Migrations
 {
     [DbContext(typeof(TFXESCCoreContext))]
-    [Migration("20250423205055_Inicial")]
+    [Migration("20250427151934_Inicial")]
     partial class Inicial
     {
         /// <inheritdoc />
@@ -42,7 +42,10 @@ namespace TFX.Core.DB.Migrations
                     b.HasKey("CORxAgregadoID")
                         .HasName("PK_CORxAgregado");
 
-                    b.ToTable("CORxAgregado", (string)null);
+                    b.ToTable("CORxAgregado", null, t =>
+                        {
+                            t.ExcludeFromMigrations();
+                        });
                 });
 
             modelBuilder.Entity("TFX.ESC.Core.DB.TFXESCCoreContext+_CORxEmpresa", b =>
@@ -65,7 +68,10 @@ namespace TFX.Core.DB.Migrations
                     b.HasKey("CORxEmpresaID")
                         .HasName("PK_CORxEmpresa");
 
-                    b.ToTable("CORxEmpresa", (string)null);
+                    b.ToTable("CORxEmpresa", null, t =>
+                        {
+                            t.ExcludeFromMigrations();
+                        });
                 });
 
             modelBuilder.Entity("TFX.ESC.Core.DB.TFXESCCoreContext+_CORxPessoa", b =>
@@ -82,7 +88,10 @@ namespace TFX.Core.DB.Migrations
                     b.HasKey("CORxPessoaID")
                         .HasName("PK_CORxPessoa");
 
-                    b.ToTable("CORxPessoa", (string)null);
+                    b.ToTable("CORxPessoa", null, t =>
+                        {
+                            t.ExcludeFromMigrations();
+                        });
                 });
 
             modelBuilder.Entity("TFX.ESC.Core.DB.TFXESCCoreContext+_ESCxContabilista", b =>
