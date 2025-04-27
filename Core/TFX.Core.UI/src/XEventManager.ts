@@ -40,25 +40,32 @@ class XEventManager
 
     private static _CallOnce = new Array<XCallOnce>();
 
-    static TrackChange<T extends object, K extends keyof T>(objeto: T, propriedade: K, onChange: XChangeHandler<T>)
+    static TrackChange<T extends object, K extends keyof T>(pObjeto: T, pPropriedade: K, pOnChange: XChangeHandler<T>)
     {
-        let valorInterno = objeto[propriedade];
+        const desc = Object.getOwnPropertyDescriptor(pObjeto, pPropriedade);
 
-        Object.defineProperty(objeto, propriedade,
+        let ivlr = pObjeto[pPropriedade];
+
+        Object.defineProperty(pObjeto, pPropriedade, {
+            configurable: true, enumerable: true,
+            get()
             {
-                get() { return valorInterno; },
-                set(novoValor: T[K])
+                return desc?.get ? desc.get.call(pObjeto) : ivlr;
+            },
+            set(nvlr: T[K])
+            {
+                const vlr = desc?.get ? desc.get.call(pObjeto) : ivlr;
+
+                if (vlr !== nvlr)
                 {
-                    const valorAntigo = valorInterno;
-                    if (valorAntigo !== novoValor)
-                    {
-                        onChange(objeto, valorAntigo, novoValor);
-                        valorInterno = novoValor;
-                    }
-                },
-                configurable: true,
-                enumerable: true
-            });
+                    pOnChange(pObjeto, vlr, nvlr);
+                    if (desc?.set)
+                        desc.set.call(pObjeto, nvlr);
+                    else
+                        ivlr = nvlr;
+                }
+            }
+        });
     }
 
     static AddExecOnce(pUUID: string, pEvent: any)

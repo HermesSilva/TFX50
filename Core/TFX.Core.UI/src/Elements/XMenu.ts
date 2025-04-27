@@ -1,20 +1,11 @@
 ﻿/// <reference path="XDiv.ts" />
 
-class XDataMenuItem  {
+class XDataMenuItem
+{
     Title: string | any;
     ID: string | any;
     ResourceID: string | any;
-    _Count: number | any;
-    get Count(): number
-    {
-        return this._Count;
-    }
-
-    set Count(pValue: number)
-    {
-        this._Count = pValue;
-    }
-
+    Count: number | any;
 
 };
 type XDataMenu = {
@@ -30,6 +21,15 @@ class XMenuButtonItem extends XDiv
     {
         super(pOwner, "hover-item");
         this.HTML.textContent = pItem.Title;
+        this.Instances = XUtils.AddElement<HTMLLIElement>(this.HTML, 'span', "XAppCount");
+        XEventManager.TrackChange(pItem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
+
+    }
+    Instances: HTMLLIElement;
+
+    Change(campo: any, antigo: any, novo: any): void
+    {
+        this.Instances.innerText = "(" + novo + ")";
     }
 }
 
@@ -92,14 +92,15 @@ class XMenuItem extends XDiv
                 this.Instances = XUtils.AddElement<HTMLLIElement>(li, 'span', "XAppCount");
                 this.Title.innerText = subitem.Title;
                 this.ID = subitem.ID;
-                this.Instances.innerText = "(5)";
                 XEventManager.TrackChange(subitem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
             };
         }
     }
+
     Change(campo: any, antigo: any, novo: any)
     {
-
+        if (this.Instances != null)
+            this.Instances.innerText = "(" + novo + ")";
     }
 
     private CreateHoverPanel()
