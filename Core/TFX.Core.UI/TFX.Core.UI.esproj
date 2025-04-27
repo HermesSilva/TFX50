@@ -3,4 +3,7 @@
     <None Remove=".vscode\**" />
     <TypeScriptConfiguration Remove=".vscode\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\Net\Data\" />
+  </ItemGroup>
 </Project>

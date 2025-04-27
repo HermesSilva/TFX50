@@ -1,44 +1,44 @@
 ﻿/// <reference path="XDiv.ts" />
 
+type XDataMenuItem = { Title: string; ID: string };
+type XDataMenu = { Icon: string; Title: string; Items: XDataMenuItem[] };
+
 class XMenuButtonItem extends XDiv
 {
-    constructor(pOwner: XElement | HTMLElement | null, pItem: any)
+    constructor(pOwner: XElement | HTMLElement | null, pItem: XDataMenuItem)
     {
         super(pOwner, "hover-item");
-        this.HTML.textContent = pItem;
+        this.HTML.textContent = pItem.Title;
     }
 }
 
-
 class XHoverPanel extends XDiv
 {
-    constructor(pOwner: XElement | HTMLElement | null, pItem: any)
+    constructor(pOwner: XElement | HTMLElement | null, pItem: XDataMenu)
     {
         super(pOwner, "hover-panel");
         this.Header = new XDiv(this, 'accordion-header');
         const icon = new XDiv(this.Header, 'icon');
-        icon.HTML.innerHTML = pItem.icon;
+        icon.HTML.innerHTML = pItem.Icon;
         const headerText = XUtils.AddElement<HTMLSpanElement>(this.Header, "span", null);
-        headerText.textContent = pItem.title;
+        headerText.textContent = pItem.Title;
     }
     Header: XDiv;
 }
 
 class XMenuItem extends XDiv
 {
-    constructor(pOwner: XElement | HTMLElement | null, pItem: any)
+    constructor(pOwner: XElement | HTMLElement | null, pItem: XDataMenu)
     {
         super(pOwner, "accordion-item");
         this.Header = new XDiv(this, 'accordion-header');
         this.DataItem = pItem;
 
-        this.Header.HTML.addEventListener('click', () => this.Menu?.ExpandItem(this))
-
-
+        this.Header.HTML.addEventListener('click', () =>this.Menu?.ExpandItem(this))
         const icon = new XDiv(this.Header, 'icon');
-        icon.HTML.innerHTML = pItem.icon;
+        icon.HTML.innerHTML = pItem.Icon ?? '✔';
         const headerText = XUtils.AddElement<HTMLSpanElement>(this.Header, "span", "menu-span");
-        headerText.textContent = pItem.title;
+        headerText.textContent = pItem.Title;
 
         this.CreateHoverPanel();
         this.CreateItens();
@@ -46,27 +46,29 @@ class XMenuItem extends XDiv
 
     Header: XDiv;
     Menu: XMenu | null = null;
-    DataItem: any;
+    DataItem: XDataMenu;
     HoverPanel: XHoverPanel | null = null;
     HoverItens = new XArray<XMenuButtonItem>();
     Title: HTMLLIElement | null = null;
     Instances: HTMLLIElement | null = null;
+    ID: string | null = null;
 
     private CreateItens()
     {
-        if (this.DataItem.subItems)
+        if (this.DataItem)
         {
             const submenu = XUtils.AddElement<HTMLUListElement>(this, 'ul', 'accordion-submenu');
-            if (this.DataItem.subItems.length > 8)
+            if (this.DataItem.Items.length > 8)
                 submenu.classList.add('has-scroll');
 
-            for (var i = 0; i < this.DataItem.subItems.length; i++)
+            for (var i = 0; i < this.DataItem.Items.length; i++)
             {
-                var subitem = this.DataItem.subItems[i];
+                var subitem = this.DataItem.Items[i];
                 const li = XUtils.AddElement<HTMLLIElement>(submenu, 'li', "XAppItem");
                 this.Title = XUtils.AddElement<HTMLLIElement>(li, 'span', null);
                 this.Instances = XUtils.AddElement<HTMLLIElement>(li, 'span', "XAppCount");
-                this.Title.innerText = subitem;
+                this.Title.innerText = subitem.Title;
+                this.ID = subitem.ID;
                 this.Instances.innerText = "(5)";
             };
         }
@@ -74,13 +76,13 @@ class XMenuItem extends XDiv
 
     private CreateHoverPanel()
     {
-        if (this.DataItem.subItems)
+        if (this.DataItem.Title)
         {
             this.HoverPanel = new XHoverPanel(this, this.DataItem);
 
-            for (var i = 0; i < this.DataItem.subItems.length; i++)
+            for (var i = 0; i < this.DataItem.Items.length; i++)
             {
-                var subitem = this.DataItem.subItems[i];
+                var subitem = this.DataItem.Items[i];
                 var hitem = new XMenuButtonItem(this.HoverPanel, subitem);
                 this.HoverItens.Add(hitem);
             }
@@ -88,43 +90,14 @@ class XMenuItem extends XDiv
     }
 }
 
-
 class XMenu extends XDiv
 {
-    private menuData = [
-        {
-            icon: '🏠',
-            title: 'Home',
-            subItems: ['Nossa História', 'Equipe', 'Parceiros']
-        },
-        {
-            icon: '🛠️',
-            title: 'Serviços',
-            subItems: Array.from({ length: 10 }, (_, i) => `Serviço ${i + 1}`)
-        },
-        {
-            icon: '📚',
-            title: 'Sobre',
-            subItems: ['Nossa História', 'Equipe', 'Parceiros']
-        },
-        {
-            icon: '📦',
-            title: 'Produtos',
-            subItems: Array.from({ length: 12 }, (_, i) => `Produto ${i + 1}`)
-        },
-        {
-            icon: '📞',
-            title: 'Contato',
-            subItems: ['Nossa História', 'Equipe', 'Parceiros']
-        }
-    ];
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "XMenu");
         this.ToggleButton = new XBaseButton(this, "collapse-toggle");
         this.AccordionMenu = new XDiv(this, "accordion-menu");
         this.ToggleButton.HTML.addEventListener('click', (e) => this.Collaspse(e));
-        this.CreateItens();
     }
 
     ToggleButton: XBaseButton;
@@ -137,11 +110,9 @@ class XMenu extends XDiv
             return;
         if (this.UnExpand(pItem))
             return;
-        //if (this.AccordionMenu.HTML.classList.contains('collapsed'))
-        //    this.AccordionMenu.HTML.classList.remove('collapsed');
 
         this.Itens.forEach(i => i.HTML.classList.remove('active'));
-        if (pItem.DataItem.subItems)
+        if (pItem.DataItem.Items)
             pItem.HTML.classList.add('active');
     }
 
@@ -162,11 +133,11 @@ class XMenu extends XDiv
         this.HTML.classList.toggle('Collapsed');
     }
 
-    CreateItens()
+    SetData(pData: Array<XDataMenu>)
     {
-        for (var i = 0; i < this.menuData.length; i++)
+        for (var i = 0; i < pData.length; i++)
         {
-            var mitem = this.menuData[i];
+            var mitem = pData[i];
             var item = new XMenuItem(this.AccordionMenu, mitem);
             item.Menu = this;
             this.Itens.Add(item);

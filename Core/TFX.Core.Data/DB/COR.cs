@@ -208,6 +208,15 @@ namespace TFX.Core.Data.DB
 
         public class _CORxPessoa
         {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _CORxPessoa> _SeedData = new Dictionary<Guid, _CORxPessoa>()
+                {
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _CORxPessoa { CORxPessoaID = new Guid("00000000-0000-0000-0000-000000000000"), Nome = @"NA" },
+                    [new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8")] = new _CORxPessoa { CORxPessoaID = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8"), Nome = @"Sistem Admin" }
+                };
+                public static _CORxPessoa[] SeedData => _SeedData.Values.ToArray();
+            }
             public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
@@ -265,6 +274,18 @@ namespace TFX.Core.Data.DB
 
         public class _CORxRecursoDireito
         {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _CORxRecursoDireito> _SeedData = new Dictionary<Guid, _CORxRecursoDireito>()
+                {
+                    [new Guid("E3FE8EFA-F5CD-4184-A876-CCDA2CF53853")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("E3FE8EFA-F5CD-4184-A876-CCDA2CF53853"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)3 },
+                    [new Guid("A5B94287-0DEE-4CE2-AE1B-97C604920F3B")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("A5B94287-0DEE-4CE2-AE1B-97C604920F3B"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)4 },
+                    [new Guid("2BFD129C-CAB6-4BF5-9395-59173AB378BC")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("2BFD129C-CAB6-4BF5-9395-59173AB378BC"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)5 },
+                    [new Guid("132F09B1-D564-494B-8147-B25B575F0A60")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("132F09B1-D564-494B-8147-B25B575F0A60"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)1 },
+                    [new Guid("2C5D7092-96A9-458B-A191-4519C53F194C")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("2C5D7092-96A9-458B-A191-4519C53F194C"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)2 }
+                };
+                public static _CORxRecursoDireito[] SeedData => _SeedData.Values.ToArray();
+            }
             [Display(Name = "Direitos")]
             [Required()]
             public Int16 CORxDireitosID {get; set;}
@@ -286,6 +307,14 @@ namespace TFX.Core.Data.DB
 
         public class _CORxRecursoTemplate
         {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _CORxRecursoTemplate> _SeedData = new Dictionary<Guid, _CORxRecursoTemplate>()
+                {
+                    [new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6")] = new _CORxRecursoTemplate { CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), Template = @"Cloud Admin", CORxStatusID = (Int16)1 }
+                };
+                public static _CORxRecursoTemplate[] SeedData => _SeedData.Values.ToArray();
+            }
             [Display(Name = "Recurso")]
             [Required()]
             public Guid CORxRecursoID {get; set;}
@@ -311,6 +340,18 @@ namespace TFX.Core.Data.DB
 
         public class _CORxRecursoTemplateDireito
         {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _CORxRecursoTemplateDireito> _SeedData = new Dictionary<Guid, _CORxRecursoTemplateDireito>()
+                {
+                    [new Guid("E8709409-A964-4092-8B8E-215DABE3514B")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("E8709409-A964-4092-8B8E-215DABE3514B"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("2BFD129C-CAB6-4BF5-9395-59173AB378BC") },
+                    [new Guid("9F147453-0765-4824-8DD1-9B707BDB0138")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("9F147453-0765-4824-8DD1-9B707BDB0138"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("132F09B1-D564-494B-8147-B25B575F0A60") },
+                    [new Guid("4C4D91B0-4ED8-41AE-90A4-BFD5EE8118A3")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("4C4D91B0-4ED8-41AE-90A4-BFD5EE8118A3"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("2C5D7092-96A9-458B-A191-4519C53F194C") },
+                    [new Guid("99FB05BE-79B0-47C9-9121-D7C76BC67C25")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("99FB05BE-79B0-47C9-9121-D7C76BC67C25"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("A5B94287-0DEE-4CE2-AE1B-97C604920F3B") },
+                    [new Guid("3F281F5A-81CB-4840-880E-546212B48BB8")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("3F281F5A-81CB-4840-880E-546212B48BB8"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("E3FE8EFA-F5CD-4184-A876-CCDA2CF53853") }
+                };
+                public static _CORxRecursoTemplateDireito[] SeedData => _SeedData.Values.ToArray();
+            }
             [Display(Name = "Direitos por Recurso")]
             [Required()]
             public Guid CORxRecursoDireitoID {get; set;}
@@ -388,6 +429,15 @@ namespace TFX.Core.Data.DB
 
         public class _CORxUsuario
         {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _CORxUsuario> _SeedData = new Dictionary<Guid, _CORxUsuario>()
+                {
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _CORxUsuario { CORxUsuarioID = new Guid("00000000-0000-0000-0000-000000000000"), EMail = @"NA" },
+                    [new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8")] = new _CORxUsuario { CORxUsuarioID = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8"), EMail = @"admin@tootega.com.br" }
+                };
+                public static _CORxUsuario[] SeedData => _SeedData.Values.ToArray();
+            }
             public Boolean IsPKEmpty => !CORxUsuarioID.HasValue;
             [Display(Name = "Usuário")]
             [Required()]
@@ -669,6 +719,7 @@ namespace TFX.Core.Data.DB
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
                 ett.ToTable("CORxPessoa");
+                ett.HasData(_CORxPessoa.XDefault.SeedData);
             });
         }
 
@@ -728,6 +779,7 @@ namespace TFX.Core.Data.DB
 
                 ett.HasIndex(d => d.CORxRecursoID).HasDatabaseName("IX_8642F0512C404418A0C5B1C586A11496");
                 ett.HasIndex(d => d.CORxDireitosID).HasDatabaseName("IX_2BBF2707C62C4B4A80B9A3FE91C2D5B3");
+                ett.HasData(_CORxRecursoDireito.XDefault.SeedData);
             });
         }
 
@@ -757,6 +809,7 @@ namespace TFX.Core.Data.DB
 
                 ett.HasIndex(d => d.CORxRecursoID).HasDatabaseName("IX_CA7AE4A659F94B55AE8D02FC25FBE69F");
                 ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_DF3AB7500B414D228CE6266520EA9D8A");
+                ett.HasData(_CORxRecursoTemplate.XDefault.SeedData);
             });
         }
 
@@ -785,6 +838,7 @@ namespace TFX.Core.Data.DB
 
                 ett.HasIndex(d => d.CORxRecursoTemplateID).HasDatabaseName("IX_998C84A533E14063A4E30498D27B1762");
                 ett.HasIndex(d => d.CORxRecursoDireitoID).HasDatabaseName("IX_413AF556566D4C86868658231BC10E05");
+                ett.HasData(_CORxRecursoTemplateDireito.XDefault.SeedData);
             });
         }
 
@@ -831,6 +885,7 @@ namespace TFX.Core.Data.DB
                    .HasConstraintName("FK_F3E4CFF511294AD5884ACAC97FDE96C4");
 
                 ett.HasIndex(d => d.CORxUsuarioID).HasDatabaseName("IX_F3E4CFF511294AD5884ACAC97FDE96C4");
+                ett.HasData(_CORxUsuario.XDefault.SeedData);
             });
         }
 

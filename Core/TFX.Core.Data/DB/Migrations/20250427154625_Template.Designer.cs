@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TFX.Core.Data.DB;
 
@@ -11,9 +12,11 @@ using TFX.Core.Data.DB;
 namespace TFX.Core.DB.Migrations
 {
     [DbContext(typeof(TFXCoreDataContext))]
-    partial class TFXCoreDataContextModelSnapshot : ModelSnapshot
+    [Migration("20250427154625_Template")]
+    partial class Template
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
