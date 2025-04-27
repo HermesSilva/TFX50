@@ -34,12 +34,52 @@ namespace TFX.Core.Data.DB
             public const Int16 Alterar = (Int16)3;
         }
 
+        public static class CORxPessoa
+        {
+            public const string sNA = @"NA";
+            public static Guid NA = new Guid("00000000-0000-0000-0000-000000000000");
+            public const string sSistem_Admin = @"Sistem Admin";
+            public static Guid Sistem_Admin = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8");
+        }
+
+        public static class CORxUsuario
+        {
+            public const string sNA = @"NA";
+            public static Guid NA = new Guid("00000000-0000-0000-0000-000000000000");
+            public const string sadmintootegacombr = @"admin@tootega.com.br";
+            public static Guid admintootegacombr = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8");
+        }
+
         public static class CORxRecurso
         {
             public const string sNA = @"NA";
             public static Guid NA = new Guid("00000000-0000-0000-0000-000000000000");
             public const string sUsuario = @"Usuario";
             public static Guid Usuario = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C");
+        }
+
+        public static class CORxRecursoTemplate
+        {
+            public const string sCloud_Admin = @"Cloud Admin";
+            public static Guid Cloud_Admin = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6");
+        }
+
+        public static class CORxRecursoDireito
+        {
+            public static Guid E3FE8EFAF5CD4184A876CCDA2CF53853 = new Guid("E3FE8EFA-F5CD-4184-A876-CCDA2CF53853");
+            public static Guid A5B942870DEE4CE2AE1B97C604920F3B = new Guid("A5B94287-0DEE-4CE2-AE1B-97C604920F3B");
+            public static Guid _2BFD129CCAB64BF5939559173AB378BC = new Guid("2BFD129C-CAB6-4BF5-9395-59173AB378BC");
+            public static Guid _132F09B1D564494B8147B25B575F0A60 = new Guid("132F09B1-D564-494B-8147-B25B575F0A60");
+            public static Guid _2C5D709296A9458BA1914519C53F194C = new Guid("2C5D7092-96A9-458B-A191-4519C53F194C");
+        }
+
+        public static class CORxRecursoTemplateDireito
+        {
+            public static Guid E8709409A96440928B8E215DABE3514B = new Guid("E8709409-A964-4092-8B8E-215DABE3514B");
+            public static Guid _9F147453076548248DD19B707BDB0138 = new Guid("9F147453-0765-4824-8DD1-9B707BDB0138");
+            public static Guid _4C4D91B04ED841AE90A4BFD5EE8118A3 = new Guid("4C4D91B0-4ED8-41AE-90A4-BFD5EE8118A3");
+            public static Guid _99FB05BE79B047C99121D7C76BC67C25 = new Guid("99FB05BE-79B0-47C9-9121-D7C76BC67C25");
+            public static Guid _3F281F5A81CB4840880E546212B48BB8 = new Guid("3F281F5A-81CB-4840-880E-546212B48BB8");
         }
 
         public static class CORxRecursoTipo

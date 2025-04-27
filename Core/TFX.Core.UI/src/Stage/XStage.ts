@@ -17,7 +17,7 @@ class XStage extends XDiv
     constructor()
     {
         super(document.body, "MainDiv");
-        this.Menu = new XMenu(this);
+        this.Menu = new MainMenu(this);
         this.TopBar = new XTopBar(this);
         this.Menu.OnResize = () => this.MenuResize();
         this.TabControl = new XStageTabControl(this);
@@ -26,7 +26,7 @@ class XStage extends XDiv
             XStage.SessionID = crypto.randomUUID();
         this.Loaded();
     }
-    Menu: XMenu;
+    Menu: MainMenu;
     TopBar: XTopBar;
     TabControl: XStageTabControl;
     static SessionID: string | any = null;
@@ -38,13 +38,8 @@ class XStage extends XDiv
 
     Loaded()
     {
-        var clt = new XHttpClient(this, "Access/Login");
-        clt.SetHeader("SessionID", XStage.SessionID);
-        clt.OnLoad = this.LoadCallBack;
-        clt.OnError = this.ErroCallBack;
-        var data: any = new Object();
-        data.Login = "teste";
-        clt.SendAsync(data);
+        this.Menu.Load();
+
         //setTimeout(() =>
         //{
         //    clt.Abort();

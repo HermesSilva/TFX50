@@ -8,7 +8,7 @@ class XHttpClient
     private _Context: any;
     private _Timeout: number = 0;
     public Method: string;
-    public OnLoad?: (pData: JSON, pCallData: any | null, pEvent: ProgressEvent | null) => void;
+    public OnLoad?: (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent | null) => void;
     public OnError?: (pError: Error, pCallData: any | null, pEvent: ProgressEvent | null) => void;
     public OnProgress?: (pEvent: ProgressEvent, pCallData: any | null) => void;
 
