@@ -12,8 +12,8 @@ using TFX.Core.Data.DB;
 namespace TFX.Core.DB.Migrations
 {
     [DbContext(typeof(TFXCoreDataContext))]
-    [Migration("20250423215615_Add")]
-    partial class Add
+    [Migration("20250427152023_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

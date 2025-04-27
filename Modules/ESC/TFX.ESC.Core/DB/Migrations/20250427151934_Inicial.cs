@@ -12,6 +12,24 @@ namespace TFX.Core.DB.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "ESCxContabilista",
+                columns: table => new
+                {
+                    ESCxContabilistaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CRC = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ESCxContabilista", x => x.ESCxContabilistaID);
+                    table.ForeignKey(
+                        name: "FK_016960BD2E3F483B996E31532D8B0BE2",
+                        column: x => x.ESCxContabilistaID,
+                        principalTable: "CORxPessoa",
+                        principalColumn: "CORxPessoaID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ESCxEscritorio",
                 columns: table => new
                 {
@@ -29,20 +47,26 @@ namespace TFX.Core.DB.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ESCxContabilista",
+                name: "ESCxEmpresa",
                 columns: table => new
                 {
-                    ESCxContabilistaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CRC = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false)
+                    ESCxEmpresaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ESCxContabilistaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ESCxContabilista", x => x.ESCxContabilistaID);
+                    table.PrimaryKey("PK_ESCxEmpresa", x => x.ESCxEmpresaID);
                     table.ForeignKey(
-                        name: "FK_016960BD2E3F483B996E31532D8B0BE2",
+                        name: "FK_B41CDCE03FE9462798A4F2E3AEFF7442",
+                        column: x => x.ESCxEmpresaID,
+                        principalTable: "CORxEmpresa",
+                        principalColumn: "CORxEmpresaID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_FCAEEE2632074900A104B57043F6C318",
                         column: x => x.ESCxContabilistaID,
-                        principalTable: "CORxPessoa",
-                        principalColumn: "CORxPessoaID",
+                        principalTable: "ESCxContabilista",
+                        principalColumn: "ESCxContabilistaID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -65,30 +89,6 @@ namespace TFX.Core.DB.Migrations
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_EFCC8459492A4DA1A909F4C0AAA6AC6A",
-                        column: x => x.ESCxContabilistaID,
-                        principalTable: "ESCxContabilista",
-                        principalColumn: "ESCxContabilistaID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ESCxEmpresa",
-                columns: table => new
-                {
-                    ESCxEmpresaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ESCxContabilistaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ESCxEmpresa", x => x.ESCxEmpresaID);
-                    table.ForeignKey(
-                        name: "FK_B41CDCE03FE9462798A4F2E3AEFF7442",
-                        column: x => x.ESCxEmpresaID,
-                        principalTable: "CORxEmpresa",
-                        principalColumn: "CORxEmpresaID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_FCAEEE2632074900A104B57043F6C318",
                         column: x => x.ESCxContabilistaID,
                         principalTable: "ESCxContabilista",
                         principalColumn: "ESCxContabilistaID",
@@ -139,16 +139,7 @@ namespace TFX.Core.DB.Migrations
                 name: "ESCxEscritorio");
 
             migrationBuilder.DropTable(
-                name: "CORxEmpresa");
-
-            migrationBuilder.DropTable(
                 name: "ESCxContabilista");
-
-            migrationBuilder.DropTable(
-                name: "CORxAgregado");
-
-            migrationBuilder.DropTable(
-                name: "CORxPessoa");
         }
     }
 }

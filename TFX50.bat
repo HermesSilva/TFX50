@@ -1,6 +1,7 @@
 set RelativePath=%~dp0%
 set BinPath=D:\Tootega\DASE4VSBin
-set home=C:\Users\Hermes\AppData\Local\Microsoft\VisualStudio\17.0_9c90c9bdTFX\Extensions\xc3mq1ge.el0
+set work=C:\Users\Hermes\AppData\Local\Microsoft\VisualStudio\17.0_9c90c9bdTFX\Extensions\xc3mq1ge.el0
+set home=C:\Users\hxpel\AppData\Local\Microsoft\VisualStudio\17.0_21c14697TFX\Extensions\0ron0lep.dat
 if exist %work% set VSIX=%work%
 if exist %home% set VSIX=%home%
 if exist %work2% set VSIX=%work2%

@@ -100,26 +100,6 @@ namespace TFX.Core.DB.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CORxRecurso",
-                columns: table => new
-                {
-                    CORxRecursoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CORxRecursoTipoID = table.Column<short>(type: "smallint", nullable: false),
-                    Nome = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false),
-                    Titulo = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CORxRecurso", x => x.CORxRecursoID);
-                    table.ForeignKey(
-                        name: "FK_3D172BE06C0E46E88190AB42F3FF81AC",
-                        column: x => x.CORxRecursoTipoID,
-                        principalTable: "CORxRecursoTipo",
-                        principalColumn: "CORxRecursoTipoID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CORxAgregado",
                 columns: table => new
                 {
@@ -148,6 +128,71 @@ namespace TFX.Core.DB.Migrations
                         principalTable: "CORxPessoa",
                         principalColumn: "CORxPessoaID",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CORxRecurso",
+                columns: table => new
+                {
+                    CORxRecursoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CORxRecursoTipoID = table.Column<short>(type: "smallint", nullable: false),
+                    CORxStatusID = table.Column<short>(type: "smallint", nullable: false),
+                    Nome = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false),
+                    Titulo = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CORxRecurso", x => x.CORxRecursoID);
+                    table.ForeignKey(
+                        name: "FK_3D172BE06C0E46E88190AB42F3FF81AC",
+                        column: x => x.CORxRecursoTipoID,
+                        principalTable: "CORxRecursoTipo",
+                        principalColumn: "CORxRecursoTipoID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_91D14E103000453FA60EC98EA012F459",
+                        column: x => x.CORxStatusID,
+                        principalTable: "CORxStatus",
+                        principalColumn: "CORxStatusID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CORxEmpresa",
+                columns: table => new
+                {
+                    CORxEmpresaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CNPJ = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: false),
+                    CORxAgregadoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CORxStatusID = table.Column<short>(type: "smallint", nullable: false),
+                    _CORxPessoaCORxPessoaID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CORxEmpresa", x => x.CORxEmpresaID);
+                    table.ForeignKey(
+                        name: "FK_3D11CC2230A34B7293C66F8733789E1F",
+                        column: x => x.CORxStatusID,
+                        principalTable: "CORxStatus",
+                        principalColumn: "CORxStatusID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_4F443AC8953246C19887C496C4CB7DCC",
+                        column: x => x.CORxAgregadoID,
+                        principalTable: "CORxAgregado",
+                        principalColumn: "CORxAgregadoID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_751AAA01BDC648D8A2B8DA03E5758339",
+                        column: x => x.CORxEmpresaID,
+                        principalTable: "CORxPessoa",
+                        principalColumn: "CORxPessoaID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CORxEmpresa_CORxPessoa__CORxPessoaCORxPessoaID",
+                        column: x => x._CORxPessoaCORxPessoaID,
+                        principalTable: "CORxPessoa",
+                        principalColumn: "CORxPessoaID");
                 });
 
             migrationBuilder.CreateTable(
@@ -207,6 +252,7 @@ namespace TFX.Core.DB.Migrations
                 {
                     CORxRecursoTemplateID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CORxRecursoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CORxStatusID = table.Column<short>(type: "smallint", nullable: false),
                     Template = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -218,44 +264,45 @@ namespace TFX.Core.DB.Migrations
                         principalTable: "CORxRecurso",
                         principalColumn: "CORxRecursoID",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_DF3AB7500B414D228CE6266520EA9D8A",
+                        column: x => x.CORxStatusID,
+                        principalTable: "CORxStatus",
+                        principalColumn: "CORxStatusID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CORxEmpresa",
+                name: "CORxEmpresaGrupo",
                 columns: table => new
                 {
-                    CORxEmpresaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CNPJ = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: false),
+                    CORxEmpresaGrupoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CORxAgregadoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CORxEmpresaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CORxStatusID = table.Column<short>(type: "smallint", nullable: false),
-                    _CORxPessoaCORxPessoaID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Grupo = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CORxEmpresa", x => x.CORxEmpresaID);
+                    table.PrimaryKey("PK_CORxEmpresaGrupo", x => x.CORxEmpresaGrupoID);
                     table.ForeignKey(
-                        name: "FK_3D11CC2230A34B7293C66F8733789E1F",
+                        name: "FK_0392DD25ED2D4C209696C72A0858FF3F",
+                        column: x => x.CORxEmpresaID,
+                        principalTable: "CORxEmpresa",
+                        principalColumn: "CORxEmpresaID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_0F3626E1A65A4611BDB2E747CA5A9893",
                         column: x => x.CORxStatusID,
                         principalTable: "CORxStatus",
                         principalColumn: "CORxStatusID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_4F443AC8953246C19887C496C4CB7DCC",
+                        name: "FK_6F15186E1CAA445292860D8634F9D6F3",
                         column: x => x.CORxAgregadoID,
                         principalTable: "CORxAgregado",
                         principalColumn: "CORxAgregadoID",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_751AAA01BDC648D8A2B8DA03E5758339",
-                        column: x => x.CORxEmpresaID,
-                        principalTable: "CORxPessoa",
-                        principalColumn: "CORxPessoaID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_CORxEmpresa_CORxPessoa__CORxPessoaCORxPessoaID",
-                        column: x => x._CORxPessoaCORxPessoaID,
-                        principalTable: "CORxPessoa",
-                        principalColumn: "CORxPessoaID");
                 });
 
             migrationBuilder.CreateTable(
@@ -334,39 +381,6 @@ namespace TFX.Core.DB.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "CORxEmpresaGrupo",
-                columns: table => new
-                {
-                    CORxEmpresaGrupoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CORxAgregadoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CORxEmpresaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CORxStatusID = table.Column<short>(type: "smallint", nullable: false),
-                    Grupo = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CORxEmpresaGrupo", x => x.CORxEmpresaGrupoID);
-                    table.ForeignKey(
-                        name: "FK_0392DD25ED2D4C209696C72A0858FF3F",
-                        column: x => x.CORxEmpresaID,
-                        principalTable: "CORxEmpresa",
-                        principalColumn: "CORxEmpresaID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_0F3626E1A65A4611BDB2E747CA5A9893",
-                        column: x => x.CORxStatusID,
-                        principalTable: "CORxStatus",
-                        principalColumn: "CORxStatusID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_6F15186E1CAA445292860D8634F9D6F3",
-                        column: x => x.CORxAgregadoID,
-                        principalTable: "CORxAgregado",
-                        principalColumn: "CORxAgregadoID",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.InsertData(
                 table: "CORxDireitos",
                 columns: new[] { "CORxDireitosID", "Direito", "Titulo" },
@@ -403,6 +417,20 @@ namespace TFX.Core.DB.Migrations
                     { (short)0, "Inatoivo" },
                     { (short)1, "Ativo" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "CORxRecurso",
+                columns: new[] { "CORxRecursoID", "CORxRecursoTipoID", "CORxStatusID", "Nome", "Titulo" },
+                values: new object[,]
+                {
+                    { new Guid("00000000-0000-0000-0000-000000000000"), (short)0, (short)0, "NA", "NA" },
+                    { new Guid("13f5ed76-d4cc-46b7-83e9-31c77bd3085c"), (short)1, (short)1, "Usuario", "Cadastro de Usuários" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "CORxMenuItem",
+                columns: new[] { "CORxMenuItemID", "CORxMenuID", "CORxRecursoID", "Item" },
+                values: new object[] { new Guid("23acd023-5ce5-412c-becf-fd4d58dc680b"), new Guid("a0194fb8-9893-48c5-bd2b-7626a82b3da3"), new Guid("13f5ed76-d4cc-46b7-83e9-31c77bd3085c"), "Cadastro de Usuários" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_04BE7F3F33664F8187708FB8EEE44BB9",
@@ -480,6 +508,11 @@ namespace TFX.Core.DB.Migrations
                 column: "CORxRecursoTipoID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_91D14E103000453FA60EC98EA012F459",
+                table: "CORxRecurso",
+                column: "CORxStatusID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_2BBF2707C62C4B4A80B9A3FE91C2D5B3",
                 table: "CORxRecursoDireito",
                 column: "CORxDireitosID");
@@ -493,6 +526,11 @@ namespace TFX.Core.DB.Migrations
                 name: "IX_CA7AE4A659F94B55AE8D02FC25FBE69F",
                 table: "CORxRecursoTemplate",
                 column: "CORxRecursoID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DF3AB7500B414D228CE6266520EA9D8A",
+                table: "CORxRecursoTemplate",
+                column: "CORxStatusID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_413AF556566D4C86868658231BC10E05",
@@ -568,13 +606,13 @@ namespace TFX.Core.DB.Migrations
                 name: "CORxRecurso");
 
             migrationBuilder.DropTable(
-                name: "CORxStatus");
-
-            migrationBuilder.DropTable(
                 name: "CORxPessoa");
 
             migrationBuilder.DropTable(
                 name: "CORxRecursoTipo");
+
+            migrationBuilder.DropTable(
+                name: "CORxStatus");
         }
     }
 }
