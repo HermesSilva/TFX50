@@ -17,6 +17,16 @@ using TFX.Core.Lzma;
 
 namespace TFX.Core.Data.Servicos.Menu
 {
+    public class AppData : XEndPointData
+    {
+        public XStringDataField AppID {get;set;}
+    }
+
+    public class ResultSet : XEndPointData
+    {
+        public XStringDataField Model {get;set;}
+    }
+
     public class MenuTuple : XServiceDataTuple
     {
         public MenuTuple()
@@ -24,13 +34,15 @@ namespace TFX.Core.Data.Servicos.Menu
             Initialize();
         }
 
-        public MenuTuple(String pMenu, String pIcone, String pItem, Guid? pCORxMenuItemID)
+        public MenuTuple(String pMenu, String pIcone, String pItem, Guid? pCORxMenuItemID, Guid pCORxRecursoID, Guid? pCORxMenuID)
             : this()
         {
             Menu.Value = pMenu;
             Icone.Value = pIcone;
             Item.Value = pItem;
             CORxMenuItemID.Value = pCORxMenuItemID;
+            CORxRecursoID.Value = pCORxRecursoID;
+            CORxMenuID.Value = pCORxMenuID;
         }
 
         public override void Initialize()
@@ -39,6 +51,8 @@ namespace TFX.Core.Data.Servicos.Menu
             Icone = new XStringDataField();
             Item = new XStringDataField();
             CORxMenuItemID = new XGuidNullableDataField();
+            CORxRecursoID = new XGuidDataField();
+            CORxMenuID = new XGuidNullableDataField();
         }
 
         public XStringDataField Menu {get;set;}
@@ -47,6 +61,10 @@ namespace TFX.Core.Data.Servicos.Menu
         public XStringDataField Item {get;set;}
         [Display(Name = "Item de Menu")]
         public XGuidNullableDataField CORxMenuItemID {get;set;}
+        [Display(Name = "Recurso")]
+        public XGuidDataField CORxRecursoID {get;set;}
+        [Display(Name = "Menu")]
+        public XGuidNullableDataField CORxMenuID {get;set;}
     }
 
     public class MenuRequest : XRequest
@@ -57,6 +75,8 @@ namespace TFX.Core.Data.Servicos.Menu
     public interface IMenuService : XIService
     {
 
+        ResultSet AppModel(AppData pData);
+
         MenuDataSet Execute();
         IQueryable<MenuTuple> ExecuteQuery();
     }
@@ -66,6 +86,11 @@ namespace TFX.Core.Data.Servicos.Menu
         public BaseMenuRule(XService pOwner)
             :base(pOwner)
         {
+        }
+
+        public virtual ResultSet AppModel(AppData pData)
+        {
+            return default;
         }
 
         public virtual void Execute()

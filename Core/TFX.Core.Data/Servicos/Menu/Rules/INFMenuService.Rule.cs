@@ -11,5 +11,10 @@ namespace TFX.Core.Data.Servicos.Menu.Rules
                :base(pService)
         {
         }
+
+        public override ResultSet AppModel(AppData pData)
+        {
+            return base.AppModel(pData);
+        }
     }
 }

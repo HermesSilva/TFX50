@@ -24,6 +24,11 @@ namespace TFX.Core.Data.Servicos.Menu
                 :base(pController)
             {
             }
+
+            public virtual ResultSet AppModel(AppData pData)
+            {
+                return Controller.Service.AppModel(pData);
+            }
         }
 
         public MenuController(IMenuService pService, ILogger<XController> pLogger)
@@ -35,6 +40,20 @@ namespace TFX.Core.Data.Servicos.Menu
 
         internal readonly IMenuService Service;
         private readonly INFMenuControllerRule _Rule;
+
+        [HttpPost("AppModel")]
+        public IActionResult AppModel([FromBody] AppData pData)
+        {
+            try
+            {
+                var returns = _Rule.AppModel(pData);
+                return Ok(returns);
+            }
+            catch (Exception pEx)
+            {
+                return StatusCode(404, XEndPointMessage.Erro(pEx));
+            }  
+        }
 
         [HttpPost("Lista")]
         public IActionResult Lista()

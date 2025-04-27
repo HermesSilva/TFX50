@@ -6,7 +6,10 @@ interface MenuTuple extends XTuple
     Icone: XField;
     Item: XField;
     CORxMenuItemID: XField;
+    CORxRecursoID: XField;
+    CORxMenuID: XField;
 }
+
 class MainMenu extends XMenu
 {
 
@@ -14,6 +17,7 @@ class MainMenu extends XMenu
     {
         super(pOwner);
     }
+
 
     Load()
     {
@@ -32,18 +36,20 @@ class MainMenu extends XMenu
     {
         const grupos = pTuples.reduce<Record<string, XDataMenu>>((groups, tuple) =>
         {
-            const key = `${tuple.Menu.Value}|${tuple.Icone.Value}`;
+            const key = `${tuple.CORxMenuID.Value}|{tuple.Menu.Value}|${tuple.Icone.Value}`;
 
             const group = groups[key] ?? (groups[key] = {
                 Icon: tuple.Icone.Value,
                 Title: tuple.Menu.Value,
+                ID: tuple.Menu.Value,
                 Items: []
             });
-
-            group.Items.push({
-                Title: tuple.Item.Value,
-                ID: tuple.CORxMenuItemID.Value
-            });
+            var item = new XDataMenuItem();
+            item.Title = tuple.Item.Value;
+            item.ID = tuple.CORxMenuItemID.Value;
+            item.ResourceID = tuple.CORxRecursoID.Value;
+            item.Count = 0;
+            group.Items.push(item);
 
             return groups;
         }, {});

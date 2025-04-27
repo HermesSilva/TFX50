@@ -23,6 +23,37 @@
       </XSVCPayloadEndPoint>
     </XSVCEndPoint>
     <XValues />
+    <XSVCEndPoint ID="5809B4C4-4885-464F-85AC-0DC0467534EF" Name="AppModel">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">End Point</XLanguage>
+        </XData>
+      </XValues>
+      <XSVCPayloadEndPoint Name="AppData" ID="6D58051D-27C3-46F2-8123-EEAE7A7910BA">
+        <XValues>
+          <XData Name="MethodName" ID="4CC415AD-ED5C-45B2-8B29-02853872512F" Type="String">AppModel</XData>
+        </XValues>
+        <XSVCUserField ID="E463D29B-560D-4C32-9B1E-F9970929D982" Name="AppID">
+          <XValues>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">ID da Aplicação</XLanguage>
+            </XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+          </XValues>
+        </XSVCUserField>
+      </XSVCPayloadEndPoint>
+      <XSVCResultEndPoint Name="ResultSet" ID="A425B9E6-A29A-4D2C-B6C6-062EC98E1E30">
+        <XValues />
+        <XSVCUserField ID="8193799B-A3B3-40BA-BCAA-9143FBCFFAE0" Name="Model">
+          <XValues>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">JSon Model</XLanguage>
+            </XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+          </XValues>
+        </XSVCUserField>
+      </XSVCResultEndPoint>
+    </XSVCEndPoint>
   </XSVCEndPoints>
   <XSVCAddIns Name="Additional" ID="B18156A4-4567-409B-9645-92C53B3D22C9">
     <XSVCInjectionSVC ID="F861E109-3300-47E2-8EA5-431A30A260C8" Name="ServiceInjection">
@@ -62,6 +93,16 @@
       <XValues>
         <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F98E6F9B-4CFD-4316-9AEA-4046DBB770DA" Text="CORxMenuItemID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Menu" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="">F98E6F9B-4CFD-4316-9AEA-4046DBB770DA</XParentData>
         <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">true</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="8DE7AB47-E392-4C8B-BE69-24B5ECB9CA61" ParentID="89C689DB-4075-41A2-B686-6E004733D2D4">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="89C689DB-4075-41A2-B686-6E004733D2D4" Text="CORxRecursoID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Menu" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="">89C689DB-4075-41A2-B686-6E004733D2D4</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="B97F4703-D8EB-4622-90DB-F61C0004A203" ParentID="65E4EB95-7648-4849-A88A-1EDE3E5CCD03">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="65E4EB95-7648-4849-A88A-1EDE3E5CCD03" Text="CORxMenuID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Menu" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="">65E4EB95-7648-4849-A88A-1EDE3E5CCD03</XParentData>
       </XValues>
     </XSVCField>
   </XSVCResultSet>

@@ -193,8 +193,7 @@ class XTabControl extends XDiv implements XIDialogContainer
         btn.Tab = tab;
         this.Tabs.Add(tab);
         tab.IsVisible = false;
-        if (this.ActiveTab == null)
-            this.SelectTab(<any>this.Tabs.FirstOrNull()?.Button);
+        this.SelectTab(tab.Button);
     }
 
     CreateTab(): XTabControlTab
