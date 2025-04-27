@@ -1,11 +1,12 @@
-@import "Variables.scss";
-@import "XCalendar.scss";
-@import "XEditor.scss";
-@import "XMenu.scss";
-@import "XTabControl.scss";
-@import "XStage.scss";
-@import "XDataGridEditor.scss";
-@import "XTable.scss";
+@import 'XVariables.scss';
+@import 'XCalendar.scss';
+@import 'XDatagridEditor.scss';
+@import 'XEditor.scss';
+@import 'XMenu.scss';
+@import 'XStage.scss';
+@import 'XTabcontrol.scss';
+@import 'XTable.scss';
+@import 'XWrappanel.scss';
 
 html {
     min-height: 100%;

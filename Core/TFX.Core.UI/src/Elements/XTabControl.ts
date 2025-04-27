@@ -6,10 +6,10 @@ class XTabControlButton extends XBaseTextButton
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "XTabControlButton");
-        XEventManager.AddEvent(this, this.HTML, XEventType.Click, () =>
-        {
-            this.TabControl?.SelectTab(this);
-        });
+        const button = <HTMLElement>XUtils.AddElement(this, "span", 'XTabControlButtonIcon');
+        button.innerHTML = '×';
+        XEventManager.AddEvent(this, button, XEventType.Click, () => this.TabControl?.CloseTab(this));
+        XEventManager.AddEvent(this, this.HTML, XEventType.Click, () => this.TabControl?.SelectTab(this));
     }
 
     TabControl: XTabControl | null = null;
@@ -147,6 +147,12 @@ class XTabControl extends XDiv implements XIDialogContainer
 
         });
         this.Dropdown.IsVisible = true;
+    }
+
+    CloseTab(pButton: XTabControlButton)
+    {
+        pButton.Tab?.Free();
+        pButton.Free();
     }
 
     SelectTab(pButton: XTabControlButton)

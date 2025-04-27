@@ -37,7 +37,6 @@ type XChangeHandler<T> = (Object: T, OldValue: any, NewValue: any) => void;
 
 class XEventManager
 {
-
     private static _CallOnce = new Array<XCallOnce>();
 
     static TrackChange<T extends object, K extends keyof T>(pObjeto: T, pPropriedade: K, pOnChange: XChangeHandler<T>)
@@ -83,7 +82,6 @@ class XEventManager
             co.Execute();
         }
     }
-
 
     static AddObserver(pContext: any, pConfig: any, pEvent: any)
     {
