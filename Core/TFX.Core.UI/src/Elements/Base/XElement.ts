@@ -55,6 +55,13 @@
         return <T>null;
     }
 
+    Free()
+    {
+        if (this.Owner instanceof XElement)
+            this.Owner.Children.Remove(this);
+        this.HTML.parentNode?.removeChild(this.HTML);
+    }
+
     GetOwnerOrSelf(pContext: XIElement): XISplashable
     {
         throw new Error("Method not implemented.");
