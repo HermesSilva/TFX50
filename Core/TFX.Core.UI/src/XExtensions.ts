@@ -570,6 +570,7 @@ interface Element
     Object: XElement;
 }
 
+type EventMethod = { Event: any, Method: any };
 interface HTMLElement
 {
     Location(pReference: HTMLElement): XPoint;
@@ -581,6 +582,7 @@ interface HTMLElement
     StyleValue(pItemName: string): number;
     StyleStrValue(pItemName: string): string;
     SetRect(pRect: XRect): void;
+    Handlers: XArray<EventMethod> | null;
 }
 
 HTMLElement.prototype.SetRect = function (pRect: XRect): void
