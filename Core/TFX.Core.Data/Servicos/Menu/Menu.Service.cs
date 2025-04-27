@@ -142,6 +142,11 @@ namespace TFX.Core.Data.Servicos.Menu
                 Context = pContext;
             }
 
+
+            public virtual ResultSet AppModel(AppData pData)
+            {
+                return ((BaseMenuRule)Service.Rule).AppModel(pData);
+            }
         }
 
         public MenuService(ILogger<XService> pLogger, DBContext pContext)
@@ -180,7 +185,9 @@ namespace TFX.Core.Data.Servicos.Menu
             var qry = query.Select(q => new MenuTuple(q.CORxMenu.Menu,
                           q.CORxMenu.Icone,
                           q.CORxMenuItem.Item,
-                          q.CORxMenuItem.CORxMenuItemID));
+                          q.CORxMenuItem.CORxMenuItemID,
+                          q.CORxMenuItem.CORxRecursoID,
+                          q.CORxMenu.CORxMenuID));
             return qry;
         }
 
@@ -193,6 +200,24 @@ namespace TFX.Core.Data.Servicos.Menu
             _INFRule.InternalAfterExecute(tuples);
             var dataset = new MenuDataSet { Tuples = tuples };
             return dataset;
+        }
+
+        public virtual ResultSet AppModel(AppData pData)
+        {
+            try
+            {
+                Context.BeginTransaction();
+                return _INFRule.AppModel(pData);
+            }
+            catch
+            {
+                Context.Rollback();
+                throw;
+            }
+            finally
+            {
+                Context.Commit();
+            }
         }
     }
 }

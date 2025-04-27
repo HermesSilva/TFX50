@@ -32,10 +32,34 @@ class XCallOnce
         this.Event.apply(this);
     }
 }
+
+type XChangeHandler<T> = (Object: T, OldValue: any, NewValue: any) => void;
+
 class XEventManager
 {
 
     private static _CallOnce = new Array<XCallOnce>();
+
+    static TrackChange<T extends object, K extends keyof T>(objeto: T, propriedade: K, onChange: XChangeHandler<T>)
+    {
+        let valorInterno = objeto[propriedade];
+
+        Object.defineProperty(objeto, propriedade,
+            {
+                get() { return valorInterno; },
+                set(novoValor: T[K])
+                {
+                    const valorAntigo = valorInterno;
+                    if (valorAntigo !== novoValor)
+                    {
+                        onChange(objeto, valorAntigo, novoValor);
+                        valorInterno = novoValor;
+                    }
+                },
+                configurable: true,
+                enumerable: true
+            });
+    }
 
     static AddExecOnce(pUUID: string, pEvent: any)
     {

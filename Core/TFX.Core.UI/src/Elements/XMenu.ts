@@ -1,7 +1,28 @@
 ﻿/// <reference path="XDiv.ts" />
 
-type XDataMenuItem = { Title: string; ID: string };
-type XDataMenu = { Icon: string; Title: string; Items: XDataMenuItem[] };
+class XDataMenuItem  {
+    Title: string | any;
+    ID: string | any;
+    ResourceID: string | any;
+    _Count: number | any;
+    get Count(): number
+    {
+        return this._Count;
+    }
+
+    set Count(pValue: number)
+    {
+        this._Count = pValue;
+    }
+
+
+};
+type XDataMenu = {
+    Icon: string;
+    Title: string;
+    ID: string;
+    Items: XDataMenuItem[]
+};
 
 class XMenuButtonItem extends XDiv
 {
@@ -31,10 +52,11 @@ class XMenuItem extends XDiv
     constructor(pOwner: XElement | HTMLElement | null, pItem: XDataMenu)
     {
         super(pOwner, "accordion-item");
+        this.Menu = <XMenu>pOwner?.Owner;
         this.Header = new XDiv(this, 'accordion-header');
         this.DataItem = pItem;
 
-        this.Header.HTML.addEventListener('click', () =>this.Menu?.ExpandItem(this))
+        this.Header.HTML.addEventListener('click', () => this.Menu?.ExpandItem(this))
         const icon = new XDiv(this.Header, 'icon');
         icon.HTML.innerHTML = pItem.Icon ?? '✔';
         const headerText = XUtils.AddElement<HTMLSpanElement>(this.Header, "span", "menu-span");
@@ -65,13 +87,19 @@ class XMenuItem extends XDiv
             {
                 var subitem = this.DataItem.Items[i];
                 const li = XUtils.AddElement<HTMLLIElement>(submenu, 'li', "XAppItem");
+                XEventManager.AddEvent(this.Menu, li, XEventType.Click, () => this.Menu?.Launch(subitem));
                 this.Title = XUtils.AddElement<HTMLLIElement>(li, 'span', null);
                 this.Instances = XUtils.AddElement<HTMLLIElement>(li, 'span', "XAppCount");
                 this.Title.innerText = subitem.Title;
                 this.ID = subitem.ID;
                 this.Instances.innerText = "(5)";
+                XEventManager.TrackChange(subitem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
             };
         }
+    }
+    Change(campo: any, antigo: any, novo: any)
+    {
+
     }
 
     private CreateHoverPanel()
@@ -84,6 +112,8 @@ class XMenuItem extends XDiv
             {
                 var subitem = this.DataItem.Items[i];
                 var hitem = new XMenuButtonItem(this.HoverPanel, subitem);
+                XEventManager.AddEvent(this.Menu, hitem.HTML, XEventType.Click, () => this.Menu?.Launch(subitem));
+
                 this.HoverItens.Add(hitem);
             }
         }
@@ -103,6 +133,13 @@ class XMenu extends XDiv
     ToggleButton: XBaseButton;
     AccordionMenu: XDiv;
     Itens = new XArray<XMenuItem>();
+    OnLaunch: XMethod<XDataMenuItem> | any;
+
+    Launch(pItem: XDataMenuItem)
+    {
+        pItem.Count++;
+        this.OnLaunch?.apply(this, [pItem]);
+    }
 
     ExpandItem(pItem: XMenuItem)
     {
@@ -139,7 +176,6 @@ class XMenu extends XDiv
         {
             var mitem = pData[i];
             var item = new XMenuItem(this.AccordionMenu, mitem);
-            item.Menu = this;
             this.Itens.Add(item);
         }
     }

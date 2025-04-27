@@ -36,5 +36,5 @@
 /// <reference path="src/Editors/XNormalEditor.ts" />
 /// <reference path="src/Editors/XDataGridEditor.ts" />
 
-/// <reference path="src/Stage/XStage.ts" />
+/// <reference path="src/App/Stage/XStage.ts" />
 

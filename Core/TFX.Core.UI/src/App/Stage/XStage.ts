@@ -1,4 +1,4 @@
-﻿/// <reference path="../Elements/XDiv.ts" />
+﻿/// <reference path="../../Elements/XDiv.ts" />
 
 class XStage extends XDiv
 {
@@ -18,6 +18,7 @@ class XStage extends XDiv
     {
         super(document.body, "MainDiv");
         this.Menu = new MainMenu(this);
+        this.Menu.OnLaunch = (arg: XDataMenuItem) => this.DoLounch(arg);
         this.TopBar = new XTopBar(this);
         this.Menu.OnResize = () => this.MenuResize();
         this.TabControl = new XStageTabControl(this);
@@ -26,10 +27,16 @@ class XStage extends XDiv
             XStage.SessionID = crypto.randomUUID();
         this.Loaded();
     }
+
     Menu: MainMenu;
     TopBar: XTopBar;
     TabControl: XStageTabControl;
     static SessionID: string | any = null;
+
+    DoLounch(pItem: XDataMenuItem)
+    {
+        var tab = this.TabControl.AddTab(pItem.Title);
+    }
 
     override SizeChanged()
     {
@@ -39,12 +46,6 @@ class XStage extends XDiv
     Loaded()
     {
         this.Menu.Load();
-
-        //setTimeout(() =>
-        //{
-        //    clt.Abort();
-        //    console.log("abortado");
-        //}, 5000);
     }
 
     ErroCallBack(pError: Error, pCallData: any | null, pEvent: ProgressEvent | null)
