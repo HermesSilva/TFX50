@@ -24,8 +24,8 @@ class XMenuButtonItem extends XDiv
         this.HTML.textContent = pItem.Title;
         this.Instances = XUtils.AddElement<HTMLLIElement>(this.HTML, 'span', "XAppCount");
         XEventManager.TrackChange(pItem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
-
     }
+
     Instances: HTMLLIElement;
 
     Change(campo: any, antigo: any, novo: any): void

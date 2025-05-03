@@ -5,7 +5,7 @@ class XPopupElement extends XSizeableElement implements XIPopupPanel
     {
         super(pOwner, pClass);
         this.ReferenceElement = this;
-        this.HTML.style.visibility = 'hidden';
+        this.HTML.style.display = 'none';
         this.HTML.style.zIndex = XPopupManager.ZIndex();
         XPopupManager.Add(this);
     }

@@ -9,17 +9,22 @@ class XButtonEditor extends XBaseInput
     }
 
     Button: XBaseButton | any;
+    Dialog: XBaseDialog | null = null;
 
     CreateInput(): HTMLInputElement
     {
         this.Button = new XBaseButton(this, "XLookupButton");
         return <any>this.Button.HTML;
     }
+
     OnClick(pArg: MouseEvent)
     {
-        var con = this.GetDialogContainer();
-        var dlg = new XBaseDialog(<any>con);
-        dlg.Title = "Mostrando o Dialogo"
-        dlg.ShowDialog();
+        if (this.Dialog == null)
+        {
+            var con = this.GetDialogContainer();
+            this.Dialog = new XBaseDialog(<any>con);
+            this.Dialog.Title = "Mostrando o Dialogo"
+        }
+        this.Dialog.ShowDialog();
     }
 }

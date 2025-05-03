@@ -12,15 +12,9 @@ namespace TFX.Core.Model
     {
         protected XModule()
         {
-            Apps = new Dictionary<Guid, XAPPModel>();
         }
         public virtual void Initialize(IServiceCollection pServices)
         {
-        }
-
-        public Dictionary<Guid, XAPPModel> Apps
-        {
-            get; 
         }
     }
 }

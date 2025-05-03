@@ -5,6 +5,7 @@ using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
 using TFX.Core.Data.Servicos.Menu;
 using TFX.Core.Data.Servicos.Usuario;
+using TFX.Core.Cache;
 
 namespace TFX.Core.Data
 {
@@ -12,11 +13,11 @@ namespace TFX.Core.Data
     {
         public override void Initialize(IServiceCollection pServices)
         {
-            Apps.Add(Usuario.gCID, new Usuario());
             pServices.AddTransient<IMenuService, MenuService>();
             pServices.AddDbContext<MenuService.DBContext>();
             pServices.AddTransient<IUsuarioService, UsuarioService>();
             pServices.AddDbContext<UsuarioService.DBContext>();
+            XMainCache.Add<Usuario>(Usuario.CID);
         }
     }
 }
