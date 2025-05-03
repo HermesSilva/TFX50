@@ -33,24 +33,17 @@ namespace Launcher
                 ContentRootPath = "/Tootega/Source/TFX50/Core/TFX.Core.UI"
             });
             builder.Services.UseOpenApi();
-
-
             builder.Services.ConfigureServices();
-            builder.Services.AddSingleton<XILoginService, XLoginService>();
-            builder.Services.AddSingleton<XResponseWrapperFilter>();
-            builder.Services.AddScoped<XITenantProvider, XTenantProvider>();
-            builder.Services.AddScoped<XISharedTransaction, XSharedTransaction>();
 
             builder.Services.AddDbContext<TFXCoreDataContext>();
             builder.Services.AddDbContext<TFXESCCoreContext>();
-
-
             Console.WriteLine(typeof(TFXESCCoreModule).FullName);
             builder.AddDependencies();
             App = builder.Build();
-            XEnvironment.Services = App.Services;
 
-            App.UseCors();
+            App.AddDependencies();
+            XEnvironment.Services = App.Services;
+            
             App.UseAuthorization();
             App.UseAuthentication();
             App.MapControllers();

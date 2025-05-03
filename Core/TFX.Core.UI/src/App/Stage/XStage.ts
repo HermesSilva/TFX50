@@ -64,6 +64,5 @@ class XStage extends XDiv
         this.TopBar.HTML.style.left = `${r.Width}px`;
         this.TopBar.HTML.style.width = `${this.Rect.Width - r.Width - 1}px`;
     }
-
 }
 

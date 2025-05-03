@@ -11,6 +11,7 @@ using AspNetCore.Scalar;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Controllers;
@@ -27,6 +28,8 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using TFX.Core;
 using TFX.Core.Controllers;
 using TFX.Core.Extensions;
+using TFX.Core.Identity;
+using TFX.Core.IDs;
 using TFX.Core.Interfaces;
 public class CustomControllerFeatureProvider : IApplicationFeatureProvider<ControllerFeature>
 {
@@ -51,6 +54,13 @@ public class CustomControllerFeatureProvider : IApplicationFeatureProvider<Contr
 
 public static class XServiceExtensions
 {
+
+    public static IApplicationBuilder AddDependencies(this IApplicationBuilder pApp)
+    {
+        pApp.UseMiddleware<XCustomMiddleware>();
+        return pApp;
+    }
+
     public static WebApplicationBuilder AddDependencies(this WebApplicationBuilder pBuilder)
     {
         var assemblys = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("TFX")).ToList();
@@ -97,6 +107,7 @@ public static class XServiceExtensions
         }
         return pBuilder;
     }
+
     public static void ConfigureServices(this IServiceCollection pServices)
     {
         pServices.AddJWT();
@@ -136,7 +147,13 @@ public static class XServiceExtensions
         {
             options.AllowSynchronousIO = true;
         });
+        pServices.AddSingleton<XILoginService, XLoginService>();
+        pServices.AddSingleton<XResponseWrapperFilter>();
+        pServices.AddScoped<XITenantProvider, XTenantProvider>();
+        pServices.AddScoped<XISharedTransaction, XSharedTransaction>();
+        pServices.AddSingleton<XCustomMiddleware>();
     }
+
     public static void AddJWT(this IServiceCollection pService)
     {
         pService.AddHttpContextAccessor();
@@ -226,7 +243,7 @@ public static class XServiceExtensions
 
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
-                Description = "'Bearer' [spaço] seu token | Exemplo: Bearer 1212123123131",
+                Description = "'Bearer' [spaço] seu token | Exemplo: Bearer ",
                 Name = "Authorization",
                 BearerFormat = "JWT",
                 In = ParameterLocation.Header,

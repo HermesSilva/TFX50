@@ -107,7 +107,7 @@ namespace TFX.Core.Data.Servicos.Usuario
         #endregion UsuarioFRM
 
         public const String sCID = "13F5ED76-D4CC-46B7-83E9-31C77BD3085C";
-        public static Guid gCID = new Guid(sCID);
+        public static Guid CID = new Guid(sCID);
         public static readonly xUsuarioACT UsuarioACT;
         public static XAddButton RessetaSenha = new XAddButton();
 

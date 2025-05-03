@@ -46,10 +46,10 @@ class XTabControlHeader extends XDiv
             const rect = elm.getBoundingClientRect();
 
             if (rect.left < painelRect.left || rect.right > painelRect.right)
-                elm.style.visibility = 'hidden';
+                elm.style.display = 'none';
 
             else
-                elm.style.visibility = 'visible';
+                elm.style.display = 'block';
         });
     }
 }

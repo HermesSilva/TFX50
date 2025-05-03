@@ -62,6 +62,7 @@ interface XIEditor extends XIElement
     NewLine: boolean;
     Rect: XRect;
     Input: HTMLInputElement;
+    Title: string;
 }
 
 interface XIPopupPanel extends XIElement

@@ -13,7 +13,7 @@ namespace TFX.Core.Controllers
 {
     public class XResponse
     {
-        public const String TuplesCount= "Não é permitido Flush sem Tuplas.";
+        public const String TuplesCount = "Não é permitido Flush sem Tuplas.";
         public const String BadJSon = "JSon inválido.";
 
         public bool Ok
@@ -27,6 +27,16 @@ namespace TFX.Core.Controllers
         public Object Data
         {
             get; set;
+        }
+        public string Errors
+        {
+            get;
+            internal set;
+        }
+        public string Details
+        {
+            get;
+            internal set;
         }
     }
 

@@ -37,35 +37,34 @@ type XChangeHandler<T> = (Object: T, OldValue: any, NewValue: any) => void;
 
 class XEventManager
 {
-
     private static _CallOnce = new Array<XCallOnce>();
 
     static TrackChange<T extends object, K extends keyof T>(pObjeto: T, pPropriedade: K, pOnChange: XChangeHandler<T>)
     {
         const desc = Object.getOwnPropertyDescriptor(pObjeto, pPropriedade);
-
         let ivlr = pObjeto[pPropriedade];
 
-        Object.defineProperty(pObjeto, pPropriedade, {
-            configurable: true, enumerable: true,
-            get()
+        Object.defineProperty(pObjeto, pPropriedade,
             {
-                return desc?.get ? desc.get.call(pObjeto) : ivlr;
-            },
-            set(nvlr: T[K])
-            {
-                const vlr = desc?.get ? desc.get.call(pObjeto) : ivlr;
-
-                if (vlr !== nvlr)
+                configurable: true, enumerable: true,
+                get()
                 {
-                    pOnChange(pObjeto, vlr, nvlr);
-                    if (desc?.set)
-                        desc.set.call(pObjeto, nvlr);
-                    else
-                        ivlr = nvlr;
+                    return desc?.get ? desc.get.call(pObjeto) : ivlr;
+                },
+                set(nvlr: T[K])
+                {
+                    const vlr = desc?.get ? desc.get.call(pObjeto) : ivlr;
+
+                    if (vlr !== nvlr)
+                    {
+                        pOnChange(pObjeto, vlr, nvlr);
+                        if (desc?.set)
+                            desc.set.call(pObjeto, nvlr);
+                        else
+                            ivlr = nvlr;
+                    }
                 }
-            }
-        });
+            });
     }
 
     static AddExecOnce(pUUID: string, pEvent: any)
@@ -90,6 +89,15 @@ class XEventManager
         observer.observe(pContext.HTML, pConfig);
     }
 
+    static RemoveEvent(pContext: any, pElement: any, pEvent: string)
+    {
+        if (pElement.Method != null && pElement.Method[pContext.UUID + "-" + pEvent] != null)
+        {
+            pElement.removeEventListener(pEvent, pElement.Method[pContext.UUID + "-" + pEvent]);
+            pElement.Method[pContext.UUID + "-" + pEvent] = null;
+        }
+    }
+
     static Remove(pElement: HTMLElement)
     {
         if (pElement.Handlers)
@@ -97,7 +105,6 @@ class XEventManager
             for (var i = 0; i < pElement.Handlers.length; i++)
             {
                 var em = pElement.Handlers[i];
-                console.log("removendo -> " + em.Event + '  ' + em.Method);
                 pElement.removeEventListener(em.Event, em.Method);
             }
         }
@@ -119,7 +126,6 @@ class XEventManager
         pElement.Handlers.Add({ Event: pEvent, Method: method });
         pElement.addEventListener(pEvent, method);
     }
-
 
     static Call(pCallScope: any, pEvent: any, pHTM: any, pCheckSource: boolean, pArg: any)
     {

@@ -44,34 +44,42 @@ class XForm extends XDiv
         edt.OrderIndex = 3;
         this.Fields.Add(<any>edt);
 
-        edt = new XIntegerEditor(this);
-        edt.Rows = 1;
-        edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt = new XDataGridEditor(this);
+        edt.Rows = 4;
+        edt.Cols = 10;
+        edt.OrderIndex = 13;
         this.Fields.Add(<any>edt);
+
         edt = new XIntegerEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 4;
+        this.Fields.Add(<any>edt);
+
+        edt = new XIntegerEditor(this);
+        edt.Rows = 1;
+        edt.Cols = 4;
+        edt.OrderIndex = 5;
         edt.Mask = "-##.##0";
         this.Fields.Add(<any>edt);
+
         edt = new XIntegerEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 6;
         edt.Mask = "####0";
         this.Fields.Add(<any>edt);
 
         edt = new XDecimalEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 7;
         edt.Mask = "####0";
         this.Fields.Add(<any>edt);
         edt = new XDecimalEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 8;
         edt.AllowNegative = true;
         edt.MaxIntegerDigits = 4;
         edt.DecimalDigits = 2;
@@ -79,7 +87,7 @@ class XForm extends XDiv
         edt = new XDecimalEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 9;
         edt.AllowNegative = true;
         edt.MaxIntegerDigits = 4;
         edt.DecimalDigits = 2;
@@ -87,44 +95,42 @@ class XForm extends XDiv
         edt = new XEMailEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 9;
         this.Fields.Add(<any>edt);
 
         edt = new XPhoneEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 10;
         this.Fields.Add(<any>edt);
 
         edt = new XPhoneEditor(this);
         edt.Rows = 1;
         edt.Cols = 4;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 11;
         this.Fields.Add(<any>edt);
 
         edt = new XDataLoockupEditor(this);
         edt.Rows = 1;
         edt.Cols = 8;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 12;
         this.Fields.Add(<any>edt);
-
-        edt = new XDataGridEditor(this);
-        edt.Rows = 7;
-        edt.Cols = 32;
-        edt.OrderIndex = 3;
-        this.Fields.Add(<any>edt);
-
 
         edt = new XButtonEditor(this);
         edt.Rows = 1;
         edt.Cols = 1;
-        edt.OrderIndex = 3;
+        edt.OrderIndex = 2;
         this.Fields.Add(<any>edt);
 
-
-        var cn = 1;
+        var cn = 10;
         this.Fields.ForEach(e => e.OrderIndex = cn++);
         this.Fields = this.Fields.OrderBy(e => e.OrderIndex);
+        this.Fields.ForEach(e =>
+        {
+            e.Title = e.Title + '(' + e.OrderIndex + ')';
+
+        });
+        this.ResizeChildren();
     }
     Fields: XArray<XIEditor> = new XArray<XIEditor>();
 

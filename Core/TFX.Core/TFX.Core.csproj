@@ -12,6 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Include="..\TFX.Core.UI\wwwroot\index.html" Link="Resource\index.html" />
 	  <Content Include="TFX.Core.dsmdl">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>TFX.Core.Module.cs</LastGenOutput>
@@ -55,6 +56,10 @@
 	    <DependentUpon>TFX.Core.dsmdl</DependentUpon>
 	    <Visible>False</Visible>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resource\" />
 	</ItemGroup>
 
 
