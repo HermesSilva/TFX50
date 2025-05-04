@@ -44,42 +44,6 @@ class XHttpClient
         return this;
     }
 
-    public async Post<T>(Payload: any): Promise<T>
-    {
-        return new Promise<T>((resolve, reject) =>
-        {
-
-            this._Xhr.open("POST", this._Url, true)
-            this._Xhr.setRequestHeader("Content-Type", "application/json")
-
-            this._Xhr.onreadystatechange = () =>
-            {
-                if (this._Xhr.readyState === 4)
-                {
-                    if (this._Xhr.status >= 200 && this._Xhr.status < 300)
-                    {
-                        try
-                        {
-                            const Response = JSON.parse(this._Xhr.responseText)
-                            resolve(Response as T)
-                        }
-                        catch (error)
-                        {
-                            reject(new Error("Erro ao processar resposta JSON"))
-                        }
-                    }
-                    else
-                        reject(new Error(`Erro HTTP ${this._Xhr.status}: ${this._Xhr.statusText}`))
-                }
-            }
-
-            this._Xhr.onerror = () => reject(new Error("Erro de rede na requisição"))
-
-            this._Xhr.send(JSON.stringify(Payload))
-        })
-    }
-
-
     public SendAsync(pData: any = null): void
     {
         if (pData != null)
@@ -94,7 +58,10 @@ class XHttpClient
 
             this.SetupCommonHeaders();
             this._Xhr.ontimeout = (pEvent) =>
+            {
                 this.OnError?.apply(this._Context, [new Error('Request timeout'), this._CallBackData, pEvent]);
+                this.OnError = undefined;
+            }
 
             this._Xhr.onload = (pEvent) =>
             {
@@ -102,18 +69,30 @@ class XHttpClient
                     this.OnLoad?.apply(this._Context, [this._Xhr.response, this._CallBackData, pEvent]);
                 else
                     this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+                this.OnLoad = undefined;
             };
 
-            this._Xhr.onerror = (pEvent) => this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+            this._Xhr.onerror = (pEvent) =>
+            {
+                this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+                this.OnError = undefined;
+            }
 
             if (this.OnProgress)
-                this._Xhr.onprogress = (pEvent) => this.OnProgress?.apply(this._Context, [pEvent, this._CallBackData]);
+                this._Xhr.onprogress = (pEvent) =>
+                {
+                    this.OnProgress?.apply(this._Context, [pEvent, this._CallBackData]);
+                    this.OnProgress = undefined;
+                }
 
             this._Xhr.send(JSON.stringify(this._Data));
         }
         catch (pError)
         {
             this.OnError?.apply(this._Context, [<Error>pError, this._CallBackData, <any>null]);
+            this.OnLoad = undefined;
+            this.OnError = undefined;
+            this.OnProgress = undefined;
         }
     }
 
