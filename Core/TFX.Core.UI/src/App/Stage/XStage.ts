@@ -35,7 +35,7 @@ class XStage extends XDiv
 
     DoLounch(pItem: XDataMenuItem)
     {
-        var tab = this.TabControl.AddTab(pItem.Title);
+        XMainCache.Get(pItem.ResourceID, this, this.LoadApp);
     }
 
     override SizeChanged()
@@ -48,12 +48,9 @@ class XStage extends XDiv
         this.Menu.Load();
     }
 
-    ErroCallBack(pError: Error, pCallData: any | null, pEvent: ProgressEvent | null)
+    LoadApp(pLoadApp: XAPPModel)
     {
-    }
-
-    LoadCallBack(pData: JSON, pCallData: any | null, pEvent: ProgressEvent | null)
-    {
+        var tab = this.TabControl.AddTab(pLoadApp.Title);
     }
 
     MenuResize()

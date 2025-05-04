@@ -17,9 +17,5 @@ namespace TFX.Core.Controllers
     public abstract class XController : XBaseController
     {
 
-        public XController(ILogger<XController> pLogger)
-            : base(pLogger)
-        {
-        }
     }
 }

@@ -27,8 +27,7 @@ namespace TFX.Core.Data.Servicos.Usuario
             }
         }
 
-        public UsuarioController(IUsuarioService pService, ILogger<XController> pLogger)
-               :base(pLogger)
+        public UsuarioController(IUsuarioService pService)
         {
             Service = pService;
             _Rule = new INFUsuarioControllerRule(this);

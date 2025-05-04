@@ -33,30 +33,95 @@ namespace TFX.Core.Model.APP
             DataSourceID = pDataSourceID;
         }
 
-        private Dictionary<Guid, Object> _Variables = new Dictionary<Guid, Object>();
 
-        public Guid DataSourceID;
-        public Guid DataSetID;
-        public Guid[] NextStepsID = new Guid[0];
-        public Guid[] PreviousStepsID;
-        public Guid FormID;
-        public Guid GroupID;
-        public String[] Paths;
-        public Rectangle Rect;
-        public Guid SourceFieldID;
-        public Int32 Flow;
-        public Int64[] Values;
-        public Guid[] AditionalFormsID;
-        public Guid SourceLinkFieldID;
-        public Guid TargetLinkFieldID;
-        public Guid TitleFieldID;
-        public Guid StateFieldID;
-        public Boolean IsRepeatable;
-        public String Previous;
-        public String PreviousDescription;
-        public String Next;
-        public String NextDescription;
-        public Boolean FlushService;
+        public Guid DataSourceID
+        {
+            get; set;
+        }
+        public Guid DataSetID
+        {
+            get; set;
+        }
+        public Guid[] NextStepsID
+        {
+            get; set;
+        }
+        public Guid[] PreviousStepsID
+        {
+            get; set;
+        }
+        public Guid FormID
+        {
+            get; set;
+        }
+        public Guid GroupID
+        {
+            get; set;
+        }
+        public String[] Paths
+        {
+            get; set;
+        }
+        public Rectangle Rect
+        {
+            get; set;
+        }
+        public Guid SourceFieldID
+        {
+            get; set;
+        }
+        public Int32 Flow
+        {
+            get; set;
+        }
+        public Int64[] Values
+        {
+            get; set;
+        }
+        public Guid[] AditionalFormsID
+        {
+            get; set;
+        }
+        public Guid SourceLinkFieldID
+        {
+            get; set;
+        }
+        public Guid TargetLinkFieldID
+        {
+            get; set;
+        }
+        public Guid TitleFieldID
+        {
+            get; set;
+        }
+        public Guid StateFieldID
+        {
+            get; set;
+        }
+        public Boolean IsRepeatable
+        {
+            get; set;
+        }
+        public String Previous
+        {
+            get; set;
+        }
+        public String PreviousDescription
+        {
+            get; set;
+        }
+        public String Next
+        {
+            get; set;
+        }
+        public String NextDescription
+        {
+            get; set;
+        }
+        public Boolean FlushService
+        {
+            get; set;
+        }
 
         public XAPPModel SAM
         {

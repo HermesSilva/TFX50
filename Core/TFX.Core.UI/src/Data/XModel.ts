@@ -1,10 +1,10 @@
-interface XData<T extends XTuple>
+interface XData<T>
 {
     ID: string
     Tuples: T[]
 }
 
-interface XResponse<T extends XData<XTuple>>
+interface XResponse<T>
 {
     Ok: boolean;
     Status: number;

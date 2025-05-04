@@ -9,5 +9,9 @@ namespace TFX.ESC.Core.DB
 {
     public  static class ESCModel
     {
+
+        public static class CORxPessoa
+        {
+        }
     }
 }

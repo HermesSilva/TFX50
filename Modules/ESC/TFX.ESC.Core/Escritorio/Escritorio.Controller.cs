@@ -28,8 +28,7 @@ namespace TFX.ESC.Core.Escritorio
             }
         }
 
-        public EscritorioController(IEscritorioService pService, ILogger<XController> pLogger)
-               :base(pLogger)
+        public EscritorioController(IEscritorioService pService)
         {
             Service = pService;
             _Rule = new INFEscritorioControllerRule(this);
@@ -38,8 +37,8 @@ namespace TFX.ESC.Core.Escritorio
         internal readonly IEscritorioService Service;
         private readonly INFEscritorioControllerRule _Rule;
 
-        [HttpPost("Execute")]
-        public IActionResult Execute([FromBody] EscritorioFilter pFilter)
+        [HttpPost("Lista")]
+        public IActionResult Lista([FromBody] EscritorioFilter pFilter)
         {
             try
             {
