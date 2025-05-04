@@ -24,15 +24,12 @@ namespace TFX.Core.IDs
     [Route("Access")]
     public class XAccessController : XBaseController
     {
-        private readonly ILogger<XAccessController> _Logger;
         private readonly XILoginService _LoginService;
         private static Process _Process;
         static DateTime _Alive = DateTime.Now;
 
-        public XAccessController(ILogger<XAccessController> pLogger, XILoginService pLoginService)
-            :base(pLogger)
+        public XAccessController(XILoginService pLoginService)
         {
-            _Logger = pLogger;
             _LoginService = pLoginService;
             if (_Process == null)
                 _Process = Process.GetCurrentProcess();

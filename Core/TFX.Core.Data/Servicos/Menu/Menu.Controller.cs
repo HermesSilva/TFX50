@@ -31,8 +31,7 @@ namespace TFX.Core.Data.Servicos.Menu
             }
         }
 
-        public MenuController(IMenuService pService, ILogger<XController> pLogger)
-               :base(pLogger)
+        public MenuController(IMenuService pService)
         {
             Service = pService;
             _Rule = new INFMenuControllerRule(this);

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 using TFX.Core.IDs.Model;
+using TFX.Core.Model.APP;
+using TFX.Core.Model.Payload;
 
 namespace TFX.Core.Cache
 {
@@ -24,6 +27,12 @@ namespace TFX.Core.Cache
                 _Cache.TryGetValue(pID, out Type tp);
                 return tp.CreateInstance<T>();
             }
+        }
+
+        internal static async Task<XAPPModel> GetModel(XAppPayload pPayload)
+        {
+            var mdl = Create<XAPPModel>(pPayload.ID);
+            return await Task.FromResult(mdl);
         }
     }
 }

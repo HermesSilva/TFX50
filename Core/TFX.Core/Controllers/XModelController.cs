@@ -1,0 +1,37 @@
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Logging;
+
+using TFX.Core.Authorize;
+using TFX.Core.Cache;
+using TFX.Core.Exceptions;
+using TFX.Core.IDs;
+using TFX.Core.IDs.Model;
+using TFX.Core.Interfaces;
+using TFX.Core.Model.APP;
+using TFX.Core.Model.Payload;
+
+namespace TFX.Core.Controllers
+{
+    [Route("Model")]
+    public class XModelController : XBaseController
+    {
+
+        [HttpPost, Route("App")]
+        public async Task<XAPPModel> App([FromBody] XAppPayload pPayload)
+        {
+            var mdl = await XMainCache.GetModel(pPayload);
+            return mdl;
+        }
+    }
+
+
+}

@@ -64,11 +64,6 @@ namespace TFX.Core.Controllers
     public abstract class XBaseController : ControllerBase, XIUseContext
     {
 
-        public XBaseController(ILogger<XBaseController> pLogger)
-        {
-            Log = pLogger;
-        }
-
         protected readonly ILogger<XBaseController> Log;
         private XUserSession _Session;
         public XUserSession Session => _Session;

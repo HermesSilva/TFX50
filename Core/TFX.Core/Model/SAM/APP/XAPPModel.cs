@@ -49,6 +49,16 @@ namespace TFX.Core.Model.APP
     }
     public class XAPPModel : XContainerObject
     {
+        public XAPPModel()
+        {
+            Steps = [];
+        }
+
+        public List<XAPPStep> Steps
+        {
+            get;
+        }
+
         public Guid DataSourceID
         {
             get; set;
@@ -61,7 +71,6 @@ namespace TFX.Core.Model.APP
         {
             get; set;
         }
-        private Dictionary<Guid, XAPPStep> Steps = new Dictionary<Guid, XAPPStep>();
         public Boolean HasDetail
         {
             get; set;
