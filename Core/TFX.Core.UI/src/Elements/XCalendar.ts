@@ -11,11 +11,14 @@ class XCalendar extends XDropDownElement
         this.RightArrow = new XBaseButton(this.Header, "XCalendarRightArrow");
 
         this.DaysGrid = new XDiv(this, "XDaysGrid");
+        this.DaysGrid.UseVisibility = true;
 
         this.MonthsGrid = new XDiv(this, "XMonthsGrid");
+        this.MonthsGrid.UseVisibility = true;
         this.MonthsGrid.IsVisible = false;
 
         this.YearsGrid = new XDiv(this, "XYearsGrid");
+        this.YearsGrid.UseVisibility = true;
         this.YearsGrid.IsVisible = false;
 
         this.ViewDate = new Date();

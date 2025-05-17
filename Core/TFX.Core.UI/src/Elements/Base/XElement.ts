@@ -42,6 +42,7 @@
     Cols: number = 0;
     Children: XArray<XElement> = new XArray<XElement>();
     AutoIncZIndex: boolean = false;
+    UseVisibility: boolean = false;
 
     GetOwner<T extends XIElement | null>(pPredicate: XFunc<T>): T
     {
@@ -135,13 +136,13 @@
         this._IsVisible = pValue;
         if (pValue === true)
         {
-            this.HTML.style.display = 'block';
+            this.UseVisibility ? this.HTML.style.visibility = 'visible' : this.HTML.style.display = 'block';
             this.OnShow();
         }
         else
             if (pValue === false)
             {
-                this.HTML.style.display = 'none';
+                this.UseVisibility ? this.HTML.style.visibility = "hidden" : this.HTML.style.display = 'none';
                 this.OnHide();
             }
         if (pValue == old)
