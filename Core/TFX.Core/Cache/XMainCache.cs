@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using TFX.Core.IDs.Model;
 using TFX.Core.Model.APP;
 using TFX.Core.Model.Payload;
+using TFX.Core.Model.Service;
+using TFX.Core.Services;
 
 namespace TFX.Core.Cache
 {
@@ -34,9 +36,15 @@ namespace TFX.Core.Cache
             }
         }
 
-        internal static async Task<XAPPModel> GetModel(XAppPayload pPayload)
+        internal static async Task<XAPPModel> GetAppModel(XModelPayload pPayload)
         {
             var mdl = Create<XAPPModel>(pPayload.ID);
+            return await Task.FromResult(mdl);
+        }
+
+        internal static async Task<XServiceModel> GetServiceModel(XModelPayload pPayload)
+        {
+            var mdl = Create<XServiceModel>(pPayload.ID);
             return await Task.FromResult(mdl);
         }
     }

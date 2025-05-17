@@ -46,7 +46,7 @@ namespace TFX.Core.Services
         protected XDBContext ProtectedContext;
         protected internal readonly ILogger<XService> Logger;
         private bool _Dispoded;
-       
+
         public virtual string Name => GetType().Name;
 
         public bool LoadAll

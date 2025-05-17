@@ -4,6 +4,6 @@ class MainDataGrid extends XDataGrid
 {
     constructor(pOwner: XElement)
     {
-        super(pOwner,"MainDataGrid");
+        super(pOwner, "MainDataGrid");
     }
 }

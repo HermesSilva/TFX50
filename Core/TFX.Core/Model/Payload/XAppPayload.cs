@@ -7,7 +7,7 @@ using TFX.Core.Model;
 
 namespace TFX.Core.Model.Payload
 {
-    public class XAppPayload
+    public class XModelPayload
     {
          public Guid ID { get; set; }
     }

@@ -14,9 +14,22 @@ using TFX.Core.Services;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
+using TFX.Core.Model.Service;
 
 namespace TFX.ESC.Core.Escritorios
 {
+
+    public class EscritorioModel : XServiceModel
+    {
+        public static Guid CID = new Guid("94D6CBB1-BC80-448E-B38D-56FA234CD41E");
+        public EscritorioModel()
+        {
+            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Description = "Nome", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Description = "CPF ou CNPJ", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "Status", Description = "Status", Type = "String" });
+        }
+    }
+
     public class EscritorioTuple : XServiceDataTuple
     {
         public EscritorioTuple()
@@ -48,17 +61,38 @@ namespace TFX.ESC.Core.Escritorios
         }
 
         [Display(Name = "CPF ou CNPJ")]
-        public XStringDataField CPFCNPJ {get;set;}
+        public XStringDataField CPFCNPJ
+        {
+            get; set;
+        }
         [Display(Name = "Estado")]
-        public XInt16DataField CORxStatusID {get;set;}
-        public XStringDataField Nome {get;set;}
+        public XInt16DataField CORxStatusID
+        {
+            get; set;
+        }
+        public XStringDataField Nome
+        {
+            get; set;
+        }
         [Display(Name = "Pessoa")]
-        public XGuidNullableDataField CORxPessoaID {get;set;}
+        public XGuidNullableDataField CORxPessoaID
+        {
+            get; set;
+        }
         [Display(Name = "Agregado")]
-        public XGuidNullableDataField CORxAgregadoID {get;set;}
+        public XGuidNullableDataField CORxAgregadoID
+        {
+            get; set;
+        }
         [Display(Name = "Escritório")]
-        public XGuidNullableDataField ESCxEscritorioID {get;set;}
-        public XStringDataField Status {get;set;}
+        public XGuidNullableDataField ESCxEscritorioID
+        {
+            get; set;
+        }
+        public XStringDataField Status
+        {
+            get; set;
+        }
     }
 
     public class EscritorioFilter : XFilter
@@ -67,8 +101,14 @@ namespace TFX.ESC.Core.Escritorios
         public EscritorioFilter()
         {
         }
-        public String Nome {get;set;}
-        public String CPFCNPJ {get;set;}
+        public String Nome
+        {
+            get; set;
+        }
+        public String CPFCNPJ
+        {
+            get; set;
+        }
     }
     public static class FRMEscritorioFilter
     {
@@ -77,7 +117,10 @@ namespace TFX.ESC.Core.Escritorios
 
     public class EscritorioRequest : XRequest
     {
-        public Guid CORxPessoaID {get;set;}
+        public Guid CORxPessoaID
+        {
+            get; set;
+        }
     }
 
     public interface IEscritorioService : XIService
@@ -91,7 +134,7 @@ namespace TFX.ESC.Core.Escritorios
     public abstract class BaseEscritorioRule : XServiceRule<EscritorioTuple, EscritorioTuple>
     {
         public BaseEscritorioRule(XService pOwner)
-            :base(pOwner)
+            : base(pOwner)
         {
         }
 

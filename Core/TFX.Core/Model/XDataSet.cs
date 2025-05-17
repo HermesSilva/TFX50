@@ -12,7 +12,7 @@ namespace TFX.Core.Model
             Tuples = new List<T>();
         }
 
-         public void Assign(XDataSet<T> pSource)
+        public void Assign(XDataSet<T> pSource)
         {
             Tuples.Clear();
             foreach (var stpl in pSource.Tuples)
