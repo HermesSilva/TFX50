@@ -18,6 +18,7 @@ namespace TFX.ESC.Core
             pServices.AddTransient<IEscritorioService, EscritorioService>();
             pServices.AddDbContext<EscritorioService.DBContext>();
             XMainCache.Add<Escritorio>(Escritorio.CID);
+            XMainCache.Add<EscritorioModel>(EscritorioModel.CID);
         }
     }
 }

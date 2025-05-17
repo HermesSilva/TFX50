@@ -26,12 +26,16 @@ namespace TFX.Core.Controllers
     {
 
         [HttpPost, Route("App")]
-        public async Task<XAPPModel> App([FromBody] XAppPayload pPayload)
+        public async Task<XAPPModel> App([FromBody] XModelPayload pPayload)
         {
-            var mdl = await XMainCache.GetModel(pPayload);
+            var mdl = await XMainCache.GetAppModel(pPayload);
+            return mdl;
+        }
+        [HttpPost, Route("Service")]
+        public async Task<XAPPModel> Service([FromBody] XModelPayload pPayload)
+        {
+            var mdl = await XMainCache.GetAppModel(pPayload);
             return mdl;
         }
     }
-
-
 }
