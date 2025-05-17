@@ -27,6 +27,18 @@ class App extends XStage
         this.Instance = new App();
     }
 
+    override SizeChanged()
+    {
+        this.MenuResize();
+    }
+
+    LoadApp(pLoadApp: XAPPModel)
+    {
+        var tab = this.TabControl.AddTab(pLoadApp.Title);
+        var dv = new SceneDataView(tab);
+        dv.Path = pLoadApp.SearchPath;
+        dv.Load();
+    }
 
     DoLounch(pItem: XDataMenuItem)
     {

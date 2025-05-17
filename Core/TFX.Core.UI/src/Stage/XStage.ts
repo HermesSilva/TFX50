@@ -16,15 +16,9 @@ class XStage extends XDiv
     TabControl: XStageTabControl;
     static SessionID: string | any = null;
 
-    override SizeChanged()
-    {
-        this.MenuResize();
-    }
-
     LoadApp(pLoadApp: XAPPModel)
     {
-        var tab = this.TabControl.AddTab(pLoadApp.Title);
+        
     }
-
 }
 

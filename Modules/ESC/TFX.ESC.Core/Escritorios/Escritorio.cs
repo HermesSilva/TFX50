@@ -9,12 +9,12 @@ namespace TFX.ESC.Core.Escritorios
 {
     public class Escritorio : XAPPModel
     {
-         public class xEscritorioACT : XAPPStep
+        public class xEscritorioACT : XAPPStep
         {
             public const String sCID = "30EA44FA-C84F-4E01-AEAA-81EEDD1C19FA";
             public static Guid gCID = new Guid(sCID);
             public xEscritorioACT(Guid pID, String pName, String pTitle, Guid pFormID, Guid pDataSourceID)
-              :base(pID, pName, pTitle, pFormID, pDataSourceID)
+              : base(pID, pName, pTitle, pFormID, pDataSourceID)
             {
             }
         }
@@ -33,7 +33,7 @@ namespace TFX.ESC.Core.Escritorios
             ID = new Guid("1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D");
             Name = "Escritorio";
             Title = "Escritório";
-
+            SearchPath = "Escritorio/Lista";
         }
     }
 }

@@ -679,6 +679,12 @@ th:active {
   height: calc(100% - 3px);
 }
 
+.XScene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .XTabControl {
   position: absolute;
   width: 100%;
