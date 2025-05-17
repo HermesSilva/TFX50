@@ -1,9 +1,10 @@
 ﻿
+type XOnLoad = (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent | null) => void;
+
 class XHttpClient
 {
     private _Xhr: XMLHttpRequest;
     private _Headers: Record<string, string> = {};
-    private _Url: string;
     private _Data?: any;
     private _CallBackData?: any;
     private _Context: any;
@@ -13,10 +14,9 @@ class XHttpClient
     public OnError?: (pError: Error, pCallData: any | null, pEvent: ProgressEvent | null) => void;
     public OnProgress?: (pEvent: ProgressEvent, pCallData: any | null) => void;
 
-    constructor(pContex: any, pUrl: string, pData: any = null)
+    constructor(pContex: any, pData: any = null)
     {
         this._Context = pContex;
-        this._Url = pUrl;
         this.Method = "POST";
         this._Data = pData;
         this._Xhr = new XMLHttpRequest();
@@ -44,14 +44,14 @@ class XHttpClient
         return this;
     }
 
-    public SendAsync(pData: any = null): void
+    public SendAsync(pPath: string, pData: any = null, pOnLoad: XOnLoad | null = null): void
     {
         if (pData != null)
             this._Data = pData;
         if (this._Data == null)
             this._Data = {};
         this._Xhr.timeout = this._Timeout;
-        this._Xhr.open(this.Method, this._Url, true);
+        this._Xhr.open(this.Method, pPath, true);
         this._Xhr.responseType = 'json';
         try
         {
@@ -68,7 +68,12 @@ class XHttpClient
             this._Xhr.onload = (pEvent) =>
             {
                 if (this._Xhr.status >= 200 && this._Xhr.status < 300)
-                    this.OnLoad?.apply(this._Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                {
+                    if (pOnLoad != null)
+                        pOnLoad.apply(this._Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                    else
+                        this.OnLoad?.apply(this._Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                }
                 else
                     this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
                 this.OnLoad = undefined;

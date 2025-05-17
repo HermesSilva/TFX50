@@ -36,13 +36,12 @@ class App extends XStage
     {
         var tab = this.TabControl.AddTab(pLoadApp.Title);
         var dv = new SceneDataView(tab);
-        dv.Path = pLoadApp.SearchPath;
-        dv.Load();
+        dv.SetModel(pLoadApp);
     }
 
     DoLounch(pItem: XDataMenuItem)
     {
-        XMainCache.Get(pItem.ResourceID, this, this.LoadApp);
+        XMainCache.GetApp(pItem.ResourceID, this, this.LoadApp);
     }
 
     MenuResize()
