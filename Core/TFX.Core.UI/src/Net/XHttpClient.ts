@@ -48,6 +48,8 @@ class XHttpClient
     {
         if (pData != null)
             this._Data = pData;
+        if (this._Data == null)
+            this._Data = {};
         this._Xhr.timeout = this._Timeout;
         this._Xhr.open(this.Method, this._Url, true);
         this._Xhr.responseType = 'json';

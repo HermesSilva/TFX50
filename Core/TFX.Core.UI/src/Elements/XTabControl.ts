@@ -189,7 +189,7 @@ class XTabControl extends XDiv implements XIDialogContainer
         this.Header.SelectionChanged();
     }
 
-    AddTab(pTitle: string)
+    AddTab(pTitle: string): XTabControlTab
     {
         var btn = new XTabControlButton(this.Header);
         btn.Title = pTitle;
@@ -200,6 +200,7 @@ class XTabControl extends XDiv implements XIDialogContainer
         this.Tabs.Add(tab);
         tab.IsVisible = false;
         this.SelectTab(tab.Button);
+        return tab;
     }
 
     CreateTab(): XTabControlTab

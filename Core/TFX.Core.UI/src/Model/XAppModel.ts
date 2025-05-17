@@ -49,30 +49,31 @@ class XAPPStep
 
 class XAPPModel
 {
-    public ID!: string;
-    public Title!: string;
-    public Name!: string;
-    public Steps: XAPPStep[] = [];
-    public DataSourceId!: string;
-    public FlushAtStep!: boolean;
-    public Size!: { width: number; height: number };
-    public HasDetail!: boolean;
-    public SearchServiceId!: string;
-    public SearchPkId!: string;
-    public SubjectFields!: string[];
-    public SubjectTitle!: string;
-    public MainViewId!: string;
-    public MainMenuId!: number;
-    public PlatformId!: number;
-    public IsSystem!: boolean;
-    public ConfigFormId!: string;
-    public IsDisabled!: boolean;
-    public Rights!: number[];
-    public Icon!: string;
-    public GroupId!: number;
-    public AppTypeId!: number;
-    public UseTypeId!: number[];
-    public OnlyHolding!: boolean;
-    public FreeForUsers!: boolean;
+    ID!: string;
+    Title!: string;
+    Name!: string;
+    Steps: XAPPStep[] = [];
+    DataSourceId!: string;
+    FlushAtStep!: boolean;
+    Size!: { width: number; height: number };
+    HasDetail!: boolean;
+    SearchServiceId!: string;
+    SearchPkId!: string;
+    SubjectFields!: string[];
+    SubjectTitle!: string;
+    MainViewId!: string;
+    MainMenuId!: number;
+    PlatformId!: number;
+    IsSystem!: boolean;
+    ConfigFormId!: string;
+    IsDisabled!: boolean;
+    Rights!: number[];
+    Icon!: string;
+    GroupId!: number;
+    AppTypeId!: number;
+    UseTypeId!: number[];
+    OnlyHolding!: boolean;
+    FreeForUsers!: boolean;
+    SearchPath: string | undefined;
 }
 
