@@ -12,20 +12,28 @@ class SceneDataView extends XScene
     }
     DataGrid: MainDataGrid;
     Model: XAPPModel | undefined;
-    
+
     private _Client: XHttpClient;
 
     SetModel(pModel: XAPPModel)
     {
         this.Model = pModel;
-        this._Client.SendAsync(Paths.ServiceModel, pModel.ID, this.LoadCallBack);
+        this._Client.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: any) =>
+        {
+            this.DataGrid.SetModel(pData.Data);
+            this.Load();
+        });
     }
 
     Load()
     {
+        if (this.Model?.SearchPath === undefined)
+            return;
+        this._Client.SendAsync(this.Model.SearchPath, {}, (pData: any) =>
+        {
+            this.DataGrid.SetDataSet(pData.Data);
+        });
     }
 
-    LoadCallBack(pData: any, pCallData: any, pEvent: ProgressEvent<EventTarget> | null)
-    {
-    }
+  
 }

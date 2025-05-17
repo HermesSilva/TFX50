@@ -18,6 +18,7 @@ using TFX.Core.IDs.Model;
 using TFX.Core.Interfaces;
 using TFX.Core.Model.APP;
 using TFX.Core.Model.Payload;
+using TFX.Core.Model.Service;
 
 namespace TFX.Core.Controllers
 {
@@ -32,9 +33,9 @@ namespace TFX.Core.Controllers
             return mdl;
         }
         [HttpPost, Route("Service")]
-        public async Task<XAPPModel> Service([FromBody] XModelPayload pPayload)
+        public async Task<XServiceModel> Service([FromBody] XModelPayload pPayload)
         {
-            var mdl = await XMainCache.GetAppModel(pPayload);
+            var mdl = await XMainCache.GetServiceModel(pPayload);
             return mdl;
         }
     }

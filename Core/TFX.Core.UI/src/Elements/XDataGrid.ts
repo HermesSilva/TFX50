@@ -7,35 +7,35 @@ class XDataGrid extends XDiv
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null)
     {
         super(pOwner, pClass);
-        var data = [];
-        for (let i = 0; i < 20; i++)
-        {
-            const row: any = {
-                id: i,
-                nome: `Nome ${i}`,
-                email: `email${i}@exemplo.com`,
-                cidade: `Cidade ${i % 100}`,
-                idade: 20 + (i % 50),
-                telefone: `(11) 9${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`,
-                empresa: `Empresa ${i % 20}`,
-                cargo: `Cargo ${i % 10}`,
-                salario: 2000 + (i % 50) * 100,
-                dataAdmissao: `${(i % 28 + 1).toString().LPad(2, '0')}/01/2023`,
-                status: i % 4 === 0 ? 'Ativo' : 'Inativo',
-                cargo1: `Cargo ${i % 10}`,
-                salario2: 2000 + (i % 50) * 100,
-                dataAdmissao3: `${(i % 28 + 1).toString().LPad(2, '0')}/01/2023`,
-                nome1: `Nome ${i}`,
-                email1: `email${i}@exemplo.com`,
-                cidade1: `Cidade ${i % 100}`,
-                idade1: 20 + (i % 50),
-                telefone1: `(11) 9${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`,
-                empresa1: `Empresa ${i % 20}`,
-            };
-            data.push(row);
-        }
+        //var data = [];
+        //for (let i = 0; i < 20; i++)
+        //{
+        //    const row: any = {
+        //        id: i,
+        //        nome: `Nome ${i}`,
+        //        email: `email${i}@exemplo.com`,
+        //        cidade: `Cidade ${i % 100}`,
+        //        idade: 20 + (i % 50),
+        //        telefone: `(11) 9${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`,
+        //        empresa: `Empresa ${i % 20}`,
+        //        cargo: `Cargo ${i % 10}`,
+        //        salario: 2000 + (i % 50) * 100,
+        //        dataAdmissao: `${(i % 28 + 1).toString().LPad(2, '0')}/01/2023`,
+        //        status: i % 4 === 0 ? 'Ativo' : 'Inativo',
+        //        cargo1: `Cargo ${i % 10}`,
+        //        salario2: 2000 + (i % 50) * 100,
+        //        dataAdmissao3: `${(i % 28 + 1).toString().LPad(2, '0')}/01/2023`,
+        //        nome1: `Nome ${i}`,
+        //        email1: `email${i}@exemplo.com`,
+        //        cidade1: `Cidade ${i % 100}`,
+        //        idade1: 20 + (i % 50),
+        //        telefone1: `(11) 9${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(1000 + Math.random() * 9000)}`,
+        //        empresa1: `Empresa ${i % 20}`,
+        //    };
+        //    data.push(row);
+        //}
         this.Table = new XTable(this, "XTable");
-        this.Table.SetDataSet(data);
+        //this.Table.SetDataSet(data);
     }
 
     Table: XTable;
