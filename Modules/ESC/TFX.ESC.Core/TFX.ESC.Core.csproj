@@ -133,25 +133,25 @@
 	    <Visible>False</Visible>
 	    <DependentUpon>ESC.dsorm</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritorio\Escritorio.Controller.cs">
+	  <Compile Update="Escritorios\Escritorio.Controller.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritorio\Escritorio.DataSet.cs">
+	  <Compile Update="Escritorios\Escritorio.DataSet.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritorio\Escritorio.Rule.cs">
+	  <Compile Update="Escritorios\Escritorio.Rule.cs">
 	    <Visible>True</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritorio\Escritorio.cs">
+	  <Compile Update="Escritorios\Escritorio.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Escritorio.dssam</DependentUpon>
 	    <Visible>False</Visible>
 	  </Compile>
-	  <Compile Update="Escritorio\Escritorio.Service.cs">
+	  <Compile Update="Escritorios\Escritorio.Service.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
@@ -210,11 +210,11 @@
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>ESC.cs</LastGenOutput>
 	  </None>
-	  <None Update="Escritorio\Escritorio.dssam">
+	  <None Update="Escritorios\Escritorio.dssam">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>Escritorio.cs</LastGenOutput>
 	  </None>
-	  <None Update="Escritorio\Escritorio.dssvc">
+	  <None Update="Escritorios\Escritorio.dssvc">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>Escritorio.Service.cs</LastGenOutput>
 	  </None>

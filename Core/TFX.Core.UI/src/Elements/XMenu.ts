@@ -47,8 +47,43 @@ class XHoverPanel extends XDiv
     }
     Header: XDiv;
 }
+class XMenuItem extends XElement
+{
+    constructor(pOwner: XMenuItemGroup, pHTMLOuner: HTMLElement)
+    {
+        super(pOwner, "XAppItem");
+        this.HTML = XUtils.AddElement<HTMLElement>(pHTMLOuner, "li");
+    }
+    Menu: XMenu | null = null;
+    Item: XDataMenuItem | undefined;
+    Title: HTMLLIElement | null = null;
+    Instances: HTMLLIElement | null = null;
+    ID: string | null = null;
 
-class XMenuItem extends XDiv
+    protected override CreateContainer(): HTMLElement 
+    {
+        return <any>null;
+    }
+
+    SetData(pItem: XDataMenuItem)
+    {
+        this.Item = pItem;
+        XEventManager.AddEvent(this.Menu, this.HTML, XEventType.Click, () => this.Menu?.Launch(pItem));
+        this.Title = XUtils.AddElement<HTMLLIElement>(this.HTML, 'span', null);
+        this.Instances = XUtils.AddElement<HTMLLIElement>(this.HTML, 'span', "XAppCount");
+        this.Title.innerText = pItem.Title;
+        this.ID = pItem.ID;
+        XEventManager.TrackChange(pItem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
+    }
+
+    Change(campo: any, antigo: any, novo: any)
+    {
+        if (this.Instances != null)
+            this.Instances.innerText = "(" + novo + ")";
+    }
+
+}
+class XMenuItemGroup extends XDiv
 {
     constructor(pOwner: XElement | HTMLElement | null, pItem: XDataMenu)
     {
@@ -72,9 +107,6 @@ class XMenuItem extends XDiv
     DataItem: XDataMenu;
     HoverPanel: XHoverPanel | null = null;
     HoverItens = new XArray<XMenuButtonItem>();
-    Title: HTMLLIElement | null = null;
-    Instances: HTMLLIElement | null = null;
-    ID: string | null = null;
 
     private CreateItens()
     {
@@ -87,21 +119,11 @@ class XMenuItem extends XDiv
             for (var i = 0; i < this.DataItem.Items.length; i++)
             {
                 var subitem = this.DataItem.Items[i];
-                const li = XUtils.AddElement<HTMLLIElement>(submenu, 'li', "XAppItem");
-                XEventManager.AddEvent(this.Menu, li, XEventType.Click, () => this.Menu?.Launch(subitem));
-                this.Title = XUtils.AddElement<HTMLLIElement>(li, 'span', null);
-                this.Instances = XUtils.AddElement<HTMLLIElement>(li, 'span', "XAppCount");
-                this.Title.innerText = subitem.Title;
-                this.ID = subitem.ID;
-                XEventManager.TrackChange(subitem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
+                let mi = new XMenuItem(this, submenu);
+                mi.Menu = this.Menu;
+                mi.SetData(subitem);
             };
         }
-    }
-
-    Change(campo: any, antigo: any, novo: any)
-    {
-        if (this.Instances != null)
-            this.Instances.innerText = "(" + novo + ")";
     }
 
     private CreateHoverPanel()
@@ -134,7 +156,7 @@ class XMenu extends XDiv
 
     ToggleButton: XBaseButton;
     AccordionMenu: XDiv;
-    Itens = new XArray<XMenuItem>();
+    Itens = new XArray<XMenuItemGroup>();
     OnLaunch: XMethod<XDataMenuItem> | any;
 
     Launch(pItem: XDataMenuItem)
@@ -143,7 +165,7 @@ class XMenu extends XDiv
         this.OnLaunch?.apply(this, [pItem]);
     }
 
-    ExpandItem(pItem: XMenuItem)
+    ExpandItem(pItem: XMenuItemGroup)
     {
         if (this.AccordionMenu.HTML.classList.contains('collapsed'))
             return;
@@ -155,7 +177,7 @@ class XMenu extends XDiv
             pItem.HTML.classList.add('active');
     }
 
-    UnExpand(pItem: XMenuItem | null = null): boolean
+    UnExpand(pItem: XMenuItemGroup | null = null): boolean
     {
         var ret = false;
         if (pItem != null && !pItem.HTML.classList.contains('active'))
@@ -177,7 +199,7 @@ class XMenu extends XDiv
         for (var i = 0; i < pData.length; i++)
         {
             var mitem = pData[i];
-            var item = new XMenuItem(this.AccordionMenu, mitem);
+            var item = new XMenuItemGroup(this.AccordionMenu, mitem);
             this.Itens.Add(item);
         }
     }

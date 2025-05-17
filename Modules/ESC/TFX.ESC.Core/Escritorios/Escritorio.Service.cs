@@ -19,10 +19,10 @@ using System.Data;
 using TFX.Core.Lzma;
 using TFX.Core.Identity;
 using System.Text;
-using TFX.ESC.Core.Escritorio.Rules;
-using TFX.ESC.Core.Escritorio;
+using TFX.ESC.Core.Escritorios.Rules;
+using TFX.ESC.Core.Escritorios;
 
-namespace TFX.ESC.Core.Escritorio
+namespace TFX.ESC.Core.Escritorios
 {
     [XGuid("94D6CBB1-BC80-448E-B38D-56FA234CD41E", typeof(IEscritorioService))]
     public class EscritorioService : XService, IEscritorioService
