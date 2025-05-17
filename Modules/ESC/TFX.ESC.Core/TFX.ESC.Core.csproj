@@ -145,6 +145,12 @@
 	    <Visible>True</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
+	  <Compile Update="Escritorio\Escritorio.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Escritorio.dssam</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
 	  <Compile Update="Escritorio\Escritorio.Service.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -203,6 +209,10 @@
 	  <None Update="DB\ESC.dsorm">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>ESC.cs</LastGenOutput>
+	  </None>
+	  <None Update="Escritorio\Escritorio.dssam">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>Escritorio.cs</LastGenOutput>
 	  </None>
 	  <None Update="Escritorio\Escritorio.dssvc">
 	    <Generator>XDASEGenerator</Generator>
