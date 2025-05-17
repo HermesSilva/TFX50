@@ -3,11 +3,20 @@
 
 class MainDataGrid extends XDataGrid
 {
-    SetModel(pModel: XAPPModel) {
-        throw new Error("Method not implemented.");
-    }
+    
     constructor(pOwner: XElement)
     {
         super(pOwner, "MainDataGrid");
     }
+
+    SetModel(pModel: XServiceModel)
+    {
+        this.Table.SetColumns(pModel.DataView.Columns);
+    }
+
+    SetDataSet(pDataSet: XDataSet)
+    {
+        this.Table.SetDataSet(pDataSet);
+    }
+
 }

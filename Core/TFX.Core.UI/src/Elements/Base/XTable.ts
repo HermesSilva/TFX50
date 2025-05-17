@@ -1,10 +1,12 @@
 ﻿/// <reference path="../XDiv.ts" />
-interface XColumnConfig
+class XColumnConfig
 {
-    Title: string;
-    Visible: boolean;
-    Width: number;
+    Name!: string;
+    Visible!: boolean;
+    Width!: number;
+    Title!: string;    
 }
+
 class XTableElement extends XElement
 {
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null = null, pTag: string | null = null)
@@ -338,7 +340,7 @@ class XTableRow extends XTableElement
     Tupla: any;
     Cell = new XArray<XTableCell>();
 
-    SetData(pTupla: any)
+    SetData(pTupla: XDataTuple)
     {
         this.Tupla = pTupla;
         this.CreateCell();
@@ -351,7 +353,7 @@ class XTableRow extends XTableElement
         for (var i = 0; i < this.Table.Columns.length; i++)
         {
             let cell = new XTableCell(this, "XTd");
-            cell.SetData(this.Tupla[this.Table.Columns[i].Title], this.Table.Header.Columns[i]);
+            cell.SetData(this.Tupla[this.Table.Columns[i].Name].Value, this.Table.Header.Columns[i]);
             this.Cell.Add(cell);
         }
     }
@@ -393,13 +395,14 @@ class XTable extends XDiv
         this.Header = new XTableHeader(this.Owner, this);
         this.Body = new XTableBody(this.Container, this);
         XEventManager.AddEvent(this, this.HTML, XEventType.Scroll, this.PositioningHeader);
+        this.RowNumberColumn = <XColumnConfig>{ Name: "RowNumber", Visible: true, Width: 50 };
     }
     Container: HTMLDivElement;
     Header: XTableHeader;
     Body: XTableBody;
     Columns: XColumnConfig[] | null = null;
-    protected DataSet: any[] = [];
-    private RowNumberColumn: XColumnConfig = { Title: '#', Visible: true, Width: 50 };
+    protected DataSet!: XDataSet;
+    private RowNumberColumn: XColumnConfig;
     OnRowClick: XMethod<XArray<XTableRow>> | null = null;
 
     DoSelectRow(pRow: XTableRow)
@@ -416,6 +419,8 @@ class XTable extends XDiv
 
     ResizeColumn(pHeaderCell: XTableHCell, pWidth: number, pCheck: boolean = false)
     {
+        if (this.Body.DataRows.length == 0)
+            return;
         var dcell = this.Body.DataRows[0].Cell.FirstOrNull(c => c.HCell == pHeaderCell);
         if (dcell != null)
         {
@@ -454,12 +459,15 @@ class XTable extends XDiv
         return [this.RowNumberColumn, ...this.Columns.filter(c => c.Visible)];
     }
 
-    SetDataSet(pDataSet: any)
+    SetColumns(pColumn: XColumnModel[])
+    {
+        this.Columns = pColumn.Select(c => <XColumnConfig>{ Name: c.Name, Title: c.Name, Visible: true, Width: 100 });
+        this.CreateHeader();
+    }
+
+    SetDataSet(pDataSet: XDataSet)
     {
         this.DataSet = pDataSet;
-        const fields = Object.keys(this.DataSet[0] || {});
-        this.Columns = fields.map(Title => ({ Title, Visible: true, Width: 120 }));
-        this.CreateHeader();
         this.CreateBody();
     }
 
@@ -468,12 +476,12 @@ class XTable extends XDiv
         this.Body.Clear();
         if (this.Columns == null)
             return;
-        for (var i = 0; i < this.DataSet.length; i++)
+        for (var i = 0; i < this.DataSet.Tuples.length; i++)
         {
             let row = this.Body.AddRow();
             if (i % 2 != 0)
                 row.HTML.className = "XTableRowEven";
-            row.SetData(this.DataSet[i]);
+            row.SetData(this.DataSet.Tuples[i]);
         }
         XEventManager.SetTiemOut(this, this.AdjustCollumnWidth, 100);
     }

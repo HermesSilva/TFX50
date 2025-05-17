@@ -52,28 +52,7 @@ class XAPPModel
     ID!: string;
     Title!: string;
     Name!: string;
-    Steps: XAPPStep[] = [];
-    DataSourceId!: string;
-    FlushAtStep!: boolean;
-    Size!: { width: number; height: number };
-    HasDetail!: boolean;
-    SearchServiceId!: string;
-    SearchPkId!: string;
-    SubjectFields!: string[];
-    SubjectTitle!: string;
-    MainViewId!: string;
-    MainMenuId!: number;
-    PlatformId!: number;
-    IsSystem!: boolean;
-    ConfigFormId!: string;
-    IsDisabled!: boolean;
-    Rights!: number[];
-    Icon!: string;
-    GroupId!: number;
-    AppTypeId!: number;
-    UseTypeId!: number[];
-    OnlyHolding!: boolean;
-    FreeForUsers!: boolean;
-    SearchPath: string | undefined;
+    SearchServiceID!: string;
+    SearchPath!: string;
 }
 
