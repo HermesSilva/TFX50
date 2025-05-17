@@ -34,6 +34,7 @@ namespace TFX.ESC.Core.Escritorios
             Name = "Escritorio";
             Title = "Escritório";
             SearchPath = "Escritorio/Lista";
+            SearchServiceID = EscritorioModel.CID;
         }
     }
 }

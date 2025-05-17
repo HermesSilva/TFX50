@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Elements/XTabControl.ts" />
+﻿/// <reference path="../Elements/XTabControl.ts" />
 
 
 class XStageTabControlTab extends XTabControlTab implements XIDialogContainer

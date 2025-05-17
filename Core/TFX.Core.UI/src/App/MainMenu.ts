@@ -20,9 +20,9 @@ class MainMenu extends XMenu
 
     Load()
     {
-        var clt = new XHttpClient(this, Routes.Menu);
+        var clt = new XHttpClient(this, Paths.Menu);
         clt.OnLoad = this.LoadCallBack;
-        clt.SendAsync();
+        clt.SendAsync(Paths.Menu);
     }
 
     LoadCallBack(pData: XResponse<XData<MenuTuple>>, pCallData: any | null, pEvent: ProgressEvent | null)
