@@ -5,13 +5,11 @@ using TFX.Core.Data;
 using Newtonsoft.Json;
 using TFX.Core.Model.APP;
 
-namespace TFX.ESC.Core.Escritorio
+namespace TFX.ESC.Core.Escritorios
 {
     public class Escritorio : XAPPModel
     {
-        #region xEscritorioACT
-
-        public class xEscritorioACT : XAPPStep
+         public class xEscritorioACT : XAPPStep
         {
             public const String sCID = "30EA44FA-C84F-4E01-AEAA-81EEDD1C19FA";
             public static Guid gCID = new Guid(sCID);
@@ -21,10 +19,8 @@ namespace TFX.ESC.Core.Escritorio
             }
         }
 
-        #endregion xEscritorioACT
-
         public const String sCID = "1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D";
-        public static Guid gCID = new Guid(sCID);
+        public static Guid CID = new Guid(sCID);
         public static readonly xEscritorioACT EscritorioACT;
 
         static Escritorio()
@@ -37,7 +33,7 @@ namespace TFX.ESC.Core.Escritorio
             ID = new Guid("1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D");
             Name = "Escritorio";
             Title = "Escritório";
-          
+
         }
     }
 }

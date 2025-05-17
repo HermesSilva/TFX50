@@ -9,12 +9,12 @@ using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TFX.Core.Data;
-using TFX.ESC.Core.Escritorio;
-using TFX.ESC.Core.Escritorio.Rules;
+using TFX.ESC.Core.Escritorios;
+using TFX.ESC.Core.Escritorios.Rules;
 using TFX.Core.Data.DB;
 using TFX.ESC.Core.DB;
 
-namespace TFX.ESC.Core.Escritorio
+namespace TFX.ESC.Core.Escritorios
 {
     [Route("Escritorio")]
     [ApiController]

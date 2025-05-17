@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using TFX.Core.Controllers;
 using TFX.Core.Services;
 
-namespace TFX.ESC.Core.Escritorio.Rules
+namespace TFX.ESC.Core.Escritorios.Rules
 {
     public class INFEscritorioServiceRule : EscritorioService.BaseINFEscritorioServiceRule
     {

@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TFX.Core.Controllers;
 using TFX.Core.Services;
-using TFX.ESC.Core.Escritorio;
+using TFX.ESC.Core.Escritorios;
 
-namespace TFX.ESC.Core.Escritorio.Rules
+namespace TFX.ESC.Core.Escritorios.Rules
 {
     public class EscritorioRule : BaseEscritorioRule
     {

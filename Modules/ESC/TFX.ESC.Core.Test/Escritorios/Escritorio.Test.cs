@@ -4,7 +4,7 @@ using TFX.Core.Model;
 using TFX.Core.Test.Setup;
 using TFX.ESC.Core.Test;
 
-namespace TFX.ESC.Core.Escritorio.Test
+namespace TFX.ESC.Core.Escritorios.Test
 {
     public class EscritorioTest : TestSetup
     {

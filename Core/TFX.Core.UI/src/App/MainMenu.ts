@@ -18,7 +18,6 @@ class MainMenu extends XMenu
         super(pOwner);
     }
 
-
     Load()
     {
         var clt = new XHttpClient(this, Routes.Menu);

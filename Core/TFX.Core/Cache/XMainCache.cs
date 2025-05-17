@@ -20,6 +20,11 @@ namespace TFX.Core.Cache
                 _Cache.Add(pID, typeof(T));
         }
 
+        public static void Add<T>(object cID)
+        {
+            throw new NotImplementedException();
+        }
+
         public static T Create<T>(Guid pID)
         {
             lock (_Cache)

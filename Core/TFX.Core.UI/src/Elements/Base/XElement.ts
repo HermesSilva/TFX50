@@ -12,30 +12,33 @@
         this.UUID = XElement.NextID();
         this.Owner = pOwner;
         this.HTML = this.CreateContainer(pTag);
-        this.HTML.Object = this;
         if (pClass == null)
             pClass = this.constructor.name;
-        this.Element = null;
-        this.CreateChildren();
-        if (!X.IsEmpty(pClass))
-            this.HTML.className = pClass
-        if (pOwner instanceof XElement)
-            pOwner.HTML.appendChild(this.HTML);
-        if (pOwner instanceof HTMLElement)
-            pOwner.appendChild(this.HTML);
-        this._ResizeObserver = new ResizeObserver(() => this.SizeChanged());
-        this._ResizeObserver.observe(this.HTML);
+        if (this.HTML != null)
+        {
+            this.HTML.Object = this;
+            this.Element = null;
+            this.CreateChildren();
+            if (!X.IsEmpty(pClass))
+                this.HTML.className = pClass
+            if (pOwner instanceof XElement)
+                pOwner.HTML.appendChild(this.HTML);
+            if (pOwner instanceof HTMLElement)
+                pOwner.appendChild(this.HTML);
+            this._ResizeObserver = new ResizeObserver(() => this.SizeChanged());
+            this._ResizeObserver.observe(this.HTML);
+        }
         if (pOwner instanceof XElement)
             pOwner.AddChildren(this);
     }
 
 
     public HTML: HTMLElement;
-    public Element: HTMLElement | null;
+    public Element: HTMLElement | null = null;
     Owner: XElement | HTMLElement | null;
     private _IsVisible: boolean = true;
     UUID: number = 0;
-    private _ResizeObserver: ResizeObserver;
+    private _ResizeObserver: ResizeObserver | undefined;
     OnResize: XMethod<XElement> | null = null;
     OrderIndex: number = 0;
     Rows: number = 0;
