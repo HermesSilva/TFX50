@@ -71,9 +71,17 @@
     height: 100%;
 }
 
+.XTableHTitle.Center {
+    justify-content: center;
+}
+
+.XTableHTitle.Right {
+    justify-content: right;
+}
+
 .XTableHTitle {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     white-space: nowrap;
     height: 42px;

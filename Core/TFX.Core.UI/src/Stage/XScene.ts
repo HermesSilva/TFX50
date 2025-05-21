@@ -1,3 +1,4 @@
+/// <reference path="../Elements/XDiv.ts" />
 
 
 class XScene extends XDiv
