@@ -1,18 +1,10 @@
 
-function Injectable<T extends new (...args: any[]) => any>(target: T): T
+interface XInjectionItem
 {
-    XObjectCache.AddProvider(target)
-    return class extends target
-    {
-        constructor(...args: any[])
-        {
-            super(...args)
-            XObjectCache.ResolveDependencies(this)
-        }
-    } as T
+    Class: string;
+    Token: Function;
+    Key: string;
 }
-
-const Inject= (token: Function): PropertyDecorator => (target, key) => ((target.constructor as any).__inject__ ??= {})[key as string] = token
 
 class XObjectCache
 {
@@ -34,12 +26,49 @@ class XObjectCache
         return instance as T
     }
 
-    static ResolveDependencies<T>(instance: T): void
+    static ResolveDependencies<T>(instance: any): void
     {
-        const ctor = (instance as any).constructor
-        const injections = (ctor as any).__inject__ as Record<string, Function>
+        if (instance.__diInjected)
+            return;
+        instance.__diInjected = true;
+        const ctor = instance.constructor
+        const injections = <XArray<XInjectionItem>>ctor.__inject__;
+        const name = ctor.__name__;
         if (injections)
-            for (const key in injections)
-                (instance as any)[key] = XObjectCache.Get(<any>injections[key])
+        {
+            const injects = <XArray<XInjectionItem>>injections;//.Where(i => i.Class == name);
+            for (var i = 0; i < injects.length; i++)
+            {
+                const item = injects[i];
+                console.log(`Resolving [${item.Key}] into [${item.Class}] into [${item.Token.name}]`);
+                instance[item.Key] = XObjectCache.Get(<any>item.Token)
+            }
+        }
+    }
+}
+
+function Injectable<T extends new (...args: any[]) => any>(target: T): T
+{
+    XObjectCache.AddProvider(target)
+    return class extends target
+    {
+        constructor(...args: any[])
+        {
+            super(...args)
+            XObjectCache.ResolveDependencies(this)
+        }
+    } as T
+}
+
+function Inject(token: Function): PropertyDecorator
+{
+    return function (target: Object, propertyKey: string | symbol): void
+    {
+        const ctor = (target.constructor as any);
+        console.log(`Injecting [${<any>propertyKey}] into [${target.constructor.name}] into [${token.name}]`);
+
+        ctor.__inject__ = <XArray<XInjectionItem>>ctor.__inject__ ?? new XArray<XInjectionItem>();
+        ctor.__inject__.Add({ Token: token, Class: target.constructor.name, Key: propertyKey });
+        ctor.__name__ = target.constructor.name;
     }
 }

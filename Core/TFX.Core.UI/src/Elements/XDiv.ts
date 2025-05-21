@@ -1,4 +1,7 @@
 ﻿/// <reference path="Base/XElement.ts" />
+/// <reference path="../Reflection/XReflections.ts" />
+
+@Injectable
 class XDiv extends XElement
 {
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null)
