@@ -8,6 +8,7 @@
 @import 'XTable.scss';
 @import 'XWrappanel.scss';
 @import "App.scss";
+@import "XButtonBar.scss";
 
 html {
     min-height: 100%;
@@ -198,15 +199,6 @@ html {
     top: 5px;
     font-size: 22px;
     white-space: nowrap;
-}
-
-.XButtonBar {
-    position: absolute;
-    height: 30px;
-    width: 100%;
-    bottom: 0px;
-    text-align: end;
-    background-color: #2266a97c;
 }
 
 

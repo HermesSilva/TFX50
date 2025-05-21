@@ -1,24 +1,30 @@
 /// <reference path="../Stage/XScene.ts" />
+/// <reference path="../Reflection/XReflections.ts" />
+/// <reference path="../Net/XHttpClient.ts" />
 
+@Injectable
 class SceneDataView extends XScene
 {
-
-
     constructor(pOwner: XElement)
     {
         super(pOwner);
         this.DataGrid = new MainDataGrid(this);
-        this._Client = new XHttpClient(this);
+        this.Filter = new XFilter(this);
+        this.Teste = "Maria";
     }
+
+    Filter: XFilter;
     DataGrid: MainDataGrid;
     Model: XAPPModel | undefined;
+    Teste: string | undefined;
 
-    private _Client: XHttpClient;
+    @Inject(XHttpClient)
+    Client!: XHttpClient;
 
     SetModel(pModel: XAPPModel)
     {
         this.Model = pModel;
-        this._Client.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: any) =>
+        this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: any) =>
         {
             this.DataGrid.SetModel(pData.Data);
             this.Load();
@@ -29,11 +35,9 @@ class SceneDataView extends XScene
     {
         if (this.Model?.SearchPath === undefined)
             return;
-        this._Client.SendAsync(this.Model.SearchPath, {}, (pData: any) =>
+        this.Client?.SendAsync(this.Model.SearchPath, {}, (pData: any) =>
         {
             this.DataGrid.SetDataSet(pData.Data);
         });
     }
-
-  
 }

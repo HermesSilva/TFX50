@@ -5,6 +5,7 @@ class XColumnConfig
     Visible!: boolean;
     Width!: number;
     Title!: string;    
+    Align: XAlign = XAlign.Left;   
 }
 
 class XTableElement extends XElement

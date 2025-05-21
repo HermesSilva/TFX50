@@ -6,7 +6,7 @@ class XStage extends XDiv
     {
         super(document.body, "MainDiv");
         this.TopBar = new XTopBar(this);
-        this.TabControl = new XStageTabControl(this);
+        this.TabControl = this.CreateTabControl();;
         this.TabControl.Dropdown.HTML.classList.add("Main");
         if (XStage.SessionID == null)
             XStage.SessionID = crypto.randomUUID();
@@ -19,6 +19,11 @@ class XStage extends XDiv
     LoadApp(pLoadApp: XAPPModel)
     {
         
+    }
+
+    CreateTabControl(): XStageTabControl
+    {
+        return new XStageTabControl(this);
     }
 }
 

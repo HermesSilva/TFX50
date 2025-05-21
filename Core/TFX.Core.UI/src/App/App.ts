@@ -1,55 +1,24 @@
-/// <reference path="../Stage/XStage.ts" />
+/// <reference path="../Stage/XStageTabControl.ts" />
 
-class App extends XStage
+class App extends XStageTabControlTab
 {
-    static Instance: App;
-
-    constructor()
+    constructor(pOwner: XElement | HTMLElement | null)
     {
-        super();
-        this.Menu = new MainMenu(this);
-        this.Menu.OnResize = () => this.MenuResize();
-        this.Menu.OnLaunch = (arg: XDataMenuItem) => this.DoLounch(arg);
-        this.Loaded();
+        super(pOwner);
+        this.ButtonBar = new XButtonBar(this);
+        this.Scanes = new XDiv(this, "Scenes");
+        this._Client = new XHttpClient(this);
     }
 
-    Menu: MainMenu;
+    private _Client: XHttpClient;
 
-    Loaded()
-    {
-        this.Menu.Load();
-    }
+    Scanes: XDiv;
+    ButtonBar: XButtonBar;
 
-    static Run()
+    SetModel(pLoadApp: XAPPModel)
     {
-        window.onmousedown = (arg) => XPopupManager.HideAll(arg);
-        window.onkeydown = (a) => XHotkeyManager.OnKeyDown(a);
-        this.Instance = new App();
-    }
+        var dv = new SceneDataView(this.Scanes);
 
-    override SizeChanged()
-    {
-        this.MenuResize();
-    }
-
-    LoadApp(pLoadApp: XAPPModel)
-    {
-        var tab = this.TabControl.AddTab(pLoadApp.Title);
-        var dv = new SceneDataView(tab);
         dv.SetModel(pLoadApp);
-    }
-
-    DoLounch(pItem: XDataMenuItem)
-    {
-        XMainCache.GetApp(pItem.ResourceID, this, this.LoadApp);
-    }
-
-    MenuResize()
-    {
-        var r = this.Menu.HTML.GetRect();
-        this.TabControl.HTML.style.left = `${r.Width}px`;
-        this.TabControl.HTML.style.width = `${this.Rect.Width - r.Width - 1}px`;
-        this.TopBar.HTML.style.left = `${r.Width}px`;
-        this.TopBar.HTML.style.width = `${this.Rect.Width - r.Width - 1}px`;
     }
 }

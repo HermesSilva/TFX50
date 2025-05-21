@@ -1,4 +1,5 @@
-﻿interface XSizeableElementSizeEvent { (pSender: XElement): void; }
+﻿/// <reference path="../XDiv.ts" />
+interface XSizeableElementSizeEvent { (pSender: XElement): void; }
 
 class XSizeableElement extends XDiv 
 {

@@ -55,7 +55,5 @@ namespace Launcher
             else
                 App.Run("http://+:7000");
         }
-
-
     }
 }
