@@ -1,4 +1,7 @@
-﻿class XElement implements XIElement
+﻿/// <reference path="../../Reflection/XReflections.ts" />
+/// <reference path="../../Model/XAppModel.ts" />
+
+class XElement implements XIElement
 {
     static _ID = 0;
 
@@ -9,7 +12,7 @@
 
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null = null, pTag: string | null = null)
     {
-        this.UUID = XElement.NextID();
+        this.UID = XElement.NextID();
         this.Owner = pOwner;
         this.HTML = this.CreateContainer(pTag);
         if (pClass == null)
@@ -37,7 +40,7 @@
     public Element: HTMLElement | null = null;
     Owner: XElement | HTMLElement | null;
     private _IsVisible: boolean = true;
-    UUID: number = 0;
+    UID: number = 0;
     private _ResizeObserver: ResizeObserver | undefined;
     OnResize: XMethod<XElement> | null = null;
     OrderIndex: number = 0;
@@ -46,6 +49,7 @@
     Children: XArray<XElement> = new XArray<XElement>();
     AutoIncZIndex: boolean = false;
     UseVisibility: boolean = false;
+
 
     GetOwner<T extends XIElement | null>(pPredicate: XFunc<T>): T
     {
