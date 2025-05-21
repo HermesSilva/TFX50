@@ -11,8 +11,9 @@ class SceneDataView extends XScene
         this.DataGrid = new MainDataGrid(this);
         this.Filter = new XFilter(this);
         this.Teste = "Maria";
+        this.X123456 = new XScene(this);
     }
-
+    X123456: XScene
     Filter: XFilter;
     DataGrid: MainDataGrid;
     Model: XAPPModel | undefined;
