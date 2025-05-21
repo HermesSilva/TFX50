@@ -1,3 +1,6 @@
+/// <reference path="src/Reflection/XReflections.ts" />
+/// <reference path="src/Net/XHttpClient.ts" />
+
 /// <reference path="src/XDefault.ts" />
 /// <reference path="src/XConst.ts" />
 /// <reference path="src/XInterfaces.ts" />
@@ -21,7 +24,6 @@
 /// <reference path="src/Elements/Base/XDropDownElement.ts" />
 /// <reference path="src/Elements/Base/XBaseLoockupInput.ts" />
 
-/// <reference path="src/Net/XHttpClient.ts" />
 /// <reference path="src/Net/XServiceBroker.ts" />
 
 
