@@ -1,34 +1,48 @@
 
-if (typeof (Reflect as any).defineMetadata !== 'function')
+const AutoInitMarker = Symbol("AutoInitClass")
+
+function AutoInit<T extends new (...args: any[]) => any>(Actual: T): T
 {
-    const MetadataStore = new WeakMap<object, Map<string, any>>();
-    (Reflect as any).defineMetadata = (key: string, value: any, target: object, propertyKey?: string) =>
+    let current = Actual.prototype;
+    while (current && current !== Object.prototype)
     {
-        let targetMap = MetadataStore.get(target)
-        if (!targetMap)
+        if (current.constructor && (current.constructor as any)[AutoInitMarker])
+            throw new Error(`The Class "${Actual.name}" cannot use @AutoInit because a base class is already decorated.`);
+
+        current = Object.getPrototypeOf(current);
+    }
+
+    const Derived = class extends Actual
+    {
+        constructor(...args: any[])
         {
-            targetMap = new Map<string, any>()
-            MetadataStore.set(target, targetMap)
+            super(...args)
+            XObjectCache.ResolveDependencies(this)
         }
-        // usa “propertyKey:key” se for metadata de membro
-        const metaKey = propertyKey ? `${propertyKey}:${key}` : key
-        targetMap.set(metaKey, value)
     };
 
-    (Reflect as any).getMetadata = (key: string, target: object, propertyKey?: string) =>
-    {
-        const targetMap = MetadataStore.get(target)
-        if (!targetMap) return undefined
-        const metaKey = propertyKey ? `${propertyKey}:${key}` : key
-        return targetMap.get(metaKey)
-    }
+    Object.defineProperty(Derived, AutoInitMarker, { value: true, enumerable: false, configurable: false, writable: false });
+    return Derived as T
 }
 
 interface XInjectionItem
 {
-    Class: string;
     Token: Function;
     Key: string;
+}
+
+function GetClassHierarchy(obj: any): string[]
+{
+    const hierarchy: any[] = []
+    let current = Object.getPrototypeOf(obj)
+
+    while (current && current !== Object.prototype)
+    {
+        const name = current.constructor?.name ?? "(anonymous)"
+        hierarchy.push(current.constructor)
+        current = Object.getPrototypeOf(current)
+    }
+    return hierarchy
 }
 
 class XObjectCache
@@ -53,43 +67,36 @@ class XObjectCache
 
     static ResolveDependencies<T>(instance: any): void
     {
-        const ctor = instance.constructor
-        const injections = <XArray<XInjectionItem>>ctor.__inject__;
-        const name = ctor.__name__;
-        if (injections)
+        let x = GetClassHierarchy(instance);
+        for (var i = 0; i < x.length; i++)
         {
-            const injects = <XArray<XInjectionItem>>injections.Where(i => i.Class == name);
-            for (var i = 0; i < injects.length; i++)
+            const item = <any>x[i];
+            if (item == null)
+                continue;
+            if (item.prototype.__inject__)
             {
-                const item = injects[i];
-                console.log(`Resolving [${item.Key}] into [${item.Class}] into [${item.Token.name}]`);
-                instance[item.Key] = XObjectCache.Get(<any>item.Token)
+                const injects = <XArray<XInjectionItem>>item.prototype.__inject__;
+                for (var j = 0; i < injects.length; i++)
+                {
+                    const item = injects[i];
+                    let vlr = instance[item.Key];
+                    if (vlr)
+                        continue;
+                    console.log(`Resolving [${item.Key}] into [${item.Token.name}] UUID=[${instance.UID}]`);
+                    instance[item.Key] = XObjectCache.Get(<any>item.Token)
+                }
             }
         }
     }
-}
-
-function Injectable<T extends new (...args: any[]) => any>(target: T): T
-{
-    XObjectCache.AddProvider(target)
-    const Wrapper = class extends target
-    {
-        constructor(...args: any[])
-        {
-            super(...args)
-            if (this.constructor === Wrapper)
-                XObjectCache.ResolveDependencies(this)
-        }
-    }
-    return Wrapper as T
 }
 
 function Inject(token: Function): PropertyDecorator
 {
     return function (target: Object, propertyKey: string | symbol): void
     {
-        const ctor = (target.constructor as any);
-        console.log(`Injecting [${<any>propertyKey}] into [${target.constructor.name}] into [${token.name}]`);
+        Object.getPrototypeOf(target)
+        const ctor = <any>target;//(target.constructor as any);
+        console.log(`Injecting [${<any>propertyKey}] into [${token.name}]`);
 
         ctor.__inject__ = <XArray<XInjectionItem>>ctor.__inject__ ?? new XArray<XInjectionItem>();
         ctor.__inject__ = (ctor.__inject__ as XArray<XInjectionItem>) ?? new XArray<XInjectionItem>();

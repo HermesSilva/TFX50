@@ -3,8 +3,6 @@
 /// <reference path="../Reflection/XReflections.ts" />
 /// <reference path="../Elements/Base/XTable.ts" />
 
-
-@Injectable
 class XScene extends XDiv
 {
     constructor(pOwner: XElement)

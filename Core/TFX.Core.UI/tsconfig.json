@@ -1,11 +1,9 @@
 {
   "compileOnSave": true,
-  "experimentalDecorators": true,
-  "emitDecoratorMetadata": true,
   "compilerOptions": {
     "experimentalDecorators": true,
-    //"emitDecoratorMetadata": true, // deixe em false se não pretende usar reflect-metadata
-    //"useDefineForClassFields": true, // compatível com os novos decorators ECMAScript
+    "emitDecoratorMetadata": true, // deixe em false se não pretende usar reflect-metadata
+    "useDefineForClassFields": true, // compatível com os novos decorators ECMAScript
     //"types": [ "node", "undici-types" ],
     "target": "ES2022",
     "module": "system",
