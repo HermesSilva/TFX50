@@ -31,15 +31,15 @@ interface XInjectionItem
     Key: string;
 }
 
-function GetClassHierarchy(obj: any): string[]
+function GetClassHierarchy(obj: any): Function[]
 {
-    const hierarchy: any[] = []
+    const hierarchy: Function[] = []
     let current = Object.getPrototypeOf(obj)
 
     while (current && current !== Object.prototype)
     {
-        const name = current.constructor?.name ?? "(anonymous)"
-        hierarchy.push(current.constructor)
+        if (current.constructor?.name)
+            hierarchy.push(current.constructor)
         current = Object.getPrototypeOf(current)
     }
     return hierarchy
@@ -75,14 +75,13 @@ class XObjectCache
                 continue;
             if (item.prototype.__inject__)
             {
-                const injects = <XArray<XInjectionItem>>item.prototype.__inject__;
-                for (var j = 0; i < injects.length; i++)
+                const injects = <XInjectionItem[]>item.prototype.__inject__;
+                for (var j = 0; j < injects.length; j++)
                 {
-                    const item = injects[i];
+                    const item = injects[j];
                     let vlr = instance[item.Key];
                     if (vlr)
                         continue;
-                    console.log(`Resolving [${item.Key}] into [${item.Token.name}] UUID=[${instance.UID}]`);
                     instance[item.Key] = XObjectCache.Get(<any>item.Token)
                 }
             }
@@ -92,16 +91,13 @@ class XObjectCache
 
 function Inject(token: Function): PropertyDecorator
 {
-    return function (target: Object, propertyKey: string | symbol): void
+    return function (target: any, propertyKey: string | symbol): void
     {
-        Object.getPrototypeOf(target)
-        const ctor = <any>target;//(target.constructor as any);
-        console.log(`Injecting [${<any>propertyKey}] into [${token.name}]`);
+        if (!target.__inject__)
+            target.__inject__ = [];
 
-        ctor.__inject__ = <XArray<XInjectionItem>>ctor.__inject__ ?? new XArray<XInjectionItem>();
-        ctor.__inject__ = (ctor.__inject__ as XArray<XInjectionItem>) ?? new XArray<XInjectionItem>();
-        ctor.__inject__.Add({ Token: token, Class: target.constructor.name, Key: propertyKey });
-        if (!ctor.__name__)
-            ctor.__name__ = ctor.name;
+        target.__inject__.push({ Token: token, Key: propertyKey });
+        if (!target.__name__)
+            target.__name__ = target.name;
     }
 }
