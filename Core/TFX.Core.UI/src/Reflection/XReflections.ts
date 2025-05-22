@@ -93,7 +93,7 @@ class XObjectCache
         }
     }
 
-    static Get<T>(pToken: new () => T, pContext?: Map<Function, any>): T
+    static Get<T>(pToken: new () => T, pContext?: Map<Function, any>, pLifetime?: XLifetime): T
     {
         const vBaseToken = XObjectCache.ResolveCanonical(pToken) as new () => T
         const vProvider = XObjectCache._Providers.get(vBaseToken)
@@ -101,14 +101,14 @@ class XObjectCache
         if (!vProvider)
             throw new Error(`Provider for "${pToken.name}" not registered.`)
 
-        if (vProvider.Lifetime === XLifetime.Singleton)
+        if (vProvider.Lifetime === XLifetime.Singleton && vProvider.Lifetime === pLifetime)
         {
             if (!vProvider.Instance)
                 vProvider.Instance = XObjectCache.Create(vBaseToken)
             return vProvider.Instance
         }
 
-        if (vProvider.Lifetime === XLifetime.Scoped)
+        if (vProvider.Lifetime === XLifetime.Scoped && vProvider.Lifetime === pLifetime)
         {
             if (!pContext)
                 throw new Error(`No context provided for scoped resolution of "${pToken.name}"`)
@@ -155,16 +155,16 @@ class XObjectCache
                 const vLifetime: XLifetime = vItem.Lifetime ?? XLifetime.Singleton
 
                 if (vLifetime === XLifetime.Transient)
-                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, new Map()) // nova instância sempre
+                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, new Map(), vLifetime)
                 else
                     if (vLifetime === XLifetime.Scoped)
                     {
                         if (!vContext.has(vItem.Token))
-                            vContext.set(vItem.Token, XObjectCache.Get(vItem.Token, vContext))
+                            vContext.set(vItem.Token, XObjectCache.Get(vItem.Token, vContext, vLifetime))
                         pInstance[vItem.Key] = vContext.get(vItem.Token)
                     }
                     else
-                        pInstance[vItem.Key] = XObjectCache.Get(vItem.Token)
+                        pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, undefined, vLifetime)
             }
         }
     }
