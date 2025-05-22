@@ -2,6 +2,7 @@
 /// <reference path="../Reflection/XReflections.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
 
+XObjectCache.AddProvider(XHttpClient, XLifetime.Singleton)
 @AutoInit
 class SceneDataView extends XScene
 {

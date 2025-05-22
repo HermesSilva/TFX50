@@ -20,7 +20,8 @@ class MainMenu extends XMenu
 
     Load()
     {
-        var clt = new XHttpClient(this, Paths.Menu);
+        var clt = new XHttpClient();
+        clt.Context = this; 
         clt.OnLoad = this.LoadCallBack;
         clt.SendAsync(Paths.Menu);
     }
