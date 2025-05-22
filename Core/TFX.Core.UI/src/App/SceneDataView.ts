@@ -28,14 +28,14 @@ class SceneDataView extends XScene
     ClientS1!: XHttpClient;
     @Inject(XHttpClient)
     ClientS2!: XHttpClient;
+
     @Inject(XHttpClient)
     ClientS3!: XHttpClient;
-
     @Inject(XHttpClient, XLifetime.Transient)
     ClientC1!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Transient)
+    @Inject(XHttpClient, XLifetime.Scoped)
     ClientC2!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Transient)
+    @Inject(XHttpClient, XLifetime.Singleton)
     Client!: XHttpClient;
 
     SetModel(pModel: XAPPModel)
