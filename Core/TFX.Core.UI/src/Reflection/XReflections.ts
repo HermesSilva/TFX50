@@ -73,30 +73,23 @@ function GetClassHierarchy(pInstance: any): Function[]
 
 class XObjectCache
 {
-    private static _Providers = new Map<Function, XProviderEntry>()
-    private static _CanonicalMap = new Map<Function, Function>()
+    private static _Providers: any = {}
     private static _Creating = new Set<Function>()
 
     static HasProvider(pToken: Function): boolean
     {
-        return XObjectCache._Providers.has(XObjectCache.ResolveCanonical(pToken))
+        return XObjectCache._Providers[pToken.name] !== undefined
     }
 
     static AddProvider(pToken: new () => any, pLifetime: XLifetime = XLifetime.Transient): void
     {
-        const vBaseToken = XObjectCache.ResolveCanonical(pToken) as new () => any
-
-        if (!XObjectCache._Providers.has(vBaseToken))
-        {
-            XObjectCache._Providers.set(vBaseToken, { Token: vBaseToken, Lifetime: pLifetime })
-            XObjectCache._CanonicalMap.set(pToken, vBaseToken)
-        }
+        if (!XObjectCache.HasProvider(pToken))
+            XObjectCache._Providers[pToken.name] = { Token: pToken, Lifetime: pLifetime }
     }
 
     static Get<T>(pToken: new () => T, pContext?: Map<Function, any>, pLifetime?: XLifetime): T
     {
-        const vBaseToken = XObjectCache.ResolveCanonical(pToken) as new () => T
-        const vProvider = XObjectCache._Providers.get(vBaseToken)
+        const vProvider = XObjectCache._Providers[pToken.name]
 
         if (!vProvider)
             throw new Error(`Provider for "${pToken.name}" not registered.`)
@@ -104,7 +97,7 @@ class XObjectCache
         if (vProvider.Lifetime === XLifetime.Singleton && vProvider.Lifetime === pLifetime)
         {
             if (!vProvider.Instance)
-                vProvider.Instance = XObjectCache.Create(vBaseToken)
+                vProvider.Instance = XObjectCache.Create(pToken)
             return vProvider.Instance
         }
 
@@ -112,12 +105,12 @@ class XObjectCache
         {
             if (!pContext)
                 throw new Error(`No context provided for scoped resolution of "${pToken.name}"`)
-            if (!pContext.has(vBaseToken))
-                pContext.set(vBaseToken, XObjectCache.Create(vBaseToken))
-            return pContext.get(vBaseToken)
+            if (!pContext.has(pToken))
+                pContext.set(pToken, XObjectCache.Create(pToken))
+            return pContext.get(pToken)
         }
 
-        return XObjectCache.Create(vBaseToken)
+        return XObjectCache.Create(pToken)
     }
 
     private static Create<T>(pToken: new () => T): T
@@ -169,15 +162,9 @@ class XObjectCache
         }
     }
 
-
     static GetRegisteredLifetime(pToken: Function): XLifetime | undefined
     {
-        return XObjectCache._Providers.get(XObjectCache.ResolveCanonical(pToken))?.Lifetime
-    }
-
-    private static ResolveCanonical(pToken: Function): Function
-    {
-        return XObjectCache._CanonicalMap.get(pToken) ?? pToken
+        return XObjectCache._Providers[pToken.name]?.Lifetime
     }
 }
 
@@ -190,15 +177,11 @@ function Inject(pToken: new () => any, pLifetime?: XLifetime): PropertyDecorator
 
         const vAlready = XObjectCache.HasProvider(pToken)
         if (!vAlready)
-            XObjectCache.AddProvider(pToken, pLifetime ?? XLifetime.Singleton)
+            XObjectCache.AddProvider(pToken, XLifetime.Singleton)
 
         const vFinalLifetime = pLifetime ?? XObjectCache.GetRegisteredLifetime(pToken) ?? XLifetime.Singleton
 
-        pTarget.__inject__.push({
-            Token: pToken,
-            Key: pKey,
-            Lifetime: vFinalLifetime
-        })
+        pTarget.__inject__.push({ Token: pToken, Key: pKey, Lifetime: vFinalLifetime })
     }
 }
 

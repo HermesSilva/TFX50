@@ -2,7 +2,7 @@
 /// <reference path="../Reflection/XReflections.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
 
-XObjectCache.AddProvider(XHttpClient, XLifetime.Singleton)
+//XObjectCache.AddProvider(XHttpClient, XLifetime.Singleton)
 @AutoInit
 class SceneDataView extends XScene
 {
@@ -11,10 +11,7 @@ class SceneDataView extends XScene
         super(pOwner);
         this.DataGrid = new MainDataGrid(this);
         this.Filter = new XFilter(this);
-        this.Teste = "Maria";
-        //this.X123456 = new XScene(this);
     }
-    //X123456: XScene
     Filter: XFilter;
     DataGrid: MainDataGrid;
     Model: XAPPModel | undefined;
@@ -39,25 +36,25 @@ class SceneDataView extends XScene
     @Inject(XHttpClient, XLifetime.Scoped)
     ClientC2!: XHttpClient;
     @Inject(XHttpClient, XLifetime.Scoped)
-    ClientC3!: XHttpClient;
+    Client!: XHttpClient;
 
     SetModel(pModel: XAPPModel)
     {
         this.Model = pModel;
-        //this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: any) =>
-        //{
-        //    this.DataGrid.SetModel(pData.Data);
-        //    this.Load();
-        //});
+        this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: any) =>
+        {
+            this.DataGrid.SetModel(pData.Data);
+            this.Load();
+        });
     }
 
     Load()
     {
         if (this.Model?.SearchPath === undefined)
             return;
-        //this.Client?.SendAsync(this.Model.SearchPath, {}, (pData: any) =>
-        //{
-        //    this.DataGrid.SetDataSet(pData.Data);
-        //});
+        this.Client?.SendAsync(this.Model.SearchPath, {}, (pData: any) =>
+        {
+            this.DataGrid.SetDataSet(pData.Data);
+        });
     }
 }
