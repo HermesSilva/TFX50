@@ -2,7 +2,7 @@
 /// <reference path="../Reflection/XReflections.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
 
-//XObjectCache.AddProvider(XHttpClient, XLifetime.Singleton)
+XObjectCache.AddProvider(XHttpClient, XLifetime.Singleton)
 @AutoInit
 class SceneDataView extends XScene
 {
@@ -17,25 +17,25 @@ class SceneDataView extends XScene
     Model: XAPPModel | undefined;
     Teste: string | undefined;
 
-    @Inject(XHttpClient, XLifetime.Transient)
+    @Inject(XHttpClient)
     ClientT1!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Transient)
+    @Inject(XHttpClient)
     ClientT2!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Transient)
+    @Inject(XHttpClient)
     ClientT3!: XHttpClient;
 
-    @Inject(XHttpClient, XLifetime.Singleton)
+    @Inject(XHttpClient)
     ClientS1!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Singleton)
+    @Inject(XHttpClient)
     ClientS2!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Singleton)
+    @Inject(XHttpClient)
     ClientS3!: XHttpClient;
 
-    @Inject(XHttpClient, XLifetime.Scoped)
+    @Inject(XHttpClient, XLifetime.Transient)
     ClientC1!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Scoped)
+    @Inject(XHttpClient, XLifetime.Transient)
     ClientC2!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Scoped)
+    @Inject(XHttpClient, XLifetime.Transient)
     Client!: XHttpClient;
 
     SetModel(pModel: XAPPModel)

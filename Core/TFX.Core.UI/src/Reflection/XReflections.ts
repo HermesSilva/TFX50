@@ -94,14 +94,14 @@ class XObjectCache
         if (!vProvider)
             throw new Error(`Provider for "${pToken.name}" not registered.`)
 
-        if (vProvider.Lifetime === XLifetime.Singleton && vProvider.Lifetime === pLifetime)
+        if (pLifetime === XLifetime.Singleton || (vProvider.Lifetime === XLifetime.Singleton && pLifetime == null))
         {
             if (!vProvider.Instance)
                 vProvider.Instance = XObjectCache.Create(pToken)
             return vProvider.Instance
         }
 
-        if (vProvider.Lifetime === XLifetime.Scoped && vProvider.Lifetime === pLifetime)
+        if (pLifetime === XLifetime.Scoped || (vProvider.Lifetime === XLifetime.Scoped && pLifetime == null))
         {
             if (!pContext)
                 throw new Error(`No context provided for scoped resolution of "${pToken.name}"`)
@@ -131,10 +131,10 @@ class XObjectCache
 
     static ResolveDependencies(pInstance: any, pContext?: Map<Function, any>): void
     {
-        const vContext = pContext ?? new Map<Function, any>()
-        const vClasses = GetClassHierarchy(pInstance)
+        const ctx: any = pContext ?? new Map<Function, any>()
+        const classes = GetClassHierarchy(pInstance)
 
-        for (const vCls of vClasses)
+        for (const vCls of classes)
         {
             const vInjects = vCls.prototype?.__inject__ as XInjectionItem[] | undefined
             if (!vInjects)
@@ -145,26 +145,16 @@ class XObjectCache
                 if (pInstance[vItem.Key])
                     continue
 
-                const vLifetime: XLifetime = vItem.Lifetime ?? XLifetime.Singleton
-
-                if (vLifetime === XLifetime.Transient)
-                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, new Map(), vLifetime)
+                if (vItem.Lifetime === XLifetime.Scoped)
+                {
+                    if (ctx[vItem.Token.name] == undefined)
+                        ctx[vItem.Token.name] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime)
+                    pInstance[vItem.Key] = ctx[vItem.Token.name]
+                }
                 else
-                    if (vLifetime === XLifetime.Scoped)
-                    {
-                        if (!vContext.has(vItem.Token))
-                            vContext.set(vItem.Token, XObjectCache.Get(vItem.Token, vContext, vLifetime))
-                        pInstance[vItem.Key] = vContext.get(vItem.Token)
-                    }
-                    else
-                        pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, undefined, vLifetime)
+                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, undefined, vItem.Lifetime)
             }
         }
-    }
-
-    static GetRegisteredLifetime(pToken: Function): XLifetime | undefined
-    {
-        return XObjectCache._Providers[pToken.name]?.Lifetime
     }
 }
 
@@ -175,13 +165,10 @@ function Inject(pToken: new () => any, pLifetime?: XLifetime): PropertyDecorator
         if (!pTarget.__inject__)
             pTarget.__inject__ = []
 
-        const vAlready = XObjectCache.HasProvider(pToken)
-        if (!vAlready)
+        if (!XObjectCache.HasProvider(pToken))
             XObjectCache.AddProvider(pToken, XLifetime.Singleton)
 
-        const vFinalLifetime = pLifetime ?? XObjectCache.GetRegisteredLifetime(pToken) ?? XLifetime.Singleton
-
-        pTarget.__inject__.push({ Token: pToken, Key: pKey, Lifetime: vFinalLifetime })
+        pTarget.__inject__.push({ Token: pToken, Key: pKey, Lifetime: pLifetime })
     }
 }
 
