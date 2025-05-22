@@ -3,6 +3,16 @@ type XOnLoad = (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent 
 
 class XHttpClient
 {
+    
+    constructor(pContex: any, pData: any = null)
+    {
+        this._Context = pContex;
+        this.Method = "POST";
+        this._Data = pData;
+        this._Xhr = new XMLHttpRequest();
+        this.UID = XElement.NextID();
+    }
+    UID: number = 0;
     private _Xhr: XMLHttpRequest;
     private _Headers: Record<string, string> = {};
     private _Data?: any;
@@ -14,13 +24,7 @@ class XHttpClient
     public OnError?: (pError: Error, pCallData: any | null, pEvent: ProgressEvent | null) => void;
     public OnProgress?: (pEvent: ProgressEvent, pCallData: any | null) => void;
 
-    constructor(pContex: any, pData: any = null)
-    {
-        this._Context = pContex;
-        this.Method = "POST";
-        this._Data = pData;
-        this._Xhr = new XMLHttpRequest();
-    }
+
     public SetTimeout(pMilliseconds: number): this
     {
         this._Timeout = pMilliseconds;

@@ -1,25 +1,45 @@
 const AutoInitMarker = Symbol("AutoInitClass")
 const CreatingInstances = new Set<Function>()
-
-function AutoInit<T extends new (...args: any[]) => any>(Actual: T): T
+enum XLifetime
 {
-    let current = Actual.prototype
+    Singleton = 1,
+    Scoped = 2,
+    Transient = 3
+}
+
+interface XProviderEntry
+{
+    Lifetime: XLifetime
+    Token: Function
+    Instance?: any
+}
+
+interface XInjectionItem
+{
+    Token: Function
+    Key: string
+    Lifetime: XLifetime
+}
+
+function AutoInit<T extends new (...pArgs: any[]) => any>(pActual: T): T
+{
+    let current = pActual.prototype
     while (current && current !== Object.prototype)
     {
         if (current.constructor && (current.constructor as any)[AutoInitMarker])
-            throw new Error(`The class "${Actual.name}" cannot use @AutoInit because a base class is already decorated.`)
+            throw new Error(`The class "${pActual.name}" cannot use @AutoInit because a base class is already decorated.`)
 
         current = Object.getPrototypeOf(current)
     }
 
-    const Derived = class extends Actual
+    const Derived = class extends pActual
     {
         constructor(...args: any[])
         {
-            if (CreatingInstances.has(Actual))
-                throw new Error(`Circular dependency detected for class "${Actual.name}"`)
+            if (CreatingInstances.has(pActual))
+                throw new Error(`Circular dependency detected for class "${pActual.name}"`)
 
-            CreatingInstances.add(Actual)
+            CreatingInstances.add(pActual)
             try
             {
                 super(...args)
@@ -27,7 +47,7 @@ function AutoInit<T extends new (...args: any[]) => any>(Actual: T): T
             }
             finally
             {
-                CreatingInstances.delete(Actual)
+                CreatingInstances.delete(pActual)
             }
         }
     }
@@ -37,16 +57,10 @@ function AutoInit<T extends new (...args: any[]) => any>(Actual: T): T
     return Derived as T
 }
 
-interface XInjectionItem
-{
-    Token: Function
-    Key: string
-}
-
-function GetClassHierarchy(obj: any): Function[]
+function GetClassHierarchy(pInstance: any): Function[]
 {
     const hierarchy: Function[] = []
-    let current = Object.getPrototypeOf(obj)
+    let current = Object.getPrototypeOf(pInstance)
 
     while (current && current !== Object.prototype)
     {
@@ -62,36 +76,63 @@ class XObjectCache
     private static _Providers = new Map<Function, any>()
     private static _Creating = new Set<Function>()
 
-    static AddProvider(token: Function)
+    static HasProvider(pToken: Function): boolean
     {
-        XObjectCache._Providers.set(token, null)
+        return XObjectCache._Providers.has(pToken)
     }
 
-    static Get<T>(token: new () => T): T
+    static AddProvider(pToken: Function, pLifetime: XLifetime = XLifetime.Transient)
     {
-        if (XObjectCache._Creating.has(token))
-            throw new Error(`Circular resolution detected for class "${token.name}"`)
+        if (!XObjectCache._Providers.has(pToken))
+            XObjectCache._Providers.set(pToken, { Token: pToken, Lifetime: pLifetime })
+    }
 
-        let instance = XObjectCache._Providers.get(token)
-        if (!instance)
+    static Get<T>(pToken: new () => T, pContext?: Map<Function, any>): T
+    {
+        const provider = XObjectCache._Providers.get(pToken)
+        if (!provider)
+            throw new Error(`Provider for "${pToken.name}" not registered.`)
+
+        if (provider.Lifetime === XLifetime.Singleton)
         {
-            try
-            {
-                XObjectCache._Creating.add(token)
-                instance = new (token as any)()
-                XObjectCache._Providers.set(token, instance)
-            }
-            finally
-            {
-                XObjectCache._Creating.delete(token)
-            }
+            if (!provider.Instance)
+                provider.Instance = XObjectCache.Create(pToken)
+            return provider.Instance
         }
-        return instance as T
+
+        if (provider.Lifetime === XLifetime.Scoped)
+        {
+            if (!pContext)
+                throw new Error(`No context provided for scoped resolution of "${pToken.name}"`)
+            if (!pContext.has(pToken))
+                pContext.set(pToken, XObjectCache.Create(pToken))
+            return pContext.get(pToken)
+        }
+
+        return XObjectCache.Create(pToken)
     }
 
-    static ResolveDependencies(instance: any): void
+    private static Create<T>(pToken: new () => T): T
     {
-        const classes = GetClassHierarchy(instance)
+        if (XObjectCache._Creating.has(pToken))
+            throw new Error(`Circular resolution detected for class "${pToken.name}"`)
+
+        try
+        {
+            XObjectCache._Creating.add(pToken)
+            return new (pToken as any)()
+        }
+        finally
+        {
+            XObjectCache._Creating.delete(pToken)
+        }
+    }
+
+    static ResolveDependencies(pInstance: any, pContext?: Map<Function, any>): void
+    {
+        const context = pContext ?? new Map<Function, any>()
+
+        const classes = GetClassHierarchy(pInstance)
         for (const cls of classes)
         {
             const injects = cls.prototype?.__inject__ as XInjectionItem[] | undefined
@@ -99,20 +140,36 @@ class XObjectCache
 
             for (const item of injects)
             {
-                if (instance[item.Key]) continue
-                instance[item.Key] = XObjectCache.Get(item.Token as any)
+                if (pInstance[item.Key]) continue
+
+                const lifetime = item.Lifetime ?? XLifetime.Singleton
+
+                if (lifetime === XLifetime.Scoped)
+                {
+                    if (!context.has(item.Token))
+                        context.set(item.Token, XObjectCache.Get(item.Token as any, context))
+                    pInstance[item.Key] = context.get(item.Token)
+                }
+                else
+                {
+                    const useContext = lifetime === XLifetime.Transient ? new Map() : undefined
+                    pInstance[item.Key] = XObjectCache.Get(item.Token as any, useContext)
+                }
             }
         }
     }
 }
 
-function Inject(token: Function): PropertyDecorator
+function Inject(pToken: Function, pLifetime: XLifetime = XLifetime.Singleton): PropertyDecorator
 {
     return function (target: any, propertyKey: string | symbol): void
     {
         if (!target.__inject__)
             target.__inject__ = []
 
-        target.__inject__.push({ Token: token, Key: propertyKey })
+        if (!XObjectCache.HasProvider(pToken))
+            XObjectCache.AddProvider(pToken, pLifetime)
+
+        target.__inject__.push({ Token: pToken, Key: propertyKey, Lifetime: pLifetime })
     }
 }
