@@ -4,11 +4,11 @@ type XOnLoad = (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent 
 class XHttpClient
 {
     
-    constructor(pContex: any, pData: any = null)
+    constructor()
     {
-        this._Context = pContex;
+        this.Context = null;
         this.Method = "POST";
-        this._Data = pData;
+        this._Data = null;
         this._Xhr = new XMLHttpRequest();
         this.UID = XElement.NextID();
     }
@@ -17,7 +17,7 @@ class XHttpClient
     private _Headers: Record<string, string> = {};
     private _Data?: any;
     private _CallBackData?: any;
-    private _Context: any;
+    Context: any;
     private _Timeout: number = 0;
     public Method: string;
     public OnLoad?: (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent | null) => void;
@@ -65,7 +65,7 @@ class XHttpClient
             this.SetupCommonHeaders();
             this._Xhr.ontimeout = (pEvent) =>
             {
-                this.OnError?.apply(this._Context, [new Error('Request timeout'), this._CallBackData, pEvent]);
+                this.OnError?.apply(this.Context, [new Error('Request timeout'), this._CallBackData, pEvent]);
                 this.OnError = undefined;
             }
 
@@ -74,25 +74,25 @@ class XHttpClient
                 if (this._Xhr.status >= 200 && this._Xhr.status < 300)
                 {
                     if (pOnLoad != null)
-                        pOnLoad.apply(this._Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                        pOnLoad.apply(this.Context, [this._Xhr.response, this._CallBackData, pEvent]);
                     else
-                        this.OnLoad?.apply(this._Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                        this.OnLoad?.apply(this.Context, [this._Xhr.response, this._CallBackData, pEvent]);
                 }
                 else
-                    this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+                    this.OnError?.apply(this.Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
                 this.OnLoad = undefined;
             };
 
             this._Xhr.onerror = (pEvent) =>
             {
-                this.OnError?.apply(this._Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+                this.OnError?.apply(this.Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
                 this.OnError = undefined;
             }
 
             if (this.OnProgress)
                 this._Xhr.onprogress = (pEvent) =>
                 {
-                    this.OnProgress?.apply(this._Context, [pEvent, this._CallBackData]);
+                    this.OnProgress?.apply(this.Context, [pEvent, this._CallBackData]);
                     this.OnProgress = undefined;
                 }
 
@@ -100,7 +100,7 @@ class XHttpClient
         }
         catch (pError)
         {
-            this.OnError?.apply(this._Context, [<Error>pError, this._CallBackData, <any>null]);
+            this.OnError?.apply(this.Context, [<Error>pError, this._CallBackData, <any>null]);
             this.OnLoad = undefined;
             this.OnError = undefined;
             this.OnProgress = undefined;
@@ -122,6 +122,6 @@ class XHttpClient
     public Abort(): void
     {
         this._Xhr.abort();
-        this.OnError?.apply(this._Context, [new Error('Request aborted'), this._Data, null]);
+        this.OnError?.apply(this.Context, [new Error('Request aborted'), this._Data, null]);
     }
 }

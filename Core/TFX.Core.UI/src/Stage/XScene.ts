@@ -10,6 +10,6 @@ class XScene extends XDiv
         super(pOwner,"XScene");
     }
 
-    @Inject(XTable)
-    X21!: XTable;
+    //@Inject(XTable)
+    //X21!: XTable;
 }

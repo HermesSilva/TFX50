@@ -1,5 +1,6 @@
 const AutoInitMarker = Symbol("AutoInitClass")
 const CreatingInstances = new Set<Function>()
+
 enum XLifetime
 {
     Singleton = 1,
@@ -10,13 +11,13 @@ enum XLifetime
 interface XProviderEntry
 {
     Lifetime: XLifetime
-    Token: Function
+    Token: new () => any
     Instance?: any
 }
 
 interface XInjectionItem
 {
-    Token: Function
+    Token: new () => any
     Key: string
     Lifetime: XLifetime
 }
@@ -26,15 +27,15 @@ function AutoInit<T extends new (...pArgs: any[]) => any>(pActual: T): T
     let current = pActual.prototype
     while (current && current !== Object.prototype)
     {
-        if (current.constructor && (current.constructor as any)[AutoInitMarker])
+        if ((current.constructor as any)[AutoInitMarker])
             throw new Error(`The class "${pActual.name}" cannot use @AutoInit because a base class is already decorated.`)
 
         current = Object.getPrototypeOf(current)
     }
 
-    const Derived = class extends pActual
+    const XDerived = class extends pActual
     {
-        constructor(...args: any[])
+        constructor(...pArgs: any[])
         {
             if (CreatingInstances.has(pActual))
                 throw new Error(`Circular dependency detected for class "${pActual.name}"`)
@@ -42,7 +43,7 @@ function AutoInit<T extends new (...pArgs: any[]) => any>(pActual: T): T
             CreatingInstances.add(pActual)
             try
             {
-                super(...args)
+                super(...pArgs)
                 XObjectCache.ResolveDependencies(this)
             }
             finally
@@ -52,64 +53,71 @@ function AutoInit<T extends new (...pArgs: any[]) => any>(pActual: T): T
         }
     }
 
-    Object.defineProperty(Derived, AutoInitMarker, { value: true, enumerable: false, configurable: false, writable: false })
-
-    return Derived as T
+    Object.defineProperty(XDerived, AutoInitMarker, { value: true, enumerable: false, configurable: false, writable: false })
+    return XDerived as T
 }
 
 function GetClassHierarchy(pInstance: any): Function[]
 {
-    const hierarchy: Function[] = []
-    let current = Object.getPrototypeOf(pInstance)
+    const vHierarchy: Function[] = []
+    let vCurrent = Object.getPrototypeOf(pInstance)
 
-    while (current && current !== Object.prototype)
+    while (vCurrent && vCurrent !== Object.prototype)
     {
-        hierarchy.push(current.constructor)
-        current = Object.getPrototypeOf(current)
+        vHierarchy.push(vCurrent.constructor)
+        vCurrent = Object.getPrototypeOf(vCurrent)
     }
 
-    return hierarchy
+    return vHierarchy
 }
 
 class XObjectCache
 {
-    private static _Providers = new Map<Function, any>()
+    private static _Providers = new Map<Function, XProviderEntry>()
+    private static _CanonicalMap = new Map<Function, Function>()
     private static _Creating = new Set<Function>()
 
     static HasProvider(pToken: Function): boolean
     {
-        return XObjectCache._Providers.has(pToken)
+        return XObjectCache._Providers.has(XObjectCache.ResolveCanonical(pToken))
     }
 
-    static AddProvider(pToken: Function, pLifetime: XLifetime = XLifetime.Transient)
+    static AddProvider(pToken: new () => any, pLifetime: XLifetime = XLifetime.Transient): void
     {
-        if (!XObjectCache._Providers.has(pToken))
-            XObjectCache._Providers.set(pToken, { Token: pToken, Lifetime: pLifetime })
+        const vBaseToken = XObjectCache.ResolveCanonical(pToken) as new () => any
+
+        if (!XObjectCache._Providers.has(vBaseToken))
+        {
+            XObjectCache._Providers.set(vBaseToken, { Token: vBaseToken, Lifetime: pLifetime })
+            XObjectCache._CanonicalMap.set(pToken, vBaseToken)
+        }
     }
 
     static Get<T>(pToken: new () => T, pContext?: Map<Function, any>): T
     {
-        const provider = XObjectCache._Providers.get(pToken)
-        if (!provider)
+        const vBaseToken = XObjectCache.ResolveCanonical(pToken) as new () => T
+        const vProvider = XObjectCache._Providers.get(vBaseToken)
+
+        if (!vProvider)
             throw new Error(`Provider for "${pToken.name}" not registered.`)
 
-        if (provider.Lifetime === XLifetime.Singleton)
+        if (vProvider.Lifetime === XLifetime.Singleton)
         {
-            if (!provider.Instance)
-                provider.Instance = XObjectCache.Create(pToken)
-            return provider.Instance
+            if (!vProvider.Instance)
+                vProvider.Instance = XObjectCache.Create(vBaseToken)
+            return vProvider.Instance
         }
 
-        if (provider.Lifetime === XLifetime.Scoped)
+        if (vProvider.Lifetime === XLifetime.Scoped)
         {
             if (!pContext)
                 throw new Error(`No context provided for scoped resolution of "${pToken.name}"`)
-            if (!pContext.has(pToken))
-                pContext.set(pToken, XObjectCache.Create(pToken))
-            return pContext.get(pToken)
+            if (!pContext.has(vBaseToken))
+                pContext.set(vBaseToken, XObjectCache.Create(vBaseToken))
+            return pContext.get(vBaseToken)
         }
 
-        return XObjectCache.Create(pToken)
+        return XObjectCache.Create(vBaseToken)
     }
 
     private static Create<T>(pToken: new () => T): T
@@ -120,7 +128,7 @@ class XObjectCache
         try
         {
             XObjectCache._Creating.add(pToken)
-            return new (pToken as any)()
+            return new pToken()
         }
         finally
         {
@@ -130,46 +138,67 @@ class XObjectCache
 
     static ResolveDependencies(pInstance: any, pContext?: Map<Function, any>): void
     {
-        const context = pContext ?? new Map<Function, any>()
+        const vContext = pContext ?? new Map<Function, any>()
+        const vClasses = GetClassHierarchy(pInstance)
 
-        const classes = GetClassHierarchy(pInstance)
-        for (const cls of classes)
+        for (const vCls of vClasses)
         {
-            const injects = cls.prototype?.__inject__ as XInjectionItem[] | undefined
-            if (!injects) continue
+            const vInjects = vCls.prototype?.__inject__ as XInjectionItem[] | undefined
+            if (!vInjects)
+                continue
 
-            for (const item of injects)
+            for (const vItem of vInjects)
             {
-                if (pInstance[item.Key]) continue
+                if (pInstance[vItem.Key])
+                    continue
 
-                const lifetime = item.Lifetime ?? XLifetime.Singleton
+                const vLifetime: XLifetime = vItem.Lifetime ?? XLifetime.Singleton
 
-                if (lifetime === XLifetime.Scoped)
-                {
-                    if (!context.has(item.Token))
-                        context.set(item.Token, XObjectCache.Get(item.Token as any, context))
-                    pInstance[item.Key] = context.get(item.Token)
-                }
+                if (vLifetime === XLifetime.Transient)
+                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, new Map()) // nova instância sempre
                 else
-                {
-                    const useContext = lifetime === XLifetime.Transient ? new Map() : undefined
-                    pInstance[item.Key] = XObjectCache.Get(item.Token as any, useContext)
-                }
+                    if (vLifetime === XLifetime.Scoped)
+                    {
+                        if (!vContext.has(vItem.Token))
+                            vContext.set(vItem.Token, XObjectCache.Get(vItem.Token, vContext))
+                        pInstance[vItem.Key] = vContext.get(vItem.Token)
+                    }
+                    else
+                        pInstance[vItem.Key] = XObjectCache.Get(vItem.Token)
             }
         }
     }
-}
 
-function Inject(pToken: Function, pLifetime: XLifetime = XLifetime.Singleton): PropertyDecorator
-{
-    return function (target: any, propertyKey: string | symbol): void
+
+    static GetRegisteredLifetime(pToken: Function): XLifetime | undefined
     {
-        if (!target.__inject__)
-            target.__inject__ = []
+        return XObjectCache._Providers.get(XObjectCache.ResolveCanonical(pToken))?.Lifetime
+    }
 
-        if (!XObjectCache.HasProvider(pToken))
-            XObjectCache.AddProvider(pToken, pLifetime)
-
-        target.__inject__.push({ Token: pToken, Key: propertyKey, Lifetime: pLifetime })
+    private static ResolveCanonical(pToken: Function): Function
+    {
+        return XObjectCache._CanonicalMap.get(pToken) ?? pToken
     }
 }
+
+function Inject(pToken: new () => any, pLifetime?: XLifetime): PropertyDecorator
+{
+    return function (pTarget: any, pKey: string | symbol): void
+    {
+        if (!pTarget.__inject__)
+            pTarget.__inject__ = []
+
+        const vAlready = XObjectCache.HasProvider(pToken)
+        if (!vAlready)
+            XObjectCache.AddProvider(pToken, pLifetime ?? XLifetime.Singleton)
+
+        const vFinalLifetime = pLifetime ?? XObjectCache.GetRegisteredLifetime(pToken) ?? XLifetime.Singleton
+
+        pTarget.__inject__.push({
+            Token: pToken,
+            Key: pKey,
+            Lifetime: vFinalLifetime
+        })
+    }
+}
+
