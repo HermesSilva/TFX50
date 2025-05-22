@@ -73,7 +73,7 @@ function GetClassHierarchy(pInstance: any): Function[]
 
 class XObjectCache
 {
-    private static _Providers: any = {}
+    private static _Providers: Record<string, XProviderEntry> = {}
     private static _Creating = new Set<Function>()
 
     static HasProvider(pToken: Function): boolean
@@ -152,7 +152,7 @@ class XObjectCache
                     pInstance[vItem.Key] = ctx[vItem.Token.name]
                 }
                 else
-                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, undefined, vItem.Lifetime)
+                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime)
             }
         }
     }
@@ -166,7 +166,7 @@ function Inject(pToken: new () => any, pLifetime?: XLifetime): PropertyDecorator
             pTarget.__inject__ = []
 
         if (!XObjectCache.HasProvider(pToken))
-            XObjectCache.AddProvider(pToken, XLifetime.Singleton)
+            XObjectCache.AddProvider(pToken, XLifetime.Scoped)
 
         pTarget.__inject__.push({ Token: pToken, Key: pKey, Lifetime: pLifetime })
     }
