@@ -24,6 +24,7 @@ using TFX.ESC.Core.Escritorios;
 
 namespace TFX.ESC.Core.Escritorios
 {
+    [XGuid("94D6CBB1-BC80-448E-B38D-56FA234CD41E", typeof(IEscritorioService))]
     public class EscritorioService : XService, IEscritorioService
     {
         public class CORxPessoa : XEntity
@@ -214,6 +215,7 @@ namespace TFX.ESC.Core.Escritorios
         {
             get;
         }
+
         public override void GracefullyClose()
         {
             Context.Commit();

@@ -9,43 +9,44 @@ namespace TFX.Core.Model.FRM
 {
     public delegate void XValidateAction(XFRMModel pForm, Boolean pClear = true);
 
-    public static class XEditorType
+    public enum XFRMEditorType
     {
-        public const Int32 Int32Editor = 16777383;
-        public const Int32 BooleanEditor = 16777382;
-        public const Int32 StaticCrossDataGridEditor = 16778930;
-        public const Int32 DateTimeEditor = 16777385;
-        public const Int32 DateEditor = 497479;
-        public const Int32 TimeEditor = 497480;
-        public const Int32 DetailsDataGridEditor = 16777387;
-        public const Int32 Int64Editor = 16777384;
-        public const Int32 MemoEditor = 16780528;
-        public const Int32 PasswordEditor = 16777386;
-        public const Int32 ServiceSelectorEditor = 16778774;
-        public const Int32 StringEditor = 16777381;
-        public const Int32 DecimalEditor = 464859;
-        public const Int32 AdhocEditor = 469549;
-        public const Int32 HTMLEditor = 470136;
-        public const Int32 StaticSelectorEditor = 16777388;
-        public const Int32 ImageFileEditor = 473207;
-        public const Int32 FingerprintEditor = 473501;
-        public const Int32 RepeatableDetailEditor = 497262;
-        public const Int32 FileUpload = 516781;
-        public const Int32 ButtonEditor = 516783;
-        public const Int32 TreeViewEditor = 594204;
-        public const Int32 SchedulerBoxEditor = 599657;
-        public const Int32 DetailSchedulerEditor = 600166;
-        public const Int32 ComboStringEditor = 600395;
-        public const Int32 DescriptionEditor = 600397;
-        public const Int32 AnswerStringEditor = 600913;
-        public const Int32 ConstantLabelBox = 601922;
-        public const Int32 LabelBox = 601918;
-        public const Int32 StringDiscreetEditor = 601919;
-        public const Int32 StringDiscreetParagraphEditor = 601920;
-        public const Int32 DynamicFormBox = 601956;
-        public const Int32 DBDataLabelBox = 602288;
-        public const Int32 DetailBinaryBox = 603763;
+        AdhocEditor = 1,
+        AnswerStringEditor = 2,
+        BooleanEditor = 3,
+        ButtonEditor = 4,
+        ComboStringEditor = 5,
+        ConstantLabelBox = 6,
+        DateEditor = 7,
+        DateTimeEditor = 8,
+        DBDataLabelBox = 9,
+        DecimalEditor = 10,
+        DescriptionEditor = 11,
+        DetailBinaryBox = 12,
+        DetailSchedulerEditor = 13,
+        DetailsDataGridEditor = 14,
+        DynamicFormBox = 15,
+        FileUpload = 16,
+        FingerprintEditor = 17,
+        HTMLEditor = 18,
+        ImageFileEditor = 19,
+        Int32Editor = 20,
+        Int64Editor = 21,
+        LabelBox = 22,
+        MemoEditor = 23,
+        PasswordEditor = 24,
+        RepeatableDetailEditor = 25,
+        SchedulerBoxEditor = 26,
+        ServiceSelectorEditor = 27,
+        StaticCrossDataGridEditor = 28,
+        StaticSelectorEditor = 29,
+        StringDiscreetEditor = 30,
+        StringDiscreetParagraphEditor = 31,
+        StringEditor = 32,
+        TimeEditor = 33,
+        TreeViewEditor = 34
     }
+
 
     public enum XFRMStyle
     {
@@ -69,6 +70,18 @@ namespace TFX.Core.Model.FRM
     {
         public XFRMModel()
         {
+            Fields = [];
+        }
+
+        public List<XFRMField> Fields
+        {
+            get;
+        }
+
+        protected XFRMField AddField(XFRMField pField)
+        {
+            Fields.Add(pField);
+            return pField;
         }
 
         public Boolean IsLineForm

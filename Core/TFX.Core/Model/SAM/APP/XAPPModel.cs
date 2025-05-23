@@ -16,6 +16,11 @@ namespace TFX.Core.Model.APP
         New = 7,
     }
 
+    public enum XScenes : byte
+    {
+        SearchGrid = 1,
+    }
+
     public class XAddButton : XObject
     {
         public Int32 ServiceID
@@ -51,97 +56,24 @@ namespace TFX.Core.Model.APP
     {
         public XAPPModel()
         {
-            Steps = [];
         }
 
-        public List<XAPPStep> Steps
-        {
-            get;
-        }
-
-        public Guid DataSourceID
-        {
-            get; set;
-        }
-        public Boolean FLushAtStep
-        {
-            get; set;
-        }
-        public Size Size
-        {
-            get; set;
-        }
-        public Boolean HasDetail
-        {
-            get; set;
-        }
         public Guid SearchServiceID
         {
-            get; set;
+            get;
+            set;
         }
-        public Guid SearchPKID
+
+        public virtual String SearchPath
         {
-            get; set;
+            get;
+            set;
         }
-        public Guid[] SubjectFields
+
+        public XScenes FisrtScene
         {
-            get; set;
-        }
-        public String SubjectTitle
-        {
-            get; set;
-        }
-        public Guid MainViewID
-        {
-            get; set;
-        }
-        public Int16 MainMenuID
-        {
-            get; set;
-        }
-        public Int16 PlatformID
-        {
-            get; set;
-        }
-        public Boolean IsSystem
-        {
-            get; set;
-        }
-        public Guid ConfigFormID
-        {
-            get; set;
-        }
-        public Boolean IsDisabled
-        {
-            get; set;
-        }
-        public Int16[] Rights
-        {
-            get; set;
-        }
-        public String Icon
-        {
-            get; set;
-        }
-        public Int16 GroupID
-        {
-            get; set;
-        }
-        public Int32 AppTypeID
-        {
-            get; set;
-        }
-        public Int16[] UseTypeID
-        {
-            get; set;
-        }
-        public Boolean OnlyHolding
-        {
-            get; set;
-        }
-        public Boolean FreeForUsers
-        {
-            get; set;
+            get;
+            set;
         }
     }
 }

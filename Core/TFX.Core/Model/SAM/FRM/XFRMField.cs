@@ -74,25 +74,12 @@ namespace TFX.Core.Model.FRM
     public class XFRMField : XContainerObject
     {
 
-        public XFRMField()
-        {
-        }
-
-        public XFRMField(Guid pID, String pName, String pTitle, Int32 pType, Int32 pRowCount, Int32 pColCount, Boolean pIsNullable, Guid pOwnerID, Object pDefaultValue = null, Guid pParentID = default)
-        {
-            ID = pID;
-            Name = pName;
-            Title = pTitle;
-            Type = pType;
-            RowCount = pRowCount;
-            ColCount = pColCount;
-            IsNullable = pIsNullable;
-            OwnerID = pOwnerID;
-            ParentID = pParentID;
-            DefaultValue = pDefaultValue;
-        }
-
         public XGeneratorInfo GeneratorInfo = new XGeneratorInfo();
+        public XFRMEditorType EditorType
+        {
+            get; set;
+        }
+
         public Guid DataSourceID
         {
             get; set;
@@ -209,7 +196,7 @@ namespace TFX.Core.Model.FRM
         {
             get; set;
         }
-        public Int32 TypeID
+        public Guid TypeID
         {
             get; set;
         }
@@ -338,18 +325,6 @@ namespace TFX.Core.Model.FRM
             get
             {
                 return (XFRMModel)Owner;
-            }
-        }
-
-        public Int32 Type
-        {
-            get
-            {
-                return TypeID;
-            }
-            set
-            {
-                TypeID = value;
             }
         }
     }
