@@ -7,28 +7,6 @@ using TFX.Core.Model;
 
 namespace TFX.Core.Model
 {
-    public class XFRMField
-    {
-        public XFRMField()
-        {
-        }
-
-        public XFRMField(Guid pID, String pName)
-        {
-            ID = pID;
-            Name = pName;
-        }
-
-        public Guid ID
-        {
-            get; set;
-        }
-
-        public String Name
-        {
-            get; set;
-        }
-    }
 
     public class XDataField
     {

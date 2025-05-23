@@ -68,10 +68,5 @@ namespace TFX.Core
             get;
             set;
         }
-        public virtual String SearchPath
-        {
-            get;
-            set;
-        }
     }
 }

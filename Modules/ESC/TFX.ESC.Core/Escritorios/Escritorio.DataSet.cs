@@ -14,22 +14,11 @@ using TFX.Core.Services;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
-using TFX.Core.Model.Service;
+using TFX.Core.Model.FRM;
+using TFX.Core.DB;
 
 namespace TFX.ESC.Core.Escritorios
 {
-
-    public class EscritorioModel : XServiceModel
-    {
-        public static Guid CID = new Guid("94D6CBB1-BC80-448E-B38D-56FA234CD41E");
-        public EscritorioModel()
-        {
-            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Description = "Nome", Type = "String" });
-            DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Description = "CPF ou CNPJ", Type = "String" });
-            DataView.Columns.Add(new XColumnModel() { Name = "Status", Description = "Status", Type = "String" });
-        }
-    }
-
     public class EscritorioTuple : XServiceDataTuple
     {
         public EscritorioTuple()
@@ -61,38 +50,17 @@ namespace TFX.ESC.Core.Escritorios
         }
 
         [Display(Name = "CPF ou CNPJ")]
-        public XStringDataField CPFCNPJ
-        {
-            get; set;
-        }
+        public XStringDataField CPFCNPJ {get;set;}
         [Display(Name = "Estado")]
-        public XInt16DataField CORxStatusID
-        {
-            get; set;
-        }
-        public XStringDataField Nome
-        {
-            get; set;
-        }
+        public XInt16DataField CORxStatusID {get;set;}
+        public XStringDataField Nome {get;set;}
         [Display(Name = "Pessoa")]
-        public XGuidNullableDataField CORxPessoaID
-        {
-            get; set;
-        }
+        public XGuidNullableDataField CORxPessoaID {get;set;}
         [Display(Name = "Agregado")]
-        public XGuidNullableDataField CORxAgregadoID
-        {
-            get; set;
-        }
+        public XGuidNullableDataField CORxAgregadoID {get;set;}
         [Display(Name = "Escritório")]
-        public XGuidNullableDataField ESCxEscritorioID
-        {
-            get; set;
-        }
-        public XStringDataField Status
-        {
-            get; set;
-        }
+        public XGuidNullableDataField ESCxEscritorioID {get;set;}
+        public XStringDataField Status {get;set;}
     }
 
     public class EscritorioFilter : XFilter
@@ -101,26 +69,13 @@ namespace TFX.ESC.Core.Escritorios
         public EscritorioFilter()
         {
         }
-        public String Nome
-        {
-            get; set;
-        }
-        public String CPFCNPJ
-        {
-            get; set;
-        }
-    }
-    public static class FRMEscritorioFilter
-    {
-        public static readonly XFRMField Nome = new XFRMField(new Guid("B7A9B060-997F-4091-90E4-68DFA1D12EB3"), "Nome");
+        public String Nome {get;set;}
+        public String CPFCNPJ {get;set;}
     }
 
     public class EscritorioRequest : XRequest
     {
-        public Guid CORxPessoaID
-        {
-            get; set;
-        }
+        public Guid CORxPessoaID {get;set;}
     }
 
     public interface IEscritorioService : XIService
@@ -134,7 +89,7 @@ namespace TFX.ESC.Core.Escritorios
     public abstract class BaseEscritorioRule : XServiceRule<EscritorioTuple, EscritorioTuple>
     {
         public BaseEscritorioRule(XService pOwner)
-            : base(pOwner)
+            :base(pOwner)
         {
         }
 
@@ -146,6 +101,53 @@ namespace TFX.ESC.Core.Escritorios
 
     public class EscritorioDataSet : XDataSet<EscritorioTuple>
     {
+        #region EscritorioFilter
+
+        public class EscritorioFilter : XFRMModel
+        {
+            public EscritorioFilter()
+            {
+                ID = new Guid("8EA042E6-E564-4DB1-8303-3896A1E67C3F");
+                Name = "EscritorioFilter";
+                Title = "";
+                MinRows = 2;
+                Style = XFRMStyle.Normal;
+                XFRMField fld;
+                fld = AddField(new XFRMField());
+                fld.ForceRW = true;
+                fld.CanInsert = true;
+                fld.CanUpdate = true;
+                fld.RowCount = 2;
+                fld.ColCount = 32;
+                fld.IsHidden = false;
+                fld.Location = 1;
+                fld.EditorCID = XModelEditors.XSearchBox;
+                fld.Operator = XOperator.EqualTo;
+                fld.JustifyHeight = false;
+                fld.AllowEmpty = true;
+                fld.FontColor = "#000000";
+                fld.FontStyle = XFontStyle.Normal;
+                fld.ShowFooter = false;
+                fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+                fld.Order = 1;
+                fld.Scale = -1;
+                fld.Length = -1;
+                fld.TypeID = XDataTypes.XString;
+                fld.AdditionalFieldsID = new Guid[] {  };
+                fld.AdditionalDataFieldsID = new Guid[] {  };
+                fld.TargetFilterFieldID = new Guid[] {  };
+                fld.SourceFilterFieldID = new Guid[] {  };
+                fld.TargetDisplayFieldID = new Guid[] {  };
+                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.AutoLoad = false;
+                fld.FilterInative = true;
+                fld.IsAnswer = false;
+                fld.AllowMultiSelect = false;
+            }
+        }
+
+        #endregion EscritorioFilter
+
         public override Guid ID => new Guid("94D6CBB1-BC80-448E-B38D-56FA234CD41E");
     }
 }

@@ -20,6 +20,10 @@ class XAddButton
     ActionType!: XPAMActionView;
     Rights!: string[];
 }
+enum XScenes 
+{
+    SearchGrid = 1,
+}
 
 class XAPPStep 
 {

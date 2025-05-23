@@ -7,11 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="TFX.Core.dsmdl" />
-	  <None Remove="TFX.Core.dsmdl" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <EmbeddedResource Include="..\TFX.Core.UI\wwwroot\index.html" Link="Resource\index.html" />
 	  <Content Include="TFX.Core.dsmdl">
 	    <Generator>XDASEGenerator</Generator>

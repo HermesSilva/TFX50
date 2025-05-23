@@ -121,7 +121,6 @@ namespace TFX.Core.Data.Servicos.Usuario
             ID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C");
             Name = "Usuario";
             Title = "Cadastro de Usuários";
-            Size = new Size(312, 150);
             RessetaSenha.Name = "RessetaSenha";
             RessetaSenha.Title = "";
             RessetaSenha.Hint = "";
