@@ -78,18 +78,18 @@ class XObjectCache
 
     static HasProvider(pToken: Function): boolean
     {
-        return XObjectCache._Providers[pToken.name] !== undefined
+        return XObjectCache._Providers["__" + pToken.name + "__"] !== undefined
     }
 
     static AddProvider(pToken: new () => any, pLifetime: XLifetime = XLifetime.Transient): void
     {
         if (!XObjectCache.HasProvider(pToken))
-            XObjectCache._Providers[pToken.name] = { Token: pToken, Lifetime: pLifetime }
+            XObjectCache._Providers["__" + pToken.name + "__"] = { Token: pToken, Lifetime: pLifetime }
     }
 
     static Get<T>(pToken: new () => T, pContext?: Map<Function, any>, pLifetime?: XLifetime): T
     {
-        const vProvider = XObjectCache._Providers[pToken.name]
+        const vProvider = XObjectCache._Providers["__" + pToken.name + "__"]
 
         if (!vProvider)
             throw new Error(`Provider for "${pToken.name}" not registered.`)
@@ -144,12 +144,12 @@ class XObjectCache
             {
                 if (pInstance[vItem.Key])
                     continue
-
+                let key = "__" + vItem.Token.name + "__";
                 if (vItem.Lifetime === XLifetime.Scoped)
                 {
-                    if (ctx[vItem.Token.name] == undefined)
-                        ctx[vItem.Token.name] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime)
-                    pInstance[vItem.Key] = ctx[vItem.Token.name]
+                    if (ctx[key] == undefined)
+                        ctx[key] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime)
+                    pInstance[vItem.Key] = ctx[key]
                 }
                 else
                     pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime)

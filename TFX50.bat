@@ -1,7 +1,6 @@
 set RelativePath=%~dp0%
 set BinPath=D:\Tootega\DASE4VSBin
-set work=C:\Users\Hermes\AppData\Local\Microsoft\VisualStudio\17.0_9c90c9bdTFX\Extensions\xc3mq1ge.el0
-set home=C:\Users\hxpel\AppData\Local\Microsoft\VisualStudio\17.0_21c14697TFX\Extensions\0ron0lep.dat
+set home=C:\Users\Hermes\AppData\Local\Microsoft\VisualStudio\17.0_9c90c9bdTFX\Extensions\l3ifpzne.phn
 if exist %work% set VSIX=%work%
 if exist %home% set VSIX=%home%
 if exist %work2% set VSIX=%work2%
@@ -20,13 +19,15 @@ IF ERRORLEVEL 1 GOTO ERRO
 copy DASE.VSIX.Core.* %VSIX%\
 IF ERRORLEVEL 1 GOTO ERRO
 
-copy DASE4VS.dll %VSIX%\
+copy *.dll %VSIX%\
+IF ERRORLEVEL 1 GOTO ERRO
+copy *.pdb %VSIX%\
 IF ERRORLEVEL 1 GOTO ERRO
 copy DASE4VS.pkgdef %VSIX%\
 IF ERRORLEVEL 1 GOTO ERRO
 
-copy *.pak %VSIX%\
-IF ERRORLEVEL 1 GOTO ERRO
+REM copy *.pak %VSIX%\
+REM IF ERRORLEVEL 1 GOTO ERRO
 set SQL_SERVER_TFX=Server=localhost;Initial Catalog=TFX;Persist Security Info=False;Integrated Security=true;MultipleActiveResultSets=true;Encrypt=false;TrustServerCertificate=true;Connection Timeout=300;
 :NOCOPY
 cd %RelativePath%
