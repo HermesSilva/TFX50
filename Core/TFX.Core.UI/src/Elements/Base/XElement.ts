@@ -15,6 +15,7 @@ class XElement implements XIElement
         this.UID = XElement.NextID();
         this.Owner = pOwner;
         this.HTML = this.CreateContainer(pTag);
+        this.ID = "";
         if (pClass == null)
             pClass = this.constructor.name;
         if (this.HTML != null)
@@ -41,6 +42,7 @@ class XElement implements XIElement
     Owner: XElement | HTMLElement | null;
     private _IsVisible: boolean = true;
     UID: number = 0;
+    ID: string;
     private _ResizeObserver: ResizeObserver | undefined;
     OnResize: XMethod<XElement> | null = null;
     OrderIndex: number = 0;

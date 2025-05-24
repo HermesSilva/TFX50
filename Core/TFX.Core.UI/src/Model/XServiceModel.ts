@@ -1,18 +1,20 @@
-﻿class XColumnModel
+﻿
+
+interface XColumnModel
 {
-    Name!: string
-    Description!: string
-    Type!: string
-    Value!: string
+    Name: string
+    Description: string
+    Type: string
+    Value: string
 }
 
-class XDataViewModel
+interface XDataViewModel
 {
-    Columns: XColumnModel[] = []
+    Columns: XColumnModel[]
 }
 
-class XServiceModel
+interface XServiceModel
 {
-    ID!: string;
-    readonly DataView: XDataViewModel = new XDataViewModel()
+    Forms: XFRMModel[]
+    DataView: XDataViewModel
 }

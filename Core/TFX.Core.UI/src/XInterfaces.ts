@@ -57,6 +57,37 @@ interface Window
 
 interface XIEditor extends XIElement
 {
+    Description: string;
+    IsNullable: boolean;
+    AllowEmpty: boolean;
+    IsReadOnly: boolean;
+    IsRequired: boolean;
+    IsFreeSearch: boolean;
+    IsFormInplace: boolean;
+    IsJustifyHeight: boolean;
+    IsSelected: any;
+    IsChecked: any;
+    State: any;
+    ID: string;
+    Name: string;
+    Value: any;
+    Type: any;
+    GeneratorInfo: XGeneratorInfo;
+    DataSourceID: string;
+    TargetDisplayFieldID: string[];
+    SourceDisplayFieldID: string[];
+    TargetFilterFieldID: string[];
+    SourceFilterFieldID: string[];
+    GridFormCID: string;
+    RowsServiceID: string;
+    ColsServiceID: string;
+    AdditionalFieldsID: string[];
+    AdditionalDataFieldsID: string[];
+    Mask: string;
+    LookupPKFieldID: string;
+    OwnerID: string;
+    ParentID: string;
+    Order: number;
     Rows: number;
     Cols: number;
     NewLine: boolean;

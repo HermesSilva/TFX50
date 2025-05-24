@@ -16,9 +16,20 @@ using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
+using TFX.Core.Model.Service;
 
 namespace TFX.Core.Data.Servicos.Usuario
 {
+    public class UsuarioServiceModel : XServiceModel
+    {
+        public static Guid CID = new Guid("53F17DAC-4376-4424-8454-0866B122BFDB");
+        public UsuarioServiceModel()
+        {
+            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "EMail", Title = "E-Mails", Type = "String" });
+            Forms.Add(new FRMUsuarioFilter());
+        }
+    }
     public class UsuarioTuple : XServiceDataTuple
     {
         public UsuarioTuple()

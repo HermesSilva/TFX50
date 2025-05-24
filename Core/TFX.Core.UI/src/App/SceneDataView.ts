@@ -15,46 +15,34 @@ class SceneDataView extends XScene
     Filter: XFilter;
     DataGrid: MainDataGrid;
     Model: XAPPModel | undefined;
+    SVCModel!: XServiceModel;
     Teste: string | undefined;
 
-    @Inject(XHttpClient)
-    ClientT1!: XHttpClient;
-    @Inject(XHttpClient)
-    ClientT2!: XHttpClient;
-    @Inject(XHttpClient)
-    ClientT3!: XHttpClient;
-
-    @Inject(XHttpClient)
-    ClientS1!: XHttpClient;
-    @Inject(XHttpClient)
-    ClientS2!: XHttpClient;
-
-    @Inject(XHttpClient)
-    ClientS3!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Transient)
-    ClientC1!: XHttpClient;
-    @Inject(XHttpClient, XLifetime.Scoped)
-    ClientC2!: XHttpClient;
     @Inject(XHttpClient, XLifetime.Singleton)
     Client!: XHttpClient;
 
     SetModel(pModel: XAPPModel)
     {
         this.Model = pModel;
-        this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: any) =>
+        this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: XResponse<XServiceModel>) =>
         {
-            this.DataGrid.SetModel(pData.Data);
+            this.SVCModel = pData.Data;
             this.Load();
         });
     }
 
     Load()
     {
+        this.DataGrid.SetModel(this.SVCModel);
+        var fmdl = this.SVCModel.Forms.FirstOrNull(f => f.Type == XFRMType.SVCFilter);
+        if (fmdl != null)
+            this.Filter.SetModel(fmdl);
         if (this.Model?.SearchPath === undefined)
             return;
         this.Client?.SendAsync(this.Model.SearchPath, {}, (pData: any) =>
         {
             this.DataGrid.SetDataSet(pData.Data);
         });
+        this.DataGrid.HTML.style.top = this.Filter.HTML.offsetHeight + "px";
     }
 }

@@ -6,8 +6,4 @@ class XFilter extends XForm
     {
         super(pOwner);
     }
-
-    SetForm(pForm: XFormModel)
-    {
-    }
 }

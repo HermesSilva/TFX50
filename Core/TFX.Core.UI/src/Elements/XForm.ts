@@ -24,18 +24,39 @@ class XForm extends XDiv
 
     constructor(pOwner: XElement | HTMLElement | null)
     {
-        super(pOwner, "XForm");
-        var edt: XIEditor | any;
-
-        edt = new XNormalEditor(this);
-        edt.Rows = 1;
-        edt.Cols = 4;
-        edt.OrderIndex = 1;
-        this.Fields.Add(<any>edt);
-
-        this.ResizeChildren();
+        super(pOwner, "XForm");        
     }
+
     Fields: XArray<XIEditor> = new XArray<XIEditor>();
+    Model!: XFRMModel;
+
+    SetModel(pForm: XFRMModel)
+    {
+        this.Model = pForm;
+        this.Fields.Clear();
+        this.SetTitle(pForm.Title);
+        this.SetDescription(pForm.Description);
+        this.SetIcon(pForm.Icon);
+        for (const field of pForm.Fields)
+        {
+            var editor = XEditorFactory.CreateEditor(this, field);
+            this.Fields.Add(editor);
+        }
+        this.ResizeChildren();
+
+    }
+
+    SetTitle(pTitle: string)
+    {
+    }
+
+    SetDescription(pDescription: string)
+    {
+    }
+
+    SetIcon(pIcon: any)
+    {
+    }
 
     override SizeChanged()
     {
@@ -52,6 +73,8 @@ class XForm extends XDiv
         const ordered = this.Fields.OrderBy(c => c.OrderIndex);
 
         const grid: boolean[][] = Array.from({ length: rows }, () => new Array(cols).fill(false));
+
+        let maxBottom = 0;
 
         for (const child of ordered)
         {
@@ -94,6 +117,11 @@ class XForm extends XDiv
                         r.Inflate(-2, -2);
                         child.Rect = r;
 
+                        // Track the bottom of the last field
+                        const bottom = y + crows * cellh;
+                        if (bottom > maxBottom)
+                            maxBottom = bottom;
+
                         placed = true;
                         break;
                     }
@@ -106,6 +134,11 @@ class XForm extends XDiv
         var tabs = this.SortRectangles(this.Fields);
         for (const child of tabs)
             child.Input.tabIndex = tidx++;
+
+        // Set form height based on positioned fields
+        if (maxBottom > 0) {
+            this.HTML.style.height = `${Math.ceil(maxBottom)}px`;
+        }
     }
 
     SortRectangles(rectangles: XArray<XIEditor>): XArray<XIEditor>
