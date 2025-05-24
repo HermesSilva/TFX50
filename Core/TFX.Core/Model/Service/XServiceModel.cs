@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore.Update.Internal;
 
+using TFX.Core.Model.FRM;
 using TFX.Core.Services;
 
 namespace TFX.Core.Model.Service
@@ -51,7 +52,14 @@ namespace TFX.Core.Model.Service
         public XServiceModel()
         {
             DataView = new XDataViewModel();
+            Forms = [];
         }
+
+        public List<XFRMModel> Forms
+        {
+            get;
+        }
+
         public XDataViewModel DataView
         {
             get;

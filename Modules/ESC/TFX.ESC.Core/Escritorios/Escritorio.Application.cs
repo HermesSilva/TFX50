@@ -7,13 +7,13 @@ using TFX.Core.DB;
 
 namespace TFX.ESC.Core.Escritorios
 {
-    public class EscritorioModel : XAPPModel
+    public class EscritorioApplication : XAPPModel
     {
-        #region Escritorio
+        #region FRMEscritorio
 
-        public class Escritorio : XFRMModel
+        public class FRMEscritorio : XFRMModel
         {
-            public Escritorio()
+            public FRMEscritorio()
             {
                 ID = new Guid("204D86F5-4EF8-49EB-ABD6-3277DA7EA15B");
                 Name = "Escritorio";
@@ -82,13 +82,13 @@ namespace TFX.ESC.Core.Escritorios
             }
         }
 
-        #endregion Escritorio
+        #endregion FRMEscritorio
 
-        #region EscritorioFilter
+        #region FRMEscritorioFilter
 
-        public class EscritorioFilter : XFRMModel
+        public class FRMEscritorioFilter : XFRMModel
         {
-            public EscritorioFilter()
+            public FRMEscritorioFilter()
             {
                 ID = new Guid("8EA042E6-E564-4DB1-8303-3896A1E67C3F");
                 Name = "EscritorioFilter";
@@ -129,10 +129,10 @@ namespace TFX.ESC.Core.Escritorios
             }
         }
 
-        #endregion EscritorioFilter
+        #endregion FRMEscritorioFilter
 
         public static Guid CID = new Guid("1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D");
-        public EscritorioModel()
+        public EscritorioApplication()
         {
             ID = new Guid("1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D");
             Name = "Escritorio";

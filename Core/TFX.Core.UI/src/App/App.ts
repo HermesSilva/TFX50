@@ -7,10 +7,7 @@ class App extends XStageTabControlTab
         super(pOwner);
         this.ButtonBar = new XButtonBar(this);
         this.Scanes = new XDiv(this, "Scenes");
-        this._Client = new XHttpClient(this);
     }
-
-    private _Client: XHttpClient;
 
     Scanes: XDiv;
     ButtonBar: XButtonBar;
@@ -18,7 +15,6 @@ class App extends XStageTabControlTab
     SetModel(pLoadApp: XAPPModel)
     {
         var dv = new SceneDataView(this.Scanes);
-
         dv.SetModel(pLoadApp);
     }
 }

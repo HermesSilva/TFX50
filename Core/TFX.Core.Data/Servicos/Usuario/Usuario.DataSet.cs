@@ -14,6 +14,8 @@ using TFX.Core.Services;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
+using TFX.Core.Model.FRM;
+using TFX.Core.DB;
 
 namespace TFX.Core.Data.Servicos.Usuario
 {
@@ -55,10 +57,49 @@ namespace TFX.Core.Data.Servicos.Usuario
         public String Nome {get;set;}
         public String EMail {get;set;}
     }
-    public static class FRMUsuarioFilter
+    public class FRMUsuarioFilter : XFRMModel
     {
-        public static readonly XFRMField Nome = new XFRMField(new Guid("2188B3FE-9322-4DB9-A71C-2B35137F1C6C"), "Nome");
+        public FRMUsuarioFilter()
+        {
+            ID = new Guid("37BCE53B-7D3A-492F-A2D5-3961F774E01D");
+            Name = "UsuarioFilter";
+            Title = "";
+            MinRows = 2;
+            Style = XFRMStyle.Normal;
+            XFRMField fld;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 14;
+            fld.IsHidden = false;
+            fld.Location = 1;
+            fld.EditorCID = XModelEditors.XSearchBox;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 1;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XString;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetDisplayFieldID = new Guid[] {  };
+            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+        }
     }
+
 
     public class UsuarioRequest : XRequest
     {
