@@ -145,7 +145,7 @@
 	    <Visible>True</Visible>
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Escritorios\Escritorio.cs">
+	  <Compile Update="Escritorios\Escritorio.SAM.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Escritorio.dssam</DependentUpon>
@@ -212,7 +212,7 @@
 	  </None>
 	  <None Update="Escritorios\Escritorio.dssam">
 	    <Generator>XDASEGenerator</Generator>
-	    <LastGenOutput>Escritorio.cs</LastGenOutput>
+	    <LastGenOutput>Escritorio.SAM.cs</LastGenOutput>
 	  </None>
 	  <None Update="Escritorios\Escritorio.dssvc">
 	    <Generator>XDASEGenerator</Generator>

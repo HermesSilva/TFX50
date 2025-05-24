@@ -28,8 +28,7 @@ namespace TFX.ESC.Core.Escritorios
             }
         }
 
-        public EscritorioController(IEscritorioService pService, ILogger<XController> pLogger)
-               :base(pLogger)
+        public EscritorioController(IEscritorioService pService)
         {
             Service = pService;
             _Rule = new INFEscritorioControllerRule(this);

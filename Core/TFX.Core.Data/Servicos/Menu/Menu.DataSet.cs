@@ -14,6 +14,8 @@ using TFX.Core.Services;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
+using TFX.Core.Model.FRM;
+using TFX.Core.DB;
 
 namespace TFX.Core.Data.Servicos.Menu
 {

@@ -17,7 +17,6 @@ namespace TFX.Core.Data
             pServices.AddDbContext<MenuService.DBContext>();
             pServices.AddTransient<IUsuarioService, UsuarioService>();
             pServices.AddDbContext<UsuarioService.DBContext>();
-            XMainCache.Add<Usuario>(Usuario.CID);
         }
     }
 }
