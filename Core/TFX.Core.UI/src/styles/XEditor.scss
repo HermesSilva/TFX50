@@ -1,3 +1,17 @@
+
+.XBaseInput, .XBaseButtonInput {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    height: calc(100% - 34px);
+    width: calc(100% - 13px);
+    resize: none;
+    top: 20px;
+}
+
 .Error {
     background-color: #ffcccc;
 }
@@ -71,6 +85,7 @@
     resize: none;
     top: 20px;
 }
+
 .XNormalEditor:focus {
     outline: none;
     border-color: #007bff;

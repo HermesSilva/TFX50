@@ -108,7 +108,7 @@ namespace TFX.Core.Model.FRM
         {
             get; set;
         }
-        public XFRMType FRMType
+        public XFRMType Type
         {
             get; set;
         }

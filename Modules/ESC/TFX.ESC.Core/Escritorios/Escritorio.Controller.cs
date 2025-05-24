@@ -37,8 +37,8 @@ namespace TFX.ESC.Core.Escritorios
         internal readonly IEscritorioService Service;
         private readonly INFEscritorioControllerRule _Rule;
 
-        [HttpPost("Lista")]
-        public IActionResult Lista([FromBody] EscritorioFilter pFilter)
+        [HttpPost("Search")]
+        public IActionResult Search([FromBody] EscritorioFilter pFilter)
         {
             try
             {

@@ -137,7 +137,7 @@ namespace TFX.Core.Data.Servicos.Usuario
             ID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C");
             Name = "Usuario";
             Title = "Cadastro de Usuários";
-            SearchServiceID = UsuarioModel.CID;
+            SearchServiceID = UsuarioServiceModel.CID;
             SearchPath = "Usuario/Search";
         }
     }

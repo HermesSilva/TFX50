@@ -76,7 +76,7 @@
 	    <Visible>False</Visible>
 	    <DependentUpon>Usuario.dssvc</DependentUpon>
 	  </Compile>
-	  <Compile Update="Servicos\Usuario\Usuario.cs">
+	  <Compile Update="Servicos\Usuario\Usuario.Application.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Usuario.dssam</DependentUpon>
@@ -129,7 +129,7 @@
 	  </None>
 	  <None Update="Servicos\Usuario\Usuario.dssam">
 	    <Generator>XDASEGenerator</Generator>
-	    <LastGenOutput>Usuario.cs</LastGenOutput>
+	    <LastGenOutput>Usuario.Application.cs</LastGenOutput>
 	  </None>
 	  <None Update="Servicos\Usuario\Usuario.dssvc">
 	    <Generator>XDASEGenerator</Generator>

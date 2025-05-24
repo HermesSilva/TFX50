@@ -3,9 +3,9 @@ using System;
 using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
+using TFX.Core.Cache;
 using TFX.Core.Data.Servicos.Menu;
 using TFX.Core.Data.Servicos.Usuario;
-using TFX.Core.Cache;
 
 namespace TFX.Core.Data
 {
@@ -15,8 +15,11 @@ namespace TFX.Core.Data
         {
             pServices.AddTransient<IMenuService, MenuService>();
             pServices.AddDbContext<MenuService.DBContext>();
+            XMainCache.Add<MenuServiceModel>(MenuServiceModel.CID);
             pServices.AddTransient<IUsuarioService, UsuarioService>();
             pServices.AddDbContext<UsuarioService.DBContext>();
+            XMainCache.Add<UsuarioServiceModel>(UsuarioServiceModel.CID);
+            XMainCache.Add<UsuarioApplication>(UsuarioApplication.CID);
         }
     }
 }

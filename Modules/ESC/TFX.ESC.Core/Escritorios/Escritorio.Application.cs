@@ -20,8 +20,10 @@ namespace TFX.ESC.Core.Escritorios
                 Title = "";
                 MinRows = 2;
                 Style = XFRMStyle.Normal;
+                Type = XFRMType.Activity;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
+                fld.Title = "";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
                 fld.RowCount = 2;
@@ -51,6 +53,7 @@ namespace TFX.ESC.Core.Escritorios
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Title = "";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
                 fld.RowCount = 2;
@@ -95,9 +98,11 @@ namespace TFX.ESC.Core.Escritorios
                 Title = "";
                 MinRows = 2;
                 Style = XFRMStyle.Normal;
+                Type = XFRMType.SVCFilter;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
                 fld.ForceRW = true;
+                fld.Title = "";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
                 fld.RowCount = 2;
@@ -137,7 +142,7 @@ namespace TFX.ESC.Core.Escritorios
             ID = new Guid("1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D");
             Name = "Escritorio";
             Title = "Escritório";
-            SearchServiceID = EscritorioModel.CID;
+            SearchServiceID = EscritorioServiceModel.CID;
             SearchPath = "Escritorio/Search";
         }
     }

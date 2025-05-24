@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -51,7 +53,18 @@ public class CustomControllerFeatureProvider : IApplicationFeatureProvider<Contr
         }
     }
 }
+public class GuidUpperCaseConverter : JsonConverter<Guid>
+{
+    public override Guid Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        return Guid.Parse(reader.GetString()!);
+    }
 
+    public override void Write(Utf8JsonWriter writer, Guid value, JsonSerializerOptions options)
+    {
+        writer.WriteStringValue(value.ToString().ToUpperInvariant());
+    }
+}
 public static class XServiceExtensions
 {
 
@@ -77,12 +90,17 @@ public static class XServiceExtensions
             }
         }
 
-        var mvcBuilder = pBuilder.Services.AddControllers();
+        var mvcBuilder = pBuilder.Services.AddControllers().AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.Converters.Add(new GuidUpperCaseConverter());
+        });
+
         mvcBuilder.ConfigureApplicationPartManager(apm =>
         {
             apm.ApplicationParts.Add(new AssemblyPart(typeof(CustomControllerFeatureProvider).Assembly));
             apm.FeatureProviders.Add(new CustomControllerFeatureProvider());
         });
+
         foreach (var assembly in assemblys)
         {
             var types = assembly.GetTypes();

@@ -16,9 +16,20 @@ using Microsoft.AspNetCore.Http;
 using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
+using TFX.Core.Model.Service;
 
 namespace TFX.Core.Data.Servicos.Menu
 {
+    public class MenuServiceModel : XServiceModel
+    {
+        public static Guid CID = new Guid("CA94C52B-3EC3-495C-B034-B3652CED2947");
+        public MenuServiceModel()
+        {
+            DataView.Columns.Add(new XColumnModel() { Name = "Menu", Title = "Menu", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "Item", Title = "Item", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "Icone", Title = "Ícone", Type = "String" });
+        }
+    }
     public class AppData : XEndPointData
     {
         public XStringDataField AppID {get;set;}
