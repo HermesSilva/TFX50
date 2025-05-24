@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 
+using TFX.Core.Model.FRM;
+
 namespace TFX.Core.Model.APP
 {
     public enum XPAMActionView : byte
@@ -52,10 +54,17 @@ namespace TFX.Core.Model.APP
             get; set;
         }
     }
-    public class XAPPModel : XContainerObject
+    public class XAPPModel : XObject
     {
+
         public XAPPModel()
         {
+            Forms = [];
+        }
+
+        public void AddForm(XFRMModel pModel)
+        {
+            Forms.Add(pModel);
         }
 
         public Guid SearchServiceID
@@ -74,6 +83,11 @@ namespace TFX.Core.Model.APP
         {
             get;
             set;
+        }
+        public List<XFRMModel> Forms
+        {
+            get;
+            private set;
         }
     }
 }

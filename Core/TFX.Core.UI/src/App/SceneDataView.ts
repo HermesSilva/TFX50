@@ -2,7 +2,6 @@
 /// <reference path="../Reflection/XReflections.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
 
-XObjectCache.AddProvider(XHttpClient, XLifetime.Singleton)
 @AutoInit
 class SceneDataView extends XScene
 {
@@ -14,21 +13,16 @@ class SceneDataView extends XScene
     }
     Filter: XFilter;
     DataGrid: MainDataGrid;
-    Model: XAPPModel | undefined;
     SVCModel!: XServiceModel;
     Teste: string | undefined;
 
     @Inject(XHttpClient, XLifetime.Singleton)
     Client!: XHttpClient;
 
-    SetModel(pModel: XAPPModel)
+    SetModel(pModel: XServiceModel)
     {
-        this.Model = pModel;
-        this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: XResponse<XServiceModel>) =>
-        {
-            this.SVCModel = pData.Data;
-            this.Load();
-        });
+        this.SVCModel = pModel;
+        this.Load();
     }
 
     Load()
@@ -37,9 +31,9 @@ class SceneDataView extends XScene
         var fmdl = this.SVCModel.Forms.FirstOrNull(f => f.Type == XFRMType.SVCFilter);
         if (fmdl != null)
             this.Filter.SetModel(fmdl);
-        if (this.Model?.SearchPath === undefined)
+        if (this.SVCModel?.SearchPath === undefined)
             return;
-        this.Client?.SendAsync(this.Model.SearchPath, {}, (pData: any) =>
+        this.Client?.SendAsync(this.SVCModel.SearchPath, {}, (pData: any) =>
         {
             this.DataGrid.SetDataSet(pData.Data);
         });
