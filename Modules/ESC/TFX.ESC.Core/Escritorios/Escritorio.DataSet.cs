@@ -25,6 +25,7 @@ namespace TFX.ESC.Core.Escritorios
         public static Guid CID = new Guid("94D6CBB1-BC80-448E-B38D-56FA234CD41E");
         public EscritorioServiceModel()
         {
+            SearchPath = "Escritorio/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String" });
             DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String" });
             Forms.Add(new FRMEscritorioFilter());

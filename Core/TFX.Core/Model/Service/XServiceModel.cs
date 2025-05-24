@@ -59,6 +59,11 @@ namespace TFX.Core.Model.Service
             Forms = [];
         }
 
+        public string SearchPath
+        {
+            get;
+            set;
+        }
         public List<XFRMModel> Forms
         {
             get;

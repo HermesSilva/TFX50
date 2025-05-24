@@ -51,12 +51,13 @@ class XAPPStep
     public FlushService!: boolean;
 }
 
-class XAPPModel
+interface XAPPModel
 {
-    ID!: string;
-    Title!: string;
-    Name!: string;
-    SearchServiceID!: string;
-    SearchPath!: string;
+    ID: string;
+    Title: string;
+    Name: string;
+    SearchServiceID: string;
+    SearchPath: string;
+    Forms: XFRMModel[];
 }
 

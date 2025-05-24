@@ -18,7 +18,7 @@ namespace TFX.Core.Model.APP
         }
     }
 
-    public class XAPPStep : XContainerObject
+    public class XAPPStep : XObject
     {
         public XAPPStep()
         {

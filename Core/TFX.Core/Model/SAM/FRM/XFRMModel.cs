@@ -66,7 +66,7 @@ namespace TFX.Core.Model.FRM
         RPTFilter = 7,
     }
 
-    public class XFRMModel : XContainerObject
+    public class XFRMModel : XObject
     {
         public XFRMModel()
         {

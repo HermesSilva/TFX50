@@ -71,7 +71,7 @@ namespace TFX.Core.Model.FRM
         NotContains = 2,
     }
 
-    public class XFRMField : XContainerObject
+    public class XFRMField : XObject
     {
 
         public XGeneratorInfo GeneratorInfo = new XGeneratorInfo();
@@ -318,14 +318,6 @@ namespace TFX.Core.Model.FRM
         {
             get;
             set;
-        }
-
-        public XFRMModel Form
-        {
-            get
-            {
-                return (XFRMModel)Owner;
-            }
         }
     }
 }

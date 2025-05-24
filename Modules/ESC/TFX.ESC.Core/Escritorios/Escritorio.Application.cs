@@ -23,7 +23,7 @@ namespace TFX.ESC.Core.Escritorios
                 Type = XFRMType.Activity;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
-                fld.Title = "";
+                fld.Title = "Nome";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
                 fld.RowCount = 2;
@@ -53,7 +53,7 @@ namespace TFX.ESC.Core.Escritorios
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
-                fld.Title = "";
+                fld.Title = "CPF ou CNPJ";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
                 fld.RowCount = 2;
@@ -87,55 +87,6 @@ namespace TFX.ESC.Core.Escritorios
 
         #endregion FRMEscritorio
 
-        #region FRMEscritorioFilter
-
-        public class FRMEscritorioFilter : XFRMModel
-        {
-            public FRMEscritorioFilter()
-            {
-                ID = new Guid("8EA042E6-E564-4DB1-8303-3896A1E67C3F");
-                Name = "EscritorioFilter";
-                Title = "";
-                MinRows = 2;
-                Style = XFRMStyle.Normal;
-                Type = XFRMType.SVCFilter;
-                XFRMField fld;
-                fld = AddField(new XFRMField());
-                fld.ForceRW = true;
-                fld.Title = "";
-                fld.CanInsert = true;
-                fld.CanUpdate = true;
-                fld.RowCount = 2;
-                fld.ColCount = 32;
-                fld.IsHidden = false;
-                fld.Location = 1;
-                fld.EditorCID = XModelEditors.XSearchBox;
-                fld.Operator = XOperator.EqualTo;
-                fld.JustifyHeight = false;
-                fld.AllowEmpty = true;
-                fld.FontColor = "#000000";
-                fld.FontStyle = XFontStyle.Normal;
-                fld.ShowFooter = false;
-                fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
-                fld.Order = 1;
-                fld.Scale = -1;
-                fld.Length = -1;
-                fld.TypeID = XDataTypes.XString;
-                fld.AdditionalFieldsID = new Guid[] {  };
-                fld.AdditionalDataFieldsID = new Guid[] {  };
-                fld.TargetFilterFieldID = new Guid[] {  };
-                fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
-                fld.AutoLoad = false;
-                fld.FilterInative = true;
-                fld.IsAnswer = false;
-                fld.AllowMultiSelect = false;
-            }
-        }
-
-        #endregion FRMEscritorioFilter
-
         public static Guid CID = new Guid("1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D");
         public EscritorioApplication()
         {
@@ -144,6 +95,7 @@ namespace TFX.ESC.Core.Escritorios
             Title = "Escritório";
             SearchServiceID = EscritorioServiceModel.CID;
             SearchPath = "Escritorio/Search";
+            AddForm(new FRMEscritorio());
         }
     }
 }

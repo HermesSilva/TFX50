@@ -17,4 +17,5 @@ interface XServiceModel
 {
     Forms: XFRMModel[]
     DataView: XDataViewModel
+    SearchPath: string
 }

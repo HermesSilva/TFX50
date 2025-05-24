@@ -26,7 +26,4 @@ class XDiv extends XElement
     {
         return XUtils.AddElement<HTMLElement>(null, "div", null);
     }
-
-    @Inject(X21)
-    X23456: X21 | null = null;
 }
