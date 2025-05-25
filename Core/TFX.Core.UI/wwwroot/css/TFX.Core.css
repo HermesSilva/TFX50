@@ -1004,6 +1004,17 @@ th:active {
   background-color: rgba(255, 207, 73, 0.1333333333);
 }
 
+.Selected {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><polygon points='0,0 10,0 0,10' fill='blue'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 5px;
+  background-position-y: 2px;
+}
+
 .XTableRowEven {
   background-color: aliceblue;
 }
