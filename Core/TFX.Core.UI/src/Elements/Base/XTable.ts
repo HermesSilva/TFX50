@@ -4,8 +4,8 @@ class XColumnConfig
     Name!: string;
     Visible!: boolean;
     Width!: number;
-    Title!: string;    
-    Align: XAlign = XAlign.Left;   
+    Title!: string;
+    Align: XAlign = XAlign.Left;
 }
 
 class XTableElement extends XElement
@@ -341,6 +341,19 @@ class XTableRow extends XTableElement
     Tupla: any;
     Cell = new XArray<XTableCell>();
 
+    get IsSelected(): boolean
+    {
+        return this.HTML.classList.contains('Selected');
+    }
+
+    set IsSelected(pValue: boolean)
+    {
+        if (pValue)
+            this.HTML.classList.add('Selected');
+        else
+            this.HTML.classList.remove('Selected');
+    }
+
     SetData(pTupla: XDataTuple)
     {
         this.Tupla = pTupla;
@@ -392,30 +405,58 @@ class XTable extends XDiv
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null)
     {
         super(pOwner, pClass);
-        this.Container = XUtils.AddElement<HTMLDivElement>(this, "table");
+        this.Container = XUtils.AddElement<HTMLTableElement>(this, "table");
+
         this.Header = new XTableHeader(this.Owner, this);
         this.Body = new XTableBody(this.Container, this);
         XEventManager.AddEvent(this, this.HTML, XEventType.Scroll, this.PositioningHeader);
         this.RowNumberColumn = <XColumnConfig>{ Name: "RowNumber", Visible: true, Width: 50 };
     }
-    Container: HTMLDivElement;
+    Container: HTMLTableElement;
     Header: XTableHeader;
     Body: XTableBody;
     Columns: XColumnConfig[] | null = null;
     protected DataSet!: XDataSet;
     private RowNumberColumn: XColumnConfig;
-    OnRowClick: XMethod<XArray<XTableRow>> | null = null;
+    OnRowClick: XMethod<XTableRow> | null = null;
 
     DoSelectRow(pRow: XTableRow)
     {
+        for (var i = 0; i < this.Body.DataRows.length; i++)
+            this.Body.DataRows[i].IsSelected = false;
+
+        pRow.IsSelected = true;
         if (this.OnRowClick != null)
-            this.OnRowClick.apply(this, [[pRow]]);
+            this.OnRowClick.apply(this, [pRow]);
     }
 
+    override SizeChanged()
+    {
+        super.SizeChanged();
+        this.PositioningHeader(<any>null);
+    }
 
     PositioningHeader(pArg: MouseEvent)
     {
+        this.Header.HTML.style.width = this.Container.clientWidth + "px";
         this.Header.HTML.style.left = `-${this.HTML.scrollLeft}px`;
+        this.Sync();
+    }
+
+    Sync()
+    {
+
+        this.Container.style.width = this.HTML.getBoundingClientRect().width + "px";
+        this.Header.HTML.style.width = `${Math.max(this.Container.getBoundingClientRect().width, this.HTML.getBoundingClientRect().width)}px`
+
+        const vBodyCols = Array.from(this.Container.querySelectorAll('tr:first-child td'))
+        const vHeaderCols = Array.from(this.Header.HTML.querySelectorAll('th'))
+        vBodyCols.forEach((vCell, i) =>
+        {
+            const vTh = vHeaderCols[i] as HTMLElement
+            if (vTh)
+                vTh.style.width = `${vCell.getBoundingClientRect().width}px`
+        })
     }
 
     ResizeColumn(pHeaderCell: XTableHCell, pWidth: number, pCheck: boolean = false)
