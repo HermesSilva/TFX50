@@ -59,11 +59,17 @@ class XTabControlTab extends XDiv implements XIDialogContainer
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "XTabControlTab");
+        this.TabControl = <XTabControl>pOwner?.Owner;
         this.DialogContainer = new XDialogContainer(this, "XDialogContainer");
     }
     Button: XTabControlButton | null = null;
     DialogContainer: XDialogContainer;
     IsDialogContainer: boolean = true;
+    TabControl!: XTabControl;
+    Close()
+    {
+        this.TabControl.CloseTab(this.Button!);
+    }
 }
 
 class XTabControlContainer extends XDiv

@@ -49,6 +49,7 @@
     top: 20px;
     outline: none;
 }
+
 .XDatePickerEditor:focus {
     outline: none;
     border-color: #007bff;
@@ -67,6 +68,7 @@
     resize: none;
     top: 20px;
 }
+
 .XMemoEditor:focus {
     outline: none;
     border-color: #007bff;
@@ -103,8 +105,9 @@
     width: calc(100% - 13px);
     resize: none;
     top: 20px;
-    text-align: right;    
+    text-align: right;
 }
+
 .XIntegerEditor:focus {
     outline: none;
     border-color: #007bff;
@@ -124,6 +127,7 @@
     top: 20px;
     text-align: right;
 }
+
 .XDecimalEditor:focus {
     outline: none;
     border-color: #007bff;
@@ -208,4 +212,45 @@
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+
+.XSearchBoxEditor {
+    position: absolute;
+    padding: var(--ip-padding);
+    height: var(--ip-height);
+    border-radius: 5px;
+    border: 2px solid #74ddff;
+    outline: none;
+    padding-right: 32px;
+    height: calc(100% - 34px);
+    width: calc(100% - 41px);
+    top: 20px;
+    outline: none;
+}
+
+.XSearchBoxEditor:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.XSearchBoxEditorButton {
+    position: absolute;
+    right: 3px;
+    top: 23PX;
+    bottom: 3px;
+    width: 28px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 3px;
+    text-align: center;
+    align-content: space-around;
+    &:hover {
+        background-color: var(--bg-hv-XLookupButton);
+    }
+}
+.XSearchIcon {
+    width: 20px;
+    padding: 4px;
 }

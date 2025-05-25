@@ -25,6 +25,7 @@ namespace TFX.Core.Data.Servicos.Usuario
         public static Guid CID = new Guid("53F17DAC-4376-4424-8454-0866B122BFDB");
         public UsuarioServiceModel()
         {
+            SearchPath = "Usuario/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String" });
             DataView.Columns.Add(new XColumnModel() { Name = "EMail", Title = "E-Mails", Type = "String" });
             Forms.Add(new FRMUsuarioFilter());
@@ -77,9 +78,11 @@ namespace TFX.Core.Data.Servicos.Usuario
             Title = "";
             MinRows = 2;
             Style = XFRMStyle.Normal;
+            Type = XFRMType.SVCFilter;
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Title = "Nome";
             fld.CanInsert = true;
             fld.CanUpdate = true;
             fld.RowCount = 2;

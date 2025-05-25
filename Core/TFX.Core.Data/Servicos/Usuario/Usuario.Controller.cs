@@ -36,8 +36,8 @@ namespace TFX.Core.Data.Servicos.Usuario
         internal readonly IUsuarioService Service;
         private readonly INFUsuarioControllerRule _Rule;
 
-        [HttpPost("Lista")]
-        public IActionResult Lista([FromBody] UsuarioFilter pFilter)
+        [HttpPost("Search")]
+        public IActionResult Search([FromBody] UsuarioFilter pFilter)
         {
             try
             {
