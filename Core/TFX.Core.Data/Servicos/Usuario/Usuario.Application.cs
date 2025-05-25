@@ -20,8 +20,10 @@ namespace TFX.Core.Data.Servicos.Usuario
                 Title = "";
                 MinRows = 2;
                 Style = XFRMStyle.Normal;
+                Type = XFRMType.Activity;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
+                fld.Title = "Nome";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
                 fld.RowCount = 2;
@@ -51,6 +53,7 @@ namespace TFX.Core.Data.Servicos.Usuario
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Title = "E-Mails";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
                 fld.RowCount = 2;
@@ -84,53 +87,6 @@ namespace TFX.Core.Data.Servicos.Usuario
 
         #endregion FRMUsuario
 
-        #region FRMUsuarioFilter
-
-        public class FRMUsuarioFilter : XFRMModel
-        {
-            public FRMUsuarioFilter()
-            {
-                ID = new Guid("37BCE53B-7D3A-492F-A2D5-3961F774E01D");
-                Name = "UsuarioFilter";
-                Title = "";
-                MinRows = 2;
-                Style = XFRMStyle.Normal;
-                XFRMField fld;
-                fld = AddField(new XFRMField());
-                fld.ForceRW = true;
-                fld.CanInsert = true;
-                fld.CanUpdate = true;
-                fld.RowCount = 2;
-                fld.ColCount = 14;
-                fld.IsHidden = false;
-                fld.Location = 1;
-                fld.EditorCID = XModelEditors.XSearchBox;
-                fld.Operator = XOperator.EqualTo;
-                fld.JustifyHeight = false;
-                fld.AllowEmpty = true;
-                fld.FontColor = "#000000";
-                fld.FontStyle = XFontStyle.Normal;
-                fld.ShowFooter = false;
-                fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
-                fld.Order = 1;
-                fld.Scale = -1;
-                fld.Length = -1;
-                fld.TypeID = XDataTypes.XString;
-                fld.AdditionalFieldsID = new Guid[] {  };
-                fld.AdditionalDataFieldsID = new Guid[] {  };
-                fld.TargetFilterFieldID = new Guid[] {  };
-                fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
-                fld.AutoLoad = false;
-                fld.FilterInative = true;
-                fld.IsAnswer = false;
-                fld.AllowMultiSelect = false;
-            }
-        }
-
-        #endregion FRMUsuarioFilter
-
         public static Guid CID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C");
         public UsuarioApplication()
         {
@@ -139,6 +95,7 @@ namespace TFX.Core.Data.Servicos.Usuario
             Title = "Cadastro de Usuários";
             SearchServiceID = UsuarioServiceModel.CID;
             SearchPath = "Usuario/Search";
+            AddForm(new FRMUsuario());
         }
     }
 }

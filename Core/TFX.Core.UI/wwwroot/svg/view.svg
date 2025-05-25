@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" width="15.2084" height="12.6391" viewBox="0 0 15.21 12.64" enable-background="new 0 0 15.21 12.64" xml:space="preserve">
+	<g>
+		<path fill="none" stroke-linejoin="round" stroke="#0096FF" stroke-opacity="1" d="M 13.9375,11.5091L 0.5,11.5091L 0.5,0.499939L 14.1702,0.499939L 14.1702,10.9582"/>
+		<line fill="none" stroke-width="0.5" stroke-linejoin="round" stroke="#0096FF" stroke-opacity="1" x1="2.16669" y1="2.34943" x2="12.5035" y2="2.34943"/>
+		<line fill="none" stroke-width="0.5" stroke-linejoin="round" stroke="#0096FF" stroke-opacity="1" x1="2.16667" y1="8.88293" x2="6.04169" y2="8.88293"/>
+		<line fill="none" stroke-width="0.5" stroke-linejoin="round" stroke="#0096FF" stroke-opacity="1" x1="2.16667" y1="6.70514" x2="5.85417" y2="6.70514"/>
+		<line fill="none" stroke-width="0.5" stroke-linejoin="round" stroke="#0096FF" stroke-opacity="1" x1="2.16669" y1="4.52728" x2="6.72919" y2="4.52728"/>
+		<ellipse fill="#FFFFFF" fill-opacity="1" stroke-linejoin="round" stroke="#055085" stroke-opacity="1" cx="9.87234" cy="7.67342" rx="2.94449" ry="3.0826"/>
+		<path fill="#055085" fill-opacity="1" stroke-width="0.5" stroke-linejoin="round" stroke="#055085" stroke-opacity="1" d="M 13.0385,10.3792L 13.0385,10.3792C 13.2165,10.1928 13.5049,10.1927 13.6827,10.3788L 14.9584,11.7143C 15.1362,11.9005 15.136,12.2024 14.958,12.3887L 14.958,12.3887C 14.78,12.5751 14.4916,12.5752 14.3138,12.3891L 13.0381,11.0536C 12.8603,10.8674 12.8605,10.5655 13.0385,10.3792 Z "/>
+		<path fill="#055085" fill-opacity="1" stroke-width="0.2" stroke-linejoin="round" stroke="#055085" stroke-opacity="1" d="M 12.0226,9.84436L 12.5454,9.29694L 13.8324,10.6443L 13.3095,11.1917L 12.0226,9.84436 Z "/>
+		<path fill="#055085" fill-opacity="1" stroke-width="0.2" stroke-linejoin="round" stroke="#055085" stroke-opacity="1" d="M 10.1095,9.51935C 9.01488,9.51935 8.12746,8.59027 8.12753,7.42612C 8.75159,8.44537 9.793,9.15778 10.9993,9.29901C 10.7317,9.43997 10.4295,9.51935 10.1095,9.51935 Z "/>
+	</g>
+</svg>

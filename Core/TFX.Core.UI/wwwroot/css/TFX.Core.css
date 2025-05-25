@@ -495,6 +495,47 @@ th:active {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
+.XSearchBoxEditor {
+  position: absolute;
+  padding: var(--ip-padding);
+  height: var(--ip-height);
+  border-radius: 5px;
+  border: 2px solid #74ddff;
+  outline: none;
+  padding-right: 32px;
+  height: calc(100% - 34px);
+  width: calc(100% - 41px);
+  top: 20px;
+  outline: none;
+}
+
+.XSearchBoxEditor:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.XSearchBoxEditorButton {
+  position: absolute;
+  right: 3px;
+  top: 23PX;
+  bottom: 3px;
+  width: 28px;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 3px;
+  text-align: center;
+  align-content: space-around;
+}
+.XSearchBoxEditorButton:hover {
+  background-color: var(--bg-hv-XLookupButton);
+}
+
+.XSearchIcon {
+  width: 20px;
+  padding: 4px;
+}
+
 .XMenu {
   position: absolute;
   width: 300px;
@@ -690,7 +731,6 @@ th:active {
   position: absolute;
   width: calc(100% - 2px);
   height: calc(100% - 3px);
-  background-color: #b6ff00;
 }
 
 .XScene {
@@ -1077,35 +1117,49 @@ th:active {
   overflow: hidden;
 }
 
-.SceneForm {
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  height: calc(100% - 50px);
-  overflow: hidden;
-}
-
-.XSVGButton {
-  width: 50px;
-  height: 50px;
-  left: 5px;
-  top: 5px;
-  background-color: beige;
-}
-
-.XSVGButton:hover {
-  background-color: aqua;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .XButtonBar {
-  top: 0;
-  width: 100%;
-  height: 60px;
   position: absolute;
-  overflow: hidden;
-  background-color: aliceblue;
+  width: calc(100% - 120px);
+  height: 60px;
+  border-bottom: 3px solid rgba(152, 178, 237, 0.631372549);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.XButtonBarR {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  right: 0px;
+  border-bottom: 3px solid rgba(152, 178, 237, 0.631372549);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: right;
+}
+
+.Left {
+  text-align: right;
+}
+
+.XButtonBarItem {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  padding: 5px;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.XButtonBarItem:hover {
+  background-color: #d4d2a8;
+}
+
+.ButtonBarIcon {
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
 }
 
 html {
