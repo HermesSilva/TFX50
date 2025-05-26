@@ -8,6 +8,7 @@ class XBaseInput extends XDiv implements XIEditor
         this.ELMTitle = new XDiv(this, "InputTitle");
 
     }
+    Name!: string;
     Description!: string;
     IsNullable!: boolean;
     AllowEmpty!: boolean;

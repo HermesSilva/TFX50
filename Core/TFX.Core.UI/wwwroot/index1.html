@@ -1,163 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        .numeric-input {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            font-family: monospace;
-            text-align: right;
-            width: 200px;
-        }
+    <script src="js/TFX.Core.js"></script>
+    <link href="css/TFX.Core.css" rel="stylesheet" />
 
-            .numeric-input:focus {
-                outline: none;
-                border-color: #007bff;
-                box-shadow: 0 0 0 2px rgba(0,123,255,.25);
-            }
-    </style>
 </head>
 <body>
-    <input type="text" id="A" class="numeric-input" placeholder="-#.##0">
-    <input type="text" id="B" class="numeric-input" placeholder="-#.##0">
-    <input type="text" id="C" class="numeric-input" placeholder="-#.##0">
-
+    <div id="meu-composer" contenteditable="false" class="XSearchBoxEditor">
+    </div>
     <script>
-        class NumericInput
-        {
-            constructor(inputElement, mask)
-            {
-                this.input = inputElement;
-                this.allowNegative = mask.startsWith('-');
-                this.mask = mask;
-                this.maxDigits = mask.replace(/[^#0]/g, '').length;
-                this.hasSeparator = mask.includes('.');
-                this.isFixedMask = !mask.includes('#') && /^[-]?0+$/.test(mask);
+        const container = document.getElementById('meu-composer')
+        new XFieldComposer(
+            container,
+            ["Nome", "CNPJ;##.###.###/####-##", "Nascimento;DD/MM/YYYY"]
+        )
 
-                this.init();
-            }
-
-            init()
-            {
-                this.input.value = this.formatNumber('0');
-                this.setupEventListeners();
-            }
-
-            setupEventListeners()
-            {
-                this.input.addEventListener('input', this.handleInput.bind(this));
-                this.input.addEventListener('keydown', this.handleKeyDown.bind(this));
-                this.input.addEventListener('blur', this.handleBlur.bind(this));
-            }
-
-            handleInput(e)
-            {
-                const rawValue = this.getRawValue(this.input.value);
-                const processed = this.processValue(rawValue);
-                this.input.value = this.formatNumber(processed);
-            }
-
-            handleKeyDown(e)
-            {
-                // Novos códigos permitidos: Home(36), End(35), Ctrl+Home/End
-                if ([8, 46, 9, 27, 13, 37, 38, 39, 40, 36, 35].includes(e.keyCode)) return;
-                if ((e.ctrlKey || e.metaKey) && [67, 86, 88, 65].includes(e.keyCode)) return;
-
-                const isNegativeSign = e.key === '-' && this.allowNegative;
-                const isNumber = e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode >= 96 && e.keyCode <= 105;
-
-                if (isNegativeSign)
-                {
-                    e.preventDefault();
-                    this.toggleSign();
-                    return;
-                }
-
-                if (!isNumber)
-                {
-                    e.preventDefault();
-                }
-            }
-
-            toggleSign()
-            {
-                const current = this.getRawValue(this.input.value);
-                const newValue = current.startsWith('-') ? current.slice(1) : `-${current}`;
-                this.input.value = this.formatNumber(newValue);
-            }
-
-            handleBlur()
-            {
-                const rawValue = this.getRawValue(this.input.value);
-                if (rawValue === '-' || rawValue === '')
-                {
-                    this.input.value = '0';
-                } else
-                {
-                    this.input.value = this.formatNumber(rawValue);
-                }
-            }
-
-            getRawValue(value)
-            {
-                return value.replace(/[^0-9-]/g, '');
-            }
-
-            processValue(raw)
-            {
-                let isNegative = this.allowNegative && raw.startsWith('-');
-                let digits = raw.replace(/-/g, '').replace(/^0+/, '') || '0';
-                digits = digits.slice(0, this.maxDigits);
-
-                if (this.isFixedMask)
-                {
-                    digits = digits.padStart(this.maxDigits, '0');
-                }
-
-                return (isNegative ? '-' : '') + digits;
-            }
-
-            formatNumber(value)
-            {
-                const isNegative = value.startsWith('-');
-                let digits = isNegative ? value.slice(1) : value;
-                digits = digits.replace(/[^0-9]/g, '');
-
-                if (this.hasSeparator)
-                {
-                    digits = this.insertSeparators(digits);
-                }
-
-                if (this.isFixedMask)
-                {
-                    digits = digits.padStart(this.maxDigits, '0');
-                }
-
-                return (isNegative ? '-' : '') + digits;
-            }
-
-            insertSeparators(digits)
-            {
-                return digits
-                    .split('').reverse().join('')
-                    .match(/.{1,3}/g)
-                    .join('.')
-                    .split('').reverse().join('')
-                    .replace(/^\./, '');
-            }
-        }
-
-        const input = document.querySelector('.numeric-input');
-        new NumericInput(input, '0000'); // Teste com máscara fixa
     </script>
-</body>
-</html>
-<script>
-        new NumericInput(document.getElementById('A'), '-#.##0');  // Permite negativos até 4 dígitos
-        new NumericInput(document.getElementById('B'), '#.##0');   // Apenas positivos
-        new NumericInput(document.getElementById('C'), '0000');    // 4 dígitos fixos
-    </script>
+
 </body>
 </html>
