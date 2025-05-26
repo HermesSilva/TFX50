@@ -40,6 +40,12 @@ namespace TFX.ESC.Core.Escritorios
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Status", Title = "Status", Type = "String", Mask = "", 
                                                       Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+            DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             Forms.Add(new FRMEscritorioFilter());
         }
     }
@@ -50,7 +56,7 @@ namespace TFX.ESC.Core.Escritorios
             Initialize();
         }
 
-        public EscritorioTuple(String pCPFCNPJ, Int16 pCORxStatusID, String pNome, Guid? pCORxPessoaID, Guid? pCORxAgregadoID, Guid? pESCxEscritorioID, String pStatus)
+        public EscritorioTuple(String pCPFCNPJ, Int16 pCORxStatusID, String pNome, Guid? pCORxPessoaID, Guid? pCORxAgregadoID, Guid? pESCxEscritorioID, String pStatus, Int32 pCEPxLocalidadePrincipalID, String pSigla, String pLocalidade)
             : this()
         {
             CPFCNPJ.Value = pCPFCNPJ;
@@ -60,6 +66,9 @@ namespace TFX.ESC.Core.Escritorios
             CORxAgregadoID.Value = pCORxAgregadoID;
             ESCxEscritorioID.Value = pESCxEscritorioID;
             Status.Value = pStatus;
+            CEPxLocalidadePrincipalID.Value = pCEPxLocalidadePrincipalID;
+            Sigla.Value = pSigla;
+            Localidade.Value = pLocalidade;
         }
 
         public override void Initialize()
@@ -71,6 +80,9 @@ namespace TFX.ESC.Core.Escritorios
             CORxAgregadoID = new XGuidNullableDataField();
             ESCxEscritorioID = new XGuidNullableDataField();
             Status = new XStringDataField();
+            CEPxLocalidadePrincipalID = new XInt32DataField();
+            Sigla = new XStringDataField();
+            Localidade = new XStringDataField();
         }
 
         [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
@@ -86,6 +98,12 @@ namespace TFX.ESC.Core.Escritorios
         [Display(Name = "Escritório")]
         public XGuidNullableDataField ESCxEscritorioID {get;set;}
         public XStringDataField Status {get;set;}
+        [Display(Name = "Localidade")]
+        public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
+        [Display(Name = "Sigla da UF")]
+        public XStringDataField Sigla {get;set;}
+        [Display(Name = "Nome da Localidade")]
+        public XStringDataField Localidade {get;set;}
     }
 
     public class EscritorioFilter : XFilter
@@ -95,6 +113,8 @@ namespace TFX.ESC.Core.Escritorios
         {
         }
         public String Nome {get;set;}
+        public String Localidade {get;set;}
+        public String Sigla {get;set;}
         public String CPFCNPJ {get;set;}
     }
     public class FRMEscritorioFilter : XFRMModel

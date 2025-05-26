@@ -18,8 +18,7 @@ class XSearchBoxEditor extends XBaseInput
     SetFields(pColumns: XColumnModel[])
     {
         this.Columns = pColumns;
-        this.AddField(pColumns[0]);
-
+        this.Columns.ForEach((c) =>this.AddField(c));
     }
 
     AddField(pColumns: XColumnModel)

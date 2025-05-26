@@ -29,6 +29,10 @@ namespace TFX.ESC.Core.Escritorios
     {
         public class CORxPessoa : XEntity
         {
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadePrincipalID {get; set;}
+
             public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
@@ -40,6 +44,8 @@ namespace TFX.ESC.Core.Escritorios
 
 
             public List<CORxAgregado> CORxAgregado {get; set;} = new List<CORxAgregado>();
+
+            public CEPxLocalidade CEPxLocalidade {get; set;}
         }
         public class ESCxEscritorio : XEntity
         {
@@ -90,6 +96,84 @@ namespace TFX.ESC.Core.Escritorios
 
             public List<CORxAgregado> CORxAgregado {get; set;} = new List<CORxAgregado>();
         }
+        public class CEPxUF : XEntity
+        {
+            [Display(Name = "CEP Final")]
+            [MaxLength(8)]
+            [Required()]
+            public String CEPFinal {get; set;}
+
+            [Display(Name = "CEP Inicial")]
+            [MaxLength(8)]
+            [Required()]
+            public String CEPInicial {get; set;}
+
+            [Display(Name = "País")]
+            [Required()]
+            public Int16 CEPxPaisID {get; set;}
+
+            public Boolean IsPKEmpty => Object.Equals(CEPxUFID, typeof(Int16).GetDefault());
+            [Display(Name = "UF")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 CEPxUFID {get; set;}
+
+            [Display(Name = "Nome da UF")]
+            [MaxLength(45)]
+            [Required()]
+            public String Nome {get; set;}
+
+            [Display(Name = "Sigla da UF")]
+            [MaxLength(2)]
+            [Required()]
+            public String Sigla {get; set;}
+
+
+            public List<CEPxLocalidade> CEPxLocalidade {get; set;} = new List<CEPxLocalidade>();
+        }
+        public class CEPxLocalidade : XEntity
+        {
+            [Display(Name = "CEP Geral")]
+            [MaxLength(8)]
+            public String CEPGeral {get; set;}
+
+            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeID, typeof(Int32).GetDefault());
+            [Display(Name = "Localidade")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxLocalidadeID {get; set;}
+
+            [Display(Name = "Tipo de Localidade")]
+            [Required()]
+            public Int16 CEPxLocalidadeTipoID {get; set;}
+
+            [Display(Name = "Municipio")]
+            [Required()]
+            public Int32 CEPxMunicipioID {get; set;}
+
+            [Display(Name = "Unidade Federativa")]
+            [Required()]
+            public Int16 CEPxUFID {get; set;}
+
+            [Display(Name = "Código no IBGE")]
+            [MaxLength(7)]
+            [DisplayFormat(DataFormatString = "0000000")]
+            public String CodigoIBGE {get; set;}
+
+            [Display(Name = "Nome da Localidade")]
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+
+
+            public List<CORxPessoa> CORxPessoa {get; set;} = new List<CORxPessoa>();
+
+            public CEPxUF CEPxUF {get; set;}
+        }
         public class DBContext : XDBContext
         {
             public DBContext(DbContextOptions<DBContext> pOptions, XITenantProvider pTenantProvider, XISharedTransaction pSharedTransaction)
@@ -101,6 +185,8 @@ namespace TFX.ESC.Core.Escritorios
             public DbSet<ESCxEscritorio> ESCxEscritorio{get; set;}
             public DbSet<CORxAgregado> CORxAgregado{get; set;}
             public DbSet<CORxStatus> CORxStatus{get; set;}
+            public DbSet<CEPxUF> CEPxUF{get; set;}
+            public DbSet<CEPxLocalidade> CEPxLocalidade{get; set;}
 
         private void ConfigureCORxPessoa(ModelBuilder pBuilder)
         {
@@ -110,7 +196,12 @@ namespace TFX.ESC.Core.Escritorios
 
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.Property(d => d.CEPxLocalidadePrincipalID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CORxPessoa");
+                ett.HasOne(d => d.CEPxLocalidade)
+                   .WithMany(p => p.CORxPessoa)
+                   .HasForeignKey(d => d.CEPxLocalidadePrincipalID)
+                   .OnDelete(DeleteBehavior.Restrict);
             });
         }
         private void ConfigureESCxEscritorio(ModelBuilder pBuilder)
@@ -158,6 +249,43 @@ namespace TFX.ESC.Core.Escritorios
                 ett.ToTable("CORxStatus");
             });
         }
+        private void ConfigureCEPxUF(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CEPxUF>(ett =>
+            {
+                ett.HasKey(e => e.CEPxUFID).HasName("PK_CEPxUF");
+
+                ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 45));
+                ett.Property(d => d.Sigla).HasColumnType(GetDBType("String", 2));
+                ett.Property(d => d.CEPxPaisID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CEPInicial).HasColumnType(GetDBType("String", 8));
+                ett.Property(d => d.CEPFinal).HasColumnType(GetDBType("String", 8));
+                ett.ToTable("CEPxUF");
+            });
+        }
+        private void ConfigureCEPxLocalidade(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<CEPxLocalidade>(ett =>
+            {
+                ett.HasKey(e => e.CEPxLocalidadeID).HasName("PK_CEPxLocalidade");
+
+                ett.Property(d => d.CEPxLocalidadeID).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
+                ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
+                ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
+                    .HasDefaultValue(GetDBValue("String", null));
+                ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
+                ett.ToTable("CEPxLocalidade");
+                ett.HasOne(d => d.CEPxUF)
+                   .WithMany(p => p.CEPxLocalidade)
+                   .HasForeignKey(d => d.CEPxUFID)
+                   .OnDelete(DeleteBehavior.Restrict);
+            });
+        }
 
             protected override void OnModelCreating(ModelBuilder pBuilder)
             {
@@ -165,6 +293,8 @@ namespace TFX.ESC.Core.Escritorios
                 ConfigureESCxEscritorio(pBuilder);
                 ConfigureCORxAgregado(pBuilder);
                 ConfigureCORxStatus(pBuilder);
+                ConfigureCEPxUF(pBuilder);
+                ConfigureCEPxLocalidade(pBuilder);
                 base.OnModelCreating(pBuilder);
             }
 
@@ -225,11 +355,13 @@ namespace TFX.ESC.Core.Escritorios
         {
             var ctx = Context;
             var query = from CORxPessoa in ctx.CORxPessoa
+                        join CEPxLocalidade in ctx.CEPxLocalidade on CORxPessoa.CEPxLocalidadePrincipalID equals CEPxLocalidade.CEPxLocalidadeID
+                        join CEPxUF in ctx.CEPxUF on CEPxLocalidade.CEPxUFID equals CEPxUF.CEPxUFID
                         join CORxAgregado in ctx.CORxAgregado on CORxPessoa.CORxPessoaID equals CORxAgregado.CORxAgregadoID
                         join CORxStatus in ctx.CORxStatus on CORxAgregado.CORxStatusID equals CORxStatus.CORxStatusID
                         join ESCxEscritorio in ctx.ESCxEscritorio on CORxAgregado.CORxAgregadoID equals ESCxEscritorio.ESCxEscritorioID
                         
-                        select new {CORxPessoa, ESCxEscritorio, CORxAgregado, CORxStatus};
+                        select new {CORxPessoa, ESCxEscritorio, CORxAgregado, CORxStatus, CEPxUF, CEPxLocalidade};
             query = _INFRule.GetWhere(query);
 
 
@@ -256,7 +388,10 @@ namespace TFX.ESC.Core.Escritorios
                                 q.CORxPessoa.CORxPessoaID,
                                 q.CORxAgregado.CORxAgregadoID,
                                 q.ESCxEscritorio.ESCxEscritorioID,
-                                q.CORxStatus.Status));
+                                q.CORxStatus.Status,
+                                q.CORxPessoa.CEPxLocalidadePrincipalID,
+                                q.CEPxUF.Sigla,
+                                q.CEPxLocalidade.Nome));
             return qry;
         }
 
@@ -322,6 +457,7 @@ namespace TFX.ESC.Core.Escritorios
                 if (stpl.CORxPessoaID.Value != null)
                     CORxPessoatpl.CORxPessoaID = stpl.CORxPessoaID.Value;
                 CORxPessoatpl.Nome = stpl.Nome.Value;
+                CORxPessoatpl.CEPxLocalidadePrincipalID = stpl.CEPxLocalidadePrincipalID.Value;
                 CORxPessoatpl.Validate(sb);
                 ctx.CORxPessoa.Add(CORxPessoatpl);
                 if (!CORxPessoatpl.IsPKEmpty)

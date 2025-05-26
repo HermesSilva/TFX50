@@ -28,6 +28,30 @@ namespace TFX.Core
         public static string SecretHashId => XEnvironment.Read("HASID_SECRET", "9ea96c82-20-8c-b5-d0fc7b736af1");
 
         private static readonly string SecurityKey = "http://www.2am5ana.c0m";
+
+        public static void ProcessStream<T>(Stream stream, int batchSize, Action<List<T>> pCallback) where T : new()
+        {
+            using var reader = new StreamReader(stream);
+            var batch = new List<T>();
+            string line;
+            // pula header e linhas em branco
+            while ((line = reader.ReadLine()) != null)
+            {
+                if (string.IsNullOrWhiteSpace(line) || line.StartsWith("Abreviatura@"))
+                    continue;
+                var parts = line.Split('@');
+                var item = new T();
+                batch.Add(item);
+                if (batch.Count >= batchSize)
+                {
+                    pCallback(batch);
+                    batch = new List<T>();
+                }
+            }
+            // processa remanescente
+            if (batch.Count > 0)
+                pCallback(batch);
+        }
         public static Boolean Assign(Object pTarget, Object pSource)
         {
             var changed = false;

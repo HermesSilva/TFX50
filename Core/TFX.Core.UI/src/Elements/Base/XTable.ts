@@ -264,7 +264,7 @@ class XTableBody extends XElement
         }
         if (!this.SortCells.Any(c => c == pCell) && pAction != 2)
             this.SortCells.Add(pCell);
-        let field = pCell.Column.Title;
+        let field = pCell.Column.Name;
         this.Table.Header.Columns.ForEach(c =>
         {
             if (!this.SortCells.Any(cc => cc == c))
@@ -289,9 +289,9 @@ class XTableBody extends XElement
             for (var i = 0; i < this.SortCells.length; i++)
             {
                 let cell = this.SortCells[i];
-                if (a.Tupla[cell.Column.Title] > b.Tupla[cell.Column.Title])
+                if (a.Tupla[cell.Column.Name].Value > b.Tupla[cell.Column.Name].Value)
                     return cell.SortState.Direction === 'asc' ? 1 : -1;
-                if (a.Tupla[cell.Column.Title] < b.Tupla[cell.Column.Title])
+                if (a.Tupla[cell.Column.Name].Value < b.Tupla[cell.Column.Name].Value)
                     return cell.SortState.Direction === 'asc' ? -1 : 1;
 
             }
