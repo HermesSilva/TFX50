@@ -250,7 +250,67 @@
         background-color: var(--bg-hv-XLookupButton);
     }
 }
+
 .XSearchIcon {
     width: 20px;
     padding: 4px;
+}
+
+
+.x-field-composer {
+    border: 1px solid #4a90e2;
+    padding: 6px;
+    min-height: 40px;
+    position: relative
+}
+
+.x-field-composer .field-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #aaa;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    max-height: 200px;
+    overflow: auto
+}
+
+.x-field-composer .field-list li {
+    padding: 4px 8px;
+    cursor: pointer
+}
+
+.x-field-composer .field-list li.selected {
+    background: #d0eaff
+}
+
+.x-field-composer .field-editor {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin: 2px;
+    background: #fafafa
+}
+
+.x-field-composer .field-editor .label {
+    font-size: .9em;
+    color: #555;
+    margin-right: 4px
+}
+
+.x-field-composer .field-editor .input {
+    border: none;
+    outline: none;
+    min-width: 20px
+}
+
+.x-field-composer .field-editor .remove {
+    color: red;
+    cursor: pointer;
+    margin-left: 4px
 }
