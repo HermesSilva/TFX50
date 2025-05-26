@@ -1,11 +1,14 @@
 ﻿/// <reference path="../XDiv.ts" />
-class XColumnConfig
+interface XColumnModel
 {
-    Name!: string;
-    Visible!: boolean;
-    Width!: number;
-    Title!: string;
-    Align: XAlign = XAlign.Left;
+    Name: string;
+    Visible: boolean;
+    Width: number;
+    Title: string;
+    Align: XAlign;
+    Mask: string;
+    IsFreeSearch: boolean;
+    Operator: XOperator;
 }
 
 class XTableElement extends XElement
@@ -65,14 +68,14 @@ class XTableHCell extends XTableElement
     Title: HTMLSpanElement;
     Content: HTMLDivElement;
     SortIcon: HTMLSpanElement;
-    Data: XColumnConfig | any = null;
+    Column!: XColumnModel;
     SortState: { Field: string; Direction: 'asc' | 'desc' };
 
-    SetData(pCell: XColumnConfig)
+    SetData(pCell: XColumnModel)
     {
         this.SortState = { Field: "", Direction: 'asc' };
-        this.Data = pCell;
-        this.Title.innerHTML = "<spans>" + this.Data.Title + "</span>";
+        this.Column = pCell;
+        this.Title.innerHTML = "<spans>" + this.Column.Title + "</span>";
     }
 
     DragEvents()
@@ -106,7 +109,7 @@ class XTableHCell extends XTableElement
         {
             e.preventDefault();
             var elm = XDragUtils.GetData<XElement>();
-            if (elm == null || elm.UUID == this.UUID)
+            if (elm == null || elm.UID == this.UID)
                 return;
 
             var w = this.HTML.GetRect().Width;
@@ -133,7 +136,7 @@ class XTableHCell extends XTableElement
             this.HTML.classList.remove('ldrag-over');
             this.HTML.classList.remove('rdrag-over');
             const elm = XDragUtils.GetData<XTableHCell>();
-            if (this.Owner instanceof XElement && elm.UUID != this.UUID)
+            if (this.Owner instanceof XElement && elm.UID != this.UID)
             {
                 var w = this.HTML.clientWidth / 2;
                 if (e.offsetX > w)
@@ -175,7 +178,7 @@ class XTableHCell extends XTableElement
                     return;
                 const newWidth = startWidth + (e.clientX - startX);
                 this.Content.style.width = `${newWidth}px`;
-                this.Data.Width = newWidth;
+                this.Column.Width = newWidth;
                 this.Table.ResizeColumn(this, newWidth);
             };
 
@@ -261,7 +264,7 @@ class XTableBody extends XElement
         }
         if (!this.SortCells.Any(c => c == pCell) && pAction != 2)
             this.SortCells.Add(pCell);
-        let field = pCell.Data.Title;
+        let field = pCell.Column.Title;
         this.Table.Header.Columns.ForEach(c =>
         {
             if (!this.SortCells.Any(cc => cc == c))
@@ -286,9 +289,9 @@ class XTableBody extends XElement
             for (var i = 0; i < this.SortCells.length; i++)
             {
                 let cell = this.SortCells[i];
-                if (a.Tupla[cell.Data.Title] > b.Tupla[cell.Data.Title])
+                if (a.Tupla[cell.Column.Title] > b.Tupla[cell.Column.Title])
                     return cell.SortState.Direction === 'asc' ? 1 : -1;
-                if (a.Tupla[cell.Data.Title] < b.Tupla[cell.Data.Title])
+                if (a.Tupla[cell.Column.Title] < b.Tupla[cell.Column.Title])
                     return cell.SortState.Direction === 'asc' ? -1 : 1;
 
             }
@@ -396,7 +399,10 @@ class XTableCell extends XTableElement
     {
         this.HCell = pHCell;
         this.Data = pData
-        this.Text.innerHTML = "<spans>" + this.Data + "</span>";
+        var vlr = this.Data;
+        if (!X.IsEmpty(pHCell.Column.Mask))
+            vlr = XUtils.ApplyMask(pData, pHCell.Column.Mask);
+        this.Text.innerHTML = "<spans>" + vlr + "</span>";
     }
 }
 
@@ -410,14 +416,14 @@ class XTable extends XDiv
         this.Header = new XTableHeader(this.Owner, this);
         this.Body = new XTableBody(this.Container, this);
         XEventManager.AddEvent(this, this.HTML, XEventType.Scroll, this.PositioningHeader);
-        this.RowNumberColumn = <XColumnConfig>{ Name: "RowNumber", Visible: true, Width: 50 };
+        this.RowNumberColumn = <XColumnModel>{ Name: "RowNumber", Visible: true, Width: 50 };
     }
     Container: HTMLTableElement;
     Header: XTableHeader;
     Body: XTableBody;
-    Columns: XColumnConfig[] | null = null;
+    Columns: XColumnModel[] | null = null;
     protected DataSet!: XDataSet;
-    private RowNumberColumn: XColumnConfig;
+    private RowNumberColumn: XColumnModel;
     OnRowClick: XMethod<XTableRow> | null = null;
 
     DoSelectRow(pRow: XTableRow)
@@ -494,16 +500,16 @@ class XTable extends XDiv
         }
     }
 
-    GetVisibleColumns(): Array<XColumnConfig>
+    GetVisibleColumns(): Array<XColumnModel>
     {
         if (this.Columns == null)
-            return new Array<XColumnConfig>();
+            return new Array<XColumnModel>();
         return [this.RowNumberColumn, ...this.Columns.filter(c => c.Visible)];
     }
 
     SetColumns(pColumn: XColumnModel[])
     {
-        this.Columns = pColumn.Select(c => <XColumnConfig>{ Name: c.Name, Title: c.Name, Visible: true, Width: 100 });
+        this.Columns = pColumn.Where(c => c.Visible);
         this.CreateHeader();
     }
 

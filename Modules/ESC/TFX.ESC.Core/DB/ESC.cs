@@ -27,6 +27,7 @@ namespace TFX.ESC.Core.DB
             public Int16 CORxStatusID {get; set;}
             [Display(Name = "CPF ou CNPJ")]
             [MaxLength(14)]
+            [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
             [Required()]
             public String CPFCNPJ {get; set;}
         }
@@ -38,6 +39,7 @@ namespace TFX.ESC.Core.DB
         public class _CORxEmpresa
         {
             [MaxLength(14)]
+            [DisplayFormat(DataFormatString = "##.###.###/####-##")]
             [Required()]
             public String CNPJ {get; set;}
             [Display(Name = "Agregado")]

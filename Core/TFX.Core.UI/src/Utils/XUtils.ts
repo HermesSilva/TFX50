@@ -2,6 +2,24 @@ class XUtils
 {
     private static CanvasContext = document.createElement('canvas').getContext('2d')!
 
+    static ApplyMask(pValue: string | number, pMaskPattern: string): string
+    {
+        const CleanValue = pValue.toString().replace(/\D/g, '')
+        const MaskOptions = pMaskPattern.split('|')
+        const SelectedMask = MaskOptions.find(M => (M.match(/#/g) || []).length === CleanValue.length) ?? MaskOptions[0]
+        let Result = ''
+        let DigitIndex = 0
+
+        for (const Char of SelectedMask)
+            if (Char === '#')
+                Result += CleanValue[DigitIndex++]
+            else
+                Result += Char
+
+        return Result
+    }
+
+
     static ApplySize(pInput: HTMLInputElement, pText: string, pFont: string)
     {
         const style = getComputedStyle(pInput)
@@ -14,7 +32,8 @@ class XUtils
                 pText = pText.toUpperCase();
                 break
             case 'lowercase':
-                pText = pText.toLowerCase(); break
+                pText = pText.toLowerCase();
+                break
             case 'capitalize':
                 pText = pText.replace(/\b\w/g, c => c.toUpperCase());
                 break

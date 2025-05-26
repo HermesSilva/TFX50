@@ -64,6 +64,7 @@ namespace TFX.ESC.Core.Escritorios
 
             [Display(Name = "CPF ou CNPJ")]
             [MaxLength(14)]
+            [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
             [Required()]
             public String CPFCNPJ {get; set;}
 

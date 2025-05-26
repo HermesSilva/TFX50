@@ -54,8 +54,8 @@ namespace TFX.Core.Data.Servicos.Menu
             }  
         }
 
-        [HttpPost("Lista")]
-        public IActionResult Lista()
+        [HttpPost("Search")]
+        public IActionResult Search()
         {
             try
             {

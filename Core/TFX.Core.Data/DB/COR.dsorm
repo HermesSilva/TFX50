@@ -213,6 +213,9 @@
         </XData>
         <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
         <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">14</XData>
+        <XData Name="Mask" ID="CABE0027-D9FB-4448-BB33-7B4DBCBB9D0D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">###.###.###-##|##.###.###/####-##</XLanguage>
+        </XData>
       </XValues>
     </XORMField>
   </XORMTable>
@@ -277,6 +280,9 @@
         </XData>
         <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
         <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">14</XData>
+        <XData Name="Mask" ID="CABE0027-D9FB-4448-BB33-7B4DBCBB9D0D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">##.###.###/####-##</XLanguage>
+        </XData>
       </XValues>
     </XORMField>
   </XORMTable>
