@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="248"
+   height="246"
+   viewBox="0 0 248 246"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="inative.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs11" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.648374"
+     inkscape:cx="132.8582"
+     inkscape:cy="91.605425"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7" />
+  <rect
+     id="Rectangle_4445"
+     data-name="Rectangle 4445"
+     width="248"
+     height="246"
+     fill="none"
+     x="0"
+     y="0" />
+  <path
+     id="Path_18899"
+     data-name="Path 18899"
+     d="m 211.62915,35.213166 a 31.428591,31.428591 0 0 0 -44.4656,0 L 122.6769,79.678767 78.211299,35.213166 A 31.442614,31.442614 0 0 0 33.745702,79.678767 L 78.211299,124.1654 33.745702,168.631 a 31.442614,31.442614 0 0 0 44.465597,44.4656 l 44.465601,-44.4656 44.48665,44.4656 a 31.442614,31.442614 0 0 0 44.4656,-44.4656 l -44.4656,-44.4656 44.4656,-44.486633 a 31.428591,31.428591 0 0 0 0,-44.465601 z"
+     fill="#f83939"
+     style="stroke-width:2.33722" />
+</svg>

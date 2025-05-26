@@ -24,7 +24,7 @@ class XForm extends XDiv
 
     constructor(pOwner: XElement | HTMLElement | null)
     {
-        super(pOwner, "XForm");        
+        super(pOwner, "XForm");
     }
 
     Fields: XArray<XIEditor> = new XArray<XIEditor>();
@@ -136,7 +136,8 @@ class XForm extends XDiv
             child.Input.tabIndex = tidx++;
 
         // Set form height based on positioned fields
-        if (maxBottom > 0) {
+        if (maxBottom > 0)
+        {
             this.HTML.style.height = `${Math.ceil(maxBottom)}px`;
         }
     }
