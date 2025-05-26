@@ -536,62 +536,34 @@ th:active {
   padding: 4px;
 }
 
-.x-field-composer {
-  border: 1px solid #4a90e2;
-  padding: 6px;
-  min-height: 40px;
-  position: relative;
-}
-
-.x-field-composer .field-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #aaa;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  max-height: 200px;
-  overflow: auto;
-}
-
-.x-field-composer .field-list li {
-  padding: 4px 8px;
-  cursor: pointer;
-}
-
-.x-field-composer .field-list li.selected {
-  background: #d0eaff;
-}
-
-.x-field-composer .field-editor {
+.XTagEditor {
   display: inline-flex;
   align-items: center;
   border: 1px solid #aaa;
   border-radius: 4px;
   padding: 2px 6px;
-  margin: 2px;
-  background: #fafafa;
+  height: 20px;
 }
 
-.x-field-composer .field-editor .label {
-  font-size: 0.9em;
-  color: #555;
-  margin-right: 4px;
+.XTagEditorTitle {
+  color: #a3a3a3;
+  padding-right: 3px;
 }
 
-.x-field-composer .field-editor .input {
+.XTagEditorInput {
   border: none;
   outline: none;
-  min-width: 20px;
+  width: 15px;
 }
 
-.x-field-composer .field-editor .remove {
-  color: red;
+.XTagEditorSVG {
+  width: 13px;
   cursor: pointer;
-  margin-left: 4px;
+}
+
+.XEditableTag {
+  display: inline-block;
+  padding-right: 2px;
 }
 
 .XMenu {

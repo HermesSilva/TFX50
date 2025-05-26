@@ -1,5 +1,46 @@
 class XUtils
 {
+    private static CanvasContext = document.createElement('canvas').getContext('2d')!
+
+    static ApplySize(pInput: HTMLInputElement, pText: string, pFont: string)
+    {
+        const style = getComputedStyle(pInput)
+        const font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`
+        XUtils.CanvasContext.font = font
+
+        switch (style.textTransform) 
+        {
+            case 'uppercase':
+                pText = pText.toUpperCase();
+                break
+            case 'lowercase':
+                pText = pText.toLowerCase(); break
+            case 'capitalize':
+                pText = pText.replace(/\b\w/g, c => c.toUpperCase());
+                break
+        }
+
+        const metrics = XUtils.CanvasContext.measureText(pText)
+        const letterSpacing = parseFloat(style.letterSpacing) || 0
+        const textWidth = metrics.width + letterSpacing * (pText.length - 1)
+
+        const pl = parseFloat(style.paddingLeft) || 0
+        const pr = parseFloat(style.paddingRight) || 0
+        const bl = parseFloat(style.borderLeftWidth) || 0
+        const br = parseFloat(style.borderRightWidth) || 0
+        const box = style.boxSizing
+
+        let finalWidth = textWidth
+        if (box === 'content-box')
+            finalWidth += pl + pr
+        else
+            finalWidth += pl + pr + bl + br
+
+        pInput.style.width = `${Math.ceil(finalWidth)}px`
+
+
+    }
+
     static SetCursor(pElement: HTMLElement, pType: XDragType)
     {
         switch (pType)

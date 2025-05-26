@@ -91,7 +91,7 @@ namespace TFX.ESC.Core.Escritorios
             ID = new Guid("8EA042E6-E564-4DB1-8303-3896A1E67C3F");
             Name = "EscritorioFilter";
             Title = "";
-            MinRows = 2;
+            MinRows = 3;
             Style = XFRMStyle.Normal;
             Type = XFRMType.SVCFilter;
             XFRMField fld;
@@ -100,7 +100,7 @@ namespace TFX.ESC.Core.Escritorios
             fld.Title = "Nome";
             fld.CanInsert = true;
             fld.CanUpdate = true;
-            fld.RowCount = 2;
+            fld.RowCount = 3;
             fld.ColCount = 32;
             fld.IsHidden = false;
             fld.Location = 1;
