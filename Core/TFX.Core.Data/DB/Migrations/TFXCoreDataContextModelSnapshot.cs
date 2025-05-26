@@ -17,10 +17,51 @@ namespace TFX.Core.DB.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("TFX.Core.Data.DB.TFXCoreDataContext+_CEPxLocalidade", b =>
+                {
+                    b.Property<int>("CEPxLocalidadeID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CEPGeral")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)")
+                        .HasDefaultValue("");
+
+                    b.Property<short>("CEPxLocalidadeTipoID")
+                        .HasColumnType("smallint");
+
+                    b.Property<int>("CEPxMunicipioID")
+                        .HasColumnType("int");
+
+                    b.Property<short>("CEPxUFID")
+                        .HasColumnType("smallint");
+
+                    b.Property<string>("CodigoIBGE")
+                        .HasMaxLength(7)
+                        .HasColumnType("varchar(7)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("varchar(128)");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.HasKey("CEPxLocalidadeID")
+                        .HasName("PK_CEPxLocalidade");
+
+                    b.ToTable("CEPxLocalidade", null, t =>
+                        {
+                            t.ExcludeFromMigrations();
+                        });
+                });
 
             modelBuilder.Entity("TFX.Core.Data.DB.TFXCoreDataContext+_CORxAgregado", b =>
                 {
@@ -279,6 +320,9 @@ namespace TFX.Core.DB.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("CEPxLocalidadePrincipalID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(180)
@@ -287,17 +331,22 @@ namespace TFX.Core.DB.Migrations
                     b.HasKey("CORxPessoaID")
                         .HasName("PK_CORxPessoa");
 
+                    b.HasIndex("CEPxLocalidadePrincipalID")
+                        .HasDatabaseName("IX_76A39CE315424C0AA399D0DBECB92750");
+
                     b.ToTable("CORxPessoa", (string)null);
 
                     b.HasData(
                         new
                         {
                             CORxPessoaID = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CEPxLocalidadePrincipalID = 0,
                             Nome = "NA"
                         },
                         new
                         {
                             CORxPessoaID = new Guid("e3d57815-06e9-46e0-96f2-d77a03700ca8"),
+                            CEPxLocalidadePrincipalID = 0,
                             Nome = "Sistem Admin"
                         });
                 });
@@ -756,6 +805,18 @@ namespace TFX.Core.DB.Migrations
                     b.Navigation("CORxRecurso");
                 });
 
+            modelBuilder.Entity("TFX.Core.Data.DB.TFXCoreDataContext+_CORxPessoa", b =>
+                {
+                    b.HasOne("TFX.Core.Data.DB.TFXCoreDataContext+_CEPxLocalidade", "CEPxLocalidade")
+                        .WithMany("CORxPessoa")
+                        .HasForeignKey("CEPxLocalidadePrincipalID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_76A39CE315424C0AA399D0DBECB92750");
+
+                    b.Navigation("CEPxLocalidade");
+                });
+
             modelBuilder.Entity("TFX.Core.Data.DB.TFXCoreDataContext+_CORxRecurso", b =>
                 {
                     b.HasOne("TFX.Core.Data.DB.TFXCoreDataContext+_CORxRecursoTipo", "CORxRecursoTipo")
@@ -875,6 +936,11 @@ namespace TFX.Core.DB.Migrations
                     b.Navigation("CORxRecursoTemplate");
 
                     b.Navigation("CORxUsuario");
+                });
+
+            modelBuilder.Entity("TFX.Core.Data.DB.TFXCoreDataContext+_CEPxLocalidade", b =>
+                {
+                    b.Navigation("CORxPessoa");
                 });
 
             modelBuilder.Entity("TFX.Core.Data.DB.TFXCoreDataContext+_CORxAgregado", b =>

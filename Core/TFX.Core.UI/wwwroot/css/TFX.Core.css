@@ -548,6 +548,7 @@ th:active {
 .XTagEditorTitle {
   color: #a3a3a3;
   padding-right: 3px;
+  font-size: 12px;
 }
 
 .XTagEditorInput {

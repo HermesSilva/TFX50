@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using TFX.Core;
 using TFX.Core.Cache;
 using TFX.Core.Controllers;
+using TFX.Core.Data.CEP;
+using TFX.Core.Data.CEP.DataPack;
 using TFX.Core.Data.DB;
 using TFX.Core.Identity;
 using TFX.Core.IDs;
@@ -23,7 +25,7 @@ namespace Launcher
     public class Program
     {
         public static WebApplication App;
-        public static bool IsAsync;
+        public static bool IsAsync = false;
 
         public static void Main(string[] args)
         {
@@ -37,13 +39,14 @@ namespace Launcher
 
             builder.Services.AddDbContext<TFXCoreDataContext>();
             builder.Services.AddDbContext<TFXESCCoreContext>();
+            builder.Services.AddDbContext<CEPxDBContext>();
             Console.WriteLine(typeof(TFXESCCoreModule).FullName);
             builder.AddDependencies();
             App = builder.Build();
 
             App.AddDependencies();
             XEnvironment.Services = App.Services;
-            
+
             App.UseAuthorization();
             App.UseAuthentication();
             App.MapControllers();
@@ -54,6 +57,8 @@ namespace Launcher
                 App.RunAsync("http://+:7000");
             else
                 App.Run("http://+:7000");
+            //CEPxDataPack.Apply();
+            //Console.ReadLine();
         }
     }
 }

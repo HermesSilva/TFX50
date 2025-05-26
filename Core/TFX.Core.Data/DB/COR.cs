@@ -14,6 +14,42 @@ namespace TFX.Core.Data.DB
 {
     public class TFXCoreDataContext : XDBContext
     {
+        #region _CEPxLocalidade
+
+        public class _CEPxLocalidade
+        {
+            [Display(Name = "CEP Geral")]
+            [MaxLength(8)]
+            public String CEPGeral {get; set;}
+            [Display(Name = "Localidade")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxLocalidadeID {get; set;}
+            [Display(Name = "Tipo de Localidade")]
+            [Required()]
+            public Int16 CEPxLocalidadeTipoID {get; set;}
+            [Display(Name = "Municipio")]
+            [Required()]
+            public Int32 CEPxMunicipioID {get; set;}
+            [Display(Name = "Unidade Federativa")]
+            [Required()]
+            public Int16 CEPxUFID {get; set;}
+            [Display(Name = "Código no IBGE")]
+            [MaxLength(7)]
+            [DisplayFormat(DataFormatString = "0000000")]
+            public String CodigoIBGE {get; set;}
+            [Display(Name = "Nome da Localidade")]
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            public List<_CORxPessoa> CORxPessoa {get; set;} = new List<_CORxPessoa>();
+        }
+
+        #endregion _CEPxLocalidade
+
         #region _CORxAgregado
 
         public class _CORxAgregado
@@ -214,11 +250,14 @@ namespace TFX.Core.Data.DB
             {
                 private static Dictionary<Guid, _CORxPessoa> _SeedData = new Dictionary<Guid, _CORxPessoa>()
                 {
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _CORxPessoa { CORxPessoaID = new Guid("00000000-0000-0000-0000-000000000000"), Nome = @"NA" },
-                    [new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8")] = new _CORxPessoa { CORxPessoaID = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8"), Nome = @"Sistem Admin" }
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _CORxPessoa { CORxPessoaID = new Guid("00000000-0000-0000-0000-000000000000"), Nome = @"NA", CEPxLocalidadePrincipalID = 0 },
+                    [new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8")] = new _CORxPessoa { CORxPessoaID = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8"), Nome = @"Sistem Admin", CEPxLocalidadePrincipalID = 0 }
                 };
                 public static _CORxPessoa[] SeedData => _SeedData.Values.ToArray();
             }
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadePrincipalID {get; set;}
             public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
@@ -226,6 +265,7 @@ namespace TFX.Core.Data.DB
             [MaxLength(180)]
             [Required()]
             public String Nome {get; set;}
+            public _CEPxLocalidade CEPxLocalidade {get; set;}
             public List<_CORxAgregado> CORxAgregado {get; set;} = new List<_CORxAgregado>();
             public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
             public List<_CORxUsuario> CORxUsuario {get; set;} = new List<_CORxUsuario>();
@@ -506,6 +546,7 @@ namespace TFX.Core.Data.DB
         internal DbSet<_CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate{get; set;}
         protected override void OnModelCreating(ModelBuilder pBuilder)
         {
+            ConfigureCEPxLocalidade(pBuilder);
             ConfigureCORxAgregado(pBuilder);
             ConfigureCORxDireitos(pBuilder);
             ConfigureCORxEmpresa(pBuilder);
@@ -522,6 +563,25 @@ namespace TFX.Core.Data.DB
             ConfigureCORxStatus(pBuilder);
             ConfigureCORxUsuario(pBuilder);
             ConfigureCORxUsuarioRecursoTemplate(pBuilder);
+        }
+
+        private void ConfigureCEPxLocalidade(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CEPxLocalidade>(ett =>
+            {
+                ett.HasKey(e => e.CEPxLocalidadeID).HasName("PK_CEPxLocalidade");
+                
+                ett.Property(d => d.CEPxLocalidadeID).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
+                ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
+                ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
+                    .HasDefaultValue(GetDBValue("String", null));
+                ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
+                ett.ToTable("CEPxLocalidade", t => t.ExcludeFromMigrations());
+            });
         }
 
         private void ConfigureCORxAgregado(ModelBuilder pBuilder)
@@ -720,7 +780,16 @@ namespace TFX.Core.Data.DB
                 
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.Property(d => d.CEPxLocalidadePrincipalID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CORxPessoa");
+
+                ett.HasOne(d => d.CEPxLocalidade)
+                   .WithMany(p => p.CORxPessoa)
+                   .HasForeignKey(d => d.CEPxLocalidadePrincipalID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_76A39CE315424C0AA399D0DBECB92750");
+
+                ett.HasIndex(d => d.CEPxLocalidadePrincipalID).HasDatabaseName("IX_76A39CE315424C0AA399D0DBECB92750");
                 ett.HasData(_CORxPessoa.XDefault.SeedData);
             });
         }

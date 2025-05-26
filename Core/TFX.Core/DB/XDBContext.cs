@@ -288,8 +288,8 @@ namespace TFX.Core
         {
             if (ConnectionString != null)
                 return ConnectionString;
-            return XEnvironment.Read("SQL_SERVER_CONEXAO", "SQL_SERVER_CONEXAO Não definida");
-        }
+            return XEnvironment.Read("SQL_SERVER_TFX", "");
+        }        
 
         public XProvider Provider
         {

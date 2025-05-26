@@ -7,12 +7,25 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="CEP\DataPack\CEPxBairro.txt" />
+	  <None Remove="CEP\DataPack\CEPxLocalidade.txt" />
+	  <None Remove="CEP\DataPack\CEPxLogradouro.txt" />
+	  <None Remove="CEP\DataPack\CEPxUF.txt" />
 	  <None Remove="TFX.Core.dsmdl" />
 	  <None Remove="TFX.Core.dsmdl" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Include="CEP\DataPack\CEPxBairro.txt" />
+	  <EmbeddedResource Include="CEP\DataPack\CEPxLocalidade.txt" />
+	  <EmbeddedResource Include="CEP\DataPack\CEPxLogradouro.txt" />
+	  <EmbeddedResource Include="CEP\DataPack\CEPxUF.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
         <PackageReference Include="AspNetCore.Scalar" Version="1.1.8" />
+        <PackageReference Include="EFCore.BulkExtensions" Version="9.0.1" />
+        <PackageReference Include="EFCore.BulkExtensions.MySql" Version="8.1.3" />
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="8.1.1" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
@@ -40,6 +53,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="CEP\CEPx.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>CEPx.dsorm</DependentUpon>
+	    <Visible>False</Visible>
+	  </Compile>
+	  <Compile Update="CEP\CEPxModel.cs">
+	    <Visible>False</Visible>
+	    <DependentUpon>CEPx.dsorm</DependentUpon>
+	  </Compile>
 	  <Compile Update="DB\COR.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -119,6 +142,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="CEP\CEPx.dsorm">
+	    <Generator>XDASEGenerator</Generator>
+	    <LastGenOutput>CEPx.cs</LastGenOutput>
+	  </None>
 	  <None Update="DB\COR.dsorm">
 	    <Generator>XDASEGenerator</Generator>
 	    <LastGenOutput>COR.cs</LastGenOutput>
