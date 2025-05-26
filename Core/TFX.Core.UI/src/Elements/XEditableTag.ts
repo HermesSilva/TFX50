@@ -55,10 +55,10 @@ class XEditableTag extends XDiv
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null = null)
     {
         super(pOwner, pClass ?? "XEditableTag");
-        this.TagEditor = new XTagEditor(this, "XTagEditor");
-        this.TagEditor.SVG.addEventListener("click", () => this.DoClick(), false);
+        this.Editor = new XTagEditor(this, "XTagEditor");
+        this.Editor.SVG.addEventListener("click", () => this.DoClick(), false);
     }
-    TagEditor: XTagEditor;
+    Editor: XTagEditor;
     OnClick!: (pTag: XEditableTag) => void;
     DoClick()
     {

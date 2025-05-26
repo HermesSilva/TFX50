@@ -28,9 +28,15 @@ class App extends XStageTabControlTab
         this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: XResponse<XServiceModel>) =>
         {
             this.DataView.SetModel(pData.Data);
+            this.SizeChanged();
         });
         this.Prepare();
+    }
+
+    override SizeChanged()
+    {
         this.Scanes.HTML.style.top = this.ButtonBar.HTML.offsetHeight + "px";
+        this.Scanes.HTML.style.height = (this.HTML.offsetHeight - this.ButtonBar.HTML.offsetHeight) + "px";
     }
 
     Prepare()

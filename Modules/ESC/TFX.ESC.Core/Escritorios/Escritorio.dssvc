@@ -164,6 +164,7 @@
         <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="9BBA3DC6-EC85-483A-9D61-E9299BCC3FD0" Text="CPFCNPJ" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Escritorio" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.ESC.Core" DataEx="">9BBA3DC6-EC85-483A-9D61-E9299BCC3FD0</XParentData>
         <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
         <XData Name="IsFreeSearch" ID="C04757A0-35BF-4BA1-97C4-A36004A6D58A" Type="Boolean">true</XData>
+        <XData Name="Operator" ID="294F2E91-B2F9-447A-A03E-DA8BBFCC96DA" Type="XOperator">LikeBegin</XData>
       </XValues>
     </XSVCField>
     <XSVCField ID="11B07E37-8320-4E5B-8691-D8407368D315" ParentID="4151E7DE-9879-40E9-843C-4C5020AA23B9">
@@ -171,6 +172,7 @@
         <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4151E7DE-9879-40E9-843C-4C5020AA23B9" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Escritorio" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.ESC.Core" DataEx="">4151E7DE-9879-40E9-843C-4C5020AA23B9</XParentData>
         <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
         <XData Name="IsFreeSearch" ID="C04757A0-35BF-4BA1-97C4-A36004A6D58A" Type="Boolean">true</XData>
+        <XData Name="Operator" ID="294F2E91-B2F9-447A-A03E-DA8BBFCC96DA" Type="XOperator">Like</XData>
       </XValues>
     </XSVCField>
   </XSVCDataView>

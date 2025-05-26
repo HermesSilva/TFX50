@@ -29,10 +29,12 @@ class XForm extends XDiv
 
     Fields: XArray<XIEditor> = new XArray<XIEditor>();
     Model!: XFRMModel;
+    SVCModel!: XServiceModel;
 
-    SetModel(pForm: XFRMModel)
+    SetModel(pForm: XFRMModel, pSVCModel: XServiceModel)
     {
         this.Model = pForm;
+        this.SVCModel = pSVCModel;
         this.Fields.Clear();
         this.SetTitle(pForm.Title);
         this.SetDescription(pForm.Description);
@@ -41,6 +43,10 @@ class XForm extends XDiv
         {
             var editor = XEditorFactory.CreateEditor(this, field);
             this.Fields.Add(editor);
+            if (editor instanceof XSearchBoxEditor)
+            {
+                editor.SetFields(pSVCModel.DataView.Columns.Where(c => c.IsFreeSearch));
+            }
         }
         this.ResizeChildren();
 

@@ -26,8 +26,20 @@ namespace TFX.ESC.Core.Escritorios
         public EscritorioServiceModel()
         {
             SearchPath = "Escritorio/Search";
-            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String" });
-            DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String", Mask = "###.###.###-##|##.###.###/####-##", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.Like });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxAgregadoID", Title = "Agregado", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "ESCxEscritorioID", Title = "Escritório", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Status", Title = "Status", Type = "String", Mask = "", 
+                                                      Visible = false });
             Forms.Add(new FRMEscritorioFilter());
         }
     }
@@ -61,6 +73,7 @@ namespace TFX.ESC.Core.Escritorios
             Status = new XStringDataField();
         }
 
+        [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
         [Display(Name = "CPF ou CNPJ")]
         public XStringDataField CPFCNPJ {get;set;}
         [Display(Name = "Estado")]

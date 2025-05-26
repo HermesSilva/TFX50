@@ -2,6 +2,7 @@
 
 class XSearchBoxEditor extends XBaseInput 
 {
+
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner);
@@ -9,15 +10,24 @@ class XSearchBoxEditor extends XBaseInput
         this.Button = new XSVGButton(this, "XSearchBoxEditorButton");
         this.Button.SVG.className = "XSearchIcon";
         this.Button.SetIcon("svg/search.svg");
-        for (var i = 0; i < 10; i++)
-        {
-            this.EditableTag = new XEditableTag(this.Input);
-            this.EditableTag.OnClick = (pTag: XEditableTag) => this.Close(pTag);
-        }
+    }
+
+    Button: XSVGButton;
+    Columns!: XColumnModel[];
+
+    SetFields(pColumns: XColumnModel[])
+    {
+        this.Columns = pColumns;
+        this.AddField(pColumns[0]);
 
     }
-    Button: XSVGButton;
-    EditableTag!: XEditableTag;
+
+    AddField(pColumns: XColumnModel)
+    {
+        var tag = new XEditableTag(this.Input);
+        tag.Editor.Title.innerHTML = pColumns.Title;
+        tag.OnClick = (pTag: XEditableTag) => this.Close(pTag);
+    }
 
     Close(pTag: XEditableTag)
     {
@@ -33,8 +43,8 @@ class XSearchBoxEditor extends XBaseInput
     {
         return this.ELMTitle.HTML.innerHTML;
     }
+
     set Title(pValue: string)
     {
-
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore.Update.Internal;
 
+using TFX.Core.DB;
 using TFX.Core.Model.FRM;
 using TFX.Core.Services;
 
@@ -35,6 +36,23 @@ namespace TFX.Core.Model.Service
         {
             get; set;
         }
+        public string Mask
+        {
+            get; set;
+        }
+        public bool Visible
+        {
+            get; set;
+        }
+        public bool IsFreeSearch
+        {
+            get; set;
+        }
+        public XOperator Operator
+        {
+            get; set;
+        }
+
     }
 
     public class XDataViewModel

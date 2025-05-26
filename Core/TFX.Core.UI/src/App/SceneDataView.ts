@@ -30,7 +30,7 @@ class SceneDataView extends XScene
         this.DataGrid.SetModel(this.SVCModel);
         var fmdl = this.SVCModel.Forms.FirstOrNull(f => f.Type == XFRMType.SVCFilter);
         if (fmdl != null)
-            this.Filter.SetModel(fmdl);
+            this.Filter.SetModel(fmdl, this.SVCModel);
         if (this.SVCModel?.SearchPath === undefined)
             return;
         this.Client?.SendAsync(this.SVCModel.SearchPath, {}, (pData: any) =>

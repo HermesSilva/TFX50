@@ -53,6 +53,7 @@ namespace TFX.ESC.Core.Escritorios
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Mask = "###.###.###-##|##.###.###/####-##";
                 fld.Title = "CPF ou CNPJ";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
