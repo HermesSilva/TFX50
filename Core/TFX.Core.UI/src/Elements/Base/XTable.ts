@@ -1,16 +1,4 @@
 ﻿/// <reference path="../XDiv.ts" />
-interface XColumnModel
-{
-    Name: string;
-    Visible: boolean;
-    Width: number;
-    Title: string;
-    Align: XAlign;
-    Mask: string;
-    IsFreeSearch: boolean;
-    Operator: XOperator;
-}
-
 class XTableElement extends XElement
 {
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null = null, pTag: string | null = null)

@@ -235,7 +235,7 @@
     box-shadow: 0 0 0 2px rgba(0,123,255,.25);
 }
 
-.XSearchBoxEditorButton {
+.XSearchBoxEditorButtonOpt {
     position: absolute;
     right: 3px;
     top: 23PX;
@@ -246,6 +246,24 @@
     border-radius: 3px;
     text-align: center;
     align-content: space-around;
+    height: calc((100% - 28px) / 2);
+
+    &:hover {
+        background-color: var(--bg-hv-XLookupButton);
+    }
+}
+
+.XSearchBoxEditorButton {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 28px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 3px;
+    text-align: center;
+    align-content: space-around;
+    height: calc((100% - 28px) / 2);
 
     &:hover {
         background-color: var(--bg-hv-XLookupButton);
@@ -281,6 +299,7 @@
 .XTagEditorSVG {
     width: 13px;
     cursor: pointer;
+    padding-left: 6px;
 }
 
 .XEditableTag {

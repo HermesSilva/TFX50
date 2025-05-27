@@ -1,6 +1,7 @@
 ﻿/// <reference path="../XDiv.ts" />
 class XBaseInput extends XDiv implements XIEditor
 {
+
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "InputContainer");
@@ -33,7 +34,6 @@ class XBaseInput extends XDiv implements XIEditor
     ColsServiceID!: string;
     AdditionalFieldsID!: string[];
     AdditionalDataFieldsID!: string[];
-    Mask!: string;
     LookupPKFieldID!: string;
     OwnerID!: string;
     ParentID!: string;
@@ -43,6 +43,26 @@ class XBaseInput extends XDiv implements XIEditor
     NewLine: boolean = false;
     OrderIndex: number = -1;
 
+    private _Mask: string = '';
+
+    public get Mask(): string
+    {
+        return this._Mask;
+    }
+    public set Mask(value: string)
+    {
+        this._Mask = value;
+        this.ApplyMask();
+    }
+
+    protected ApplyMask()
+    {    
+    }
+
+    RemoveTitle()
+    {
+        this.ELMTitle?.Free();
+    }
     get Title(): string
     {
         return this.ELMTitle.HTML.innerHTML;

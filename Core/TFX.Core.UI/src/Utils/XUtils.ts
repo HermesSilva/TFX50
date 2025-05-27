@@ -1,29 +1,33 @@
-class XUtils
+﻿class XUtils
 {
     private static CanvasContext = document.createElement('canvas').getContext('2d')!
 
+
     static ApplyMask(pValue: string | number, pMaskPattern: string): string
     {
-        const CleanValue = pValue.toString().replace(/\D/g, '')
-        const MaskOptions = pMaskPattern.split('|')
-        const SelectedMask = MaskOptions.find(M => (M.match(/#/g) || []).length === CleanValue.length) ?? MaskOptions[0]
+        const CleanValue = typeof pValue === 'number' ? pValue.toString() : pValue.replace(/\D/g, '')
+        const Masks = pMaskPattern.split('|').map(mask => ({ Mask: mask, Count: (mask.match(/#/g) || []).length })).OrderBy(a => a.Count)
+
+        let SelectedMask = Masks.FirstOrNull(item => item.Count >= CleanValue.length)?.Mask ?? Masks[Masks.length - 1].Mask
+
         let Result = ''
         let DigitIndex = 0
 
-        for (const Char of SelectedMask)
-            if (Char === '#')
-                Result += CleanValue[DigitIndex++]
-            else
-                Result += Char
+        for (let i = 0; i < SelectedMask.length && DigitIndex < CleanValue.length; i++)
+        {
+            const Char = SelectedMask[i]
+            Result += Char === '#' ? CleanValue[DigitIndex++] : Char
+        }
 
         return Result
     }
 
 
-    static ApplySize(pInput: HTMLInputElement, pText: string, pFont: string)
+    static ApplySize(pInput: HTMLElement, pText: string, pFont?: string): number
     {
         const style = getComputedStyle(pInput)
-        const font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`
+
+        const font = pFont || `${style.fontStyle || 'normal'} ${style.fontWeight || 'normal'} ${style.fontSize} ${style.fontFamily}`
         XUtils.CanvasContext.font = font
 
         switch (style.textTransform) 
@@ -41,24 +45,22 @@ class XUtils
 
         const metrics = XUtils.CanvasContext.measureText(pText)
         const letterSpacing = parseFloat(style.letterSpacing) || 0
-        const textWidth = metrics.width + letterSpacing * (pText.length - 1)
+        const spacing = pText.length > 1 ? letterSpacing * (pText.length - 1) : 0
+        const textWidth = metrics.width + spacing
 
         const pl = parseFloat(style.paddingLeft) || 0
         const pr = parseFloat(style.paddingRight) || 0
         const bl = parseFloat(style.borderLeftWidth) || 0
         const br = parseFloat(style.borderRightWidth) || 0
-        const box = style.boxSizing
 
         let finalWidth = textWidth
-        if (box === 'content-box')
-            finalWidth += pl + pr
-        else
+        if (style.boxSizing === 'content-box')
             finalWidth += pl + pr + bl + br
 
         pInput.style.width = `${Math.ceil(finalWidth)}px`
-
-
+        return Math.ceil(finalWidth);
     }
+
 
     static SetCursor(pElement: HTMLElement, pType: XDragType)
     {
@@ -122,7 +124,7 @@ class XUtils
     public static AddElement<T extends Element>(pOwner: any | HTMLElement | null, pTag: string | null, pClass: string | null = null, pInsert: boolean = false): T
     {
         if (pTag == null)
-            throw new Error(`Parameter "pTag" can�t be null`);
+            throw new Error(`Parameter "pTag" can´t be null`);
         var own: Element;
         if (pOwner == null)
             own = document.body;

@@ -40,6 +40,10 @@ namespace TFX.Core.Model.Service
         {
             get; set;
         }
+        public int MaxLenght
+        {
+            get; set;
+        }
         public bool Visible
         {
             get; set;

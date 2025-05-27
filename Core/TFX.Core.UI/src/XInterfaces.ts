@@ -13,7 +13,9 @@ interface XISplashable
 interface Element
 {
     Owner: XElement | null;
+    Class: string;
 }
+
 interface XIElement
 {
     Owner: XElement | HTMLElement | null;
@@ -57,6 +59,7 @@ interface Window
 
 interface XIEditor extends XIElement
 {
+    RemoveTitle(): void;
     Description: string;
     IsNullable: boolean;
     AllowEmpty: boolean;

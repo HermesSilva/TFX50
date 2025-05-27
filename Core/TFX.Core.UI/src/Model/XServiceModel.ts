@@ -1,11 +1,15 @@
 ﻿
-
 interface XColumnModel
 {
-    Name: string
-    Description: string
-    Type: string
-    Value: string
+    Name: string;
+    Visible: boolean;
+    Width: number;
+    Title: string;
+    Align: XAlign;
+    Mask: string;
+    IsFreeSearch: boolean;
+    Operator: XOperator;
+    MaxLenght: number;
 }
 
 interface XDataViewModel

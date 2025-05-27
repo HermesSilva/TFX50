@@ -6,6 +6,8 @@ class XDiv extends XElement
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null)
     {
         super(pOwner, pClass);
+        if (this.HTML)
+            this.HTML.setAttribute("xClass", Object.getPrototypeOf(this).constructor.name);
     }
 
     protected override CreateContainer(): HTMLElement 
