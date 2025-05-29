@@ -509,12 +509,6 @@ th:active {
   outline: none;
 }
 
-.XSearchBoxEditor:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
 .XSearchBoxEditorButtonOpt {
   position: absolute;
   right: 3px;
@@ -561,6 +555,11 @@ th:active {
   padding: 2px 6px;
   height: 20px;
 }
+.XTagEditor:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
 
 .XTagEditorTitle {
   color: #a3a3a3;
@@ -572,6 +571,11 @@ th:active {
   border: none;
   outline: none;
   width: 15px;
+}
+.XTagEditorInput:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 .XTagEditorSVG {
