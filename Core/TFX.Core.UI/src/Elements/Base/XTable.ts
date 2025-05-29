@@ -5,14 +5,7 @@ class XTableElement extends XElement
     {
         super(pOwner, pClass, pTag);
     }
-    Cells = new XArray<XTableElement>();
-
-    AddCell(pClass: string)
-    {
-        var cell = new XTableElement(this, pClass, "tr");
-        this.Cells.Add(cell);
-    }
-
+    
     protected override CreateContainer(pTag: string | null = null): HTMLElement 
     {
         return XUtils.AddElement<HTMLTableElement>(null, pTag, null);
@@ -64,6 +57,7 @@ class XTableHCell extends XTableElement
         this.SortState = { Field: "", Direction: 'asc' };
         this.Column = pCell;
         this.Title.innerHTML = "<spans>" + this.Column.Title + "</span>";
+        this.Content.setAttribute("data-field", this.Column.Name);
     }
 
     DragEvents()
@@ -330,7 +324,7 @@ class XTableRow extends XTableElement
     Table: XTable;
     Body: XTableBody;
     Tupla: any;
-    Cell = new XArray<XTableCell>();
+    Cells = new XArray<XTableCell>();
 
     get IsSelected(): boolean
     {
@@ -359,7 +353,7 @@ class XTableRow extends XTableElement
         {
             let cell = new XTableCell(this, "XTd");
             cell.SetData(this.Tupla[this.Table.Columns[i].Name].Value, this.Table.Header.Columns[i]);
-            this.Cell.Add(cell);
+            this.Cells.Add(cell);
         }
     }
 }
@@ -439,25 +433,24 @@ class XTable extends XDiv
 
     Sync()
     {
+        this.Container.style.width = this.HTML.clientWidth + "px";
+        this.Header.HTML.style.width = `${Math.max(this.Container.clientWidth, this.HTML.clientWidth)}px`
 
-        this.Container.style.width = this.HTML.getBoundingClientRect().width + "px";
-        this.Header.HTML.style.width = `${Math.max(this.Container.getBoundingClientRect().width, this.HTML.getBoundingClientRect().width)}px`
-
-        const vBodyCols = Array.from(this.Container.querySelectorAll('tr:first-child td'))
-        const vHeaderCols = Array.from(this.Header.HTML.querySelectorAll('th'))
-        vBodyCols.forEach((vCell, i) =>
+        if (this.Body.DataRows.length > 0)
         {
-            const vTh = vHeaderCols[i] as HTMLElement
-            if (vTh)
-                vTh.style.width = `${vCell.getBoundingClientRect().width}px`
-        })
+            for (var i = 0; i < this.Body.DataRows[0].Cells.length; i++)
+            {
+                let cell = <XTableCell>this.Body.DataRows[0].Cells[i];
+                this.Header.Columns[i].Content.style.width = `${cell.Content.clientWidth}px`;
+            }
+        }
     }
 
     ResizeColumn(pHeaderCell: XTableHCell, pWidth: number, pCheck: boolean = false)
     {
         if (this.Body.DataRows.length == 0)
             return;
-        var dcell = this.Body.DataRows[0].Cell.FirstOrNull(c => c.HCell == pHeaderCell);
+        var dcell = this.Body.DataRows[0].Cells.FirstOrNull(c => c.HCell == pHeaderCell);
         if (dcell != null)
         {
             if (pCheck)
@@ -477,13 +470,13 @@ class XTable extends XDiv
     {
         if (this.Columns == null)
             return;
-        var left = this.Body.DataRows[0].Cell.IndexOf(c => c.HCell == pLeft);
-        var right = this.Body.DataRows[0].Cell.IndexOf(c => c.HCell == pRight);
+        var left = this.Body.DataRows[0].Cells.IndexOf(c => c.HCell == pLeft);
+        var right = this.Body.DataRows[0].Cells.IndexOf(c => c.HCell == pRight);
         for (var i = 0; i < this.Body.DataRows.length; i++)
         {
             var row = this.Body.DataRows[i];
-            var cl = row.Cell[left];
-            var cr = row.Cell[right];
+            var cl = row.Cells[left];
+            var cr = row.Cells[right];
             row.HTML.insertBefore(cl.HTML, cr.HTML);
         }
     }
@@ -519,7 +512,7 @@ class XTable extends XDiv
                 row.HTML.className = "XTableRowEven";
             row.SetData(this.DataSet.Tuples[i]);
         }
-        XEventManager.SetTiemOut(this, this.AdjustCollumnWidth, 100);
+        //XEventManager.SetTiemOut(this, this.AdjustCollumnWidth, 100);
     }
 
     private AdjustCollumnWidth()
@@ -527,18 +520,16 @@ class XTable extends XDiv
         if (this.Body.DataRows.length > 0)
         {
             var row = this.Body.DataRows[0];
-            for (var i = 0; i < row.Cell.length; i++)
+            for (var i = 0; i < row.Cells.length; i++)
             {
-                let bcell = row.Cell[i];
+                let bcell = row.Cells[i];
                 let hcell = this.Header.Columns[i];
                 let bw = bcell.HTML.clientWidth;
                 let hw = hcell.HTML.clientWidth;
                 if (bw > hw)
                     hcell.Content.style.width = `${bw}px`;
-
                 else
                     bcell.Content.style.width = `${hw}px`;
-
             }
         }
     }
