@@ -26,8 +26,12 @@ namespace TFX.Core.Data.Servicos.Usuario
         public UsuarioServiceModel()
         {
             SearchPath = "Usuario/Search";
-            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String" });
-            DataView.Columns.Add(new XColumnModel() { Name = "EMail", Title = "E-Mails", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "EMail", Title = "E-Mails", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             Forms.Add(new FRMUsuarioFilter());
         }
     }
