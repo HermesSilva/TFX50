@@ -24,7 +24,9 @@ Tests/             Conjunto de testes automatizados e projetos de stress
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/) instalado.
 - Node.js/yarn caso deseje compilar a interface web em `TFX.Core.UI`.
+- DASE Instalado [Instruções de Instalação](https://github.com/HermesSilva/TFX50/tree/main/DASE4VS.md)
 
+---
 ## Compilação
 
 Para compilar toda a solução execute:
