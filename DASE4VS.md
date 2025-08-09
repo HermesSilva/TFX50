@@ -18,7 +18,7 @@ Antes de começar, certifique-se de que você tem:
 
 - ✔ **Visual Studio 2022:** Versão 17.14.11 ou superior, em qualquer edição.
 - ✔ **Arquivo da Extensão:** `DASE4VS.vsix` salvo no seu computador.
-- ✔ **Arquivo de Instalaçõ do DASE**  [📥 Baixar DASE4VS.vsix](https://github.com/HermesSilva/TFX50/tree/main/DASE/DASE4VS.vsix)
+- ✔ **Arquivo de Instalaçõ do DASE**  [📥 Baixar DASE4VS.vsix](https://github.com/HermesSilva/TFX50/tree/main/releases/download/DASE4VS.vsix)
 
 ---
 
