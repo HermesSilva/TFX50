@@ -30,6 +30,7 @@ namespace TFX.ESC.Core.DB
             [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
             [Required()]
             public String CPFCNPJ {get; set;}
+            public List<_ESCxEscritorio> ESCxEscritorio {get; set;} = new List<_ESCxEscritorio>();
         }
 
         #endregion _CORxAgregado
@@ -52,6 +53,7 @@ namespace TFX.ESC.Core.DB
             [Display(Name = "Estado")]
             [Required()]
             public Int16 CORxStatusID {get; set;}
+            public List<_ESCxEmpresa> ESCxEmpresa {get; set;} = new List<_ESCxEmpresa>();
         }
 
         #endregion _CORxEmpresa
@@ -60,6 +62,9 @@ namespace TFX.ESC.Core.DB
 
         public class _CORxPessoa
         {
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadePrincipalID {get; set;}
             public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
@@ -67,6 +72,7 @@ namespace TFX.ESC.Core.DB
             [MaxLength(180)]
             [Required()]
             public String Nome {get; set;}
+            public List<_ESCxContabilista> ESCxContabilista {get; set;} = new List<_ESCxContabilista>();
         }
 
         #endregion _CORxPessoa
@@ -203,6 +209,7 @@ namespace TFX.ESC.Core.DB
                 
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.Property(d => d.CEPxLocalidadePrincipalID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CORxPessoa", t => t.ExcludeFromMigrations());
             });
         }

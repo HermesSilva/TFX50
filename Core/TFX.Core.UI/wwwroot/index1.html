@@ -1,21 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <script src="js/TFX.Core.js"></script>
-    <link href="css/TFX.Core.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Visual Studio Web Clone - Sittax</title>
+  <link rel="stylesheet" href="styles.css">
 
 </head>
-<body>
-    <div id="meu-composer" contenteditable="false" class="XSearchBoxEditor">
+<body>  <script>document.querySelectorAll('.tree .folder').forEach(folder => {
+  folder.addEventListener('click', function (e) {
+    // Impede propagação para os pais
+    e.stopPropagation();
+    this.classList.toggle('collapsed');
+  });
+});
+
+  </script>
+  <div class="topbar">
+    <div class="menu">
+      <span>File</span>
+      <span>Edit</span>
+      <span>View</span>
+      <span>Git</span>
+      <span>Project</span>
+      <span>Build</span>
+      <span>Debug</span>
+      <span>Test</span>
+      <span>Analyze</span>
+      <span>Tools</span>
+      <span>Extensions</span>
+      <span>Window</span>
+      <span>Help</span>
+      <input type="text" placeholder="🔍 Search...">
     </div>
-    <script>
-        const container = document.getElementById('meu-composer')
-        new XFieldComposer(
-            container,
-            ["Nome", "CNPJ;##.###.###/####-##", "Nascimento;DD/MM/YYYY"]
-        )
+    <div class="status">
+      <span class="green-dot"></span>
+      <span>Sittax</span>
+    </div>
+  </div>
 
-    </script>
+  <div class="main">
+    <aside class="solution-explorer">
+      <h2>Solution Explorer</h2>
+      <input type="text" placeholder="Search Solution Explorer">
+      <ul class="tree">
+        <li class="folder">Solution 'Sittax' (49 of 49 projects)
+          <ul>
+            <li class="folder">Core
+              <ul>
+                <li class="file">STX.Core</li>
+                <li class="file">STX.Core.Test</li>
+                <li class="file">STX.Core.WebScrap</li>
+                <li class="file">STX.DbModel</li>
+                <li class="file">STX.Journal</li>
+                <li class="file">STX.Runtime</li>
+                <li class="file">STX.Tools</li>
+                <li class="file">UDF.Lama</li>
+              </ul>
+            </li>
+            <li class="folder">NFe
+              <ul>
+                <li class="file">Sittax.NFe.INF</li>
+                <li class="file">Sittax.NFe.Launcher</li>
+                <li class="folder">Sittax.NFe.MDL
+                  <ul>
+                    <li class="file">Dependencies</li>
+                    <li class="file">Content</li>
+                    <li class="file">ControleVSUs</li>
+                    <li class="file">DB</li>
+                    <li class="folder">Downloads
+                      <ul>
+                        <li class="file">ControleDownload.DataSet.cs</li>
+                        <li class="file">DesabilitaEmpresa.DataSet.cs</li>
+                        <li class="file">DesabilitaEscritorio.DataSet.cs</li>
+                        <li class="file">GerDownload.DataSet.cs</li>
+                        <li class="file">HistoricoDownload.DataSet.cs</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="folder">Sittax.NFe.SEFAZ
+                  <ul>
+                    <li class="file">DownloadSEFAZ_RSContext.cs</li>
+                    <li class="file">DownloadSEFAZ_SC_TCContext.cs</li>
+                    <li class="file">DownloadSEFAZ_SCContext.cs</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <section class="workspace"></section>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>

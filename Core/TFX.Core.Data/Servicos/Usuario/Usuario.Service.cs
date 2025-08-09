@@ -44,6 +44,10 @@ namespace TFX.Core.Data.Servicos.Usuario
         }
         public class CORxPessoa : XEntity
         {
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadePrincipalID {get; set;}
+
             public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
             [Display(Name = "Pessoa")]
             [Required()]
@@ -89,6 +93,7 @@ namespace TFX.Core.Data.Servicos.Usuario
 
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
+                ett.Property(d => d.CEPxLocalidadePrincipalID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CORxPessoa");
             });
         }

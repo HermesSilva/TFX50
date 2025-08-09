@@ -36,7 +36,15 @@ namespace Launcher
             });
             builder.Services.UseOpenApi();
             builder.Services.ConfigureServices();
-
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
             builder.Services.AddDbContext<TFXCoreDataContext>();
             builder.Services.AddDbContext<TFXESCCoreContext>();
             builder.Services.AddDbContext<CEPxDBContext>();
@@ -46,7 +54,7 @@ namespace Launcher
 
             App.AddDependencies();
             XEnvironment.Services = App.Services;
-
+            App.UseCors();
             App.UseAuthorization();
             App.UseAuthentication();
             App.MapControllers();
