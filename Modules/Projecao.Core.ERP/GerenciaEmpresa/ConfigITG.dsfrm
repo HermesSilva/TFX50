@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XFRMDesigner ID="B96F5A8E-E33A-4167-B5EB-B01D1D688288" Name="ConfigITG" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">GerenciaEmpresa</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">97FF63F7-1028-4950-9089-94E86F5AC81F</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Configuração da Integração</XLanguage>
+    </XData>
+    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">C98E3857-6D6F-4AFB-B37B-02C8A0D58536</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">AD7AB810-AA00-4A8A-BEBC-48076E036782|41EC685B-E01A-4929-B888-E4B452674F09|A05CF824-4082-4DF7-AD59-7EF9AD1BC976|EDA384BF-E13A-4155-9D5D-BD100CEE374C|B3618D1C-7366-4B8B-917F-FC7E008665C0|4369FE79-3BA0-4F20-BE0C-934BAF036D08|228A3CF5-1FD2-4762-953E-22C21A4F29A8|BBEB9211-7F2C-4D2A-BF46-AB44FE088033|7AB6EE45-1757-4530-B2AF-67D4496A81F1|22A346A3-CA4A-4D3D-8E3A-BF2371535C52</XData>
+  </XValues>
+  <XFRMForm ID="FA466C71-8120-4AFA-B0F8-DBB215B15CB3" Name="IntegracaoLegadoConfig">
+    <XValues>
+      <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">StandAlone</XData>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
+      <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Integração com Legado - Config</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMField Name="Host" ID="E50CC308-6B7E-4017-B1C5-16CDF4F1D667" iID="529122">
+      <XValues>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">8</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">192.168.3.249</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=249.75;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Servidor Oracle</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="Instancia" ID="67C9D4FE-1937-4A20-8642-5374CB5E0B15" iID="529126">
+      <XValues>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">orcl</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=405.84375;Y=0;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Instância</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="Porta" ID="8D07EDB5-CB00-41D2-9CED-A4FDD3BCBCE0" iID="529128">
+      <XValues>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B45FBE87-40A0-44EF-B2EC-CD6A3000DA3A</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=249.75;Y=0;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Porta</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="Usuario" ID="F91F85D8-0C9F-4A04-9E76-58D44569E0DB" iID="529130">
+      <XValues>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">AGROPOP_URIAS</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=561.9375;Y=0;Width=187.3125;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Usuário</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="Senha" ID="D1E4907F-BCF4-4EFE-B11A-8E4EE1F351B2" iID="529134">
+      <XValues>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">8</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">5CD44E65-DDA1-43A6-899D-19B08032044E</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">TESTE</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=749.25;Y=0;Width=249.75;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Senha</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="GrupoServico" ID="4E1BC910-F0CB-4151-AE7A-36D5DA7E3F4B" iID="601740">
+      <XValues>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">016.000</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Grupo de Serviços</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="GrupoVacina" ID="9C0821A5-C31A-4DCE-AE7F-C5081941EF5D" iID="601743">
+      <XValues>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">7</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">013.000</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=156.09375;Y=80;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Grupo de Vacinas</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="GrupoExame" ID="7F935721-48E1-4B29-9085-52CF4EFBD81E" iID="601746">
+      <XValues>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">8</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">002.000</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=312.1875;Y=80;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Grupo de Exames</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="HostInt" ID="6CD6FBDC-7A25-46A1-80D0-D45167FF55AE">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Servidor Integração</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">9</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=468.28125;Y=80;Width=187.3125;Height=80}</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="UsuarioInt" ID="94A1C867-5101-426C-B8A1-FF9DCF4E628E">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Usuario Integração</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">10</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=655.59375;Y=80;Width=156.09375;Height=80}</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="SenhaInt" ID="85FD4610-F071-463B-B493-F397A6010E4A">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Senha Integração</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">11</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">5CD44E65-DDA1-43A6-899D-19B08032044E</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=811.6875;Y=80;Width=187.3125;Height=80}</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="TwilioNumero" ID="36615C09-719D-4CC2-8285-CF829FAC6121">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Número para Mensagens</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">14</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">8</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=374.625;Y=160;Width=249.75;Height=80}</XData>
+        <XData Name="Mask" ID="025F68C5-CF33-49FF-9164-DE79E2B6E511" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">0000-0000|(00) 0000-0000|+00 (00) 0000-0000|00000-0000|(00) 00000-0000|+00 (00) 00000-0000</XLanguage>
+        </XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="DDD" ID="3F789216-17DA-4CD2-80FE-6AB00487FD85">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">DDD Prefrencial</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">16</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=811.6875;Y=160;Width=187.3125;Height=80}</XData>
+        <XData Name="Mask" ID="025F68C5-CF33-49FF-9164-DE79E2B6E511" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">00</XLanguage>
+        </XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="CodigoPais" ID="E88A6EE2-3557-4F41-A1D4-EC5D0D81B688">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Código Pais (telefone)</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">15</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=624.375;Y=160;Width=187.3125;Height=80}</XData>
+        <XData Name="Mask" ID="025F68C5-CF33-49FF-9164-DE79E2B6E511" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">00</XLanguage>
+        </XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="LatenciaServico" ID="8C6833CB-121D-4DA5-B178-DF6F7E4C5195">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Latência do Serviço (s)</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">12</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B45FBE87-40A0-44EF-B2EC-CD6A3000DA3A</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=160;Width=187.3125;Height=80}</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="Int32">1</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="LatenciaIntegracao" ID="DF39433C-D9B5-4B8B-8AEC-EBDC21D8FE7F">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Latência da Integração (s)</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">13</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B45FBE87-40A0-44EF-B2EC-CD6A3000DA3A</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=187.3125;Y=160;Width=187.3125;Height=80}</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="Int32">5</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="FechaPedido" ID="94303D10-D3CA-4999-B8B9-B9125835C276">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Criar Pedido Fechado</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">17</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">B42D0699-00B6-4999-BD36-244B12990C2F</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">8165BCEE-65D3-4BDA-80AF-B4EF0B1590F0</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=240;Width=187.3125;Height=80}</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="Boolean">true</XData>
+        <XData Name="FontStyle" ID="B752FB0C-6CF8-46CD-B41F-FA9B8D72F011" Type="XFontStyle">Normal</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="MigrarClientes" ID="0710681F-224F-493C-B636-F0D59325E458">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Migrar Clientes</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">18</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">B42D0699-00B6-4999-BD36-244B12990C2F</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">8165BCEE-65D3-4BDA-80AF-B4EF0B1590F0</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=187.3125;Y=240;Width=187.3125;Height=80}</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="IntegracaoReversa" ID="75E50B97-033C-45F0-ABA5-8DA7AED8A36B">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Usa Integração Reversa</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">19</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">B42D0699-00B6-4999-BD36-244B12990C2F</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">8165BCEE-65D3-4BDA-80AF-B4EF0B1590F0</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=374.625;Y=240;Width=187.3125;Height=80}</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="Parametros" ID="B8E68BEB-87FB-4A67-AE56-6CCDF34881BA">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Outros Parâmetros</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">21</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">ADA993EB-4A42-440D-98E2-722EE0119959</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">3</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=320;Width=999;Height=120}</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField Name="DiasAvisoVacina" ID="A8E96A26-CC8A-4CEA-9454-6AA762FC7EDD">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Antec. Aviso de Vacina</XLanguage>
+        </XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">20</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B45FBE87-40A0-44EF-B2EC-CD6A3000DA3A</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=561.9375;Y=240;Width=187.3125;Height=80}</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="String">3</XData>
+      </XValues>
+    </XFRMField>
+  </XFRMForm>
+</XFRMDesigner>

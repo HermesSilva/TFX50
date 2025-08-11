@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner Name="GrupoDesconto" ID="DB0FCED7-C456-46C1-84A6-9722CFEEAEC0" iID="635267" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+  <XValues>
+    <XLinkData Type="Guid" Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" ElementID="F77163B2-EB8D-4945-8700-0B3D845A212F" Text="ConvenioEmpresa - (Projecao.Core.CRD.GrupoDesconto)" DocumentID="F77163B2-EB8D-4945-8700-0B3D845A212F" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">F77163B2-EB8D-4945-8700-0B3D845A212F</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XPAMStartAction">DataGrid</XData>
+    <XLinkArrayData Type="Guid[]" Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F">
+      <XLinkData ID="24845579-E650-463F-8FF5-FC3C80445346" ElementID="880441F4-6E3A-4581-9228-32D8CE030C4E" Text="Configurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="6" Order="2">880441F4-6E3A-4581-9228-32D8CE030C4E</XLinkData>
+      <XLinkData ID="20B288F3-4E43-44D5-B121-0E658B2B4027" ElementID="D013D072-622A-4CDF-A966-C0F3622A0F37" Text="Inativar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="4" Order="3">D013D072-622A-4CDF-A966-C0F3622A0F37</XLinkData>
+      <XLinkData ID="D2AE4BB2-F25C-43E4-AD0C-69AD21A996B0" ElementID="FAB09927-CDE5-4B3E-87A5-96CA5DB6B839" Text="Incluir" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="4">FAB09927-CDE5-4B3E-87A5-96CA5DB6B839</XLinkData>
+      <XLinkData ID="5166D536-C692-4786-9995-14B518A09D48" ElementID="110EDF00-7E45-4C68-982D-CCB06158B372" Text="Restaurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="5" Order="5">110EDF00-7E45-4C68-982D-CCB06158B372</XLinkData>
+      <XLinkData ID="1C45DD18-4CBA-44CB-8DE1-9A5AC42D949F" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="6">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+      <XLinkData ID="E3CF9212-3814-4A96-8C4D-68303362FD3F" ElementID="E3CE9D50-305A-4583-81BD-90BC5872AB50" Text="Alterar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="3" Order="1">E3CE9D50-305A-4583-81BD-90BC5872AB50</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Type="Guid[]" Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650">
+      <XLinkData ID="10C59201-49F1-4636-9C74-77C79761E9B1" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="2">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+      <XLinkData ID="60BAE801-A121-465E-A765-264CFC8ED60E" ElementID="5AEAF9CA-696A-4F72-8522-30399BC74157" Text="Administração da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="1">5AEAF9CA-696A-4F72-8522-30399BC74157</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="826BB6BC-6C9F-4179-94F1-FDAA9FD79BEC" ElementID="EC0031E5-B3C6-4309-8A07-4C820E5B19AF" Text="Pet Shop" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82" ModuleName="Projecao.Core.PET" DataEx="9" Order="1">EC0031E5-B3C6-4309-8A07-4C820E5B19AF</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="DBFB1ACA-1AB0-4F69-9F22-7E006159A10C" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">A310D5AA-677C-4F98-BE4E-D8A91CA5F200</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=675;Height=190}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Grupos e Descontos</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">GrupoDesconto</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">0EF2BF81-B77A-42D9-BE81-AF8B33B030F9|AFDB5306-B1AE-4330-B562-9712024F1587|6E3F5924-D47F-4296-8886-D6E46B9F6951|8729ECF5-7C6C-4601-9594-137D645BA096|DB47F6AF-4088-4BF5-AE01-CE1D24B3A331|40743E62-579D-4EAC-AEEE-5F50C9807284|66916D84-C5C9-4347-9227-B0B6D5499769|089E2B20-DEBB-442B-B5F6-E0778E81CED0|DA12079C-505A-4F4C-96AB-19916CFFA3C1|CBB8E760-4B27-4121-8CFE-E2CE26C38F6D</XData>
+  </XValues>
+  <XSAMActivity Name="GrupoDescontoACT" ID="FAD30D58-EB39-417E-89F0-DD27C10FF2FB" iID="635274">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=270;Y=48;Width=168;Height=92}</XData>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=245;G=222;B=179}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Grupos de Desconto</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMDesigner Name="GrupoDesconto" ID="272CC56C-328D-4B5E-A725-80FD08CC03EC" iID="635279" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+      <XFRMForm ID="CD540600-BD7B-48A1-AAB4-F3616BF24274" Name="FieldContainer">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=1142;Height=598}</XData>
+          <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+          <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+            <XLanguage IETFCode="pt-br" IsDefault="true">Grupos de Desconto - User Activity</XLanguage>
+          </XData>
+        </XValues>
+        <XFRMField ID="DE86AD05-5782-4A7C-B066-820EA68EB00B" iID="635284" ParentID="2083A128-531F-4F6B-93EC-3A0BE7D5650C">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="2083A128-531F-4F6B-93EC-3A0BE7D5650C" Text="SYSxPessoaConvenio.NomeConvenio" DocumentID="F77163B2-EB8D-4945-8700-0B3D845A212F" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">2083A128-531F-4F6B-93EC-3A0BE7D5650C</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=1142;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="852D4580-5AA7-4592-A9C1-D9124E10EB38" iID="635287" ParentID="7E55092C-D115-439B-8F69-DDCE60D157A3">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7E55092C-D115-439B-8F69-DDCE60D157A3" Text="SYSxPessoa.Nome" DocumentID="F77163B2-EB8D-4945-8700-0B3D845A212F" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">7E55092C-D115-439B-8F69-DDCE60D157A3</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">25</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=46;Width=892;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="B6BE0838-248E-4A3F-83CC-7042AD3394D1" iID="635290" ParentID="77E59CF3-50DD-45B7-8DD1-559361E80448">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="77E59CF3-50DD-45B7-8DD1-559361E80448" Text="SYSxEmpresa.Sigla" DocumentID="F77163B2-EB8D-4945-8700-0B3D845A212F" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">77E59CF3-50DD-45B7-8DD1-559361E80448</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">7</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=892;Y=46;Width=250;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="495AB9C0-40E7-4980-A57E-E1562AAA83AB" iID="635293" ParentID="39A6C392-359C-46BB-A27B-CCE2465210F6">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="39A6C392-359C-46BB-A27B-CCE2465210F6" Text="CRDxConvenio.CRDxConvenioID" DocumentID="F77163B2-EB8D-4945-8700-0B3D845A212F" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">39A6C392-359C-46BB-A27B-CCE2465210F6</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XLinkData Type="Guid" Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" ElementID="A00A7416-3318-4DB2-87AA-81C698160184" Text="GrupoDesconto - (Projecao.Core.CRD.GrupoDesconto)" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">A00A7416-3318-4DB2-87AA-81C698160184</XLinkData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+            <XData Name="FormImplace" ID="D2C54317-2544-4E20-AFC1-4A9AAACF003C" Type="Boolean">true</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">ADD41C4D-6BB4-49A6-856E-4CAA566DEBC2</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=92;Width=1142;Height=460}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+          <XFRMDesigner Name="CRDxConvenioID" ID="9C4A20E4-F155-47E2-9B10-B6EA732DFABF" iID="635296" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+            <XFRMForm ID="E2316B85-47B0-48B9-AE1D-BF9C35716901" Name="FieldContainer">
+              <XValues>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=1142;Height=92}</XData>
+                <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Convênio - Grid Details</XLanguage>
+                </XData>
+              </XValues>
+              <XFRMField ID="5611A53B-525C-4CDE-9B4C-66A20A14D2A1" iID="635301" ParentID="C8091464-EEA3-4A83-B907-4B86AE0EDD5C">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C8091464-EEA3-4A83-B907-4B86AE0EDD5C" Text="CRDxConvenioGrupo.Valor" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">C8091464-EEA3-4A83-B907-4B86AE0EDD5C</XParentData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+                  <XLinkData Type="Guid" Name="RowFieldID" ID="F38745D6-AFA8-4874-81BE-32217A8ABB6F" ElementID="C8091464-EEA3-4A83-B907-4B86AE0EDD5C" Text="CRDxConvenioGrupo.Valor" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">C8091464-EEA3-4A83-B907-4B86AE0EDD5C</XLinkData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=321;Height=46}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="14617C11-59D5-4C63-9ACB-55047FE0D42D" iID="635304" ParentID="582AB78E-C3B2-47F9-9FEF-A5D1013D3F7B">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="582AB78E-C3B2-47F9-9FEF-A5D1013D3F7B" Text="ISExGrupo.Grupo" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">582AB78E-C3B2-47F9-9FEF-A5D1013D3F7B</XParentData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">23</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=321;Y=0;Width=821;Height=46}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+                </XValues>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Convênio</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">A9CD08BD-31AE-40BD-9867-43EA4D7F3F32</XData>
+            </XValues>
+          </XFRMDesigner>
+        </XFRMField>
+      </XFRMForm>
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">A3BF8926-23BF-4666-AA17-975D2FA2E96A</XData>
+      </XValues>
+    </XFRMDesigner>
+  </XSAMActivity>
+</XSAMDesigner>

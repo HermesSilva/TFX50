@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner Name="ConsultaAutorizacao" ID="4A67B4AC-697E-41AF-9B9D-1B3512A18E3B" iID="537491" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+  <XValues>
+    <XLinkData Type="Guid" Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" ElementID="C57A1BBB-3FF0-4195-9FB3-098466374919" Text="ConsultaAutorizacao - (Projecao.Core.CRD.ConsultaAutorizacao)" DocumentID="C57A1BBB-3FF0-4195-9FB3-098466374919" DocumentName="ConsultaAutorizacao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">C57A1BBB-3FF0-4195-9FB3-098466374919</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XPAMStartAction">DataGrid</XData>
+    <XLinkArrayData Type="Guid[]" Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F">
+      <XLinkData ID="24845579-E650-463F-8FF5-FC3C80445346" ElementID="880441F4-6E3A-4581-9228-32D8CE030C4E" Text="Configurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="6" Order="2">880441F4-6E3A-4581-9228-32D8CE030C4E</XLinkData>
+      <XLinkData ID="20B288F3-4E43-44D5-B121-0E658B2B4027" ElementID="D013D072-622A-4CDF-A966-C0F3622A0F37" Text="Inativar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="4" Order="3">D013D072-622A-4CDF-A966-C0F3622A0F37</XLinkData>
+      <XLinkData ID="D2AE4BB2-F25C-43E4-AD0C-69AD21A996B0" ElementID="FAB09927-CDE5-4B3E-87A5-96CA5DB6B839" Text="Incluir" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="4">FAB09927-CDE5-4B3E-87A5-96CA5DB6B839</XLinkData>
+      <XLinkData ID="5166D536-C692-4786-9995-14B518A09D48" ElementID="110EDF00-7E45-4C68-982D-CCB06158B372" Text="Restaurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="5" Order="5">110EDF00-7E45-4C68-982D-CCB06158B372</XLinkData>
+      <XLinkData ID="1C45DD18-4CBA-44CB-8DE1-9A5AC42D949F" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="6">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+      <XLinkData ID="E3CF9212-3814-4A96-8C4D-68303362FD3F" ElementID="E3CE9D50-305A-4583-81BD-90BC5872AB50" Text="Alterar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="3" Order="1">E3CE9D50-305A-4583-81BD-90BC5872AB50</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Type="Guid[]" Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650">
+      <XLinkData ID="10C59201-49F1-4636-9C74-77C79761E9B1" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="2">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+      <XLinkData ID="60BAE801-A121-465E-A765-264CFC8ED60E" ElementID="5AEAF9CA-696A-4F72-8522-30399BC74157" Text="Administração da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="1">5AEAF9CA-696A-4F72-8522-30399BC74157</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="826BB6BC-6C9F-4179-94F1-FDAA9FD79BEC" ElementID="EC0031E5-B3C6-4309-8A07-4C820E5B19AF" Text="Pet Shop" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82" ModuleName="Projecao.Core.PET" DataEx="9" Order="1">EC0031E5-B3C6-4309-8A07-4C820E5B19AF</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="DBFB1ACA-1AB0-4F69-9F22-7E006159A10C" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">E6723D2D-00CC-4D4D-AE27-77C99D5F625F</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=10}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Consulta Autorizações</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">ConsultaAutorizacao</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">FB2DFA8D-71E1-4479-8343-5B01F80AF83B|A7B22B6A-486F-458D-BBA3-B6AC4EDB27FF|CC57A7B0-043F-4109-995A-C8E02EFDCA71|AD1AE9A6-CD61-4341-AD53-B26FA95C62F2|C35DF63E-AD7D-453E-97FE-550BAB6E6C20|D02A2094-8781-481E-9444-00538339A96D|DB9371BD-1CB9-43AC-9231-3FD69B295DDB|0E3A0121-BB8C-4055-9AE4-DD4EC05EC5D9|CFC3B950-1EBD-40DA-8E80-B74FFFABC428|31190685-C154-4CBD-8CB3-59F1BD41C1B6</XData>
+  </XValues>
+  <XSAMActivity Name="ConsultaAutorizacaoACT" ID="31BD0136-7E41-439F-956B-B531CBA68A71" iID="537494">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=272;Y=65;Width=168;Height=92}</XData>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=245;G=222;B=179}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Autorização WEB</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMDesigner Name="ConsultaAutorizacao" ID="D78ACEE4-1930-49CE-BC3D-7DFE0C66C6FF" iID="537495" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+      <XFRMForm ID="C35F7438-3893-459B-9F17-42B6F14C2C0A" Name="FieldContainer">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">PAMAdditionalForm</XData>
+          <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=814;Height=2898}</XData>
+          <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+          <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+            <XLanguage IETFCode="pt-br" IsDefault="true">Autorização WEB - User Activity</XLanguage>
+          </XData>
+        </XValues>
+        <XFRMField ID="480A2423-D579-41FC-B413-5AE4CEFE7932" iID="537496" ParentID="F416774C-4621-4B0A-9B81-F2C16FA7CC29">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F416774C-4621-4B0A-9B81-F2C16FA7CC29" Text="SYSxPessoa.Nome" DocumentID="C57A1BBB-3FF0-4195-9FB3-098466374919" DocumentName="ConsultaAutorizacao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">F416774C-4621-4B0A-9B81-F2C16FA7CC29</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">23</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=229;Y=0;Width=585;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Nome do Cliente</XLanguage>
+            </XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="DE42E6DD-E0EB-447C-91E0-F43D036C733A" iID="537498" ParentID="B3CDF574-318C-45CC-8713-35099A0AD286">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="B3CDF574-318C-45CC-8713-35099A0AD286" Text="CRDxCartaoLog.CRDxCartaoLogID" DocumentID="C57A1BBB-3FF0-4195-9FB3-098466374919" DocumentName="ConsultaAutorizacao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">B3CDF574-318C-45CC-8713-35099A0AD286</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=229;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Número Transação</XLanguage>
+            </XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="AA98B991-41B2-42A9-9077-2EBCB167EFC2" iID="537500" ParentID="621BD8DC-E4E4-48F7-B1E8-8E01425C4A5E">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="621BD8DC-E4E4-48F7-B1E8-8E01425C4A5E" Text="CRDxCartaoLog.Data" DocumentID="C57A1BBB-3FF0-4195-9FB3-098466374919" DocumentName="ConsultaAutorizacao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">621BD8DC-E4E4-48F7-B1E8-8E01425C4A5E</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">D56E8E17-9D09-4FE9-9A30-A6AA5865ABC6</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">6C9A2A8B-8418-4475-96DF-51F18B29F381</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=46;Width=229;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="1772318B-7F92-4330-B6EC-BEF0D9100C2F" iID="537502" ParentID="F40BC913-17E7-445D-863D-6CE35D27FD3F">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F40BC913-17E7-445D-863D-6CE35D27FD3F" Text="CRDxCartaoLog.NumeroVenda" DocumentID="C57A1BBB-3FF0-4195-9FB3-098466374919" DocumentName="ConsultaAutorizacao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">F40BC913-17E7-445D-863D-6CE35D27FD3F</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=229;Y=46;Width=153;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="97EA0BAC-65C0-4C1E-AA0B-5E1EB90318F6" iID="537504" ParentID="AA585BC7-9B59-4056-914C-ADEA59DE9E90">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AA585BC7-9B59-4056-914C-ADEA59DE9E90" Text="CRDxCartaoLog.Valor" DocumentID="C57A1BBB-3FF0-4195-9FB3-098466374919" DocumentName="ConsultaAutorizacao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">AA585BC7-9B59-4056-914C-ADEA59DE9E90</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">7</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=382;Y=46;Width=178;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="D99F49ED-FC33-461C-92FF-1A5B3DDBA6E8" iID="537506" ParentID="E9B924B1-8473-49D4-A3B3-3309D90CB7CE">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E9B924B1-8473-49D4-A3B3-3309D90CB7CE" Text="CRDxCartaoLogTipo.Tipo" DocumentID="C57A1BBB-3FF0-4195-9FB3-098466374919" DocumentName="ConsultaAutorizacao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">E9B924B1-8473-49D4-A3B3-3309D90CB7CE</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">10</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=560;Y=46;Width=254;Height=46}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          </XValues>
+        </XFRMField>
+        <XAddButton Name="Buttons" ID="A9D18D75-12CB-40C5-B923-3BCDC4499EA7" iID="537508">
+          <XValues>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Buttons</XLanguage>
+            </XData>
+          </XValues>
+          <XAddButtonItem Name="CancelaAutorizacao" ID="A31D794F-D0F1-42DC-9C7C-636A3E0575F8" iID="537509">
+            <XValues>
+              <XLinkData Type="Guid" Name="ServiceID" ID="1755DB7A-502A-45C3-AC76-D76CF9782C5B" ElementID="00000000-0000-0000-0000-000000000000" Text="" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">00000000-0000-0000-0000-000000000000</XLinkData>
+              <XData Name="AskMessage" ID="AF8C53D1-5834-47D6-A45E-E9C6B3E32016" Type="String">Esta ação irá cancelar a autorização selecionada.\nDeseja continuar?</XData>
+              <XData Name="IconURL" ID="4CC8F9D2-93E0-43C3-8EF1-6A33404DE214" Type="String">totrash.svg</XData>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Cancelamento de Autorização</XLanguage>
+              </XData>
+            </XValues>
+          </XAddButtonItem>
+        </XAddButton>
+      </XFRMForm>
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">DE82449C-8ED4-45A3-AC89-0D829156B3E4</XData>
+      </XValues>
+    </XFRMDesigner>
+  </XSAMActivity>
+  <XAddButton Name="Buttons" ID="2686B853-26DA-4B52-99B2-9386F1BE3604" iID="537512">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Buttons</XLanguage>
+      </XData>
+    </XValues>
+  </XAddButton>
+</XSAMDesigner>

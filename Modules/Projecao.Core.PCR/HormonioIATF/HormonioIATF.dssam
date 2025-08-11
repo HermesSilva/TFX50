@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner ID="67C1AEAC-31B2-48A2-BC01-9FA36DED4E95" Name="HormonioIATF" ModuleID="02C4E7C5-1B4F-43DB-AC6C-CD36BBE428B7">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">HormonioIATF</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">D44F2247-A18D-44F2-9A9B-0435B7C110F9|7A839462-77A0-448D-A289-B15A5871D39B|D8BB5821-0B90-4857-8858-8D6E155ADD3E|9DCF8E12-7D1C-41C3-A48D-5E7DC63B4F74|0367D864-FDFC-4531-9AD0-E3452C9EA826|CD675504-3C58-4303-AB40-4D70883163C1|E7933423-9762-4B12-8DC6-D7132F55EF06|2F05017C-F756-46C2-B519-E340D7681978|C5DC35EA-6978-4BEC-8F53-98D627A85991|9C8ECE87-56CC-4D96-A945-BDDC7C61417B</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">F267B1E0-25A9-4E08-A8B6-1C133C798320</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=368;Height=150}</XData>
+    <XLinkArrayData Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F" Type="Guid[]">
+      <XLinkData ID="39EACEFA-53C7-4B09-B9B1-3AFE5CF854CF" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="6">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+      <XLinkData ID="9F3D590B-9AA6-4F61-A908-6B4D7C0F8BE0" ElementID="110EDF00-7E45-4C68-982D-CCB06158B372" Text="Restaurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="5" Order="5">110EDF00-7E45-4C68-982D-CCB06158B372</XLinkData>
+      <XLinkData ID="779E3FF4-FB6D-4107-8D4B-F589C25E5497" ElementID="D013D072-622A-4CDF-A966-C0F3622A0F37" Text="Inativar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="4" Order="3">D013D072-622A-4CDF-A966-C0F3622A0F37</XLinkData>
+      <XLinkData ID="7E14B45E-BC3B-4132-86A1-6D5A86AF785A" ElementID="880441F4-6E3A-4581-9228-32D8CE030C4E" Text="Configurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="6" Order="2">880441F4-6E3A-4581-9228-32D8CE030C4E</XLinkData>
+      <XLinkData ID="A81AF423-2BC4-4ED7-93A3-E1521275E66B" ElementID="FAB09927-CDE5-4B3E-87A5-96CA5DB6B839" Text="Incluir" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="4">FAB09927-CDE5-4B3E-87A5-96CA5DB6B839</XLinkData>
+      <XLinkData ID="A3EF8B08-9363-43F2-AA23-24F22F5ACEF6" ElementID="E3CE9D50-305A-4583-81BD-90BC5872AB50" Text="Alterar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="3" Order="1">E3CE9D50-305A-4583-81BD-90BC5872AB50</XLinkData>
+    </XLinkArrayData>
+    <XLinkData Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" Type="Guid" ElementID="5CEAE67C-0AEA-4F02-8E8B-AB3174562133" Text="HormonioIATF - (Projecao.Core.PCR.HormonioIATF)" DocumentID="5CEAE67C-0AEA-4F02-8E8B-AB3174562133" DocumentName="HormonioIATF" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">5CEAE67C-0AEA-4F02-8E8B-AB3174562133</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XStartAction">DataGrid</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Cadastro de Hormônios para IATF</XLanguage>
+    </XData>
+    <XLinkArrayData Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650" Type="Guid[]">
+      <XLinkData ID="13C7092C-C0CA-4F06-A1D2-1A2C8C6EA42A" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="2">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+      <XLinkData ID="BC7D16C7-E4C2-4E1F-9606-F5F02112D869" ElementID="5AEAF9CA-696A-4F72-8522-30399BC74157" Text="Administração da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="1">5AEAF9CA-696A-4F72-8522-30399BC74157</XLinkData>
+    </XLinkArrayData>
+    <XData Name="UserLevel" ID="C4A75429-E512-4D19-A007-C985053C5C97" Type="XUserlevel">User</XData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="54B0F1E9-311D-4B16-990D-A752098B5163" ElementID="E4748125-5A30-49A9-9D1F-70EDF422D0F9" Text="Controle de Rebanho" DocumentID="6DBB562A-5705-4031-BFEF-ED55908FB5F4" DocumentName="PCRx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="19" Order="1">E4748125-5A30-49A9-9D1F-70EDF422D0F9</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="7343BA1B-43FF-478F-8B81-C182E9E9A3EA" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSAMActivity ID="99564152-FB0B-419D-A7C6-C4588044D584" Name="HormonioIATFACT">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=74;Height=72}</XData>
+    </XValues>
+    <XFRMDesigner ID="349FE3C7-B6C4-4919-BE5B-8C00421D6C25" Name="HormonioIATF">
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">87AAC74F-C570-402C-B52E-93C8441C79AC</XData>
+      </XValues>
+      <XFRMForm Name="T" ID="46BA76B6-4450-4DE2-8AB7-0211248D939D">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=965;Height=678}</XData>
+        </XValues>
+        <XFRMField ID="FCBE1E19-5A79-418F-A848-0507B93F0029" ParentID="A66E6863-2634-41C1-B62E-CF8FDF9FB71B">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A66E6863-2634-41C1-B62E-CF8FDF9FB71B" Text="ISExItem.ISExItemID" DocumentID="5CEAE67C-0AEA-4F02-8E8B-AB3174562133" DocumentName="HormonioIATF" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">A66E6863-2634-41C1-B62E-CF8FDF9FB71B</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=50;Width=907;Height=500}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="816D853E-C65F-48D6-BE72-C0DABC7DC0CB" Text="VacinaLote - (Projecao.Core.PCR.Vacina)" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">816D853E-C65F-48D6-BE72-C0DABC7DC0CB</XLinkData>
+            <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+          </XValues>
+          <XFRMDesigner ID="7477B847-E6B9-4927-99A3-152DA78FF1B6" Name="ISExItemID">
+            <XFRMForm Name="T" ID="C3D1DF44-6EF9-4C25-A384-68C5D90D1C68">
+              <XValues>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=527;Height=58}</XData>
+              </XValues>
+              <XFRMField ID="47D0836F-3C6E-4482-93EE-B6E13EA49B96" ParentID="FAC71B57-2CE2-464F-9FCF-89E8262E26D8">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="FAC71B57-2CE2-464F-9FCF-89E8262E26D8" Text="ISExLote.Numero" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">FAC71B57-2CE2-464F-9FCF-89E8262E26D8</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">11</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=181.15625;Height=50}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Número do Lote</XLanguage>
+                  </XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="4220D4AF-AD83-48A7-B4B0-498FBCA12557" ParentID="C7394544-4044-4CB4-8368-B960540FEBAA">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C7394544-4044-4CB4-8368-B960540FEBAA" Text="ISExLote.Fabricacao" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">C7394544-4044-4CB4-8368-B960540FEBAA</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">11</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=181.15625;Y=0;Width=181.15625;Height=50}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="1E230764-092F-4788-8FC1-32E3B6CD91E6" ParentID="D4DA716C-DF95-4BC8-9ABF-FB7538403F27">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="D4DA716C-DF95-4BC8-9ABF-FB7538403F27" Text="ISExLote.Validade" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">D4DA716C-DF95-4BC8-9ABF-FB7538403F27</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">10</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=362.3125;Y=0;Width=164.6875;Height=50}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+                </XValues>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Lotes do Hormônio para IATF</XLanguage>
+              </XData>
+              <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=180;Y=156;Width=527;Height=58}</XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">67E63F53-F4A9-4AFF-B24E-F68222B691EF</XData>
+            </XValues>
+          </XFRMDesigner>
+        </XFRMField>
+        <XFRMField ID="C68D0ADB-0B8E-4CE3-A62E-B0BE5EBF8509" ParentID="047ADD49-C96A-4443-95A9-2A39079BB03D">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="047ADD49-C96A-4443-95A9-2A39079BB03D" Text="ISExItem.Nome" DocumentID="5CEAE67C-0AEA-4F02-8E8B-AB3174562133" DocumentName="HormonioIATF" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">047ADD49-C96A-4443-95A9-2A39079BB03D</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=907;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Nome do Hormônio para IATF</XLanguage>
+            </XData>
+          </XValues>
+        </XFRMField>
+      </XFRMForm>
+    </XFRMDesigner>
+  </XSAMActivity>
+</XSAMDesigner>

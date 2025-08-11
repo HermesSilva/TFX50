@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XModule Name="Projecao.Core.CRD" ID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+  <XValues>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Projecao.Core.CRD</XLanguage>
+    </XData>
+    <XData Name="NameSpace" ID="AA8B388C-17CD-48A6-8162-24E891354696" Type="String">Projecao.Core.CRD</XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String" />
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">DE1AFDE9-BA09-45B0-BF7F-8D414C81EBE6</XData>
+  </XValues>
+  <XNameSpace Name="Projecao.Core.CRD" ID="62E86E81-EFE8-45B1-AD5B-E6076A862E0C">
+    <XValues />
+  </XNameSpace>
+</XModule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XModule Name="Projecao.Core.NTR" ID="0E753EE6-8CF5-448C-8438-DAC71A5AECB2" ModuleID="0E753EE6-8CF5-448C-8438-DAC71A5AECB2">
+  <XNameSpace Name="Projecao.Core.NTR" ID="AA8B388C-17CD-48A6-8162-24E891354696">
+    <XValues />
+  </XNameSpace>
+  <XValues>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">EBB93F7F-A072-4DD4-9873-689026CEA168</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Projecao.Core.NTR</XLanguage>
+    </XData>
+    <XData Name="NameSpace" ID="AA8B388C-17CD-48A6-8162-24E891354696" Type="String">Projecao.Core.NTR</XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String" />
+  </XValues>
+</XModule>

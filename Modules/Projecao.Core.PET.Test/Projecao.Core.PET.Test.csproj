@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{D7B092A8-9439-4ACC-A8D3-A43E6BF27673}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>$(ObjPath)\$(ProjectName)\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>$(ObjPath)\$(ProjectName)\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Agendamento\AgendamentoEsteticaRed.SAM.AgendamentoEstetica.Test.dscit" />
+    <None Remove="Agendamento\AgendamentoEsteticaRed.SAM.Lidiane.Test.dscit" />
+    <None Remove="Projecao.Core.PET.Test.dsmdl" />
+    <None Remove="Tutor\Tutor.SAM.Tutores.Test.dscit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Agendamento\AgendamentoEsteticaRed.SAM.AgendamentoEstetica.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AgendamentoEsteticaRed.SAM.AgendamentoEstetica.Test.dscit</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoEsteticaRed.SAM.AgendamentoEstetica.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AgendamentoEsteticaRed.SAM.AgendamentoEstetica.Test.dscit</DependentUpon>
+    </Compile>
+    <Compile Include="Projecao.Core.PET.Test.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.PET.Test.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="Tutor\Tutor.SAM.Tutores.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tutor.SAM.Tutores.Test.dscit</DependentUpon>
+    </Compile>
+    <Compile Include="Tutor\Tutor.SAM.Tutores.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Tutor.SAM.Tutores.Test.dscit</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Agendamento\AgendamentoEsteticaRed.SAM.AgendamentoEstetica.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoEsteticaRed.SAM.AgendamentoEstetica.Test.CIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Projecao.Core.PET.Test.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.PET.Test.cs</LastGenOutput>
+    </Content>
+    <Content Include="Tutor\Tutor.SAM.Tutores.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Tutor.SAM.Tutores.Test.CIT.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TFX-Core\Test\TFX.CIT.Core\TFX.CIT.Core.csproj" />
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.PET\Projecao.Core.PET.csproj" />
+  </ItemGroup>
+</Project>

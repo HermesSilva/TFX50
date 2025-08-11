@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner ID="C0C673B8-C4D1-4DA2-ADFC-1B6D15FF8C60" Name="Rebanho" ModuleID="02C4E7C5-1B4F-43DB-AC6C-CD36BBE428B7">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Rebanho</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">A44C4E54-1FA0-443D-A048-313C4F9C829E|96432ADA-0A58-4BE4-A9CD-B66AF2D529D6|39322EC5-0025-4761-B477-841A22376FDB|BE7F067F-4253-433E-A6D4-E8DF41E2972D|3F4950B2-A926-4CF7-93CC-BA69DB41E91A|513A2C9E-EC8D-4698-8996-AD2B4CBF7B95|4A39FE1D-880C-4142-966C-E1586990739A|569E502B-19B7-4A2E-988A-27426B6310BB|8D080E59-F24F-4FE7-BF31-C637BA945516|813E8389-4645-409C-9C84-F975B9327FB3</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">82CA8FE2-35C8-45E7-8ABF-8E17E57E27C9</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=345;Height=150}</XData>
+    <XLinkArrayData Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F" Type="Guid[]">
+      <XLinkData ID="E19281FF-D08C-42C9-8FC0-B4E7E32AE25D" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+    <XLinkData Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" Type="Guid" ElementID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" Text="Rebanho - (Projecao.Core.PCR.Rebanho)" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">23542C87-DFC6-4AD9-8C5E-8D80138D8615</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XStartAction">DataGrid</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Cadastro do Rebanho</XLanguage>
+    </XData>
+    <XLinkArrayData Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650" Type="Guid[]">
+      <XLinkData ID="C604EEB7-63EC-4857-AEF7-CAD1C7E7E753" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" Order="2" DataEx="2">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+      <XLinkData ID="D6703476-CEDF-4768-9D87-6D90479D9C75" ElementID="5AEAF9CA-696A-4F72-8522-30399BC74157" Text="Administração da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="1">5AEAF9CA-696A-4F72-8522-30399BC74157</XLinkData>
+    </XLinkArrayData>
+    <XData Name="UserLevel" ID="C4A75429-E512-4D19-A007-C985053C5C97" Type="XUserlevel">User</XData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="511EDEC5-2934-4E6D-8F89-BF4A245269D1" ElementID="E4748125-5A30-49A9-9D1F-70EDF422D0F9" Text="Controle de Rebanho" DocumentID="6DBB562A-5705-4031-BFEF-ED55908FB5F4" DocumentName="PCRx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="19" Order="1">E4748125-5A30-49A9-9D1F-70EDF422D0F9</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="D10730AB-4ADB-41D5-A8A4-424220E7EBAB" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSAMActivity ID="FDFD7158-BF0A-4661-A5AD-87B9273AB582" Name="RebanhoACT">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=74;Height=72}</XData>
+    </XValues>
+    <XFRMDesigner ID="763EF3D5-342F-4982-B988-7F7A47518AEF" Name="Rebanho">
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">7BC8C797-DA20-4863-8EDC-3E246532A154</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=10;Y=37;Width=50;Height=25}</XData>
+      </XValues>
+      <XFRMForm Name="T" ID="083030CB-9E2F-4B88-B0F4-3BD32C9325B0">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=965;Height=678}</XData>
+        </XValues>
+        <XFRMField ID="ED03A8DC-B812-4944-99E8-80462AC6D390" ParentID="80494E5F-803E-43C5-BF8D-3953A201D2AF">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="80494E5F-803E-43C5-BF8D-3953A201D2AF" Text="ISExItem.Nome" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">80494E5F-803E-43C5-BF8D-3953A201D2AF</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">12</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=340.125;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="C6BAB352-75A9-4091-B619-41B07520202C" ParentID="F544A424-138F-4297-A6E8-2804FDFB2DDA">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F544A424-138F-4297-A6E8-2804FDFB2DDA" Text="PCRxRaca.Raca" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">F544A424-138F-4297-A6E8-2804FDFB2DDA</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=623.5625;Y=0;Width=141.71875;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="7A868E3A-6C51-48A2-9D2F-C6F1AE79AEF2" ParentID="C986447A-DDCB-4417-B123-136754EB608A">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C986447A-DDCB-4417-B123-136754EB608A" Text="PCRxMae.Mae" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">C986447A-DDCB-4417-B123-136754EB608A</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">16</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=50;Width=453.5;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Mãe</XLanguage>
+            </XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="1A8FE409-E742-4E41-9A07-F6A5C1A12A71" ParentID="E85E31BF-47AC-406A-B2BF-ABC925B333A3">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E85E31BF-47AC-406A-B2BF-ABC925B333A3" Text="PCRxPai.Pai" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">E85E31BF-47AC-406A-B2BF-ABC925B333A3</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">16</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=453.5;Y=50;Width=453.5;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="B04ABFFA-F29F-46EB-8DB1-35ADAD7E0DB3" ParentID="4360FBA5-6777-4B22-9E28-7DF50BAE1091">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4360FBA5-6777-4B22-9E28-7DF50BAE1091" Text="ISExItem.ISExItemID" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">4360FBA5-6777-4B22-9E28-7DF50BAE1091</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">7</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">23</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=100;Width=651.90625;Height=450}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">9</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="68DC4160-D802-4A50-A2E2-5EAB1C152EEE" Text="Evento - (Projecao.Core.PCR.Rebanho)" DocumentID="0DD9B219-355A-40E2-B9F8-9CDD4195205C" DocumentName="Evento" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">68DC4160-D802-4A50-A2E2-5EAB1C152EEE</XLinkData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Eventos Relativos a Este PET</XLanguage>
+            </XData>
+            <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="2A02FA46-D0F6-4CDA-AF25-2240D54A6558" ParentID="002BB0D2-3F49-48B4-BB78-720C2E787B95">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="002BB0D2-3F49-48B4-BB78-720C2E787B95" Text="ISExCodigo.Numero" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">002BB0D2-3F49-48B4-BB78-720C2E787B95</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=340.125;Y=0;Width=141.71875;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="1423BD73-D287-4EED-9ED2-7B9FAFF06D4E" ParentID="002DB9A0-EC6A-4407-B671-B4B2A84AEC7F">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="002DB9A0-EC6A-4407-B671-B4B2A84AEC7F" Text="PCRxAnimalLote.Lote" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">002DB9A0-EC6A-4407-B671-B4B2A84AEC7F</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=481.84375;Y=0;Width=141.71875;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="79E798D8-3FFC-47FD-BBCC-0534CBF4E37B" ParentID="4360FBA5-6777-4B22-9E28-7DF50BAE1091" Name="PCRxMaeID">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4360FBA5-6777-4B22-9E28-7DF50BAE1091" Text="ISExItem.ISExItemID" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">4360FBA5-6777-4B22-9E28-7DF50BAE1091</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">8</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=651.90625;Y=100;Width=255.09375;Height=450}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">9</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="F9B8D52D-792A-4C3C-95C3-91E1B8DF1A38" Text="FIlhote - (Projecao.Core.PCR.Rebanho)" DocumentID="15BFFE3A-7F49-45B9-9F74-C83E43E67D42" DocumentName="FIlhote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">F9B8D52D-792A-4C3C-95C3-91E1B8DF1A38</XLinkData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Filhos</XLanguage>
+            </XData>
+            <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+          </XValues>
+        </XFRMField>
+      </XFRMForm>
+    </XFRMDesigner>
+  </XSAMActivity>
+  <XSAMButton ID="8F58EE19-D4E6-42E1-A918-A7F957015560" Name="GeraRebanho">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=250;Y=5;Width=90;Height=30}</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+      <XLinkData Name="RightID" ID="EEA7851D-9F87-43EE-BC70-AB007D5EBD29" Type="Guid" ElementID="FAB09927-CDE5-4B3E-87A5-96CA5DB6B839" Text="Incluir" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1">FAB09927-CDE5-4B3E-87A5-96CA5DB6B839</XLinkData>
+      <XData Name="ViewMoment" ID="9E73B8F0-3E63-4B37-82D2-A97B64CAF4AE" Type="XButtonView">Search</XData>
+      <XLinkData Name="ServiceID" ID="E7ACC82B-9989-467E-A49D-A96E3B6978B1" Type="Guid" ElementID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" Text="Rebanho - (Projecao.Core.PCR.Rebanho)" DocumentID="23542C87-DFC6-4AD9-8C5E-8D80138D8615" DocumentName="Rebanho" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">23542C87-DFC6-4AD9-8C5E-8D80138D8615</XLinkData>
+      <XData Name="ServiceAction" ID="1BD36B52-16DB-4FF9-BC40-5758A86C4B98" Type="XButtonAction">Custom</XData>
+    </XValues>
+  </XSAMButton>
+</XSAMDesigner>

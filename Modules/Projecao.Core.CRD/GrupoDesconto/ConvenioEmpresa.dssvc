@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSVCDesigner Name="ConvenioEmpresa" ID="F77163B2-EB8D-4945-8700-0B3D845A212F" iID="635153" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+  <XValues>
+    <XLinkData Type="Guid" Name="MasterTableID" ID="EF08410B-53DF-4BE7-9191-796BC9F823B9" ElementID="6B249B00-8863-43B4-A098-426049F82B08" Text="CRDxConvenioEmpresa" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">6B249B00-8863-43B4-A098-426049F82B08</XLinkData>
+    <XData Name="HPCDataID" ID="B568A34D-9643-4639-A4BF-3E16D9BEC466" Type="Int32">635159</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">4DB77D80-A1B6-464C-BB95-A68FAA3E5003</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=1154;Height=719}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Convênios e Empresas</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">GrupoDesconto</XData>
+    <XData Name="ConfigID" ID="1B728749-8544-4FEA-9A7D-B6279B6398FC" Type="Guid">5F74B354-4766-454A-90BC-E7EA2BBCE109</XData>
+    <XData Name="ConfigID" ID="70591062-3DC1-4E07-B35B-F5C1EF6B2D4C" Type="Guid">563C0202-948A-4CD3-BD0D-AC9F1A0D5AB5</XData>
+    <XLinkArrayData Name="Rights" ID="D989F6D3-5963-4010-A848-67A186EE6286" Type="Guid[]">
+      <XLinkData ID="1CADC463-4D48-4604-8881-777B538D282B" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSVCResultSet Name="ResultSet" ID="55CB95C5-10DF-449F-943E-9A0D38C512D0" iID="635157">
+    <XValues>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=165;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">ResultSet</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField Name="NomeConvenio" ID="2083A128-531F-4F6B-93EC-3A0BE7D5650C" iID="635201" ParentID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">36</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=36;Width=10;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Nome do Convênio</XLanguage>
+        </XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">256</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="39A6C392-359C-46BB-A27B-CCE2465210F6" iID="635202" ParentID="B0CA8377-8765-4C48-A32B-D7734BDFFA7E">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="B0CA8377-8765-4C48-A32B-D7734BDFFA7E" Text="CRDxConvenioID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">B0CA8377-8765-4C48-A32B-D7734BDFFA7E</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">54</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=54;Width=10;Height=25}</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="77E59CF3-50DD-45B7-8DD1-559361E80448" iID="635203" ParentID="53994D69-FD6D-4C74-8CF6-55A39B7D9D07">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="53994D69-FD6D-4C74-8CF6-55A39B7D9D07" Text="Sigla" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">53994D69-FD6D-4C74-8CF6-55A39B7D9D07</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Sigla</XLanguage>
+        </XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">25</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="7E55092C-D115-439B-8F69-DDCE60D157A3" iID="635204" ParentID="2AD6286E-A1E5-4E20-BD37-878DA068D23D">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="2AD6286E-A1E5-4E20-BD37-878DA068D23D" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">2AD6286E-A1E5-4E20-BD37-878DA068D23D</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">18</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=18;Width=10;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Empresa Participante</XLanguage>
+        </XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">256</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="154A89B0-81C5-4F29-B75F-F85E1B664A3E" iID="635266" ParentID="AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E" Text="SYSxProprietariaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">49</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="F1A69D6F-7053-4690-8656-6312672E0CF4" iID="635316" ParentID="7D08576E-8C1F-448E-B5D5-5F2F8D4EC8D7">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7D08576E-8C1F-448E-B5D5-5F2F8D4EC8D7" Text="CRDxConvenioEmpresaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">7D08576E-8C1F-448E-B5D5-5F2F8D4EC8D7</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">99</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">true</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCResultSet>
+  <XSVCUserFields Name="UserFields" ID="5FC6441A-29B4-424B-890B-6602D4578D99" iID="635158">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Parameters</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCUserFields>
+  <XFRMDesigner Name="ConvenioEmpresaFilter" ID="E31B17DB-F60D-4DF9-8248-8BC97767A543" iID="635162" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+    <XFRMForm ID="5C4A5223-B484-41A6-A2FC-0AB657BD6A5A" Name="ConvenioEmpresaFilter">
+      <XValues>
+        <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=1125;Height=92}</XData>
+        <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Convenios e Empresas - Filtro</XLanguage>
+        </XData>
+      </XValues>
+      <XFRMField Name="Nome" ID="74CC1CA8-7DE7-4C7A-BF4D-0E9E11722C74" iID="635313" ParentID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2">
+        <XValues>
+          <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="" Type="Guid">73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2</XParentData>
+          <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+          <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+          <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+          <XLinkArrayData Type="Guid[]" Name="AdditionalFields" ID="AD828E26-BA2E-46CC-97CF-132510C88FC6">
+            <XLinkData ID="D40EB31C-0B4C-4BA7-AF52-99420619470E" ElementID="2AD6286E-A1E5-4E20-BD37-878DA068D23D" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">2AD6286E-A1E5-4E20-BD37-878DA068D23D</XLinkData>
+          </XLinkArrayData>
+          <XData Name="Operator" ID="75AEF4FE-A2A3-4DDA-A61D-23CC8575E8A2" Type="XOperator">Like</XData>
+          <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=1125;Height=46}</XData>
+          <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+            <XLanguage IETFCode="pt-br" IsDefault="true">Nome do Convênio/Empresa</XLanguage>
+          </XData>
+        </XValues>
+      </XFRMField>
+    </XFRMForm>
+    <XValues>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">C2B552AB-6384-4AF8-A329-E1BBAFC4C6D6</XData>
+    </XValues>
+  </XFRMDesigner>
+  <XSVCDataView Name="DataView" ID="E86DFD64-D5F8-4070-9746-A0CD5199CA1F" iID="635167">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">DataView</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField ID="A7AA348D-850E-42A5-ADCB-E391DBDACD41" iID="635205" ParentID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="1C7A97EE-6E6D-4FB8-905B-F6B204696505" iID="635206" ParentID="53994D69-FD6D-4C74-8CF6-55A39B7D9D07">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="53994D69-FD6D-4C74-8CF6-55A39B7D9D07" Text="Sigla" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">53994D69-FD6D-4C74-8CF6-55A39B7D9D07</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">18</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=18;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="5C3E791A-2F85-4022-B7D9-8C97C8D85E43" iID="635207" ParentID="2AD6286E-A1E5-4E20-BD37-878DA068D23D">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="2AD6286E-A1E5-4E20-BD37-878DA068D23D" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">2AD6286E-A1E5-4E20-BD37-878DA068D23D</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">36</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=36;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCDataView>
+  <XSVCOrderBy Name="OrderBy" ID="83942CBA-E47A-4E60-9FE5-10B0584EA083" iID="635168">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">OrderBy</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField ID="450DE327-9FDD-42B2-8154-C0B48A461C3D" iID="635208" ParentID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="74BDF6BB-97F4-4C25-ABC2-A6E7B7A0077F" iID="635209" ParentID="53994D69-FD6D-4C74-8CF6-55A39B7D9D07">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="53994D69-FD6D-4C74-8CF6-55A39B7D9D07" Text="Sigla" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">53994D69-FD6D-4C74-8CF6-55A39B7D9D07</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">18</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=18;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCOrderBy>
+  <XSVCWhere Name="Where" ID="D08446F6-0E8A-4D9E-A0BD-7C351C3E255C" iID="635169">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Where</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField ID="10CEC902-3A9C-425C-BE67-8FE8350C98C3" iID="635213" ParentID="3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8" Text="SYSxEmpresaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8</XParentData>
+      </XValues>
+    </XSVCField>
+  </XSVCWhere>
+  <XSVCTable ID="3574FBB6-B8BF-4F91-91F3-A0DFDE1D258A" iID="635170" ParentID="8CCD762D-565E-47F0-B57A-05C1A22D5627">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="8CCD762D-565E-47F0-B57A-05C1A22D5627" Text="CRDxConvenio" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">8CCD762D-565E-47F0-B57A-05C1A22D5627</XParentData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=158;Y=46;Width=276;Height=180}</XData>
+    </XValues>
+    <XSVCField ID="B0CA8377-8765-4C48-A32B-D7734BDFFA7E" iID="635171" ParentID="0FEE1F87-D606-47D2-AC53-CF08442D63A6">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="0FEE1F87-D606-47D2-AC53-CF08442D63A6" Text="CRDxConvenioID" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">0FEE1F87-D606-47D2-AC53-CF08442D63A6</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">149</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=149;Width=264;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="D664DAF2-AB19-4330-BBB1-ACD83CF707D9" iID="635172" ParentID="59F3782B-295D-47B4-93AC-A4AF5E3BB07B">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="59F3782B-295D-47B4-93AC-A4AF5E3BB07B" Text="Inicio" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">59F3782B-295D-47B4-93AC-A4AF5E3BB07B</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">24</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=24;Width=264;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="70AC1FA3-3FBC-4065-B3CC-B4A9F76579A2" iID="635173" ParentID="9ADCDE76-C97F-456A-ABF4-3E842480656B">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="9ADCDE76-C97F-456A-ABF4-3E842480656B" Text="Pagamento" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">9ADCDE76-C97F-456A-ABF4-3E842480656B</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">99</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=99;Width=264;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="D9D9B681-B075-42C8-AC67-E24B5E34DE0E" iID="635174" ParentID="06924202-8CCB-49D5-8F4E-B79D8EDAE670">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="06924202-8CCB-49D5-8F4E-B79D8EDAE670" Text="Fechamento" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">06924202-8CCB-49D5-8F4E-B79D8EDAE670</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">74</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=74;Width=264;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="5CCDF836-B5BB-43B8-8BBF-E700CDDE279D" iID="635175" ParentID="EF4B50CA-062E-42C4-A3AA-219FBE54C2CC">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="EF4B50CA-062E-42C4-A3AA-219FBE54C2CC" Text="SYSxEstadoID" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">EF4B50CA-062E-42C4-A3AA-219FBE54C2CC</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">124</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=124;Width=264;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="F6B1643B-F7C8-4CBB-8937-357DF4C503F2" iID="635176" ParentID="4FE94EF3-4F42-4EEE-9336-4AA0EAB8849B">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4FE94EF3-4F42-4EEE-9336-4AA0EAB8849B" Text="CRDxConvenioTipoID" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">4FE94EF3-4F42-4EEE-9336-4AA0EAB8849B</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">49</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=49;Width=264;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCTable>
+  <XSVCTable ID="6B249B00-8863-43B4-A098-426049F82B08" iID="635177" ParentID="A7625E52-5208-49D4-AE45-87CFEA28EDDA">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A7625E52-5208-49D4-AE45-87CFEA28EDDA" Text="CRDxConvenioEmpresa" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">A7625E52-5208-49D4-AE45-87CFEA28EDDA</XParentData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=561;Y=329;Width=240;Height=130}</XData>
+    </XValues>
+    <XSVCField ID="AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E" iID="635178" ParentID="5E061D92-6C10-4BC9-80A8-1D0DE85F5A47">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="5E061D92-6C10-4BC9-80A8-1D0DE85F5A47" Text="SYSxProprietariaID" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">5E061D92-6C10-4BC9-80A8-1D0DE85F5A47</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">49</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=49;Width=228;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="497FD29C-F01A-4868-B2BC-8D06DD47BD22" iID="635179" ParentID="527A0C69-6D3C-4D6F-8F00-8348798C43FD">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="527A0C69-6D3C-4D6F-8F00-8348798C43FD" Text="CRDxConvenioID" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">527A0C69-6D3C-4D6F-8F00-8348798C43FD</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">74</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=74;Width=228;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="7D08576E-8C1F-448E-B5D5-5F2F8D4EC8D7" iID="635180" ParentID="22294510-C4A8-4BB2-B503-5604E17957B4">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="22294510-C4A8-4BB2-B503-5604E17957B4" Text="CRDxConvenioEmpresaID" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">22294510-C4A8-4BB2-B503-5604E17957B4</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">99</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=99;Width=228;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="E33F06DA-8FFA-4FDC-9FF0-8D509DF1B3F6" iID="635181" ParentID="4D2015E1-3E85-4CBC-9EBD-EB817ABD6502">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4D2015E1-3E85-4CBC-9EBD-EB817ABD6502" Text="SYSxEstadoID" DocumentID="A5E58667-3E2E-4696-A7EA-9161E37E1CA8" DocumentName="CRDx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">4D2015E1-3E85-4CBC-9EBD-EB817ABD6502</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">24</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=24;Width=228;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCTable>
+  <XSVCTable ID="1881542E-8242-4843-87B3-38E06F85A64F" iID="635182" ParentID="A50A4CD0-B499-4F2A-96C3-B6925817205D">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A50A4CD0-B499-4F2A-96C3-B6925817205D" Text="SYSxEmpresa" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">A50A4CD0-B499-4F2A-96C3-B6925817205D</XParentData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=850;Y=83;Width=222;Height=166}</XData>
+    </XValues>
+    <XSVCField ID="53994D69-FD6D-4C74-8CF6-55A39B7D9D07" iID="635183" ParentID="64AA07BC-360B-4C35-8E9B-514B68AA6759">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="64AA07BC-360B-4C35-8E9B-514B68AA6759" Text="Sigla" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">64AA07BC-360B-4C35-8E9B-514B68AA6759</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">24</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=24;Width=210;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8" iID="635184" ParentID="2CE25D42-9A54-4E15-8506-E6285569548B">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="2CE25D42-9A54-4E15-8506-E6285569548B" Text="SYSxEmpresaID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">2CE25D42-9A54-4E15-8506-E6285569548B</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">142</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=142;Width=210;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="485C0B18-B37F-404D-B74F-4AE0E7CB52B6" iID="635185" ParentID="7AC7C24B-63BE-4EEF-BF38-64B7A76AD30B">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7AC7C24B-63BE-4EEF-BF38-64B7A76AD30B" Text="SYSxEstadoID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">7AC7C24B-63BE-4EEF-BF38-64B7A76AD30B</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">117</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=117;Width=210;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="D61D59A8-1EFC-4222-B2DF-DE8157126755" ParentID="F80D06C9-9013-4908-97D2-CB6ADC095AEE">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F80D06C9-9013-4908-97D2-CB6ADC095AEE" Text="SYSxEmpresaMatrizID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">F80D06C9-9013-4908-97D2-CB6ADC095AEE</XParentData>
+      </XValues>
+    </XSVCField>
+  </XSVCTable>
+  <XSVCTable Name="SYSxPessoaConvenio" ID="9FB72C74-18CE-473F-8740-64E455D947C9" iID="635189" ParentID="6FBFB697-EAEA-4747-A431-053B84E28FEC">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="6FBFB697-EAEA-4747-A431-053B84E28FEC" Text="SYSxPessoa" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">6FBFB697-EAEA-4747-A431-053B84E28FEC</XParentData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=133;Y=358;Width=180;Height=91}</XData>
+    </XValues>
+    <XSVCField ID="73F6EBB1-2FCA-4C97-B63C-45AC0E84F7D2" iID="635190" ParentID="F08FE609-6332-44C8-A569-CA9D51765F56">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F08FE609-6332-44C8-A569-CA9D51765F56" Text="Nome" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">F08FE609-6332-44C8-A569-CA9D51765F56</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">24</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=24;Width=168;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="996D9956-05BE-4160-B92C-BA84488C71C8" iID="635191" ParentID="240B60D5-4109-4689-B527-2762818C4F9D">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="240B60D5-4109-4689-B527-2762818C4F9D" Text="SYSxPessoaID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">240B60D5-4109-4689-B527-2762818C4F9D</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">67</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=67;Width=168;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCTable>
+  <XSVCReference Name="Referencia" ID="282D9004-C2A8-45C3-A87B-AD05B8050889" iID="635193">
+    <XValues>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Type="Guid" Side="1" X="0" Y="0,5" ElementID="996D9956-05BE-4160-B92C-BA84488C71C8" Text="SYSxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">996D9956-05BE-4160-B92C-BA84488C71C8</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=138;Y=432}|{X=108;Y=432}|{X=108;Y=210}|{X=162;Y=210}</XData>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Type="Guid" Side="3" X="1" Y="0,5" ElementID="B0CA8377-8765-4C48-A32B-D7734BDFFA7E" Text="CRDxConvenioID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">B0CA8377-8765-4C48-A32B-D7734BDFFA7E</XLinkedShape>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=0;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Referência</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCReference>
+  <XSVCReference Name="Referencia" ID="3C292A8A-9B43-4092-9E0E-E8564DB341F4" iID="635194">
+    <XValues>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Type="Guid" Side="1" X="0" Y="0,5" ElementID="AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E" Text="SYSxProprietariaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=792;Y=390}|{X=828;Y=390}|{X=828;Y=234}|{X=858;Y=234}</XData>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Type="Guid" Side="1" X="0" Y="0,5" ElementID="3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8" Text="SYSxEmpresaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8</XLinkedShape>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=0;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Referência</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCReference>
+  <XSVCReference Name="Referencia" ID="4ABB4DDD-0A9B-441F-8432-E23CE5EC18B4" iID="635195">
+    <XValues>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Type="Guid" Side="3" X="1" Y="0,5" ElementID="497FD29C-F01A-4868-B2BC-8D06DD47BD22" Text="CRDxConvenioID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">497FD29C-F01A-4868-B2BC-8D06DD47BD22</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=564;Y=414}|{X=498;Y=414}|{X=498;Y=210}|{X=426;Y=210}</XData>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Type="Guid" Side="1" X="0" Y="0,5" ElementID="B0CA8377-8765-4C48-A32B-D7734BDFFA7E" Text="CRDxConvenioID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">B0CA8377-8765-4C48-A32B-D7734BDFFA7E</XLinkedShape>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=0;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Referência</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCReference>
+  <XSVCTable Name="SYSxPessoa" ID="3C69486A-2C69-416B-B34E-E395591C2FDB" iID="635196" ParentID="6FBFB697-EAEA-4747-A431-053B84E28FEC">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="6FBFB697-EAEA-4747-A431-053B84E28FEC" Text="SYSxPessoa" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">6FBFB697-EAEA-4747-A431-053B84E28FEC</XParentData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=898;Y=393;Width=180;Height=91}</XData>
+    </XValues>
+    <XSVCField ID="2AD6286E-A1E5-4E20-BD37-878DA068D23D" iID="635197" ParentID="F08FE609-6332-44C8-A569-CA9D51765F56">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F08FE609-6332-44C8-A569-CA9D51765F56" Text="Nome" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">F08FE609-6332-44C8-A569-CA9D51765F56</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">24</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=24;Width=168;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="E1211333-C9FE-4C5B-B323-8C22C26E142A" iID="635198" ParentID="240B60D5-4109-4689-B527-2762818C4F9D">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="240B60D5-4109-4689-B527-2762818C4F9D" Text="SYSxPessoaID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">240B60D5-4109-4689-B527-2762818C4F9D</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">67</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=67;Width=168;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCTable>
+  <XSVCReference Name="Referencia" ID="A0FD3D5E-2D62-4BC9-95F5-7D6791E5CC51" iID="635200">
+    <XValues>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Type="Guid" Side="3" X="1" Y="0,5" ElementID="3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8" Text="SYSxEmpresaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">3F021CE1-7A94-4F33-A7CA-B5523CF3CEF8</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=1068;Y=234}|{X=1104;Y=234}|{X=1104;Y=468}|{X=1074;Y=468}</XData>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Type="Guid" Side="1" X="0" Y="0,5" ElementID="E1211333-C9FE-4C5B-B323-8C22C26E142A" Text="SYSxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">E1211333-C9FE-4C5B-B323-8C22C26E142A</XLinkedShape>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=0;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Referência</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCReference>
+  <XSVCShadow ID="4C04B567-62A8-4F6D-A27C-7867ABF95D15" iID="635259" ParentID="A00A7416-3318-4DB2-87AA-81C698160184">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A00A7416-3318-4DB2-87AA-81C698160184" Text="GrupoDesconto - (Projecao.Core.CRD.GrupoDesconto)" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">A00A7416-3318-4DB2-87AA-81C698160184</XParentData>
+      <XLinkArrayData Type="Guid[]" Name="Rights" ID="C807802F-FA1A-4B1A-9EE2-94BAE638550A">
+        <XLinkData ID="898AB281-095C-4CC6-B027-C62D4C57FD57" ElementID="D013D072-622A-4CDF-A966-C0F3622A0F37" Text="Inativar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="4">D013D072-622A-4CDF-A966-C0F3622A0F37</XLinkData>
+        <XLinkData ID="6985D80A-8278-44CF-BA82-B281C3C16A14" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+        <XLinkData ID="1D922DE2-EF62-4011-8440-6BAAB7D2A7FF" ElementID="E3CE9D50-305A-4583-81BD-90BC5872AB50" Text="Alterar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="3">E3CE9D50-305A-4583-81BD-90BC5872AB50</XLinkData>
+      </XLinkArrayData>
+      <XData Name="CanChange" ID="BA66CFFE-BA23-49E4-ACF9-7885972BBEC2" Type="Boolean">true</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=487;Y=539;Width=342;Height=130}</XData>
+      <XData Name="Padding" ID="BFB1355A-A656-43B1-B214-68ABA4F4F9E4" Type="Thickness">{Left=6;Top=24;Right=6;Bottom=6}</XData>
+    </XValues>
+    <XSVCField ID="0088B042-68ED-4C11-BA66-EE2BAF7DFADE" iID="635260" ParentID="0370E5EA-E88A-4E7C-AF71-9D964A4B0CFD">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="0370E5EA-E88A-4E7C-AF71-9D964A4B0CFD" Text="GEPxGrupoID" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">0370E5EA-E88A-4E7C-AF71-9D964A4B0CFD</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">24</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=24;Width=330;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="8C8833D7-8270-481A-831E-BBAC09BA2C20" iID="635261" ParentID="DEC5A3DC-AACC-4CB5-900F-A188472A8BE1">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="DEC5A3DC-AACC-4CB5-900F-A188472A8BE1" Text="CRDxConvenioID" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">DEC5A3DC-AACC-4CB5-900F-A188472A8BE1</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">49</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=49;Width=330;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="3A85E123-E922-473D-8856-DE82109E5932" iID="635262" ParentID="FF81BD71-BD7D-4CC2-AE68-7660D5EBC09E">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="FF81BD71-BD7D-4CC2-AE68-7660D5EBC09E" Text="CRDxConvenioGrupoID" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">FF81BD71-BD7D-4CC2-AE68-7660D5EBC09E</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">99</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=99;Width=330;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="144BFCA0-8CA0-4242-B1C4-CB24AD101034" iID="635263" ParentID="B0728C26-5D4D-4F96-ACE7-1FFD5C2FC4FF">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="B0728C26-5D4D-4F96-ACE7-1FFD5C2FC4FF" Text="SYSxFilialID" DocumentID="A00A7416-3318-4DB2-87AA-81C698160184" DocumentName="GrupoDesconto" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">B0728C26-5D4D-4F96-ACE7-1FFD5C2FC4FF</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">74</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=74;Width=330;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCShadow>
+  <XSVCReference Name="Referencia" ID="7904EB46-CEE8-4E11-BD87-22262C60F90F" iID="635264">
+    <XValues>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Type="Guid" Side="3" X="1" Y="0,5" ElementID="8C8833D7-8270-481A-831E-BBAC09BA2C20" Text="CRDxConvenioGrupo.CRDxConvenioID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">8C8833D7-8270-481A-831E-BBAC09BA2C20</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=492;Y=600}|{X=462;Y=600}|{X=462;Y=210}|{X=426;Y=210}</XData>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Type="Guid" Side="1" X="0" Y="0,5" ElementID="B0CA8377-8765-4C48-A32B-D7734BDFFA7E" Text="CRDxConvenioID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">B0CA8377-8765-4C48-A32B-D7734BDFFA7E</XLinkedShape>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=0;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Referência</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCReference>
+  <XSVCReference Name="Referencia" ID="09ECC850-663E-4B2D-9A13-F060FFA631C6" iID="635265">
+    <XValues>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Type="Guid" Side="1" X="0" Y="0,5" ElementID="144BFCA0-8CA0-4242-B1C4-CB24AD101034" Text="CRDxConvenioGrupo.SYSxFilialID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">144BFCA0-8CA0-4242-B1C4-CB24AD101034</XLinkedShape>
+      <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=822;Y=624}|{X=852;Y=624}|{X=852;Y=390}|{X=792;Y=390}</XData>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Type="Guid" Side="1" X="0" Y="0,5" ElementID="AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E" Text="SYSxProprietariaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="ConvenioEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">AB0B4C20-6CBC-40C4-BAAD-DB4F7568973E</XLinkedShape>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=0;G=0;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Referência</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCReference>
+</XSVCDesigner>

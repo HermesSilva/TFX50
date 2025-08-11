@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSVCDesigner Name="FechaFaturaFranqueado" ID="76F98AED-E3B6-412A-AE45-EDF55BFD5A5F" iID="532024" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+  <XValues>
+    <XData Name="Type" ID="760FAE3B-718E-4839-921F-292800986ECB" Type="XServiceType">Utility</XData>
+    <XData Name="HPCDataID" ID="B568A34D-9643-4639-A4BF-3E16D9BEC466" Type="Int32">597223</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">EC990CD3-9609-454E-B7D2-59A21AC2264B</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=12}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Fecha Fatura de Franqueado</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">FaturaFranqueado</XData>
+    <XData Name="ConfigID" ID="1B728749-8544-4FEA-9A7D-B6279B6398FC" Type="Guid">C08E2E6A-1398-4D0A-92A7-AD94F33B3C24</XData>
+    <XData Name="ConfigID" ID="70591062-3DC1-4E07-B35B-F5C1EF6B2D4C" Type="Guid">1AE1F026-45BB-455E-910C-5A855CD5F7FC</XData>
+    <XLinkArrayData Name="Rights" ID="D989F6D3-5963-4010-A848-67A186EE6286" Type="Guid[]">
+      <XLinkData ID="902023D8-3AE0-447C-9437-D35319C01793" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSVCResultSet Name="ResultSet" ID="84B2B8C5-157B-477C-A051-47171ABC4DEC" iID="532028">
+    <XValues>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=165;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">ResultSet</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField ID="4014C4E0-E291-4146-92C3-4D96EDD90081" iID="532038" ParentID="13EB32D2-AB31-4E59-8E30-BAD97B9A3BA6">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="13EB32D2-AB31-4E59-8E30-BAD97B9A3BA6" Text="FranqueadoID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechaFaturaFranqueado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">13EB32D2-AB31-4E59-8E30-BAD97B9A3BA6</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">true</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="E5A91DAD-05C1-4E2F-9DD9-8E4353272D5F" iID="532044" ParentID="FFA662E8-DED6-42F2-82CD-1E97B9482CFD">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="FFA662E8-DED6-42F2-82CD-1E97B9482CFD" Text="Fechamento" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechaFaturaFranqueado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">FFA662E8-DED6-42F2-82CD-1E97B9482CFD</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">18</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCResultSet>
+  <XSVCUserFields Name="UserFields" ID="9A9AF2DD-FE7A-4E0C-849C-0434AD4AB468" iID="532029">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=66}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Parameters</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCUserField Name="FranqueadoID" ID="13EB32D2-AB31-4E59-8E30-BAD97B9A3BA6" iID="532037">
+      <XValues>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">ADD41C4D-6BB4-49A6-856E-4CAA566DEBC2</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Franqueado</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField Name="Fechamento" ID="FFA662E8-DED6-42F2-82CD-1E97B9482CFD" iID="532043">
+      <XValues>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=18;Width=12;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Fechamento</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCUserField>
+  </XSVCUserFields>
+  <XFRMDesigner Name="FechaFaturaFranqueadoFilter" ID="5AA30B3B-BB27-45BC-A5FE-B23322442E79" iID="532032" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+    <XFRMForm ID="B0A2383C-32F9-409E-9FD7-7E8218FED2A0" Name="FechaFaturaFranqueadoFilter">
+      <XValues>
+        <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+        <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Fecha Fatura de Franqueado - Filtro</XLanguage>
+        </XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+      </XValues>
+    </XFRMForm>
+    <XValues>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">604090DD-CCF9-4A86-A737-9581DAA7618E</XData>
+    </XValues>
+  </XFRMDesigner>
+  <XSVCDataView Name="DataView" ID="5F7EAF62-DB0A-49C6-979A-2D2C3664B609" iID="532046">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">DataView</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCDataView>
+  <XSVCOrderBy Name="OrderBy" ID="CF2F7760-F233-4DE5-8928-DFCCD63BCDE8" iID="532047">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">OrderBy</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCOrderBy>
+  <XSVCWhere Name="Where" ID="FA6E49A1-DB1A-414B-9707-C72C86E3FC5B" iID="594063">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Where</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCWhere>
+</XSVCDesigner>

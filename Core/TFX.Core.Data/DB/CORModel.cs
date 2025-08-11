@@ -103,5 +103,9 @@ namespace TFX.Core.Data.DB
             public const string sCadastro_de_Usuarios = @"Cadastro de Usuários";
             public static Guid Cadastro_de_Usuarios = new Guid("23ACD023-5CE5-412C-BECF-FD4D58DC680B");
         }
+
+        public static class CEPxLocalidade
+        {
+        }
     }
 }

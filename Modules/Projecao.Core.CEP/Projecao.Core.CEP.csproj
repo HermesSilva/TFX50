@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Configurations>Debug;Release;Linux</Configurations>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyVersion>4.1.1.6666</AssemblyVersion>
+    <FileVersion>4.1.1.6666</FileVersion>
+    <Version>4.1.1.6666</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DB\CEPx.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CEPx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\CEPxModel.cs">
+      <Visible>False</Visible>
+      <DependentUpon>CEPx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="Localidade\Localidade.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Localidade.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Localidade\Localidade.Application.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Localidade.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Localidade\Localidade.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Localidade.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Localidade\Localidade.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Localidade.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Localidade\Rules\INFLocalidadeService.Rule.cs" />
+    <Compile Include="Logradouro\Logradouro.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Logradouro.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Logradouro\Logradouro.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Logradouro.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Logradouro\Logradouro.Application.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Logradouro.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Logradouro\Logradouro.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Logradouro.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Logradouro\Rules\INFLogradouroService.Rule.cs" />
+    <Compile Include="Projecao.Core.CEP.Module.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.CEP.dsmdl</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadOnly\Logradouro.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Logradouro.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Logradouro.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Logradouro.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Logradouro.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Logradouro.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Rules\INFLogradouroService.Rule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projecao.Core.CEP.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.CEP.Module.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="DB\CEPx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>CEPx.cs</LastGenOutput>
+    </None>
+    <None Update="DB\CEPx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>CEPx.dsorm</DependentUpon>
+    </None>
+    <None Update="Localidade\Localidade.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Localidade.Application.cs</LastGenOutput>
+    </None>
+    <None Update="Localidade\Localidade.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Localidade.Service.cs</LastGenOutput>
+    </None>
+    <None Update="Logradouro\Logradouro.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Logradouro.Application.cs</LastGenOutput>
+    </None>
+    <None Update="Logradouro\Logradouro.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Logradouro.Service.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Logradouro.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Logradouro.Service.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+ 
+
+</Project>

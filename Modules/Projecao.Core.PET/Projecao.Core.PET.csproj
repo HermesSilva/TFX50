@@ -1,0 +1,1400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>e3d05d28-7014-4b59-9cb6-c283beefdb82</ProjectGUID>
+    <DASEProjectGUID>530e397c-fe3a-4736-a5ef-937a65125541</DASEProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Linux|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Anamnesia\**" />
+    <Content Remove="Atendimento\**" />
+    <Content Remove="EmpresaGrupo\**" />
+    <Content Remove="ManutencaoAtendimento\**" />
+    <EmbeddedResource Remove="Anamnesia\**" />
+    <EmbeddedResource Remove="Atendimento\**" />
+    <EmbeddedResource Remove="EmpresaGrupo\**" />
+    <EmbeddedResource Remove="ManutencaoAtendimento\**" />
+    <None Remove="Anamnesia\**" />
+    <None Remove="Atendimento\**" />
+    <None Remove="EmpresaGrupo\**" />
+    <None Remove="ManutencaoAtendimento\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Agendamento\AgendamentoManutencao.SAM.Rule.ts" />
+    <None Remove="Agendamento\AgendamentoProfiEste.SVC.ts" />
+    <None Remove="Agendamento\AgendamentoProfiSaude.SVC.ts" />
+    <None Remove="AgendaVacina\AgendaVacina.SVC.ts" />
+    <None Remove="AgendaVacina\AgendaVacinaItens.SVC.ts" />
+    <None Remove="Animal\Vacinas.SVC.ts" />
+    <None Remove="Consultas\Consultas.SVC.ts" />
+    <None Remove="Consultas\ConsultasDescritivo.SVC.ts" />
+    <None Remove="Consultas\ConsultasDocumentos.SVC.ts" />
+    <None Remove="Consultas\ConsultasExames.SVC.ts" />
+    <None Remove="Consultas\ConsultasReceitas.SVC.ts" />
+    <None Remove="Consultas\ConsultasVacina.SVC.ts" />
+    <None Remove="Consultas\PedidoExames.SVC.ts" />
+    <None Remove="Pacote\CriacaoPacote.SAM.Rule.ts" />
+    <None Remove="ReadOnly\BuscaAgendaProfissional.SVC.ts" />
+    <None Remove="ReadOnly\Pacote.SVC.ts" />
+    <None Remove="ReadOnly\PacoteVacina.SVC.ts" />
+    <None Remove="ReadOnly\Servico.SVC.ts" />
+    <None Remove="ReadOnly\Vacina.SVC.ts" />
+    <None Remove="RPTs\Comissao\Comissao.RPT.xml" />
+    <None Remove="RPTs\Comissao\Comissao.SVC.ts" />
+    <None Remove="RPTs\FichaHigiene.RPT.xml" />
+    <None Remove="RPTs\Receita\Receita.SVC.ts" />
+    <None Remove="RPTs\Receita\ReceitaNormal.RPT.xml" />
+    <None Remove="RPTs\RPTTest.RPT.xml" />
+    <None Remove="RPTs\Servico\Acerto.RPT.xml" />
+    <None Remove="RPTs\Servico\Atendimento.SVC.ts" />
+    <None Remove="RPTs\Servico\Profissional.SVC.ts" />
+    <None Remove="VisaoGeral\Aniversario.SVC.ts" />
+    <None Remove="VisaoGeral\Estetica.SVC.ts" />
+    <None Remove="VisaoGeral\Retirada.SVC.ts" />
+    <None Remove="VisaoGeral\Saude.SVC.ts" />
+    <None Remove="VisaoGeral\TaxiPET.SVC.ts" />
+    <None Remove="VisaoGeral\VisaoGeral.SAM.Rule.ts" />
+    <None Remove="VisaoGeral\VisaoGeral.SVC.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agendamento\Agendamento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Agendamento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\Agendamento.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Agendamento.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Agendamento\Agendamento.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Agendamento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoDetalhe.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoDetalhe.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoExames.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoExames.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoExames.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AgendamentoExames.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoManutencao.SAM.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoManutencao.dssam</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoProduto.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoProduto.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoProduto.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AgendamentoProduto.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoProfiEste.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AgendamentoProfiEste.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoProfiSaude.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AgendamentoProfiSaude.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoSaudeRed.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AgendamentoSaudeRed.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoServico.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoServico.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoServico.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AgendamentoServico.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoVacina.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoVacina.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoVacina.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AgendamentoVacina.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\Forms\Detalhes.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Detalhes.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agendamento\Forms\Exames.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Exames.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agendamento\Forms\Produtos.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Produtos.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agendamento\Forms\Servico.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Servico.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agendamento\Forms\Vacinas.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacinas.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AgendaVacina\AgendaVacina.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AgendaVacina.dssam</DependentUpon>
+    </Compile>
+    <Compile Include="AgendaVacina\AgendaVacina.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AgendaVacina.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AgendaVacina\AgendaVacinaItens.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AgendaVacinaItens.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agenda\Agenda.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Agenda.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Agenda\Agenda.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Agenda.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Animal\Animal.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Agendamento\AgendamentoEsteticaRed.SAM.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoEsteticaRed.dssam</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Animal\AnimalImagem.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AnimalImagem.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Animal\AnimalImagem.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AnimalImagem.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Animal\Vacinas.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Vacinas.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Animal\Vacinas.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacinas.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="CheckList\CheckList.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>CheckList.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Consultas\Consultas.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Consultas.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Consultas.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Consultas.dssam</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Consultas.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Consultas.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Consultas\ConsultasDescritivo.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ConsultasDescritivo.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultasDescritivo.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasDescritivo.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Consultas\ConsultasDocumentos.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasDocumentos.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Consultas\ConsultasExames.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasExames.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Consultas\ConsultasReceitas.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ConsultasReceitas.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultasReceitas.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConsultasReceitas.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Consultas\ConsultasVacina.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasVacina.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Consultas\Forms\ConsultaExames.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConsultaExames.dsfrm</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Forms\ConsultaVacinas.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConsultaVacinas.dsfrm</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\PedidoExames.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PedidoExames.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\PETx.ORM.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PETx.dsorm</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DB\PETx.PETxAnamnesiaDocumento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PETx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PETx.PETxAnimalImagem.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PETx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PETx.PETxAnimalTutor.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PETx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="FecharAtendimento\FecharAtenAgrupado.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>FecharAtenAgrupado.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="FecharAtendimento\FecharAtenAgrupado.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>FecharAtenAgrupado.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="FecharAtendimento\FecharAtendimento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>FecharAtendimento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="FecharAtendimento\FecharAtendimento.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>FecharAtendimento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Projecao.Core.PET.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Projecao.Core.PET.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Projecao.Core.PET.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.PET.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Animal\Animal.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Animal.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Animal\Animal.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Animal\AnimalTutor.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AnimalTutor.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="CheckList\CheckList.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CheckList.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FecharAtendimento\FecharAtenAgrupado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FecharAtenAgrupado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FecharAtendimento\FecharAtendimento.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FecharAtendimento.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FecharAtendimento\FecharAtendimento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FecharAtendimento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pacote\CriacaoPacote.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CriacaoPacote.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+   
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+   
+    <Compile Include="ReadOnly\AnimalTutor.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AnimalTutor.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\AnimalTutor.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AnimalTutor.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\AtedimentoAnimal.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>AtedimentoAnimal.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ReadOnly\AtendimentoDetalhe.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AtendimentoDetalhe.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\BuscaAgenda.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>BuscaAgenda.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\BuscaAgenda.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaAgenda.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\BuscaAgendaProfissional.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaAgendaProfissional.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ReadOnly\PacoteServico.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Servico.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\PacoteVacina.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\ProfissionaEstetica.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ProfissionaEstetica.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\ProfissionaEstetica.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ProfissionaEstetica.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\ProfissionalAgenda.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ProfissionalAgenda.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\ProfissionalSaude.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ProfissionalSaude.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\ProfissionalSaude.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ProfissionalSaude.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Raca.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Raca.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Servico.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Servico.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Servico.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Servico.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Vacina.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Vacina.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="RPTs\Comissao\Comissao.RPT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Comissao.dsrpt</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\Comissao\Comissao.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Comissao.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="RPTs\Comissao\Comissao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Comissao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\FIchaHigiene.RPT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FichaHigiene.dsrpt</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\Receita\Receita.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Receita.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\Receita\ReceitaNormal.RPT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReceitaNormal.dsrpt</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\RPTTest.RPT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RPTTest.dsrpt</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\Servico\Acerto.RPT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Acerto.dsrpt</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\Servico\Atendimento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Atendimento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="RPTs\Servico\Atendimento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Atendimento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RPTs\Servico\Profissional.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Tutor\Animal.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Tutor\Animal.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Tutor\Tutor.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Tutor.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Tutor\Tutor.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tutor.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Tutor\Tutor.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tutor.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="VisaoGeral\Aniversario.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Aniversario.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="VisaoGeral\Aniversario.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Aniversario.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="VisaoGeral\Estetica.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Estetica.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="VisaoGeral\Retirada.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Retirada.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="VisaoGeral\Saude.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Saude.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="VisaoGeral\TaxiPET.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TaxiPET.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="VisaoGeral\VisaoGeral.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>VisaoGeral.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="VisaoGeral\VisaoGeral.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VisaoGeral.dssam</DependentUpon>
+    </Compile>
+    <Compile Include="VisaoGeral\VisaoGeral.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VisaoGeral.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projecao.Core.PET.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.PET.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+         <PrivateAssets>Yes</PrivateAssets> 
+         <IncludeAssets>No</IncludeAssets> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+       <Private>false</Private>
+       <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+       <PrivateAssets>Yes</PrivateAssets>
+       <ExcludeAssets>Yes</ExcludeAssets>
+       <IncludeAssets>No</IncludeAssets>
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+         <PrivateAssets>Yes</PrivateAssets> 
+         <IncludeAssets>No</IncludeAssets> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+     </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj">
+         <Private>False</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+     </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj">
+         <Private>False</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+     </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.IMC\Projecao.Core.IMC.csproj">
+      <Private>False</Private>
+    </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.ISE\Projecao.Core.ISE.csproj">
+      <Private>False</Private>
+    </ProjectReference> 
+  </ItemGroup>
+  <ItemGroup>
+<Content Include="DB\PETx.dsorm">
+  <Generator>XDASEGenerator</Generator>
+  <LastGenOutput>PETx.ORM.cs</LastGenOutput>
+</Content>
+
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RPTs\Comissao\Comissao.RPT.xml">
+      <Visible>False</Visible>
+      <DependentUpon>Comissao.dsrpt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTs\FichaHigiene.RPT.xml">
+      <Visible>False</Visible>
+      <DependentUpon>FichaHigiene.dsrpt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTs\Receita\ReceitaNormal.RPT.xml">
+      <Visible>False</Visible>
+      <DependentUpon>ReceitaNormal.dsrpt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTs\RPTTest.RPT.xml">
+      <Visible>False</Visible>
+      <DependentUpon>RPTTest.dsrpt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPTs\Servico\Acerto.RPT.xml">
+      <Visible>False</Visible>
+      <DependentUpon>Acerto.dsrpt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Agendamento\Agendamento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Agendamento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoCompleto.PAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoCompleto.dspam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoDetalhe.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoDetalhe.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoExames.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoExames.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoManutencao.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>AgendamentoSaudeRed.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoManutencao.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoManutencao.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoProduto.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoProduto.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoProfiEste.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoProfiEste.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoProfiSaude.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoProfiSaude.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoSaudeRed.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoSaudeRed.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoServico.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoServico.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoVacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoVacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Detalhes.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Detalhes.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Exames.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Exames.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Produtos.FRM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>Produtos.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Produtos.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Produtos.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Servico.FRM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>Servico.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Servico.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Servico.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Vacinas.FRM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>Vacinas.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\Forms\Vacinas.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacinas.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="AgendaVacina\AgendaVacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendaVacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="AgendaVacina\AgendaVacinaItens.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendaVacinaItens.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agenda\Agenda.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Agenda.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agenda\Agenda.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Agenda.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Animal\Animal.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Animal.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Animal\Animal.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Animal\AnimalImagem.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AnimalImagem.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Animal\AnimalTutor.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AnimalTutor.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Agendamento\AgendamentoEsteticaRed.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AgendamentoEsteticaRed.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Animal\Vacinas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacinas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="CheckList\CheckList.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>CheckList.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="CheckList\CheckList.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>CheckList.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Consultas\Consultas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Consultas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Consultas\ConsultasDescritivo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasDescritivo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Consultas\ConsultasDocumentos.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasDocumentos.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Consultas\ConsultasExames.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasExames.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Consultas\ConsultasReceitas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasReceitas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Consultas\ConsultasVacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultasVacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Consultas\PedidoExames.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PedidoExames.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="DB\PETx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PETx.dsorm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FecharAtendimento\FecharAtenAgrupado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FecharAtenAgrupado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FecharAtendimento\FecharAtendimento.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>FecharAtendimento.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FecharAtendimento\FecharAtendimento.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FecharAtendimento.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FecharAtendimento\FecharAtendimento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FecharAtendimento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pacote\CriacaoPacote.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>CriacaoPacote.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pacote\CriacaoPacote.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>CriacaoPacote.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pacote\ManutencaoPacore.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ManutencaoPacore.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pacote\Pacote.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Pacote.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pacote\PacoteSaldo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PacoteSaldo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pacote\PacoteServico.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PacoteServico.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pacote\PacoteVacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PacoteVacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\AnimalTutor.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AnimalTutor.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\AtedimentoAnimal.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AtedimentoAnimal.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\AtendimentoDetalhe.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AtendimentoDetalhe.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\BuscaAgenda.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaAgenda.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\BuscaAgendaProfissional.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaAgendaProfissional.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\PacoteServico.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Servico.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\PacoteVacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\ProfissionaEstetica.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ProfissionaEstetica.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\ProfissionalAgenda.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ProfissionalAgenda.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\ProfissionalSaude.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ProfissionalSaude.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Raca.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Raca.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Servico.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Servico.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Vacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="RPTs\Comissao\Comissao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Comissao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="RPTs\Receita\Receita.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Receita.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="RPTs\Servico\Atendimento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Atendimento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="RPTs\Servico\Profissional.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tutor\Animal.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tutor\Tutor.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>Tutor.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tutor\Tutor.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Tutor.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tutor\Tutor.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Tutor.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="VisaoGeral\Aniversario.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Aniversario.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="VisaoGeral\Estetica.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Estetica.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="VisaoGeral\Retirada.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Retirada.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="VisaoGeral\Saude.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Saude.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="VisaoGeral\TaxiPET.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>TaxiPET.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="VisaoGeral\VisaoGeral.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>VisaoGeral.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="VisaoGeral\VisaoGeral.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>VisaoGeral.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Agendamento\Agendamento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Agendamento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoCompleto.dspam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoCompleto.PAM.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoDetalhe.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoDetalhe.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoExames.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoExames.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoManutencao.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoManutencao.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoProduto.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoProduto.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoProfiEste.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoProfiEste.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoProfiSaude.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoProfiSaude.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoSaudeRed.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoSaudeRed.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoServico.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoServico.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoVacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoVacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\Forms\Detalhes.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Detalhes.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\Forms\Exames.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Exames.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\Forms\Produtos.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Produtos.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\Forms\Servico.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Servico.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\Forms\Vacinas.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacinas.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="AgendaVacina\AgendaVacina.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendaVacina.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="AgendaVacina\AgendaVacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendaVacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="AgendaVacina\AgendaVacinaItens.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendaVacinaItens.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agenda\Agenda.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Agenda.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Agenda\Agenda.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Agenda.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Animal\Animal.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Animal.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Animal\Animal.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Animal.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Animal\AnimalImagem.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AnimalImagem.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Animal\AnimalTutor.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AnimalTutor.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Agendamento\AgendamentoEsteticaRed.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AgendamentoEsteticaRed.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Animal\Vacinas.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacinas.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="CheckList\CheckList.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>CheckList.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="CheckList\CheckList.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>CheckList.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\Consultas.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Consultas.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\Consultas.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Consultas.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\ConsultasDescritivo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultasDescritivo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\ConsultasDocumentos.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultasDocumentos.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\ConsultasExames.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultasExames.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\ConsultasReceitas.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultasReceitas.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\ConsultasVacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultasVacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\Forms\ConsultaExames.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultaExames.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\Forms\ConsultaVacinas.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultaVacinas.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Consultas\PedidoExames.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PedidoExames.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="DB\PETx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PETx.ORM.cs</LastGenOutput>
+    </None>
+    <None Update="FecharAtendimento\FecharAtenAgrupado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FecharAtenAgrupado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FecharAtendimento\FecharAtendimento.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FecharAtendimento.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="FecharAtendimento\FecharAtendimento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FecharAtendimento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Pacote\CriacaoPacote.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>CriacaoPacote.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Pacote\ManutencaoPacore.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ManutencaoPacore.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Pacote\Pacote.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Pacote.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Pacote\PacoteSaldo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PacoteSaldo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Pacote\PacoteServico.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PacoteServico.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Pacote\PacoteVacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PacoteVacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\AnimalTutor.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AnimalTutor.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\AtedimentoAnimal.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AtedimentoAnimal.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\AtendimentoDetalhe.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AtendimentoDetalhe.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\BuscaAgenda.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaAgenda.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\BuscaAgendaProfissional.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaAgendaProfissional.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\PacoteServico.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PacoteServico.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\PacoteVacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PacoteVacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\ProfissionaEstetica.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ProfissionaEstetica.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\ProfissionalAgenda.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ProfissionalAgenda.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\ProfissionalSaude.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ProfissionalSaude.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Raca.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Raca.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Servico.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Servico.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Vacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\Comissao\Comissao.dsrpt">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Comissao.RPT.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\Comissao\Comissao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Comissao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\FichaHigiene.dsrpt">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FIchaHigiene.RPT.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\Receita\Receita.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Receita.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\Receita\ReceitaNormal.dsrpt">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ReceitaNormal.RPT.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\RPTTest.dsrpt">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>RPTTest.RPT.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\Servico\Acerto.dsrpt">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Acerto.RPT.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\Servico\Atendimento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Atendimento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="RPTs\Servico\Profissional.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Profissional.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Tutor\Animal.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Animal.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Tutor\Tutor.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Tutor.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Tutor\Tutor.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Tutor.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="VisaoGeral\Aniversario.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Aniversario.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="VisaoGeral\Estetica.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Estetica.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="VisaoGeral\Retirada.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Retirada.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="VisaoGeral\Saude.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Saude.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="VisaoGeral\TaxiPET.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>TaxiPET.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="VisaoGeral\VisaoGeral.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>VisaoGeral.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="VisaoGeral\VisaoGeral.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>VisaoGeral.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <XModule ID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82" iID="590218" Name="Projecao.Core.PET" Title="PET" />
+  </ProjectExtensions>
+</Project>

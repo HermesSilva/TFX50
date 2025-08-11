@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
+using TFX.Core.Cache;
 
 namespace TFX.Core.Journal
 {

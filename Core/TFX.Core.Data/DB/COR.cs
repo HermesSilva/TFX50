@@ -21,6 +21,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "CEP Geral")]
             [MaxLength(8)]
             public String CEPGeral {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeID, typeof(Int32).GetDefault());
             [Display(Name = "Localidade")]
             [Required()]
             [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -28,7 +29,7 @@ namespace TFX.Core.Data.DB
             [Display(Name = "Tipo de Localidade")]
             [Required()]
             public Int16 CEPxLocalidadeTipoID {get; set;}
-            [Display(Name = "Municipio")]
+            [Display(Name = "Município")]
             [Required()]
             public Int32 CEPxMunicipioID {get; set;}
             [Display(Name = "Unidade Federativa")]
@@ -574,13 +575,16 @@ namespace TFX.Core.Data.DB
                 ett.Property(d => d.CEPxLocalidadeID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
+                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
                     .HasDefaultValue(GetDBValue("String", null));
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
-                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade", t => t.ExcludeFromMigrations());
+
+                ett.HasIndex(e => new { e.CEPxUFID, e.Nome })
+                    .HasDatabaseName("IX_4A9B3534_DFB0_4E42_AA40_F5A8171D216C");
             });
         }
 

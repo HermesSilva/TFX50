@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{A72CBF98-D280-44D3-B14A-8C0329C62035}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASETest</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Projecao.Core.CEP.Test.dsmdl" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <Compile Include="Projecao.Core.CEP.Test.Module.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.CEP.Test.dsmdl</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Projecao.Core.CEP.Test.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.CEP.Test.Module.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\TFX.Core.Test.Setup\TFX.Core.Test.Setup.csproj" />
+    <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
+  </ItemGroup>
+
+</Project>

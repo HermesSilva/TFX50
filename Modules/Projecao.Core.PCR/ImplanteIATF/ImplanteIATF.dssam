@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner ID="A97F11B5-5043-4270-813D-C9E5D0EE8A87" Name="ImplanteIATF" ModuleID="02C4E7C5-1B4F-43DB-AC6C-CD36BBE428B7">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">ImplanteIATF</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">D44F2247-A18D-44F2-9A9B-0435B7C110F9|7A839462-77A0-448D-A289-B15A5871D39B|D8BB5821-0B90-4857-8858-8D6E155ADD3E|9DCF8E12-7D1C-41C3-A48D-5E7DC63B4F74|0367D864-FDFC-4531-9AD0-E3452C9EA826|CD675504-3C58-4303-AB40-4D70883163C1|E7933423-9762-4B12-8DC6-D7132F55EF06|2F05017C-F756-46C2-B519-E340D7681978|C5DC35EA-6978-4BEC-8F53-98D627A85991|9C8ECE87-56CC-4D96-A945-BDDC7C61417B</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">F267B1E0-25A9-4E08-A8B6-1C133C798320</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=329;Height=150}</XData>
+    <XLinkArrayData Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F" Type="Guid[]">
+      <XLinkData ID="39EACEFA-53C7-4B09-B9B1-3AFE5CF854CF" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="6">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+      <XLinkData ID="9F3D590B-9AA6-4F61-A908-6B4D7C0F8BE0" ElementID="110EDF00-7E45-4C68-982D-CCB06158B372" Text="Restaurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="5" Order="5">110EDF00-7E45-4C68-982D-CCB06158B372</XLinkData>
+      <XLinkData ID="779E3FF4-FB6D-4107-8D4B-F589C25E5497" ElementID="D013D072-622A-4CDF-A966-C0F3622A0F37" Text="Inativar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="4" Order="3">D013D072-622A-4CDF-A966-C0F3622A0F37</XLinkData>
+      <XLinkData ID="7E14B45E-BC3B-4132-86A1-6D5A86AF785A" ElementID="880441F4-6E3A-4581-9228-32D8CE030C4E" Text="Configurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="6" Order="2">880441F4-6E3A-4581-9228-32D8CE030C4E</XLinkData>
+      <XLinkData ID="A81AF423-2BC4-4ED7-93A3-E1521275E66B" ElementID="FAB09927-CDE5-4B3E-87A5-96CA5DB6B839" Text="Incluir" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="4">FAB09927-CDE5-4B3E-87A5-96CA5DB6B839</XLinkData>
+      <XLinkData ID="A3EF8B08-9363-43F2-AA23-24F22F5ACEF6" ElementID="E3CE9D50-305A-4583-81BD-90BC5872AB50" Text="Alterar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="3" Order="1">E3CE9D50-305A-4583-81BD-90BC5872AB50</XLinkData>
+    </XLinkArrayData>
+    <XLinkData Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" Type="Guid" ElementID="6C4EF0B1-7D06-4A02-A93A-57DB6BEA424F" Text="ImplanteIATF - (Projecao.Core.PCR.ImplanteIATF)" DocumentID="6C4EF0B1-7D06-4A02-A93A-57DB6BEA424F" DocumentName="ImplanteIATF" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">6C4EF0B1-7D06-4A02-A93A-57DB6BEA424F</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XStartAction">DataGrid</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Cadastro de Implantes para IATF</XLanguage>
+    </XData>
+    <XLinkArrayData Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650" Type="Guid[]">
+      <XLinkData ID="13C7092C-C0CA-4F06-A1D2-1A2C8C6EA42A" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="2">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+      <XLinkData ID="BC7D16C7-E4C2-4E1F-9606-F5F02112D869" ElementID="5AEAF9CA-696A-4F72-8522-30399BC74157" Text="Administração da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="1">5AEAF9CA-696A-4F72-8522-30399BC74157</XLinkData>
+    </XLinkArrayData>
+    <XData Name="UserLevel" ID="C4A75429-E512-4D19-A007-C985053C5C97" Type="XUserlevel">User</XData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="7DE2C647-C4F8-4366-BF20-712A30520708" ElementID="E4748125-5A30-49A9-9D1F-70EDF422D0F9" Text="Controle de Rebanho" DocumentID="6DBB562A-5705-4031-BFEF-ED55908FB5F4" DocumentName="PCRx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="19" Order="1">E4748125-5A30-49A9-9D1F-70EDF422D0F9</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="E356EC5C-1CD6-4008-9CAE-217D9AF5BD38" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSAMActivity ID="C86B66A3-5AA0-4708-BD3A-582E1E254354" Name="ImplanteIATFACT">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=74;Height=72}</XData>
+    </XValues>
+    <XFRMDesigner ID="3AE9F52F-44A9-44ED-B182-ECBDD7DFE37B" Name="ImplanteIATF">
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">87AAC74F-C570-402C-B52E-93C8441C79AC</XData>
+      </XValues>
+      <XFRMForm Name="T" ID="E7407264-E0E2-4079-B881-389300EDBFC6">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=965;Height=678}</XData>
+        </XValues>
+        <XFRMField ID="D3B8AD63-FC04-450B-8F0F-FBE18CB7ADDC" ParentID="FA848779-F12E-46FC-B6C5-EA1210D69C28">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="FA848779-F12E-46FC-B6C5-EA1210D69C28" Text="ISExItem.Nome" DocumentID="6C4EF0B1-7D06-4A02-A93A-57DB6BEA424F" DocumentName="ImplanteIATF" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">FA848779-F12E-46FC-B6C5-EA1210D69C28</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=907;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="C422C019-D9AA-43D3-86E1-262B12EA4DA2" ParentID="AC09282D-F1F4-4610-9DBC-80CC723CE735">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AC09282D-F1F4-4610-9DBC-80CC723CE735" Text="ISExItem.ISExItemID" DocumentID="6C4EF0B1-7D06-4A02-A93A-57DB6BEA424F" DocumentName="ImplanteIATF" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">AC09282D-F1F4-4610-9DBC-80CC723CE735</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=50;Width=907;Height=500}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="816D853E-C65F-48D6-BE72-C0DABC7DC0CB" Text="VacinaLote - (Projecao.Core.PCR.Vacina)" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">816D853E-C65F-48D6-BE72-C0DABC7DC0CB</XLinkData>
+            <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+          </XValues>
+          <XFRMDesigner ID="731B0A1E-4941-44F5-B1F2-F3BA9B140258" Name="ISExItemID">
+            <XFRMForm Name="T" ID="318C1A0C-C076-42F7-8D47-CD0EB371D647">
+              <XValues>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=478;Height=54}</XData>
+              </XValues>
+              <XFRMField ID="1D4B2972-BC1D-4C8D-986D-4C2E83F7E1FB" ParentID="FAC71B57-2CE2-464F-9FCF-89E8262E26D8">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="FAC71B57-2CE2-464F-9FCF-89E8262E26D8" Text="ISExLote.Numero" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">FAC71B57-2CE2-464F-9FCF-89E8262E26D8</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">14</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=209.125;Height=50}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="8873198E-11FA-4DAC-89D7-8F85ED989C91" ParentID="D4DA716C-DF95-4BC8-9ABF-FB7538403F27">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="D4DA716C-DF95-4BC8-9ABF-FB7538403F27" Text="ISExLote.Validade" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">D4DA716C-DF95-4BC8-9ABF-FB7538403F27</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=343.5625;Y=0;Width=134.4375;Height=50}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="50FB42B9-ADAF-4379-B5B3-B429F9D8FB68" ParentID="C7394544-4044-4CB4-8368-B960540FEBAA">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C7394544-4044-4CB4-8368-B960540FEBAA" Text="ISExLote.Fabricacao" DocumentID="BAF5114F-BDEF-4E0B-9B63-545C6E439252" DocumentName="VacinaLote" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">C7394544-4044-4CB4-8368-B960540FEBAA</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=209.125;Y=0;Width=134.4375;Height=50}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+                </XValues>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Lotes do Implante para IATF</XLanguage>
+              </XData>
+              <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=102;Y=136;Width=478;Height=54}</XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">91127990-5CC3-4B29-82AD-F3593D05EF1E</XData>
+            </XValues>
+          </XFRMDesigner>
+        </XFRMField>
+      </XFRMForm>
+    </XFRMDesigner>
+  </XSAMActivity>
+</XSAMDesigner>

@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{EEC86D07-CC6A-40E5-B155-85B6395A9754}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Linux|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Projecao.Core.ISE.dsmdl" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+
+    <Compile Include="Comissao\Comissao.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Comissao.dssvc</DependentUpon>
+    </Compile>
+
+    <Compile Include="Comissao\Comissao.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Comissao.dssam</DependentUpon>
+    </Compile>
+
+    <Compile Include="Comissao\Comissao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Comissao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+
+    <Compile Include="Comissao\ComissaoGrupo.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ComissaoGrupo.dssvc</DependentUpon>
+    </Compile>
+
+    <Compile Include="Comissao\ComissaoGrupo.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ComissaoGrupo.dssam</DependentUpon>
+    </Compile>
+
+    <Compile Include="Comissao\ComissaoGrupo.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ComissaoGrupo.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+
+    <Compile Include="Comissao\ComissaoServico.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ComissaoServico.dssam</DependentUpon>
+    </Compile>
+
+    <Compile Include="PegaPreco.cs" />
+
+    <Compile Include="Projecao.Core.ISE.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.ISE.dsmdl</DependentUpon>
+    </Compile>
+
+    <Compile Include="DB\CSTx.ORM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CSTx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+
+    <Compile Include="DB\ISEx.ORM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ISEx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+
+    <Compile Include="Itens\ItemCategoria.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ItemCategoria.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+
+    <Compile Include="Itens\ItemCategoria.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ItemCategoria.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\ComissaoEmpresa.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ComissaoEmpresa.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Exame.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Exame.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Exame.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Exame.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Grupo.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Grupo.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Itens.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Itens.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Itens.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Itens.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Linha.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Linha.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Marca.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Marca.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\ModeloCaculo.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ModeloCaculo.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Produto.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Produto.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Produto.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Produto.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Promocao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Promocao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Servicos.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Servicos.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Servicos.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Servicos.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Content Include="Projecao.Core.ISE.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.ISE.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.2.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj" />
+    <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="DB\ISEx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ISEx.dsorm</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Comissao\Comissao.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Comissao.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Comissao\Comissao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Comissao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Comissao\ComissaoGrupo.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ComissaoGrupo.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Comissao\ComissaoGrupo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ComissaoGrupo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Comissao\ComissaoServico.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ComissaoServico.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Comissao\ComissãoServico.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ComissãoServico.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="DB\CSTx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>CSTx.ORM.cs</LastGenOutput>
+    </None>
+    <None Update="DB\ISEx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ISEx.ORM.cs</LastGenOutput>
+    </None>
+    <None Update="Itens\ItemCategoria.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ItemCategoria.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Itens\ItemCategoria.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ItemCategoria.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\ComissaoEmpresa.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ComissaoEmpresa.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Exame.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Exame.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Grupo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Grupo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Itens.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Itens.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Linha.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Linha.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Marca.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Marca.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\ModeloCaculo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ModeloCaculo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Produto.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Produto.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Promocao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Promocao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Servico.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Servico.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Servicos.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Servicos.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Vacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacina.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Update="Comissao\Comissao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Comissao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Comissao\ComissaoGrupo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ComissaoGrupo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="DB\CSTx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>CSTx.dsorm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Itens\ItemCategoria.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ItemCategoria.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Itens\ItemCategoria.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ItemCategoria.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\ComissaoEmpresa.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ComissaoEmpresa.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Exame.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Exame.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Grupo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Grupo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Itens.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Itens.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Linha.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Linha.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Marca.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Marca.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\ModeloCaculo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ModeloCaculo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Produto.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Produto.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Promocao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Promocao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Servico.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Servico.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Servicos.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Servicos.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Vacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+</Project>

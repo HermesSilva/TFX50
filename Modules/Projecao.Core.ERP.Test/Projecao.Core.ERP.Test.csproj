@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{7C89AE48-4AAD-4EF1-A75A-4EC2CF739990}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASETest</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyVersion>4.1.1.6666</AssemblyVersion>
+    <FileVersion>4.1.1.6666</FileVersion>
+    <Version>4.1.1.6666</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Empresa\Empresa.SAM.Tootega.Test.dscit" />
+    <None Remove="Profissional\Profissional.SAM.Ana_Clara.Test.dscit" />
+    <None Remove="Projecao.Core.ERP.Test.dsmdl" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <Compile Include="Empresa\Empresa.SAM.Tootega.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Empresa.SAM.Tootega.Test.dscit</DependentUpon>
+    </Compile>
+
+    <Compile Include="Empresa\Empresa.SAM.Tootega.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Empresa.SAM.Tootega.Test.dscit</DependentUpon>
+    </Compile>
+
+    <Compile Include="GerenciaEmpresa\GerenciaEmpresa.SAM.Tootega.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GerenciaEmpresa.SAM.Tootega.Test.dscit</DependentUpon>
+    </Compile>
+
+    <Compile Include="GerenciaEmpresa\GerenciaEmpresa.SAM.Tootega.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>GerenciaEmpresa.SAM.Tootega.Test.dscit</DependentUpon>
+    </Compile>
+
+    <Compile Include="Profissional\Profissional.SAM.Ana_Clara.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Profissional.SAM.Ana_Clara.Test.dscit</DependentUpon>
+    </Compile>
+
+    <Compile Include="Profissional\Profissional.SAM.Ana_Clara.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Profissional.SAM.Ana_Clara.Test.dscit</DependentUpon>
+    </Compile>
+
+    <Compile Include="Projecao.Core.ERP.Test.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.ERP.Test.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Empresa\Empresa.SAM.Tootega.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Empresa.SAM.Tootega.Test.CIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Profissional\Profissional.SAM.Ana_Clara.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Profissional.SAM.Ana_Clara.Test.CIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Projecao.Core.ERP.Test.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.ERP.Test.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj">
+      <Private>False</Private>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+      <Private>False</Private>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj">
+      <Private>False</Private>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\Test\TFX.CIT.Core\TFX.CIT.Core.csproj">
+      <Private>False</Private>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj">
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <Private>False</Private>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj">
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <Private>False</Private>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="GerenciaEmpresa\GerenciaEmpresa.SAM.Tootega.Test.dscit">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>GerenciaEmpresa.SAM.Tootega.Test.CIT.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+
+</Project>

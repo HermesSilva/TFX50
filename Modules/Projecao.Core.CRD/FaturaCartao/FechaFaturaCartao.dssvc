@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSVCDesigner Name="FechaFaturaCartao" ID="A2F9A27E-A463-43DB-BA07-EB79DAB8F520" iID="531685" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+  <XValues>
+    <XLinkData Type="Guid" Name="MasterTableID" ID="EF08410B-53DF-4BE7-9191-796BC9F823B9" ElementID="00000000-0000-0000-0000-000000000000" Text="" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">00000000-0000-0000-0000-000000000000</XLinkData>
+    <XData Name="Type" ID="760FAE3B-718E-4839-921F-292800986ECB" Type="XServiceType">Utility</XData>
+    <XData Name="HPCDataID" ID="B568A34D-9643-4639-A4BF-3E16D9BEC466" Type="Int32">597329</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">956AF27A-B4FC-4A15-835B-BD484E292D9C</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=450;Height=252}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Fecha Fatura de Cartões</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">FaturaCartao</XData>
+    <XData Name="ConfigID" ID="1B728749-8544-4FEA-9A7D-B6279B6398FC" Type="Guid">7B7DEBDB-B201-4DA2-B580-3D5163913DCB</XData>
+    <XData Name="ConfigID" ID="70591062-3DC1-4E07-B35B-F5C1EF6B2D4C" Type="Guid">E016CC4F-2B63-41AD-A356-96E6738AEFC5</XData>
+    <XLinkArrayData Name="Rights" ID="D989F6D3-5963-4010-A848-67A186EE6286" Type="Guid[]">
+      <XLinkData ID="D6F35820-E0BC-40EB-9E7D-290004F2C211" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSVCResultSet Name="ResultSet" ID="0BEFAEE3-CB6A-4070-80D9-668D5751516D" iID="531689">
+    <XValues>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=165;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">ResultSet</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField ID="D7E64688-129C-4DAE-9F81-A35F02AD734F" iID="531803" ParentID="28FF86A2-3C95-4072-ACBF-31A9371CBB04">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="28FF86A2-3C95-4072-ACBF-31A9371CBB04" Text="ConvenioID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechaFaturaCartao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">28FF86A2-3C95-4072-ACBF-31A9371CBB04</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">true</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="A2730825-6502-46AC-B222-9E950746CA1D" iID="535817" ParentID="9219C8F7-7BED-4B85-AF6F-42F9B6421B59">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="9219C8F7-7BED-4B85-AF6F-42F9B6421B59" Text="Inicio" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechaFaturaCartao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">9219C8F7-7BED-4B85-AF6F-42F9B6421B59</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">36</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=36;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="FD3EBFEC-3EA2-4F45-B7BE-0D91D22B4A2B" iID="535819" ParentID="69F2A19B-7333-42B8-B4D0-FDCC59E7CF60">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="69F2A19B-7333-42B8-B4D0-FDCC59E7CF60" Text="Fim" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechaFaturaCartao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">69F2A19B-7333-42B8-B4D0-FDCC59E7CF60</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">54</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=54;Width=10;Height=18}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCResultSet>
+  <XSVCUserFields Name="UserFields" ID="A2DC236F-8D47-487E-87F6-009E25DD5212" iID="531690">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=64}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Parameters</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCUserField Name="ConvenioID" ID="28FF86A2-3C95-4072-ACBF-31A9371CBB04" iID="531802">
+      <XValues>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">ADD41C4D-6BB4-49A6-856E-4CAA566DEBC2</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Convênio</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField Name="Inicio" ID="9219C8F7-7BED-4B85-AF6F-42F9B6421B59" iID="535816">
+      <XValues>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">6C9A2A8B-8418-4475-96DF-51F18B29F381</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=28;Width=12;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Início</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField Name="Fim" ID="69F2A19B-7333-42B8-B4D0-FDCC59E7CF60" iID="535818">
+      <XValues>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">6C9A2A8B-8418-4475-96DF-51F18B29F381</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=18;Width=12;Height=18}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Fim</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCUserField>
+  </XSVCUserFields>
+  <XFRMDesigner Name="FechaFaturaCartaoFilter" ID="F2EE913E-5535-4868-9A77-286425DDE646" iID="531693" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+    <XFRMForm ID="A92A48BC-5BE9-4CFD-9E6A-0483C164839A" Name="FechaFaturaCartaoFilter">
+      <XValues>
+        <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=250;Height=92}</XData>
+        <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Fecha Fatura de Cartões - Filtro</XLanguage>
+        </XData>
+      </XValues>
+    </XFRMForm>
+    <XValues>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">AB85E682-FEEB-43A5-B440-A2D721611761</XData>
+    </XValues>
+  </XFRMDesigner>
+  <XSVCDataView Name="DataView" ID="874F386D-D257-44CD-BF6C-CEF432F52D04" iID="531709">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">DataView</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCDataView>
+  <XSVCOrderBy Name="OrderBy" ID="709E0C0E-DC0C-4D98-BA89-005D44107452" iID="531710">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">OrderBy</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCOrderBy>
+  <XSVCWhere Name="Where" ID="E1580A03-9FBA-46A7-9CBC-7AB753FD02F4" iID="594046">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Where</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCWhere>
+</XSVCDesigner>

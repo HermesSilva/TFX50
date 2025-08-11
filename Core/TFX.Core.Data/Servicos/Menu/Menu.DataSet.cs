@@ -26,9 +26,18 @@ namespace TFX.Core.Data.Servicos.Menu
         public MenuServiceModel()
         {
             SearchPath = "Menu/Search";
-            DataView.Columns.Add(new XColumnModel() { Name = "Menu", Title = "Menu", Type = "String" });
-            DataView.Columns.Add(new XColumnModel() { Name = "Item", Title = "Item", Type = "String" });
-            DataView.Columns.Add(new XColumnModel() { Name = "Icone", Title = "Ícone", Type = "String" });
+            DataView.Columns.Add(new XColumnModel() { Name = "Menu", Title = "Menu", Type = "String", Mask = "", 
+                                                      Visible = true });
+            DataView.Columns.Add(new XColumnModel() { Name = "Icone", Title = "Ícone", Type = "String", Mask = "", 
+                                                      Visible = true });
+            DataView.Columns.Add(new XColumnModel() { Name = "Item", Title = "Item", Type = "String", Mask = "", 
+                                                      Visible = true });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxMenuItemID", Title = "Item de Menu", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxRecursoID", Title = "Recurso", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxMenuID", Title = "Menu", Type = "Guid", Mask = "", 
+                                                      Visible = false });
         }
     }
     public class AppData : XEndPointData

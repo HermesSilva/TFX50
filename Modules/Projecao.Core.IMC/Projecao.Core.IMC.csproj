@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{B5719F18-5B54-4C52-8787-980D33E480F5}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>$(ObjPath)\$(ProjectName)\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>$(ObjPath)\$(ProjectName)\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Chat\Chat.SVC.ts" />
+    <None Remove="DB\IMCx.ORM.ts" />
+    <None Remove="Mensagens\IntegraMensagens.SVC.ts" />
+    <None Remove="Mensagens\Mensagens.SVC.ts" />
+    <None Remove="Projecao.Core.IMC.dsmdl" />
+    <None Remove="Servico\AtualizaTwilio.SVC.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Chat\Chat.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Chat.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Chat\Chat.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Chat.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\IMCx.ORM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IMCx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Mensagens\IntegraMensagens.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Mensagens.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagens\IntegraMensagens.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Mensagens.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Mensagens\Mensagens.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Mensagens.dssam</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagens\Mensagens.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Mensagens.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Mensagens\XMessageBroker.cs" />
+    <Compile Include="Projecao.Core.IMC.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Projecao.Core.IMC.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Projecao.Core.IMC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.IMC.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="Servico\AtualizaTwilio.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AtualizaTwilio.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Servico\AtualizaTwilio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AtualizaTwilio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Utils\XTwilioHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Projecao.Core.IMC.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.IMC.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Twilio.AspNet.Common" Version="8.0.2" />
+    <PackageReference Include="Twilio.AspNet.Core" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <IncludeAssets>No</IncludeAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj">
+      <Private>False</Private>
+      <IncludeAssets>No</IncludeAssets>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj">
+      <Private>False</Private>
+      <IncludeAssets>No</IncludeAssets>
+      <PrivateAssets>Yes</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="Chat\Chat.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Chat.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="DB\IMCx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IMCx.dsorm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Mensagens\IntegraMensagens.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Mensagens.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Mensagens\Mensagens.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Mensagens.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Servico\AtualizaTwilio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AtualizaTwilio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Chat\Chat.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Chat.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="DB\IMCx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IMCx.ORM.cs</LastGenOutput>
+    </None>
+    <None Update="Mensagens\IntegraMensagens.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IntegraMensagens.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Mensagens\Mensagens.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Mensagens.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Mensagens\Mensagens.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Mensagens.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Servico\AtualizaTwilio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AtualizaTwilio.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

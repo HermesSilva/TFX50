@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <ProjectGUID>fa1f36e1-a70a-40d3-b312-d11efde16118</ProjectGUID>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Linux|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Sincronizacao\**" />
+    <EmbeddedResource Remove="Sincronizacao\**" />
+    <None Remove="Sincronizacao\**" />
+    <TypeScriptCompile Remove="Sincronizacao\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Itens.csv" />
+    <None Remove="Projecao.Core.ITG.dsmdl" />
+    <None Remove="Utilitarios\AtualizaIntegracao.SVC.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Envio\EnviaUsuario.cs" />
+    <Compile Include="Envio\UsuariosTable.cs" />
+    <Compile Include="Envio\ControleTable.cs" />
+    <Compile Include="Envio\EnviaControle.cs" />
+    <Compile Include="Envio\ItemPedidoTable.cs" />
+    <Compile Include="Envio\MensagemTable.cs" />
+    <Compile Include="Envio\PedidoTable.cs" />
+    <Compile Include="Envio\EnviaCliente.cs" />
+    <Compile Include="Envio\EnviaDesconto.cs" />
+    <Compile Include="Envio\EnviaDescontoDetalhe.cs" />
+    <Compile Include="Envio\XEnvios.cs" />
+    <Compile Include="Envio\ClientesTable.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_CADASTROS.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_GRUPOPROD.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_LINHA.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_MARCAS.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_PRODUTOS.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_PRODUTOS_CAMPOS_EMPRESAS.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_PROMOCAO.cs" />
+    <Compile Include="Integracao\Tabelas\FAT_PROMOCAOITEM.cs" />
+    <Compile Include="Integracao\XBaseIntegracaoTabela.cs" />
+    <Compile Include="Integracao\XGerenciaIntegracao.cs" />
+    <Compile Include="Jobs\IntegracaoLegado.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>IntegracaoLegado.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Jobs\IntegracaoLegado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IntegracaoLegado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Projecao.Core.ITG.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.ITG.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Projecao.Core.ITG.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Projecao.Core.ITG.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="Recebe\RecebeCliente.cs" />
+    <Compile Include="Recebe\RecebeDados.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>RecebeDados.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Recebe\RecebeDados.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RecebeDados.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Recebe\RecebeControle.cs" />
+    <Compile Include="Recebe\RecebeDesconto.cs" />
+    <Compile Include="Recebe\RecebeDescontoDetalhe.cs" />
+    <Compile Include="Recebe\RecebeUsuario.cs" />
+    <Compile Include="RI\XReverseIntegration.cs" />
+    <Compile Include="Sincronizacao\ConcluiAtendimento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ConcluiAtendimento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Sincronizacao\ConcluiAtendimento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConcluiAtendimento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Sincronizacao\SincAtendimento.cs" />
+    <Compile Include="Recebe\XClientMessageRule.cs" />
+    <Compile Include="Sincronizacao\XSincronize.cs" />
+    <Compile Include="Utilitarios\AtualizaIntegracao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AtualizaIntegracao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="XIntegrationManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projecao.Core.ITG.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.ITG.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Itens.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sincronizacao\ConcluiAtendimento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConcluiAtendimento.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.2.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj"> 
+         <Private>False</Private> 
+         <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies> 
+         <PrivateAssets>Yes</PrivateAssets> 
+         <IncludeAssets>No</IncludeAssets> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj"> 
+         <Private>False</Private> 
+         <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+         <IncludeAssets>No</IncludeAssets> 
+         <PrivateAssets>Yes</PrivateAssets> 
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj"> 
+         <Private>False</Private> 
+         <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies> 
+         <PrivateAssets>Yes</PrivateAssets> 
+         <IncludeAssets>No</IncludeAssets> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+     </ProjectReference> 
+     <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj">
+       <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+       <Private>False</Private>
+     </ProjectReference> 
+     <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj">
+       <Private>False</Private>
+     </ProjectReference> 
+     <ProjectReference Include="..\Projecao.Core.IMC\Projecao.Core.IMC.csproj">
+       <Private>False</Private>
+       <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+     </ProjectReference> 
+     <ProjectReference Include="..\Projecao.Core.ISE\Projecao.Core.ISE.csproj">
+       <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+       <Private>False</Private>
+     </ProjectReference> 
+     <ProjectReference Include="..\Projecao.Core.LGC\Projecao.Core.LGC.csproj">
+       <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+       <Private>False</Private>
+     </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.PET\Projecao.Core.PET.csproj">
+         <Private>False</Private> 
+         <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies> 
+     </ProjectReference> 
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Sincronizacao\ConcluiAtendimento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConcluiAtendimento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Utilitarios\AtualizaIntegracao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AtualizaIntegracao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Jobs\IntegracaoLegado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IntegracaoLegado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Jobs\IntegracaoMensagem.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IntegracaoMensagem.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Recebe\RecebeDados.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>RecebeDados.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Utilitarios\AtualizaIntegracao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AtualizaIntegracao.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="Jobs\IntegracaoLegado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IntegracaoLegado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Jobs\IntegracaoMensagem.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IntegracaoMensagem.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Recebe\RecebeDados.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>RecebeDados.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ProjectExtensions>
+    <XModule ID="FA1F36E1-A70A-40D3-B312-D11EFDE16118" iID="529157" Name="Projecao.Core.ITG" Title="Integração" />
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <ProjectGUID>5710baec-e5cb-4087-bd1d-402b0a77a1f5</ProjectGUID>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Linux|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Projecao.Core.LGC.dsmdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\XLegacyManager.cs" />
+    <Compile Include="DB\XLegacyTable.cs" />
+    <Compile Include="DB\XOracleFieldLegacyFields.cs" />
+    <Compile Include="DB\XOracleLegacyDBReverse.cs" />
+    <Compile Include="Projecao.Core.LGC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.LGC.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projecao.Core.LGC.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.LGC.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+         <IncludeAssets>No</IncludeAssets> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+         <PrivateAssets>Yes</PrivateAssets> 
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+         <IncludeAssets>No</IncludeAssets> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+         <PrivateAssets>Yes</PrivateAssets> 
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+         <IncludeAssets>No</IncludeAssets> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+         <PrivateAssets>Yes</PrivateAssets> 
+     </ProjectReference> 
+  </ItemGroup>
+  <ProjectExtensions>
+    <XModule ID="5710BAEC-E5CB-4087-BD1D-402B0A77A1F5" iID="622740" Name="Projecao.Core.LGC" Title="Legacy" />
+  </ProjectExtensions>
+</Project>

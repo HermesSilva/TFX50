@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>ebb5930c-9a21-4ab6-993e-b86f40039784</ProjectGUID>
+    <DASEProjectGUID>530e397c-fe3a-4736-a5ef-937a65125541</DASEProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Linux|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Modelo\**" />
+    <EmbeddedResource Remove="Modelo\**" />
+    <None Remove="Modelo\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Projecao.Core.CRD.dsmdl" />
+    <None Remove="AutomatedService\FechamentoFatura.SVC.ts" />
+    <None Remove="AutorizacaoWEB\Autorizacao.SAM.ts" />
+    <None Remove="AutorizacaoWEB\Autorizacao.SVC.ts" />
+    <None Remove="AutorizacaoWEB\AutorizacaoWEB.SAM.ts" />
+    <None Remove="AutorizacaoWEB\AutorizacaoWEB.SVC.ts" />
+    <None Remove="Cartao\Cartao.SAM.ts" />
+    <None Remove="Cartao\Cartao.SVC.ts" />
+    <None Remove="ConsultaAutorizacao\ConsultaAutorizacao.SAM.ts" />
+    <None Remove="ConsultaAutorizacao\ConsultaAutorizacao.SVC.ts" />
+    <None Remove="Conveniado\Conveniado.SAM.ts" />
+    <None Remove="Conveniado\Conveniado.SVC.ts" />
+    <None Remove="Convenio\Convenio.SAM.ts" />
+    <None Remove="Convenio\Convenio.SVC.ts" />
+    <None Remove="Convenio\EmpresasPermitidas.SVC.ts" />
+    <None Remove="Convenio\Importacao\Importacao.SAM.ts" />
+    <None Remove="Convenio\Importacao\Importacao.SVC.ts" />
+    <None Remove="DB\CRDx.ORM.ts" />
+    <None Remove="FaturaCartao\FaturaCartao.SAM.ts" />
+    <None Remove="FaturaCartao\FaturaCartao.SVC.ts" />
+    <None Remove="FaturaCartao\FaturaConvenio.SVC.ts" />
+    <None Remove="FaturaCartao\FechaFaturaCartao.SVC.ts" />
+    <None Remove="FaturaFranqueado\BuscaFaturaFranqueado.SVC.ts" />
+    <None Remove="FaturaFranqueado\FaturaFranqueado.SAM.ts" />
+    <None Remove="FaturaFranqueado\FaturaFranqueado.SVC.ts" />
+    <None Remove="FaturaFranqueado\FechaFaturaFranqueado.SVC.ts" />
+    <None Remove="FaturaFranqueado\VendaFranqueado.SVC.ts" />
+    <None Remove="FechaFaturaConvenio\BuscaConvenio.SVC.ts" />
+    <None Remove="FechaFaturaConvenio\FechaFaturaConvenio.SAM.ts" />
+    <None Remove="FechaFaturaConvenio\FechaFaturaConvenio.SVC.ts" />
+    <None Remove="FechaFaturaFraqueado\BuscaFranqueado.SVC.ts" />
+    <None Remove="FechaFaturaFraqueado\FechaFaturaFranqueado.SAM.ts" />
+    <None Remove="FechaFaturaFraqueado\FechaFaturaFranqueado.SVC.ts" />
+    <None Remove="GrupoDesconto\ConvenioEmpresa.SVC.ts" />
+    <None Remove="GrupoDesconto\GrupoDesconto.SAM.ts" />
+    <None Remove="GrupoDesconto\GrupoDesconto.SVC.ts" />
+    <None Remove="LocalizaConveniado\LocalizaConveniado.SAM.ts" />
+    <None Remove="LocalizaConveniado\LocalizaConveniado.SVC.ts" />
+    <None Remove="PontoVenda\PontoVenda.SAM.ts" />
+    <None Remove="PontoVenda\PontoVenda.SVC.ts" />
+    <None Remove="ReadOnly\BuscaCartao.SVC.ts" />
+    <None Remove="ReadOnly\BuscaConvenio.SVC.ts" />
+    <None Remove="ReadOnly\BuscaFranqueado.SVC.ts" />
+    <None Remove="ReadOnly\BuscaGrupo.SVC.ts" />
+    <None Remove="ReadOnly\Cartao.SVC.ts" />
+    <None Remove="ReadOnly\Conveniado.SVC.ts" />
+    <None Remove="ReadOnly\Convenio.SVC.ts" />
+    <None Remove="ReadOnly\Franqueado.SVC.ts" />
+    <None Remove="Relatorios\AutorizacaoConvenio\Conveniado.SVC.ts" />
+    <None Remove="Relatorios\AutorizacaoConvenio\Convenio.SVC.ts" />
+    <None Remove="Relatorios\AutorizacaoConvenio\Vendas.SVC.ts" />
+    <None Remove="Relatorios\AutorizacaoFranqueado\Franqueado.SVC.ts" />
+    <None Remove="Relatorios\AutorizacaoFranqueado\Vendas.SVC.ts" />
+    <None Remove="Relatorios\AutorizacoesSitentico\AutorizacoesSintetico.SVC.ts" />
+    <None Remove="Relatorios\ConvenioConveniados\Conveniados.SVC.ts" />
+    <None Remove="Relatorios\ConvenioConveniados\Convenios.SVC.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Projecao.Core.CRD.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.CRD.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="AutomatedService\FechamentoFatura.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FechamentoFatura.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AutorizacaoWEB\Autorizacao.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Autorizacao.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AutorizacaoWEB\Autorizacao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Autorizacao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AutorizacaoWEB\AutorizacaoWEB.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AutorizacaoWEB.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AutorizacaoWEB\AutorizacaoWEB.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AutorizacaoWEB.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Cartao\Cartao.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cartao.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Cartao\Cartao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cartao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ConsultaAutorizacao\ConsultaAutorizacao.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConsultaAutorizacao.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ConsultaAutorizacao\ConsultaAutorizacao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConsultaAutorizacao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Conveniado\Conveniado.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Conveniado.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Conveniado\Conveniado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Conveniado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Convenio\Convenio.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Convenio.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Convenio\Convenio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Convenio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Convenio\EmpresasPermitidas.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EmpresasPermitidas.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Convenio\Importacao\Importacao.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Importacao.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Convenio\Importacao\Importacao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Importacao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\CRDx.ORM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CRDx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaCartao\FaturaCartao.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FaturaCartao.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaCartao\FaturaCartao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FaturaCartao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaCartao\FaturaConvenio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FaturaConvenio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaCartao\FechaFaturaCartao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FechaFaturaCartao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaFranqueado\BuscaFaturaFranqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaFaturaFranqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaFranqueado\FaturaFranqueado.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FaturaFranqueado.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaFranqueado\FaturaFranqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FaturaFranqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaFranqueado\FechaFaturaFranqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FechaFaturaFranqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FaturaFranqueado\VendaFranqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VendaFranqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FechaFaturaConvenio\BuscaConvenio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaConvenio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FechaFaturaConvenio\FechaFaturaConvenio.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FechaFaturaConvenio.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FechaFaturaConvenio\FechaFaturaConvenio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FechaFaturaConvenio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FechaFaturaFraqueado\BuscaFranqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaFranqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FechaFaturaFraqueado\FechaFaturaFranqueado.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FechaFaturaFranqueado.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="FechaFaturaFraqueado\FechaFaturaFranqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FechaFaturaFranqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="GrupoDesconto\ConvenioEmpresa.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConvenioEmpresa.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="GrupoDesconto\GrupoDesconto.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GrupoDesconto.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="GrupoDesconto\GrupoDesconto.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GrupoDesconto.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="LocalizaConveniado\LocalizaConveniado.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LocalizaConveniado.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="LocalizaConveniado\LocalizaConveniado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LocalizaConveniado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PontoVenda\PontoVenda.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PontoVenda.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PontoVenda\PontoVenda.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PontoVenda.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\BuscaCartao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaCartao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\BuscaConvenio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaConvenio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\BuscaFranqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaFranqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\BuscaGrupo.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaGrupo.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Cartao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Cartao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Conveniado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Conveniado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Convenio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Convenio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Franqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Franqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\AutorizacaoConvenio\Conveniado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Conveniado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\AutorizacaoConvenio\Convenio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Convenio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\AutorizacaoConvenio\Vendas.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vendas.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\AutorizacaoFranqueado\Franqueado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Franqueado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\AutorizacaoFranqueado\Vendas.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vendas.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\AutorizacoesSitentico\AutorizacoesSintetico.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AutorizacoesSintetico.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\ConvenioConveniados\Conveniados.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Conveniados.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Relatorios\ConvenioConveniados\Convenios.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Convenios.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projecao.Core.CRD.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.CRD.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+         <ExcludeAssets>Yes</ExcludeAssets> 
+         <IncludeAssets>No</IncludeAssets> 
+         <PrivateAssets>Yes</PrivateAssets> 
+     </ProjectReference> 
+     <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj"> 
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+     </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj">
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+     </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj">
+         <Private>false</Private> 
+         <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies> 
+     </ProjectReference> 
+    <ProjectReference Include="..\Projecao.Core.ISE\Projecao.Core.ISE.csproj" /> 
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="AutomatedService\FechamentoFatura.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FechamentoFatura.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="AutorizacaoWEB\Autorizacao.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Autorizacao.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="AutorizacaoWEB\Autorizacao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Autorizacao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="AutorizacaoWEB\AutorizacaoWEB.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AutorizacaoWEB.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="AutorizacaoWEB\AutorizacaoWEB.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AutorizacaoWEB.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Cartao\Cartao.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Cartao.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Cartao\Cartao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Cartao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ConsultaAutorizacao\ConsultaAutorizacao.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultaAutorizacao.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ConsultaAutorizacao\ConsultaAutorizacao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConsultaAutorizacao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Conveniado\Conveniado.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Conveniado.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Conveniado\Conveniado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Conveniado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Convenio\Convenio.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Convenio.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Convenio\Convenio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Convenio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Convenio\EmpresasPermitidas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>EmpresasPermitidas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Convenio\Importacao\Importacao.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Importacao.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Convenio\Importacao\Importacao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Importacao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="DB\CRDx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>CRDx.dsorm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaCartao\FaturaCartao.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FaturaCartao.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaCartao\FaturaCartao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FaturaCartao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaCartao\FaturaConvenio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FaturaConvenio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaCartao\FechaFaturaCartao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FechaFaturaCartao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaFranqueado\BuscaFaturaFranqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaFaturaFranqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaFranqueado\FaturaFranqueado.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FaturaFranqueado.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaFranqueado\FaturaFranqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FaturaFranqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaFranqueado\FechaFaturaFranqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FechaFaturaFranqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FaturaFranqueado\VendaFranqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>VendaFranqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FechaFaturaConvenio\BuscaConvenio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaConvenio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FechaFaturaConvenio\FechaFaturaConvenio.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FechaFaturaConvenio.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FechaFaturaConvenio\FechaFaturaConvenio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FechaFaturaConvenio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FechaFaturaFraqueado\BuscaFranqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaFranqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FechaFaturaFraqueado\FechaFaturaFranqueado.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FechaFaturaFranqueado.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="FechaFaturaFraqueado\FechaFaturaFranqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FechaFaturaFranqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="GrupoDesconto\ConvenioEmpresa.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConvenioEmpresa.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="GrupoDesconto\GrupoDesconto.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>GrupoDesconto.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="GrupoDesconto\GrupoDesconto.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>GrupoDesconto.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="LocalizaConveniado\LocalizaConveniado.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>LocalizaConveniado.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="LocalizaConveniado\LocalizaConveniado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>LocalizaConveniado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PontoVenda\PontoVenda.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PontoVenda.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PontoVenda\PontoVenda.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PontoVenda.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\BuscaCartao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaCartao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\BuscaConvenio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaConvenio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\BuscaFranqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaFranqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\BuscaGrupo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaGrupo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Cartao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Cartao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Conveniado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Conveniado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Convenio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Convenio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Franqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Franqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\AutorizacaoConvenio\Conveniado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Conveniado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\AutorizacaoConvenio\Convenio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Convenio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\AutorizacaoConvenio\Vendas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vendas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\AutorizacaoFranqueado\Franqueado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Franqueado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\AutorizacaoFranqueado\Vendas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vendas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\AutorizacoesSitentico\AutorizacoesSintetico.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AutorizacoesSintetico.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\ConvenioConveniados\Conveniados.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Conveniados.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Relatorios\ConvenioConveniados\Convenios.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Convenios.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="AutomatedService\FechamentoFatura.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FechamentoFatura.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="AutorizacaoWEB\Autorizacao.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Autorizacao.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="AutorizacaoWEB\Autorizacao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Autorizacao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="AutorizacaoWEB\AutorizacaoWEB.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AutorizacaoWEB.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="AutorizacaoWEB\AutorizacaoWEB.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AutorizacaoWEB.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Cartao\Cartao.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Cartao.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Cartao\Cartao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Cartao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ConsultaAutorizacao\ConsultaAutorizacao.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultaAutorizacao.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="ConsultaAutorizacao\ConsultaAutorizacao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConsultaAutorizacao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Conveniado\Conveniado.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Conveniado.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Conveniado\Conveniado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Conveniado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Convenio\Convenio.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Convenio.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Convenio\Convenio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Convenio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Convenio\EmpresasPermitidas.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>EmpresasPermitidas.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Convenio\Importacao\Importacao.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Importacao.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Convenio\Importacao\Importacao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Importacao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="DB\CRDx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>CRDx.ORM.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaCartao\FaturaCartao.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FaturaCartao.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaCartao\FaturaCartao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FaturaCartao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaCartao\FaturaConvenio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FaturaConvenio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaCartao\FechaFaturaCartao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FechaFaturaCartao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaFranqueado\BuscaFaturaFranqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaFaturaFranqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaFranqueado\FaturaFranqueado.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FaturaFranqueado.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaFranqueado\FaturaFranqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FaturaFranqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaFranqueado\FechaFaturaFranqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FechaFaturaFranqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FaturaFranqueado\VendaFranqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>VendaFranqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FechaFaturaConvenio\BuscaConvenio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaConvenio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FechaFaturaConvenio\FechaFaturaConvenio.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FechaFaturaConvenio.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="FechaFaturaConvenio\FechaFaturaConvenio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FechaFaturaConvenio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FechaFaturaFraqueado\BuscaFranqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaFranqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="FechaFaturaFraqueado\FechaFaturaFranqueado.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FechaFaturaFranqueado.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="FechaFaturaFraqueado\FechaFaturaFranqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FechaFaturaFranqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="GrupoDesconto\ConvenioEmpresa.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConvenioEmpresa.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="GrupoDesconto\GrupoDesconto.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>GrupoDesconto.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="GrupoDesconto\GrupoDesconto.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>GrupoDesconto.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="LocalizaConveniado\LocalizaConveniado.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>LocalizaConveniado.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="LocalizaConveniado\LocalizaConveniado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>LocalizaConveniado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="PontoVenda\PontoVenda.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PontoVenda.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="PontoVenda\PontoVenda.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PontoVenda.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\BuscaCartao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaCartao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\BuscaConvenio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaConvenio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\BuscaFranqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaFranqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\BuscaGrupo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaGrupo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Cartao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Cartao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Conveniado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Conveniado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Convenio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Convenio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Franqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Franqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\AutorizacaoConvenio\Conveniado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Conveniado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\AutorizacaoConvenio\Convenio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Convenio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\AutorizacaoConvenio\Vendas.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vendas.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\AutorizacaoFranqueado\Franqueado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Franqueado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\AutorizacaoFranqueado\Vendas.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vendas.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\AutorizacoesSitentico\AutorizacoesSintetico.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AutorizacoesSintetico.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\ConvenioConveniados\Conveniados.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Conveniados.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Relatorios\ConvenioConveniados\Convenios.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Convenios.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <XModule ID="EBB5930C-9A21-4AB6-993E-B86F40039784" iID="530303" Name="Projecao.Core.CRD" Title="Cartão Fidelidade" />
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSVCDesigner Name="FechamentoFatura" ID="06C502CE-723F-46F6-BCE6-33E52C62489E" iID="531721" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+  <XValues>
+    <XLinkData Type="Guid" Name="MasterTableID" ID="EF08410B-53DF-4BE7-9191-796BC9F823B9" ElementID="2098BA0C-B53D-4CAC-94DA-5B27A95B201F" Text="SYSxJobLog" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechamentoFatura" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">2098BA0C-B53D-4CAC-94DA-5B27A95B201F</XLinkData>
+    <XData Name="HPCDataID" ID="B568A34D-9643-4639-A4BF-3E16D9BEC466" Type="Int32">597226</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">A6756F96-3DDA-4C8E-B42A-11E301179778</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=558;Height=486}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Fechamento de Faturas</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">AutomatedService</XData>
+    <XData Name="ConfigID" ID="1B728749-8544-4FEA-9A7D-B6279B6398FC" Type="Guid">4AB05A8E-0160-4B95-972F-0737DC10C9AD</XData>
+    <XData Name="ConfigID" ID="70591062-3DC1-4E07-B35B-F5C1EF6B2D4C" Type="Guid">50C548DE-3C6E-4AC7-BC70-352121104770</XData>
+    <XLinkArrayData Name="Rights" ID="D989F6D3-5963-4010-A848-67A186EE6286" Type="Guid[]">
+      <XLinkData ID="A8F1E6AB-6947-4CB4-B83A-642E9B111FE8" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSVCResultSet Name="ResultSet" ID="7910CC92-A5D1-417D-BFF2-044DC4499D1C" iID="531725">
+    <XValues>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=165;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">ResultSet</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField ID="1045C61C-0882-40FA-AFF1-913CD2BA7DCC" iID="531736" ParentID="366072A5-FEBC-4A9E-86BA-68839A5AD0CD">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="366072A5-FEBC-4A9E-86BA-68839A5AD0CD" Text="SYSxJobLogTipoID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechamentoFatura" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">366072A5-FEBC-4A9E-86BA-68839A5AD0CD</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">125</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">false</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=125;Width=10;Height=25}</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="BA1FB047-3DA4-45E3-8955-74C9E3D614AD" iID="531737" ParentID="4DEE8D26-7F61-45EA-9818-A6B96B9B70E2">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4DEE8D26-7F61-45EA-9818-A6B96B9B70E2" Text="SYSxJobLogEstadoID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechamentoFatura" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">4DEE8D26-7F61-45EA-9818-A6B96B9B70E2</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">75</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">false</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=75;Width=10;Height=25}</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="00C0067C-0BCB-4903-AB0D-E6401CD6A48A" iID="531738" ParentID="C8229AA5-0ABE-4C4C-9200-C9DDC8C66C90">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C8229AA5-0ABE-4C4C-9200-C9DDC8C66C90" Text="SYSxJobID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechamentoFatura" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">C8229AA5-0ABE-4C4C-9200-C9DDC8C66C90</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">50</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">false</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=50;Width=10;Height=25}</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="D45C6A15-5731-4A5E-8570-39500966AE84" iID="531739" ParentID="3580A761-C18B-4131-A573-AC7E5F315DE5">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="3580A761-C18B-4131-A573-AC7E5F315DE5" Text="SYSxJobLogID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechamentoFatura" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">3580A761-C18B-4131-A573-AC7E5F315DE5</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">100</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">true</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=100;Width=10;Height=25}</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="CB719ACD-187A-4A00-A148-B74CBC0532A3" iID="531740" ParentID="AE3319C6-C0B2-4D3A-9511-DDE8D3CAD451">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AE3319C6-C0B2-4D3A-9511-DDE8D3CAD451" Text="Relatorio" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechamentoFatura" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">AE3319C6-C0B2-4D3A-9511-DDE8D3CAD451</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">25</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">false</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=25;Width=10;Height=25}</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="F6A6B02A-11EB-471C-9829-7BF545F8D44E" iID="531741" ParentID="61596B07-2D4D-44D2-A448-6DD51248AD80">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="61596B07-2D4D-44D2-A448-6DD51248AD80" Text="Momento" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="FechamentoFatura" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CRD" DataEx="">61596B07-2D4D-44D2-A448-6DD51248AD80</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">false</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=25}</XData>
+        <XData Name="Scale" ID="C093D02A-AF28-4E79-BD27-1CF1FAF20204" Type="Int32">0</XData>
+        <XData Name="Length" ID="D1AEAA0E-9FC0-478D-9464-DF991F5CE009" Type="Int32">0</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCResultSet>
+  <XSVCUserFields Name="UserFields" ID="2F3D107D-93FC-494A-8DB8-3B2B275B6170" iID="531726">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Parameters</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCUserFields>
+  <XSVCTable ID="2098BA0C-B53D-4CAC-94DA-5B27A95B201F" iID="531729" ParentID="88D46CC5-6549-43BB-9076-50A4B84BBA23">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="88D46CC5-6549-43BB-9076-50A4B84BBA23" Text="SYSxJobLog" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">88D46CC5-6549-43BB-9076-50A4B84BBA23</XParentData>
+      <XData Name="CanChange" ID="27FDEC5F-AB2F-4592-8F67-4FD99728D4F6" Type="Boolean">true</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=132;Y=108;Width=228;Height=180}</XData>
+    </XValues>
+    <XSVCField ID="366072A5-FEBC-4A9E-86BA-68839A5AD0CD" iID="531730" ParentID="F09DF5FC-2157-48EE-9CAF-EA5878CBEA4F">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F09DF5FC-2157-48EE-9CAF-EA5878CBEA4F" Text="SYSxJobLogTipoID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">F09DF5FC-2157-48EE-9CAF-EA5878CBEA4F</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">24</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=24;Width=216;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="4DEE8D26-7F61-45EA-9818-A6B96B9B70E2" iID="531731" ParentID="1FF5889C-51E9-4ABD-B957-6B1EAFE1D4E1">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="1FF5889C-51E9-4ABD-B957-6B1EAFE1D4E1" Text="SYSxJobLogEstadoID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">1FF5889C-51E9-4ABD-B957-6B1EAFE1D4E1</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">124</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=124;Width=216;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="C8229AA5-0ABE-4C4C-9200-C9DDC8C66C90" iID="531732" ParentID="5D40DC3E-5B84-47E1-AA13-10668516A664">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="5D40DC3E-5B84-47E1-AA13-10668516A664" Text="SYSxJobID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">5D40DC3E-5B84-47E1-AA13-10668516A664</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">99</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=99;Width=216;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="3580A761-C18B-4131-A573-AC7E5F315DE5" iID="531733" ParentID="14BBF29A-CC20-4900-81D5-D5B62A07456D">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="14BBF29A-CC20-4900-81D5-D5B62A07456D" Text="SYSxJobLogID" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">14BBF29A-CC20-4900-81D5-D5B62A07456D</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">149</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=149;Width=216;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="AE3319C6-C0B2-4D3A-9511-DDE8D3CAD451" iID="531734" ParentID="02E3E28B-51A2-40BE-9AC9-D8DC14B2FA92">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="02E3E28B-51A2-40BE-9AC9-D8DC14B2FA92" Text="Relatorio" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">02E3E28B-51A2-40BE-9AC9-D8DC14B2FA92</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">74</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=74;Width=216;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="61596B07-2D4D-44D2-A448-6DD51248AD80" iID="531735" ParentID="DA19F8B3-1AEA-490E-A437-C0931821C656">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="DA19F8B3-1AEA-490E-A437-C0931821C656" Text="Momento" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="">DA19F8B3-1AEA-490E-A437-C0931821C656</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">49</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=6;Y=49;Width=216;Height=25}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCTable>
+  <XSVCDataView Name="DataView" ID="1D289D68-78EA-4FDD-9F60-71B20A3611E2" iID="531742">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">DataView</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCDataView>
+  <XSVCOrderBy Name="OrderBy" ID="8194A608-F42F-4E44-9172-5D9580023FB3" iID="531743">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">OrderBy</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCOrderBy>
+  <XFRMDesigner Name="FechamentoFaturaFilter" ID="560ABFF3-2047-48CF-AE0A-EA52A27FD83A" iID="531744" ModuleID="EBB5930C-9A21-4AB6-993E-B86F40039784">
+    <XFRMForm ID="10215EB2-E31C-4BAC-A90B-7E8E82755664" Name="FechamentoFaturaFilter">
+      <XValues>
+        <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=889;Height=50}</XData>
+        <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Fechamento de Faturas - Filtro</XLanguage>
+        </XData>
+      </XValues>
+    </XFRMForm>
+    <XValues>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">4E8F0028-53F1-4C44-BFCF-FB5BC7330CE2</XData>
+    </XValues>
+  </XFRMDesigner>
+  <XSVCWhere Name="Where" ID="378D539C-E7D8-4A87-BA18-FE5370BF133B" iID="593994">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Where</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCWhere>
+</XSVCDesigner>
