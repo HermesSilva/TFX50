@@ -1,0 +1,1090 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{3CCF482D-FC87-421E-B044-BB89F3F703D0}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Linux|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Hormonio\**" />
+    <Content Remove="Reproduto\**" />
+    <EmbeddedResource Remove="Hormonio\**" />
+    <EmbeddedResource Remove="Reproduto\**" />
+    <None Remove="Hormonio\**" />
+    <None Remove="Reproduto\**" />
+    <TypeScriptCompile Remove="Hormonio\**" />
+    <TypeScriptCompile Remove="Reproduto\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Projecao.Core.PCR.dsmdl" />
+    <None Remove="DB\PCRx.ORM.ts" />
+    <None Remove="Integracao\IATFFase.dssvc" />
+    <None Remove="Report\RebanhoAgrupado.RPT.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Remove="Integracao\IATFFase.SVC.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Projecao.Core.PCR.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.PCR.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Projecao.Core.PCR.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Projecao.Core.PCR.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="AnimalEvento\Animal.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="AnimalEvento\Animal.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AnimalEvento\AnimalEvento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AnimalEvento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="AnimalEvento\AnimalEvento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AnimalEvento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\PCRx.ORM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxAnimal.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxAnimalEvento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxAnimalLote.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxEvento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxIATFFase.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxPasto.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxReprodutor.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\PCRx.PCRxRetiro.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="Fazenda\Fazenda.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Fazenda.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Fazenda\Fazenda.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Fazenda.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Fazenda\Fazenda.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Fazenda.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Fazenda\Retiro.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Retiro.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="HormonioIATF\HormonioIATF.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>HormonioIATF.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="HormonioIATF\HormonioIATF.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HormonioIATF.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="IATF\IATF.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>IATF.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="IATF\IATF.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IATF.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="IATF\IATF.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IATF.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="IATF\IATFFases.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IATFFases.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ImplanteIATF\ImplanteIATF.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ImplanteIATF.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ImplanteIATF\ImplanteIATF.SAM.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ImplanteIATF.dssam</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ImplanteIATF\ImplanteIATF.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ImplanteIATF.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Integracao\AnimalLote.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>AnimalLote.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\AnimalLote.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AnimalLote.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\ImplanteIATF.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>ImplanteIATF.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\ImplanteIATF.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ImplanteIATF.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\IATFFaseTipo.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>IATFFaseTipo.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\IATFFaseTipo.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IATFFaseTipo.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Pasto.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Pasto.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\XSendReadOnlyDBRule.cs" />
+    <Compile Include="ReadOnly\Touro.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Touro.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pasto\Elemento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Elemento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Rebanho\Evento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Evento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Rebanho\Evento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Evento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Rebanho\FIlhote.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FIlhote.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RecebeOperacao\EventoFazenda.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventoFazenda.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Fazenda.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Fazenda.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\FazendaEndereco.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FazendaEndereco.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Hormonio.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Hormonio.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\Hormonio.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Hormonio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Modelo\APPxAtividade.cs" />
+    <Compile Include="Integracao\Modelo\APPxAtividadeItem.cs" />
+    <Compile Include="Integracao\Modelo\APPxConfig.cs" />
+    <Compile Include="Integracao\Modelo\APPxErrorLog.cs" />
+    <Compile Include="Integracao\Modelo\APPxLocation.cs" />
+    <Compile Include="Integracao\Rebanho.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\Reprodutor.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Reprodutor.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\Vacina.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\Vacina.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Vacas.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Vacas.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="RecebeOperacao\IntegraAnimal.cs" />
+    <Compile Include="RecebeOperacao\IntegraErros.cs" />
+    <Compile Include="RecebeOperacao\IntegraDesmama.cs" />
+    <Compile Include="RecebeOperacao\IntegraIATF.cs" />
+    <Compile Include="RecebeOperacao\IntegraVacinacao.cs" />
+    <Compile Include="RecebeOperacao\IntegraPesagem.cs" />
+    <Compile Include="RecebeOperacao\IntegraCampeio.cs" />
+    <Compile Include="Integracao\Reprodutor.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Reprodutor.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Veterinario.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Veterinario.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Integracao\Veterinario.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Veterinario.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\XSQLiteUtils.cs" />
+    <Compile Include="Integracao\ImportaDados.cs" />
+    <Compile Include="Integracao\Fazenda.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Fazenda.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Pasto.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pasto.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Rebanho.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\RebanhoCodigo.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RebanhoCodigo.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Integracao\Retiro.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Retiro.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RecebeOperacao\IntegraAtividade.cs" />
+    <Compile Include="RecebeOperacao\IntegraUtils.cs" />
+    <Compile Include="RecebeOperacao\IntegraGPS.cs" />
+    <Compile Include="RecebeOperacao\IntegraAnimal.Rule.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="Pasto\Pasto.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pasto.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pasto\Pasto.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pasto.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Touro.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Touro.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\TouroEvento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TouroEvento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Vacas.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacas.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Rebanho\Rebanho.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Rebanho\Rebanho.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Rebanho.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Rebanho\Rebanho.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="RecebeOperacao\XReceiveTempDBRule.cs" />
+    <Compile Include="Report\Dashboard.BRV.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dashboard.dsbrv</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Report\Dashboard.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dashboard.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Report\IATFEficacia.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>IATFEficacia.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Report\IATFEficacia.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IATFEficacia.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Report\Rebanho.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Report\RebanhoAgrupado.RPT.cs">
+      <Visible>False</Visible>
+      <DependentUpon>RebanhoAgrupado.dsrpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\RebanhoAgrupado.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>RebanhoAgrupado.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RebanhoAgrupado.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RebanhoAgrupado.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Report\Vacina.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Vacina.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Reprodutor\Reprodutor.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Reprodutor.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Reprodutor\Reprodutor.SAM.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Reprodutor.dssam</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reprodutor\Reprodutor.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Reprodutor.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Retiro\Retiro.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Retiro.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Retiro\Retiro.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Retiro.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="HormonioIATF\HormonioIATF.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HormonioIATF.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Rotas\MobileRota.SAM.cs">
+      <Visible>False</Visible>
+      <DependentUpon>MobileRota.dssam</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Rotas\MobileRota.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>MobileRota.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Rotas\PontoDestaque.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PontoDestaque.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Rotas\RotaDados.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>RotaDados.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Rotas\RotaDados.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>RotaDados.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Rotas\Rotas.SVC.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Rotas.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Vacina\Vacina.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Vacina\Vacina.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacina.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Vacina\Vacina.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Vacina\VacinaLote.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VacinaLote.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="XScriptExecutorPCR.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Projecao.Core.PCR.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.PCR.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Report\RebanhoAgrupado.RPT.xml">
+      <Visible>False</Visible>
+      <DependentUpon>RebanhoAgrupado.dsrpt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.7.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite" Version="1.0.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj" />
+    <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj" />
+    <ProjectReference Include="..\Projecao.Core.ISE\Projecao.Core.ISE.csproj" />
+    <ProjectReference Include="..\Projecao.Core.NTR\Projecao.Core.NTR.csproj">
+      <CopyLocal>False</CopyLocal>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="DB\PCRx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PCRx.dsorm</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AnimalEvento\Animal.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Animal.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="AnimalEvento\AnimalEvento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AnimalEvento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="DB\PCRx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PCRx.ORM.cs</LastGenOutput>
+    </None>
+    <None Update="Fazenda\Fazenda.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Fazenda.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Fazenda\Fazenda.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Fazenda.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Fazenda\Retiro.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Retiro.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="HormonioIATF\HormonioIATF.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>HormonioIATF.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="IATF\IATF.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IATF.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="IATF\IATF.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IATF.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="IATF\IATFFases.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IATFFases.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ImplanteIATF\ImplanteIATF.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ImplanteIATF.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="ImplanteIATF\ImplanteIATF.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ImplanteIATF.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\AnimalLote.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>AnimalLote.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\ImplanteIATF.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ImplanteIATF.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\IATFFaseTipo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IATFFaseTipo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Pasto\Elemento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Elemento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Rebanho\Evento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Evento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Rebanho\FIlhote.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FIlhote.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="RecebeOperacao\EventoFazenda.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>EventoFazenda.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Fazenda.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Fazenda.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\FazendaEndereco.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>FazendaEndereco.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Hormonio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Hormonio.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Pasto.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Pasto.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Rebanho.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Rebanho.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\RebanhoCodigo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>RebanhoCodigo.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Retiro.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Retiro.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Reprodutor.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Reprodutor.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Vacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Integracao\Veterinario.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Veterinario.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Pasto\Pasto.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Pasto.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Pasto\Pasto.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Pasto.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Touro.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Touro.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\TouroEvento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>TouroEvento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Vacas.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacas.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Rebanho\Rebanho.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Rebanho.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Rebanho\Rebanho.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Rebanho.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Report\Dashboard.dsbrv">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Dashboard.BRV.cs</LastGenOutput>
+    </None>
+    <None Update="Report\Dashboard.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Dashboard.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Report\IATFEficacia.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IATFEficacia.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Report\Rebanho.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Rebanho.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Report\RebanhoAgrupado.dsrpt">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>RebanhoAgrupado.RPT.cs</LastGenOutput>
+    </None>
+    <None Update="Report\RebanhoAgrupado.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>RebanhoAgrupado.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Report\Vacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Reprodutor\Reprodutor.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Reprodutor.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Reprodutor\Reprodutor.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Reprodutor.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Retiro\Retiro.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Retiro.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Retiro\Retiro.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Retiro.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="HormonioIATF\HormonioIATF.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>HormonioIATF.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Rotas\MobileRota.dssam">
+      <LastGenOutput>MobileRota.SAM.cs</LastGenOutput>
+      <Generator>XDASEGenerator</Generator>
+    </None>
+    <None Update="Rotas\MobileRota.dssvc">
+      <LastGenOutput>MobileRota.SVC.cs</LastGenOutput>
+      <Generator>XDASEGenerator</Generator>
+    </None>
+    <None Update="Rotas\PontoDestaque.dssvc">
+      <LastGenOutput>PontoDestaque.SVC.cs</LastGenOutput>
+      <Generator>XDASEGenerator</Generator>
+    </None>
+    <None Update="Rotas\RotaDados.dssvc">
+      <LastGenOutput>RotaDados.SVC.cs</LastGenOutput>
+      <Generator>XDASEGenerator</Generator>
+    </None>
+    <None Update="Rotas\Rotas.dssvc">
+      <LastGenOutput>Rotas.SVC.cs</LastGenOutput>
+      <Generator>XDASEGenerator</Generator>
+    </None>
+    <None Update="Vacina\Vacina.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacina.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Vacina\Vacina.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacina.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Vacina\VacinaLote.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>VacinaLote.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Update="AnimalEvento\Animal.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Animal.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="AnimalEvento\AnimalEvento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AnimalEvento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Fazenda\Fazenda.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Fazenda.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Fazenda\Fazenda.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Fazenda.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Fazenda\Retiro.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Retiro.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="HormonioIATF\HormonioIATF.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>HormonioIATF.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="HormonioIATF\HormonioIATF.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>HormonioIATF.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="IATF\IATF.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IATF.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="IATF\IATF.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IATF.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="IATF\IATFFases.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IATFFases.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ImplanteIATF\ImplanteIATF.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ImplanteIATF.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ImplanteIATF\ImplanteIATF.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ImplanteIATF.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\AnimalLote.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AnimalLote.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Fazenda.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Fazenda.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\FazendaEndereco.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FazendaEndereco.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Hormonio.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Hormonio.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\IATFFaseTipo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IATFFaseTipo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\ImplanteIATF.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ImplanteIATF.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Pasto.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Pasto.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Rebanho.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\RebanhoCodigo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>RebanhoCodigo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Reprodutor.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Reprodutor.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Retiro.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Retiro.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Vacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Integracao\Veterinario.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Veterinario.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Pasto\Elemento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Elemento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Pasto\Pasto.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Pasto.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Pasto\Pasto.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Pasto.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Touro.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Touro.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\TouroEvento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>TouroEvento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ReadOnly\Vacas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rebanho\Evento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Evento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rebanho\FIlhote.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>FIlhote.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rebanho\Rebanho.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Rebanho.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rebanho\Rebanho.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="RecebeOperacao\AnimalEvento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>AnimalEvento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="RecebeOperacao\EventoFazenda.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>EventoFazenda.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Report\Dashboard.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Dashboard.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Report\IATFEficacia.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>IATFEficacia.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Report\Rebanho.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Rebanho.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Report\RebanhoAgrupado.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>RebanhoAgrupado.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Report\Vacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Reprodutor\Reprodutor.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Reprodutor.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Reprodutor\Reprodutor.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Reprodutor.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Retiro\Retiro.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Retiro.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Retiro\Retiro.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Retiro.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rotas\MobileRota.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>MobileRota.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rotas\MobileRota.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>MobileRota.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rotas\PontoDestaque.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PontoDestaque.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rotas\RotaDados.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>RotaDados.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Rotas\Rotas.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Rotas.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Vacina\HormonioIATF.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>HormonioIATF.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Vacina\Vacina.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Vacina\Vacina.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Vacina.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Vacina\VacinaLote.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>VacinaLote.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Report\AtividadeCurral\" />
+  </ItemGroup>
+</Project>

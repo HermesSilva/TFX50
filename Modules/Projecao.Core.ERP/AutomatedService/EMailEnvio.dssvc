@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSVCDesigner Name="EMailEnvio" ID="9518AE01-27B2-4FCE-AB2C-994E2AABBCCB" iID="593120" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278">
+  <XValues>
+    <XData Name="ConfigID" ID="1B728749-8544-4FEA-9A7D-B6279B6398FC" Type="Guid">1BF95437-A0C5-4AC3-9DD5-C968E573272E</XData>
+    <XData Name="HPCDataID" ID="B568A34D-9643-4639-A4BF-3E16D9BEC466" Type="Int32">597284</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">81B69864-3265-4BFF-B375-7D39864C82C5</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Envio de E-Mails</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">AutomatedService</XData>
+    <XLinkData Name="MasterTableID" ID="EF08410B-53DF-4BE7-9191-796BC9F823B9" Type="Guid" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="" ModuleName="" ModuleID="00000000-0000-0000-0000-000000000000" Text="" ElementID="00000000-0000-0000-0000-000000000000" DataEx="">00000000-0000-0000-0000-000000000000</XLinkData>
+    <XLinkArrayData Name="Rights" ID="D989F6D3-5963-4010-A848-67A186EE6286" Type="Guid[]">
+      <XLinkData ID="1226A06C-50A8-4390-8D9E-E7246093DE53" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" Order="1" DataEx="2">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+    <XData Name="ConfigID" ID="70591062-3DC1-4E07-B35B-F5C1EF6B2D4C" Type="Guid">17A9B832-4AAC-480E-89E1-6126580EF8C0</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">703D1AD2-F478-4BCD-8740-6A98A78E6499|12A05212-87A5-4019-8082-F4C0EE8ED6E4|076D18F9-7C28-4220-95A7-B67A1FF0217A|2027048E-85E2-4083-ABEE-1D70C6E9E1D6|B5BDD6EF-9DC6-4B97-BF78-C20670A6C37E|983349B9-6426-4C6E-B510-BB1CCF567C51|46C758D4-B200-4B24-B8DA-63BF5B46F196|C0A09358-8073-4BD3-B504-08D17BC5B60D|9810B9DD-9B57-42B5-AA76-B7FE18DDE950|98E4A6D6-9A93-4634-8751-77490124DFA5</XData>
+    <XLinkData Name="DBEnvVariable" ID="73A8B1B8-E1FC-4A47-8607-4A7EDE93B5B0" Type="Guid" ElementID="9CC44EEE-F51A-445B-9C7A-6B7EA3A04E66" Text="SQL_SERVER_TFX" DocumentID="558ED7DA-6600-4CFD-80E9-65D95C484373" DocumentName="EnvironmentVariables" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">9CC44EEE-F51A-445B-9C7A-6B7EA3A04E66</XLinkData>
+    <XData Name="Type" ID="760FAE3B-718E-4839-921F-292800986ECB" Type="XServiceType">Utility</XData>
+  </XValues>
+  <XSVCResultSet Name="ResultSet" ID="3493E178-86B5-4247-A004-DCF8AE82068B" iID="593124">
+    <XValues>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=165;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">ResultSet</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCResultSet>
+  <XSVCUserFields Name="UserFields" ID="41D68BFA-A7C5-468F-A45D-D45899EF8448" iID="593125">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Parameters</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCUserFields>
+  <XSVCDataView Name="DataView" ID="1979A966-5B66-44B4-BA22-6A29BFBE64AB" iID="593141">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">DataView</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCDataView>
+  <XSVCOrderBy Name="OrderBy" ID="C8A2A99E-E070-4D46-BBF2-3E101AB91095" iID="593142">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">OrderBy</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCOrderBy>
+  <XFRMDesigner Name="EMailEnvioFilter" ID="18AEF9FA-8EE4-4022-8E71-0BEB05170D3F" iID="593143" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278">
+    <XFRMForm ID="8E39560C-ECA8-4188-8670-DEDB22A45542" Name="EMailEnvioFilter">
+      <XValues>
+        <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
+        <XData Name="ConfigID" ID="6DA01592-08F9-4CB9-A09B-14BB63FF6EAE" Type="Guid">75AEB6B8-1164-4D9E-B8FB-719DA36C0197</XData>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">ADE7BA39-A768-4111-819E-2AAD00F48870</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=1221;Height=92}</XData>
+        <XData Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" Type="Guid[]">8E39560C-ECA8-4188-8670-DEDB22A45542|FC2A878B-F6D6-49DA-BFF2-5076C894D3ED</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Envio de E-Mails - Filtro</XLanguage>
+        </XData>
+      </XValues>
+    </XFRMForm>
+    <XValues>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">6B5A8378-CDD1-40B1-AD08-36EB09C19D38</XData>
+      <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">1360731A-481A-495D-BCA2-11FF33C62E1A</XData>
+      <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">B15B8932-E2FB-41EE-AE67-D918C53B906A|BD0D2065-D286-4E3D-A461-D0EC16BCA7F4|DD1C0338-239B-486D-A285-BD14990ADD03|217767C1-8DCF-4AC1-9C94-A7C504C103F4|7D9A30D4-7CEC-4A9A-A1A5-87F26B2D3227|6B23A736-37A1-4905-B8B5-6B5153049A54|C60CD844-179C-4DE6-89D9-241D643871B1|7F518B0B-6715-4F65-8B2C-C59E7E25D691|45B4D064-772A-4342-881A-73B03BAC17E2|7E98E1C8-F23D-443B-A08F-993558B05641</XData>
+    </XValues>
+  </XFRMDesigner>
+  <XSVCWhere Name="Where" ID="B75F0659-1680-4518-872F-842D087F8868" iID="594069">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Where</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCWhere>
+  <XSVCEndPoints Name="EndPoints" ID="34D9BD03-1291-4408-9849-97EFE19496D8">
+    <XSVCEndPoint ID="FFE6B10A-8D6B-4115-9ADC-0BAD925FA619" Name="Execute">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Execute</XLanguage>
+        </XData>
+        <XData Name="IsDefault" ID="2DA04072-AB74-449A-BC28-7DB5333EC830" Type="Boolean">true</XData>
+      </XValues>
+    </XSVCEndPoint>
+    <XValues />
+  </XSVCEndPoints>
+  <XSVCAddIns Name="Additional" ID="B17C82A3-BA75-4AB9-9764-83C172781574">
+    <XSVCInjectionSVC ID="CB2C37DA-91C7-41A3-9F5B-3693DECC70F6" Name="ServiceInjection">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Service Injection</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCInjectionSVC>
+    <XSVCDBContexTable ID="D663C1D5-1112-47D3-870C-D6F5A5B51666" Name="AditionalTables">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Aditional Tables</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCDBContexTable>
+    <XValues />
+  </XSVCAddIns>
+</XSVCDesigner>

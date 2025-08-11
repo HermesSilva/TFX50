@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSVCDesigner Name="AtualizaIntegracao" ID="74FAB757-E9CC-4C04-9F61-242EC671194D" iID="529373" ModuleID="FA1F36E1-A70A-40D3-B312-D11EFDE16118">
+  <XValues>
+    <XData Name="Type" ID="760FAE3B-718E-4839-921F-292800986ECB" Type="XServiceType">Utility</XData>
+    <XData Name="HPCDataID" ID="B568A34D-9643-4639-A4BF-3E16D9BEC466" Type="Int32">597262</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">6BDB0E22-70D6-4063-A470-4542E5AAD386</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=12}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Atualiza Integração</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Utilitarios</XData>
+    <XData Name="ConfigID" ID="1B728749-8544-4FEA-9A7D-B6279B6398FC" Type="Guid">57D4D0AB-3779-46DF-82B2-8569630172A6</XData>
+    <XData Name="ConfigID" ID="70591062-3DC1-4E07-B35B-F5C1EF6B2D4C" Type="Guid">954D57F7-1C66-4296-8232-D854B89037C7</XData>
+    <XLinkArrayData Name="Rights" ID="D989F6D3-5963-4010-A848-67A186EE6286" Type="Guid[]">
+      <XLinkData ID="7F71813E-21F2-4364-A00D-DB27CDA5B1FC" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">C5219125-6322-4FE4-8B44-C5327C6A2651|F0B77CD9-D2D6-4C93-8F39-E68405C27827|221CBC9C-5DAC-414B-9273-8D9AF7519FD6|736A87C9-E2AA-4D2C-AE94-9277F3F2338E|5CF649BE-28E6-4D73-8A3E-EA21131A6958|1A1AFAA7-E12C-4028-BE99-3082928828F2|132ADE65-99B3-4771-8DF8-571ED5DCDFEC|C732DCAC-1DD4-4153-8FAA-59E07A6C70DA|57D7787F-28A4-4071-B272-BC101D58E61A|1017A27A-360A-4AAE-96E7-CFA9C2A845C6</XData>
+  </XValues>
+  <XSVCResultSet Name="ResultSet" ID="19BE447A-08A8-4484-ADAD-2AA1CA763FD7" iID="529377">
+    <XValues>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=165;B=0}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">ResultSet</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCField ID="DCE79982-6962-4A15-A9E4-A51D86216AD1" iID="529390" ParentID="E7C74131-296A-49D8-9951-0796558A7D80">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E7C74131-296A-49D8-9951-0796558A7D80" Text="Atualiza" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="AtualizaIntegracao" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ITG" DataEx="">E7C74131-296A-49D8-9951-0796558A7D80</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">true</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCResultSet>
+  <XSVCUserFields Name="UserFields" ID="E13D9F11-20A5-4779-8834-928C826B6105" iID="529378">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=12;Height=12}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Parameters</XLanguage>
+      </XData>
+    </XValues>
+    <XSVCUserField Name="Atualiza" ID="E7C74131-296A-49D8-9951-0796558A7D80" iID="529389">
+      <XValues>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Atualiza</XLanguage>
+        </XData>
+      </XValues>
+    </XSVCUserField>
+  </XSVCUserFields>
+  <XFRMDesigner Name="AtualizaIntegracaoFilter" ID="D50D8BD6-0103-4140-9C20-E273FD9E9602" iID="529381" ModuleID="FA1F36E1-A70A-40D3-B312-D11EFDE16118">
+    <XFRMForm ID="AA2B40FA-4BDA-4887-9057-9CADF80B9352" Name="AtualizaIntegracaoFilter">
+      <XValues>
+        <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+        <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Atualiza Integração - Filter</XLanguage>
+        </XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+      </XValues>
+    </XFRMForm>
+    <XValues>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">3CAE7C82-DF82-4329-89EC-4DF6D152A1A2</XData>
+      <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">844BD0C2-3807-4F0F-B2F7-7550CE5F286C</XData>
+      <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">33029B9F-9064-4B2A-A6D2-54496820475D|B27DE4E2-3032-4FE2-9904-18ABD19A6ED1|F3A473AC-382E-4598-8848-9DBE1A20AC98|5EB302E3-8E0B-4661-8D5D-7F25A13D8365|26BF24D2-378C-4549-A96B-32FFEED7350D|C42A7E05-E6DD-4C06-8919-E8120A440998|22B2BDB6-067D-4F25-81D5-4A7E04A8E234|B06630E3-0902-4B8D-BCAB-8A18E1B5244C|3F0158D7-95F6-461A-A683-94594918695E|FC12FF09-2E08-4DD1-AC85-8FEB29D9B9AE</XData>
+    </XValues>
+  </XFRMDesigner>
+  <XSVCDataView Name="DataView" ID="DC6CFD59-8BA3-421D-A6DF-7D60EE32777F" iID="529387">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">DataView</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCDataView>
+  <XSVCOrderBy Name="OrderBy" ID="24FA2391-2E28-48A1-BC48-844C4370CFDD" iID="529388">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">OrderBy</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCOrderBy>
+  <XSVCWhere Name="Where" ID="71B9715B-568C-4E8B-A86B-46E3EF923FFC" iID="593991">
+    <XValues>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Where</XLanguage>
+      </XData>
+    </XValues>
+  </XSVCWhere>
+</XSVCDesigner>

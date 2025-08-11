@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner ID="F97EE715-05F0-4200-9144-8F0C6A85D072" Name="Logradouro" ModuleID="86C8282F-31CF-419F-99DF-18D84C561EC7">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Logradouro</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">AB955A6F-6C19-4C26-ADA0-8FD2E3D46DB1|54BF241B-3D62-4EF8-8AEE-4A72DC536E4A|87458EB7-C849-42F4-899C-7398B453FAB0|04287FF8-9570-44D1-A031-83E15D79B02B|6071B89A-6D7F-447E-A1E0-27D89D48E0CA|D75B6CCD-9E22-481A-85F5-6562775D74D8|CE49CCC4-7639-41E3-8418-E1A99C7966C1|C29D03D0-DAB9-476F-AD18-C94EBD0C0609|9FE8DD00-3855-4C02-ABAF-B893E45B66C5|E53960AF-1AA6-455D-8480-0367CC322563</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">950210AC-81A6-4AA5-BCF6-639D18AAA99A</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=331;Height=150}</XData>
+    <XLinkArrayData Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F" Type="Guid[]">
+      <XLinkData ID="2E6ED818-BDC0-4A95-9DC9-3335D6EF789B" ElementID="FF12F6D7-C3AA-4FA5-9301-AB4386CB5455" Text="Alterar" DocumentID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" DocumentName="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5" ModuleName="TFX.Core.Data" DataEx="3" Order="1">FF12F6D7-C3AA-4FA5-9301-AB4386CB5455</XLinkData>
+      <XLinkData ID="68DF1233-02E7-4B5F-8C54-D8D561088703" ElementID="8998D41D-7144-4126-A4AD-01D377B240BE" Text="Apagar" DocumentID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" DocumentName="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5" ModuleName="TFX.Core.Data" DataEx="5" Order="2">8998D41D-7144-4126-A4AD-01D377B240BE</XLinkData>
+      <XLinkData ID="EF2EE968-D844-4605-9B30-15848E1CF7BF" ElementID="8A6D29AB-865E-4C82-9D49-7055877C23C5" Text="Inativar" DocumentID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" DocumentName="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5" ModuleName="TFX.Core.Data" DataEx="4" Order="3">8A6D29AB-865E-4C82-9D49-7055877C23C5</XLinkData>
+      <XLinkData ID="DC030B3F-1015-467B-9B5F-B8D7084EFAC5" ElementID="8B703679-5EF7-4790-A27C-B8629C851115" Text="Inserir" DocumentID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" DocumentName="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5" ModuleName="TFX.Core.Data" DataEx="2" Order="4">8B703679-5EF7-4790-A27C-B8629C851115</XLinkData>
+      <XLinkData ID="E064F506-3540-4473-9416-DEDB8E2FAE32" ElementID="C392B182-0F99-4E12-B421-AC6A03752205" Text="Visualizar" DocumentID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" DocumentName="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5" ModuleName="TFX.Core.Data" DataEx="1" Order="5">C392B182-0F99-4E12-B421-AC6A03752205</XLinkData>
+    </XLinkArrayData>
+    <XLinkData Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" Type="Guid" ElementID="B4838416-BB04-446B-B189-3D69440046A7" Text="Logradouro - (Projecao.Core.CEP.Logradouro)" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="">B4838416-BB04-446B-B189-3D69440046A7</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XStartAction">DataGrid</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Logradouros</XLanguage>
+    </XData>
+    <XLinkArrayData Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650" Type="Guid[]">
+      <XLinkData ID="28ABA49B-4226-400E-8320-9334625C9EFF" ElementID="5AEAF9CA-696A-4F72-8522-30399BC74157" Text="Administração da Nuvem" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="1" Order="1">5AEAF9CA-696A-4F72-8522-30399BC74157</XLinkData>
+      <XLinkData ID="45BA2429-178E-46ED-BB5F-77AB86119147" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Nuvem" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="2">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+    </XLinkArrayData>
+    <XData Name="UserLevel" ID="C4A75429-E512-4D19-A007-C985053C5C97" Type="XUserlevel">User</XData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="41E2D8E4-AE04-41C8-B260-1E8E8B718900" ElementID="77CD2BFC-0C1A-4431-9DA0-90DE580CC4B4" Text="Sistema" DocumentID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" DocumentName="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5" ModuleName="TFX.Core.Data" DataEx="A0194FB8-9893-48C5-BD2B-7626A82B3DA3" Order="1">77CD2BFC-0C1A-4431-9DA0-90DE580CC4B4</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="9F5AF73D-9A3D-40A6-BA86-50542BC1D9CD" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">A6BAE3F0-6EAC-4B03-BAFC-283B1D58022F|40A92BFD-6FCC-4D0D-8052-9B815AC2D577|5D686D00-A1AD-4616-B700-712B09B08902|680686E5-41FE-4970-98A9-D02DAF503E8A|46026FA2-BA70-47C2-9A0B-942CB73BB3E3|37812167-D0E9-4BED-BE3D-65FD55F19575|56F4B049-DD66-43CC-A9DE-C8718C801B26|4F73571C-539D-4CE8-AC79-EC223FD514E0|61C6AE8F-0255-431B-A042-97A1B3E8CADC|B7E639CA-4C8A-460B-854E-34215409EEF0</XData>
+  </XValues>
+  <XSAMActivity ID="36720286-EF50-4EDD-B839-5B342BEE50F6" Name="LogradouroACT">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=74;Height=72}</XData>
+    </XValues>
+    <XFRMDesigner ID="BC71440F-79CE-4E1C-8AF8-C9C67C7AEC74" Name="Logradouro">
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">FC5302BF-2EB3-4034-84C4-0BB6B0703078</XData>
+        <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">7C343188-2D48-425E-981B-B154DE2BA5C1</XData>
+        <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">CDD7585E-1CA3-4330-8B34-49D6C19913A0|37017C57-71A8-4256-BF66-DF95B324DBE3|1269E86E-3FB5-49BF-B8F6-D5252A6FF4A0|41AEB624-2B0F-40E7-9B0F-47BE58F5287D|D6465E8F-582A-4B78-AF87-71C7DAAF2BBA|18ECD84F-EAF7-4F38-8612-12D91EF1134D|CA3FD465-BAB5-4EAF-8FD9-1CCA73FACDB8|39CAD104-CBDC-4A78-AB26-92C87DA43313|651CA81C-D608-45E0-8B5A-98843B27D618|3C749BFA-E22B-415B-BD54-93D14CA4E2F7</XData>
+      </XValues>
+      <XFRMForm Name="T" ID="0C1680FD-F72A-40EF-8ED9-2FC7602BFBCC">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
+        </XValues>
+        <XFRMField ID="04F12C33-0321-404E-837A-D348CEBE0C3C" ParentID="F588F3F4-66E6-405C-B5E3-E6BEC65CAF68">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F588F3F4-66E6-405C-B5E3-E6BEC65CAF68" Text="CEPxLogradouro.Tipo" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">F588F3F4-66E6-405C-B5E3-E6BEC65CAF68</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">7</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=218.53125;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">1</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">32</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="031074EE-AF24-4439-ADB4-D3BA2C492C8B" ParentID="7F49F4D9-DA97-4A0F-BD73-6DA8340559B1">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7F49F4D9-DA97-4A0F-BD73-6DA8340559B1" Text="CEPxLogradouro.Nome" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">7F49F4D9-DA97-4A0F-BD73-6DA8340559B1</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">14</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=218.53125;Y=0;Width=437.0625;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">2</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">32</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="1FF02916-5464-43DC-B30A-173AD2522B32" ParentID="1B393540-E21E-475D-878A-12FC08F67EB6">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="1B393540-E21E-475D-878A-12FC08F67EB6" Text="CEPxLocalidade.NomeLocalidade" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">1B393540-E21E-475D-878A-12FC08F67EB6</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">11</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=655.59375;Y=0;Width=343.40625;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">3</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">32</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="1522B217-5263-48C0-BB6F-A81C15F29F8D" ParentID="92CF593F-DC60-4AE3-957E-2723784003D4">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="92CF593F-DC60-4AE3-957E-2723784003D4" Text="CEPxBairro.NomeBairro" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">92CF593F-DC60-4AE3-957E-2723784003D4</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">15</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=468.28125;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">4</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">32</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="35C242D4-BE94-4E75-BB79-D3C5D603CC46" ParentID="AB986CB5-6468-48C8-ACC7-60970A5ABE32">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AB986CB5-6468-48C8-ACC7-60970A5ABE32" Text="CEPxUF.Sigla" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">AB986CB5-6468-48C8-ACC7-60970A5ABE32</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=811.6875;Y=80;Width=187.3125;Height=80}</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">6</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">16</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="84B7DC3F-B684-44F6-ADDE-848E63842D27" ParentID="D2BF8BCE-5410-4EDC-9CF5-3C4A784D7B20">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="D2BF8BCE-5410-4EDC-9CF5-3C4A784D7B20" Text="CEPxLocalidade.CEPGeral" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">D2BF8BCE-5410-4EDC-9CF5-3C4A784D7B20</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">7</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">8</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=160;Width=249.75;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">7</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">16</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="2B95E796-8A19-4AD8-8040-F3785458FE75" ParentID="8B57FCBB-02E6-4C7F-AD95-FF202A2E8C24">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="8B57FCBB-02E6-4C7F-AD95-FF202A2E8C24" Text="CEPxLocalidade.CodigoIBGE" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">8B57FCBB-02E6-4C7F-AD95-FF202A2E8C24</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">8</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=249.75;Y=160;Width=280.96875;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">8</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">16</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="625D549C-7138-40CD-AD17-698379458001" ParentID="A679E37B-CF2E-4A95-8146-B9FA3DB5E492">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A679E37B-CF2E-4A95-8146-B9FA3DB5E492" Text="CEPxBairro.Breviatura" DocumentID="B4838416-BB04-446B-B189-3D69440046A7" DocumentName="Logradouro" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.CEP" DataEx="" Type="Guid">A679E37B-CF2E-4A95-8146-B9FA3DB5E492</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">11</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=468.28125;Y=80;Width=343.40625;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">5</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">16</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+      </XFRMForm>
+    </XFRMDesigner>
+  </XSAMActivity>
+</XSAMDesigner>

@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Projecao.Core.CEP;
+
 using TFX.Core;
 using TFX.Core.Cache;
 using TFX.Core.Controllers;
@@ -49,6 +51,7 @@ namespace Launcher
             builder.Services.AddDbContext<TFXESCCoreContext>();
             builder.Services.AddDbContext<CEPxDBContext>();
             Console.WriteLine(typeof(TFXESCCoreModule).FullName);
+            Console.WriteLine(typeof(ProjecaoCoreCEPModule).FullName);
             builder.AddDependencies();
             App = builder.Build();
 

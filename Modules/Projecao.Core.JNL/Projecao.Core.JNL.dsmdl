@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XModule Name="Projecao.Core.JNL" ID="D19DA196-F6DA-4702-A07A-D77AF7CA6D93" ModuleID="D19DA196-F6DA-4702-A07A-D77AF7CA6D93">
+  <XValues>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Jornalização</XLanguage>
+    </XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">14E5A1D8-610E-4B7A-8579-2ABC5D2FAD63</XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String" />
+    <XData Name="NameSpace" ID="AA8B388C-17CD-48A6-8162-24E891354696" Type="String">Projecao.Core.JNL</XData>
+  </XValues>
+  <XNameSpace Name="Projecao.Core.JNL" ID="0B405349-0810-4277-9AF0-B7B926358774">
+    <XValues />
+  </XNameSpace>
+</XModule>

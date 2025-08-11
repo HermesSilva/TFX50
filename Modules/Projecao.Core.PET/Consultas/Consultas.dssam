@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner Name="Consultas" ID="F867CACB-3C5B-48BC-9806-56AF2FDF7B74" iID="601361" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+  <XValues>
+    <XLinkData Type="Guid" Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" ElementID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" Text="Consultas - (Projecao.Core.PET.Consultas)" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">CAEFEE10-F909-4971-A7EB-6D5A0071DE4E</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XPAMStartAction">CardGrid</XData>
+    <XLinkArrayData Type="Guid[]" Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F">
+      <XLinkData ID="E3CF9212-3814-4A96-8C4D-68303362FD3F" ElementID="E3CE9D50-305A-4583-81BD-90BC5872AB50" Text="Alterar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="3" Order="1">E3CE9D50-305A-4583-81BD-90BC5872AB50</XLinkData>
+      <XLinkData ID="EE895DF3-5C5F-4543-9649-02747D059189" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="2">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Type="Guid[]" Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650">
+      <XLinkData ID="B401659D-7E09-4F83-A5FE-4490AC5DEE24" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Nuvem" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="1">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="3AC6E4EC-5C98-40A2-8F93-6CB3534F9779" ElementID="761447B7-3653-4D63-B32F-41372FAAF203" Text="Movimentos" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="20" Order="1">761447B7-3653-4D63-B32F-41372FAAF203</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="DBFB1ACA-1AB0-4F69-9F22-7E006159A10C" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">D2FC2C58-8BE8-4499-8377-8C7F7C375F87</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=471;Height=150}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Consulta Veterinaria</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Consultas</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">977059B1-A799-46F7-BF6F-B9CBC60AF651|9091676A-7E95-4389-BF04-996F83D7D53B|8A2F11E5-F20D-4EC8-B918-88B8D14C2229|31505577-65CB-4694-B3C4-0E471BEDE63C|F61EB733-62D1-429E-8F35-C3A5B57D6BA3|8D0561EF-D81D-41BB-B169-D548AF4CF612|F8F1E2E1-AC07-4345-9163-4911D1AFF925|2A833A01-7FDC-426F-A0A3-B20801F2DCAE|DC6E0745-5E10-48EF-A691-8D5C4EEB970C|9DE15B38-B606-413A-8139-14FFC5663B7B</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">778AA1FA-EF2A-42FA-8B05-2A7F9B2928D4|956538BB-A9EB-4DF1-A646-409BF5A64CF1|783EB46F-187F-4C92-A33F-AD357FC11A2B|A2AD14C6-D7B6-4BE5-9114-CE6A4017938A|455CE701-67C1-4419-BF1C-352DE81C5416|8F78DF53-C9FC-48AB-A777-AA485CEC8E71|C964E04B-73FF-4FC8-8420-150E4190C4B8|A82ABCA7-1896-4F3D-8610-AD7221BE8F65|7C39C99E-B373-4E46-931A-632470FBE785|9AEBB4FF-B93A-4DD9-8078-1E21C606AA89</XData>
+    <XLinkData Name="SearchServiceID" ID="9038BDF3-6512-4F1B-8209-179311D0EE42" Type="Guid" ElementID="6AC051FE-BA8A-4F5D-90C5-E35609D4D3D8" Text="BuscaAgenda - (Projecao.Core.PET.ReadOnly)" DocumentID="6AC051FE-BA8A-4F5D-90C5-E35609D4D3D8" DocumentName="BuscaAgenda" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">6AC051FE-BA8A-4F5D-90C5-E35609D4D3D8</XLinkData>
+  </XValues>
+  <XSAMActivity Name="ConsultasACT" ID="2E4E3F88-C0D8-4B08-BA96-4AF79ED8C556" iID="601367">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=74;Height=72}</XData>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=245;G=222;B=179}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Anamnésia</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMDesigner Name="Consultas" ID="498CA361-CC43-4F79-896A-AE598D7A58A9" iID="602091" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+      <XFRMForm ID="9333D2A5-E583-4389-A188-25F20F393040" Name="FieldContainer">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
+          <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+          <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+            <XLanguage IETFCode="pt-br" IsDefault="true">Anamnésia- User Activity</XLanguage>
+          </XData>
+        </XValues>
+        <XFRMField ID="1AF603F1-93B7-4663-BDB4-4C551143C8C6" iID="602100" ParentID="3C5D3B4D-9FEE-4AD2-BCC1-4B9A74CC366F">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="3C5D3B4D-9FEE-4AD2-BCC1-4B9A74CC366F" Text="PETxAnimal.PETNome" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">3C5D3B4D-9FEE-4AD2-BCC1-4B9A74CC366F</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">12</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=343.40625;Y=0;Width=374.625;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="C23F20C8-CCF2-4FA2-BF26-14480830E858" iID="602103" ParentID="059F4014-C91C-4165-AFA8-EFDE25778C0A">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="059F4014-C91C-4165-AFA8-EFDE25778C0A" Text="PETxFamilia.Familia" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">059F4014-C91C-4165-AFA8-EFDE25778C0A</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=842.90625;Y=0;Width=156.09375;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="FCDDDE20-E8A1-40EE-9A5C-AEBA28991273" iID="602118" ParentID="2CCCCD20-EA39-4323-AD48-C064BDE566B1">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="2CCCCD20-EA39-4323-AD48-C064BDE566B1" Text="PETxAtendimento.Data" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">2CCCCD20-EA39-4323-AD48-C064BDE566B1</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">7</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">D56E8E17-9D09-4FE9-9A30-A6AA5865ABC6</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">6C9A2A8B-8418-4475-96DF-51F18B29F381</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=124.875;Y=0;Width=218.53125;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="164E6631-2003-405D-838A-807F8B40F1AB" iID="602121" ParentID="03D30024-5B8D-4FD7-8951-0C9B2AD53E2A">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="03D30024-5B8D-4FD7-8951-0C9B2AD53E2A" Text="ERPxGenero.Genero" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">03D30024-5B8D-4FD7-8951-0C9B2AD53E2A</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">4</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=718.03125;Y=0;Width=124.875;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="755CE930-7599-4DB0-BD97-F8666A788C37" ParentID="0280CF2F-2A2C-4B34-BB68-20FFEA48D01F">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="0280CF2F-2A2C-4B34-BB68-20FFEA48D01F" Text="PETxAtendimento.Numero" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">0280CF2F-2A2C-4B34-BB68-20FFEA48D01F</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">4</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=124.875;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMTabControl Name="NewTabControl" ID="AC86EEF8-8411-4C5D-8294-D0BEAAA740CE">
+          <XValues>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">New Tab Control </XLanguage>
+            </XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">59A28B08-01BF-4EAF-81CA-F317B3907B19</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=999;Height=520}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">13</XData>
+            <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+          </XValues>
+          <XFRMDesigner Name="TabFormPrin" ID="8D6FF5D3-89A6-4383-9CD0-CCFB6E41EA12">
+            <XFRMForm Name="TabFormPrin" ID="23740DED-B8FF-4F09-8ED5-5DE97B995E94">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Anamnese</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField ID="2C531FC2-6058-45EE-9E9A-D539439568AF" ParentID="AB764F7A-330A-4063-9334-0E1A63A55AAD" Name="Descritivo">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AB764F7A-330A-4063-9334-0E1A63A55AAD" Text="PETxAnamnesia.Descritivo" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">AB764F7A-330A-4063-9334-0E1A63A55AAD</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B2B78C3C-48B4-4B16-935C-045691B79E05</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">22</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=686.8125;Height=400}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Descritivo</XLanguage>
+                  </XData>
+                  <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="C9BF5CC4-37EB-406B-8629-F68EE747EEF4" Text="ConsultasDescritivo - (Projecao.Core.PET.Consultas)" DocumentID="810E0B1F-ED6C-4355-B0A4-F256EBD33B4A" DocumentName="ConsultasDescritivo" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">C9BF5CC4-37EB-406B-8629-F68EE747EEF4</XLinkData>
+                  <XLinkArrayData Name="AdditionalDataFieldID" ID="850705D0-2775-484F-B521-A132E2542745" Type="Guid[]">
+                    <XLinkData ID="7EE6B094-6466-4ADB-A718-F70F3AA055BF" ElementID="16F401C9-6AE5-48C1-A5B2-52242734E926" Text="PETxAnamnesia.Descritivo" DocumentID="810E0B1F-ED6C-4355-B0A4-F256EBD33B4A" DocumentName="ConsultasDescritivo" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">16F401C9-6AE5-48C1-A5B2-52242734E926</XLinkData>
+                    <XLinkData ID="38B59088-63E9-4DA8-BA79-CA3273E68441" ElementID="EF7A321B-F529-4CBF-AF33-E325179DB6CF" Text="PETxAnamnesia.Numero" DocumentID="810E0B1F-ED6C-4355-B0A4-F256EBD33B4A" DocumentName="ConsultasDescritivo" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="2">EF7A321B-F529-4CBF-AF33-E325179DB6CF</XLinkData>
+                    <XLinkData ID="43F15EDE-9E1D-4438-9AFC-2B81CCBE9089" ElementID="119E68D7-0633-4EAD-B544-247ACDEAFF3A" Text="PETxAnamnesia.Data" DocumentID="810E0B1F-ED6C-4355-B0A4-F256EBD33B4A" DocumentName="ConsultasDescritivo" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="3">119E68D7-0633-4EAD-B544-247ACDEAFF3A</XLinkData>
+                  </XLinkArrayData>
+                  <XData Name="AdditionalTitle" ID="C9030314-031F-4B6B-9196-D4F249A1428A" Type="String">Atendimento </XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="5C584D88-CAC2-49ED-A627-0CA0E2615336" iID="602139" ParentID="E08FA952-8862-4BB5-9ED0-C7634A018740">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E08FA952-8862-4BB5-9ED0-C7634A018740" Text="PETxTutor.TutorObservacao" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">E08FA952-8862-4BB5-9ED0-C7634A018740</XParentData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">4</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">10</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">9</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">ADA993EB-4A42-440D-98E2-722EE0119959</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=686.8125;Y=320;Width=312.1875;Height=160}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="34A56B2F-1D3A-4442-AEAD-C1CD2C4674DF" iID="602136" ParentID="130EC2FD-9D19-435E-ACB1-BC8C2D78EF64">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="130EC2FD-9D19-435E-ACB1-BC8C2D78EF64" Text="PETxAnimal.PETObservacao" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">130EC2FD-9D19-435E-ACB1-BC8C2D78EF64</XParentData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">3</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">10</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">8</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">ADA993EB-4A42-440D-98E2-722EE0119959</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=686.8125;Y=200;Width=312.1875;Height=120}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField Name="Observacao" ID="1B199A5A-8670-4C57-BBEA-2F1DC64B00AC" iID="602127" ParentID="2B7674B7-3E2C-4058-BA98-CB942198704C">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="2B7674B7-3E2C-4058-BA98-CB942198704C" Text="PETxAtendimento.Observacao" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">2B7674B7-3E2C-4058-BA98-CB942198704C</XParentData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">3</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">10</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">7</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">ADA993EB-4A42-440D-98E2-722EE0119959</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=686.8125;Y=80;Width=312.1875;Height=120}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Observação do Atendimento</XLanguage>
+                  </XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="8470846E-D8D0-4E49-9AE2-444BD30C84C7" iID="602124" ParentID="9018BDEC-A78C-4E62-A864-95793F8607C6">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="9018BDEC-A78C-4E62-A864-95793F8607C6" Text="SYSxPessoa.TutorNome" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">9018BDEC-A78C-4E62-A864-95793F8607C6</XParentData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">8</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=749.25;Y=0;Width=249.75;Height=80}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="ADE0F26F-6D53-4E61-92AC-58FC25DB19EF" iID="602115" ParentID="1AAF47A9-C9B3-4DC1-85F6-B4A257855E33">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="1AAF47A9-C9B3-4DC1-85F6-B4A257855E33" Text="PETxPelagem.Pelagem" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">1AAF47A9-C9B3-4DC1-85F6-B4A257855E33</XParentData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=593.15625;Y=0;Width=156.09375;Height=80}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="3FC18132-E422-4E02-BFFB-0DA180ECB8BB" iID="602109" ParentID="10E2264C-E095-4742-B167-F34334FD5E2F">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="10E2264C-E095-4742-B167-F34334FD5E2F" Text="PETxPorte.Porte" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">10E2264C-E095-4742-B167-F34334FD5E2F</XParentData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=437.0625;Y=0;Width=156.09375;Height=80}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="FC5809E5-8CAA-4D10-BF78-73AD314490F0" iID="602106" ParentID="428E4C42-F643-47C3-B8D8-7CFD407FB64B">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="428E4C42-F643-47C3-B8D8-7CFD407FB64B" Text="PETxRaca.Raca" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">428E4C42-F643-47C3-B8D8-7CFD407FB64B</XParentData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=156.09375;Y=0;Width=280.96875;Height=80}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                </XValues>
+              </XFRMField>
+              <XFRMField ID="DC383A11-FC09-476C-B330-F1A019424942" iID="602112" ParentID="059BA9C9-E807-40AE-81C6-FF08AF276542">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="059BA9C9-E807-40AE-81C6-FF08AF276542" Text="PETxAnimal.Nascimento" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">059BA9C9-E807-40AE-81C6-FF08AF276542</XParentData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">6C9A2A8B-8418-4475-96DF-51F18B29F381</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=156.09375;Height=80}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                </XValues>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Anamnese</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">5F5E963E-D86F-4719-AFF9-28520B59A3ED</XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">6050542B-6701-499C-9A98-533FA25C671F</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">C10463C7-3D1B-4154-8D1D-0125FBDF86EE|6F5BAE18-E5D0-44B0-84D0-D3551911F0EE|36459C8E-B938-480A-AB0E-89DE48FC63D3|B171109C-8719-4D92-A26A-2F07A68ECC5D|8D7A006A-F93A-468A-A995-9C64C3AF4BBC|28259447-82B5-4032-AF13-65798BE3BEC6|6C6EBCB9-310E-46B6-82FF-8FDC2F029CDB|33333CD8-2062-4A2A-AC0D-DCC94F9B13A7|96C55199-5087-4120-B909-681C976B6421|CA0CA039-1F90-4AAB-8A57-3B5B9F0F95C6</XData>
+            </XValues>
+          </XFRMDesigner>
+          <XFRMDesigner Name="TabFormExa" ID="6DC9C2B2-12B0-4223-BB1E-DDC7AB463569">
+            <XFRMForm Name="TabFormExa" ID="0597C9F0-5162-45A1-B894-2315D040A981">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Exames e Vacinas</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField ID="3075D731-0180-4556-953D-F0127187C937" ParentID="775834DA-A550-4B94-8939-AD803F24F130" Name="PETxAnamnesiaExamesID">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="775834DA-A550-4B94-8939-AD803F24F130" Text="PETxAnamnesia.PETxAnamnesiaID" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">775834DA-A550-4B94-8939-AD803F24F130</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">CEB96A0B-3856-44DE-9264-8D264940C893</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">13</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=405.84375;Height=480}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">12</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Exames</XLanguage>
+                  </XData>
+                  <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="63BE8B8A-6D1A-489F-8522-7D4334144CE7" Text="AgendamentoExames - (Projecao.Core.PET.Agendamento)" DocumentID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" DocumentName="AgendamentoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">63BE8B8A-6D1A-489F-8522-7D4334144CE7</XLinkData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                  <XLinkData Name="SelectionServiceID" ID="8554C9E3-EA09-4F65-B9D8-1AD1385211F5" Type="Guid" ElementID="6B2B148C-8E5A-462B-B3A1-D5B1FA9C229F" Text="Exame - (Projecao.Core.ISE.ReadOnly)" DocumentID="6B2B148C-8E5A-462B-B3A1-D5B1FA9C229F" DocumentName="Exame" ModuleID="F28C7462-44A8-4233-9A88-4B89761423D3" ModuleName="Projecao.Core.ISE" DataEx="">6B2B148C-8E5A-462B-B3A1-D5B1FA9C229F</XLinkData>
+                  <XLinkArrayData Name="SourceFilterFieldID" ID="AC72EC86-B81B-4430-B35A-AAD90392B37D" Type="Guid[]">
+                    <XLinkData ID="AA100C3C-7344-407B-83F1-856BAAEF1A59" ElementID="B8E2E531-A5A6-48AA-AEC8-422BAAE21ED4" Text="ISExExame.ISExExameID" DocumentID="6B2B148C-8E5A-462B-B3A1-D5B1FA9C229F" DocumentName="Exame" ModuleID="F28C7462-44A8-4233-9A88-4B89761423D3" ModuleName="Projecao.Core.ISE" DataEx="" Order="1">B8E2E531-A5A6-48AA-AEC8-422BAAE21ED4</XLinkData>
+                  </XLinkArrayData>
+                  <XLinkArrayData Name="TargetFilterFieldID" ID="18EDAE4B-7E8C-40BE-804F-0C10540DFCD5" Type="Guid[]">
+                    <XLinkData ID="75F5DEC2-DBE8-4BF6-A6BC-E417722070A3" ElementID="76A8CA2F-CD35-4CCA-AEC2-35AD2DAE9D7E" Text="PETxAtendimentoExames.ISExExameID" DocumentID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" DocumentName="AgendamentoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">76A8CA2F-CD35-4CCA-AEC2-35AD2DAE9D7E</XLinkData>
+                  </XLinkArrayData>
+                  <XLinkArrayData Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5" Type="Guid[]">
+                    <XLinkData ID="C5F3666A-29A5-4B2C-8318-EDED1DD47DFE" ElementID="5E4E2DC0-801A-4691-9BCF-217F7C7E8D54" Text="ISExItem.Nome" DocumentID="6B2B148C-8E5A-462B-B3A1-D5B1FA9C229F" DocumentName="Exame" ModuleID="F28C7462-44A8-4233-9A88-4B89761423D3" ModuleName="Projecao.Core.ISE" DataEx="" Order="1">5E4E2DC0-801A-4691-9BCF-217F7C7E8D54</XLinkData>
+                    <XLinkData ID="AD3B5458-D974-4951-BA92-439EF952EA4C" ElementID="B3A2F850-52FB-4BE6-A355-2874B2EA7375" Text=".Valor" DocumentID="6B2B148C-8E5A-462B-B3A1-D5B1FA9C229F" DocumentName="Exame" ModuleID="F28C7462-44A8-4233-9A88-4B89761423D3" ModuleName="Projecao.Core.ISE" DataEx="" Order="2">B3A2F850-52FB-4BE6-A355-2874B2EA7375</XLinkData>
+                  </XLinkArrayData>
+                  <XLinkArrayData Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497" Type="Guid[]">
+                    <XLinkData ID="E830CD45-933B-4C60-9DFD-B6ED571DE1E2" ElementID="FB8D4B6F-9A6B-4F8A-96D0-FC8991A1F7C0" Text="ISExItem.Nome" DocumentID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" DocumentName="AgendamentoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">FB8D4B6F-9A6B-4F8A-96D0-FC8991A1F7C0</XLinkData>
+                    <XLinkData ID="860F59BE-36A6-4CBC-8845-11B7DB7AB3F2" ElementID="FBED32F8-2BFC-40E7-822F-F0F425DDE527" Text="PETxAtendimentoExames.ValorTabela" DocumentID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" DocumentName="AgendamentoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="2">FBED32F8-2BFC-40E7-822F-F0F425DDE527</XLinkData>
+                  </XLinkArrayData>
+                </XValues>
+                <XFRMDesigner ID="6488C92F-F5F5-49C1-9DA4-293FA006E4B6" Name="PETxAnamnesiaExamesID">
+                  <XFRMForm Name="T" ID="FF5E674E-BB23-46F3-A13C-51B6A07D0C7B">
+                    <XValues>
+                      <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=498;Height=189}</XData>
+                    </XValues>
+                  </XFRMForm>
+                  <XValues>
+                    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                      <XLanguage IETFCode="pt-br" IsDefault="true">Exames</XLanguage>
+                    </XData>
+                    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">4CB531A7-61BC-4318-B13A-73B2C4103A07</XData>
+                    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">3DB16882-E444-43A3-8B12-BFFD2B73FAD2</XData>
+                    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">E498F8CA-CC1B-4F9A-B7E0-90D4558C2FBD|538AD040-A7D0-40F3-A154-152C98A96F86|90C0C672-5D47-4B05-93D1-655B5BAC56C2|BA726759-1C5C-48A1-AA10-4C563390E6F0|0E9D9BB6-E831-495D-BD1E-BCDC0BA4C398|EA895168-A805-4996-A9D1-33EBC8201660|C3B1ABD5-D627-42F2-A0CC-A6D1ECC0171B|02B78A19-76EF-414D-A369-F3F2E1453741|FD254AE4-6CC2-4897-BACA-41DCCCDF1AD9|13889203-52A5-4BD6-B003-FCC8B7F11349</XData>
+                    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=16;Y=172;Width=498;Height=189}</XData>
+                  </XValues>
+                </XFRMDesigner>
+              </XFRMField>
+              <XFRMField ID="844A14E3-3238-46F0-A595-AADF5E7100E7" ParentID="775834DA-A550-4B94-8939-AD803F24F130" Name="PETxAnamnesiaVacinasID">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="775834DA-A550-4B94-8939-AD803F24F130" Text="PETxAnamnesia.PETxAnamnesiaID" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">775834DA-A550-4B94-8939-AD803F24F130</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">CEB96A0B-3856-44DE-9264-8D264940C893</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">19</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=405.84375;Y=0;Width=593.15625;Height=480}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">12</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Vacinas</XLanguage>
+                  </XData>
+                  <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="6662C981-59FE-4A41-A4A6-273181577CBA" Text="AgendamentoVacina - (Projecao.Core.PET.Agendamento)" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">6662C981-59FE-4A41-A4A6-273181577CBA</XLinkData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                  <XLinkData Name="SelectionServiceID" ID="8554C9E3-EA09-4F65-B9D8-1AD1385211F5" Type="Guid" ElementID="4275D42A-A884-4222-958C-3398334E74BD" Text="Vacina - (Projecao.Core.PET.ReadOnly)" DocumentID="4275D42A-A884-4222-958C-3398334E74BD" DocumentName="Vacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">4275D42A-A884-4222-958C-3398334E74BD</XLinkData>
+                  <XLinkArrayData Name="SourceFilterFieldID" ID="AC72EC86-B81B-4430-B35A-AAD90392B37D" Type="Guid[]">
+                    <XLinkData ID="8B9E3D1A-732E-4D90-B2A1-0303CF77A766" ElementID="5D2FD0BE-2991-4B3F-98E2-91F5F0D1A313" Text="ISExVacina.ISExVacinaID" DocumentID="4275D42A-A884-4222-958C-3398334E74BD" DocumentName="Vacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">5D2FD0BE-2991-4B3F-98E2-91F5F0D1A313</XLinkData>
+                  </XLinkArrayData>
+                  <XLinkArrayData Name="TargetFilterFieldID" ID="18EDAE4B-7E8C-40BE-804F-0C10540DFCD5" Type="Guid[]">
+                    <XLinkData ID="B31FF332-6912-4FB1-BCE7-AD490ABACA45" ElementID="CFE21A13-334C-4C88-9FD2-9B6D4AC57FDD" Text="PETxAtendimentoVacina.ISExVacinaID" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">CFE21A13-334C-4C88-9FD2-9B6D4AC57FDD</XLinkData>
+                  </XLinkArrayData>
+                  <XLinkArrayData Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5" Type="Guid[]">
+                    <XLinkData ID="DFC62611-A2A0-4DD3-A403-31224D7EB3F1" ElementID="84F91457-2BA5-418E-A4F4-442670882E7C" Text="ISExItem.Nome" DocumentID="4275D42A-A884-4222-958C-3398334E74BD" DocumentName="Vacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">84F91457-2BA5-418E-A4F4-442670882E7C</XLinkData>
+                    <XLinkData ID="4107FA12-0BD1-46A4-8CE2-DE72DC735C91" ElementID="FF39EE24-75BB-48BD-B47D-3DDE9A99652E" Text=".Valor" DocumentID="4275D42A-A884-4222-958C-3398334E74BD" DocumentName="Vacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="2">FF39EE24-75BB-48BD-B47D-3DDE9A99652E</XLinkData>
+                  </XLinkArrayData>
+                  <XLinkArrayData Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497" Type="Guid[]">
+                    <XLinkData ID="8BC0CA51-10BA-4A48-AE43-35DF329E5EC0" ElementID="FF268F00-6547-4C8A-825F-1011659B1074" Text="ISExItem.Nome" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">FF268F00-6547-4C8A-825F-1011659B1074</XLinkData>
+                    <XLinkData ID="D1E2FED9-1E73-4431-B9DB-3FA6233B5DA7" ElementID="BC8557A0-539D-42D4-9359-4F0DFACB228E" Text="PETxAtendimentoVacina.ValorTabela" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="2">BC8557A0-539D-42D4-9359-4F0DFACB228E</XLinkData>
+                  </XLinkArrayData>
+                </XValues>
+                <XFRMDesigner ID="5FB8E02C-1A09-4A49-82D8-F6247470D8D2" ParentID="85F4B893-3B5C-48D6-B4F1-C1575CD3257B" Name="PETxAnamnesiaVacinasID">
+                  <XValues>
+                    <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="85F4B893-3B5C-48D6-B4F1-C1575CD3257B" Text="ConsultaVacinas" DocumentID="85F4B893-3B5C-48D6-B4F1-C1575CD3257B" DocumentName="ConsultaVacinas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">85F4B893-3B5C-48D6-B4F1-C1575CD3257B</XParentData>
+                    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                      <XLanguage IETFCode="pt-br" IsDefault="true">Vacinas</XLanguage>
+                    </XData>
+                    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">EFE238C2-00F7-41F3-B682-6A551D525658</XData>
+                    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">46A86F15-0836-4EBD-83B0-376B8F44F5C7</XData>
+                    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">54AEB175-D5BB-4116-A068-7DAB2509C095|EE517614-E2F6-4E83-8DB5-42C5728F7044|0E9A9192-26DE-49C4-8503-C4A3A0FB0FEA|846A7A6C-45C1-4569-AECB-E5BC23B9EFE3|E4902522-F951-4B9C-BBC5-05A7E224E48D|48A24D6E-BFF9-4AB7-B060-7630D364A19B|8427F55E-1367-4BC0-849B-8175150488A9|1EFBC620-8DFB-4DCB-8C56-1549E1006250|76E5A83A-0A9F-4146-8A10-59C4B6E87FB6|BD1531BE-EFF8-451E-9F28-B1F3E6FA78D4</XData>
+                    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=47;Y=177;Width=814;Height=241}</XData>
+                  </XValues>
+                </XFRMDesigner>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Exames e Vacinas</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">9CE35097-1719-4EBF-838C-3F14E768B7E3</XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">D2261519-54A7-4595-9726-20E0EE9DF84E</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">AAE4E035-5496-4413-9E1A-BA4769040904|92EB1D72-E7D6-4019-A2D4-861AB178317B|20E52606-27BE-4214-B142-C9BC3D70720E|AE98C7C1-A359-4B0C-BA70-565CED8BDCA4|FAB86D50-3E52-4CE0-AA77-6B99DF6DCC41|CFCA934F-DB08-4BC6-B72C-9E60CE44B8A5|4A5725A7-8E9B-44EB-B215-2B69D839159D|2A0AD647-B000-41DC-BD06-B8B85004460F|966CFB96-911A-4BB1-AAC3-D6B7F1E23B7D|D5CC8434-126A-4BD1-87AB-45769E3A86FA</XData>
+            </XValues>
+          </XFRMDesigner>
+          <XFRMDesigner Name="TabFormDoc" ID="A2D148C8-1CCB-49F5-B067-0193AA9B221D">
+            <XFRMForm Name="TabFormDoc" ID="A7EE5EE9-DCDA-41AB-A15F-15FE6D0CB113">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Documentos</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField ID="F966F061-8869-4C45-9D25-6B9C04058708" ParentID="775834DA-A550-4B94-8939-AD803F24F130" Name="PETxAnamnesiaDocID">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="775834DA-A550-4B94-8939-AD803F24F130" Text="PETxAnamnesia.PETxAnamnesiaID" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">775834DA-A550-4B94-8939-AD803F24F130</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">C11A7B09-292C-4D86-9ADA-7907C1EF95BA</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=480}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">12</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Documentos</XLanguage>
+                  </XData>
+                  <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="BC10C82C-7810-43A8-86E1-8116240C4905" Text="ConsultasDocumentos - (Projecao.Core.PET.Consultas)" DocumentID="39CB2C84-B28C-4424-8A84-D70CAF2E09A6" DocumentName="ConsultasDocumentos" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">BC10C82C-7810-43A8-86E1-8116240C4905</XLinkData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                  <XLinkArrayData Name="AdditionalDataFieldID" ID="850705D0-2775-484F-B521-A132E2542745" Type="Guid[]">
+                    <XLinkData ID="19ABA0E8-2A7D-421F-9731-FC78F46E210E" ElementID="FECB9F45-8273-4254-B7F4-3F32BF234C66" Text="PETxAnamnesiaDocumento.Documento" DocumentID="39CB2C84-B28C-4424-8A84-D70CAF2E09A6" DocumentName="ConsultasDocumentos" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">FECB9F45-8273-4254-B7F4-3F32BF234C66</XLinkData>
+                    <XLinkData ID="B5E80BB0-8EA8-4B7A-98F6-139A120D2A87" ElementID="264F0808-C690-4129-B2CC-B22135B45996" Text="PETxAnamnesiaDocumento.Tipo" DocumentID="39CB2C84-B28C-4424-8A84-D70CAF2E09A6" DocumentName="ConsultasDocumentos" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="2">264F0808-C690-4129-B2CC-B22135B45996</XLinkData>
+                    <XLinkData ID="FEBE59D5-048C-4DC3-80BC-F308CC863030" ElementID="4A61D4F8-80E1-43AA-850F-9F5963455F9E" Text="PETxAnamnesiaDocumento.Descricao" DocumentID="39CB2C84-B28C-4424-8A84-D70CAF2E09A6" DocumentName="ConsultasDocumentos" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="3">4A61D4F8-80E1-43AA-850F-9F5963455F9E</XLinkData>
+                  </XLinkArrayData>
+                </XValues>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Documentos</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">F9831D2B-8385-43E1-B859-BB95518BE9F6</XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">3356A1A7-B3C4-4500-8B53-0119CD9A7DF1</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">4B483EF7-D875-470E-A6BA-74F130941280|B9E51F2A-4563-4077-92E9-4E113FFBF6F1|203503C7-7DD1-415B-8727-861827BB7FB2|4C552D66-C3EB-461B-BEE6-5F048A8B9803|5D768A19-D2B5-44B7-B357-D6E8164C90FA|65CAED41-6F0E-4D93-A1F6-3C427686A4FE|E617CF4F-7638-4DA5-939A-76FF1F2B1808|DB093D5D-BC62-433B-AD09-1E27158A5866|3A6FA6E6-8751-4CDE-A2D7-ED49E42692BE|4660985C-A830-4686-9745-4A64199D2CA5</XData>
+            </XValues>
+          </XFRMDesigner>
+          <XFRMDesigner Name="TabFormReceitas" ID="DF8E3C03-5C49-498D-8FD6-35C637B34A9D">
+            <XFRMForm Name="TabFormReceitas" ID="5D39D53B-055F-426B-B556-3712BC2B29C0">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Receitas</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField ID="67A4D0C6-9E82-47E9-9D19-F25099222D84" ParentID="775834DA-A550-4B94-8939-AD803F24F130">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="775834DA-A550-4B94-8939-AD803F24F130" Text="PETxAnamnesia.PETxAnamnesiaID" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">775834DA-A550-4B94-8939-AD803F24F130</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B2B78C3C-48B4-4B16-935C-045691B79E05</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=480}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">12</XData>
+                  <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="90957524-38D8-4B39-AA54-7B4BBC9190B2" Text="ConsultasReceitas - (Projecao.Core.PET.Consultas)" DocumentID="34DC02CB-FC89-46D7-AB87-132A4E4A969E" DocumentName="ConsultasReceitas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">90957524-38D8-4B39-AA54-7B4BBC9190B2</XLinkData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Receitas</XLanguage>
+                  </XData>
+                  <XData Name="ShowButtons" ID="2DBD2B20-EB78-45D0-A929-EBAB5E29AB81" Type="XEditorButton[]">Add|Print</XData>
+                  <XLinkArrayData Name="AdditionalDataFieldID" ID="850705D0-2775-484F-B521-A132E2542745" Type="Guid[]">
+                    <XLinkData ID="84A319C7-5E2D-47B3-A42B-9A966C3B6F88" ElementID="7F9BD260-FD9F-4D0C-9245-B7282706349B" Text="PETxReceita.Descritivo" DocumentID="34DC02CB-FC89-46D7-AB87-132A4E4A969E" DocumentName="ConsultasReceitas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">7F9BD260-FD9F-4D0C-9245-B7282706349B</XLinkData>
+                  </XLinkArrayData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                </XValues>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Receitas</XLanguage>
+              </XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">52C634C6-8122-4943-94C2-EBAE61C27FAB</XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">981B1575-2C99-4780-8846-340276032A1A</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">4E64E2C7-19C5-4B9F-9071-B153FCA20AF9|8949D372-1A63-45BD-B21F-8738C2C7599F|6FF78A5C-9205-4BE1-BFED-F7420B3861FE|CDBA23D2-DAC2-4273-9D7A-A35D2BDC1DC5|971057A0-7232-4D7E-9284-C71CF6C68FF4|B2B9D9A7-167F-4D0C-8653-5724BF473B54|17FF63B6-E364-40D3-BD13-73B6B8BDF89E|6F30D51C-4B97-4278-985E-EB5FA6780922|469904F7-B09A-405F-AEB1-F6B59812AEBF|1C67CB5A-F126-4FE3-9F8C-CE0A3116F6B3</XData>
+            </XValues>
+          </XFRMDesigner>
+          <XFRMDesigner Name="TabFormPedidoExames" ID="A170E8B8-86DC-4BB3-8605-03907DB923B4">
+            <XFRMForm Name="TabFormPedidoExames" ID="5A1180D7-7265-4D64-82A6-B04F54C2E8C4">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Pedidos de Exames</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField ID="053BE256-52F4-4C46-8052-4F39CAD55841" ParentID="775834DA-A550-4B94-8939-AD803F24F130">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="775834DA-A550-4B94-8939-AD803F24F130" Text="PETxAnamnesia.PETxAnamnesiaID" DocumentID="CAEFEE10-F909-4971-A7EB-6D5A0071DE4E" DocumentName="Consultas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">775834DA-A550-4B94-8939-AD803F24F130</XParentData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B2B78C3C-48B4-4B16-935C-045691B79E05</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=480}</XData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">12</XData>
+                  <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="E15806F6-35DA-49BE-A4EB-D03A63C30E32" Text="PedidoExames - (Projecao.Core.PET.Consultas)" DocumentID="19D64F6D-2765-4DF4-AACC-CCB4DDAD2611" DocumentName="PedidoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">E15806F6-35DA-49BE-A4EB-D03A63C30E32</XLinkData>
+                  <XLinkArrayData Name="AdditionalDataFieldID" ID="850705D0-2775-484F-B521-A132E2542745" Type="Guid[]">
+                    <XLinkData ID="0F82A990-9867-4AF7-9E44-74D11DACC806" ElementID="39B6700D-D94E-49DF-92CA-DB82F84EEBD4" Text="PETxPedidoExame.Descritivo" DocumentID="19D64F6D-2765-4DF4-AACC-CCB4DDAD2611" DocumentName="PedidoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">39B6700D-D94E-49DF-92CA-DB82F84EEBD4</XLinkData>
+                  </XLinkArrayData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                  <XData Name="ShowButtons" ID="2DBD2B20-EB78-45D0-A929-EBAB5E29AB81" Type="XEditorButton[]">Add|Print</XData>
+                </XValues>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Pedidos de Exames</XLanguage>
+              </XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">57756F93-34B9-4814-AEC7-B79737394012</XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">B5BF2784-866B-4B02-9652-0A2B1C06F0B8</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">14879FE4-1CEE-460B-A7D7-7E1FBCA79AD7|36648D2B-D424-427D-ADCE-F029108974A9|72A419D9-FA9C-4598-8593-D0CF057E09E5|5229E110-C068-47CF-A43B-1ECA02D8979D|D40B8808-2F08-460B-9478-DA0F02ACFE12|7BAC6F46-D6CB-4E9C-AFA0-F8DAC910D177|5F14D763-2B83-4D60-940A-D8CED3F9C475|2E1B9EB1-9956-4288-827D-11FA7E9DFB60|88C6D134-365E-480A-A965-66FC69196B05|E0C43E45-30D3-4301-A574-0362F8FA374E</XData>
+            </XValues>
+          </XFRMDesigner>
+        </XFRMTabControl>
+      </XFRMForm>
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">AC95EABC-68E7-48B8-8D2D-59D63C7C68DC</XData>
+        <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">EA624580-E63F-4045-978B-AEC4152500CA</XData>
+        <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">E126805F-2269-4EF3-9C2F-23761F417FC0|94705356-951D-4FA9-B1C7-907CCEDB699A|444C36AE-43FB-4B05-B963-BFE49314E5C3|1B4ECA7C-AE70-4619-8C95-11DA4B717D46|917FEA80-1C72-4D54-BEEF-1E413A2E55B0|3202D8E7-AE03-485C-918C-E6CDC4A4EF98|76435173-1825-474D-8F0B-BF455B3A9A5B|6852194E-E4E6-4CF5-AB0A-1A4F1C7F2152|88206DF6-B8D7-4E21-8472-4EE015561C59|B1C16A7D-9BAC-4B8D-9379-C741759135E4</XData>
+      </XValues>
+    </XFRMDesigner>
+  </XSAMActivity>
+</XSAMDesigner>

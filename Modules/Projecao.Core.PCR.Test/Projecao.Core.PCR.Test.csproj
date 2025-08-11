@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{EBF3214E-6968-441B-8A78-2B76FB656519}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASETest</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Projecao.Core.PCR.Test.dsmdl" />
+    <None Remove="IATF\IATF.SAM.IATF.Test.dscit" />
+    <None Remove="Pasto\Pasto.SAM.Pastos.Test.dscit" />
+    <None Remove="Reprodutor\Reprodutor.SAM.Reprodutores.Test.dscit" />
+    <None Remove="Retiro\Retiro.SAM.Retiros.Test.dscit" />
+    <None Remove="Vacina\Vacina.SAM.Vacinas.Test.dscit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Projecao.Core.PCR.Test.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.PCR.Test.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="IATF\IATF.SAM.IATF.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IATF.SAM.IATF.Test.dscit</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="IATF\IATF.SAM.IATF.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>IATF.SAM.IATF.Test.dscit</DependentUpon>
+    </Compile>
+    <Compile Include="Pasto\Pasto.SAM.Pastos.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pasto.SAM.Pastos.Test.dscit</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pasto\Pasto.SAM.Pastos.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Pasto.SAM.Pastos.Test.dscit</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+    <Compile Include="Reprodutor\Reprodutor.SAM.Reprodutores.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Reprodutor.SAM.Reprodutores.Test.dscit</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Reprodutor\Reprodutor.SAM.Reprodutores.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Reprodutor.SAM.Reprodutores.Test.dscit</DependentUpon>
+    </Compile>
+    <Compile Include="Retiro\Retiro.SAM.Retiros.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Retiro.SAM.Retiros.Test.dscit</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Retiro\Retiro.SAM.Retiros.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Retiro.SAM.Retiros.Test.dscit</DependentUpon>
+    </Compile>
+    <Compile Include="Vacina\Vacina.SAM.Vacinas.Test.CIT.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vacina.SAM.Vacinas.Test.dscit</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Vacina\Vacina.SAM.Vacinas.Test.CIT.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Vacina.SAM.Vacinas.Test.dscit</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Projecao.Core.PCR.Test.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.PCR.Test.cs</LastGenOutput>
+    </Content>
+    <Content Include="IATF\IATF.SAM.IATF.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>IATF.SAM.IATF.Test.CIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pasto\Pasto.SAM.Pastos.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Pasto.SAM.Pastos.Test.CIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Reprodutor\Reprodutor.SAM.Reprodutores.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Reprodutor.SAM.Reprodutores.Test.CIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Retiro\Retiro.SAM.Retiros.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Retiro.SAM.Retiros.Test.CIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Vacina\Vacina.SAM.Vacinas.Test.dscit">
+      <Visible>True</Visible>
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Vacina.SAM.Vacinas.Test.CIT.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Test\TFX.CIT.Core\TFX.CIT.Core.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj">
+      <CopyLocal>False</CopyLocal>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.ERP\Projecao.Core.ERP.csproj">
+      <CopyLocal>False</CopyLocal>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\Projecao.Core.PCR\Projecao.Core.PCR.csproj">
+      <CopyLocal>False</CopyLocal>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

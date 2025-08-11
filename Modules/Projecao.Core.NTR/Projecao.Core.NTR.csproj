@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ProjectGUID>{56D18EED-484B-4DAB-9973-9AF4439DBE2B}</ProjectGUID>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>$(ProjectName)</AssemblyName>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup><PropertyGroup><AssemblyVersion>4.1.1.6666</AssemblyVersion><FileVersion>4.1.1.6666</FileVersion><Version>4.1.1.6666</Version></PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Linux|AnyCPU'">
+    <OutputPath>$(BinPath)\Application\</OutputPath>
+    <IntermediateOutputPath>Obj\</IntermediateOutputPath>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;$(CrossPlatform)</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Projecao.Core.NTR.dsmdl" />
+    <None Remove="DASEProperties.dsmdl" />
+    <None Remove="DB\NTRx.ORM.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Projecao.Core.NTR.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.NTR.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="Projecao.Core.NTR.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Projecao.Core.NTR.dsmdl</DependentUpon>
+    </Compile>
+
+    <Compile Include="DB\NTRx.ORM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NTRx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="EventoMobile\MobileConfig.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MobileConfig.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="EventoMobile\MobileConfig.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MobileConfig.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="EventoMobile\MobileConfigLog.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MobileConfigLog.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Evento\Evento.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Evento.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Jobs\HPCIntegracao.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HPCIntegracao.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Evento\Evento.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Evento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PontoDestaque\PontoDestaque.SAM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PontoDestaque.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PontoDestaque\PontoDestaque.SVC.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PontoDestaque.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Visible>True</Visible>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Projecao.Core.NTR.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.NTR.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.7.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite" Version="1.0.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Model\TFX.Core.Model.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core.Service\TFX.Core.Service.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <PrivateAssets>Yes</PrivateAssets>
+      <ExcludeAssets>Yes</ExcludeAssets>
+      <IncludeAssets>No</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TFX-Core\TFX.Core\TFX.Core.csproj">
+      <Private>false</Private>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="DB\NTRx.ORM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>NTRx.dsorm</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DB\NTRx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>NTRx.ORM.cs</LastGenOutput>
+    </None>
+    <None Update="EventoMobile\MobileConfig.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>MobileConfig.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="EventoMobile\MobileConfig.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>MobileConfig.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="EventoMobile\MobileConfigLog.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>MobileConfigLog.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Evento\Evento.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Evento.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="Jobs\HPCIntegracao.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>HPCIntegracao.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="Evento\Evento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Evento.SVC.cs</LastGenOutput>
+    </None>
+    <None Update="PontoDestaque\PontoDestaque.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PontoDestaque.SAM.cs</LastGenOutput>
+    </None>
+    <None Update="PontoDestaque\PontoDestaque.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PontoDestaque.SVC.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Update="EventoMobile\MobileConfig.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>MobileConfig.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="EventoMobile\MobileConfig.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>MobileConfig.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="EventoMobile\MobileConfigLog.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>MobileConfigLog.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Evento\Evento.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Evento.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Evento\Evento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Evento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="Jobs\HPCIntegracao.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>HPCIntegracao.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="PontoDestaque\PontoDestaque.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PontoDestaque.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="PontoDestaque\PontoDestaque.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PontoDestaque.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+</Project>

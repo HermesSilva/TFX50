@@ -1,12 +1,13 @@
 set RelativePath=%~dp0%
 set BinPath=D:\Tootega\DASE4VSBin
-set home=C:\Users\Hermes\AppData\Local\Microsoft\VisualStudio\17.0_9c90c9bdTFX\Extensions\em1jleiz.1b0
+set home=C:\Users\Hermes\AppData\Local\Microsoft\VisualStudio\17.0_9c90c9bdTFX\Extensions\jpbouh1k.l4h
 if exist %work% set VSIX=%work%
 if exist %home% set VSIX=%home%
 if exist %work2% set VSIX=%work2%
 
 if [%BinPath%] == [] goto ERRO
 if [%VSIX%] == [] goto NOCOPY
+rem if [%1] == [] goto NOCOPY
 
 set DeployType=None
 

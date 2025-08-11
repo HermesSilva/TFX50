@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner Name="Tutor" ID="4D0080BB-3F8F-4DA2-8C24-F3F0B5E1051D" iID="591967" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+  <XValues>
+    <XLinkData Type="Guid" Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" ElementID="ACB4D559-50A6-4925-9AD0-F62FD666F107" Text="Tutor - (Projecao.Core.PET.Tutor)" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">ACB4D559-50A6-4925-9AD0-F62FD666F107</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XPAMStartAction">DataGrid</XData>
+    <XLinkArrayData Type="Guid[]" Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F">
+      <XLinkData ID="24845579-E650-463F-8FF5-FC3C80445346" ElementID="880441F4-6E3A-4581-9228-32D8CE030C4E" Text="Configurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="6" Order="2">880441F4-6E3A-4581-9228-32D8CE030C4E</XLinkData>
+      <XLinkData ID="20B288F3-4E43-44D5-B121-0E658B2B4027" ElementID="D013D072-622A-4CDF-A966-C0F3622A0F37" Text="Inativar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="4" Order="3">D013D072-622A-4CDF-A966-C0F3622A0F37</XLinkData>
+      <XLinkData ID="D2AE4BB2-F25C-43E4-AD0C-69AD21A996B0" ElementID="FAB09927-CDE5-4B3E-87A5-96CA5DB6B839" Text="Incluir" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="1" Order="4">FAB09927-CDE5-4B3E-87A5-96CA5DB6B839</XLinkData>
+      <XLinkData ID="5166D536-C692-4786-9995-14B518A09D48" ElementID="110EDF00-7E45-4C68-982D-CCB06158B372" Text="Restaurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="5" Order="5">110EDF00-7E45-4C68-982D-CCB06158B372</XLinkData>
+      <XLinkData ID="1C45DD18-4CBA-44CB-8DE1-9A5AC42D949F" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="6">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+      <XLinkData ID="E3CF9212-3814-4A96-8C4D-68303362FD3F" ElementID="E3CE9D50-305A-4583-81BD-90BC5872AB50" Text="Alterar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="3" Order="1">E3CE9D50-305A-4583-81BD-90BC5872AB50</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Type="Guid[]" Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650">
+      <XLinkData ID="F81FBAB0-C043-45FC-813A-E137B61F350D" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Nuvem" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="1">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="B608107A-3363-4E90-B021-FAF6666C11C1" ElementID="E0AF9437-37E2-4C87-992B-770BB9A87435" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="14" Order="1">E0AF9437-37E2-4C87-992B-770BB9A87435</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="DBFB1ACA-1AB0-4F69-9F22-7E006159A10C" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">B89A0B86-31EB-42D2-84B4-351B35B27DC6</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=450;Height=150}</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Tutor de PETs</XLanguage>
+    </XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Tutor</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">EF5B35E2-A8BE-4045-ABAF-7FA31504C64E|776C9851-CC3A-488B-8D33-355E0D0B8C8F|68D9BF8C-FF87-49B3-B500-936C458434DA|0D146D8B-8AE9-43C6-947A-6FC4733C5DAB|3A4B19C5-8FBA-44D1-99B0-604D0BCF1A10|4D8AF785-2F76-446D-81F4-957288CBA2F1|F43F3610-54DE-4E2D-B44E-9E87189783B1|9361049E-ECE0-4A16-9719-7C481BAABA76|279105F1-5DD4-46F3-B6E0-E9696F7F8A00|DB7AACBA-5AC8-4828-804B-A2F04B5EF57E</XData>
+    <XData Name="Icon" ID="FBFDF5DF-C7C4-41A4-B4EC-D3D098251779" Type="String">tutor.svg</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">5F98656C-A2A2-49A1-A1A5-D71F7B1B4D66|51F1F3C4-CD90-4FE8-8BFB-24B4D0665FD2|23A433F8-5EA6-497B-8B79-606B0E4B24A5|3040C804-4C9A-40BC-BE1C-36996A449B83|3DD88992-2158-4788-B48E-A46B0FC1EEB3|7B7AD8B4-2D3A-455B-B557-92D816E7908F|9ED51902-CC62-4A43-BD3C-456078895B2E|2FF7885B-0C65-458F-9D99-876F5E09DADE|C1354E42-11DD-496B-BD45-B4A0D6F2F4C5|0C55A787-0750-4A61-A2DB-BAF245E40F58</XData>
+  </XValues>
+  <XSAMActivity Name="TutorACT" ID="CC8BBD61-FC91-4FFB-B062-16B5D8CEDBF4" iID="591970">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=74;Height=72}</XData>
+      <XData Name="BackgroundColor" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=245;G=222;B=179}</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Tutor</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMDesigner Name="Tutor" ID="F2D9A629-19FA-4440-9DF3-6DE8E2AB73A3" iID="592166" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+      <XFRMForm ID="0A0A4406-35F2-4E01-B7FD-2B3C942F47A3" Name="FieldContainer">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
+          <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+          <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+            <XLanguage IETFCode="pt-br" IsDefault="true">Tutor- User Activity</XLanguage>
+          </XData>
+        </XValues>
+        <XFRMField ID="D3A1C9E7-24ED-4CC4-ADF2-6B763AD6B60E" iID="591972" ParentID="66DCB284-E9A8-4C4A-9E1D-977827A3F6E6">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="66DCB284-E9A8-4C4A-9E1D-977827A3F6E6" Text="SYSxPessoa.Nome" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">66DCB284-E9A8-4C4A-9E1D-977827A3F6E6</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">24</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">29D1D781-89F4-4D05-876C-02016DE4ACC1</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=749.25;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="ACB4D559-50A6-4925-9AD0-F62FD666F107" Text="Tutor - (Projecao.Core.PET.Tutor)" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">ACB4D559-50A6-4925-9AD0-F62FD666F107</XLinkData>
+            <XLinkData Name="SourceFieldID" ID="8386FB56-8211-4301-ACCF-362A93A98DD4" Type="Guid" ElementID="A899B053-F6DB-465B-8F91-B64469EB2535" Text=".CPF" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">A899B053-F6DB-465B-8F91-B64469EB2535</XLinkData>
+            <XData Name="AdditionalTitle" ID="C9030314-031F-4B6B-9196-D4F249A1428A" Type="String">XXXXXXXXX</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="62E56097-364A-4A80-AFD1-E6FF2F7FD69A" iID="591974" ParentID="73A31017-515B-4764-9E27-21C9B0F8E814">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="73A31017-515B-4764-9E27-21C9B0F8E814" Text="ERPxPessoaFisica.ERPxGeneroID" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">73A31017-515B-4764-9E27-21C9B0F8E814</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">4</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XLinkData Type="Guid" Name="TableID" ID="20EAE06F-5190-436A-8B4F-79D24E6289BE" ElementID="7671DC91-8953-46C6-B9C2-1AF875B1C711" Text="ERPxGenero" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">7671DC91-8953-46C6-B9C2-1AF875B1C711</XLinkData>
+            <XLinkData Type="Guid" Name="FKFieldID" ID="CC4DF01A-1600-4727-ACC6-15A0D4C0F395" ElementID="0A87580C-15B9-462C-B5C1-F8F5A40A4AF9" Text="ERPxGeneroID" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">0A87580C-15B9-462C-B5C1-F8F5A40A4AF9</XLinkData>
+            <XLinkArrayData Type="Guid[]" Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497">
+              <XLinkData ID="7A3ED87F-3C59-4FF1-953A-515D3674325A" ElementID="EF74236D-7330-472A-B4FE-5D08025A53B3" Text="ERPxGenero.Genero" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">EF74236D-7330-472A-B4FE-5D08025A53B3</XLinkData>
+            </XLinkArrayData>
+            <XLinkArrayData Type="Guid[]" Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5">
+              <XLinkData ID="B7748685-0DA9-4113-AFA6-616E1AD12A2F" ElementID="E1C95896-5736-4247-A911-DA6300C691F9" Text="Genero" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">E1C95896-5736-4247-A911-DA6300C691F9</XLinkData>
+            </XLinkArrayData>
+            <XData Name="AllowEmpty" ID="38185044-075D-4917-BFA0-D0A99A321785" Type="Boolean">true</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">AC111493-AD7B-4F74-A0E8-DF0E0BB6B74A</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=874.125;Y=0;Width=124.875;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="60C14E43-9BA3-4A90-B507-7B0DE5D6050D" iID="592013" ParentID="F13AE607-F047-41C3-9ED7-59ADB8A95E9E">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F13AE607-F047-41C3-9ED7-59ADB8A95E9E" Text="ERPxPessoaFisica.Nascimento" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">F13AE607-F047-41C3-9ED7-59ADB8A95E9E</XParentData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">4</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">6C9A2A8B-8418-4475-96DF-51F18B29F381</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=749.25;Y=0;Width=124.875;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="0273DFEF-7998-4D6B-9E11-395F53E2A4BA" iID="601590" ParentID="434454A9-F46B-4B4A-93A3-9A57D211036F">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="434454A9-F46B-4B4A-93A3-9A57D211036F" Text="PETxTutor.Observacao" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">434454A9-F46B-4B4A-93A3-9A57D211036F</XParentData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">ADA993EB-4A42-440D-98E2-722EE0119959</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=999;Height=80}</XData>
+            <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMTabControl Name="NewTabControl" ID="B862F5B1-7E7D-44F7-9E32-44FD49404614">
+          <XValues>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">New Tab Control </XLanguage>
+            </XData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">59A28B08-01BF-4EAF-81CA-F317B3907B19</XData>
+            <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=160;Width=999;Height=440}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">11</XData>
+          </XValues>
+          <XFRMDesigner Name="TabFormPET" ID="A240903A-2BE0-4477-A690-35954CFEB83C">
+            <XFRMForm Name="TabFormPET" ID="046AED6D-8DEE-4850-9921-D77319D9A407">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">PETs</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField Name="AnimaisID" ID="418A8C86-495B-408F-B54F-BB9450870C6E" iID="592318" ParentID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F" Text="SYSxPessoa.SYSxPessoaID" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">AC9DE2EC-751B-4B26-A5FA-C718C0400E4F</XParentData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XLinkData Type="Guid" Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" ElementID="266D3B55-E31F-4A29-B6C7-142ABAB21191" Text="Animal - (Projecao.Core.PET.Tutor)" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">266D3B55-E31F-4A29-B6C7-142ABAB21191</XLinkData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">ADD41C4D-6BB4-49A6-856E-4CAA566DEBC2</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=400}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">PETs</XLanguage>
+                  </XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                </XValues>
+                <XFRMDesigner Name="AnimaisID" ID="21C3554C-D463-479F-9B5C-7044C24607F8" iID="592920" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+                  <XFRMForm ID="15394BCC-E52E-4B6E-B940-003F1F4E5F02" Name="FieldContainer">
+                    <XValues>
+                      <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+                      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=800;Height=154}</XData>
+                      <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+                      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                        <XLanguage IETFCode="pt-br" IsDefault="true">PETs</XLanguage>
+                      </XData>
+                    </XValues>
+                    <XFRMField ID="EC9D249D-FEAB-4D3C-9A98-8666C3FA53FB" iID="592925" ParentID="4198998C-5A80-4CC8-A3F0-C4E99E896ED4">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4198998C-5A80-4CC8-A3F0-C4E99E896ED4" Text="PETxAnimal.Nome" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">4198998C-5A80-4CC8-A3F0-C4E99E896ED4</XParentData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">15</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=375;Height=80}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                      </XValues>
+                    </XFRMField>
+                    <XFRMField ID="2DB9F9E5-2E87-4B9B-8BCE-C2746D6048B6" iID="592928" ParentID="96EEF5AE-CCB6-47C5-960F-A52D2AC14FDA">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="96EEF5AE-CCB6-47C5-960F-A52D2AC14FDA" Text="PETxAnimal.ERPxSexoID" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">96EEF5AE-CCB6-47C5-960F-A52D2AC14FDA</XParentData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">11</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+                        <XLinkData Type="Guid" Name="TableID" ID="20EAE06F-5190-436A-8B4F-79D24E6289BE" ElementID="7671DC91-8953-46C6-B9C2-1AF875B1C711" Text="ERPxGenero" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">7671DC91-8953-46C6-B9C2-1AF875B1C711</XLinkData>
+                        <XLinkData Type="Guid" Name="FKFieldID" ID="CC4DF01A-1600-4727-ACC6-15A0D4C0F395" ElementID="0A87580C-15B9-462C-B5C1-F8F5A40A4AF9" Text="ERPxGeneroID" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">0A87580C-15B9-462C-B5C1-F8F5A40A4AF9</XLinkData>
+                        <XLinkArrayData Type="Guid[]" Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497">
+                          <XLinkData ID="3EB2E92B-1815-48CD-A93F-02D8A8F6BE81" ElementID="9DF201CB-A304-42D2-A153-092BEF1D7AD5" Text="ERPxGenero.Genero" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="1">9DF201CB-A304-42D2-A153-092BEF1D7AD5</XLinkData>
+                          <XLinkData ID="97BFAF2F-1839-47F7-AF4A-25ECF1BD3563" ElementID="F395C888-E0BA-4A2F-BC64-F863777B6D64" Text="ERPxGenero.Designacao" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Order="2">F395C888-E0BA-4A2F-BC64-F863777B6D64</XLinkData>
+                        </XLinkArrayData>
+                        <XLinkArrayData Type="Guid[]" Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5">
+                          <XLinkData ID="1CC2A3F5-DD15-4E91-B7AE-229A7E7A2DE9" ElementID="E1C95896-5736-4247-A911-DA6300C691F9" Text="Genero" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="" Order="1">E1C95896-5736-4247-A911-DA6300C691F9</XLinkData>
+                          <XLinkData ID="499C40DF-A990-4ACB-9450-342AD49087ED" ElementID="B83FCDF1-553D-460F-9CF2-798A927888CF" Text="Designacao" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="" Order="2">B83FCDF1-553D-460F-9CF2-798A927888CF</XLinkData>
+                        </XLinkArrayData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">AC111493-AD7B-4F74-A0E8-DF0E0BB6B74A</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=275;Height=80}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                          <XLanguage IETFCode="pt-br" IsDefault="true">Gênero</XLanguage>
+                        </XData>
+                      </XValues>
+                    </XFRMField>
+                    <XFRMField ID="002FAC92-7CC1-47B8-9E80-61ED9804F7C1" iID="592931" ParentID="782C4520-8F83-4624-8051-8BB716312332">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="782C4520-8F83-4624-8051-8BB716312332" Text="PETxAnimal.PETxRacaID" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">782C4520-8F83-4624-8051-8BB716312332</XParentData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">11</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+                        <XLinkData Type="Guid" Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" ElementID="D3DFD4F9-CC0D-459A-BD0B-B07427D01E00" Text="Raca - (Projecao.Core.PET.ReadOnly)" DocumentID="D3DFD4F9-CC0D-459A-BD0B-B07427D01E00" DocumentName="Raca" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">D3DFD4F9-CC0D-459A-BD0B-B07427D01E00</XLinkData>
+                        <XLinkData Type="Guid" Name="FKFieldID" ID="CC4DF01A-1600-4727-ACC6-15A0D4C0F395" ElementID="5D6D53B3-BB20-49BF-8319-526476D1AB19" Text="PETxRacaID" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">5D6D53B3-BB20-49BF-8319-526476D1AB19</XLinkData>
+                        <XLinkArrayData Type="Guid[]" Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497">
+                          <XLinkData ID="481832BD-577A-4289-ABB9-166B65162DBA" ElementID="239DB8E3-13F9-4BBA-AB5B-0F43E8B30A0D" Text="PETxRaca.Raca" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">239DB8E3-13F9-4BBA-AB5B-0F43E8B30A0D</XLinkData>
+                          <XLinkData ID="0CA7864B-5FAE-4DE3-BE12-E05A318F1D9E" ElementID="A4D66D4B-AD9C-4987-9DB6-54FF0F3E9711" Text="PETxFamilia.Familia" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">A4D66D4B-AD9C-4987-9DB6-54FF0F3E9711</XLinkData>
+                        </XLinkArrayData>
+                        <XLinkArrayData Type="Guid[]" Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5">
+                          <XLinkData ID="D39CCECA-4543-49CC-BE5C-08C14837947F" ElementID="73867E4B-E99D-4184-91D4-58C126B906F9" Text="PETxRaca.Raca" DocumentID="D3DFD4F9-CC0D-459A-BD0B-B07427D01E00" DocumentName="Raca" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">73867E4B-E99D-4184-91D4-58C126B906F9</XLinkData>
+                          <XLinkData ID="9F7630D0-8B98-48D4-A293-D1CB2A955159" ElementID="914B3715-5B2C-4840-8AE8-0484E69EF6F9" Text="PETxFamilia.Familia" DocumentID="D3DFD4F9-CC0D-459A-BD0B-B07427D01E00" DocumentName="Raca" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">914B3715-5B2C-4840-8AE8-0484E69EF6F9</XLinkData>
+                        </XLinkArrayData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">66290387-F0AD-4746-A1F7-B0D8D4C5C2EE</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=275;Y=80;Width=275;Height=80}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                      </XValues>
+                    </XFRMField>
+                    <XFRMField Name="PETxPelagemID" ID="CBEBE919-8B9F-4B2F-AD70-DBF02EEACE16" iID="592934" ParentID="F009EC02-CEBD-4D24-BCE2-88AE2B84E2C4">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F009EC02-CEBD-4D24-BCE2-88AE2B84E2C4" Text="PETxAnimal.PETxPelagemID" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">F009EC02-CEBD-4D24-BCE2-88AE2B84E2C4</XParentData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">7</XData>
+                        <XLinkData Type="Guid" Name="TableID" ID="20EAE06F-5190-436A-8B4F-79D24E6289BE" ElementID="43CBE79C-34BA-4EAE-A9C1-9379D2F070FA" Text="PETxPelagem" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">43CBE79C-34BA-4EAE-A9C1-9379D2F070FA</XLinkData>
+                        <XLinkData Type="Guid" Name="FKFieldID" ID="CC4DF01A-1600-4727-ACC6-15A0D4C0F395" ElementID="41CA861D-4D8F-4BCA-9FF8-38CE3CA8E567" Text="PETxPelagemID" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">41CA861D-4D8F-4BCA-9FF8-38CE3CA8E567</XLinkData>
+                        <XLinkArrayData Type="Guid[]" Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497">
+                          <XLinkData ID="67689B54-811F-4295-A65C-38938C093223" ElementID="411D99EB-904E-4A57-906A-BE6DE3172B11" Text="PETxPelagem.Pelagem" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">411D99EB-904E-4A57-906A-BE6DE3172B11</XLinkData>
+                        </XLinkArrayData>
+                        <XLinkArrayData Type="Guid[]" Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5">
+                          <XLinkData ID="8D124931-1EB8-42F9-8191-07C3D4079E3E" ElementID="DFDD3EBF-5A5B-49F9-AE45-90FA865524EF" Text="Pelagem" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">DFDD3EBF-5A5B-49F9-AE45-90FA865524EF</XLinkData>
+                        </XLinkArrayData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">AC111493-AD7B-4F74-A0E8-DF0E0BB6B74A</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=175;Y=160;Width=225;Height=80}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                      </XValues>
+                    </XFRMField>
+                    <XFRMField ID="86857664-6ABB-4B60-9737-27A9D7E3EA9E" iID="592937" ParentID="383BC798-04CB-4427-870F-3E08F316B238">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="383BC798-04CB-4427-870F-3E08F316B238" Text="PETxAnimal.Nascimento" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">383BC798-04CB-4427-870F-3E08F316B238</XParentData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">7</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">6C9A2A8B-8418-4475-96DF-51F18B29F381</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=375;Y=0;Width=175;Height=80}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                      </XValues>
+                    </XFRMField>
+                    <XFRMField ID="C71D0827-09A3-474E-81F2-7EDA37E9AE0D" iID="597974" ParentID="01A7DE34-E36D-421A-A933-B5A625FB2988">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="01A7DE34-E36D-421A-A933-B5A625FB2988" Text="PETxAnimal.PETxPorteID" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">01A7DE34-E36D-421A-A933-B5A625FB2988</XParentData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">7</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+                        <XLinkData Type="Guid" Name="TableID" ID="20EAE06F-5190-436A-8B4F-79D24E6289BE" ElementID="CC52AF3D-1B11-4B08-808B-F11A50E5AED9" Text="PETxPorte" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">CC52AF3D-1B11-4B08-808B-F11A50E5AED9</XLinkData>
+                        <XLinkData Type="Guid" Name="FKFieldID" ID="CC4DF01A-1600-4727-ACC6-15A0D4C0F395" ElementID="36543216-2C28-406B-917C-2EE9ABA9F43D" Text="PETxPorteID" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">36543216-2C28-406B-917C-2EE9ABA9F43D</XLinkData>
+                        <XLinkArrayData Type="Guid[]" Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497">
+                          <XLinkData ID="E45CCD71-321E-431C-96DC-EF24D8D6A402" ElementID="40CBEE87-AC3E-4CF8-BF38-8A19774EF117" Text="PETxPorte.Porte" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">40CBEE87-AC3E-4CF8-BF38-8A19774EF117</XLinkData>
+                        </XLinkArrayData>
+                        <XLinkArrayData Type="Guid[]" Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5">
+                          <XLinkData ID="12AC89A1-D396-4298-93E9-582CE3740DC1" ElementID="427B4996-0AA1-4AA1-837E-06B25893C0F6" Text="Porte" DocumentID="05BBC31E-6FE1-4508-ABEB-AE5A65E4958B" DocumentName="PETx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">427B4996-0AA1-4AA1-837E-06B25893C0F6</XLinkData>
+                        </XLinkArrayData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">AC111493-AD7B-4F74-A0E8-DF0E0BB6B74A</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=160;Width=175;Height=80}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                      </XValues>
+                    </XFRMField>
+                    <XFRMField ID="7859B4BC-848B-40F6-8EC5-710FA4F16F54" iID="601593" ParentID="4628FE80-6032-40E7-983D-376C57065494">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4628FE80-6032-40E7-983D-376C57065494" Text="PETxAnimal.Observacao" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">4628FE80-6032-40E7-983D-376C57065494</XParentData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">6</XData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">10</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">ADA993EB-4A42-440D-98E2-722EE0119959</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=550;Y=0;Width=250;Height=240}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                      </XValues>
+                    </XFRMField>
+                    <XFRMField ID="74C5035B-C370-4416-9ADB-C9060AB88EF7" iID="607814" ParentID="F2740C57-776A-40BF-95D2-C98B309073EB">
+                      <XValues>
+                        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F2740C57-776A-40BF-95D2-C98B309073EB" Text="PETxAnimal.Cor" DocumentID="266D3B55-E31F-4A29-B6C7-142ABAB21191" DocumentName="Animal" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">F2740C57-776A-40BF-95D2-C98B309073EB</XParentData>
+                        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+                        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">8</XData>
+                        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+                        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+                        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=400;Y=160;Width=150;Height=80}</XData>
+                        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+                      </XValues>
+                    </XFRMField>
+                  </XFRMForm>
+                  <XValues>
+                    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                      <XLanguage IETFCode="pt-br" IsDefault="true">PETs</XLanguage>
+                    </XData>
+                    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">7854E4CE-D702-4959-B3BC-883836792CB7</XData>
+                    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=23;Y=75;Width=800;Height=154}</XData>
+                    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">DD6C6F84-51F9-46F2-AFA9-2CD68A9B4CA2</XData>
+                    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">A5F38D07-C098-483A-BABB-1B42170BE092|8673F668-C86D-4A08-905D-8AE4BAFC3865|5BE60604-7176-43A0-BBE1-A5DE529B7D0C|15DDEBB8-E162-4DC6-9BAE-B2E409BAF8B0|096293F6-468B-4075-952C-B36470C4D40C|991F686D-DFAD-47AE-B583-0343BBA8F363|844CE1E7-3778-43C6-B695-F3D278C21B30|850A92E0-6678-445C-9812-8EB21E16C115|54E2D59B-342A-4448-B6D4-8FBC4CA342A4|34402BCB-8E20-4074-A68E-6F783E361E7C</XData>
+                  </XValues>
+                </XFRMDesigner>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">PETs</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">290FA53D-8382-41C9-8989-FA5E4F56D1C2</XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">B81BAB79-DC60-4DE1-AEDA-13218AA84F47</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">758CC272-56BF-47D5-9013-13FECC4A8C2A|9A249D46-DD90-4AB8-9EB7-F671890C10E4|6B3F9415-AF9E-478B-9CA2-2E7989C43F85|BEE34336-9F67-483F-A229-5874F411DF97|F5C986C1-3C3F-4DDE-96D7-C87273A4719D|7EEC1B5B-8E49-43A1-96E2-E5DC9C0EEF87|93D844B2-74BC-451A-BBDB-703FD321F991|728D9844-72F8-4748-8667-B8D69DD1C17E|3D21E831-9D3C-46AC-906C-CF9ACE59FE30|F175A025-866D-454A-B8F8-94ADB7232B9F</XData>
+            </XValues>
+          </XFRMDesigner>
+          <XFRMDesigner Name="TabFormDocumento" ID="4971D8EC-88C3-4FDE-89A7-386B5A70F670">
+            <XFRMForm Name="TabFormDocumento" ID="092EE63B-DB1B-41D5-A43F-0D90C2126F48">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Documentos</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField Name="PessoaDocumentoID" ID="DF34A502-B1DB-4A50-9A4F-01537025D2EB" iID="592006" ParentID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F" Text="SYSxPessoa.SYSxPessoaID" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">AC9DE2EC-751B-4B26-A5FA-C718C0400E4F</XParentData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XLinkData Type="Guid" Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" ElementID="34ADCC85-4724-4E28-B0AC-CE711B98DC23" Text="Documento - (Projecao.Core.ERP.Pessoa)" DocumentID="34ADCC85-4724-4E28-B0AC-CE711B98DC23" DocumentName="Documento" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">34ADCC85-4724-4E28-B0AC-CE711B98DC23</XLinkData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">ADD41C4D-6BB4-49A6-856E-4CAA566DEBC2</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=400}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Documentos</XLanguage>
+                  </XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                </XValues>
+                <XFRMDesigner ID="244FB2B3-B2AC-4B5B-870E-D4B80D29BEC5" ParentID="365723DF-452C-48A8-A12B-89091137D98B" Name="PessoaDocumentoID">
+                  <XValues>
+                    <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="365723DF-452C-48A8-A12B-89091137D98B" Text="Documento" DocumentID="365723DF-452C-48A8-A12B-89091137D98B" DocumentName="Documento" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">365723DF-452C-48A8-A12B-89091137D98B</XParentData>
+                    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                      <XLanguage IETFCode="pt-br" IsDefault="true">Documentos</XLanguage>
+                    </XData>
+                    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">4AE01B5C-2C32-4B77-9FBF-58B6FD51D441</XData>
+                    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=136;Y=196;Width=521;Height=85}</XData>
+                    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">E5650A25-90DC-4E4D-80B5-5D5B11E29D73</XData>
+                    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">37834FD8-9E12-484C-AE5D-0FD4C184C7D7|650035F0-8DF4-4C52-BE96-5FAC8455A673|8331EE0A-7D66-4123-BD09-DB41742E2318|ED98DC28-6DAB-46A1-AA11-DB1725187B6C|788F1E6C-FB29-4C20-ABA6-F7B1988C69A8|47EFDFB7-EA9C-454E-9F56-BB612076F425|11F5E040-FCC8-49FA-96BA-12D98D9C1BCB|1731C32B-BF4F-457B-AE5F-FD1600467219|3F5B8AD5-7179-484E-960E-F0322D8E2C99|097CA991-87C4-4C28-8593-E042C619B12A</XData>
+                  </XValues>
+                </XFRMDesigner>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Documentos</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">DCA72A6B-32CB-40DA-BEE3-0F81C791C17F</XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">8EC12114-5195-444A-872C-4D7A5BA11012</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">7B020804-A961-43F2-964D-286B7F466215|70BA8463-7AD2-4B04-B891-292219A2FD6E|DC843FD2-88E9-4806-818B-19F5D3A4CAC9|248CCE31-6A97-4289-84F7-31BB813247B3|A43B38C0-ECD5-43F8-8AF6-E6225B9E7567|7ACC4E4B-BB5C-4019-8D5C-2F3B8C1E4713|763CE1E5-EBF3-4BB2-B6F6-0AC2720400C3|FED3BB2C-7F60-40B2-95D3-FC89AC550DF6|A5202858-AF85-4B99-8C51-33AF799ADAF2|4C48283D-AE13-40E1-A466-6FF8A10CFF40</XData>
+            </XValues>
+          </XFRMDesigner>
+          <XFRMDesigner Name="TabFormEndereco" ID="44DD11B0-0990-4B0E-AA10-91DE73AAFB13">
+            <XFRMForm Name="TabFormEndereco" ID="27C285A3-1EEF-492D-8727-425B3EE16733">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Endereços</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField Name="PessoaEnderecoID" ID="E811B6D6-CE74-4CCA-8871-B72AA247514D" iID="591976" ParentID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F" Text="SYSxPessoa.SYSxPessoaID" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">AC9DE2EC-751B-4B26-A5FA-C718C0400E4F</XParentData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XLinkData Type="Guid" Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" ElementID="FDEB9A57-921E-49FF-8B81-2D917798CED9" Text="Endereco - (Projecao.Core.ERP.Pessoa)" DocumentID="FDEB9A57-921E-49FF-8B81-2D917798CED9" DocumentName="Endereco" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">FDEB9A57-921E-49FF-8B81-2D917798CED9</XLinkData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">ADD41C4D-6BB4-49A6-856E-4CAA566DEBC2</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=400}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Endereços</XLanguage>
+                  </XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                </XValues>
+                <XFRMDesigner ID="953414BE-B97A-45EB-844D-D2EF3F9A8E04" ParentID="C60BC797-E888-4662-B738-8B93CE20D75E" Name="PessoaEnderecoID">
+                  <XValues>
+                    <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C60BC797-E888-4662-B738-8B93CE20D75E" Text="Endereco" DocumentID="C60BC797-E888-4662-B738-8B93CE20D75E" DocumentName="Endereco" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">C60BC797-E888-4662-B738-8B93CE20D75E</XParentData>
+                    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                      <XLanguage IETFCode="pt-br" IsDefault="true">Endereços</XLanguage>
+                    </XData>
+                    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">4D643B37-D547-48AE-870A-3E1F3299DCAB</XData>
+                    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=79;Y=175;Width=676;Height=210}</XData>
+                    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">11157E60-C802-40A1-B4C3-5C155F345C32</XData>
+                    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">0100B294-FC36-4B21-9767-1611A656E9AB|C2027F51-1E3A-4C77-A4BB-E2AC3E671B9E|26CB330E-D541-4F07-92EB-062D6C26B0D4|CDF6CE2D-AAC3-4947-A809-2F8D3BEBC460|A233BD67-29B9-406D-AD50-A6275C790804|CC9F541A-DC5A-477D-8DA7-7D087CC7EF85|1D68D7B2-057E-4874-A3E5-8194D0DF3F0C|EA8FCE8B-A594-4961-85BF-BAD6FBBDFC72|FFAA8DAC-E67D-42F5-984D-4C78DEEE89E4|86AAE371-7E04-49FA-9503-F3F129604D2A</XData>
+                  </XValues>
+                </XFRMDesigner>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Endereços</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">D5B63E36-F57D-4493-B65D-74FDACFBAB51</XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">DCB3221B-EAAD-42CF-883A-5530867CCDB8</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">61A9E017-8F62-4B5E-B6D8-F6A4B7C7D0F2|0DD2AF98-AC98-4253-88D8-D415F75B917F|3608591B-7BF0-419C-B87E-02C8EAD55FB2|AC5FEEA3-EC67-4827-A13A-379E02E47BDB|63D719AF-FF50-492B-96A5-A25068CC3C13|A7986CA2-E770-4136-8788-78E1E58B012B|0D674D80-41E6-4106-8E24-CC91B047563B|63A9E3D0-C229-42D1-9ED6-AF2029AC792F|191354CC-E42B-4087-8D7F-D14981442A17|9726C272-C66B-45C7-801C-38CB88025DF7</XData>
+            </XValues>
+          </XFRMDesigner>
+          <XFRMDesigner Name="TabFormContato" ID="DC951270-628A-47BE-AA9D-FBD0A9AF10FE">
+            <XFRMForm Name="TabFormContato" ID="60820B42-C26B-42DE-9BC9-E27DFEC3D6EE">
+              <XValues>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Meios de Contato</XLanguage>
+                </XData>
+                <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">DetailGrid</XData>
+                <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=28;Y=28;Width=401;Height=250}</XData>
+              </XValues>
+              <XFRMField Name="PessoaContatoID" ID="9E18B4DE-B779-40CD-8AC2-7C42014857FD" iID="591997" ParentID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F">
+                <XValues>
+                  <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AC9DE2EC-751B-4B26-A5FA-C718C0400E4F" Text="SYSxPessoa.SYSxPessoaID" DocumentID="ACB4D559-50A6-4925-9AD0-F62FD666F107" DocumentName="Tutor" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">AC9DE2EC-751B-4B26-A5FA-C718C0400E4F</XParentData>
+                  <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+                  <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+                  <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+                  <XLinkData Type="Guid" Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" ElementID="63151C23-62E8-4BBA-9C12-FEC0708E03CF" Text="Contato - (Projecao.Core.ERP.Pessoa)" DocumentID="63151C23-62E8-4BBA-9C12-FEC0708E03CF" DocumentName="Contato" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">63151C23-62E8-4BBA-9C12-FEC0708E03CF</XLinkData>
+                  <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+                  <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+                  <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">ADD41C4D-6BB4-49A6-856E-4CAA566DEBC2</XData>
+                  <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=400}</XData>
+                  <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+                  <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                    <XLanguage IETFCode="pt-br" IsDefault="true">Meios de Contato</XLanguage>
+                  </XData>
+                  <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+                  <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+                </XValues>
+                <XFRMDesigner ID="1EBF5471-D0AE-4C6B-9F52-71EF72E647FB" ParentID="7F98F6CB-C3D2-4A83-816F-F5396D6E79CF" Name="PessoaContatoID">
+                  <XValues>
+                    <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7F98F6CB-C3D2-4A83-816F-F5396D6E79CF" Text="Contato" DocumentID="7F98F6CB-C3D2-4A83-816F-F5396D6E79CF" DocumentName="Contato" ModuleID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" ModuleName="Projecao.Core.ERP" DataEx="">7F98F6CB-C3D2-4A83-816F-F5396D6E79CF</XParentData>
+                    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                      <XLanguage IETFCode="pt-br" IsDefault="true">Meios de Contato</XLanguage>
+                    </XData>
+                    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">45E7CDCB-CB9C-4934-9019-520DB0D4F282</XData>
+                    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=171;Y=279;Width=636;Height=165}</XData>
+                    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">1E5BB362-EB57-4AFD-B8F2-767F823AEB9F</XData>
+                    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">CB9C881A-0894-48D4-9AA4-0AE7EE986ADC|1F21C929-7D41-40C4-A931-CBAB75851C27|493AC7F2-3B63-4D4E-95B7-3EB83D230727|F658D982-ED60-426A-BBCC-E7B7ADE467BD|ED2F811F-0669-4381-94AB-B3EDC7FB00C9|1179761D-1E3B-45B1-BB1A-B2814A8A2C1A|2F3A041C-ECB6-4870-B791-6FF797B5315B|6C49EB56-1774-410E-A46E-D5F8FF3268A4|F10CA782-D4C2-4F94-A463-A37EE9491A36|E3B62D20-E9DB-4082-9E93-4C3D48ADBC85</XData>
+                  </XValues>
+                </XFRMDesigner>
+              </XFRMField>
+            </XFRMForm>
+            <XValues>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">Meios de Contato</XLanguage>
+              </XData>
+              <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">187B7550-685A-48A8-9F2F-A56BFF8FEE13</XData>
+              <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">D5232764-896D-4B42-A5FD-FC4F04FB6B17</XData>
+              <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">585C9613-73BE-4760-97BE-059BDA5020A7|0C34F5B0-8599-41A9-A510-F7C7964395A4|47EE8E30-6668-475E-9323-99760631908C|356C8206-95AB-4CFE-A459-A21F6D61428F|975B4643-DD82-446C-A041-7C48873D3C18|EF05C82B-57E8-41D4-8101-E61B416A228D|634357D1-E292-49FD-97E3-D934664A1CE7|0AC7206F-F424-4239-B8BE-5231DCAC5B0F|08EE80BA-A976-45BF-88B2-BCFE9A0CE468|9EAF75FE-E1D6-403B-9E96-682EB07E4493</XData>
+            </XValues>
+          </XFRMDesigner>
+        </XFRMTabControl>
+      </XFRMForm>
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">1C1A217B-0BF2-4550-9037-96C5887351C6</XData>
+        <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">B6ADE9E6-AF7F-4325-A8B1-D10AE057DC39</XData>
+        <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">71595BCF-2614-4B34-839E-5030D9F63656|F1DD621D-7180-4847-8660-640D687A2166|892913D7-1716-4A9F-A58E-470A814F0014|85A7FE7A-8DFF-4D8A-943F-499230BA300E|EF02307B-D427-41F3-85CB-79B18E98BFA4|C5390F5E-565D-4286-9612-191667B649FA|723691EB-FB1E-4845-A282-693D1D4C0B57|53D29F1B-EEE3-4AA0-BDE6-DA19A04E46CE|20544090-F04E-41C3-BDBB-449BDD329A10|BB7DB47F-1EE4-4823-80AD-59AABF4961B7</XData>
+      </XValues>
+    </XFRMDesigner>
+  </XSAMActivity>
+  <XSAMButton ID="D953870C-D9ED-431D-A223-1A5D97494AE0" Name="IMC">
+    <XValues>
+      <XLinkData Name="RightID" ID="EEA7851D-9F87-43EE-BC70-AB007D5EBD29" Type="Guid" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+      <XData Name="ViewMoment" ID="9E73B8F0-3E63-4B37-82D2-A97B64CAF4AE" Type="XButtonView">SearchSelectedFormEditing</XData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=355;Y=5;Width=90;Height=30}</XData>
+      <XData Name="Background" ID="7152B5B8-EE22-4D84-9EA1-50AA254DA63D" Type="Color">{A=255;R=255;G=255;B=255}</XData>
+      <XData Name="Action" ID="1BD36B52-16DB-4FF9-BC40-5758A86C4B98" Type="XButtonAction">AppPopup</XData>
+      <XData Name="Icon" ID="9099FF6D-7283-471D-BC9F-A47E1918D48E" Type="String">imc</XData>
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">WhatsApp</XLanguage>
+      </XData>
+      <XData Name="Description" ID="B073026B-F262-4345-887E-BDE6AF586240" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Abre Aplicativo de comucação via WhatsApp</XLanguage>
+      </XData>
+      <XData Name="ButtonTag" ID="83758E2D-494D-4E5F-9C93-9418B5C20AF2" Type="String">IMC</XData>
+    </XValues>
+  </XSAMButton>
+</XSAMDesigner>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSVCDesigner ID="066B62E2-75D7-47F6-B088-34984DDEA09E" Name="RebanhoAgrupado" ModuleID="02C4E7C5-1B4F-43DB-AC6C-CD36BBE428B7">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Report</XData>
+    <XData Name="ConfigID" ID="1B728749-8544-4FEA-9A7D-B6279B6398FC" Type="Guid">19C8E0A8-BEAB-4DDD-BDF3-EADC8B680CF0</XData>
+    <XData Name="ConfigID" ID="70591062-3DC1-4E07-B35B-F5C1EF6B2D4C" Type="Guid">798BCDF7-D269-44CB-A562-E9D35DC175D9</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">AADC74E8-731F-43D2-9EAF-7E12A8D4314B</XData>
+    <XLinkArrayData Name="Rights" ID="D989F6D3-5963-4010-A848-67A186EE6286" Type="Guid[]">
+      <XLinkData ID="1AF73DA2-91E2-46E3-A2F3-C630675185ED" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+    <XData Name="Type" ID="760FAE3B-718E-4839-921F-292800986ECB" Type="XServiceType">Utility</XData>
+  </XValues>
+  <XSVCResultSet Name="ResultSet" ID="4BC9872B-C0BD-45A3-A312-83C16EE6EA46">
+    <XSVCField ID="F71E724C-FF9F-46B9-AB53-94E5A55C431D" ParentID="A0EC4D82-BC41-4E34-97BE-968CD7F1839F">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A0EC4D82-BC41-4E34-97BE-968CD7F1839F" Text="PrimaryKeyID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">A0EC4D82-BC41-4E34-97BE-968CD7F1839F</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="5553C5E1-23B5-4DFA-B594-915CC5945720" ParentID="D9181818-6F0A-4052-8B43-65E2765B30D9">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="D9181818-6F0A-4052-8B43-65E2765B30D9" Text="FaixaEtaria" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">D9181818-6F0A-4052-8B43-65E2765B30D9</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="6757FEF7-22D2-49AF-97FD-3B88AE20C4A6" ParentID="545E44A4-72B8-4411-9030-A194A897CA3B">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="545E44A4-72B8-4411-9030-A194A897CA3B" Text="Quantidade" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">545E44A4-72B8-4411-9030-A194A897CA3B</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="3F8927F9-E692-48D6-B052-AC07032101B1" ParentID="9671AB49-8EFE-49E6-A923-2761B303036A">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="9671AB49-8EFE-49E6-A923-2761B303036A" Text="Designacao" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">9671AB49-8EFE-49E6-A923-2761B303036A</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="790460BE-D156-4584-B4AE-F57435A89F14" ParentID="1528A0CC-33F9-46F7-A646-835AC32E3557">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="1528A0CC-33F9-46F7-A646-835AC32E3557" Text="GeneroID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">1528A0CC-33F9-46F7-A646-835AC32E3557</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="0E6382B2-791C-4F12-B4CB-3BED1C177C22" ParentID="5A38A232-344E-4985-B7BE-677F98626CDB">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="5A38A232-344E-4985-B7BE-677F98626CDB" Text="EmpresaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">5A38A232-344E-4985-B7BE-677F98626CDB</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="E86544F2-D93A-4CB7-95DE-87E1A3BC95BB" ParentID="DAE6CE7E-99A3-40A2-B19F-A9AD90920D94">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="DAE6CE7E-99A3-40A2-B19F-A9AD90920D94" Text="Especie" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">DAE6CE7E-99A3-40A2-B19F-A9AD90920D94</XParentData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="5A0C6356-1990-4043-80EC-E263DA24B606" ParentID="D92D1F06-D5A8-499C-AB64-22FA460B3E32">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="D92D1F06-D5A8-499C-AB64-22FA460B3E32" Text="Meses" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="RebanhoAgrupado" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">D92D1F06-D5A8-499C-AB64-22FA460B3E32</XParentData>
+      </XValues>
+    </XSVCField>
+  </XSVCResultSet>
+  <XSVCUserFields Name="UserFields" ID="03FB9253-8C5D-4992-943C-5FC2DF5F8884">
+    <XSVCUserField ID="A0EC4D82-BC41-4E34-97BE-968CD7F1839F" Name="PrimaryKeyID">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">PK</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="IsPK" ID="4C978027-1415-4708-B665-2CE6690CEBAC" Type="Boolean">true</XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField ID="D9181818-6F0A-4052-8B43-65E2765B30D9" Name="FaixaEtaria">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Faixa Etária</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField ID="545E44A4-72B8-4411-9030-A194A897CA3B" Name="Quantidade">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Quantidade</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField ID="9671AB49-8EFE-49E6-A923-2761B303036A" Name="Designacao">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Designação</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField ID="1528A0CC-33F9-46F7-A646-835AC32E3557" Name="GeneroID">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Gênero</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">5BD72111-603B-42E5-9488-53A4299E45EB</XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField ID="5A38A232-344E-4985-B7BE-677F98626CDB" Name="EmpresaID">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">User Data Field</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8C5DEBC0-4165-4429-B106-1554552F802E</XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField ID="DAE6CE7E-99A3-40A2-B19F-A9AD90920D94" Name="Especie">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Espécie</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
+      </XValues>
+    </XSVCUserField>
+    <XSVCUserField ID="D92D1F06-D5A8-499C-AB64-22FA460B3E32" Name="Meses">
+      <XValues>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Meses</XLanguage>
+        </XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+      </XValues>
+    </XSVCUserField>
+  </XSVCUserFields>
+  <XSVCOrderBy Name="OrderBy" ID="37C41DC6-1D2C-44D2-9E72-58AD8EA541E3" />
+  <XSVCWhere Name="Where" ID="F7DBEE4A-C95E-4098-A836-A275FD549AA2" />
+  <XSVCDataView Name="DataView" ID="E56C6CAB-67AE-4575-A4C6-52D779C0E60B" />
+  <XSVCShadow ID="3716E2A2-0537-4B27-A46C-9316A323E17B" ParentID="B6488E35-6A99-4B57-89AD-348B67E7CFA7">
+    <XValues>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="B6488E35-6A99-4B57-89AD-348B67E7CFA7" Text="Vacina - (Projecao.Core.PCR.Report)" DocumentID="B6488E35-6A99-4B57-89AD-348B67E7CFA7" DocumentName="Vacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">B6488E35-6A99-4B57-89AD-348B67E7CFA7</XParentData>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=592;Y=328;Width=186.443333333333;Height=69}</XData>
+    </XValues>
+    <XSVCField ID="EDD1303F-CF3A-47AA-B4D4-295B2B6547AC" ParentID="F9580A2D-8340-42C9-88F5-8483909FB1A6">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F9580A2D-8340-42C9-88F5-8483909FB1A6" Text=".PrimaryKeyID" DocumentID="B6488E35-6A99-4B57-89AD-348B67E7CFA7" DocumentName="Vacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">F9580A2D-8340-42C9-88F5-8483909FB1A6</XParentData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=24;Width=178.443333333333;Height=21}</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="F9AE5F2D-6155-48E9-971C-E3E8A9E5BD15" ParentID="C6A80A03-BCB2-436A-8C38-35A2A05FF4A7">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C6A80A03-BCB2-436A-8C38-35A2A05FF4A7" Text="PCRxAnimal.Quantidade" DocumentID="B6488E35-6A99-4B57-89AD-348B67E7CFA7" DocumentName="Vacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">C6A80A03-BCB2-436A-8C38-35A2A05FF4A7</XParentData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=3;Y=45;Width=178.443333333333;Height=21}</XData>
+      </XValues>
+    </XSVCField>
+  </XSVCShadow>
+</XSVCDesigner>

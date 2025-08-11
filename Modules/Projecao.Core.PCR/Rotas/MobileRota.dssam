@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XSAMDesigner ID="E03C6F60-7D2E-49F9-B550-A697DEE085E1" Name="MobileRota" ModuleID="02C4E7C5-1B4F-43DB-AC6C-CD36BBE428B7">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Rotas</XData>
+    <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=346;Height=150}</XData>
+    <XData Name="RightID" ID="105B2539-BBCE-49E0-9C5B-6F400FF6D928" Type="Guid[]">B551F14E-B097-444F-8BCB-133B71F20CE2|2FD04C2C-D59D-45DF-BA6B-FDE1BEBB1655|ACB8BFD0-1C48-4567-8994-F077F9499872|52EFAA88-C07D-4A09-8CCC-F573E5A292BE|BE429ABC-FD5C-480D-A514-0EC6AB34CF95|97527F02-0425-45A1-B7E3-8732DEC9BC5A|A6E122E5-1C45-4F37-B83A-2BEF42453A5A|04FA2D70-F748-4779-AECE-5A28FE0FCEDA|F18F0528-5E0C-4660-8140-0DBAD3015608|A70B0C85-BE35-4F56-8CFD-43DA7870DBA8</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">2CD5A63A-DE6F-4B55-9F5F-654BB6A7247B</XData>
+    <XLinkArrayData Name="Rights" ID="5473546B-6F02-4DEA-9459-1500A452762F" Type="Guid[]">
+      <XLinkData ID="8ECCABE4-9ADB-4F43-8983-20ADF20D1A37" ElementID="880441F4-6E3A-4581-9228-32D8CE030C4E" Text="Configurar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="6" Order="1">880441F4-6E3A-4581-9228-32D8CE030C4E</XLinkData>
+    </XLinkArrayData>
+    <XLinkData Name="ServiceID" ID="F51D5E60-F885-43BD-AC7C-76D47AC5AF37" Type="Guid" ElementID="9074A461-9C8D-48CF-8978-4005C432C8A9" Text="MobileRota - (Projecao.Core.PCR.Rotas)" DocumentID="9074A461-9C8D-48CF-8978-4005C432C8A9" DocumentName="MobileRota" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">9074A461-9C8D-48CF-8978-4005C432C8A9</XLinkData>
+    <XData Name="StartAction" ID="333094F6-475C-4C7B-BE3B-D0FE238F85E9" Type="XStartAction">DataGrid</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Rotas por Dispositivo Móvel</XLanguage>
+    </XData>
+    <XLinkArrayData Name="UseTypeID" ID="82300524-95B7-481E-A9F1-D1F889883650" Type="Guid[]">
+      <XLinkData ID="069BE3D1-F706-4B4C-81D5-631D19072481" ElementID="9E514336-961D-4A0B-9599-8B340E7D7338" Text="Assinante da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="2">9E514336-961D-4A0B-9599-8B340E7D7338</XLinkData>
+      <XLinkData ID="529748D5-4886-4FF4-AF3A-92EEEA063365" ElementID="5AEAF9CA-696A-4F72-8522-30399BC74157" Text="Administração da Cloud" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="1" Order="1">5AEAF9CA-696A-4F72-8522-30399BC74157</XLinkData>
+    </XLinkArrayData>
+    <XData Name="UserLevel" ID="C4A75429-E512-4D19-A007-C985053C5C97" Type="XUserlevel">User</XData>
+    <XLinkArrayData Name="AppModulesID" ID="3B9A2D49-061C-4774-8128-93C6E1503F12" Type="Guid[]">
+      <XLinkData ID="BA1936A2-4E4A-4985-9B94-E67C98353859" ElementID="8BCE9DC8-6880-4730-8C66-385F41F1E74B" Text="Auditoria" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="13" Order="1">8BCE9DC8-6880-4730-8C66-385F41F1E74B</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="92893B19-55D8-4808-A62A-30BFDB156B16" Type="Guid[]">
+      <XLinkData ID="8BDC135F-279A-44CB-B9D6-27F9E6D2332C" ElementID="74128F12-E02C-4894-BCCA-7AFD1C3828BF" Text="Cadastros" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="32E1F829-CDC9-4032-886F-FC5A778B82F8" ModuleName="TFX.Core.Service" DataEx="2" Order="1">74128F12-E02C-4894-BCCA-7AFD1C3828BF</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XSAMActivity ID="5390FDA4-7D1C-4151-A5BF-807CD9F8B0BA" Name="MobileRotaACT">
+    <XValues>
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=74;Height=72}</XData>
+    </XValues>
+    <XFRMDesigner ID="049EDEB1-CF53-45C0-8C3E-C95488986CF6" Name="MobileRota">
+      <XValues>
+        <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">3B52A976-03AB-4E9F-9CE0-2E43DA7AA7F6</XData>
+      </XValues>
+      <XFRMForm Name="T" ID="0A30042C-34A5-49B5-B4DE-86F716925E9B">
+        <XValues>
+          <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">Activity</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=965;Height=678}</XData>
+        </XValues>
+        <XFRMField ID="A1E54F9F-8C6E-4EB5-9EB8-9F5DB0610DE2" ParentID="3533E04C-FD4D-4D8F-9CBC-93385BD4D07C">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="3533E04C-FD4D-4D8F-9CBC-93385BD4D07C" Text="SYSxPessoa.Nome" DocumentID="9074A461-9C8D-48CF-8978-4005C432C8A9" DocumentName="MobileRota" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">3533E04C-FD4D-4D8F-9CBC-93385BD4D07C</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">14</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=396.8125;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="EB6E6818-3C60-46DC-80B6-267E28EA3E87" ParentID="12C41332-B48C-4722-91D1-F8939B0C7185">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="12C41332-B48C-4722-91D1-F8939B0C7185" Text="NTRxMobileConfig.Data" DocumentID="9074A461-9C8D-48CF-8978-4005C432C8A9" DocumentName="MobileRota" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">12C41332-B48C-4722-91D1-F8939B0C7185</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">00292032-E4A9-4A74-8B31-BF42D90A137A</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=396.8125;Y=0;Width=170.0625;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">2</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">18</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="4104D61B-DF97-430D-9861-B860147523FF" ParentID="E8F5CE01-C39A-4C6F-AE6B-3C1715F9B421">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E8F5CE01-C39A-4C6F-AE6B-3C1715F9B421" Text="NTRxMobileConfig.Dispositivo" DocumentID="9074A461-9C8D-48CF-8978-4005C432C8A9" DocumentName="MobileRota" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">E8F5CE01-C39A-4C6F-AE6B-3C1715F9B421</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=566.875;Y=0;Width=170.0625;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">3</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">15</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="95FDBEC7-7192-4553-8563-EFF85455D145" ParentID="1B8069E6-C362-4806-B290-B7745DC103CB">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="1B8069E6-C362-4806-B290-B7745DC103CB" Text="NTRxMobileConfig.Chamadas" DocumentID="9074A461-9C8D-48CF-8978-4005C432C8A9" DocumentName="MobileRota" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">1B8069E6-C362-4806-B290-B7745DC103CB</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=736.9375;Y=0;Width=170.0625;Height=50}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">1</XData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">4</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">17</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">1</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="B26E9D33-99BA-40B0-B498-F72F56E303AE" ParentID="CE973175-6767-46FD-8AF5-64973980C262">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="CE973175-6767-46FD-8AF5-64973980C262" Text="NTRxMobileConfig.NTRxMobileConfigID" DocumentID="9074A461-9C8D-48CF-8978-4005C432C8A9" DocumentName="MobileRota" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">CE973175-6767-46FD-8AF5-64973980C262</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">083C4AC6-6C57-4BE4-8EFB-11B6B442FA4C</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=50;Width=170.0625;Height=500}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Rotas do Dispositivo</XLanguage>
+            </XData>
+            <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="1EC95B7E-799A-45B8-B610-2C7E478BC23B" Text="Rotas - (Projecao.Core.PCR.Rotas)" DocumentID="3ECECB5D-474B-4C20-A0C9-6294B6A89684" DocumentName="Rotas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">1EC95B7E-799A-45B8-B610-2C7E478BC23B</XLinkData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">5</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">32</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">4</XData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="678723C0-E6AF-49E2-8A49-C2940C437B0E" ParentID="390A854E-B490-4D5D-B911-498F611DC196">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="390A854E-B490-4D5D-B911-498F611DC196" Text="NTRxMobileAtividade.NTRxMobileAtividadeID" DocumentID="3ECECB5D-474B-4C20-A0C9-6294B6A89684" DocumentName="Rotas" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="" Type="Guid">390A854E-B490-4D5D-B911-498F611DC196</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">6</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">4C8C9711-A99D-4779-93DD-8443AEC5F549</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">26</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=170.0625;Y=50;Width=736.9375;Height=500}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">10</XData>
+            <XData Name="JustifyHeight" ID="162C6321-E8F7-4670-ADDD-27C883C9FB6F" Type="Boolean">true</XData>
+            <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+              <XLanguage IETFCode="pt-br" IsDefault="true">Rota Realizada</XLanguage>
+            </XData>
+            <XLinkData Name="SourceFieldID" ID="8386FB56-8211-4301-ACCF-362A93A98DD4" Type="Guid" ElementID="CCB913CB-E63F-439D-8FE1-8D90ECDF8424" Text="NTRxMobileAtividade.Rota" DocumentID="4939DF13-476C-411D-9695-B6D89CCF95A5" DocumentName="RotaDados" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">CCB913CB-E63F-439D-8FE1-8D90ECDF8424</XLinkData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="4939DF13-476C-411D-9695-B6D89CCF95A5" Text="RotaDados - (Projecao.Core.PCR.Rotas)" DocumentID="4939DF13-476C-411D-9695-B6D89CCF95A5" DocumentName="RotaDados" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PCR" DataEx="">4939DF13-476C-411D-9695-B6D89CCF95A5</XLinkData>
+            <XData Name="OrderIndexSmall" ID="B5D67628-3780-4EA5-BF01-CB56D75EADF1" Type="Int32">6</XData>
+            <XData Name="ColCountSmall" ID="A2E92EFB-E5E7-42FC-9FB0-08280D4E6653" Type="Int32">32</XData>
+            <XData Name="RowCountSmall" ID="0CA72B20-0965-4487-A27A-594152FC05CE" Type="Int32">17</XData>
+          </XValues>
+        </XFRMField>
+      </XFRMForm>
+    </XFRMDesigner>
+  </XSAMActivity>
+</XSAMDesigner>

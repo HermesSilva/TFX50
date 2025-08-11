@@ -36,19 +36,6 @@ namespace TFX.Core.Data.Servicos.Usuario
         internal readonly IUsuarioService Service;
         private readonly INFUsuarioControllerRule _Rule;
 
-        [HttpPost("Search")]
-        public IActionResult Search([FromBody] UsuarioFilter pFilter)
-        {
-            try
-            {
-                var dst = Service.Execute(pFilter);
-                return Ok(dst);
-            }
-            catch (Exception pEx)
-            {
-                return StatusCode(404, XEndPointMessage.Erro(pEx));
-            }  
-        }
 
         [HttpPost("Flush")]
         [XEndpointDescription(typeof(UsuarioService.CORxPessoa), typeof(UsuarioService.CORxUsuario))]

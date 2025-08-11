@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XModule Name="Projecao.Core.PCR.Test" ID="6FCC08E9-0337-49A6-8AE0-50298401C295">
+  <XValues>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">EE2AA838-6947-4513-9A38-1C23FE9152D8</XData>
+    <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+      <XLanguage IETFCode="pt-br" IsDefault="true">Projecao.Core.PCR.Test</XLanguage>
+    </XData>
+    <XData Name="NameSpace" ID="AA8B388C-17CD-48A6-8162-24E891354696" Type="String">Projecao.Core.PCR.Test</XData>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String" />
+  </XValues>
+</XModule>

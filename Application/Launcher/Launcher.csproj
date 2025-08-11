@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\Core\TFX.Core.Data\TFX.Core.Data.csproj" />
     <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
     <ProjectReference Include="..\..\Modules\ESC\TFX.ESC.Core\TFX.ESC.Core.csproj" />
+    <ProjectReference Include="..\..\Modules\Projecao.Core.CEP\Projecao.Core.CEP.csproj" />
   </ItemGroup>
 
   <ItemGroup>

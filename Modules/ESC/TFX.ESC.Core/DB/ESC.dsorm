@@ -62,6 +62,12 @@
         </XValues>
       </XORMDataTuple>
     </XORMDataSet>
+    <XORMFKField ID="802B3B65-976B-4C15-99F4-A6357DDBF692" ParentID="30973F1D-E439-4973-8DB8-9ADB97B82BBD">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="30973F1D-E439-4973-8DB8-9ADB97B82BBD" Text="CEPxLocalidadePrincipalID" DocumentID="7EC1C21E-EC23-49FA-B841-915FD59D6C77" DocumentName="COR" ModuleID="48BC3A07-0986-4381-913E-CC0FCDFF80B5" ModuleName="TFX.Core.Data" DataEx="">30973F1D-E439-4973-8DB8-9ADB97B82BBD</XParentData>
+        <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+      </XValues>
+    </XORMFKField>
   </XORMTable>
   <XORMTable Name="ESCxContabilista" ID="AAC3EF8B-7102-4636-B6F7-606B37D8D1D1">
     <XValues>

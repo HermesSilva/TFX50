@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <MyType>DASE</MyType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Configurations>Debug;Release;Linux</Configurations>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyVersion>4.1.1.6666</AssemblyVersion>
+    <FileVersion>4.1.1.6666</FileVersion>
+    <Version>4.1.1.6666</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="DB\PessoasJuridica\**" />
+    <EmbeddedResource Remove="DB\PessoasJuridica\**" />
+    <None Remove="DB\PessoasJuridica\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Empresa\Empresa.SAM.Rule.ts" />
+    <None Remove="Empresa\Empresa.SAM.ts" />
+    <None Remove="Empresa\Empresa.SVC.ts" />
+    <None Remove="GerenciaEmpresa\ConfigITG.FRM.ts" />
+    <None Remove="GerenciaEmpresa\GerenciaEmpresa.SAM.ts" />
+    <None Remove="GerenciaEmpresa\GerenciaEmpresa.SVC.ts" />
+    <None Remove="PessoaJuridica\PessoaJuridica.SAM.Rule.ts" />
+    <None Remove="Pessoa\Contato.FRM.ts" />
+    <None Remove="Pessoa\Documento.FRM.Rule.ts" />
+    <None Remove="Pessoa\Documento.FRM.ts" />
+    <None Remove="Pessoa\Endereco.FRM.ts" />
+    <None Remove="Profissional\Categoria.SVC.ts" />
+    <None Remove="Profissional\Horarios.SVC.ts" />
+    <None Remove="Profissional\Profissional.SAM.Rule.ts" />
+    <None Remove="Profissional\Profissional.SAM.ts" />
+    <None Remove="Profissional\Profissional.SVC.ts" />
+    <None Remove="Projecao.Core.ERP.dsmdl" />
+    <None Remove="AutomatedService\EMailEnvio.dssvc" />
+    <None Remove="AutomatedService\EMailEnvio.SVC.ts" />
+    <None Remove="AutomatedService\EMailEnvioSVC.ts" />
+    <None Remove="DB\EMLx.dsorm" />
+    <None Remove="DB\EMLx.ORM.ts" />
+    <None Remove="DB\EMLx.ts" />
+    <None Remove="DB\ERPx.dsorm" />
+    <None Remove="DB\ERPx.ORM.ts" />
+    <None Remove="DB\ERPx.ts" />
+    <None Remove="PessoaFisica\BuscaPessoaFisicaSVC.ts" />
+    <None Remove="PessoaFisica\PessoaFisica.APP.ts" />
+    <None Remove="PessoaFisica\PessoaFisica.dsapp" />
+    <None Remove="PessoaFisica\PessoaFisica.dssvc" />
+    <None Remove="PessoaFisica\PessoaFisica.SAM.ts" />
+    <None Remove="PessoaFisica\PessoaFisica.SVC.ts" />
+    <None Remove="PessoaFisica\PessoaFisicaTipo.SVC.ts" />
+    <None Remove="PessoaJuridica\PessoaJuridica.SAM.ts" />
+    <None Remove="PessoaJuridica\PessoaJuridica.SVC.ts" />
+    <None Remove="Pessoa\BuscaPessoa.dssvc" />
+    <None Remove="Pessoa\BuscaPessoa.SVC.ts" />
+    <None Remove="Pessoa\BuscaPessoaSVC.ts" />
+    <None Remove="Pessoa\Contato.dssvc" />
+    <None Remove="Pessoa\Contato.SVC.ts" />
+    <None Remove="Pessoa\Documento.dssvc" />
+    <None Remove="Pessoa\Documento.SVC.ts" />
+    <None Remove="Pessoa\DocumentoSVC.ts" />
+    <None Remove="Pessoa\Endereco.dssvc" />
+    <None Remove="Pessoa\Endereco.SVC.ts" />
+    <None Remove="Pessoa\EnderecoSVC.ts" />
+    <None Remove="ReadOnly\Empresa.SVC.ts" />
+    <None Remove="ReadOnly\EmpresaConfig.SVC.ts" />
+    <None Remove="ReadOnly\HPCKeySVC.ts" />
+    <None Remove="ReadOnly\Profissional.SVC.ts" />
+    <None Remove="ReadOnly\TipoDocumento.dssvc" />
+    <None Remove="ReadOnly\TipoDocumento.SVC.ts" />
+    <None Remove="ReadOnly\TipoDocumentoSVC.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutomatedService\EMailEnvio.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>EMailEnvio.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="AutomatedService\EMailEnvio.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>EMailEnvio.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="DB\EMLxModel.cs">
+      <Visible>False</Visible>
+      <DependentUpon>EMLx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ERPxModel.cs">
+      <Visible>False</Visible>
+      <DependentUpon>ERPx.dsorm</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\Empresa.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\Empresa.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\Empresa.Application.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Empresa.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Empresa\Empresa.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Empresa\Rules\INFEmpresaService.Rule.cs" />
+    <Compile Include="GerenciaEmpresa\ConfigITG.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConfigITG.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="GerenciaEmpresa\GerenciaEmpresa.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>GerenciaEmpresa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="GerenciaEmpresa\GerenciaEmpresa.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>GerenciaEmpresa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="GerenciaEmpresa\GerenciaEmpresa.Application.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GerenciaEmpresa.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="GerenciaEmpresa\GerenciaEmpresa.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GerenciaEmpresa.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PessoaFisica\PessoaFisica.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisica.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaFisica\PessoaFisica.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PessoaFisica.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaFisica\PessoaFisicaTipo.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisicaTipo.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaFisica\PessoaFisicaTipo.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PessoaFisicaTipo.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaFisica\Rules\INFPessoaFisicaService.Rule.cs" />
+    <Compile Include="PessoaJuridica\PessoaJuridica.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaJuridica.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaJuridica\Rules\INFPessoaJuridicaService.Rule.cs" />
+    <Compile Include="Pessoa\BuscaPessoa.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>BuscaPessoa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\BuscaPessoa.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>BuscaPessoa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Contato.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Contato.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Documento.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Documento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Documento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Documento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Endereco.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Endereco.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Endereco.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Endereco.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Rules\INFBuscaPessoaService.Rule.cs" />
+    <Compile Include="Pessoa\Rules\INFContatoService.Rule.cs" />
+    <Compile Include="Pessoa\Rules\INFDocumentoService.Rule.cs" />
+    <Compile Include="Pessoa\Rules\INFEnderecoService.Rule.cs" />
+    <Compile Include="Profissional\Categoria.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Categoria.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Profissional\Categoria.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Categoria.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Profissional\Categoria.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Categoria.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Profissional\Horarios.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Horarios.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Profissional\Horarios.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Horarios.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Profissional\Horarios.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Horarios.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Profissional\Profissional.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Profissional\Profissional.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Profissional\Profissional.Application.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Profissional.dssam</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Profissional\Profissional.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Profissional\Rules\INFCategoriaService.Rule.cs" />
+    <Compile Include="Profissional\Rules\INFHorariosService.Rule.cs" />
+    <Compile Include="Profissional\Rules\INFProfissionalService.Rule.cs" />
+    <Compile Include="Projecao.Core.ERP.Module.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Projecao.Core.ERP.dsmdl</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="AutomatedService\EMailEnvio.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EMailEnvio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\EMLx.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EMLx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="DB\ERPx.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ERPx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PessoaFisica\PessoaFisica.Application.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisica.dssam</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PessoaFisica\PessoaFisica.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PessoaFisica.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PessoaFisica\PessoaFisicaTipo.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PessoaFisicaTipo.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="PessoaJuridica\PessoaJuridica.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>PessoaJuridica.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="PessoaJuridica\PessoaJuridica.Application.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaJuridica.dssam</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PessoaJuridica\PessoaJuridica.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PessoaJuridica.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pessoa\BuscaPessoa.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuscaPessoa.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pessoa\Contato.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contato.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pessoa\Contato.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Contato.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Contato.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Contato.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pessoa\Contato.Tuple.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Contato.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Pessoa\Documento.FRM.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Documento.dsfrm</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Pessoa\Documento.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pessoa\Endereco.FRM.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Endereco.dsfrm</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Pessoa\Endereco.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Endereco.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Empresa.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Empresa.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Empresa.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\EmpresaConfig.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>EmpresaConfig.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\EmpresaConfig.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>EmpresaConfig.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\EmpresaConfig.Service.cs">
+      <Visible>False</Visible>
+      <DependentUpon>EmpresaConfig.dssvc</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ReadOnly\Profissional.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Profissional.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\Profissional.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="ReadOnly\Rules\INFEmpresaConfigService.Rule.cs" />
+    <Compile Include="ReadOnly\Rules\INFEmpresaService.Rule.cs" />
+    <Compile Include="ReadOnly\Rules\INFProfissionalService.Rule.cs" />
+    <Compile Include="ReadOnly\Rules\INFTipoDocumentoService.Rule.cs" />
+    <Compile Include="ReadOnly\TipoDocumento.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>TipoDocumento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\TipoDocumento.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>TipoDocumento.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="ReadOnly\TipoDocumento.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TipoDocumento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
+    <Compile Include="Projecao.Core.ERP.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>Projecao.Core.ERP.dsmdl</DependentUpon>
+    </Compile>
+    <Compile Include="XAppUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Projecao.Core.ERP.dsmdl">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Projecao.Core.ERP.Module.cs</LastGenOutput>
+    </Content>
+    <Content Include="AutomatedService\EMailEnvio.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>EMailEnvio.Service.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\EMLx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>EMLx.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\ERPx.dsorm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ERPx.cs</LastGenOutput>
+    </Content>
+    <Content Include="PessoaFisica\PessoaFisica.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PessoaFisica.Service.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pessoa\BuscaPessoa.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>BuscaPessoa.Service.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pessoa\Contato.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Contato.Service.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pessoa\Documento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Documento.Service.cs</LastGenOutput>
+    </Content>
+    <Content Include="Pessoa\Endereco.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Endereco.Service.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReadOnly\TipoDocumento.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>TipoDocumento.Service.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\TFX.Core.Access\TFX.Core.Access.csproj" />
+    <ProjectReference Include="..\..\Core\TFX.Core.Data\TFX.Core.Data.csproj" />
+    <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
+    <ProjectReference Include="..\Projecao.Core.CEP\Projecao.Core.CEP.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ProjectExtensions>
+    <XModule ID="4EAAA9C2-CF99-46BF-AA6D-67418E998278" iID="529568" Name="Projecao.Core.ERP" Title="Enterprise Resource Planning" />
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="AutomatedService\EMailEnvio.SVC.ts">
+      <DependentUpon>EMailEnvio.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="DB\EMLx.ORM.ts">
+      <DependentUpon>EMLx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="DB\ERPx.ORM.ts">
+      <DependentUpon>ERPx.dsorm</DependentUpon>
+      <Visible>False</Visible>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Empresa\Empresa.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>Empresa.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Empresa\Empresa.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Empresa.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Empresa\Empresa.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="GerenciaEmpresa\ConfigITG.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>ConfigITG.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="GerenciaEmpresa\GerenciaEmpresa.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>GerenciaEmpresa.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="GerenciaEmpresa\GerenciaEmpresa.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>GerenciaEmpresa.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PessoaFisica\PessoaFisica.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisica.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PessoaFisica\PessoaFisica.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisica.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PessoaFisica\PessoaFisicaTipo.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisicaTipo.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PessoaJuridica\PessoaJuridica.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>PessoaJuridica.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PessoaJuridica\PessoaJuridica.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaJuridica.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="PessoaJuridica\PessoaJuridica.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaJuridica.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\BuscaPessoa.SVC.ts">
+      <DependentUpon>BuscaPessoa.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\Contato.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Contato.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\Contato.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Contato.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\Documento.FRM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>Documento.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\Documento.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Documento.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\Documento.SVC.ts">
+      <DependentUpon>Documento.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\Endereco.FRM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Endereco.dsfrm</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pessoa\Endereco.SVC.ts">
+      <DependentUpon>Endereco.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Profissional\Categoria.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Categoria.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Profissional\Horarios.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Horarios.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Profissional\Profissional.SAM.Rule.ts">
+      <Visible>True</Visible>
+      <DependentUpon>Profissional.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Profissional\Profissional.SAM.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Profissional.dssam</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Profissional\Profissional.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Empresa.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\EmpresaConfig.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>EmpresaConfig.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\Profissional.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>Profissional.dssvc</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ReadOnly\TipoDocumento.SVC.ts">
+      <Visible>False</Visible>
+      <DependentUpon>TipoDocumento.dssvc</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+
+    <None Update="Empresa\Empresa.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Empresa.Application.cs</LastGenOutput>
+    </None>
+
+    <None Update="Empresa\Empresa.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Empresa.Service.cs</LastGenOutput>
+    </None>
+
+    <None Update="GerenciaEmpresa\ConfigITG.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>ConfigITG.FRM.cs</LastGenOutput>
+    </None>
+
+    <None Update="GerenciaEmpresa\GerenciaEmpresa.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>GerenciaEmpresa.Application.cs</LastGenOutput>
+    </None>
+
+    <None Update="GerenciaEmpresa\GerenciaEmpresa.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>GerenciaEmpresa.Service.cs</LastGenOutput>
+    </None>
+
+    <None Update="PessoaFisica\PessoaFisica.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PessoaFisica.Application.cs</LastGenOutput>
+    </None>
+    <None Update="PessoaFisica\PessoaFisicaTipo.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PessoaFisicaTipo.Service.cs</LastGenOutput>
+    </None>
+    <None Update="PessoaJuridica\PessoaJuridica.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PessoaJuridica.Application.cs</LastGenOutput>
+    </None>
+    <None Update="PessoaJuridica\PessoaJuridica.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>PessoaJuridica.Service.cs</LastGenOutput>
+    </None>
+    <None Update="Pessoa\Contato.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Contato.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Pessoa\Documento.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Documento.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Pessoa\Endereco.dsfrm">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Endereco.FRM.cs</LastGenOutput>
+    </None>
+    <None Update="Profissional\Categoria.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Categoria.Service.cs</LastGenOutput>
+    </None>
+    <None Update="Profissional\Horarios.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Horarios.Service.cs</LastGenOutput>
+    </None>
+    <None Update="Profissional\Profissional.dssam">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Profissional.Application.cs</LastGenOutput>
+    </None>
+    <None Update="Profissional\Profissional.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Profissional.Service.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\Empresa.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Empresa.Service.cs</LastGenOutput>
+    </None>
+    <None Update="ReadOnly\EmpresaConfig.dssvc">
+      <LastGenOutput>EmpresaConfig.Service.cs</LastGenOutput>
+      <Generator>XDASEGenerator</Generator>
+    </None>
+    <None Update="ReadOnly\Profissional.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>Profissional.Service.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

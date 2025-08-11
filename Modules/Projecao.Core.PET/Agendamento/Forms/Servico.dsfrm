@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XFRMDesigner ID="4359C402-5778-4B2C-AB5E-431E8AD122AF" Name="Servico" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Agendamento\Forms</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">502C3668-2F0C-4AFF-93A7-590740A9DFA6</XData>
+    <XLinkData Name="ServiceID" ID="5B953D04-B1C2-48A6-902D-2D75F39EFBCE" Type="Guid" ElementID="E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8" Text="AgendamentoServico - (Projecao.Core.PET.Agendamento)" DocumentID="E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8" DocumentName="AgendamentoServico" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8</XLinkData>
+    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">BFC95AA7-A073-4E5E-ACB2-06ECC47B77A0</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">C2A3D555-AA03-4447-A0D0-1D42307BB6DA|333A08D3-58DA-459B-85BD-FB4D13C8606D|B2307457-DD8B-49B6-9506-82A0DB1FF02A|5489CAC2-E2F1-42B4-9149-53338ED231F5|1FBE7031-F9D7-4771-9334-D88647B78E47|0781228E-0A55-47C3-AC5B-5E74D503925D|B977AD8B-AA99-4BCA-8F61-10BDDECD6BCE|57C6FB09-F418-459A-9484-A80F871920E6|50AF7294-699B-4E40-A0AF-89B652806B09|A0FAF44C-477A-496B-8069-8E02F21DB6E5</XData>
+  </XValues>
+  <XFRMForm ID="5D8A3CB3-C729-4A9C-A4AE-73FDF371E6EF" Name="FieldContainer">
+    <XValues>
+      <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">StandAlone</XData>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
+      <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Serviços Solicitados - Grid Details</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMField ID="0B820D6E-2035-48F8-9CE4-E28461012DED" iID="598315" ParentID="95F48ED5-929D-41F2-AE0C-15640E4059DA">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="95F48ED5-929D-41F2-AE0C-15640E4059DA" Text="PETxAtendimentoServicos.Quantidade" DocumentID="E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8" DocumentName="AgendamentoServico" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">95F48ED5-929D-41F2-AE0C-15640E4059DA</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">4</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B45FBE87-40A0-44EF-B2EC-CD6A3000DA3A</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=124.875;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="Int32">1</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ShowSpin" ID="3A1921CC-77FF-4159-81F6-2A67078724E5" Type="Boolean">true</XData>
+        <XData Name="Min" ID="F0020546-0CCF-45B4-A05C-2012D957632B" Type="String">1</XData>
+        <XData Name="Max" ID="80A31E90-1F8C-460D-9AA0-A753F076F05C" Type="String">99</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField ID="531700A6-9ECE-4302-8432-4910C9F0C8FC" iID="598318" ParentID="703B75FC-D074-4587-BE3A-ABA2BC49D5FE">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="703B75FC-D074-4587-BE3A-ABA2BC49D5FE" Text="PETxAtendimentoServicos.ValorCobrado" DocumentID="E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8" DocumentName="AgendamentoServico" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">703B75FC-D074-4587-BE3A-ABA2BC49D5FE</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=468.28125;Y=0;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Valor Cobrado (un)</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="Min" ID="F0020546-0CCF-45B4-A05C-2012D957632B" Type="String">0</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField ID="8B5B47DA-1378-4959-91EE-5E0A1CFFF145" iID="598321" ParentID="E0AA3552-7A0D-4C8E-906F-FF6D9081D8A5">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E0AA3552-7A0D-4C8E-906F-FF6D9081D8A5" Text="PETxAtendimentoServicos.ValorTabela" DocumentID="E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8" DocumentName="AgendamentoServico" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">E0AA3552-7A0D-4C8E-906F-FF6D9081D8A5</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=312.1875;Y=0;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Valor de Tabela (un)</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField ID="9ED99FFA-9997-4EA2-9C93-EE791D9A5734" iID="598822" ParentID="71BBDD37-42C3-4097-9FAD-9B1E106F8E20">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="71BBDD37-42C3-4097-9FAD-9B1E106F8E20" Text="PETxAtendimentoServicos.ValorTotal" DocumentID="E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8" DocumentName="AgendamentoServico" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">71BBDD37-42C3-4097-9FAD-9B1E106F8E20</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">5</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">5</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=624.375;Y=0;Width=156.09375;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField ID="116CC578-CE56-411A-B2E6-B5508FA926E4" ParentID="17829CC4-C2F6-48A1-B5B3-5919B1B91121">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="17829CC4-C2F6-48A1-B5B3-5919B1B91121" Text="PETxAtendimentoServicos.QuantidadePacote" DocumentID="E2A2DB91-A99F-47B7-A307-32A5C5ADCFF8" DocumentName="AgendamentoServico" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">17829CC4-C2F6-48A1-B5B3-5919B1B91121</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B45FBE87-40A0-44EF-B2EC-CD6A3000DA3A</XData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=124.875;Y=0;Width=187.3125;Height=80}</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ShowSpin" ID="3A1921CC-77FF-4159-81F6-2A67078724E5" Type="Boolean">true</XData>
+      </XValues>
+    </XFRMField>
+  </XFRMForm>
+</XFRMDesigner>

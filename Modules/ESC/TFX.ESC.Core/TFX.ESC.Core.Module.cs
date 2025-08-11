@@ -4,7 +4,6 @@ using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
 using TFX.Core.Cache;
-using TFX.ESC.Core.Escritorios;
 
 namespace TFX.ESC.Core
 {
@@ -12,10 +11,10 @@ namespace TFX.ESC.Core
     {
         public override void Initialize(IServiceCollection pServices)
         {
-            pServices.AddTransient<IEscritorioService, EscritorioService>();
-            pServices.AddDbContext<EscritorioService.DBContext>();
-            XMainCache.Add<EscritorioServiceModel>(EscritorioServiceModel.CID);
-            XMainCache.Add<EscritorioApplication>(EscritorioApplication.CID);
+            pServices.AddTransient<TFX.ESC.Core.Escritorios.IEscritorioService, TFX.ESC.Core.Escritorios.EscritorioService>();
+            pServices.AddDbContext<TFX.ESC.Core.Escritorios.EscritorioService.DBContext>();
+            XMainCache.Add<TFX.ESC.Core.Escritorios.EscritorioServiceModel>(TFX.ESC.Core.Escritorios.EscritorioServiceModel.CID);
+            XMainCache.Add<TFX.ESC.Core.Escritorios.EscritorioApplication>(TFX.ESC.Core.Escritorios.EscritorioApplication.CID);
         }
     }
 }

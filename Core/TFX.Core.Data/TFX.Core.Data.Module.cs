@@ -4,8 +4,6 @@ using System.Linq;
 using TFX.Core.Model;
 using Microsoft.Extensions.DependencyInjection;
 using TFX.Core.Cache;
-using TFX.Core.Data.Servicos.Menu;
-using TFX.Core.Data.Servicos.Usuario;
 
 namespace TFX.Core.Data
 {
@@ -13,13 +11,13 @@ namespace TFX.Core.Data
     {
         public override void Initialize(IServiceCollection pServices)
         {
-            pServices.AddTransient<IMenuService, MenuService>();
-            pServices.AddDbContext<MenuService.DBContext>();
-            XMainCache.Add<MenuServiceModel>(MenuServiceModel.CID);
-            pServices.AddTransient<IUsuarioService, UsuarioService>();
-            pServices.AddDbContext<UsuarioService.DBContext>();
-            XMainCache.Add<UsuarioServiceModel>(UsuarioServiceModel.CID);
-            XMainCache.Add<UsuarioApplication>(UsuarioApplication.CID);
+            pServices.AddTransient<TFX.Core.Data.Servicos.Menu.IMenuService, TFX.Core.Data.Servicos.Menu.MenuService>();
+            pServices.AddDbContext<TFX.Core.Data.Servicos.Menu.MenuService.DBContext>();
+            XMainCache.Add<TFX.Core.Data.Servicos.Menu.MenuServiceModel>(TFX.Core.Data.Servicos.Menu.MenuServiceModel.CID);
+            pServices.AddTransient<TFX.Core.Data.Servicos.Usuario.IUsuarioService, TFX.Core.Data.Servicos.Usuario.UsuarioService>();
+            pServices.AddDbContext<TFX.Core.Data.Servicos.Usuario.UsuarioService.DBContext>();
+            XMainCache.Add<TFX.Core.Data.Servicos.Usuario.UsuarioServiceModel>(TFX.Core.Data.Servicos.Usuario.UsuarioServiceModel.CID);
+            XMainCache.Add<TFX.Core.Data.Servicos.Usuario.UsuarioApplication>(TFX.Core.Data.Servicos.Usuario.UsuarioApplication.CID);
         }
     }
 }

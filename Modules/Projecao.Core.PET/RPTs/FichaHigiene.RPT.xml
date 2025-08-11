@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XTFXDocumentElement Name="FichaHigiene" ID="3103640E-B6D7-4B74-8F50-F2E3797D92DB">
+  <XTFXValues>
+    <XTFXData Name="PageSize" Type="XRPTPaperType">Custom</XTFXData>
+    <XTFXData Name="ViewWidth" Type="Int32">204</XTFXData>
+    <XTFXData Name="ViewHeight" Type="Int32">5000</XTFXData>
+    <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+    <XTFXData Name="RightID" Type="Guid[]">306E08F9-2AB9-44B3-BAB2-E92030BE7972|BB1AB5BD-6393-403D-8140-962F5F9C18A1|ED06FC0B-EC63-4172-B080-F20E6D6CA769|09F3AF82-4919-4C8F-A062-2E2988D61705|3A6361F3-B34B-44BE-966B-2BB3F2B1B4C0|BBB3C7EC-DC28-4F4C-8AC1-F27340FFCF7C|20DE5418-C6EB-40D3-A3D8-52EE22891272|E863EE76-F147-428F-874D-03356CDBDD16|679A7688-A59E-47C1-B527-16C0D23F9F33|5971CD14-9357-4E28-8C62-27911C9E15EE</XTFXData>
+    <XTFXData Name="UserLevel" Type="XUserlevel">User</XTFXData>
+    <XTFXData Name="IsRibbon" Type="Boolean">true</XTFXData>
+    <XTFXData Name="ReportTypeID" Type="Int16">1</XTFXData>
+    <XTFXData Name="SnapToGrid" Type="Boolean">false</XTFXData>
+    <XTFXData Name="RelativeFolder" Type="String">RPTs</XTFXData>
+    <XTFXData Name="ServerID" Type="Guid">FDA101E6-33A2-4191-B621-503C6F133867</XTFXData>
+    <XTFXData Name="ScrollableElements" Type="Boolean">false</XTFXData>
+    <XTFXData Name="ComponentsID" Type="Guid[]">66E538A2-5F65-4375-B592-FA720755B452|6D5B895A-EE63-43F2-ABDB-E714288A69F3|07DC7904-EBF2-477B-B343-2F1E08F5DDF0|49E49161-89F8-4BD5-98FF-C4D89B68F6A3|241209A6-F954-4739-931D-80DB2A993FF4|03BB1480-9108-49C9-A94C-467D3687FB82|21FC0EDA-59EF-4F41-AA12-EFF2B4019C45|22C683C4-FA3D-40C5-A02B-4C608A519DD3|665BD465-752B-441E-A921-CA3BA3D114BC|E8C86A6D-19F1-49EE-8B3D-281CE554E54F</XTFXData>
+    <XTFXData Name="Rect" Type="Rect">{X=0;Y=0;Width=10;Height=10}</XTFXData>
+    <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+    <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+    <XTFXData Name="HorizontalAlignment" Type="XHorizontalAlignment">None</XTFXData>
+    <XTFXData Name="VerticalAlignment" Type="XVerticalAlignment">None</XTFXData>
+    <XTFXData Name="ViewSize" Type="Size">{Width=10;Height=10}</XTFXData>
+    <XTFXData Name="Color" Type="Color">{A=255;R=0;G=0;B=0}</XTFXData>
+    <XTFXData Name="Background" Type="Color">{A=0;R=255;G=255;B=255}</XTFXData>
+    <XTFXData Name="Title" Type="String">Ficha Operacional</XTFXData>
+    <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+    <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+  </XTFXValues>
+  <XTFXDocumentPage Name="PageModel" ID="B05059D9-163A-4078-BA15-B60ED751F045" IsAdHoc="false">
+    <XTFXValues>
+      <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+      <XTFXData Name="Border" Type="XThickness">1|1|1|1</XTFXData>
+      <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+      <XTFXData Name="Rect" Type="XRect">25|25|204|5000</XTFXData>
+      <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+      <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+      <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+      <XTFXData Name="Row" Type="Int32">0</XTFXData>
+      <XTFXData Name="Col" Type="Int32">0</XTFXData>
+      <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+      <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+      <XTFXData Name="Order" Type="Int32">0</XTFXData>
+      <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+      <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+    </XTFXValues>
+    <XTFXHeader Name="PageHeader" ID="03C5ADCC-D282-4CDD-A846-EAF4B471660D" IsAdHoc="false">
+      <XTFXValues>
+        <XTFXData Name="RowCount" Type="Int32">2</XTFXData>
+        <XTFXData Name="ColCount" Type="Int32">2</XTFXData>
+        <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+        <XTFXData Name="Border" Type="XThickness">0|0|0|1</XTFXData>
+        <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+        <XTFXData Name="Rect" Type="XRect">1|1|202|33,6647126196351</XTFXData>
+        <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+        <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+        <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+        <XTFXData Name="Row" Type="Int32">0</XTFXData>
+        <XTFXData Name="Col" Type="Int32">0</XTFXData>
+        <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+        <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+        <XTFXData Name="Order" Type="Int32">0</XTFXData>
+        <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+        <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+      </XTFXValues>
+      <XTFXVariable Name="" ID="5817AB29-BCA7-4E96-9BBA-9C29F826DB7E" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="MathFunction" Type="XMathFunction">Sum</XTFXData>
+          <XTFXData Name="ResetBihavior" Type="XResetBihavior">NoReset</XTFXData>
+          <XTFXData Name="Variable" Type="XVariables">CompanyName</XTFXData>
+          <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|CenterLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|0|202|16,3323563098175</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">0</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">2</XTFXData>
+          <XTFXData Name="Order" Type="Int32">0</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+        </XTFXValues>
+      </XTFXVariable>
+      <XTFXVariable Name="" ID="FD28396E-6BBA-420B-A42A-E6D7EF2FE311" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="MathFunction" Type="XMathFunction">Sum</XTFXData>
+          <XTFXData Name="ResetBihavior" Type="XResetBihavior">NoReset</XTFXData>
+          <XTFXData Name="Variable" Type="XVariables">DocumentTitle</XTFXData>
+          <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|CenterLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|16.3323563098175|101|16,3323563098175</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">1</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">0</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+        </XTFXValues>
+      </XTFXVariable>
+      <XTFXVariable Name="" ID="84A333CD-6BDE-42A2-AEE8-A439B73D27AB" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="MathFunction" Type="XMathFunction">Sum</XTFXData>
+          <XTFXData Name="ResetBihavior" Type="XResetBihavior">NoReset</XTFXData>
+          <XTFXData Name="Variable" Type="XVariables">DateTime</XTFXData>
+          <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|CenterRight|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">101|16.3323563098175|101|16,3323563098175</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">1</XTFXData>
+          <XTFXData Name="Col" Type="Int32">1</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">0</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+        </XTFXValues>
+      </XTFXVariable>
+    </XTFXHeader>
+    <XTFXBody Name="PageBody" ID="AB94BAF8-FDDD-41F4-9018-CFCBD6A2CD40" IsAdHoc="false">
+      <XTFXValues>
+        <XTFXData Name="FixedSize" Type="Boolean">true</XTFXData>
+        <XTFXData Name="AllowPageBreak" Type="Boolean">false</XTFXData>
+        <XTFXData Name="UseZebra" Type="Boolean">false</XTFXData>
+        <XTFXData Name="ColumnCount" Type="Int32">1</XTFXData>
+        <XTFXData Name="ColumnsGap" Type="Double">0</XTFXData>
+        <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+        <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+        <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+        <XTFXData Name="Rect" Type="XRect">1|34.6647126196351|202|4964,33528738037</XTFXData>
+        <XTFXData Name="Alignment" Type="XAlignment">Client</XTFXData>
+        <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+        <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+        <XTFXData Name="Row" Type="Int32">0</XTFXData>
+        <XTFXData Name="Col" Type="Int32">0</XTFXData>
+        <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+        <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+        <XTFXData Name="Order" Type="Int32">3</XTFXData>
+        <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+        <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+      </XTFXValues>
+      <XTFXRow Name="Row" ID="7B5643FA-DC1A-4717-8410-78F701AE2C9B" IsAdHoc="true">
+        <XTFXValues>
+          <XTFXData Name="RowCount" Type="Int32">4</XTFXData>
+          <XTFXData Name="ColCount" Type="Int32">7</XTFXData>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|0|202|57,0691947018002</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">1</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">2</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">true</XTFXData>
+        </XTFXValues>
+        <XTFXField Name="NomeAnimal" ID="BC648DE3-E2F5-4AD4-A333-9B55C8E9BE2D" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Bold</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">28.8571428571429|0|173,142857142857|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">1</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">6</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Nome do PET</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">49234D21-E6C0-4C40-B2A6-62C4486D7FAA</XTFXData>
+            <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+          </XTFXValues>
+        </XTFXField>
+        <XTFXField Name="NomeTutor" ID="1E682C0D-3890-42DA-B1D4-995F08CD7F4A" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">28.8571428571429|14.26729867545|173,142857142857|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">1</XTFXData>
+            <XTFXData Name="Col" Type="Int32">1</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">6</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Nome do Tutor</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">938C39F4-910D-4D90-B5E4-A1BBC30A5034</XTFXData>
+            <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+          </XTFXValues>
+        </XTFXField>
+        <XTFXText Name="NewText" ID="36110D14-38D3-4AD2-A556-FA4DB3A3DFCC" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|0|28,8571428571429|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|1|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">PET:</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          </XTFXValues>
+        </XTFXText>
+        <XTFXText Name="NewText" ID="2F02DA8E-37FD-44BA-A642-AA8BE3E83D22" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|14.26729867545|28,8571428571429|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|1|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">1</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Tutor:</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          </XTFXValues>
+        </XTFXText>
+        <XTFXText Name="NewText" ID="7A523729-6128-4F31-AB79-162488B9E837" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|28.5345973509001|28,8571428571429|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">2</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Raça:</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          </XTFXValues>
+        </XTFXText>
+        <XTFXField Name="Raca" ID="780EC08D-F034-47AB-BE42-18871A055573" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">28.8571428571429|28.5345973509001|173,142857142857|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">2</XTFXData>
+            <XTFXData Name="Col" Type="Int32">1</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">6</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Raça</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">8926B1D4-6A15-42E2-A444-E233D9AFC0E8</XTFXData>
+            <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+          </XTFXValues>
+        </XTFXField>
+        <XTFXText Name="NewText" ID="9329381E-3EA2-445D-9385-ED610D19107E" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|42.8018960263501|28,8571428571429|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">3</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Fone:</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          </XTFXValues>
+        </XTFXText>
+        <XTFXField Name="TutorTelefone" ID="A6D60631-B348-43FB-BC88-8BEAB4E85971" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">28.8571428571429|42.8018960263501|144,285714285714|14,26729867545</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">3</XTFXData>
+            <XTFXData Name="Col" Type="Int32">1</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">5</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Telefone Tutor</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">A17610F7-54E0-4E29-B4CB-F177FC11DC9E</XTFXData>
+            <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+          </XTFXValues>
+        </XTFXField>
+      </XTFXRow>
+      <XTFXSubBody Name="SubBody" ID="B130BA8B-83B2-4741-BB18-00978BD933AC" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="DataSetID" Type="Guid">6F348C0E-4B83-45D2-9CA1-169A639DB5EA</XTFXData>
+          <XTFXData Name="FixedSize" Type="Boolean">true</XTFXData>
+          <XTFXData Name="AllowPageBreak" Type="Boolean">true</XTFXData>
+          <XTFXData Name="UseZebra" Type="Boolean">false</XTFXData>
+          <XTFXData Name="ColumnCount" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColumnsGap" Type="Double">0</XTFXData>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|102.0691947018|202|60,0262960180316</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">0</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">4</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+        </XTFXValues>
+        <XTFXRowHeader Name="RowHeader" ID="8C6FDABC-CD34-4029-A26E-D35A849DF7A0" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">4</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|1|0|1</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|0|202|15</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">1</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXText Name="Nome" ID="AE6B6128-6539-4854-8C0A-41B6CCF7996F" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">0|1|202|13</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">0</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">4</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Serviços</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">BFEB5CE9-1A8F-448B-BA50-ACA6D4FABF74</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">6F348C0E-4B83-45D2-9CA1-169A639DB5EA</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+          <XTFXText Name="ValorTotal" ID="3F9FEA33-DC42-4697-BD52-B2585D68BBB9" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopRight|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">151.5|1|50,5|13</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">3</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Valor Total</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">230090B2-3637-44CD-BD13-21DF82728D50</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">6F348C0E-4B83-45D2-9CA1-169A639DB5EA</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+        </XTFXRowHeader>
+        <XTFXRow Name="Row" ID="3038D4FE-0421-463F-9956-E2776AC359F5" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">5</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|15|202|15</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">1</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">2</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXField Name="Nome" ID="E27CAC94-8E8B-447A-A3BF-144D7061D667" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">0|0|161,6|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">0</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">4</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Nome</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">BFEB5CE9-1A8F-448B-BA50-ACA6D4FABF74</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">6F348C0E-4B83-45D2-9CA1-169A639DB5EA</XTFXData>
+            </XTFXValues>
+          </XTFXField>
+          <XTFXField Name="ValorTotal" ID="7EFE6FE5-8B00-4234-ACFD-28CAFA8F8996" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopRight|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">161.6|0|40,4|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">6</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Valor Total</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">230090B2-3637-44CD-BD13-21DF82728D50</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">6F348C0E-4B83-45D2-9CA1-169A639DB5EA</XTFXData>
+            </XTFXValues>
+          </XTFXField>
+        </XTFXRow>
+        <XTFXSummary Name="PageSummary" ID="5C8968F8-F34F-4D59-ADA4-306EA5449221" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">9</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|45.0210368144253|202|15,0052592036063</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">BottomLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXVariable Name="ValorTotal" ID="0F236BB1-51EC-4EF8-8053-F25CB76DED5A" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="MathFunction" Type="XMathFunction">Sum</XTFXData>
+              <XTFXData Name="ResetBihavior" Type="XResetBihavior">RowRest</XTFXData>
+              <XTFXData Name="Variable" Type="XVariables">Totalizer</XTFXData>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|1|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopRight|Bold</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">157.111111111111|0|44,8888888888889|15,0052592036063</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">7</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">2</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Valor Total</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">230090B2-3637-44CD-BD13-21DF82728D50</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">6F348C0E-4B83-45D2-9CA1-169A639DB5EA</XTFXData>
+            </XTFXValues>
+          </XTFXVariable>
+          <XTFXText Name="NewText" ID="26B96259-5EA7-45A6-87EB-553162F07572" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|1|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">67.3333333333333|0|89,7777777777778|15,0052592036063</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">3</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">4</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Total em Serviços</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+        </XTFXSummary>
+      </XTFXSubBody>
+      <XTFXSubBody Name="SubBody" ID="3A5DB77C-0CC5-48E8-B6B3-78C21517B59A" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="DataSetID" Type="Guid">1C402F15-3F63-4CAF-BD04-EF55C048E36C</XTFXData>
+          <XTFXData Name="FixedSize" Type="Boolean">true</XTFXData>
+          <XTFXData Name="AllowPageBreak" Type="Boolean">true</XTFXData>
+          <XTFXData Name="UseZebra" Type="Boolean">false</XTFXData>
+          <XTFXData Name="ColumnCount" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColumnsGap" Type="Double">0</XTFXData>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|283.703304393761|202|63,7828700225395</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">0</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">10</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+        </XTFXValues>
+        <XTFXRowHeader Name="RowHeader" ID="E3A0A4E9-7A36-4D8D-9E22-B92D7FC0F1B0" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">2</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|1|0|1</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|0|202|15</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">1</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXText Name="Detalhe" ID="A241811F-B1C2-4FE3-A444-9788B75B0080" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">0|1|101|13</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">0</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Detalhes</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">56BEADD2-32B1-48BA-B1C8-4896F868FABA</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">1C402F15-3F63-4CAF-BD04-EF55C048E36C</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+          <XTFXText Name="Acrescimo" ID="78C7C720-2164-4437-9F63-A2D2FD7AFCCB" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopRight|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">101|1|101|13</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">6</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Acréscimo</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">9A023B48-396A-40AD-A587-DCC07C4C51C7</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">1C402F15-3F63-4CAF-BD04-EF55C048E36C</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+        </XTFXRowHeader>
+        <XTFXRow Name="Row" ID="2BAE738F-B32D-465A-B693-6C7435A15AB7" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">7</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|15|202|15</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">1</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">2</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXField Name="Detalhe" ID="B761CD93-3E59-4C37-9876-D6A1F3C22D83" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">0|0|144,285714285714|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">0</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">5</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Detalhe</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">56BEADD2-32B1-48BA-B1C8-4896F868FABA</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">1C402F15-3F63-4CAF-BD04-EF55C048E36C</XTFXData>
+            </XTFXValues>
+          </XTFXField>
+          <XTFXField Name="Acrescimo" ID="194DDF4D-0AF0-46C0-BAE2-9DC9DF0259C5" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopRight|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">144.285714285714|0|57,7142857142857|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">5</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">2</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Acréscimo</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">9A023B48-396A-40AD-A587-DCC07C4C51C7</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">1C402F15-3F63-4CAF-BD04-EF55C048E36C</XTFXData>
+            </XTFXValues>
+          </XTFXField>
+        </XTFXRow>
+        <XTFXSummary Name="PageSummary" ID="C106B845-FFC0-4959-A81C-0F0665655E41" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">9</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|48.7828700225395|202|15</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">BottomLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXVariable Name="Acrescimo" ID="3CEDEFAE-ED6D-46B9-8379-E7D7BFB15EF6" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="MathFunction" Type="XMathFunction">Sum</XTFXData>
+              <XTFXData Name="ResetBihavior" Type="XResetBihavior">RowRest</XTFXData>
+              <XTFXData Name="Variable" Type="XVariables">Totalizer</XTFXData>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|1|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopRight|Bold</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">157.111111111111|0|44,8888888888889|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">7</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">2</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Acréscimo</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">9A023B48-396A-40AD-A587-DCC07C4C51C7</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">1C402F15-3F63-4CAF-BD04-EF55C048E36C</XTFXData>
+            </XTFXValues>
+          </XTFXVariable>
+          <XTFXText Name="NewText" ID="0474B328-A404-40A6-AC0A-DA599F84571B" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|1|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">22.4444444444444|0|134,666666666667|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">1</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">6</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Total em Acréscimos</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+        </XTFXSummary>
+      </XTFXSubBody>
+      <XTFXStackPanel Name="StackPanel" ID="069DFE52-2B30-4590-AE01-BA16736CABAD" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|162.095490719832|202|66,7881292261457</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">0</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">7</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+        </XTFXValues>
+        <XTFXField Name="EnderecoBusca" ID="1A48719B-B4C6-42E0-9432-F465DCC6D8FC" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Mask" Type="String">=&gt; Buscar: {0}</XTFXData>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Wrap</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|14.7407963936889|202|19</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">2</XTFXData>
+            <XTFXData Name="Title" Type="String">Endereço para Busca</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">C989DBC6-929C-47B2-9A7F-5354E646FA27</XTFXData>
+            <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+          </XTFXValues>
+        </XTFXField>
+        <XTFXField Name="EnderecoEntrega" ID="0BDB64A2-61FE-40E1-986F-520C68AF589C" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Mask" Type="String">=&gt; Entregar: {0}</XTFXData>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Wrap</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|33.7407963936889|202|19</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">3</XTFXData>
+            <XTFXData Name="Title" Type="String">Endereço para Entrega</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">35C1A0A1-6686-4399-81DA-8A20F980DB0F</XTFXData>
+            <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+          </XTFXValues>
+        </XTFXField>
+        <XTFXText Name="NewText" ID="893B864C-1756-4753-9074-E3B691C18013" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|1|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|9|FF000000|TopLeft|Bold</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|0|202|14,7407963936889</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">1</XTFXData>
+            <XTFXData Name="Title" Type="String">Taxi PET:</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          </XTFXValues>
+        </XTFXText>
+      </XTFXStackPanel>
+      <XTFXSubBody Name="SubBody" ID="58860E0F-8B92-48FE-BEE1-DE9A175CEAAE" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="DataSetID" Type="Guid">D16C9FBC-61F5-46E1-B74E-30D9C35537FD</XTFXData>
+          <XTFXData Name="FixedSize" Type="Boolean">true</XTFXData>
+          <XTFXData Name="AllowPageBreak" Type="Boolean">true</XTFXData>
+          <XTFXData Name="UseZebra" Type="Boolean">false</XTFXData>
+          <XTFXData Name="ColumnCount" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColumnsGap" Type="Double">0</XTFXData>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|57.0691947018002|202|45</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">0</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">3</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+        </XTFXValues>
+        <XTFXRow Name="Row" ID="698DB6B0-A4C0-4609-A09B-2B67DE98B200" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">10</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|15|202|15</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">1</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">2</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXField Name="Nome" ID="3AD8D152-6794-4D32-BF3C-CEFCECF1A462" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">0|0|161,6|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">0</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">8</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Nome</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">3A47BF93-1031-4D85-8818-C703AC1592F0</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">D16C9FBC-61F5-46E1-B74E-30D9C35537FD</XTFXData>
+            </XTFXValues>
+          </XTFXField>
+          <XTFXField Name="Inicio" ID="F78C7770-A774-4C17-9280-BC642E42A1C1" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Mask" Type="String">HH:mm</XTFXData>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopRight|Bold</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">161.6|0|40,4|15</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">8</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">2</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Início do Atendimento</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">0825E613-7E3F-4D52-A582-C916D2804463</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">D16C9FBC-61F5-46E1-B74E-30D9C35537FD</XTFXData>
+            </XTFXValues>
+          </XTFXField>
+        </XTFXRow>
+        <XTFXRowHeader Name="RowHeader" ID="A315FE58-97D8-4937-8AE4-2F51A6C986E9" IsAdHoc="true">
+          <XTFXValues>
+            <XTFXData Name="RowCount" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColCount" Type="Int32">10</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">FF000000</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|1|0|1</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|0|202|15</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">1</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+          </XTFXValues>
+          <XTFXText Name="Nome" ID="8F6D1A2A-C176-4151-BF7A-62FFDD315E30" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">0|1|121,2|13</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">0</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">6</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Nome</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">3A47BF93-1031-4D85-8818-C703AC1592F0</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">D16C9FBC-61F5-46E1-B74E-30D9C35537FD</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+          <XTFXText Name="Inicio" ID="6CE48DDA-B408-4BBA-A647-24841C80DD16" IsAdHoc="false">
+            <XTFXValues>
+              <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+              <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+              <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopRight|Normal</XTFXData>
+              <XTFXData Name="Rect" Type="XRect">161.6|1|40,4|13</XTFXData>
+              <XTFXData Name="Alignment" Type="XAlignment">None</XTFXData>
+              <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+              <XTFXData Name="Row" Type="Int32">0</XTFXData>
+              <XTFXData Name="Col" Type="Int32">8</XTFXData>
+              <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+              <XTFXData Name="ColSpan" Type="Int32">2</XTFXData>
+              <XTFXData Name="Order" Type="Int32">0</XTFXData>
+              <XTFXData Name="Title" Type="String">Horário</XTFXData>
+              <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+              <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+              <XTFXData Name="ParentID" Type="Guid">0825E613-7E3F-4D52-A582-C916D2804463</XTFXData>
+              <XTFXData Name="ServiceID" Type="Guid">D16C9FBC-61F5-46E1-B74E-30D9C35537FD</XTFXData>
+            </XTFXValues>
+          </XTFXText>
+        </XTFXRowHeader>
+      </XTFXSubBody>
+      <XTFXStackPanel Name="StackPanel" ID="DD02F5D3-4222-43A2-85FB-BCAFAC38A941" IsAdHoc="false">
+        <XTFXValues>
+          <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+          <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+          <XTFXData Name="Rect" Type="XRect">0|228.883619945978|202|54,8196844477837</XTFXData>
+          <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+          <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+          <XTFXData Name="Row" Type="Int32">0</XTFXData>
+          <XTFXData Name="Col" Type="Int32">0</XTFXData>
+          <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+          <XTFXData Name="Order" Type="Int32">9</XTFXData>
+          <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+        </XTFXValues>
+        <XTFXText Name="NewText" ID="D118B880-5412-4BFB-ADC8-DA109E7186B0" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Trucante</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Bold</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|0|202|14,7407963936889</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">2|0|2|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">0</XTFXData>
+            <XTFXData Name="Title" Type="String">Observações:</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+          </XTFXValues>
+        </XTFXText>
+        <XTFXField Name="Observacao" ID="05D4C7E6-AC07-4FDB-A619-EFAF0645D1C7" IsAdHoc="false">
+          <XTFXValues>
+            <XTFXData Name="AdditionalFields" Type="Guid[]">8A318CAB-8CFE-495F-B390-F734CD9FCE64|E6F470CF-14E5-4189-9FF8-EBAD1F60288C</XTFXData>
+            <XTFXData Name="AdditionalFieldSeparator" Type="String">\r\n</XTFXData>
+            <XTFXData Name="Mask" Type="String">- {0}</XTFXData>
+            <XTFXData Name="Overflow" Type="XTextOverflow">Wrap</XTFXData>
+            <XTFXData Name="BorderColor" Type="XBorderColor">00FFFFFF</XTFXData>
+            <XTFXData Name="Border" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Font" Type="XFont">Arial|10|FF000000|TopLeft|Normal</XTFXData>
+            <XTFXData Name="Rect" Type="XRect">0|14.7407963936889|202|19,5078888054094</XTFXData>
+            <XTFXData Name="Alignment" Type="XAlignment">TopLeftRight</XTFXData>
+            <XTFXData Name="Padding" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="CornerRadius" Type="XThickness">0|0|0|0</XTFXData>
+            <XTFXData Name="Row" Type="Int32">0</XTFXData>
+            <XTFXData Name="Col" Type="Int32">0</XTFXData>
+            <XTFXData Name="RowSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="ColSpan" Type="Int32">1</XTFXData>
+            <XTFXData Name="Order" Type="Int32">1</XTFXData>
+            <XTFXData Name="Title" Type="String">Observação</XTFXData>
+            <XTFXData Name="OwnerID" Type="Guid">00000000-0000-0000-0000-000000000000</XTFXData>
+            <XTFXData Name="IsReadOnly" Type="Boolean">false</XTFXData>
+            <XTFXData Name="ParentID" Type="Guid">76DB8E63-47BB-4C99-980F-BB7763964D15</XTFXData>
+            <XTFXData Name="ServiceID" Type="Guid">4C72FE94-F629-4C6B-8981-D66AF03BD38A</XTFXData>
+          </XTFXValues>
+        </XTFXField>
+      </XTFXStackPanel>
+    </XTFXBody>
+  </XTFXDocumentPage>
+</XTFXDocumentElement>

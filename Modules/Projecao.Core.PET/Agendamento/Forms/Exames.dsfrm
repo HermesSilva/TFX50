@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XFRMDesigner ID="482A2F53-6090-4ED5-8F9D-8BFEEBAF4E24" Name="Exames" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Agendamento\Forms</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">4C6A9582-E9E8-4A72-8C57-C2B8E9D4B950</XData>
+    <XLinkData Name="ServiceID" ID="5B953D04-B1C2-48A6-902D-2D75F39EFBCE" Type="Guid" ElementID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" Text="AgendamentoExames - (Projecao.Core.PET.Agendamento)" DocumentID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" DocumentName="AgendamentoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">E4DBCED3-01A8-497A-AF91-D5026CE98E6B</XLinkData>
+    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">68AF5FE4-B265-41E6-9187-1CF82630AD81</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">EDC0F9BB-E16D-44F7-8B6F-0113E9B34EC8|08C64EC5-EEAF-4754-A42F-6A238EABE56B|FEB06722-43A5-4FFC-B4D4-BFC2A29B4C06|19E16943-2AB9-49BD-8E06-C58D7D05DBF6|EEAB3DCC-7371-4D50-9D0E-F60CE65FCAE2|0674CC2A-CAD1-490E-96C8-8F5796D26470|00D890E3-1529-4707-B738-FFCCDCD7684C|864552BA-AC4B-455A-8940-9468BB3BA099|D3015363-001D-4777-9CE4-BD9C76BBB68D|F1CA0D7A-A4DD-40CB-B17C-EEC7A29E1798</XData>
+  </XValues>
+  <XFRMForm ID="D41848FC-56BF-47A8-BEC0-402F95CE176F" Name="FieldContainer">
+    <XValues>
+      <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">StandAlone</XData>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
+      <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Pedidos de  Exames - Grid Details</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMField ID="0B7C528F-0082-47AF-8535-F170B4874CFC" iID="598369" ParentID="D8E0FE32-84DC-4F2D-8E34-E55AF34E5D36">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="D8E0FE32-84DC-4F2D-8E34-E55AF34E5D36" Text="PETxAtendimentoExames.ValorCobrado" DocumentID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" DocumentName="AgendamentoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">D8E0FE32-84DC-4F2D-8E34-E55AF34E5D36</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">16</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=499.5;Y=0;Width=499.5;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="Min" ID="F0020546-0CCF-45B4-A05C-2012D957632B" Type="String">0</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField ID="F020AA66-5DE0-4274-8E50-E7F2341020A8" iID="598372" ParentID="FBED32F8-2BFC-40E7-822F-F0F425DDE527">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="FBED32F8-2BFC-40E7-822F-F0F425DDE527" Text="PETxAtendimentoExames.ValorTabela" DocumentID="E4DBCED3-01A8-497A-AF91-D5026CE98E6B" DocumentName="AgendamentoExames" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">FBED32F8-2BFC-40E7-822F-F0F425DDE527</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">16</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=499.5;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+  </XFRMForm>
+</XFRMDesigner>

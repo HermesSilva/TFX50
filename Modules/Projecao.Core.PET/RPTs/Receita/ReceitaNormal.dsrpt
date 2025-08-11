@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XRPTDesigner ID="D94E6C3B-5A3C-4483-A731-0F4F4A600F94" Name="ReceitaNormal" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">RPTs\Receita</XData>
+    <XData Name="RightID" ID="0EA69C29-6FE3-4454-BCBE-C3A2A77A8A65" Type="Guid[]">69914C75-C771-48CD-B3CE-BD76999F4963|351FF395-7E21-4919-A8BC-46F298782571|AE5DEE9F-3408-432A-8B4E-6902569AE1E1|C2BA414E-4593-4FC3-8CB7-C1AF52E2FC2E|0BF7BA8D-7589-49BE-818B-99C9DD74094A|9E112486-B3BC-4E86-8750-73492B7C6822|BCACB859-8BB5-4A3C-A2D1-F9A6FD357324|6321332B-CFAC-4F72-A7EC-4B788B366635|28DF35D7-60AB-4576-8460-124F782018BC|443F5DFD-CC7C-42B2-934C-BA1273963435</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">98A96200-A182-439C-95CD-6FE4963C2435</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">340B7F88-CF8B-4CFF-9626-CA03EDEF8D02|BD556F40-EF2C-4ECD-9CA5-9D214FB2FCD1|BEEA4C7F-F4BC-46F1-9534-BA86B9134892|7B84C85D-7EE3-4766-BA63-23208FB80C9E|AC02A0CD-4692-4526-9D5C-0415565F15C7|6B4EA63A-6884-4152-BE4E-59A9AC1CC5A8|972A45C5-579F-4C08-B05B-1BD67B17CFD1|E0A2455F-9BD4-4D60-8907-0313304555A5|727B7C57-5DC9-4A19-B32B-46D4F07E0238|AA44411F-853A-4672-A463-A4B9E4D882E8</XData>
+    <XData Name="ViewWidth" ID="2759AF1F-A36E-4403-846D-4C414B1CED68" Type="Int32">595</XData>
+    <XData Name="ViewHeight" ID="6E17086B-A018-4073-8BC9-7D95E766E1F8" Type="Int32">842</XData>
+    <XLinkArrayData Name="AppModulesID" ID="90B6749A-B47C-4D93-98F6-0E956BD9D2AF" Type="Guid[]">
+      <XLinkData ID="D8530801-D214-4360-9E9D-103D5447DF41" ElementID="2D63B786-ECBA-4BD0-91A5-7179E2060356" Text="NA" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="0" Order="1">2D63B786-ECBA-4BD0-91A5-7179E2060356</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="AppTypesID" ID="DCD0A048-9478-437A-ACDA-C7FF65827F1E" Type="Guid[]">
+      <XLinkData ID="8E17C622-8EAA-4CE1-94A2-574A5278272D" ElementID="E621CE25-6159-434C-97E4-D5F864FA23C8" Text="Relatórios" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="3" Order="1">E621CE25-6159-434C-97E4-D5F864FA23C8</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="ReportTypeID" ID="C1E34F40-8CE8-409B-B40C-907F5D7C8410" Type="Guid[]">
+      <XLinkData ID="CF51E01F-14C5-4D03-98D2-82169F198CE1" ElementID="4C8F16BD-41FE-4D8E-A80B-1D0B55F2DA94" Text="pdf" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="1" Order="1">4C8F16BD-41FE-4D8E-A80B-1D0B55F2DA94</XLinkData>
+    </XLinkArrayData>
+    <XLinkArrayData Name="Rights" ID="B310A571-CB94-41E5-83BB-D587DC15AD74" Type="Guid[]">
+      <XLinkData ID="0EF70FDE-77A9-48BA-8D9F-FF78265B6607" ElementID="AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E" Text="Visualizar" DocumentID="C7A600DC-35AF-404A-8027-8F60E0F521BD" DocumentName="CTLx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="2" Order="1">AF7A5E2B-7A81-4B55-BA0D-BA2D7A00BD5E</XLinkData>
+    </XLinkArrayData>
+    <XLinkData Name="ServiceID" ID="C6EC34CE-A63B-4036-9A53-4102E678C3E0" Type="Guid" ElementID="558086B3-075D-481C-BF91-4BB599E902E9" Text="Receita - (Projecao.Core.PET.RPTs.Receita)" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">558086B3-075D-481C-BF91-4BB599E902E9</XLinkData>
+    <XLinkArrayData Name="UseTypeID" ID="E63617D7-EE6E-4BA7-95C5-45789102B6C6" Type="Guid[]">
+      <XLinkData ID="FFC66811-8B7D-461D-B067-62A9E915A456" ElementID="C47F6271-29BF-4FEC-8D7F-29A82338DEA1" Text="Indireto" DocumentID="9E09357B-62DE-4724-82D3-B19788BC59CA" DocumentName="SYSx" ModuleID="B0679834-3406-41D1-80D6-458328AC5F48" ModuleName="TFX.Core.Service" DataEx="0" Order="1">C47F6271-29BF-4FEC-8D7F-29A82338DEA1</XLinkData>
+    </XLinkArrayData>
+  </XValues>
+  <XRPTPage Name="PageModel" ID="7714ADD4-7E58-4C05-B7AE-B02AC3BB2EDF">
+    <XValues>
+      <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">25|25|595|842</XData>
+      <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+    </XValues>
+    <XRPTBody Name="PageBody" ID="0ADFF4CD-8863-4540-928F-981E7E1CB15F">
+      <XValues>
+        <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">1|1|593|840</XData>
+      </XValues>
+      <XRPTRow Name="Row" ID="57713D66-63E7-4237-B5DA-F6E370E28181">
+        <XValues>
+          <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+          <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|0|593|820</XData>
+          <XData Name="Alignment" ID="806E9FE8-0718-49F9-95CB-34F8D66C1538" Type="XAlignment">TopLeftRight</XData>
+          <XData Name="RowCount" ID="9B2CACD9-E1C8-47FB-97E7-3C0AE2792953" Type="Int32">1</XData>
+          <XData Name="ColCount" ID="4568E564-A339-4716-B6C3-525E1BD17B30" Type="Int32">1</XData>
+          <XData Name="BackgroundColor" ID="F605F977-5AA6-413A-9B73-18713AE844E4" Type="XColor">00FFFFFF</XData>
+        </XValues>
+        <XRPTGrid Name="NewGrid" ID="E849648B-9336-4DEC-8C61-9936DD0D1B63">
+          <XValues>
+            <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">0</XData>
+            <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+            <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|0|593|820</XData>
+            <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">1</XData>
+            <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+            <XData Name="ColCount" ID="4568E564-A339-4716-B6C3-525E1BD17B30" Type="Int32">29</XData>
+            <XData Name="RowCount" ID="9B2CACD9-E1C8-47FB-97E7-3C0AE2792953" Type="Int32">16</XData>
+            <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+            <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+            <XData Name="BackgroundColor" ID="F605F977-5AA6-413A-9B73-18713AE844E4" Type="XColor">00FFFFFF</XData>
+            <XData Name="Alignment" ID="806E9FE8-0718-49F9-95CB-34F8D66C1538" Type="XAlignment">Client</XData>
+          </XValues>
+          <XRPTGrid Name="NewGrid" ID="149CB942-A06A-4198-8F1B-341FE15579F2">
+            <XValues>
+              <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+              <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">1</XData>
+              <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">20.448275862069|51.25|552,103448275862|205</XData>
+              <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">27</XData>
+              <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">4</XData>
+              <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">1|1|1|1</XData>
+              <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+              <XData Name="ColCount" ID="4568E564-A339-4716-B6C3-525E1BD17B30" Type="Int32">34</XData>
+              <XData Name="RowCount" ID="9B2CACD9-E1C8-47FB-97E7-3C0AE2792953" Type="Int32">7</XData>
+            </XValues>
+            <XRPTText Name="NewText" ID="F6362D0F-18D6-47D1-BA64-E9688C7080DD">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">0</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">1|1|550,103448275862|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">INDENTIFICAÇÃO DO EMITENTE:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">34</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|11|FF000000|TopLeft|Bold</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="6CA3484F-0DBD-4492-B915-E7651705AB66">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">1|30|97,0770791075051|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Nome Completo:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">6</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="FF348825-6DCA-4769-AAA0-7F552FDF863D">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">2</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">1|59|48,5385395537525|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">CRMV:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">3</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="0D041D8D-B94B-4BDF-8488-6FA314E3542C">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">2</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">28</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">454.026369168357|59|32,3590263691684|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">UF:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">2</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="57985F8F-DD38-41A7-BCCD-B869983F2C7D">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">3</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">1|88|64,7180527383367|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Endereço:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">4</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="049AD398-5ECD-4D7E-8BA3-A041A352A793">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">4</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">1|117|48,5385395537525|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Cidade:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">3</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="24BC4AC1-7319-4AB0-B957-68B37469F33F">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">4</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">28</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">454.026369168357|117|32,3590263691684|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">UF:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">2</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="4C27879B-7F93-45D4-BE65-70F488D900BE">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">5</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">1|146|32,3590263691684|29</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Tel:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">2</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTField Name="" ID="3BC3FDB4-5491-478E-A582-D17A1543E294" ParentID="A3B2000F-8953-489B-B8E7-7ED4EBB08C64">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">6</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A3B2000F-8953-489B-B8E7-7ED4EBB08C64" Text=".Veterinario" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">A3B2000F-8953-489B-B8E7-7ED4EBB08C64</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">98.0770791075051|30|436,846855983773|29</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">27</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="80745D61-08E5-40FD-A3FC-A14DC0576116" ParentID="C4485D14-6832-40BF-960A-BEBD9C35D83E">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">2</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">3</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="C4485D14-6832-40BF-960A-BEBD9C35D83E" Text=".CRMV" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">C4485D14-6832-40BF-960A-BEBD9C35D83E</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">49.5385395537525|59|275,051724137931|29</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">17</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="22595F74-F4F3-4712-B607-D82C8FF9A62E" ParentID="B245819F-3227-4C2F-A6A2-DD76F4FAC27F">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">2</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">30</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="B245819F-3227-4C2F-A6A2-DD76F4FAC27F" Text=".CRMVUF" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">B245819F-3227-4C2F-A6A2-DD76F4FAC27F</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">486.385395537525|59|48,5385395537525|29</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">3</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="4977EDA6-526F-4AC9-A786-643BBC9BD1E6" ParentID="E5E1FB92-5C72-498D-9099-2619E2EAA6BE">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">3</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">4</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E5E1FB92-5C72-498D-9099-2619E2EAA6BE" Text=".VetEndereco" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">E5E1FB92-5C72-498D-9099-2619E2EAA6BE</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">65.7180527383367|88|469,205882352941|29</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">29</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="946A3CC2-0344-4D91-B7BC-B0A8D6F81F3C" ParentID="52AB33DE-8846-4996-A020-B24EF7954858">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">4</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">3</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="52AB33DE-8846-4996-A020-B24EF7954858" Text=".VetCidade" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">52AB33DE-8846-4996-A020-B24EF7954858</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">49.5385395537525|117|323,590263691684|29</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">20</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="150A1ADD-8299-4C91-84F2-A80989E01733" ParentID="67E03BA6-0965-4204-9A20-2FBAAFF53116">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">4</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">30</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="67E03BA6-0965-4204-9A20-2FBAAFF53116" Text=".VetUF" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">67E03BA6-0965-4204-9A20-2FBAAFF53116</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">486.385395537525|117|48,5385395537525|29</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">3</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="5A23F8A4-2AB9-4440-9CB6-1D1D2D127F3E" ParentID="A32E6F5E-E318-4AA7-AAB3-CD1A7B3D9AF2">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">5</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">2</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="A32E6F5E-E318-4AA7-AAB3-CD1A7B3D9AF2" Text=".VetFone" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">A32E6F5E-E318-4AA7-AAB3-CD1A7B3D9AF2</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">33.3590263691684|146|372,128803245436|29</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">23</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+          </XRPTGrid>
+          <XRPTText Name="NewText" ID="700C62CC-C6BD-4957-AE22-602280448515">
+            <XValues>
+              <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">0</XData>
+              <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">1</XData>
+              <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">20.448275862069|0|552,103448275862|51,25</XData>
+              <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                <XLanguage IETFCode="pt-br" IsDefault="true">RECEITA VETERINÁRIA</XLanguage>
+              </XData>
+              <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">27</XData>
+              <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+              <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|22|FF000000|Center|Bold</XData>
+            </XValues>
+          </XRPTText>
+          <XRPTGrid Name="NewGrid" ID="AA46BA6B-C2C5-4DA3-B91C-D60476842244">
+            <XValues>
+              <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">5</XData>
+              <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">1</XData>
+              <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">20.448275862069|256.25|552,103448275862|205</XData>
+              <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">27</XData>
+              <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">4</XData>
+              <XData Name="ColCount" ID="4568E564-A339-4716-B6C3-525E1BD17B30" Type="Int32">22</XData>
+              <XData Name="RowCount" ID="9B2CACD9-E1C8-47FB-97E7-3C0AE2792953" Type="Int32">5</XData>
+              <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+              <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+            </XValues>
+            <XRPTText Name="NewText" ID="825E9B93-8693-4C9D-87A1-3D5343047F63">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">0</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|0|75,2868338557994|41</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Nome do PET:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">3</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="0EA1EB88-477C-45DB-9987-D775DB302D45">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|41|50,1912225705329|41</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Espécie:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">2</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="312537DE-A1F6-4BFF-AE92-8493E854D877">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">2</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|82|100,382445141066|41</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Nome do Tutor:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">4</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="0AC097FE-C99B-44EB-B487-AF8381773860">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">3</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|123|50,1912225705329|41</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Endereço:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">2</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="18D0B934-E61F-4C69-BAB9-22D6A258590A">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">4</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|164|150,573667711599|41</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">PRESCRIÇÃO</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">6</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|12|FF000000|CenterLeft|Bold</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTField Name="" ID="F2F48F9E-B983-4905-8669-D8CFFA61531E" ParentID="32BADFE6-7634-4793-AC7E-FE7D6F2AC44C">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">0</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">3</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="32BADFE6-7634-4793-AC7E-FE7D6F2AC44C" Text="PETxAnimal.Nome" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">32BADFE6-7634-4793-AC7E-FE7D6F2AC44C</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">75.2868338557994|0|301,147335423197|41</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">12</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BackgroundColor" ID="F605F977-5AA6-413A-9B73-18713AE844E4" Type="XColor">00FFFFFF</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="811F0FA1-F00F-479D-9052-947556AEC20D" ParentID="7D6DA1E3-E407-432E-B46D-2395406AED21">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">2</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">4</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7D6DA1E3-E407-432E-B46D-2395406AED21" Text="SYSxPessoa.NomeTutor" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">7D6DA1E3-E407-432E-B46D-2395406AED21</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">100.382445141066|82|451,721003134796|41</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">18</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="822CE04C-4B28-4F96-8404-97C8E86A3180" ParentID="AD63C5D8-2174-4023-8068-5B0C0323D3CF">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">2</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="AD63C5D8-2174-4023-8068-5B0C0323D3CF" Text="PETxFamilia.Familia" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">AD63C5D8-2174-4023-8068-5B0C0323D3CF</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">50.1912225705329|41|125,478056426332|41</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">5</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTField Name="" ID="991F2264-9297-4F3E-982A-E6857D672901" ParentID="798D5894-50E4-4FBC-B00A-509B43522ECB">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">3</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">3</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="798D5894-50E4-4FBC-B00A-509B43522ECB" Text=".TutorEndereco" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">798D5894-50E4-4FBC-B00A-509B43522ECB</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">75.2868338557994|123|476,816614420063|41</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">19</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTText Name="NewText" ID="0184D9FA-4C47-4D74-9325-35DACC478699">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">8</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">200.764890282132|41|50,1912225705329|41</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Gênero:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">2</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTField Name="" ID="31FC9A38-1C98-4089-B0D8-C92963801CBA" ParentID="DFC6B113-1A6E-4F86-A729-CB510F08A4FE">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">10</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="DFC6B113-1A6E-4F86-A729-CB510F08A4FE" Text="ERPxGenero.Genero" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">DFC6B113-1A6E-4F86-A729-CB510F08A4FE</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">250.956112852665|41|100,382445141066|41</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">4</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTText Name="NewText" ID="B0718DA4-1D74-4E34-82EA-24920330165B">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">15</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">376.434169278997|41|50,1912225705329|41</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Raça:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">2</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTField Name="" ID="DFE428D1-FA58-4685-8EAB-902422C4FCF7" ParentID="E95EB2BA-66A6-43F4-83BF-7BD8CB707155">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">17</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E95EB2BA-66A6-43F4-83BF-7BD8CB707155" Text="PETxRaca.Raca" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">E95EB2BA-66A6-43F4-83BF-7BD8CB707155</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">426.62539184953|41|125,478056426332|41</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">5</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTField>
+          </XRPTGrid>
+          <XRPTGrid Name="NewGrid" ID="3A75361B-E146-47D7-AADE-EA62948C1188">
+            <XValues>
+              <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">9</XData>
+              <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">1</XData>
+              <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">20.448275862069|461.25|552,103448275862|256,25</XData>
+              <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">27</XData>
+              <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">5</XData>
+            </XValues>
+            <XRPTField Name="" ID="67E8B68D-B3B3-400B-8FAA-580CA3187E73" ParentID="4AB1CD38-6A88-40C7-9C29-22F35C85D740">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">0</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4AB1CD38-6A88-40C7-9C29-22F35C85D740" Text="PETxReceita.Descritivo" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">4AB1CD38-6A88-40C7-9C29-22F35C85D740</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|0|552,103448275862|256,25</XData>
+                <XData Name="Overflow" ID="854B8219-755F-4861-A739-091B6C518EF5" Type="XTextOverflow">Wrap</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">1</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="BackgroundColor" ID="F605F977-5AA6-413A-9B73-18713AE844E4" Type="XColor">00FFFFFF</XData>
+              </XValues>
+            </XRPTField>
+          </XRPTGrid>
+          <XRPTGrid Name="NewGrid" ID="6D631FCA-C172-423D-BFCD-44F29C5FC0D1">
+            <XValues>
+              <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">14</XData>
+              <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">1</XData>
+              <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">20.448275862069|717.5|552,103448275862|51,25</XData>
+              <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">27</XData>
+              <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">1</XData>
+              <XData Name="ColCount" ID="4568E564-A339-4716-B6C3-525E1BD17B30" Type="Int32">16</XData>
+              <XData Name="RowCount" ID="9B2CACD9-E1C8-47FB-97E7-3C0AE2792953" Type="Int32">7</XData>
+            </XValues>
+            <XRPTText Name="NewText" ID="1406B245-C35B-42E4-86DB-4D5A7B6FAEF3">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">0</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">0|7.32142857142857|34,5064655172414|21,9642857142857</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Data:</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">1</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">3</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTText Name="NewText" ID="C6AA61C0-D602-44B5-990F-A0F58AB989EA">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">4</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">7</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">241.54525862069|29.2857142857143|276,051724137931|21,9642857142857</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true">Assinatura/Carimbo do Médico Veterinário</XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">8</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">3</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|0</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">00FFFFFF</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|Center|Normal</XData>
+              </XValues>
+            </XRPTText>
+            <XRPTField Name="" ID="4DFA6DF1-BCE4-4AE7-B12E-63C0608DE9A3" ParentID="9C99AFF6-1EEE-419F-95C6-786D746177C7">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">1</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">1</XData>
+                <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="9C99AFF6-1EEE-419F-95C6-786D746177C7" Text="PETxReceita.Data" DocumentID="558086B3-075D-481C-BF91-4BB599E902E9" DocumentName="Receita" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">9C99AFF6-1EEE-419F-95C6-786D746177C7</XParentData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">34.5064655172414|7.32142857142857|172,532327586207|21,9642857142857</XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">5</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">3</XData>
+                <XData Name="Font" ID="F0833CD6-DC21-49FA-9F97-237E3A0DD0E2" Type="XFont">Arial|10|FF000000|BottomLeft|Normal</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+              </XValues>
+            </XRPTField>
+            <XRPTText Name="NewText" ID="190EAB78-B674-41DC-B64C-BEAC41F22AD3">
+              <XValues>
+                <XData Name="Row" ID="0AAB4266-9698-4EE5-A446-EC7CB6C303A9" Type="Int32">2</XData>
+                <XData Name="Col" ID="F18CFD62-5344-4597-8394-12C50D96D934" Type="Int32">7</XData>
+                <XData Name="Rect" ID="16A0484E-8AE3-426D-B58D-F55D167A777E" Type="XRect">241.54525862069|14.6428571428571|276,051724137931|14,6428571428571</XData>
+                <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+                  <XLanguage IETFCode="pt-br" IsDefault="true"></XLanguage>
+                </XData>
+                <XData Name="ColSpan" ID="DA9730B4-A412-4F7B-8AD5-546CB46FF652" Type="Int32">8</XData>
+                <XData Name="RowSpan" ID="64487246-5F29-4657-8A79-32DF5A6B5EF6" Type="Int32">2</XData>
+                <XData Name="Border" ID="C33EC38A-1EC5-4C60-9858-EA42FAF99BBA" Type="XThickness">0|0|0|1</XData>
+                <XData Name="BorderColor" ID="54D1B9ED-2EAA-40A7-95B5-E29C2E127F28" Type="XBorderColor">FF000000</XData>
+              </XValues>
+            </XRPTText>
+          </XRPTGrid>
+        </XRPTGrid>
+      </XRPTRow>
+    </XRPTBody>
+  </XRPTPage>
+</XRPTDesigner>

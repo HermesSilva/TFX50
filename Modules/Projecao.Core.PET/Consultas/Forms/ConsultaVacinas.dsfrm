@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XFRMDesigner ID="85F4B893-3B5C-48D6-B4F1-C1575CD3257B" Name="ConsultaVacinas" ModuleID="E3D05D28-7014-4B59-9CB6-C283BEEFDB82">
+  <XValues>
+    <XData Name="RelativeFolder" ID="DCAA1E55-B8D5-436C-8543-DBB4C68F6B89" Type="String">Consultas\Forms</XData>
+    <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">380BD115-1524-4007-8295-76C1AF6C8A73</XData>
+    <XLinkData Name="ServiceID" ID="5B953D04-B1C2-48A6-902D-2D75F39EFBCE" Type="Guid" ElementID="FCF31712-4170-47F3-8CF7-CC76E50441A8" Text="AgendamentoVacina - (Projecao.Core.PET.Agendamento)" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="">FCF31712-4170-47F3-8CF7-CC76E50441A8</XLinkData>
+    <XData Name="ConfigID" ID="0CCEBA87-B6AE-4CB5-B3A0-6DAE25340503" Type="Guid">F702459D-7152-488C-AF5B-ED98FC055344</XData>
+    <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">54AEB175-D5BB-4116-A068-7DAB2509C095|EE517614-E2F6-4E83-8DB5-42C5728F7044|0E9A9192-26DE-49C4-8503-C4A3A0FB0FEA|846A7A6C-45C1-4569-AECB-E5BC23B9EFE3|E4902522-F951-4B9C-BBC5-05A7E224E48D|48A24D6E-BFF9-4AB7-B060-7630D364A19B|8427F55E-1367-4BC0-849B-8175150488A9|1EFBC620-8DFB-4DCB-8C56-1549E1006250|76E5A83A-0A9F-4146-8A10-59C4B6E87FB6|BD1531BE-EFF8-451E-9F28-B1F3E6FA78D4</XData>
+  </XValues>
+  <XFRMForm ID="BE5424FF-4D0A-4E04-9202-83BB5DD876C4" Name="FieldContainer">
+    <XValues>
+      <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">StandAlone</XData>
+      <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" />
+      <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
+      <XLinkArrayData Type="Guid[]" Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" />
+      <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+        <XLanguage IETFCode="pt-br" IsDefault="true">Vacinas - Grid Details</XLanguage>
+      </XData>
+    </XValues>
+    <XFRMField ID="0C21037B-1690-43C1-87EB-F0B87195CD13" iID="598348" ParentID="4356B674-D9EC-43F6-8C3D-462D542C47BF">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="4356B674-D9EC-43F6-8C3D-462D542C47BF" Text="PETxAtendimentoVacina.Quantidade" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">4356B674-D9EC-43F6-8C3D-462D542C47BF</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">B45FBE87-40A0-44EF-B2EC-CD6A3000DA3A</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">FAADA046-C1B9-4E89-9B64-310E272FC0CC</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=187.3125;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="DefaultValue" ID="2152CB85-A8E7-4C05-85E0-02A6EAFB7C74" Type="Int32">1</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+        <XData Name="ShowSpin" ID="3A1921CC-77FF-4159-81F6-2A67078724E5" Type="Boolean">true</XData>
+        <XData Name="Max" ID="80A31E90-1F8C-460D-9AA0-A753F076F05C" Type="String">99</XData>
+        <XData Name="Min" ID="F0020546-0CCF-45B4-A05C-2012D957632B" Type="String">1</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField ID="54875E4A-71AA-4A80-AAEC-F93BEE16434F" iID="598354" ParentID="BC8557A0-539D-42D4-9359-4F0DFACB228E">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="BC8557A0-539D-42D4-9359-4F0DFACB228E" Text="PETxAtendimentoVacina.ValorTabela" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">BC8557A0-539D-42D4-9359-4F0DFACB228E</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=187.3125;Y=0;Width=187.3125;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+        <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+          <XLanguage IETFCode="pt-br" IsDefault="true">Valor de Tabela (un)</XLanguage>
+        </XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+    <XFRMField ID="FE6B1400-1C67-4AE6-93F7-1B1A06D5704D" iID="598852" ParentID="3E9DAA9F-5B6D-4B12-93F8-2858195EABE5">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="3E9DAA9F-5B6D-4B12-93F8-2858195EABE5" Text="PETxAtendimentoVacina.ValorTotal" DocumentID="FCF31712-4170-47F3-8CF7-CC76E50441A8" DocumentName="AgendamentoVacina" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.PET" DataEx="" Type="Guid">3E9DAA9F-5B6D-4B12-93F8-2858195EABE5</XParentData>
+        <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+        <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">6FD76216-1D13-4438-B568-72556767B3DF</XData>
+        <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">0B16C95D-7DB8-425F-8DFB-F0A9DBA06400</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=374.625;Y=0;Width=187.3125;Height=80}</XData>
+        <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+        <XData Name="IsReadOnly" ID="F206EE68-5488-4180-ACBF-EE5442909895" Type="Boolean">true</XData>
+        <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+        <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+        <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+      </XValues>
+    </XFRMField>
+  </XFRMForm>
+</XFRMDesigner>
