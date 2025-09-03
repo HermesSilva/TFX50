@@ -11,9 +11,6 @@ namespace Projecao.Core.ERP
     {
         public override void Initialize(IServiceCollection pServices)
         {
-            pServices.AddTransient<Projecao.Core.ERP.AutomatedService.IEMailEnvioService, Projecao.Core.ERP.AutomatedService.EMailEnvioService>();
-            pServices.AddDbContext<Projecao.Core.ERP.AutomatedService.EMailEnvioService.DBContext>();
-            XMainCache.Add<Projecao.Core.ERP.AutomatedService.EMailEnvioServiceModel>(Projecao.Core.ERP.AutomatedService.EMailEnvioServiceModel.CID);
             pServices.AddTransient<Projecao.Core.ERP.Empresa.IEmpresaService, Projecao.Core.ERP.Empresa.EmpresaService>();
             pServices.AddDbContext<Projecao.Core.ERP.Empresa.EmpresaService.DBContext>();
             XMainCache.Add<Projecao.Core.ERP.Empresa.EmpresaServiceModel>(Projecao.Core.ERP.Empresa.EmpresaServiceModel.CID);

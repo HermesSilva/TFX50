@@ -26,17 +26,17 @@ namespace Projecao.Core.ERP.ReadOnly
         public EmpresaServiceModel()
         {
             SearchPath = "Empresa/Search";
-            DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
-            DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "String", Mask = "", 
-                                                      Visible = true });
-            DataView.Columns.Add(new XColumnModel() { Name = "Mascara", Title = "Máscara", Type = "String", Mask = "", 
-                                                      Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "String", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Mascara", Title = "Máscara", Type = "String", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
                                                       Visible = false });
             Forms.Add(new FRMEmpresaFilter());
         }
@@ -48,38 +48,38 @@ namespace Projecao.Core.ERP.ReadOnly
             Initialize();
         }
 
-        public EmpresaTuple(String pRazaoSocial, String pNumero, String pMascara, String pNome, Guid? pCORxPessoaID, Int32 pCEPxLocalidadePrincipalID)
+        public EmpresaTuple(String pNome, Guid? pCORxPessoaID, Int32 pCEPxLocalidadePrincipalID, String pNumero, String pMascara, String pRazaoSocial)
             : this()
         {
-            RazaoSocial.Value = pRazaoSocial;
-            Numero.Value = pNumero;
-            Mascara.Value = pMascara;
             Nome.Value = pNome;
             CORxPessoaID.Value = pCORxPessoaID;
             CEPxLocalidadePrincipalID.Value = pCEPxLocalidadePrincipalID;
+            Numero.Value = pNumero;
+            Mascara.Value = pMascara;
+            RazaoSocial.Value = pRazaoSocial;
         }
 
         public override void Initialize()
         {
-            RazaoSocial = new XStringDataField();
-            Numero = new XStringDataField();
-            Mascara = new XStringDataField();
             Nome = new XStringDataField();
             CORxPessoaID = new XGuidNullableDataField();
             CEPxLocalidadePrincipalID = new XInt32DataField();
+            Numero = new XStringDataField();
+            Mascara = new XStringDataField();
+            RazaoSocial = new XStringDataField();
         }
 
-        [Display(Name = "Razão Social")]
-        public XStringDataField RazaoSocial {get;set;}
-        [Display(Name = "Número")]
-        public XStringDataField Numero {get;set;}
-        [Display(Name = "Máscara")]
-        public XStringDataField Mascara {get;set;}
         public XStringDataField Nome {get;set;}
         [Display(Name = "Pessoa")]
         public XGuidNullableDataField CORxPessoaID {get;set;}
         [Display(Name = "Localidade")]
         public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
+        [Display(Name = "Número")]
+        public XStringDataField Numero {get;set;}
+        [Display(Name = "Máscara")]
+        public XStringDataField Mascara {get;set;}
+        [Display(Name = "Razão Social")]
+        public XStringDataField RazaoSocial {get;set;}
     }
 
     public class EmpresaFilter : XFilter

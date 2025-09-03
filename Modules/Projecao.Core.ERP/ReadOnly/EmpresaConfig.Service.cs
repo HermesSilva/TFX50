@@ -179,7 +179,7 @@ namespace Projecao.Core.ERP.ReadOnly
             var ctx = Context;
             var query = from CORxPessoa in ctx.CORxPessoa
                         join ERPxDocumento in ctx.ERPxDocumento on CORxPessoa.CORxPessoaID equals ERPxDocumento.CORxPessoaID
-                        where ERPxDocumento.ERPxDocumentoTipoID ERPxModel.ERPxDocumentoTipo.CNPJ
+                        where ERPxDocumento.ERPxDocumentoTipoID == Projecao.Core.ERP.DB.ERPxModel.ERPxDocumentoTipo.CNPJ
                         select new {ERPxDocumento, CORxPessoa};
             query = _INFRule.GetWhere(query);
 

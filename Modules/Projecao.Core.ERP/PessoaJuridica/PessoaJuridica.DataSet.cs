@@ -251,7 +251,7 @@ namespace Projecao.Core.ERP.PessoaJuridica
             Initialize();
         }
 
-        public PessoaJuridicaTuple(String pRazaoSocial, Int16 pCORxStatusID, String pCNPJ, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, ContatoTuple pContato, DocumentoTuple pDocumento, EnderecoTuple pEndereco)
+        public PessoaJuridicaTuple(String pRazaoSocial, Int16 pCORxStatusID, String pCNPJ, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, ContatoTuple[] pContato, DocumentoTuple[] pDocumento, EnderecoTuple[] pEndereco)
             : this()
         {
             RazaoSocial.Value = pRazaoSocial;
@@ -260,6 +260,9 @@ namespace Projecao.Core.ERP.PessoaJuridica
             CORxPessoaID.Value = pCORxPessoaID;
             Nome.Value = pNome;
             CEPxLocalidadePrincipalID.Value = pCEPxLocalidadePrincipalID;
+            Contato = pContato;
+            Documento = pDocumento;
+            Endereco = pEndereco;
         }
 
         public override void Initialize()

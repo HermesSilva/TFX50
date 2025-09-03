@@ -255,7 +255,7 @@ namespace Projecao.Core.ERP.Empresa
             Initialize();
         }
 
-        public EmpresaTuple(String pChave, String pCNPJ, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, String pRazaoSocial, Int16 pCORxStatusID, String pNumero, ContatoTuple pContato, DocumentoTuple pDocumento, EnderecoTuple pEndereco)
+        public EmpresaTuple(String pChave, String pCNPJ, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, String pRazaoSocial, Int16 pCORxStatusID, String pNumero, ContatoTuple[] pContato, DocumentoTuple[] pDocumento, EnderecoTuple[] pEndereco)
             : this()
         {
             Chave.Value = pChave;
@@ -266,6 +266,9 @@ namespace Projecao.Core.ERP.Empresa
             RazaoSocial.Value = pRazaoSocial;
             CORxStatusID.Value = pCORxStatusID;
             Numero.Value = pNumero;
+            Contato = pContato;
+            Documento = pDocumento;
+            Endereco = pEndereco;
         }
 
         public override void Initialize()
