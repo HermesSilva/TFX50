@@ -272,7 +272,7 @@ namespace Projecao.Core.ERP.PessoaJuridica
             [Required()]
             public Int16 CEPxLocalidadeTipoID {get; set;}
 
-            [Display(Name = "Município")]
+            [Display(Name = "Municipio")]
             [Required()]
             public Int32 CEPxMunicipioID {get; set;}
 
@@ -522,12 +522,12 @@ namespace Projecao.Core.ERP.PessoaJuridica
                 ett.Property(d => d.CEPxLocalidadeID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
-                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
                     .HasDefaultValue(GetDBValue("String", null));
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade");
             });
         }

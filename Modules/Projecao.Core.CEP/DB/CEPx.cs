@@ -12,8 +12,161 @@ using TFX.Core.Lzma;
 
 namespace Projecao.Core.CEP.DB
 {
-    public  partial class ProjecaoCoreCEPContext : XDBContext
+    public class ProjecaoCoreCEPContext : XDBContext
     {
+        #region _CEPxBairro
+
+        public class _CEPxBairro
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int32, _CEPxBairro> _SeedData = new Dictionary<Int32, _CEPxBairro>()
+                {
+                    [0] = new _CEPxBairro { CEPxLocalidadeID = 0, Numero = 0, Breviatura = null, Nome = @"NI", CEPxBairroID = 0 }
+                };
+                public static _CEPxBairro[] SeedData => _SeedData.Values.ToArray();
+            }
+            [Display(Name = "Abreviatura")]
+            [MaxLength(25)]
+            public String Breviatura {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxBairroID, typeof(Int32).GetDefault());
+            [Display(Name = "Bairro")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxBairroID {get; set;}
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadeID {get; set;}
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            public _CEPxLocalidade CEPxLocalidade {get; set;}
+            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
+        }
+
+        #endregion _CEPxBairro
+
+        #region _CEPxLocalidade
+
+        public class _CEPxLocalidade
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int32, _CEPxLocalidade> _SeedData = new Dictionary<Int32, _CEPxLocalidade>()
+                {
+                    [0] = new _CEPxLocalidade { CEPxLocalidadeTipoID = (Int16)3, Nome = @"NA", Numero = 0, CEPGeral = @"00000000", CodigoIBGE = @"0", CEPxMunicipioID = 0, CEPxUFID = (Int16)0, CEPxLocalidadeID = 0 }
+                };
+                public static _CEPxLocalidade[] SeedData => _SeedData.Values.ToArray();
+            }
+            [Display(Name = "CEP Geral")]
+            [MaxLength(8)]
+            public String CEPGeral {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeID, typeof(Int32).GetDefault());
+            [Display(Name = "Localidade")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxLocalidadeID {get; set;}
+            [Display(Name = "Tipo de Localidade")]
+            [Required()]
+            public Int16 CEPxLocalidadeTipoID {get; set;}
+            [Display(Name = "Município")]
+            [Required()]
+            public Int32 CEPxMunicipioID {get; set;}
+            [Display(Name = "Unidade Federativa")]
+            [Required()]
+            public Int16 CEPxUFID {get; set;}
+            [Display(Name = "Código no IBGE")]
+            [MaxLength(7)]
+            [DisplayFormat(DataFormatString = "0000000")]
+            public String CodigoIBGE {get; set;}
+            [Display(Name = "Nome da Localidade")]
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            public _CEPxUF CEPxUF {get; set;}
+            public _CEPxLocalidade CEPxLocalidade {get; set;}
+            public _CEPxLocalidadeTipo CEPxLocalidadeTipo {get; set;}
+            public List<_CEPxLocalidade> CEPxMunicipio {get; set;} = new List<_CEPxLocalidade>();
+            public List<_CEPxBairro> CEPxBairro {get; set;} = new List<_CEPxBairro>();
+            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
+        }
+
+        #endregion _CEPxLocalidade
+
+        #region _CEPxLocalidadeTipo
+
+        public class _CEPxLocalidadeTipo
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int16, _CEPxLocalidadeTipo> _SeedData = new Dictionary<Int16, _CEPxLocalidadeTipo>()
+                {
+                    [(Int16)1] = new _CEPxLocalidadeTipo { Tipo = @"Município", CEPxLocalidadeTipoID = (Int16)1 },
+                    [(Int16)3] = new _CEPxLocalidadeTipo { Tipo = @"Povoado", CEPxLocalidadeTipoID = (Int16)3 },
+                    [(Int16)2] = new _CEPxLocalidadeTipo { Tipo = @"Distrito", CEPxLocalidadeTipoID = (Int16)2 }
+                };
+                public static _CEPxLocalidadeTipo[] SeedData => _SeedData.Values.ToArray();
+            }
+            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeTipoID, typeof(Int16).GetDefault());
+            [Display(Name = "Tipo de Localidade")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 CEPxLocalidadeTipoID {get; set;}
+            [MaxLength(25)]
+            [Required()]
+            public String Tipo {get; set;}
+            public List<_CEPxLocalidade> CEPxLocalidade {get; set;} = new List<_CEPxLocalidade>();
+        }
+
+        #endregion _CEPxLocalidadeTipo
+
+        #region _CEPxLogradouro
+
+        public class _CEPxLogradouro
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int32, _CEPxLogradouro> _SeedData = new Dictionary<Int32, _CEPxLogradouro>()
+                {
+                    [0] = new _CEPxLogradouro { Nome = @"NI", CEPxLocalidadeID = 0, Numero = 0, CEP = null, Tipo = @"NA", CEPxLogradouroID = 0, CEPxBairroID = 0 }
+                };
+                public static _CEPxLogradouro[] SeedData => _SeedData.Values.ToArray();
+            }
+            [MaxLength(8)]
+            [DisplayFormat(DataFormatString = "00.000-000")]
+            public String CEP {get; set;}
+            [Display(Name = "Bairro")]
+            [Required()]
+            public Int32 CEPxBairroID {get; set;}
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadeID {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxLogradouroID, typeof(Int32).GetDefault());
+            [Display(Name = "Logradouro")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxLogradouroID {get; set;}
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            [MaxLength(30)]
+            [Required()]
+            public String Tipo {get; set;}
+            public _CEPxBairro CEPxBairro {get; set;}
+            public _CEPxLocalidade CEPxLocalidade {get; set;}
+        }
+
+        #endregion _CEPxLogradouro
+
         #region _CEPxPais
 
         public class _CEPxPais
@@ -358,159 +511,6 @@ namespace Projecao.Core.CEP.DB
         }
 
         #endregion _CEPxUF
-
-        #region _CEPxLocalidade
-
-        public class _CEPxLocalidade
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int32, _CEPxLocalidade> _SeedData = new Dictionary<Int32, _CEPxLocalidade>()
-                {
-                    [0] = new _CEPxLocalidade { CEPxLocalidadeTipoID = (Int16)3, Nome = @"NA", Numero = 0, CEPGeral = @"00000000", CodigoIBGE = @"0", CEPxMunicipioID = 0, CEPxUFID = (Int16)0, CEPxLocalidadeID = 0 }
-                };
-                public static _CEPxLocalidade[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "CEP Geral")]
-            [MaxLength(8)]
-            public String CEPGeral {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeID, typeof(Int32).GetDefault());
-            [Display(Name = "Localidade")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int32 CEPxLocalidadeID {get; set;}
-            [Display(Name = "Tipo de Localidade")]
-            [Required()]
-            public Int16 CEPxLocalidadeTipoID {get; set;}
-            [Display(Name = "Município")]
-            [Required()]
-            public Int32 CEPxMunicipioID {get; set;}
-            [Display(Name = "Unidade Federativa")]
-            [Required()]
-            public Int16 CEPxUFID {get; set;}
-            [Display(Name = "Código no IBGE")]
-            [MaxLength(7)]
-            [DisplayFormat(DataFormatString = "0000000")]
-            public String CodigoIBGE {get; set;}
-            [Display(Name = "Nome da Localidade")]
-            [MaxLength(128)]
-            [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Número")]
-            [Required()]
-            public Int32 Numero {get; set;}
-            public _CEPxUF CEPxUF {get; set;}
-            public _CEPxLocalidade CEPxLocalidade {get; set;}
-            public _CEPxLocalidadeTipo CEPxLocalidadeTipo {get; set;}
-            public List<_CEPxLocalidade> CEPxMunicipio {get; set;} = new List<_CEPxLocalidade>();
-            public List<_CEPxBairro> CEPxBairro {get; set;} = new List<_CEPxBairro>();
-            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
-        }
-
-        #endregion _CEPxLocalidade
-
-        #region _CEPxLocalidadeTipo
-
-        public class _CEPxLocalidadeTipo
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int16, _CEPxLocalidadeTipo> _SeedData = new Dictionary<Int16, _CEPxLocalidadeTipo>()
-                {
-                    [(Int16)1] = new _CEPxLocalidadeTipo { Tipo = @"Município", CEPxLocalidadeTipoID = (Int16)1 },
-                    [(Int16)3] = new _CEPxLocalidadeTipo { Tipo = @"Povoado", CEPxLocalidadeTipoID = (Int16)3 },
-                    [(Int16)2] = new _CEPxLocalidadeTipo { Tipo = @"Distrito", CEPxLocalidadeTipoID = (Int16)2 }
-                };
-                public static _CEPxLocalidadeTipo[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeTipoID, typeof(Int16).GetDefault());
-            [Display(Name = "Tipo de Localidade")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 CEPxLocalidadeTipoID {get; set;}
-            [MaxLength(25)]
-            [Required()]
-            public String Tipo {get; set;}
-            public List<_CEPxLocalidade> CEPxLocalidade {get; set;} = new List<_CEPxLocalidade>();
-        }
-
-        #endregion _CEPxLocalidadeTipo
-
-        #region _CEPxBairro
-
-        public class _CEPxBairro
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int32, _CEPxBairro> _SeedData = new Dictionary<Int32, _CEPxBairro>()
-                {
-                    [0] = new _CEPxBairro { CEPxLocalidadeID = 0, Numero = 0, Breviatura = null, Nome = @"NI", CEPxBairroID = 0 }
-                };
-                public static _CEPxBairro[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Abreviatura")]
-            [MaxLength(25)]
-            public String Breviatura {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CEPxBairroID, typeof(Int32).GetDefault());
-            [Display(Name = "Bairro")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int32 CEPxBairroID {get; set;}
-            [Display(Name = "Localidade")]
-            [Required()]
-            public Int32 CEPxLocalidadeID {get; set;}
-            [MaxLength(128)]
-            [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Número")]
-            [Required()]
-            public Int32 Numero {get; set;}
-            public _CEPxLocalidade CEPxLocalidade {get; set;}
-            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
-        }
-
-        #endregion _CEPxBairro
-
-        #region _CEPxLogradouro
-
-        public class _CEPxLogradouro
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int32, _CEPxLogradouro> _SeedData = new Dictionary<Int32, _CEPxLogradouro>()
-                {
-                    [0] = new _CEPxLogradouro { Nome = @"NI", CEPxLocalidadeID = 0, Numero = 0, CEP = null, Tipo = @"NA", CEPxLogradouroID = 0, CEPxBairroID = 0 }
-                };
-                public static _CEPxLogradouro[] SeedData => _SeedData.Values.ToArray();
-            }
-            [MaxLength(8)]
-            [DisplayFormat(DataFormatString = "00.000-000")]
-            public String CEP {get; set;}
-            [Display(Name = "Bairro")]
-            [Required()]
-            public Int32 CEPxBairroID {get; set;}
-            [Display(Name = "Localidade")]
-            [Required()]
-            public Int32 CEPxLocalidadeID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CEPxLogradouroID, typeof(Int32).GetDefault());
-            [Display(Name = "Logradouro")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int32 CEPxLogradouroID {get; set;}
-            [MaxLength(128)]
-            [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Número")]
-            [Required()]
-            public Int32 Numero {get; set;}
-            [MaxLength(30)]
-            [Required()]
-            public String Tipo {get; set;}
-            public _CEPxBairro CEPxBairro {get; set;}
-            public _CEPxLocalidade CEPxLocalidade {get; set;}
-        }
-
-        #endregion _CEPxLogradouro
 
 
         protected ProjecaoCoreCEPContext(DbContextOptions pOptions)

@@ -27,6 +27,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="DB\EMLxModel.cs">
+      <Visible>False</Visible>
+      <DependentUpon>EMLx.dsorm</DependentUpon>
+    </Compile>
     <Compile Include="DB\ERPx.cs">
       <Visible>False</Visible>
       <DependentUpon>ERPx.dsorm</DependentUpon>

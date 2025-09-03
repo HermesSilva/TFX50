@@ -60,6 +60,18 @@
             <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
           </XValues>
         </XFRMField>
+        <XFRMField ID="76697EE3-3BAE-4D63-B3CA-EA55950C2C83" ParentID="D9B87936-5DFA-46C0-A282-09CEDDD46BBE" Name="Nomexxx">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="D9B87936-5DFA-46C0-A282-09CEDDD46BBE" Text="CORxPessoa.Nome" DocumentID="53F17DAC-4376-4424-8454-0866B122BFDB" DocumentName="Usuario" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="" Type="Guid">D9B87936-5DFA-46C0-A282-09CEDDD46BBE</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">18</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=561.9375;Height=200}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">5</XData>
+          </XValues>
+        </XFRMField>
       </XFRMForm>
     </XFRMDesigner>
   </XSAMActivity>

@@ -12,21 +12,51 @@ using TFX.Core.Lzma;
 
 namespace TFX.ESC.Core.DB
 {
-    public  partial class TFXESCCoreContext : XDBContext
+    public class TFXESCCoreContext : XDBContext
     {
-        #region _ESCxEscritorio
+        #region _CORxAgregado
 
-        public class _ESCxEscritorio
+        public class _CORxAgregado
         {
-            public Boolean IsPKEmpty => !ESCxEscritorioID.HasValue;
-            [Display(Name = "Escritório")]
+            public Boolean IsPKEmpty => !CORxAgregadoID.HasValue;
+            [Display(Name = "Agregado")]
             [Required()]
-            public Guid? ESCxEscritorioID {get; set;}
-            public _CORxAgregado CORxAgregado {get; set;}
-            public List<_ESCxContabilistaEscritorio> ESCxContabilistaEscritorio {get; set;} = new List<_ESCxContabilistaEscritorio>();
+            public Guid? CORxAgregadoID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            [Display(Name = "CPF ou CNPJ")]
+            [MaxLength(14)]
+            [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
+            [Required()]
+            public String CPFCNPJ {get; set;}
+            public List<_ESCxEscritorio> ESCxEscritorio {get; set;} = new List<_ESCxEscritorio>();
         }
 
-        #endregion _ESCxEscritorio
+        #endregion _CORxAgregado
+
+        #region _CORxEmpresa
+
+        public class _CORxEmpresa
+        {
+            [MaxLength(14)]
+            [DisplayFormat(DataFormatString = "##.###.###/####-##")]
+            [Required()]
+            public String CNPJ {get; set;}
+            [Display(Name = "Agregado")]
+            [Required()]
+            public Guid CORxAgregadoID {get; set;}
+            public Boolean IsPKEmpty => !CORxEmpresaID.HasValue;
+            [Display(Name = "Empresa")]
+            [Required()]
+            public Guid? CORxEmpresaID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            public List<_ESCxEmpresa> ESCxEmpresa {get; set;} = new List<_ESCxEmpresa>();
+        }
+
+        #endregion _CORxEmpresa
 
         #region _CORxPessoa
 
@@ -85,50 +115,6 @@ namespace TFX.ESC.Core.DB
 
         #endregion _ESCxContabilistaEscritorio
 
-        #region _CORxAgregado
-
-        public class _CORxAgregado
-        {
-            public Boolean IsPKEmpty => !CORxAgregadoID.HasValue;
-            [Display(Name = "Agregado")]
-            [Required()]
-            public Guid? CORxAgregadoID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            [Display(Name = "CPF ou CNPJ")]
-            [MaxLength(14)]
-            [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
-            [Required()]
-            public String CPFCNPJ {get; set;}
-            public List<_ESCxEscritorio> ESCxEscritorio {get; set;} = new List<_ESCxEscritorio>();
-        }
-
-        #endregion _CORxAgregado
-
-        #region _CORxEmpresa
-
-        public class _CORxEmpresa
-        {
-            [MaxLength(14)]
-            [DisplayFormat(DataFormatString = "##.###.###/####-##")]
-            [Required()]
-            public String CNPJ {get; set;}
-            [Display(Name = "Agregado")]
-            [Required()]
-            public Guid CORxAgregadoID {get; set;}
-            public Boolean IsPKEmpty => !CORxEmpresaID.HasValue;
-            [Display(Name = "Empresa")]
-            [Required()]
-            public Guid? CORxEmpresaID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            public List<_ESCxEmpresa> ESCxEmpresa {get; set;} = new List<_ESCxEmpresa>();
-        }
-
-        #endregion _CORxEmpresa
-
         #region _ESCxEmpresa
 
         public class _ESCxEmpresa
@@ -145,6 +131,20 @@ namespace TFX.ESC.Core.DB
         }
 
         #endregion _ESCxEmpresa
+
+        #region _ESCxEscritorio
+
+        public class _ESCxEscritorio
+        {
+            public Boolean IsPKEmpty => !ESCxEscritorioID.HasValue;
+            [Display(Name = "Escritório")]
+            [Required()]
+            public Guid? ESCxEscritorioID {get; set;}
+            public _CORxAgregado CORxAgregado {get; set;}
+            public List<_ESCxContabilistaEscritorio> ESCxContabilistaEscritorio {get; set;} = new List<_ESCxContabilistaEscritorio>();
+        }
+
+        #endregion _ESCxEscritorio
 
 
         protected TFXESCCoreContext(DbContextOptions pOptions)
