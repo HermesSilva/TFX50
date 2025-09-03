@@ -12,8 +12,159 @@ using TFX.Core.Lzma;
 
 namespace TFX.Core.Data.CEP
 {
-    public  partial class CEPxDBContext : XDBContext
+    public class CEPxDBContext : XDBContext
     {
+        #region _CEPxBairro
+
+        public class _CEPxBairro
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int32, _CEPxBairro> _SeedData = new Dictionary<Int32, _CEPxBairro>()
+                {
+                    [0] = new _CEPxBairro { CEPxLocalidadeID = 0, Numero = 0, Breviatura = null, Nome = @"NI", CEPxBairroID = 0 }
+                };
+                public static _CEPxBairro[] SeedData => _SeedData.Values.ToArray();
+            }
+            [Display(Name = "Abreviatura")]
+            [MaxLength(25)]
+            public String Breviatura {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxBairroID, typeof(Int32).GetDefault());
+            [Display(Name = "Bairro")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxBairroID {get; set;}
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadeID {get; set;}
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            public _CEPxLocalidade CEPxLocalidade {get; set;}
+            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
+        }
+
+        #endregion _CEPxBairro
+
+        #region _CEPxLocalidade
+
+        public class _CEPxLocalidade
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int32, _CEPxLocalidade> _SeedData = new Dictionary<Int32, _CEPxLocalidade>()
+                {
+                    [0] = new _CEPxLocalidade { CEPxLocalidadeTipoID = (Int16)3, Nome = @"NA", Numero = 0, CEPGeral = @"00000000", CodigoIBGE = @"0", CEPxUFID = (Int16)0, CEPxLocalidadeID = 0, CEPxMunicipioID = 0 }
+                };
+                public static _CEPxLocalidade[] SeedData => _SeedData.Values.ToArray();
+            }
+            [Display(Name = "CEP Geral")]
+            [MaxLength(8)]
+            public String CEPGeral {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeID, typeof(Int32).GetDefault());
+            [Display(Name = "Localidade")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxLocalidadeID {get; set;}
+            [Display(Name = "Tipo de Localidade")]
+            [Required()]
+            public Int16 CEPxLocalidadeTipoID {get; set;}
+            [Display(Name = "Municipio")]
+            [Required()]
+            public Int32 CEPxMunicipioID {get; set;}
+            [Display(Name = "Unidade Federativa")]
+            [Required()]
+            public Int16 CEPxUFID {get; set;}
+            [Display(Name = "Código no IBGE")]
+            [MaxLength(7)]
+            [DisplayFormat(DataFormatString = "0000000")]
+            public String CodigoIBGE {get; set;}
+            [Display(Name = "Nome da Localidade")]
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            public _CEPxUF CEPxUF {get; set;}
+            public _CEPxLocalidadeTipo CEPxLocalidadeTipo {get; set;}
+            public List<_CEPxBairro> CEPxBairro {get; set;} = new List<_CEPxBairro>();
+            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
+        }
+
+        #endregion _CEPxLocalidade
+
+        #region _CEPxLocalidadeTipo
+
+        public class _CEPxLocalidadeTipo
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int16, _CEPxLocalidadeTipo> _SeedData = new Dictionary<Int16, _CEPxLocalidadeTipo>()
+                {
+                    [(Int16)1] = new _CEPxLocalidadeTipo { Tipo = @"Município", CEPxLocalidadeTipoID = (Int16)1 },
+                    [(Int16)3] = new _CEPxLocalidadeTipo { Tipo = @"Povoado", CEPxLocalidadeTipoID = (Int16)3 },
+                    [(Int16)2] = new _CEPxLocalidadeTipo { Tipo = @"Distrito", CEPxLocalidadeTipoID = (Int16)2 }
+                };
+                public static _CEPxLocalidadeTipo[] SeedData => _SeedData.Values.ToArray();
+            }
+            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeTipoID, typeof(Int16).GetDefault());
+            [Display(Name = "Tipo de Localidade")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 CEPxLocalidadeTipoID {get; set;}
+            [MaxLength(25)]
+            [Required()]
+            public String Tipo {get; set;}
+            public List<_CEPxLocalidade> CEPxLocalidade {get; set;} = new List<_CEPxLocalidade>();
+        }
+
+        #endregion _CEPxLocalidadeTipo
+
+        #region _CEPxLogradouro
+
+        public class _CEPxLogradouro
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int32, _CEPxLogradouro> _SeedData = new Dictionary<Int32, _CEPxLogradouro>()
+                {
+                    [0] = new _CEPxLogradouro { Nome = @"NI", CEPxLocalidadeID = 0, Numero = 0, CEP = null, Tipo = @"NA", CEPxLogradouroID = 0, CEPxBairroID = 0 }
+                };
+                public static _CEPxLogradouro[] SeedData => _SeedData.Values.ToArray();
+            }
+            [MaxLength(8)]
+            [DisplayFormat(DataFormatString = "00.000-000")]
+            public String CEP {get; set;}
+            [Display(Name = "Bairro")]
+            [Required()]
+            public Int32 CEPxBairroID {get; set;}
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadeID {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxLogradouroID, typeof(Int32).GetDefault());
+            [Display(Name = "Logradouro")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxLogradouroID {get; set;}
+            [MaxLength(128)]
+            [Required()]
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            [MaxLength(30)]
+            [Required()]
+            public String Tipo {get; set;}
+            public _CEPxBairro CEPxBairro {get; set;}
+            public _CEPxLocalidade CEPxLocalidade {get; set;}
+        }
+
+        #endregion _CEPxLogradouro
+
         #region _CEPxPais
 
         public class _CEPxPais
@@ -359,623 +510,6 @@ namespace TFX.Core.Data.CEP
 
         #endregion _CEPxUF
 
-        #region _CEPxLocalidade
-
-        public class _CEPxLocalidade
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int32, _CEPxLocalidade> _SeedData = new Dictionary<Int32, _CEPxLocalidade>()
-                {
-                    [0] = new _CEPxLocalidade { CEPxLocalidadeTipoID = (Int16)3, Nome = @"NA", Numero = 0, CEPGeral = @"00000000", CodigoIBGE = @"0", CEPxUFID = (Int16)0, CEPxLocalidadeID = 0, CEPxMunicipioID = 0 }
-                };
-                public static _CEPxLocalidade[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "CEP Geral")]
-            [MaxLength(8)]
-            public String CEPGeral {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeID, typeof(Int32).GetDefault());
-            [Display(Name = "Localidade")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int32 CEPxLocalidadeID {get; set;}
-            [Display(Name = "Tipo de Localidade")]
-            [Required()]
-            public Int16 CEPxLocalidadeTipoID {get; set;}
-            [Display(Name = "Municipio")]
-            [Required()]
-            public Int32 CEPxMunicipioID {get; set;}
-            [Display(Name = "Unidade Federativa")]
-            [Required()]
-            public Int16 CEPxUFID {get; set;}
-            [Display(Name = "Código no IBGE")]
-            [MaxLength(7)]
-            [DisplayFormat(DataFormatString = "0000000")]
-            public String CodigoIBGE {get; set;}
-            [Display(Name = "Nome da Localidade")]
-            [MaxLength(128)]
-            [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Número")]
-            [Required()]
-            public Int32 Numero {get; set;}
-            public _CEPxUF CEPxUF {get; set;}
-            public _CEPxLocalidadeTipo CEPxLocalidadeTipo {get; set;}
-            public List<_CEPxBairro> CEPxBairro {get; set;} = new List<_CEPxBairro>();
-            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
-            public List<_CORxPessoa> CORxPessoa {get; set;} = new List<_CORxPessoa>();
-        }
-
-        #endregion _CEPxLocalidade
-
-        #region _CEPxLocalidadeTipo
-
-        public class _CEPxLocalidadeTipo
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int16, _CEPxLocalidadeTipo> _SeedData = new Dictionary<Int16, _CEPxLocalidadeTipo>()
-                {
-                    [(Int16)1] = new _CEPxLocalidadeTipo { Tipo = @"Município", CEPxLocalidadeTipoID = (Int16)1 },
-                    [(Int16)3] = new _CEPxLocalidadeTipo { Tipo = @"Povoado", CEPxLocalidadeTipoID = (Int16)3 },
-                    [(Int16)2] = new _CEPxLocalidadeTipo { Tipo = @"Distrito", CEPxLocalidadeTipoID = (Int16)2 }
-                };
-                public static _CEPxLocalidadeTipo[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => Object.Equals(CEPxLocalidadeTipoID, typeof(Int16).GetDefault());
-            [Display(Name = "Tipo de Localidade")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 CEPxLocalidadeTipoID {get; set;}
-            [MaxLength(25)]
-            [Required()]
-            public String Tipo {get; set;}
-            public List<_CEPxLocalidade> CEPxLocalidade {get; set;} = new List<_CEPxLocalidade>();
-        }
-
-        #endregion _CEPxLocalidadeTipo
-
-        #region _CEPxBairro
-
-        public class _CEPxBairro
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int32, _CEPxBairro> _SeedData = new Dictionary<Int32, _CEPxBairro>()
-                {
-                    [0] = new _CEPxBairro { CEPxLocalidadeID = 0, Numero = 0, Breviatura = null, Nome = @"NI", CEPxBairroID = 0 }
-                };
-                public static _CEPxBairro[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Abreviatura")]
-            [MaxLength(25)]
-            public String Breviatura {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CEPxBairroID, typeof(Int32).GetDefault());
-            [Display(Name = "Bairro")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int32 CEPxBairroID {get; set;}
-            [Display(Name = "Localidade")]
-            [Required()]
-            public Int32 CEPxLocalidadeID {get; set;}
-            [MaxLength(128)]
-            [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Número")]
-            [Required()]
-            public Int32 Numero {get; set;}
-            public _CEPxLocalidade CEPxLocalidade {get; set;}
-            public List<_CEPxLogradouro> CEPxLogradouro {get; set;} = new List<_CEPxLogradouro>();
-        }
-
-        #endregion _CEPxBairro
-
-        #region _CEPxLogradouro
-
-        public class _CEPxLogradouro
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int32, _CEPxLogradouro> _SeedData = new Dictionary<Int32, _CEPxLogradouro>()
-                {
-                    [0] = new _CEPxLogradouro { Nome = @"NI", CEPxLocalidadeID = 0, Numero = 0, CEP = null, Tipo = @"NA", CEPxLogradouroID = 0, CEPxBairroID = 0 }
-                };
-                public static _CEPxLogradouro[] SeedData => _SeedData.Values.ToArray();
-            }
-            [MaxLength(8)]
-            [DisplayFormat(DataFormatString = "00.000-000")]
-            public String CEP {get; set;}
-            [Display(Name = "Bairro")]
-            [Required()]
-            public Int32 CEPxBairroID {get; set;}
-            [Display(Name = "Localidade")]
-            [Required()]
-            public Int32 CEPxLocalidadeID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CEPxLogradouroID, typeof(Int32).GetDefault());
-            [Display(Name = "Logradouro")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int32 CEPxLogradouroID {get; set;}
-            [MaxLength(128)]
-            [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Número")]
-            [Required()]
-            public Int32 Numero {get; set;}
-            [MaxLength(30)]
-            [Required()]
-            public String Tipo {get; set;}
-            public _CEPxBairro CEPxBairro {get; set;}
-            public _CEPxLocalidade CEPxLocalidade {get; set;}
-        }
-
-        #endregion _CEPxLogradouro
-
-        #region _CORxStatus
-
-        public class _CORxStatus
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int16, _CORxStatus> _SeedData = new Dictionary<Int16, _CORxStatus>()
-                {
-                    [(Int16)0] = new _CORxStatus { CORxStatusID = (Int16)0, Status = @"Inatoivo" },
-                    [(Int16)1] = new _CORxStatus { CORxStatusID = (Int16)1, Status = @"Ativo" }
-                };
-                public static _CORxStatus[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => Object.Equals(CORxStatusID, typeof(Int16).GetDefault());
-            [Display(Name = "Status")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 CORxStatusID {get; set;}
-            [MaxLength(20)]
-            [Required()]
-            public String Status {get; set;}
-            public List<_CORxAgregado> CORxAgregado {get; set;} = new List<_CORxAgregado>();
-            public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
-            public List<_CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<_CORxEmpresaGrupo>();
-            public List<_CORxRecurso> CORxRecurso {get; set;} = new List<_CORxRecurso>();
-            public List<_CORxRecursoTemplate> CORxRecursoTemplate {get; set;} = new List<_CORxRecursoTemplate>();
-        }
-
-        #endregion _CORxStatus
-
-        #region _CORxDireitos
-
-        public class _CORxDireitos
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int16, _CORxDireitos> _SeedData = new Dictionary<Int16, _CORxDireitos>()
-                {
-                    [(Int16)0] = new _CORxDireitos { CORxDireitosID = (Int16)0, Direito = @"NA", Titulo = @"NA" },
-                    [(Int16)5] = new _CORxDireitos { CORxDireitosID = (Int16)5, Direito = @"Apagar", Titulo = @"Apagar" },
-                    [(Int16)4] = new _CORxDireitos { CORxDireitosID = (Int16)4, Direito = @"Inativar", Titulo = @"Inativar" },
-                    [(Int16)2] = new _CORxDireitos { CORxDireitosID = (Int16)2, Direito = @"Inserir", Titulo = @"Inserir" },
-                    [(Int16)1] = new _CORxDireitos { CORxDireitosID = (Int16)1, Direito = @"Visualizar", Titulo = @"Visualizar" },
-                    [(Int16)3] = new _CORxDireitos { CORxDireitosID = (Int16)3, Direito = @"Alterar", Titulo = @"Alterar" }
-                };
-                public static _CORxDireitos[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => Object.Equals(CORxDireitosID, typeof(Int16).GetDefault());
-            [Display(Name = "Direitos")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 CORxDireitosID {get; set;}
-            [MaxLength(50)]
-            [Required()]
-            public String Direito {get; set;}
-            [Display(Name = "Título")]
-            [MaxLength(50)]
-            [Required()]
-            public String Titulo {get; set;}
-            public List<_CORxRecursoDireito> CORxRecursoDireito {get; set;} = new List<_CORxRecursoDireito>();
-        }
-
-        #endregion _CORxDireitos
-
-        #region _CORxPessoa
-
-        public class _CORxPessoa
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxPessoa> _SeedData = new Dictionary<Guid, _CORxPessoa>()
-                {
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _CORxPessoa { CORxPessoaID = new Guid("00000000-0000-0000-0000-000000000000"), Nome = @"NA", CEPxLocalidadePrincipalID = 0 },
-                    [new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8")] = new _CORxPessoa { CORxPessoaID = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8"), Nome = @"Sistem Admin", CEPxLocalidadePrincipalID = 0 }
-                };
-                public static _CORxPessoa[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Localidade")]
-            [Required()]
-            public Int32 CEPxLocalidadePrincipalID {get; set;}
-            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
-            [Display(Name = "Pessoa")]
-            [Required()]
-            public Guid? CORxPessoaID {get; set;}
-            [MaxLength(180)]
-            [Required()]
-            public String Nome {get; set;}
-            public _CEPxLocalidade CEPxLocalidade {get; set;}
-            public List<_CORxAgregado> CORxAgregado {get; set;} = new List<_CORxAgregado>();
-            public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
-            public List<_CORxUsuario> CORxUsuario {get; set;} = new List<_CORxUsuario>();
-        }
-
-        #endregion _CORxPessoa
-
-        #region _CORxAgregado
-
-        public class _CORxAgregado
-        {
-            public Boolean IsPKEmpty => !CORxAgregadoID.HasValue;
-            [Display(Name = "Agregado")]
-            [Required()]
-            public Guid? CORxAgregadoID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            [Display(Name = "CPF ou CNPJ")]
-            [MaxLength(14)]
-            [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
-            [Required()]
-            public String CPFCNPJ {get; set;}
-            public _CORxPessoa CORxPessoa {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public List<_CORxEmpresa> CORxEmpresa {get; set;} = new List<_CORxEmpresa>();
-            public List<_CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<_CORxEmpresaGrupo>();
-        }
-
-        #endregion _CORxAgregado
-
-        #region _CORxEmpresa
-
-        public class _CORxEmpresa
-        {
-            [MaxLength(14)]
-            [DisplayFormat(DataFormatString = "##.###.###/####-##")]
-            [Required()]
-            public String CNPJ {get; set;}
-            [Display(Name = "Agregado")]
-            [Required()]
-            public Guid CORxAgregadoID {get; set;}
-            public Boolean IsPKEmpty => !CORxEmpresaID.HasValue;
-            [Display(Name = "Empresa")]
-            [Required()]
-            public Guid? CORxEmpresaID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            public _CORxPessoa CORxPessoa {get; set;}
-            public _CORxAgregado CORxAgregado {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public List<_CORxEmpresaGrupo> CORxEmpresaGrupo {get; set;} = new List<_CORxEmpresaGrupo>();
-        }
-
-        #endregion _CORxEmpresa
-
-        #region _CORxEmpresaGrupo
-
-        public class _CORxEmpresaGrupo
-        {
-            [Display(Name = "Agregado")]
-            [Required()]
-            public Guid CORxAgregadoID {get; set;}
-            public Boolean IsPKEmpty => !CORxEmpresaGrupoID.HasValue;
-            [Display(Name = "Grupo de Empresas")]
-            [Required()]
-            public Guid? CORxEmpresaGrupoID {get; set;}
-            [Display(Name = "Empresa")]
-            [Required()]
-            public Guid CORxEmpresaID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            [Required()]
-            public Guid Grupo {get; set;}
-            public _CORxAgregado CORxAgregado {get; set;}
-            public _CORxEmpresa CORxEmpresa {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-        }
-
-        #endregion _CORxEmpresaGrupo
-
-        #region _CORxUsuario
-
-        public class _CORxUsuario
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxUsuario> _SeedData = new Dictionary<Guid, _CORxUsuario>()
-                {
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _CORxUsuario { CORxUsuarioID = new Guid("00000000-0000-0000-0000-000000000000"), EMail = @"NA" },
-                    [new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8")] = new _CORxUsuario { CORxUsuarioID = new Guid("E3D57815-06E9-46E0-96F2-D77A03700CA8"), EMail = @"admin@tootega.com.br" }
-                };
-                public static _CORxUsuario[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => !CORxUsuarioID.HasValue;
-            [Display(Name = "Usuário")]
-            [Required()]
-            public Guid? CORxUsuarioID {get; set;}
-            [Display(Name = "E-Mails")]
-            [MaxLength(80)]
-            [Required()]
-            public String EMail {get; set;}
-            public _CORxPessoa CORxPessoa {get; set;}
-            public List<_CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate {get; set;} = new List<_CORxUsuarioRecursoTemplate>();
-            public List<_CORxFavorito> CORxFavorito {get; set;} = new List<_CORxFavorito>();
-        }
-
-        #endregion _CORxUsuario
-
-        #region _CORxRecurso
-
-        public class _CORxRecurso
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxRecurso> _SeedData = new Dictionary<Guid, _CORxRecurso>()
-                {
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _CORxRecurso { CORxRecursoID = new Guid("00000000-0000-0000-0000-000000000000"), CORxRecursoTipoID = (Int16)0, Nome = @"NA", Titulo = @"NA", CORxStatusID = (Int16)0 },
-                    [new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C")] = new _CORxRecurso { CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxRecursoTipoID = (Int16)1, Nome = @"Usuario", Titulo = @"Cadastro de Usuários", CORxStatusID = (Int16)1 }
-                };
-                public static _CORxRecurso[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => !CORxRecursoID.HasValue;
-            [Display(Name = "Recurso")]
-            [Required()]
-            public Guid? CORxRecursoID {get; set;}
-            [Display(Name = "Tipo de Recurso")]
-            [Required()]
-            public Int16 CORxRecursoTipoID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            [MaxLength(128)]
-            [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Título")]
-            [MaxLength(80)]
-            [Required()]
-            public String Titulo {get; set;}
-            public _CORxRecursoTipo CORxRecursoTipo {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public List<_CORxRecursoTemplate> CORxRecursoTemplate {get; set;} = new List<_CORxRecursoTemplate>();
-            public List<_CORxRecursoDireito> CORxRecursoDireito {get; set;} = new List<_CORxRecursoDireito>();
-            public List<_CORxMenuItem> CORxMenuItem {get; set;} = new List<_CORxMenuItem>();
-        }
-
-        #endregion _CORxRecurso
-
-        #region _CORxRecursoTemplate
-
-        public class _CORxRecursoTemplate
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxRecursoTemplate> _SeedData = new Dictionary<Guid, _CORxRecursoTemplate>()
-                {
-                    [new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6")] = new _CORxRecursoTemplate { CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), Template = @"Cloud Admin", CORxStatusID = (Int16)1 }
-                };
-                public static _CORxRecursoTemplate[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Recurso")]
-            [Required()]
-            public Guid CORxRecursoID {get; set;}
-            public Boolean IsPKEmpty => !CORxRecursoTemplateID.HasValue;
-            [Display(Name = "Conjunto de Recursos")]
-            [Required()]
-            public Guid? CORxRecursoTemplateID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            [MaxLength(50)]
-            [Required()]
-            public String Template {get; set;}
-            public _CORxRecurso CORxRecurso {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public List<_CORxUsuarioRecursoTemplate> CORxUsuarioRecursoTemplate {get; set;} = new List<_CORxUsuarioRecursoTemplate>();
-            public List<_CORxRecursoTemplateDireito> CORxRecursoTemplateDireito {get; set;} = new List<_CORxRecursoTemplateDireito>();
-        }
-
-        #endregion _CORxRecursoTemplate
-
-        #region _CORxRecursoDireito
-
-        public class _CORxRecursoDireito
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxRecursoDireito> _SeedData = new Dictionary<Guid, _CORxRecursoDireito>()
-                {
-                    [new Guid("E3FE8EFA-F5CD-4184-A876-CCDA2CF53853")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("E3FE8EFA-F5CD-4184-A876-CCDA2CF53853"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)3 },
-                    [new Guid("A5B94287-0DEE-4CE2-AE1B-97C604920F3B")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("A5B94287-0DEE-4CE2-AE1B-97C604920F3B"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)4 },
-                    [new Guid("2BFD129C-CAB6-4BF5-9395-59173AB378BC")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("2BFD129C-CAB6-4BF5-9395-59173AB378BC"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)5 },
-                    [new Guid("132F09B1-D564-494B-8147-B25B575F0A60")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("132F09B1-D564-494B-8147-B25B575F0A60"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)1 },
-                    [new Guid("2C5D7092-96A9-458B-A191-4519C53F194C")] = new _CORxRecursoDireito { CORxRecursoDireitoID = new Guid("2C5D7092-96A9-458B-A191-4519C53F194C"), CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C"), CORxDireitosID = (Int16)2 }
-                };
-                public static _CORxRecursoDireito[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Direitos")]
-            [Required()]
-            public Int16 CORxDireitosID {get; set;}
-            public Boolean IsPKEmpty => !CORxRecursoDireitoID.HasValue;
-            [Display(Name = "Direitos por Recurso")]
-            [Required()]
-            public Guid? CORxRecursoDireitoID {get; set;}
-            [Display(Name = "Recurso")]
-            [Required()]
-            public Guid CORxRecursoID {get; set;}
-            public _CORxRecurso CORxRecurso {get; set;}
-            public _CORxDireitos CORxDireitos {get; set;}
-            public List<_CORxRecursoTemplateDireito> CORxRecursoTemplateDireito {get; set;} = new List<_CORxRecursoTemplateDireito>();
-        }
-
-        #endregion _CORxRecursoDireito
-
-        #region _CORxUsuarioRecursoTemplate
-
-        public class _CORxUsuarioRecursoTemplate
-        {
-            [Display(Name = "Conjunto de Recursos")]
-            [Required()]
-            public Guid CORxRecursoTemplateID {get; set;}
-            [Display(Name = "Usuário")]
-            [Required()]
-            public Guid CORxUsuarioID {get; set;}
-            public Boolean IsPKEmpty => !CORxUsuarioRecursoTemplateID.HasValue;
-            [Display(Name = "Templates por Usuário")]
-            [Required()]
-            public Guid? CORxUsuarioRecursoTemplateID {get; set;}
-            public _CORxUsuario CORxUsuario {get; set;}
-            public _CORxRecursoTemplate CORxRecursoTemplate {get; set;}
-        }
-
-        #endregion _CORxUsuarioRecursoTemplate
-
-        #region _CORxRecursoTemplateDireito
-
-        public class _CORxRecursoTemplateDireito
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxRecursoTemplateDireito> _SeedData = new Dictionary<Guid, _CORxRecursoTemplateDireito>()
-                {
-                    [new Guid("E8709409-A964-4092-8B8E-215DABE3514B")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("E8709409-A964-4092-8B8E-215DABE3514B"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("2BFD129C-CAB6-4BF5-9395-59173AB378BC") },
-                    [new Guid("9F147453-0765-4824-8DD1-9B707BDB0138")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("9F147453-0765-4824-8DD1-9B707BDB0138"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("132F09B1-D564-494B-8147-B25B575F0A60") },
-                    [new Guid("4C4D91B0-4ED8-41AE-90A4-BFD5EE8118A3")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("4C4D91B0-4ED8-41AE-90A4-BFD5EE8118A3"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("2C5D7092-96A9-458B-A191-4519C53F194C") },
-                    [new Guid("99FB05BE-79B0-47C9-9121-D7C76BC67C25")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("99FB05BE-79B0-47C9-9121-D7C76BC67C25"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("A5B94287-0DEE-4CE2-AE1B-97C604920F3B") },
-                    [new Guid("3F281F5A-81CB-4840-880E-546212B48BB8")] = new _CORxRecursoTemplateDireito { CORxRecursoTemplateDireitoID = new Guid("3F281F5A-81CB-4840-880E-546212B48BB8"), CORxRecursoTemplateID = new Guid("58CD2032-1081-4582-9F4E-47C60FADABA6"), CORxRecursoDireitoID = new Guid("E3FE8EFA-F5CD-4184-A876-CCDA2CF53853") }
-                };
-                public static _CORxRecursoTemplateDireito[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Direitos por Recurso")]
-            [Required()]
-            public Guid CORxRecursoDireitoID {get; set;}
-            public Boolean IsPKEmpty => !CORxRecursoTemplateDireitoID.HasValue;
-            [Display(Name = "Direito de Recurso por Template")]
-            [Required()]
-            public Guid? CORxRecursoTemplateDireitoID {get; set;}
-            [Display(Name = "Conjunto de Recursos")]
-            [Required()]
-            public Guid CORxRecursoTemplateID {get; set;}
-            public _CORxRecursoTemplate CORxRecursoTemplate {get; set;}
-            public _CORxRecursoDireito CORxRecursoDireito {get; set;}
-        }
-
-        #endregion _CORxRecursoTemplateDireito
-
-        #region _CORxRecursoTipo
-
-        public class _CORxRecursoTipo
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int16, _CORxRecursoTipo> _SeedData = new Dictionary<Int16, _CORxRecursoTipo>()
-                {
-                    [(Int16)1] = new _CORxRecursoTipo { CORxRecursoTipoID = (Int16)1, Tipo = @"Aplicação de UI" },
-                    [(Int16)0] = new _CORxRecursoTipo { CORxRecursoTipoID = (Int16)0, Tipo = @"NA" },
-                    [(Int16)2] = new _CORxRecursoTipo { CORxRecursoTipoID = (Int16)2, Tipo = @"Web API" }
-                };
-                public static _CORxRecursoTipo[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => Object.Equals(CORxRecursoTipoID, typeof(Int16).GetDefault());
-            [Display(Name = "Tipo de Recurso")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 CORxRecursoTipoID {get; set;}
-            [MaxLength(50)]
-            [Required()]
-            public String Tipo {get; set;}
-            public List<_CORxRecurso> CORxRecurso {get; set;} = new List<_CORxRecurso>();
-        }
-
-        #endregion _CORxRecursoTipo
-
-        #region _CORxMenu
-
-        public class _CORxMenu
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxMenu> _SeedData = new Dictionary<Guid, _CORxMenu>()
-                {
-                    [new Guid("A0194FB8-9893-48C5-BD2B-7626A82B3DA3")] = new _CORxMenu { CORxMenuID = new Guid("A0194FB8-9893-48C5-BD2B-7626A82B3DA3"), Menu = @"Sistema", Icone = null }
-                };
-                public static _CORxMenu[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => !CORxMenuID.HasValue;
-            [Display(Name = "Menu")]
-            [Required()]
-            public Guid? CORxMenuID {get; set;}
-            [Display(Name = "Ícone")]
-            [MaxLength(25)]
-            public String Icone {get; set;}
-            [MaxLength(50)]
-            [Required()]
-            public String Menu {get; set;}
-            public List<_CORxMenuItem> CORxMenuItem {get; set;} = new List<_CORxMenuItem>();
-        }
-
-        #endregion _CORxMenu
-
-        #region _CORxMenuItem
-
-        public class _CORxMenuItem
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _CORxMenuItem> _SeedData = new Dictionary<Guid, _CORxMenuItem>()
-                {
-                    [new Guid("23ACD023-5CE5-412C-BECF-FD4D58DC680B")] = new _CORxMenuItem { CORxMenuItemID = new Guid("23ACD023-5CE5-412C-BECF-FD4D58DC680B"), CORxMenuID = new Guid("A0194FB8-9893-48C5-BD2B-7626A82B3DA3"), Item = @"Cadastro de Usuários", CORxRecursoID = new Guid("13F5ED76-D4CC-46B7-83E9-31C77BD3085C") }
-                };
-                public static _CORxMenuItem[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Menu")]
-            [Required()]
-            public Guid CORxMenuID {get; set;}
-            public Boolean IsPKEmpty => !CORxMenuItemID.HasValue;
-            [Display(Name = "Item de Menu")]
-            [Required()]
-            public Guid? CORxMenuItemID {get; set;}
-            [Display(Name = "Recurso")]
-            [Required()]
-            public Guid CORxRecursoID {get; set;}
-            [MaxLength(50)]
-            [Required()]
-            public String Item {get; set;}
-            public _CORxMenu CORxMenu {get; set;}
-            public _CORxRecurso CORxRecurso {get; set;}
-            public List<_CORxFavorito> CORxFavorito {get; set;} = new List<_CORxFavorito>();
-        }
-
-        #endregion _CORxMenuItem
-
-        #region _CORxFavorito
-
-        public class _CORxFavorito
-        {
-            public Boolean IsPKEmpty => !CORxFavoritoID.HasValue;
-            [Display(Name = "Favoritos")]
-            [Required()]
-            public Guid? CORxFavoritoID {get; set;}
-            [Display(Name = "Item de Menu")]
-            [Required()]
-            public Guid CORxMenuItemID {get; set;}
-            [Display(Name = "Usuário")]
-            [Required()]
-            public Guid CORxUsuarioID {get; set;}
-            [Display(Name = "Frequência")]
-            [Required()]
-            public Int32 Frequencia {get; set;}
-            public _CORxMenuItem CORxMenuItem {get; set;}
-            public _CORxUsuario CORxUsuario {get; set;}
-        }
-
-        #endregion _CORxFavorito
-
 
         protected CEPxDBContext(DbContextOptions pOptions)
           : base(pOptions)
@@ -1003,22 +537,6 @@ namespace TFX.Core.Data.CEP
             ConfigureCEPxLogradouro(pBuilder);
             ConfigureCEPxPais(pBuilder);
             ConfigureCEPxUF(pBuilder);
-            ConfigureCORxAgregado(pBuilder);
-            ConfigureCORxDireitos(pBuilder);
-            ConfigureCORxEmpresa(pBuilder);
-            ConfigureCORxEmpresaGrupo(pBuilder);
-            ConfigureCORxFavorito(pBuilder);
-            ConfigureCORxMenu(pBuilder);
-            ConfigureCORxMenuItem(pBuilder);
-            ConfigureCORxPessoa(pBuilder);
-            ConfigureCORxRecurso(pBuilder);
-            ConfigureCORxRecursoDireito(pBuilder);
-            ConfigureCORxRecursoTemplate(pBuilder);
-            ConfigureCORxRecursoTemplateDireito(pBuilder);
-            ConfigureCORxRecursoTipo(pBuilder);
-            ConfigureCORxStatus(pBuilder);
-            ConfigureCORxUsuario(pBuilder);
-            ConfigureCORxUsuarioRecursoTemplate(pBuilder);
         }
 
         private void ConfigureCEPxBairro(ModelBuilder pBuilder)
@@ -1172,410 +690,6 @@ namespace TFX.Core.Data.CEP
 
                 ett.HasIndex(d => d.CEPxPaisID).HasDatabaseName("IX_94F98F7A928E46699CECF2DD030D18C2");
                 ett.HasData(_CEPxUF.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxAgregado(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxAgregado>(ett =>
-            {
-                ett.HasKey(e => e.CORxAgregadoID).HasName("PK_CORxAgregado");
-                
-                ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
-                ett.ToTable("CORxAgregado");
-
-                ett.HasOne(d => d.CORxPessoa)
-                   .WithMany()
-                   .HasForeignKey(d => d.CORxAgregadoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_D129F24223084A40BDB3C6BF6BC16ABD");
-
-                ett.HasOne(d => d.CORxStatus)
-                   .WithMany(p => p.CORxAgregado)
-                   .HasForeignKey(d => d.CORxStatusID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_04BE7F3F33664F8187708FB8EEE44BB9");
-
-                ett.HasIndex(d => d.CORxAgregadoID).HasDatabaseName("IX_D129F24223084A40BDB3C6BF6BC16ABD");
-                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_04BE7F3F33664F8187708FB8EEE44BB9");
-            });
-        }
-
-        private void ConfigureCORxDireitos(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxDireitos>(ett =>
-            {
-                ett.HasKey(e => e.CORxDireitosID).HasName("PK_CORxDireitos");
-                
-                ett.Property(d => d.CORxDireitosID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.Direito).HasColumnType(GetDBType("String", 50));
-                ett.Property(d => d.Titulo).HasColumnType(GetDBType("String", 50));
-                ett.ToTable("CORxDireitos");
-                ett.HasData(_CORxDireitos.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxEmpresa(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxEmpresa>(ett =>
-            {
-                ett.HasKey(e => e.CORxEmpresaID).HasName("PK_CORxEmpresa");
-                
-                ett.Property(d => d.CORxEmpresaID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CNPJ).HasColumnType(GetDBType("String", 14));
-                ett.ToTable("CORxEmpresa");
-
-                ett.HasOne(d => d.CORxPessoa)
-                   .WithMany()
-                   .HasForeignKey(d => d.CORxEmpresaID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_751AAA01BDC648D8A2B8DA03E5758339");
-
-                ett.HasOne(d => d.CORxAgregado)
-                   .WithMany(p => p.CORxEmpresa)
-                   .HasForeignKey(d => d.CORxAgregadoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_4F443AC8953246C19887C496C4CB7DCC");
-
-                ett.HasOne(d => d.CORxStatus)
-                   .WithMany(p => p.CORxEmpresa)
-                   .HasForeignKey(d => d.CORxStatusID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_3D11CC2230A34B7293C66F8733789E1F");
-
-                ett.HasIndex(d => d.CORxEmpresaID).HasDatabaseName("IX_751AAA01BDC648D8A2B8DA03E5758339");
-                ett.HasIndex(d => d.CORxAgregadoID).HasDatabaseName("IX_4F443AC8953246C19887C496C4CB7DCC");
-                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_3D11CC2230A34B7293C66F8733789E1F");
-            });
-        }
-
-        private void ConfigureCORxEmpresaGrupo(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxEmpresaGrupo>(ett =>
-            {
-                ett.HasKey(e => e.CORxEmpresaGrupoID).HasName("PK_CORxEmpresaGrupo");
-                
-                ett.Property(d => d.CORxEmpresaGrupoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxEmpresaID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.Grupo).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
-                ett.ToTable("CORxEmpresaGrupo");
-
-                ett.HasOne(d => d.CORxEmpresa)
-                   .WithMany(p => p.CORxEmpresaGrupo)
-                   .HasForeignKey(d => d.CORxEmpresaID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_0392DD25ED2D4C209696C72A0858FF3F");
-
-                ett.HasOne(d => d.CORxAgregado)
-                   .WithMany(p => p.CORxEmpresaGrupo)
-                   .HasForeignKey(d => d.CORxAgregadoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_6F15186E1CAA445292860D8634F9D6F3");
-
-                ett.HasOne(d => d.CORxStatus)
-                   .WithMany(p => p.CORxEmpresaGrupo)
-                   .HasForeignKey(d => d.CORxStatusID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_0F3626E1A65A4611BDB2E747CA5A9893");
-
-                ett.HasIndex(d => d.CORxAgregadoID).HasDatabaseName("IX_6F15186E1CAA445292860D8634F9D6F3");
-                ett.HasIndex(d => d.CORxEmpresaID).HasDatabaseName("IX_0392DD25ED2D4C209696C72A0858FF3F");
-                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_0F3626E1A65A4611BDB2E747CA5A9893");
-            });
-        }
-
-        private void ConfigureCORxFavorito(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxFavorito>(ett =>
-            {
-                ett.HasKey(e => e.CORxFavoritoID).HasName("PK_CORxFavorito");
-                
-                ett.Property(d => d.CORxFavoritoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxMenuItemID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxUsuarioID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.Frequencia).HasColumnType(GetDBType("Int32"));
-                ett.ToTable("CORxFavorito");
-
-                ett.HasOne(d => d.CORxUsuario)
-                   .WithMany(p => p.CORxFavorito)
-                   .HasForeignKey(d => d.CORxUsuarioID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_45F65CC922A3454A8F2297DC234FE876");
-
-                ett.HasOne(d => d.CORxMenuItem)
-                   .WithMany(p => p.CORxFavorito)
-                   .HasForeignKey(d => d.CORxMenuItemID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_B9FA63EA76C64A528D3FB64F43A29930");
-
-                ett.HasIndex(d => d.CORxMenuItemID).HasDatabaseName("IX_B9FA63EA76C64A528D3FB64F43A29930");
-                ett.HasIndex(d => d.CORxUsuarioID).HasDatabaseName("IX_45F65CC922A3454A8F2297DC234FE876");
-            });
-        }
-
-        private void ConfigureCORxMenu(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxMenu>(ett =>
-            {
-                ett.HasKey(e => e.CORxMenuID).HasName("PK_CORxMenu");
-                
-                ett.Property(d => d.CORxMenuID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.Menu).HasColumnType(GetDBType("String", 50));
-                ett.Property(d => d.Icone).HasColumnType(GetDBType("String", 25)).IsRequired(false);
-                ett.ToTable("CORxMenu");
-                ett.HasData(_CORxMenu.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxMenuItem(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxMenuItem>(ett =>
-            {
-                ett.HasKey(e => e.CORxMenuItemID).HasName("PK_CORxMenuItem");
-                
-                ett.Property(d => d.CORxMenuItemID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxMenuID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.Item).HasColumnType(GetDBType("String", 50));
-                ett.Property(d => d.CORxRecursoID).HasColumnType(GetDBType("Guid"));
-                ett.ToTable("CORxMenuItem");
-
-                ett.HasOne(d => d.CORxMenu)
-                   .WithMany(p => p.CORxMenuItem)
-                   .HasForeignKey(d => d.CORxMenuID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_DB53F2347A1F41978B6CC027E0529DE1");
-
-                ett.HasOne(d => d.CORxRecurso)
-                   .WithMany(p => p.CORxMenuItem)
-                   .HasForeignKey(d => d.CORxRecursoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_2540E01112654DC4B4CE3983FA0714B0");
-
-                ett.HasIndex(d => d.CORxMenuID).HasDatabaseName("IX_DB53F2347A1F41978B6CC027E0529DE1");
-                ett.HasIndex(d => d.CORxRecursoID).HasDatabaseName("IX_2540E01112654DC4B4CE3983FA0714B0");
-                ett.HasData(_CORxMenuItem.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxPessoa(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxPessoa>(ett =>
-            {
-                ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
-                
-                ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));
-                ett.Property(d => d.CEPxLocalidadePrincipalID).HasColumnType(GetDBType("Int32"));
-                ett.ToTable("CORxPessoa");
-
-                ett.HasOne(d => d.CEPxLocalidade)
-                   .WithMany(p => p.CORxPessoa)
-                   .HasForeignKey(d => d.CEPxLocalidadePrincipalID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_76A39CE315424C0AA399D0DBECB92750");
-
-                ett.HasIndex(d => d.CEPxLocalidadePrincipalID).HasDatabaseName("IX_76A39CE315424C0AA399D0DBECB92750");
-                ett.HasData(_CORxPessoa.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxRecurso(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxRecurso>(ett =>
-            {
-                ett.HasKey(e => e.CORxRecursoID).HasName("PK_CORxRecurso");
-                
-                ett.Property(d => d.CORxRecursoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
-                ett.Property(d => d.Titulo).HasColumnType(GetDBType("String", 80));
-                ett.Property(d => d.CORxRecursoTipoID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
-                ett.ToTable("CORxRecurso");
-
-                ett.HasOne(d => d.CORxRecursoTipo)
-                   .WithMany(p => p.CORxRecurso)
-                   .HasForeignKey(d => d.CORxRecursoTipoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_3D172BE06C0E46E88190AB42F3FF81AC");
-
-                ett.HasOne(d => d.CORxStatus)
-                   .WithMany(p => p.CORxRecurso)
-                   .HasForeignKey(d => d.CORxStatusID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_91D14E103000453FA60EC98EA012F459");
-
-                ett.HasIndex(d => d.CORxRecursoTipoID).HasDatabaseName("IX_3D172BE06C0E46E88190AB42F3FF81AC");
-                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_91D14E103000453FA60EC98EA012F459");
-                ett.HasData(_CORxRecurso.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxRecursoDireito(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxRecursoDireito>(ett =>
-            {
-                ett.HasKey(e => e.CORxRecursoDireitoID).HasName("PK_CORxRecursoDireito");
-                
-                ett.Property(d => d.CORxRecursoDireitoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxRecursoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxDireitosID).HasColumnType(GetDBType("Int16"));
-                ett.ToTable("CORxRecursoDireito");
-
-                ett.HasOne(d => d.CORxDireitos)
-                   .WithMany(p => p.CORxRecursoDireito)
-                   .HasForeignKey(d => d.CORxDireitosID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_2BBF2707C62C4B4A80B9A3FE91C2D5B3");
-
-                ett.HasOne(d => d.CORxRecurso)
-                   .WithMany(p => p.CORxRecursoDireito)
-                   .HasForeignKey(d => d.CORxRecursoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_8642F0512C404418A0C5B1C586A11496");
-
-                ett.HasIndex(d => d.CORxRecursoID).HasDatabaseName("IX_8642F0512C404418A0C5B1C586A11496");
-                ett.HasIndex(d => d.CORxDireitosID).HasDatabaseName("IX_2BBF2707C62C4B4A80B9A3FE91C2D5B3");
-                ett.HasData(_CORxRecursoDireito.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxRecursoTemplate(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxRecursoTemplate>(ett =>
-            {
-                ett.HasKey(e => e.CORxRecursoTemplateID).HasName("PK_CORxRecursoTemplate");
-                
-                ett.Property(d => d.CORxRecursoTemplateID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxRecursoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.Template).HasColumnType(GetDBType("String", 50));
-                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
-                ett.ToTable("CORxRecursoTemplate");
-
-                ett.HasOne(d => d.CORxStatus)
-                   .WithMany(p => p.CORxRecursoTemplate)
-                   .HasForeignKey(d => d.CORxStatusID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_DF3AB7500B414D228CE6266520EA9D8A");
-
-                ett.HasOne(d => d.CORxRecurso)
-                   .WithMany(p => p.CORxRecursoTemplate)
-                   .HasForeignKey(d => d.CORxRecursoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_CA7AE4A659F94B55AE8D02FC25FBE69F");
-
-                ett.HasIndex(d => d.CORxRecursoID).HasDatabaseName("IX_CA7AE4A659F94B55AE8D02FC25FBE69F");
-                ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_DF3AB7500B414D228CE6266520EA9D8A");
-                ett.HasData(_CORxRecursoTemplate.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxRecursoTemplateDireito(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxRecursoTemplateDireito>(ett =>
-            {
-                ett.HasKey(e => e.CORxRecursoTemplateDireitoID).HasName("PK_CORxRecursoTemplateDireito");
-                
-                ett.Property(d => d.CORxRecursoTemplateDireitoID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxRecursoTemplateID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxRecursoDireitoID).HasColumnType(GetDBType("Guid"));
-                ett.ToTable("CORxRecursoTemplateDireito");
-
-                ett.HasOne(d => d.CORxRecursoDireito)
-                   .WithMany(p => p.CORxRecursoTemplateDireito)
-                   .HasForeignKey(d => d.CORxRecursoDireitoID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_413AF556566D4C86868658231BC10E05");
-
-                ett.HasOne(d => d.CORxRecursoTemplate)
-                   .WithMany(p => p.CORxRecursoTemplateDireito)
-                   .HasForeignKey(d => d.CORxRecursoTemplateID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_998C84A533E14063A4E30498D27B1762");
-
-                ett.HasIndex(d => d.CORxRecursoTemplateID).HasDatabaseName("IX_998C84A533E14063A4E30498D27B1762");
-                ett.HasIndex(d => d.CORxRecursoDireitoID).HasDatabaseName("IX_413AF556566D4C86868658231BC10E05");
-                ett.HasData(_CORxRecursoTemplateDireito.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxRecursoTipo(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxRecursoTipo>(ett =>
-            {
-                ett.HasKey(e => e.CORxRecursoTipoID).HasName("PK_CORxRecursoTipo");
-                
-                ett.Property(d => d.CORxRecursoTipoID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.Tipo).HasColumnType(GetDBType("String", 50));
-                ett.ToTable("CORxRecursoTipo");
-                ett.HasData(_CORxRecursoTipo.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxStatus(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxStatus>(ett =>
-            {
-                ett.HasKey(e => e.CORxStatusID).HasName("PK_CORxStatus");
-                
-                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.Status).HasColumnType(GetDBType("String", 20));
-                ett.ToTable("CORxStatus");
-                ett.HasData(_CORxStatus.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxUsuario(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxUsuario>(ett =>
-            {
-                ett.HasKey(e => e.CORxUsuarioID).HasName("PK_CORxUsuario");
-                
-                ett.Property(d => d.CORxUsuarioID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.EMail).HasColumnType(GetDBType("String", 80));
-                ett.ToTable("CORxUsuario");
-
-                ett.HasOne(d => d.CORxPessoa)
-                   .WithMany()
-                   .HasForeignKey(d => d.CORxUsuarioID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_F3E4CFF511294AD5884ACAC97FDE96C4");
-
-                ett.HasIndex(d => d.CORxUsuarioID).HasDatabaseName("IX_F3E4CFF511294AD5884ACAC97FDE96C4");
-                ett.HasData(_CORxUsuario.XDefault.SeedData);
-            });
-        }
-
-        private void ConfigureCORxUsuarioRecursoTemplate(ModelBuilder pBuilder)
-        {
-            pBuilder.Entity<_CORxUsuarioRecursoTemplate>(ett =>
-            {
-                ett.HasKey(e => e.CORxUsuarioRecursoTemplateID).HasName("PK_CORxUsuarioRecursoTemplate");
-                
-                ett.Property(d => d.CORxUsuarioRecursoTemplateID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxUsuarioID).HasColumnType(GetDBType("Guid"));
-                ett.Property(d => d.CORxRecursoTemplateID).HasColumnType(GetDBType("Guid"));
-                ett.ToTable("CORxUsuarioRecursoTemplate");
-
-                ett.HasOne(d => d.CORxRecursoTemplate)
-                   .WithMany(p => p.CORxUsuarioRecursoTemplate)
-                   .HasForeignKey(d => d.CORxRecursoTemplateID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_4B924243B5C649B99E8BABAA4C17A5E2");
-
-                ett.HasOne(d => d.CORxUsuario)
-                   .WithMany(p => p.CORxUsuarioRecursoTemplate)
-                   .HasForeignKey(d => d.CORxUsuarioID)
-                   .OnDelete(DeleteBehavior.Restrict)
-                   .HasConstraintName("FK_D3EBA1E15D7E4EF4A84A2EC9053EB6C6");
-
-                ett.HasIndex(d => d.CORxUsuarioID).HasDatabaseName("IX_D3EBA1E15D7E4EF4A84A2EC9053EB6C6");
-                ett.HasIndex(d => d.CORxRecursoTemplateID).HasDatabaseName("IX_4B924243B5C649B99E8BABAA4C17A5E2");
             });
         }
     }
