@@ -292,7 +292,7 @@ namespace Projecao.Core.ERP.PessoaFisica
             Initialize();
         }
 
-        public PessoaFisicaTuple(String pCPF, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, Int16 pERPxGeneroID, DateTime pNascimento, Int16 pCORxStatusID, String pGenero, ContatoTuple pContato, DocumentoTuple pDocumento, EnderecoTuple pEndereco, PessoaFisicaTipoTuple pPessoaFisicaTipo)
+        public PessoaFisicaTuple(String pCPF, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, Int16 pERPxGeneroID, DateTime pNascimento, Int16 pCORxStatusID, String pGenero, ContatoTuple[] pContato, DocumentoTuple[] pDocumento, EnderecoTuple[] pEndereco, PessoaFisicaTipoTuple[] pPessoaFisicaTipo)
             : this()
         {
             CPF.Value = pCPF;
@@ -303,6 +303,10 @@ namespace Projecao.Core.ERP.PessoaFisica
             Nascimento.Value = pNascimento;
             CORxStatusID.Value = pCORxStatusID;
             Genero.Value = pGenero;
+            Contato = pContato;
+            Documento = pDocumento;
+            Endereco = pEndereco;
+            PessoaFisicaTipo = pPessoaFisicaTipo;
         }
 
         public override void Initialize()

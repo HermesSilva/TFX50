@@ -70,7 +70,7 @@ namespace Projecao.Core.ERP.GerenciaEmpresa
 
         public override void Initialize()
         {
-            Configuracao = new XByte[]DataField();
+            Configuracao = new XBinaryDataField();
             Numero = new XStringDataField();
             FormID = new XGuidDataField();
             RazaoSocial = new XStringDataField();

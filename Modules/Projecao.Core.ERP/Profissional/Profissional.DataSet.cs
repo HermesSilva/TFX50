@@ -329,7 +329,7 @@ namespace Projecao.Core.ERP.Profissional
             Initialize();
         }
 
-        public ProfissionalTuple(String pCPF, String pCategoria, Int16 pCORxStatusID, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, Int16 pERPxGeneroID, DateTime pNascimento, String pGenero, CategoriaTuple pCategoria, ContatoTuple pContato, DocumentoTuple pDocumento, EnderecoTuple pEndereco, HorariosTuple pHorarios)
+        public ProfissionalTuple(String pCPF, String pCategoria, Int16 pCORxStatusID, Guid? pCORxPessoaID, String pNome, Int32 pCEPxLocalidadePrincipalID, Int16 pERPxGeneroID, DateTime pNascimento, String pGenero, CategoriaTuple[] pCategoria, ContatoTuple[] pContato, DocumentoTuple[] pDocumento, EnderecoTuple[] pEndereco, HorariosTuple[] pHorarios)
             : this()
         {
             CPF.Value = pCPF;
@@ -341,6 +341,11 @@ namespace Projecao.Core.ERP.Profissional
             ERPxGeneroID.Value = pERPxGeneroID;
             Nascimento.Value = pNascimento;
             Genero.Value = pGenero;
+            Categoria = pCategoria;
+            Contato = pContato;
+            Documento = pDocumento;
+            Endereco = pEndereco;
+            Horarios = pHorarios;
         }
 
         public override void Initialize()

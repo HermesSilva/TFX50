@@ -221,7 +221,7 @@ namespace Projecao.Core.ERP.GerenciaEmpresa
             var query = from CORxPessoa in ctx.CORxPessoa
                         join ERPxPessoaJuridica in ctx.ERPxPessoaJuridica on CORxPessoa.CORxPessoaID equals ERPxPessoaJuridica.ERPxPessoaJuridicaID
                         join ERPxDocumento in ctx.ERPxDocumento on CORxPessoa.CORxPessoaID equals ERPxDocumento.CORxPessoaID
-                        where ERPxDocumento.ERPxDocumentoTipoID ERPxModel.ERPxDocumentoTipo.CNPJ
+                        where ERPxDocumento.ERPxDocumentoTipoID == Projecao.Core.ERP.DB.ERPxModel.ERPxDocumentoTipo.CNPJ
                         select new {ERPxDocumento, ERPxPessoaJuridica, CORxPessoa};
             query = _INFRule.GetWhere(query);
 

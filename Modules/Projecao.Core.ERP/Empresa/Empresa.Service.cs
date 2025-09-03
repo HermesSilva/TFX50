@@ -687,7 +687,7 @@ namespace Projecao.Core.ERP.Empresa
                         join CORxAgregado in ctx.CORxAgregado on CORxPessoa.CORxPessoaID equals CORxAgregado.CORxAgregadoID
                         join ERPxPessoaJuridica in ctx.ERPxPessoaJuridica on CORxPessoa.CORxPessoaID equals ERPxPessoaJuridica.ERPxPessoaJuridicaID
                         join ERPxDocumento in ctx.ERPxDocumento on CORxPessoa.CORxPessoaID equals ERPxDocumento.CORxPessoaID
-                        where ERPxDocumento.ERPxDocumentoTipoID == ERPxModel.ERPxDocumentoTipo.CNPJ
+                        where ERPxDocumento.ERPxDocumentoTipoID == Projecao.Core.ERP.DB.ERPxModel.ERPxDocumentoTipo.CNPJ
                         select new {ERPxPessoaJuridica, ERPxDocumento, CORxPessoa, CORxAgregado};
             query = _INFRule.GetWhere(query);
 
@@ -711,13 +711,13 @@ namespace Projecao.Core.ERP.Empresa
 
             var Documento = pFull ? from ERPxDocumento in ctx.ERPxDocumento
                         join ERPxDocumentoTipo in ctx.ERPxDocumentoTipo on ERPxDocumento.ERPxDocumentoTipoID equals ERPxDocumentoTipo.ERPxDocumentoTipoID
-                        where 
+                        
                         select new {ERPxDocumento, ERPxDocumentoTipo} : null; 
 
             var Contato = pFull ? from ERPxContato in ctx.ERPxContato
                         join ERPxContatoTipo in ctx.ERPxContatoTipo on ERPxContato.ERPxContatoTipoID equals ERPxContatoTipo.ERPxContatoTipoID
                         join ERPxFinalidade in ctx.ERPxFinalidade on ERPxContato.ERPxFinalidadeID equals ERPxFinalidade.ERPxFinalidadeID
-                        where 
+                        
                         select new {ERPxContato, ERPxContatoTipo, ERPxFinalidade} : null; 
 
             var Endereco = pFull ? from ERPxEndereco in ctx.ERPxEndereco
@@ -726,7 +726,7 @@ namespace Projecao.Core.ERP.Empresa
                         join CEPxLocalidade in ctx.CEPxLocalidade on CEPxLogradouro.CEPxLocalidadeID equals CEPxLocalidade.CEPxLocalidadeID
                         join CEPxUF in ctx.CEPxUF on CEPxLocalidade.CEPxUFID equals CEPxUF.CEPxUFID
                         join CEPxBairro in ctx.CEPxBairro on CEPxLogradouro.CEPxBairroID equals CEPxBairro.CEPxBairroID
-                        where 
+                        
                         select new {ERPxEndereco, ERPxFinalidade, CEPxUF, CEPxLocalidade, CEPxLogradouro, CEPxBairro} : null; 
 
             var qry = query.Select(q => new EmpresaTuple(null,
@@ -736,51 +736,51 @@ namespace Projecao.Core.ERP.Empresa
                              q.CORxPessoa.CEPxLocalidadePrincipalID,
                              q.ERPxPessoaJuridica.RazaoSocial,
                              q.ERPxPessoaJuridica.CORxStatusID,
-                             q.ERPxDocumento.Numero, Contato = 
+                             q.ERPxDocumento.Numero,
                              pFull ? Contato.Where(q1 => q1.ERPxContato.CORxPessoaID == q.CORxPessoa.CORxPessoaID )
-                            .Select(q => new ContatoTuple(Validar = false,
-                             Contato = q.ERPxContato.Contato,
-                             ERPxContatoID = q.ERPxContato.ERPxContatoID,
-                             ERPxContatoTipoID = q.ERPxContato.ERPxContatoTipoID,
-                             Validado = q.ERPxContato.Validado,
-                             ERPxFinalidadeID = q.ERPxContato.ERPxFinalidadeID,
-                             CORxStatusID = q.ERPxContato.CORxStatusID,
-                             CORxPessoaID = q.ERPxContato.CORxPessoaID,
-                             Observacao = q.ERPxContato.Observacao,
-                             Mascara = q.ERPxContatoTipo.Mascara,
-                             Tipo = q.ERPxContatoTipo.Tipo,
-                             Finalidade = q.ERPxFinalidade.Finalidade)).ToArray() : null, Documento = 
+                            .Select(q => new ContatoTuple(false,
+                             q.ERPxContato.Contato,
+                             q.ERPxContato.ERPxContatoID,
+                             q.ERPxContato.ERPxContatoTipoID,
+                             q.ERPxContato.Validado,
+                             q.ERPxContato.ERPxFinalidadeID,
+                             q.ERPxContato.CORxStatusID,
+                             q.ERPxContato.CORxPessoaID,
+                             q.ERPxContato.Observacao,
+                             q.ERPxContatoTipo.Mascara,
+                             q.ERPxContatoTipo.Tipo,
+                             q.ERPxFinalidade.Finalidade)).ToArray() : null,
                              pFull ? Documento.Where(q2 => q2.ERPxDocumento.CORxPessoaID == q.CORxPessoa.CORxPessoaID )
-                            .Select(q => new DocumentoTuple(ERPxDocumentoID = q.ERPxDocumento.ERPxDocumentoID,
-                               ERPxDocumentoTipoID = q.ERPxDocumento.ERPxDocumentoTipoID,
-                               Numero = q.ERPxDocumento.Numero,
-                               CORxStatusID = q.ERPxDocumento.CORxStatusID,
-                               CORxPessoaID = q.ERPxDocumento.CORxPessoaID,
-                               Mascara = q.ERPxDocumentoTipo.Mascara,
-                               Tipo = q.ERPxDocumentoTipo.Tipo)).ToArray() : null, Endereco = 
+                            .Select(q => new DocumentoTuple(q.ERPxDocumento.ERPxDocumentoID,
+                               q.ERPxDocumento.ERPxDocumentoTipoID,
+                               q.ERPxDocumento.Numero,
+                               q.ERPxDocumento.CORxStatusID,
+                               q.ERPxDocumento.CORxPessoaID,
+                               q.ERPxDocumentoTipo.Mascara,
+                               q.ERPxDocumentoTipo.Tipo)).ToArray() : null,
                              pFull ? Endereco.Where(q3 => q3.ERPxEndereco.CORxPessoaID == q.CORxPessoa.CORxPessoaID )
-                            .Select(q => new EnderecoTuple(Localidade = q.CEPxLocalidade.Nome,
-                              CEPxLogradouroID = q.ERPxEndereco.CEPxLogradouroID,
-                              Complemento = q.ERPxEndereco.Complemento,
-                              Logradouro = q.CEPxLogradouro.Nome,
-                              Tipo = q.CEPxLogradouro.Tipo,
-                              CEP = q.CEPxLogradouro.CEP,
-                              Bairro = q.CEPxBairro.Nome,
-                              Longitude = q.ERPxEndereco.Longitude,
-                              Latitude = q.ERPxEndereco.Latitude,
-                              Endereco = null,
-                              Sigla = q.CEPxUF.Sigla,
-                              NomeUF = q.CEPxUF.Nome,
-                              CodigoIBGE = q.CEPxLocalidade.CodigoIBGE,
-                              ERPxEnderecoID = q.ERPxEndereco.ERPxEnderecoID,
-                              ERPxFinalidadeID = q.ERPxEndereco.ERPxFinalidadeID,
-                              Lote = q.ERPxEndereco.Lote,
-                              Numero = q.ERPxEndereco.Numero,
-                              Observacao = q.ERPxEndereco.Observacao,
-                              Quadra = q.ERPxEndereco.Quadra,
-                              CORxStatusID = q.ERPxEndereco.CORxStatusID,
-                              CORxPessoaID = q.ERPxEndereco.CORxPessoaID,
-                              Finalidade = q.ERPxFinalidade.Finalidade)).ToArray() : null));
+                            .Select(q => new EnderecoTuple(q.CEPxLocalidade.Nome,
+                              q.ERPxEndereco.CEPxLogradouroID,
+                              q.ERPxEndereco.Complemento,
+                              q.CEPxLogradouro.Nome,
+                              q.CEPxLogradouro.Tipo,
+                              q.CEPxLogradouro.CEP,
+                              q.CEPxBairro.Nome,
+                              q.ERPxEndereco.Longitude,
+                              q.ERPxEndereco.Latitude,
+                              null,
+                              q.CEPxUF.Sigla,
+                              q.CEPxUF.Nome,
+                              q.CEPxLocalidade.CodigoIBGE,
+                              q.ERPxEndereco.ERPxEnderecoID,
+                              q.ERPxEndereco.ERPxFinalidadeID,
+                              q.ERPxEndereco.Lote,
+                              q.ERPxEndereco.Numero,
+                              q.ERPxEndereco.Observacao,
+                              q.ERPxEndereco.Quadra,
+                              q.ERPxEndereco.CORxStatusID,
+                              q.ERPxEndereco.CORxPessoaID,
+                              q.ERPxFinalidade.Finalidade)).ToArray() : null));
             return qry;
         }
 

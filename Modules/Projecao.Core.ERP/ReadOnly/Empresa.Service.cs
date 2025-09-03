@@ -263,7 +263,10 @@ namespace Projecao.Core.ERP.ReadOnly
         {
             var ctx = Context;
             var query = from CORxPessoa in ctx.CORxPessoa
-                        where ERPxDocumento.ERPxDocumentoTipoID ERPxModel.ERPxDocumentoTipo.CNPJ
+                        join ERPxDocumento in ctx.ERPxDocumento on CORxPessoa.CORxPessoaID equals ERPxDocumento.CORxPessoaID
+                        join ERPxDocumentoTipo in ctx.ERPxDocumentoTipo on ERPxDocumento.ERPxDocumentoTipoID equals ERPxDocumentoTipo.ERPxDocumentoTipoID
+                        join ERPxPessoaJuridica in ctx.ERPxPessoaJuridica on CORxPessoa.CORxPessoaID equals ERPxPessoaJuridica.ERPxPessoaJuridicaID
+                        where ERPxDocumento.ERPxDocumentoTipoID == Projecao.Core.ERP.DB.ERPxModel.ERPxDocumentoTipo.CNPJ
                         select new {ERPxPessoaJuridica, ERPxDocumento, ERPxDocumentoTipo, CORxPessoa};
             query = _INFRule.GetWhere(query);
 
@@ -279,12 +282,12 @@ namespace Projecao.Core.ERP.ReadOnly
                     query = query.Take(75);
             }
 
-            var qry = query.Select(q => new EmpresaTuple(q.ERPxPessoaJuridica.RazaoSocial,
+            var qry = query.Select(q => new EmpresaTuple(q.CORxPessoa.Nome,
+                             q.CORxPessoa.CORxPessoaID,
+                             q.CORxPessoa.CEPxLocalidadePrincipalID,
                              q.ERPxDocumento.Numero,
                              q.ERPxDocumentoTipo.Mascara,
-                             q.CORxPessoa.Nome,
-                             q.CORxPessoa.CORxPessoaID,
-                             q.CORxPessoa.CEPxLocalidadePrincipalID));
+                             q.ERPxPessoaJuridica.RazaoSocial));
             return qry;
         }
 

@@ -138,6 +138,7 @@
         <XLinkArrayData Name="ValueID" ID="2BE69569-2575-4A16-AC69-38D1684AF3ED" Type="Guid[]">
           <XLinkData ID="787092B6-1192-4E08-ADC3-9503652854DD" ElementID="777AB6E1-6F81-476C-8EDA-DEC6FD359BCA" Text="CNPJ" DocumentID="4E22A7DA-AD65-4076-85B0-71C22F6634A6" DocumentName="ERPx" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="2" Order="1">777AB6E1-6F81-476C-8EDA-DEC6FD359BCA</XLinkData>
         </XLinkArrayData>
+        <XData Name="Logic" ID="32A1EB5A-BA2C-43E0-A0CC-DC2F62EC5CDA" Type="XFLTLogic[]">EqualTo</XData>
       </XValues>
     </XFLTField>
     <XValues />
@@ -276,15 +277,15 @@
   </XSVCTable>
   <XSVCReference ID="6F316D35-95F3-4AA7-8779-A18555466D6D">
     <XValues>
-      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="267A62DD-21B9-41EE-84CC-EC7E08CB8E57" Text="CORxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="">267A62DD-21B9-41EE-84CC-EC7E08CB8E57</XLinkedShape>
-      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="6A00B640-AB28-4387-9DF8-6C4D97BA871F" Text="ERPxPessoaJuridicaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="">6A00B640-AB28-4387-9DF8-6C4D97BA871F</XLinkedShape>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="267A62DD-21B9-41EE-84CC-EC7E08CB8E57" Text="CORxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="" Type="Guid">267A62DD-21B9-41EE-84CC-EC7E08CB8E57</XLinkedShape>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="6A00B640-AB28-4387-9DF8-6C4D97BA871F" Text="ERPxPessoaJuridicaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="" Type="Guid">6A00B640-AB28-4387-9DF8-6C4D97BA871F</XLinkedShape>
       <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=737;Y=117.5}|{X=617.5;Y=117.5}|{X=617.5;Y=172.5}|{X=498;Y=172.5}</XData>
     </XValues>
   </XSVCReference>
   <XSVCReference ID="120CC01E-DAA7-4665-9F75-9809DE3DABFB">
     <XValues>
-      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="267A62DD-21B9-41EE-84CC-EC7E08CB8E57" Text="CORxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="">267A62DD-21B9-41EE-84CC-EC7E08CB8E57</XLinkedShape>
-      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="C534F6DC-1D11-4DD4-B24C-8485DB7CF954" Text="CORxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="">C534F6DC-1D11-4DD4-B24C-8485DB7CF954</XLinkedShape>
+      <XLinkedShape Name="RightShape" ID="6461BED3-F1A0-4910-985D-9F0B0058D8BF" Side="0" X="0" Y="0" DesiredDegree="" ElementID="267A62DD-21B9-41EE-84CC-EC7E08CB8E57" Text="CORxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="" Type="Guid">267A62DD-21B9-41EE-84CC-EC7E08CB8E57</XLinkedShape>
+      <XLinkedShape Name="LeftShape" ID="8A8851EB-B6CA-414F-B55A-C22A6A0F3753" Side="0" X="0" Y="0" DesiredDegree="" ElementID="C534F6DC-1D11-4DD4-B24C-8485DB7CF954" Text="CORxPessoaID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Projecao.Core.ERP" DataEx="" Type="Guid">C534F6DC-1D11-4DD4-B24C-8485DB7CF954</XLinkedShape>
       <XData Name="Points" ID="E2378CBF-8185-465D-8215-142922E96006" Type="Point[]">{X=703;Y=389.5}|{X=600.5;Y=389.5}|{X=600.5;Y=172.5}|{X=498;Y=172.5}</XData>
     </XValues>
   </XSVCReference>

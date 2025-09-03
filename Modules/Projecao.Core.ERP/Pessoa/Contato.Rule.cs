@@ -1,35 +1,16 @@
-using System;
-using System.Text;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using TFX.Core.Controllers;
+using TFX.Core.Services;
+using Projecao.Core.ERP.Pessoa;
 
-using TFX.Core.Exceptions;
-using TFX.Core.Reflections;
-using TFX.Core.Service.Data;
-
-namespace Projecao.Core.ERP.Pessoa
+namespace Projecao.Core.ERP.Pessoa.Rules
 {
-    [XRegister(typeof(ContatoRule), sCID, typeof(ContatoSVC))]
-    public class ContatoRule : ContatoSVC.XRule
+    public class ContatoRule : BaseContatoRule
     {
-        public const String sCID = "52D57C25-F4B2-4D4F-95BE-47044EC1ED65";
-        public static Guid gCID = new Guid(sCID);
-
-        public ContatoRule()
+        public ContatoRule(XService pService)
+               :base(pService)
         {
-            ID = gCID;
-        }
-
-        protected override void BeforeFlush(XExecContext pContext, ContatoSVC pModel, ContatoSVC.XDataSet pDataSet)
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (ContatoSVC.XTuple tpl in pDataSet.Tuples)
-            {
-                if (tpl.Contato.IsEmpty())
-                    sb.AppendLine($"Meio de contato \"{tpl.Contato}\" está com número/contato vazio, não é permitido.");
-                if (tpl.Mascara.IsFull())
-                    tpl.Contato = tpl.Contato.OnlyNumbers();
-            }
-            if (sb.Length > 0)
-                throw new XUnconformity(sb.ToString());
         }
     }
 }

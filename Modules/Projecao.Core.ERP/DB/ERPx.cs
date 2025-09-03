@@ -12,101 +12,204 @@ using TFX.Core.Lzma;
 
 namespace Projecao.Core.ERP.DB
 {
-    public class ProjecaoCoreERPContext : XDBContext
+    public  partial class ProjecaoCoreERPContext : XDBContext
     {
-        #region _CEPxLogradouro
+        #region _EMLxCaixa
 
-        public class _CEPxLogradouro
+        public class _EMLxCaixa
         {
-            [MaxLength(8)]
-            [DisplayFormat(DataFormatString = "00.000-000")]
-            public String CEP {get; set;}
-            [Display(Name = "Bairro")]
+            [Display(Name = "Assunto")]
+            [MaxLength(50)]
             [Required()]
-            public Int32 CEPxBairroID {get; set;}
-            [Display(Name = "Localidade")]
+            public String Asunto {get; set;}
+            [Display(Name = "Criação")]
             [Required()]
-            public Int32 CEPxLocalidadeID {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(CEPxLogradouroID, typeof(Int32).GetDefault());
-            [Display(Name = "Logradouro")]
+            public DateTime Criacao {get; set;}
+            public Boolean IsPKEmpty => !EMLxCaixaID.HasValue;
+            [Display(Name = "Caixa de Correspondência")]
             [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int32 CEPxLogradouroID {get; set;}
-            [MaxLength(128)]
+            public Guid? EMLxCaixaID {get; set;}
+            [Display(Name = "Estado")]
             [Required()]
-            public String Nome {get; set;}
-            [Display(Name = "Número")]
+            public Int16 EMLxEstadoID {get; set;}
+            [Display(Name = "Servidor")]
             [Required()]
-            public Int32 Numero {get; set;}
-            [MaxLength(30)]
+            public Guid EMLxServidorID {get; set;}
             [Required()]
-            public String Tipo {get; set;}
-            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
+            public DateTime Envio {get; set;}
+            [Required()]
+            public String Mensagem {get; set;}
+            [Display(Name = "Pessoas")]
+            [Required()]
+            public Guid SYSxEmitenteID {get; set;}
+            public _EMLxEstado EMLxEstado {get; set;}
+            public _EMLxServidor EMLxServidor {get; set;}
+            public _CORxPessoa CORxPessoa {get; set;}
+            public List<_EMLxLog> EMLxLog {get; set;} = new List<_EMLxLog>();
+            public List<_EMLxAnexo> EMLxAnexo {get; set;} = new List<_EMLxAnexo>();
+            public List<_EMLxDestinatario> EMLxDestinatario {get; set;} = new List<_EMLxDestinatario>();
         }
 
-        #endregion _CEPxLogradouro
+        #endregion _EMLxCaixa
 
-        #region _CORxPessoa
+        #region _EMLxEstado
 
-        public class _CORxPessoa
+        public class _EMLxEstado
         {
-            [Display(Name = "Localidade")]
-            [Required()]
-            public Int32 CEPxLocalidadePrincipalID {get; set;}
-            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
-            [Display(Name = "Pessoa")]
-            [Required()]
-            public Guid? CORxPessoaID {get; set;}
-            [MaxLength(180)]
-            [Required()]
-            public String Nome {get; set;}
-            public List<_ERPxContato> ERPxContato {get; set;} = new List<_ERPxContato>();
-            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
-            public List<_ERPxDocumento> ERPxDocumento {get; set;} = new List<_ERPxDocumento>();
-        }
-
-        #endregion _CORxPessoa
-
-        #region _CORxStatus
-
-        public class _CORxStatus
-        {
-            public Boolean IsPKEmpty => Object.Equals(CORxStatusID, typeof(Int16).GetDefault());
-            [Display(Name = "Status")]
+            public class XDefault
+            {
+                private static Dictionary<Int16, _EMLxEstado> _SeedData = new Dictionary<Int16, _EMLxEstado>()
+                {
+                    [(Int16)2] = new _EMLxEstado { Estado = @"Enviado", EMLxEstadoID = (Int16)2 },
+                    [(Int16)3] = new _EMLxEstado { Estado = @"Com Erro", EMLxEstadoID = (Int16)3 },
+                    [(Int16)1] = new _EMLxEstado { Estado = @"A Enviar", EMLxEstadoID = (Int16)1 }
+                };
+                public static _EMLxEstado[] SeedData => _SeedData.Values.ToArray();
+            }
+            public Boolean IsPKEmpty => Object.Equals(EMLxEstadoID, typeof(Int16).GetDefault());
+            [Display(Name = "Estado")]
             [Required()]
             [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 CORxStatusID {get; set;}
+            public Int16 EMLxEstadoID {get; set;}
             [MaxLength(20)]
             [Required()]
-            public String Status {get; set;}
-            public List<_ERPxPessoaFisica> ERPxPessoaFisica {get; set;} = new List<_ERPxPessoaFisica>();
-            public List<_ERPxPessoaJuridica> ERPxPessoaJuridica {get; set;} = new List<_ERPxPessoaJuridica>();
-            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
-            public List<_ERPxContato> ERPxContato {get; set;} = new List<_ERPxContato>();
-            public List<_ERPxDocumento> ERPxDocumento {get; set;} = new List<_ERPxDocumento>();
-            public List<_ERPxPessoaFisicaTipos> ERPxPessoaFisicaTipos {get; set;} = new List<_ERPxPessoaFisicaTipos>();
-            public List<_ERPxProfissional> ERPxProfissional {get; set;} = new List<_ERPxProfissional>();
-            public List<_ERPxProfissionalHorario> ERPxProfissionalHorario {get; set;} = new List<_ERPxProfissionalHorario>();
+            public String Estado {get; set;}
+            public List<_EMLxCaixa> EMLxCaixa {get; set;} = new List<_EMLxCaixa>();
         }
 
-        #endregion _CORxStatus
+        #endregion _EMLxEstado
 
-        #region _ERPxCategoria
+        #region _EMLxLog
 
-        public class _ERPxCategoria
+        public class _EMLxLog
         {
-            [MaxLength(35)]
             [Required()]
-            public String Categoria {get; set;}
-            public Boolean IsPKEmpty => Object.Equals(ERPxCategoriaID, typeof(Int16).GetDefault());
-            [Display(Name = "Categoria de Profissional")]
+            public DateTime Data {get; set;}
+            [Display(Name = "Caixa de Correspondência")]
             [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 ERPxCategoriaID {get; set;}
-            public List<_ERPxProfissionalCategoria> ERPxProfissionalCategoria {get; set;} = new List<_ERPxProfissionalCategoria>();
+            public Guid EMLxCaixaID {get; set;}
+            public Boolean IsPKEmpty => !EMLxLogID.HasValue;
+            [Display(Name = "Log de Envio")]
+            [Required()]
+            public Guid? EMLxLogID {get; set;}
+            [MaxLength(150)]
+            [Required()]
+            public String Mensagem {get; set;}
+            [Required()]
+            public String Pilha {get; set;}
+            public _EMLxCaixa EMLxCaixa {get; set;}
         }
 
-        #endregion _ERPxCategoria
+        #endregion _EMLxLog
+
+        #region _EMLxAnexo
+
+        public class _EMLxAnexo
+        {
+            [Required()]
+            public Byte[] Dado {get; set;}
+            [NotMapped]
+            public Byte[] DadoArray
+            {
+                get
+                {
+                    return XLzma.Decode(Dado);
+                }
+                set
+                {
+                    Dado = XLzma.Encode(value);
+                }
+            }
+            public Boolean IsPKEmpty => !EMLxAnexoID.HasValue;
+            [Display(Name = "Anexo")]
+            [Required()]
+            public Guid? EMLxAnexoID {get; set;}
+            [Display(Name = "Caixa de Correspondência")]
+            [Required()]
+            public Guid EMLxCaixaID {get; set;}
+            [MaxLength(50)]
+            [Required()]
+            public String Nome {get; set;}
+            public _EMLxCaixa EMLxCaixa {get; set;}
+        }
+
+        #endregion _EMLxAnexo
+
+        #region _EMLxServidor
+
+        public class _EMLxServidor
+        {
+            [Display(Name = "Finalidade do Servidor")]
+            [Required()]
+            public Int16 EMLxServidorFinalizadeID {get; set;}
+            public Boolean IsPKEmpty => !EMLxServidorID.HasValue;
+            [Display(Name = "Servidor")]
+            [Required()]
+            public Guid? EMLxServidorID {get; set;}
+            [MaxLength(25)]
+            [Required()]
+            public String Nome {get; set;}
+            [Required()]
+            public Int32 Porta {get; set;}
+            [MaxLength(256)]
+            [Required()]
+            public String Senha {get; set;}
+            [Display(Name = "Servidor SMTP")]
+            [MaxLength(60)]
+            [Required()]
+            public String SMTPServidor {get; set;}
+            [Display(Name = "Usa SSL")]
+            [Required()]
+            public Boolean SSL {get; set;}
+            [Display(Name = "Usuário")]
+            [Required()]
+            public String Usuario {get; set;}
+            public _EMLxServidorFinalizade EMLxServidorFinalizade {get; set;}
+            public List<_EMLxCaixa> EMLxCaixa {get; set;} = new List<_EMLxCaixa>();
+            public List<_EMLxEmpresaServidor> EMLxEmpresaServidor {get; set;} = new List<_EMLxEmpresaServidor>();
+        }
+
+        #endregion _EMLxServidor
+
+        #region _EMLxDestinatario
+
+        public class _EMLxDestinatario
+        {
+            [Display(Name = "Caixa de Correspondência")]
+            [Required()]
+            public Guid EMLxCaixaID {get; set;}
+            public Boolean IsPKEmpty => !EMLxDestinatarioID.HasValue;
+            [Display(Name = "Destinatários")]
+            [Required()]
+            public Guid? EMLxDestinatarioID {get; set;}
+            [Display(Name = "Meios de Contato")]
+            [Required()]
+            public Guid ERPxContatoID {get; set;}
+            public _ERPxContato ERPxContato {get; set;}
+            public _EMLxCaixa EMLxCaixa {get; set;}
+        }
+
+        #endregion _EMLxDestinatario
+
+        #region _EMLxEmpresaServidor
+
+        public class _EMLxEmpresaServidor
+        {
+            [Display(Name = "Pessoas")]
+            [Required()]
+            public Guid CORxPessoaID {get; set;}
+            public Boolean IsPKEmpty => !EMLxEmpresaServidorID.HasValue;
+            [Display(Name = "Empresa por Servidor")]
+            [Required()]
+            public Guid? EMLxEmpresaServidorID {get; set;}
+            [Display(Name = "Servidor")]
+            [Required()]
+            public Guid EMLxServidorID {get; set;}
+            public _EMLxServidor EMLxServidor {get; set;}
+            public _CORxPessoa CORxPessoa {get; set;}
+        }
+
+        #endregion _EMLxEmpresaServidor
 
         #region _ERPxContato
 
@@ -122,7 +225,6 @@ namespace Projecao.Core.ERP.DB
             [Display(Name = "Estado")]
             [Required()]
             public Int16 CORxStatusID {get; set;}
-            public Boolean IsPKEmpty => !ERPxContatoID.HasValue;
             [Display(Name = "Meios de Contato")]
             [Required()]
             public Guid? ERPxContatoID {get; set;}
@@ -141,9 +243,193 @@ namespace Projecao.Core.ERP.DB
             public _ERPxContatoTipo ERPxContatoTipo {get; set;}
             public _CORxStatus CORxStatus {get; set;}
             public _CORxPessoa CORxPessoa {get; set;}
+            public List<_EMLxDestinatario> EMLxDestinatario {get; set;} = new List<_EMLxDestinatario>();
         }
 
         #endregion _ERPxContato
+
+        #region _EMLxServidorFinalizade
+
+        public class _EMLxServidorFinalizade
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int16, _EMLxServidorFinalizade> _SeedData = new Dictionary<Int16, _EMLxServidorFinalizade>()
+                {
+                    [(Int16)1] = new _EMLxServidorFinalizade { Finalidade = @"Uso Geral", EMLxServidorFinalizadeID = (Int16)1 }
+                };
+                public static _EMLxServidorFinalizade[] SeedData => _SeedData.Values.ToArray();
+            }
+            public Boolean IsPKEmpty => Object.Equals(EMLxServidorFinalizadeID, typeof(Int16).GetDefault());
+            [Display(Name = "Finalidade do Servidor")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 EMLxServidorFinalizadeID {get; set;}
+            [MaxLength(25)]
+            [Required()]
+            public String Finalidade {get; set;}
+            public List<_EMLxServidor> EMLxServidor {get; set;} = new List<_EMLxServidor>();
+        }
+
+        #endregion _EMLxServidorFinalizade
+
+        #region _CORxAgregado
+
+        public class _CORxAgregado
+        {
+            public Boolean IsPKEmpty => !CORxAgregadoID.HasValue;
+            [Display(Name = "Agregado")]
+            [Required()]
+            public Guid? CORxAgregadoID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            [Display(Name = "CPF ou CNPJ")]
+            [MaxLength(14)]
+            [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
+            [Required()]
+            public String CPFCNPJ {get; set;}
+        }
+
+        #endregion _CORxAgregado
+
+        #region _CORxPessoa
+
+        public class _CORxPessoa
+        {
+            [Display(Name = "Localidade")]
+            [Required()]
+            public Int32 CEPxLocalidadePrincipalID {get; set;}
+            public Boolean IsPKEmpty => !CORxPessoaID.HasValue;
+            [Display(Name = "Pessoa")]
+            [Required()]
+            public Guid? CORxPessoaID {get; set;}
+            [MaxLength(180)]
+            [Required()]
+            public String Nome {get; set;}
+            public List<_EMLxEmpresaServidor> EMLxEmpresaServidor {get; set;} = new List<_EMLxEmpresaServidor>();
+            public List<_EMLxCaixa> EMLxCaixa {get; set;} = new List<_EMLxCaixa>();
+            public List<_ERPxContato> ERPxContato {get; set;} = new List<_ERPxContato>();
+            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
+            public List<_ERPxDocumento> ERPxDocumento {get; set;} = new List<_ERPxDocumento>();
+        }
+
+        #endregion _CORxPessoa
+
+        #region _ERPxPessoaFisica
+
+        public class _ERPxPessoaFisica
+        {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _ERPxPessoaFisica> _SeedData = new Dictionary<Guid, _ERPxPessoaFisica>()
+                {
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _ERPxPessoaFisica { ERPxGeneroID = (Int16)0, Nascimento = new DateTime(1, 1, 1), ERPxPessoaFisicaID = new Guid("00000000-0000-0000-0000-000000000000"), CORxStatusID = (Int16)0 },
+                    [new Guid("F4B32152-8189-4525-BCEE-A6A62A290B38")] = new _ERPxPessoaFisica { ERPxGeneroID = (Int16)0, Nascimento = new DateTime(1975, 1, 1), ERPxPessoaFisicaID = new Guid("F4B32152-8189-4525-BCEE-A6A62A290B38"), CORxStatusID = (Int16)1 }
+                };
+                public static _ERPxPessoaFisica[] SeedData => _SeedData.Values.ToArray();
+            }
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            [Display(Name = "Gênero")]
+            [Required()]
+            public Int16 ERPxGeneroID {get; set;}
+            public Boolean IsPKEmpty => !ERPxPessoaFisicaID.HasValue;
+            [Display(Name = "Pessoa Física")]
+            [Required()]
+            public Guid? ERPxPessoaFisicaID {get; set;}
+            [Display(Name = "Data de Nascimento")]
+            [Required()]
+            public DateTime Nascimento {get; set;}
+            public _ERPxGenero ERPxGenero {get; set;}
+            public _CORxStatus CORxStatus {get; set;}
+            public List<_ERPxPessoaFisicaTipos> ERPxPessoaFisicaTipos {get; set;} = new List<_ERPxPessoaFisicaTipos>();
+            public List<_ERPxProfissional> ERPxProfissional {get; set;} = new List<_ERPxProfissional>();
+        }
+
+        #endregion _ERPxPessoaFisica
+
+        #region _ERPxPessoaJuridica
+
+        public class _ERPxPessoaJuridica
+        {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _ERPxPessoaJuridica> _SeedData = new Dictionary<Guid, _ERPxPessoaJuridica>()
+                {
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _ERPxPessoaJuridica { RazaoSocial = @"NA", ERPxPessoaJuridicaID = new Guid("00000000-0000-0000-0000-000000000000"), CORxStatusID = (Int16)1 }
+                };
+                public static _ERPxPessoaJuridica[] SeedData => _SeedData.Values.ToArray();
+            }
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            public Boolean IsPKEmpty => !ERPxPessoaJuridicaID.HasValue;
+            [Display(Name = "Pessoa Jurídica")]
+            [Required()]
+            public Guid? ERPxPessoaJuridicaID {get; set;}
+            [Display(Name = "Razão Social")]
+            [MaxLength(160)]
+            [Required()]
+            public String RazaoSocial {get; set;}
+            public _CORxStatus CORxStatus {get; set;}
+            public List<_ERPxFornecedor> ERPxFornecedor {get; set;} = new List<_ERPxFornecedor>();
+        }
+
+        #endregion _ERPxPessoaJuridica
+
+        #region _ERPxEndereco
+
+        public class _ERPxEndereco
+        {
+            public class XDefault
+            {
+                private static Dictionary<Guid, _ERPxEndereco> _SeedData = new Dictionary<Guid, _ERPxEndereco>()
+                {
+                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _ERPxEndereco { CORxPessoaID = new Guid("00000000-0000-0000-0000-000000000000"), ERPxFinalidadeID = (Int16)1, CEPxLogradouroID = 0, Numero = @"NI", Quadra = @"NI", Lote = @"NI", CORxStatusID = (Int16)1, ERPxEnderecoID = new Guid("00000000-0000-0000-0000-000000000000"), Complemento = null, Observacao = null, Latitude = 0, Longitude = 0 }
+                };
+                public static _ERPxEndereco[] SeedData => _SeedData.Values.ToArray();
+            }
+            [Display(Name = "Logradouro")]
+            [Required()]
+            public Int32 CEPxLogradouroID {get; set;}
+            [MaxLength(30)]
+            public String Complemento {get; set;}
+            [Display(Name = "Pessoas")]
+            [Required()]
+            public Guid CORxPessoaID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            public Boolean IsPKEmpty => !ERPxEnderecoID.HasValue;
+            [Display(Name = "Endereço")]
+            [Required()]
+            public Guid? ERPxEnderecoID {get; set;}
+            [Display(Name = "Finalidade")]
+            [Required()]
+            public Int16 ERPxFinalidadeID {get; set;}
+            [Required()]
+            public Decimal Latitude {get; set;}
+            [Required()]
+            public Decimal Longitude {get; set;}
+            [MaxLength(4)]
+            public String Lote {get; set;}
+            [Display(Name = "Número")]
+            [MaxLength(10)]
+            public String Numero {get; set;}
+            [Display(Name = "Observação")]
+            [MaxLength(50)]
+            public String Observacao {get; set;}
+            [MaxLength(4)]
+            public String Quadra {get; set;}
+            public _ERPxFinalidade ERPxFinalidade {get; set;}
+            public _CEPxLogradouro CEPxLogradouro {get; set;}
+            public _CORxStatus CORxStatus {get; set;}
+            public _CORxPessoa CORxPessoa {get; set;}
+        }
+
+        #endregion _ERPxEndereco
 
         #region _ERPxContatoTipo
 
@@ -177,6 +463,35 @@ namespace Projecao.Core.ERP.DB
         }
 
         #endregion _ERPxContatoTipo
+
+        #region _ERPxFinalidade
+
+        public class _ERPxFinalidade
+        {
+            public class XDefault
+            {
+                private static Dictionary<Int16, _ERPxFinalidade> _SeedData = new Dictionary<Int16, _ERPxFinalidade>()
+                {
+                    [(Int16)4] = new _ERPxFinalidade { Finalidade = @"Envio de Mensagens", ERPxFinalidadeID = (Int16)4 },
+                    [(Int16)3] = new _ERPxFinalidade { Finalidade = @"Documentos Fiscais", ERPxFinalidadeID = (Int16)3 },
+                    [(Int16)2] = new _ERPxFinalidade { Finalidade = @"Cobrança", ERPxFinalidadeID = (Int16)2 },
+                    [(Int16)1] = new _ERPxFinalidade { Finalidade = @"Outros", ERPxFinalidadeID = (Int16)1 }
+                };
+                public static _ERPxFinalidade[] SeedData => _SeedData.Values.ToArray();
+            }
+            public Boolean IsPKEmpty => Object.Equals(ERPxFinalidadeID, typeof(Int16).GetDefault());
+            [Display(Name = "Finalidade")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 ERPxFinalidadeID {get; set;}
+            [MaxLength(30)]
+            [Required()]
+            public String Finalidade {get; set;}
+            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
+            public List<_ERPxContato> ERPxContato {get; set;} = new List<_ERPxContato>();
+        }
+
+        #endregion _ERPxFinalidade
 
         #region _ERPxDocumento
 
@@ -252,100 +567,6 @@ namespace Projecao.Core.ERP.DB
 
         #endregion _ERPxDocumentoTipo
 
-        #region _ERPxEndereco
-
-        public class _ERPxEndereco
-        {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _ERPxEndereco> _SeedData = new Dictionary<Guid, _ERPxEndereco>()
-                {
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _ERPxEndereco { CORxPessoaID = new Guid("00000000-0000-0000-0000-000000000000"), ERPxFinalidadeID = (Int16)1, CEPxLogradouroID = 0, Numero = @"NI", Quadra = @"NI", Lote = @"NI", CORxStatusID = (Int16)1, ERPxEnderecoID = new Guid("00000000-0000-0000-0000-000000000000"), Complemento = null, Observacao = null, Latitude = 0, Longitude = 0 }
-                };
-                public static _ERPxEndereco[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Logradouro")]
-            [Required()]
-            public Int32 CEPxLogradouroID {get; set;}
-            [MaxLength(30)]
-            public String Complemento {get; set;}
-            [Display(Name = "Pessoas")]
-            [Required()]
-            public Guid CORxPessoaID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            public Boolean IsPKEmpty => !ERPxEnderecoID.HasValue;
-            [Display(Name = "Endereço")]
-            [Required()]
-            public Guid? ERPxEnderecoID {get; set;}
-            [Display(Name = "Finalidade")]
-            [Required()]
-            public Int16 ERPxFinalidadeID {get; set;}
-            [Required()]
-            public Decimal Latitude {get; set;}
-            [Required()]
-            public Decimal Longitude {get; set;}
-            [MaxLength(4)]
-            public String Lote {get; set;}
-            [Display(Name = "Número")]
-            [MaxLength(10)]
-            public String Numero {get; set;}
-            [Display(Name = "Observação")]
-            [MaxLength(50)]
-            public String Observacao {get; set;}
-            [MaxLength(4)]
-            public String Quadra {get; set;}
-            public _ERPxFinalidade ERPxFinalidade {get; set;}
-            public _CEPxLogradouro CEPxLogradouro {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public _CORxPessoa CORxPessoa {get; set;}
-        }
-
-        #endregion _ERPxEndereco
-
-        #region _ERPxFinalidade
-
-        public class _ERPxFinalidade
-        {
-            public class XDefault
-            {
-                private static Dictionary<Int16, _ERPxFinalidade> _SeedData = new Dictionary<Int16, _ERPxFinalidade>()
-                {
-                    [(Int16)4] = new _ERPxFinalidade { Finalidade = @"Envio de Mensagens", ERPxFinalidadeID = (Int16)4 },
-                    [(Int16)3] = new _ERPxFinalidade { Finalidade = @"Documentos Fiscais", ERPxFinalidadeID = (Int16)3 },
-                    [(Int16)2] = new _ERPxFinalidade { Finalidade = @"Cobrança", ERPxFinalidadeID = (Int16)2 },
-                    [(Int16)1] = new _ERPxFinalidade { Finalidade = @"Outros", ERPxFinalidadeID = (Int16)1 }
-                };
-                public static _ERPxFinalidade[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => Object.Equals(ERPxFinalidadeID, typeof(Int16).GetDefault());
-            [Display(Name = "Finalidade")]
-            [Required()]
-            [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 ERPxFinalidadeID {get; set;}
-            [MaxLength(30)]
-            [Required()]
-            public String Finalidade {get; set;}
-            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
-            public List<_ERPxContato> ERPxContato {get; set;} = new List<_ERPxContato>();
-        }
-
-        #endregion _ERPxFinalidade
-
-        #region _ERPxFornecedor
-
-        public class _ERPxFornecedor
-        {
-            public Boolean IsPKEmpty => !ERPxFornecedorID.HasValue;
-            [Display(Name = "Fornecedores")]
-            [Required()]
-            public Guid? ERPxFornecedorID {get; set;}
-            public _ERPxPessoaJuridica ERPxPessoaJuridica {get; set;}
-        }
-
-        #endregion _ERPxFornecedor
-
         #region _ERPxGenero
 
         public class _ERPxGenero
@@ -381,39 +602,50 @@ namespace Projecao.Core.ERP.DB
 
         #endregion _ERPxGenero
 
-        #region _ERPxPessoaFisica
+        #region _CEPxLogradouro
 
-        public class _ERPxPessoaFisica
+        public class _CEPxLogradouro
         {
-            public class XDefault
-            {
-                private static Dictionary<Guid, _ERPxPessoaFisica> _SeedData = new Dictionary<Guid, _ERPxPessoaFisica>()
-                {
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _ERPxPessoaFisica { ERPxGeneroID = (Int16)0, Nascimento = new DateTime(1, 1, 1), ERPxPessoaFisicaID = new Guid("00000000-0000-0000-0000-000000000000"), CORxStatusID = (Int16)0 },
-                    [new Guid("F4B32152-8189-4525-BCEE-A6A62A290B38")] = new _ERPxPessoaFisica { ERPxGeneroID = (Int16)0, Nascimento = new DateTime(1975, 1, 1), ERPxPessoaFisicaID = new Guid("F4B32152-8189-4525-BCEE-A6A62A290B38"), CORxStatusID = (Int16)1 }
-                };
-                public static _ERPxPessoaFisica[] SeedData => _SeedData.Values.ToArray();
-            }
-            [Display(Name = "Estado")]
+            [MaxLength(8)]
+            [DisplayFormat(DataFormatString = "00.000-000")]
+            public String CEP {get; set;}
+            [Display(Name = "Bairro")]
             [Required()]
-            public Int16 CORxStatusID {get; set;}
-            [Display(Name = "Gênero")]
+            public Int32 CEPxBairroID {get; set;}
+            [Display(Name = "Localidade")]
             [Required()]
-            public Int16 ERPxGeneroID {get; set;}
-            public Boolean IsPKEmpty => !ERPxPessoaFisicaID.HasValue;
-            [Display(Name = "Pessoa Física")]
+            public Int32 CEPxLocalidadeID {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(CEPxLogradouroID, typeof(Int32).GetDefault());
+            [Display(Name = "Logradouro")]
             [Required()]
-            public Guid? ERPxPessoaFisicaID {get; set;}
-            [Display(Name = "Data de Nascimento")]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int32 CEPxLogradouroID {get; set;}
+            [MaxLength(128)]
             [Required()]
-            public DateTime Nascimento {get; set;}
-            public _ERPxGenero ERPxGenero {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public List<_ERPxPessoaFisicaTipos> ERPxPessoaFisicaTipos {get; set;} = new List<_ERPxPessoaFisicaTipos>();
-            public List<_ERPxProfissional> ERPxProfissional {get; set;} = new List<_ERPxProfissional>();
+            public String Nome {get; set;}
+            [Display(Name = "Número")]
+            [Required()]
+            public Int32 Numero {get; set;}
+            [MaxLength(30)]
+            [Required()]
+            public String Tipo {get; set;}
+            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
         }
 
-        #endregion _ERPxPessoaFisica
+        #endregion _CEPxLogradouro
+
+        #region _ERPxFornecedor
+
+        public class _ERPxFornecedor
+        {
+            public Boolean IsPKEmpty => !ERPxFornecedorID.HasValue;
+            [Display(Name = "Fornecedores")]
+            [Required()]
+            public Guid? ERPxFornecedorID {get; set;}
+            public _ERPxPessoaJuridica ERPxPessoaJuridica {get; set;}
+        }
+
+        #endregion _ERPxFornecedor
 
         #region _ERPxPessoaFisicaTipo
 
@@ -473,34 +705,38 @@ namespace Projecao.Core.ERP.DB
 
         #endregion _ERPxPessoaFisicaTipos
 
-        #region _ERPxPessoaJuridica
+        #region _ERPxProfissionalHorarioTipo
 
-        public class _ERPxPessoaJuridica
+        public class _ERPxProfissionalHorarioTipo
         {
             public class XDefault
             {
-                private static Dictionary<Guid, _ERPxPessoaJuridica> _SeedData = new Dictionary<Guid, _ERPxPessoaJuridica>()
+                private static Dictionary<Int16, _ERPxProfissionalHorarioTipo> _SeedData = new Dictionary<Int16, _ERPxProfissionalHorarioTipo>()
                 {
-                    [new Guid("00000000-0000-0000-0000-000000000000")] = new _ERPxPessoaJuridica { RazaoSocial = @"NA", ERPxPessoaJuridicaID = new Guid("00000000-0000-0000-0000-000000000000"), CORxStatusID = (Int16)1 }
+                    [(Int16)0] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)0, Horario = @"Às Domingos" },
+                    [(Int16)6] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)6, Horario = @"Aos Sábados" },
+                    [(Int16)1] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)1, Horario = @"Às Segundas Feiras" },
+                    [(Int16)2] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)2, Horario = @"Às Terças Feiras" },
+                    [(Int16)5] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)5, Horario = @"Às Sextas Feiras" },
+                    [(Int16)4] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)4, Horario = @"Às Quintas Feiras" },
+                    [(Int16)7] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)7, Horario = @"De Segunda à Sexta" },
+                    [(Int16)3] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)3, Horario = @"Às Quartas Feiras" }
                 };
-                public static _ERPxPessoaJuridica[] SeedData => _SeedData.Values.ToArray();
+                public static _ERPxProfissionalHorarioTipo[] SeedData => _SeedData.Values.ToArray();
             }
-            [Display(Name = "Estado")]
+            public Boolean IsPKEmpty => Object.Equals(ERPxProfissionalHorarioTipoID, typeof(Int16).GetDefault());
+            [Display(Name = "Tipos de Horários")]
             [Required()]
-            public Int16 CORxStatusID {get; set;}
-            public Boolean IsPKEmpty => !ERPxPessoaJuridicaID.HasValue;
-            [Display(Name = "Pessoa Jurídica")]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 ERPxProfissionalHorarioTipoID {get; set;}
+            [Display(Name = "Tipo de Horário")]
+            [MaxLength(35)]
             [Required()]
-            public Guid? ERPxPessoaJuridicaID {get; set;}
-            [Display(Name = "Razão Social")]
-            [MaxLength(160)]
-            [Required()]
-            public String RazaoSocial {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public List<_ERPxFornecedor> ERPxFornecedor {get; set;} = new List<_ERPxFornecedor>();
+            public String Horario {get; set;}
+            public List<_ERPxProfissionalHorario> ERPxProfissionalHorario {get; set;} = new List<_ERPxProfissionalHorario>();
         }
 
-        #endregion _ERPxPessoaJuridica
+        #endregion _ERPxProfissionalHorarioTipo
 
         #region _ERPxProfissional
 
@@ -549,6 +785,23 @@ namespace Projecao.Core.ERP.DB
 
         #endregion _ERPxProfissionalCategoria
 
+        #region _ERPxCategoria
+
+        public class _ERPxCategoria
+        {
+            [MaxLength(35)]
+            [Required()]
+            public String Categoria {get; set;}
+            public Boolean IsPKEmpty => Object.Equals(ERPxCategoriaID, typeof(Int16).GetDefault());
+            [Display(Name = "Categoria de Profissional")]
+            [Required()]
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public Int16 ERPxCategoriaID {get; set;}
+            public List<_ERPxProfissionalCategoria> ERPxProfissionalCategoria {get; set;} = new List<_ERPxProfissionalCategoria>();
+        }
+
+        #endregion _ERPxCategoria
+
         #region _ERPxProfissionalHorario
 
         public class _ERPxProfissionalHorario
@@ -578,38 +831,29 @@ namespace Projecao.Core.ERP.DB
 
         #endregion _ERPxProfissionalHorario
 
-        #region _ERPxProfissionalHorarioTipo
+        #region _CORxStatus
 
-        public class _ERPxProfissionalHorarioTipo
+        public class _CORxStatus
         {
-            public class XDefault
-            {
-                private static Dictionary<Int16, _ERPxProfissionalHorarioTipo> _SeedData = new Dictionary<Int16, _ERPxProfissionalHorarioTipo>()
-                {
-                    [(Int16)0] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)0, Horario = @"Às Domingos" },
-                    [(Int16)6] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)6, Horario = @"Aos Sábados" },
-                    [(Int16)1] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)1, Horario = @"Às Segundas Feiras" },
-                    [(Int16)2] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)2, Horario = @"Às Terças Feiras" },
-                    [(Int16)5] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)5, Horario = @"Às Sextas Feiras" },
-                    [(Int16)4] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)4, Horario = @"Às Quintas Feiras" },
-                    [(Int16)7] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)7, Horario = @"De Segunda à Sexta" },
-                    [(Int16)3] = new _ERPxProfissionalHorarioTipo { ERPxProfissionalHorarioTipoID = (Int16)3, Horario = @"Às Quartas Feiras" }
-                };
-                public static _ERPxProfissionalHorarioTipo[] SeedData => _SeedData.Values.ToArray();
-            }
-            public Boolean IsPKEmpty => Object.Equals(ERPxProfissionalHorarioTipoID, typeof(Int16).GetDefault());
-            [Display(Name = "Tipos de Horários")]
+            public Boolean IsPKEmpty => Object.Equals(CORxStatusID, typeof(Int16).GetDefault());
+            [Display(Name = "Status")]
             [Required()]
             [DatabaseGenerated(DatabaseGeneratedOption.None)]
-            public Int16 ERPxProfissionalHorarioTipoID {get; set;}
-            [Display(Name = "Tipo de Horário")]
-            [MaxLength(35)]
+            public Int16 CORxStatusID {get; set;}
+            [MaxLength(20)]
             [Required()]
-            public String Horario {get; set;}
+            public String Status {get; set;}
+            public List<_ERPxPessoaFisica> ERPxPessoaFisica {get; set;} = new List<_ERPxPessoaFisica>();
+            public List<_ERPxPessoaJuridica> ERPxPessoaJuridica {get; set;} = new List<_ERPxPessoaJuridica>();
+            public List<_ERPxEndereco> ERPxEndereco {get; set;} = new List<_ERPxEndereco>();
+            public List<_ERPxContato> ERPxContato {get; set;} = new List<_ERPxContato>();
+            public List<_ERPxDocumento> ERPxDocumento {get; set;} = new List<_ERPxDocumento>();
+            public List<_ERPxPessoaFisicaTipos> ERPxPessoaFisicaTipos {get; set;} = new List<_ERPxPessoaFisicaTipos>();
+            public List<_ERPxProfissional> ERPxProfissional {get; set;} = new List<_ERPxProfissional>();
             public List<_ERPxProfissionalHorario> ERPxProfissionalHorario {get; set;} = new List<_ERPxProfissionalHorario>();
         }
 
-        #endregion _ERPxProfissionalHorarioTipo
+        #endregion _CORxStatus
 
 
         protected ProjecaoCoreERPContext(DbContextOptions pOptions)
@@ -644,8 +888,17 @@ namespace Projecao.Core.ERP.DB
         protected override void OnModelCreating(ModelBuilder pBuilder)
         {
             ConfigureCEPxLogradouro(pBuilder);
+            ConfigureCORxAgregado(pBuilder);
             ConfigureCORxPessoa(pBuilder);
             ConfigureCORxStatus(pBuilder);
+            ConfigureEMLxAnexo(pBuilder);
+            ConfigureEMLxCaixa(pBuilder);
+            ConfigureEMLxDestinatario(pBuilder);
+            ConfigureEMLxEmpresaServidor(pBuilder);
+            ConfigureEMLxEstado(pBuilder);
+            ConfigureEMLxLog(pBuilder);
+            ConfigureEMLxServidor(pBuilder);
+            ConfigureEMLxServidorFinalizade(pBuilder);
             ConfigureERPxCategoria(pBuilder);
             ConfigureERPxContato(pBuilder);
             ConfigureERPxContatoTipo(pBuilder);
@@ -685,6 +938,19 @@ namespace Projecao.Core.ERP.DB
             });
         }
 
+        private void ConfigureCORxAgregado(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_CORxAgregado>(ett =>
+            {
+                ett.HasKey(e => e.CORxAgregadoID).HasName("PK_CORxAgregado");
+                
+                ett.Property(d => d.CORxAgregadoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.CPFCNPJ).HasColumnType(GetDBType("String", 14));
+                ett.ToTable("CORxAgregado", t => t.ExcludeFromMigrations());
+            });
+        }
+
         private void ConfigureCORxPessoa(ModelBuilder pBuilder)
         {
             pBuilder.Entity<_CORxPessoa>(ett =>
@@ -707,6 +973,199 @@ namespace Projecao.Core.ERP.DB
                 ett.Property(d => d.CORxStatusID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.Status).HasColumnType(GetDBType("String", 20));
                 ett.ToTable("CORxStatus", t => t.ExcludeFromMigrations());
+            });
+        }
+
+        private void ConfigureEMLxAnexo(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxAnexo>(ett =>
+            {
+                ett.HasKey(e => e.EMLxAnexoID).HasName("PK_EMLxAnexo");
+                
+                ett.Property(d => d.Dado).HasColumnType(GetDBType("Byte[]"));
+                ett.Property(d => d.EMLxCaixaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMLxAnexoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 50));
+                ett.ToTable("EMLxAnexo");
+
+                ett.HasOne(d => d.EMLxCaixa)
+                   .WithMany(p => p.EMLxAnexo)
+                   .HasForeignKey(d => d.EMLxCaixaID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593111");
+
+                ett.HasIndex(d => d.EMLxCaixaID).HasDatabaseName("IX_8DD4566AC9AB45DC8B0B2EB79544A8C7");
+            });
+        }
+
+        private void ConfigureEMLxCaixa(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxCaixa>(ett =>
+            {
+                ett.HasKey(e => e.EMLxCaixaID).HasName("PK_EMLxCaixa");
+                
+                ett.Property(d => d.EMLxEstadoID).HasColumnType(GetDBType("Int16"));
+                ett.Property(d => d.EMLxCaixaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Mensagem).HasColumnType(GetDBType("String"));
+                ett.Property(d => d.Envio).HasColumnType(GetDBType("DateTime"));
+                ett.Property(d => d.Criacao).HasColumnType(GetDBType("DateTime"));
+                ett.Property(d => d.SYSxEmitenteID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMLxServidorID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Asunto).HasColumnType(GetDBType("String", 50));
+                ett.ToTable("EMLxCaixa");
+
+                ett.HasOne(d => d.CORxPessoa)
+                   .WithMany(p => p.EMLxCaixa)
+                   .HasForeignKey(d => d.SYSxEmitenteID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_740A2C9FCA9E45B7A8474CF152CC7787");
+
+                ett.HasOne(d => d.EMLxServidor)
+                   .WithMany(p => p.EMLxCaixa)
+                   .HasForeignKey(d => d.EMLxServidorID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593162");
+
+                ett.HasOne(d => d.EMLxEstado)
+                   .WithMany(p => p.EMLxCaixa)
+                   .HasForeignKey(d => d.EMLxEstadoID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593073");
+
+                ett.HasIndex(d => d.EMLxEstadoID).HasDatabaseName("IX_66241D59536E47B49E34165C7A8239F1");
+                ett.HasIndex(d => d.EMLxServidorID).HasDatabaseName("IX_BF992DDE37E7499BA349BF3A1D51E7FC");
+                ett.HasIndex(d => d.SYSxEmitenteID).HasDatabaseName("IX_740A2C9FCA9E45B7A8474CF152CC7787");
+            });
+        }
+
+        private void ConfigureEMLxDestinatario(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxDestinatario>(ett =>
+            {
+                ett.HasKey(e => e.EMLxDestinatarioID).HasName("PK_EMLxDestinatario");
+                
+                ett.Property(d => d.ERPxContatoID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMLxCaixaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMLxDestinatarioID).HasColumnType(GetDBType("Guid"));
+                ett.ToTable("EMLxDestinatario");
+
+                ett.HasOne(d => d.ERPxContato)
+                   .WithMany(p => p.EMLxDestinatario)
+                   .HasForeignKey(d => d.ERPxContatoID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593078");
+
+                ett.HasOne(d => d.EMLxCaixa)
+                   .WithMany(p => p.EMLxDestinatario)
+                   .HasForeignKey(d => d.EMLxCaixaID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593178");
+
+                ett.HasIndex(d => d.ERPxContatoID).HasDatabaseName("IX_F0EFA1AC90904286A4F197BDD9B374DE");
+                ett.HasIndex(d => d.EMLxCaixaID).HasDatabaseName("IX_6016D7428D524850B145B80FE6A42488");
+            });
+        }
+
+        private void ConfigureEMLxEmpresaServidor(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxEmpresaServidor>(ett =>
+            {
+                ett.HasKey(e => e.EMLxEmpresaServidorID).HasName("PK_EMLxEmpresaServidor");
+                
+                ett.Property(d => d.EMLxServidorID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMLxEmpresaServidorID).HasColumnType(GetDBType("Guid"));
+                ett.ToTable("EMLxEmpresaServidor");
+
+                ett.HasOne(d => d.CORxPessoa)
+                   .WithMany(p => p.EMLxEmpresaServidor)
+                   .HasForeignKey(d => d.CORxPessoaID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_1B5E64FF1C794BC4A7BB0A2180621E4D");
+
+                ett.HasOne(d => d.EMLxServidor)
+                   .WithMany(p => p.EMLxEmpresaServidor)
+                   .HasForeignKey(d => d.EMLxServidorID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593262");
+
+                ett.HasIndex(d => d.EMLxServidorID).HasDatabaseName("IX_B7B582743EC343B69CEFAE26C3488E0F");
+                ett.HasIndex(d => d.CORxPessoaID).HasDatabaseName("IX_1B5E64FF1C794BC4A7BB0A2180621E4D");
+            });
+        }
+
+        private void ConfigureEMLxEstado(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxEstado>(ett =>
+            {
+                ett.HasKey(e => e.EMLxEstadoID).HasName("PK_EMLxEstado");
+                
+                ett.Property(d => d.Estado).HasColumnType(GetDBType("String", 20));
+                ett.Property(d => d.EMLxEstadoID).HasColumnType(GetDBType("Int16"));
+                ett.ToTable("EMLxEstado");
+                ett.HasData(_EMLxEstado.XDefault.SeedData);
+            });
+        }
+
+        private void ConfigureEMLxLog(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxLog>(ett =>
+            {
+                ett.HasKey(e => e.EMLxLogID).HasName("PK_EMLxLog");
+                
+                ett.Property(d => d.EMLxCaixaID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.EMLxLogID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Pilha).HasColumnType(GetDBType("String"));
+                ett.Property(d => d.Data).HasColumnType(GetDBType("DateTime"));
+                ett.Property(d => d.Mensagem).HasColumnType(GetDBType("String", 150));
+                ett.ToTable("EMLxLog");
+
+                ett.HasOne(d => d.EMLxCaixa)
+                   .WithMany(p => p.EMLxLog)
+                   .HasForeignKey(d => d.EMLxCaixaID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593093");
+
+                ett.HasIndex(d => d.EMLxCaixaID).HasDatabaseName("IX_AF99BCD81EE54C5CAF4C709A847F830D");
+            });
+        }
+
+        private void ConfigureEMLxServidor(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxServidor>(ett =>
+            {
+                ett.HasKey(e => e.EMLxServidorID).HasName("PK_EMLxServidor");
+                
+                ett.Property(d => d.EMLxServidorID).HasColumnType(GetDBType("Guid"));
+                ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 25));
+                ett.Property(d => d.Senha).HasColumnType(GetDBType("String", 256));
+                ett.Property(d => d.Usuario).HasColumnType(GetDBType("String"));
+                ett.Property(d => d.Porta).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.SMTPServidor).HasColumnType(GetDBType("String", 60));
+                ett.Property(d => d.SSL).HasColumnType(GetDBType("Boolean"));
+                ett.Property(d => d.EMLxServidorFinalizadeID).HasColumnType(GetDBType("Int16"));
+                ett.ToTable("EMLxServidor");
+
+                ett.HasOne(d => d.EMLxServidorFinalizade)
+                   .WithMany(p => p.EMLxServidor)
+                   .HasForeignKey(d => d.EMLxServidorFinalizadeID)
+                   .OnDelete(DeleteBehavior.Restrict)
+                   .HasConstraintName("FK_593603");
+
+                ett.HasIndex(d => d.EMLxServidorFinalizadeID).HasDatabaseName("IX_DC14ECA948514440A1C13AEBCE33BD32");
+            });
+        }
+
+        private void ConfigureEMLxServidorFinalizade(ModelBuilder pBuilder)
+        {
+            pBuilder.Entity<_EMLxServidorFinalizade>(ett =>
+            {
+                ett.HasKey(e => e.EMLxServidorFinalizadeID).HasName("PK_EMLxServidorFinalizade");
+                
+                ett.Property(d => d.Finalidade).HasColumnType(GetDBType("String", 25));
+                ett.Property(d => d.EMLxServidorFinalizadeID).HasColumnType(GetDBType("Int16"));
+                ett.ToTable("EMLxServidorFinalizade");
+                ett.HasData(_EMLxServidorFinalizade.XDefault.SeedData);
             });
         }
 
@@ -738,7 +1197,7 @@ namespace Projecao.Core.ERP.DB
                 ett.Property(d => d.Validado).HasColumnType(GetDBType("Boolean"))
                     .HasDefaultValue(GetDBValue("Boolean", false));
                 ett.Property(d => d.Observacao).HasColumnType(GetDBType("String", 30)).IsRequired(false);
-                ett.ToTable("ERPxContato");
+                ett.ToTable("ERPxContato", t => t.ExcludeFromMigrations());
 
                 ett.HasOne(d => d.CORxPessoa)
                    .WithMany(p => p.ERPxContato)
@@ -768,10 +1227,6 @@ namespace Projecao.Core.ERP.DB
                 ett.HasIndex(d => d.ERPxContatoTipoID).HasDatabaseName("IX_95C55966E7914D66A601A3EBAA8AB674");
                 ett.HasIndex(d => d.CORxStatusID).HasDatabaseName("IX_51C6F265549348069F2821C19BFCE13E");
                 ett.HasIndex(d => d.CORxPessoaID).HasDatabaseName("IX_0E654D4AED51402E9FF6E98504AEB5CA");
-
-                ett.HasIndex(e => new { e.CORxPessoaID, e.Contato })
-                    .IsUnique()
-                    .HasDatabaseName("IX_F37B5226_0067_4E6D_912E_7E42D3C4BADA");
             });
         }
 
