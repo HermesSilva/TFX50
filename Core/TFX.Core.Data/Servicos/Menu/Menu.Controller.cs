@@ -54,5 +54,18 @@ namespace TFX.Core.Data.Servicos.Menu
             }  
         }
 
+        [HttpPost("Search")]
+        public IActionResult Execute()
+        {
+            try
+            {
+                var dst = Service.Execute();
+                return Ok(dst);
+            }
+            catch (Exception pEx)
+            {
+                return StatusCode(404, XEndPointMessage.Erro(pEx));
+            }  
+        }
     }
 }
