@@ -20,6 +20,17 @@ namespace Projecao.Core.CEP
             pServices.AddTransient<Projecao.Core.CEP.ReadOnly.ILogradouroService, Projecao.Core.CEP.ReadOnly.LogradouroService>();
             pServices.AddDbContext<Projecao.Core.CEP.ReadOnly.LogradouroService.DBContext>();
             XMainCache.Add<Projecao.Core.CEP.ReadOnly.LogradouroServiceModel>(Projecao.Core.CEP.ReadOnly.LogradouroServiceModel.CID);
+            pServices.AddTransient<Projecao.Core.CEP.Localidade.ILocalidadeService, Projecao.Core.CEP.Localidade.LocalidadeService>();
+            pServices.AddDbContext<Projecao.Core.CEP.Localidade.LocalidadeService.DBContext>();
+            XMainCache.Add<Projecao.Core.CEP.Localidade.LocalidadeServiceModel>(Projecao.Core.CEP.Localidade.LocalidadeServiceModel.CID);
+            pServices.AddTransient<Projecao.Core.CEP.Logradouro.ILogradouroService, Projecao.Core.CEP.Logradouro.LogradouroService>();
+            pServices.AddDbContext<Projecao.Core.CEP.Logradouro.LogradouroService.DBContext>();
+            XMainCache.Add<Projecao.Core.CEP.Logradouro.LogradouroServiceModel>(Projecao.Core.CEP.Logradouro.LogradouroServiceModel.CID);
+            pServices.AddTransient<Projecao.Core.CEP.ReadOnly.ILogradouroService, Projecao.Core.CEP.ReadOnly.LogradouroService>();
+            pServices.AddDbContext<Projecao.Core.CEP.ReadOnly.LogradouroService.DBContext>();
+            XMainCache.Add<Projecao.Core.CEP.ReadOnly.LogradouroServiceModel>(Projecao.Core.CEP.ReadOnly.LogradouroServiceModel.CID);
+            XMainCache.Add<Projecao.Core.CEP.Localidade.LocalidadeApplication>(Projecao.Core.CEP.Localidade.LocalidadeApplication.CID);
+            XMainCache.Add<Projecao.Core.CEP.Logradouro.LogradouroApplication>(Projecao.Core.CEP.Logradouro.LogradouroApplication.CID);
             XMainCache.Add<Projecao.Core.CEP.Localidade.LocalidadeApplication>(Projecao.Core.CEP.Localidade.LocalidadeApplication.CID);
             XMainCache.Add<Projecao.Core.CEP.Logradouro.LogradouroApplication>(Projecao.Core.CEP.Logradouro.LogradouroApplication.CID);
         }
