@@ -31,6 +31,7 @@ IF ERRORLEVEL 1 GOTO ERRO
 REM copy *.pak %VSIX%\
 REM IF ERRORLEVEL 1 GOTO ERRO
 set SQL_SERVER_TFX=Server=localhost;Initial Catalog=TFX;Persist Security Info=False;Integrated Security=true;MultipleActiveResultSets=true;Encrypt=false;TrustServerCertificate=true;Connection Timeout=300;
+rem set SQL_SERVER_TFX=Data Source=SRV2-SAP\ERP;Integrated Security=True;Persist Security Info=False;Pooling=False;Multiple Active Result Sets=False;Encrypt=True;Trust Server Certificate=True;Application Name="SQL Server Management Studio";Command Timeout=0
 :NOCOPY
 cd %RelativePath%
 if exist "%ProgramFiles%\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe" "%ProgramFiles%\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe" /rootSuffix  TFX TFX50.sln
