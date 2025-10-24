@@ -15,16 +15,17 @@ namespace TFX.Core.Cache
     {
 
         private static readonly Dictionary<Guid, Type> _Cache = new Dictionary<Guid, Type>();
+        public static readonly Dictionary<Guid, XAPPModel> Apps = new Dictionary<Guid, XAPPModel>();
 
-        public static void Add<T>(Guid pID)
+        public static void Add<T>(Guid pID) where T : class, new()
         {
             lock (_Cache)
-                _Cache.Add(pID, typeof(T));
-        }
-
-        public static void Add<T>(object cID)
-        {
-            throw new NotImplementedException();
+            {
+                var tp = typeof(T);
+                _Cache.Add(pID, tp);
+                if (tp.Implemnts<XAPPModel>())
+                    Apps.Add(pID, new T() as XAPPModel);
+            }
         }
 
         public static T Create<T>(Guid pID)

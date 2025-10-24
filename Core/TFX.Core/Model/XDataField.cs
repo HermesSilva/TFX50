@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Text.Json.Serialization;
 
 using TFX.Core.Interfaces;
@@ -16,6 +17,7 @@ namespace TFX.Core.Model
 
     }
 
+    [DebuggerDisplay("Value: {Value} State: {State}")]
     public class XDataField<T> : XDataField, XIDataField 
     {
 

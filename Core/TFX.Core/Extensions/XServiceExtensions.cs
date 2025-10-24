@@ -76,19 +76,19 @@ public static class XServiceExtensions
 
     public static WebApplicationBuilder AddDependencies(this WebApplicationBuilder pBuilder)
     {
-        var assemblys = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("TFX")).ToList();
-        var files = Directory.GetFiles(XDefault.AppPath, "TFX.*.dll").Where(f => !assemblys.Any(a => Path.GetFileName(a.Location) == Path.GetFileName(f))).ToList();
-        foreach (var file in files)
-        {
-            try
-            {
-                var asm = Assembly.LoadFrom(file);
-                assemblys.Add(asm);
-            }
-            catch (Exception ex)
-            {
-            }
-        }
+        var assemblys = AppDomain.CurrentDomain.GetAssemblies().ToList();
+        //var files = Directory.GetFiles(XDefault.AppPath, "TFX.*.dll").Where(f => !assemblys.Any(a => Path.GetFileName(a.Location) == Path.GetFileName(f))).ToList();
+        //foreach (var file in files)
+        //{
+        //    try
+        //    {
+        //        var asm = Assembly.LoadFrom(file);
+        //        assemblys.Add(asm);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+        //}
 
         var mvcBuilder = pBuilder.Services.AddControllers().AddJsonOptions(options =>
         {

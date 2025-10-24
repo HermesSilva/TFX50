@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
     <ProjectReference Include="..\..\Modules\ESC\TFX.ESC.Core\TFX.ESC.Core.csproj" />
     <ProjectReference Include="..\..\Modules\Tootega.Core.CEP\Tootega.Core.CEP.csproj" />
+    <ProjectReference Include="..\..\Modules\Tootega.Core.ERP\Tootega.Core.ERP.csproj" />
   </ItemGroup>
 
   <ItemGroup>

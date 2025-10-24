@@ -23,6 +23,7 @@ using TFX.ESC.Core;
 using TFX.ESC.Core.DB;
 
 using Tootega.Core.CEP;
+using Tootega.Core.ERP;
 namespace Launcher
 {
     public class Program
@@ -55,6 +56,7 @@ namespace Launcher
             Console.WriteLine(typeof(TootegaCoreCEPModule).FullName);
             Console.WriteLine(typeof(TFXESCCoreModule).FullName);
             Console.WriteLine(typeof(TFXCoreDataModule).FullName);
+            Console.WriteLine(typeof(TootegaCoreERPModule).FullName);
             builder.AddDependencies();
             App = builder.Build();
 

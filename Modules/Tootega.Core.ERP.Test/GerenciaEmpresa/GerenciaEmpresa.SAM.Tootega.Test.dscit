@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <XCITDesigner Name="GerenciaEmpresaSAMTootegaTest" ID="553CE459-33FA-4DEA-803D-FDBE18A3C556" ModuleID="8530033C-800A-4834-99A6-965C003699FD">
   <XValues>
-    <XLinkData Name="ApplicationID" ID="F0C12DF6-F6B2-4D04-8975-C0C37E5CBE70" Type="Guid" ElementID="F8837660-1473-40FA-AF63-21BF08928E7B" Text="GerenciaEmpresa" DocumentID="F8837660-1473-40FA-AF63-21BF08928E7B" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">F8837660-1473-40FA-AF63-21BF08928E7B</XLinkData>
+    <XLinkData Name="ApplicationID" ID="F0C12DF6-F6B2-4D04-8975-C0C37E5CBE70" Type="Guid" ElementID="F8837660-1473-40FA-AF63-21BF08928E7B" Text="GerenciaEmpresa" DocumentID="F8837660-1473-40FA-AF63-21BF08928E7B" DocumentName="GerenciaEmpresa" ModuleID="4C75A5FA-A191-404F-A9C1-B4BBC03BFA4C" ModuleName="Tootega.Core.ERP" DataEx="">F8837660-1473-40FA-AF63-21BF08928E7B</XLinkData>
     <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">9049A5F6-419C-435B-AB15-054AD9B1BDB5</XData>
     <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
       <XLanguage IETFCode="pt-br" IsDefault="true">Parâmetros de Empresas</XLanguage>
@@ -12,13 +12,13 @@
   </XValues>
   <XCITDataSet ID="9AA57784-F6F7-40B5-A615-DBC08E461158" ParentID="7E08A924-BD1A-4283-ACFF-32A8D11D3E3D">
     <XValues>
-      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7E08A924-BD1A-4283-ACFF-32A8D11D3E3D" Text="GerenciaEmpresa - (ERROR)" DocumentID="E8C8F59A-C2AA-4FAC-B528-C7302E3C513A" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">7E08A924-BD1A-4283-ACFF-32A8D11D3E3D</XParentData>
+      <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7E08A924-BD1A-4283-ACFF-32A8D11D3E3D" Text="GerenciaEmpresa - (Tootega.Core.ERP.GerenciaEmpresa)" DocumentID="E8C8F59A-C2AA-4FAC-B528-C7302E3C513A" DocumentName="GerenciaEmpresa" ModuleID="4C75A5FA-A191-404F-A9C1-B4BBC03BFA4C" ModuleName="Tootega.Core.ERP" DataEx="">7E08A924-BD1A-4283-ACFF-32A8D11D3E3D</XParentData>
       <XLinkData Name="SourceElementID" ID="14FF9C0B-A5F4-4D2B-B1F8-CE58445E116D" Type="Guid" ElementID="E8C8F59A-C2AA-4FAC-B528-C7302E3C513A" Text="GerenciaEmpresa - (Tootega.Core.ERP.GerenciaEmpresa)" DocumentID="E8C8F59A-C2AA-4FAC-B528-C7302E3C513A" DocumentName="GerenciaEmpresa" ModuleID="4C75A5FA-A191-404F-A9C1-B4BBC03BFA4C" ModuleName="Tootega.Core.ERP" DataEx="">E8C8F59A-C2AA-4FAC-B528-C7302E3C513A</XLinkData>
       <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=10;Y=10;Width=1380;Height=250}</XData>
       <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
         <XLanguage IETFCode="pt-br" IsDefault="true">Main Form - Parâmetros de Empresas</XLanguage>
       </XData>
-      <XLinkData Name="FormID" ID="CA95498A-DF08-4649-900D-382017E39B6F" Type="Guid" ElementID="1617FB50-0F9F-444D-B7B3-105D4444598C" Text="GerenciaEmpresa" DocumentID="F8837660-1473-40FA-AF63-21BF08928E7B" DocumentName="GerenciaEmpresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">1617FB50-0F9F-444D-B7B3-105D4444598C</XLinkData>
+      <XLinkData Name="FormID" ID="CA95498A-DF08-4649-900D-382017E39B6F" Type="Guid" ElementID="1617FB50-0F9F-444D-B7B3-105D4444598C" Text="GerenciaEmpresa" DocumentID="F8837660-1473-40FA-AF63-21BF08928E7B" DocumentName="GerenciaEmpresa" ModuleID="4C75A5FA-A191-404F-A9C1-B4BBC03BFA4C" ModuleName="Tootega.Core.ERP" DataEx="">1617FB50-0F9F-444D-B7B3-105D4444598C</XLinkData>
     </XValues>
     <XCITDataTuple ID="994B7BB4-7E27-411F-96BD-A4719FAE58D9">
       <XFieldValue ID="CF80CE1B-4EF2-4A7D-B515-B86F102B6077" FieldID="4BB03860-BF31-4BEC-8411-7BA015EA7477">Tootega Pesquisa e Inovação</XFieldValue>
