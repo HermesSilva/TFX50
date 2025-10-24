@@ -37,6 +37,19 @@ namespace TFX.ESC.Core.Escritorios
         internal readonly IEscritorioService Service;
         private readonly INFEscritorioControllerRule _Rule;
 
+        [HttpPost("Search")]
+        public IActionResult Execute([FromBody] EscritorioFilter pFilter)
+        {
+            try
+            {
+                var dst = Service.Execute(pFilter);
+                return Ok(dst);
+            }
+            catch (Exception pEx)
+            {
+                return StatusCode(404, XEndPointMessage.Erro(pEx));
+            }  
+        }
 
         [HttpPost("Flush")]
         [XEndpointDescription(typeof(EscritorioService.CORxAgregado), typeof(EscritorioService.CORxPessoa), typeof(EscritorioService.ESCxEscritorio))]

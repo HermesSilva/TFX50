@@ -44,6 +44,8 @@ namespace TFX.Core.Data.Servicos.Menu
 
 
             public List<CORxMenuItem> CORxMenuItem {get; set;} = new List<CORxMenuItem>();
+
+            public List<CORxMenuItem> CORxMenuItemSub {get; set;} = new List<CORxMenuItem>();
         }
         public class CORxMenuItem : XEntity
         {
@@ -76,6 +78,7 @@ namespace TFX.Core.Data.Servicos.Menu
 
             public DbSet<CORxMenu> CORxMenu{get; set;}
             public DbSet<CORxMenuItem> CORxMenuItem{get; set;}
+            public DbSet<CORxMenuItem> CORxMenuItemSub{get; set;}
 
         private void ConfigureCORxMenu(ModelBuilder pBuilder)
         {
@@ -175,10 +178,11 @@ namespace TFX.Core.Data.Servicos.Menu
         public IQueryable<MenuTuple> ExecuteQuery()
         {
             var ctx = Context;
-            var query = from CORxMenuItem in ctx.CORxMenuItem
-                        join CORxMenu in ctx.CORxMenu on CORxMenuItem.CORxMenuID equals CORxMenu.CORxMenuID
-                        
-                        select new {CORxMenu, CORxMenuItem};
+            var query =  from CORxMenu in ctx.CORxMenu
+                        join CORxMenuItemSub in ctx.CORxMenuItemSub on CORxMenu.CORxMenuID equals CORxMenuItemSub.CORxMenuID
+                        join CORxMenuItem in ctx.CORxMenuItem on CORxMenu.CORxMenuID equals CORxMenuItem.CORxMenuID
+                        select new { CORxMenu, CORxMenuItemSub, CORxMenuItem };
+;
             query = _INFRule.GetWhere(query);
 
 

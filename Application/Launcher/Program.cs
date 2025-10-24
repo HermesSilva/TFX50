@@ -9,11 +9,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-using Projecao.Core.CEP;
-
 using TFX.Core;
 using TFX.Core.Cache;
 using TFX.Core.Controllers;
+using TFX.Core.Data;
 using TFX.Core.Data.CEP;
 using TFX.Core.Data.CEP.DataPack;
 using TFX.Core.Data.DB;
@@ -22,6 +21,8 @@ using TFX.Core.IDs;
 using TFX.Core.Interfaces;
 using TFX.ESC.Core;
 using TFX.ESC.Core.DB;
+
+using Tootega.Core.CEP;
 namespace Launcher
 {
     public class Program
@@ -51,7 +52,9 @@ namespace Launcher
             builder.Services.AddDbContext<TFXESCCoreContext>();
             builder.Services.AddDbContext<CEPxDBContext>();
             Console.WriteLine(typeof(TFXESCCoreModule).FullName);
-            Console.WriteLine(typeof(ProjecaoCoreCEPModule).FullName);
+            Console.WriteLine(typeof(TootegaCoreCEPModule).FullName);
+            Console.WriteLine(typeof(TFXESCCoreModule).FullName);
+            Console.WriteLine(typeof(TFXCoreDataModule).FullName);
             builder.AddDependencies();
             App = builder.Build();
 

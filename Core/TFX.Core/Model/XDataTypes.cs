@@ -26,6 +26,7 @@ namespace TFX.Core.Model
         public static readonly Guid XInt64 = new Guid(sXInt64);
         public const String sXNumeric = "0B16C95D-7DB8-425F-8DFB-F0A9DBA06400";
         public static readonly Guid XNumeric = new Guid(sXNumeric);
+        public static readonly Guid XDecimal = new Guid(sXNumeric);
         public const String sXString = "8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62";
         public static readonly Guid XString = new Guid(sXString);
         public const String sXMemo = "8EB466C4-AD4D-490A-8076-0C757D292E1D";

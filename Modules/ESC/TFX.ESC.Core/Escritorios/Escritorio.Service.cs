@@ -147,7 +147,7 @@ namespace TFX.ESC.Core.Escritorios
             [Required()]
             public Int16 CEPxLocalidadeTipoID {get; set;}
 
-            [Display(Name = "Municipio")]
+            [Display(Name = "Município")]
             [Required()]
             public Int32 CEPxMunicipioID {get; set;}
 
@@ -273,12 +273,12 @@ namespace TFX.ESC.Core.Escritorios
                 ett.Property(d => d.CEPxLocalidadeID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
+                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
                     .HasDefaultValue(GetDBValue("String", null));
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
-                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade");
                 ett.HasOne(d => d.CEPxUF)
                    .WithMany(p => p.CEPxLocalidade)
@@ -354,14 +354,14 @@ namespace TFX.ESC.Core.Escritorios
         public IQueryable<EscritorioTuple> ExecuteQuery(EscritorioFilter pFilter)
         {
             var ctx = Context;
-            var query = from CORxPessoa in ctx.CORxPessoa
+            var query =  from CORxPessoa in ctx.CORxPessoa
                         join CEPxLocalidade in ctx.CEPxLocalidade on CORxPessoa.CEPxLocalidadePrincipalID equals CEPxLocalidade.CEPxLocalidadeID
-                        join CEPxUF in ctx.CEPxUF on CEPxLocalidade.CEPxUFID equals CEPxUF.CEPxUFID
                         join CORxAgregado in ctx.CORxAgregado on CORxPessoa.CORxPessoaID equals CORxAgregado.CORxAgregadoID
+                        join CEPxUF in ctx.CEPxUF on CEPxLocalidade.CEPxUFID equals CEPxUF.CEPxUFID
                         join CORxStatus in ctx.CORxStatus on CORxAgregado.CORxStatusID equals CORxStatus.CORxStatusID
                         join ESCxEscritorio in ctx.ESCxEscritorio on CORxAgregado.CORxAgregadoID equals ESCxEscritorio.ESCxEscritorioID
-                        
-                        select new {CORxPessoa, ESCxEscritorio, CORxAgregado, CORxStatus, CEPxUF, CEPxLocalidade};
+                        select new { CORxPessoa, CEPxLocalidade, CORxAgregado, CEPxUF, CORxStatus, ESCxEscritorio };
+;
             query = _INFRule.GetWhere(query);
 
 

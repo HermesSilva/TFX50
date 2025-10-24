@@ -319,5 +319,10 @@ namespace TFX.Core.Model.FRM
             get;
             set;
         }
+        public Guid[] TabForms
+        {
+            get;
+            set;
+        }
     }
 }

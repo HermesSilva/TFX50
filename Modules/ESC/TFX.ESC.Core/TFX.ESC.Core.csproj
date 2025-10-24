@@ -157,6 +157,9 @@
 	    <DependentUpon>Escritorio.dssvc</DependentUpon>
 	    <Visible>False</Visible>
 	  </Compile>
+	  <Compile Update="Properties\AssemblyInfo.cs">
+	    <Visible>True</Visible>
+	  </Compile>
 	  <Compile Update="Servicos\Usuario.Controller.cs">
 	    <Visible>False</Visible>
 	    <DependentUpon>Usuario.dssvc</DependentUpon>

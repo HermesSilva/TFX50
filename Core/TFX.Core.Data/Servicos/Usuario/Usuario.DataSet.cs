@@ -90,7 +90,7 @@ namespace TFX.Core.Data.Servicos.Usuario
             fld.CanInsert = true;
             fld.CanUpdate = true;
             fld.RowCount = 2;
-            fld.ColCount = 14;
+            fld.ColCount = 32;
             fld.IsHidden = false;
             fld.Location = 1;
             fld.EditorCID = XModelEditors.XSearchBox;

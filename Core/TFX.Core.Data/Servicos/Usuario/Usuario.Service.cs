@@ -161,10 +161,10 @@ namespace TFX.Core.Data.Servicos.Usuario
         public IQueryable<UsuarioTuple> ExecuteQuery(UsuarioFilter pFilter)
         {
             var ctx = Context;
-            var query = from CORxPessoa in ctx.CORxPessoa
-                        join CORxUsuario in ctx.CORxUsuario on CORxPessoa.CORxPessoaID equals CORxUsuario.CORxUsuarioID
-                        
-                        select new {CORxUsuario, CORxPessoa};
+            var query =  from CORxUsuario in ctx.CORxUsuario
+                        join CORxPessoa in ctx.CORxPessoa on CORxUsuario.CORxUsuarioID equals CORxPessoa.CORxPessoaID
+                        select new { CORxUsuario, CORxPessoa };
+;
             query = _INFRule.GetWhere(query);
 
 
