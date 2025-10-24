@@ -1,4 +1,4 @@
-﻿/// <reference path="../XDiv.ts" />
+/// <reference path="../XDiv.ts" />
 class XTableElement extends XElement
 {
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null = null, pTag: string | null = null)
@@ -512,8 +512,8 @@ class XTable extends XDiv
                 row.HTML.className = "XTableRowEven";
             row.SetData(this.DataSet.Tuples[i]);
         }
-        //XEventManager.SetTiemOut(this, this.AdjustCollumnWidth, 100);
-    }
+        XEventManager.SetTiemOut(this, this.SizeChanged, 100);
+    } 
 
     private AdjustCollumnWidth()
     {

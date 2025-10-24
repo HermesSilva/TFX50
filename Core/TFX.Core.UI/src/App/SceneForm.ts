@@ -25,6 +25,6 @@ class SceneForm extends XScene
 
     Load()
     {
-        this.Form.SetModel(this.Model);
+        //this.Form.SetModel(this.Model);
     }
 }

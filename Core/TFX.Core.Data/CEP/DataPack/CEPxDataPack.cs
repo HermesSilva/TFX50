@@ -10,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 using TFX.Core;
 using TFX.Core.Reflections;
-using EFCore.BulkExtensions;
 
 namespace TFX.Core.Data.CEP.DataPack
 {
@@ -129,7 +128,8 @@ namespace TFX.Core.Data.CEP.DataPack
                 using (var scope = XEnvironment.Services.CreateScope())
                 using (var ctx = scope.ServiceProvider.GetRequiredService<CEPxDBContext>())
                 {
-                    ctx.BulkInsert(batch);
+                    ctx.AddRange(batch);
+                    ctx.SaveChanges();
                 }
             }
             catch (Exception ex)
@@ -146,7 +146,8 @@ namespace TFX.Core.Data.CEP.DataPack
                 using (var scope = XEnvironment.Services.CreateScope())
                 using (var ctx = scope.ServiceProvider.GetRequiredService<CEPxDBContext>())
                 {
-                    ctx.BulkInsert(batch);
+                    ctx.AddRange(batch);
+                    ctx.SaveChanges();
                 }
             }
             catch (Exception ex)
