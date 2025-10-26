@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 using TFX.Core.Interfaces;
 
@@ -83,7 +84,8 @@ namespace TFX.Core.Model
             Value = pValue; 
         }
 
-        public T Value
+		[Display(Description = "Valor atual do campo de dados.")]
+		public T Value
         {
             get
             {
@@ -100,13 +102,15 @@ namespace TFX.Core.Model
             }
         }
 
-        [JsonIgnore]
+		[Display(Description = "Valor anterior do campo de dados (antes da modificação).")]
+		[JsonIgnore]
         public Object? OldValue
         {
             get; set;
         }
 
-        public XFieldState State
+		[Display(Description = "Estado do campo de dados (vazio, inalterado, não vazio, modificado).")]
+		public XFieldState State
         {
             get; set;
         }

@@ -5,7 +5,7 @@ class XTableElement extends XElement
     {
         super(pOwner, pClass, pTag);
     }
-    
+
     protected override CreateContainer(pTag: string | null = null): HTMLElement 
     {
         return XUtils.AddElement<HTMLTableElement>(null, pTag, null);
@@ -296,6 +296,7 @@ class XTableBody extends XElement
 
     Clear()
     {
+        this.DataRows.Clear();
         this.HTML.innerHTML = "";
     }
 
@@ -441,7 +442,8 @@ class XTable extends XDiv
             for (var i = 0; i < this.Body.DataRows[0].Cells.length; i++)
             {
                 let cell = <XTableCell>this.Body.DataRows[0].Cells[i];
-                this.Header.Columns[i].Content.style.width = `${cell.Content.clientWidth}px`;
+                if (cell.Content.clientWidth > 0)
+                    this.Header.Columns[i].Content.style.width = `${cell.Content.clientWidth}px`;
             }
         }
     }
@@ -502,6 +504,7 @@ class XTable extends XDiv
 
     CreateBody()
     {
+        
         this.Body.Clear();
         if (this.Columns == null)
             return;
@@ -513,7 +516,7 @@ class XTable extends XDiv
             row.SetData(this.DataSet.Tuples[i]);
         }
         XEventManager.SetTiemOut(this, this.SizeChanged, 100);
-    } 
+    }
 
     private AdjustCollumnWidth()
     {

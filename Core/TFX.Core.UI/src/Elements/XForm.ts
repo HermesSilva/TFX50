@@ -49,7 +49,6 @@ class XForm extends XDiv
             }
         }
         this.ResizeChildren();
-
     }
 
     SetTitle(pTitle: string)

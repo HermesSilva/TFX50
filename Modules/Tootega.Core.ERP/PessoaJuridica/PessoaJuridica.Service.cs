@@ -526,8 +526,7 @@ namespace Tootega.Core.ERP.PessoaJuridica
                 ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
-                    .HasDefaultValue(GetDBValue("String", null));
+                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false);
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade");
             });

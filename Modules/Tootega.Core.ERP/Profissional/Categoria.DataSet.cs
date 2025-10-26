@@ -72,10 +72,6 @@ namespace Tootega.Core.ERP.Profissional
 
     public class CategoriaFilter : XFilter
     {
-
-        public CategoriaFilter()
-        {
-        }
     }
     public class FRMCategoriaFilter : XFRMModel
     {

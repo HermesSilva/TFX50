@@ -102,11 +102,7 @@ namespace Tootega.Core.ERP.Empresa
 
     public class EmpresaFilter : XFilter
     {
-
-        public EmpresaFilter()
-        {
-        }
-        public String RazaoSocial {get;set;}
+        public XFilterField RazaoSocial {get;set;}
     }
     public class FRMEmpresaFilter : XFRMModel
     {

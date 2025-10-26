@@ -173,10 +173,6 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class EnderecoFilter : XFilter
     {
-
-        public EnderecoFilter()
-        {
-        }
     }
     public class FRMEnderecoFilter : XFRMModel
     {

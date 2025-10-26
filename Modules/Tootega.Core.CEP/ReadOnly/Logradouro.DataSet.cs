@@ -94,16 +94,7 @@ namespace Tootega.Core.CEP.ReadOnly
 
     public class LogradouroFilter : XFilter
     {
-
-        public LogradouroFilter()
-        {
-        }
-
-        public LogradouroFilter(String pLogradouro)
-        {
-            Logradouro = pLogradouro;
-        }
-        public String Logradouro {get;set;}
+        public XFilterField Logradouro {get;set;}
     }
     public class FRMLogradouroFilter : XFRMModel
     {

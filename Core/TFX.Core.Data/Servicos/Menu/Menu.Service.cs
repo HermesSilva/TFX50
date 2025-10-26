@@ -192,7 +192,7 @@ namespace TFX.Core.Data.Servicos.Menu
                           q.CORxMenuItem.CORxMenuItemID,
                           q.CORxMenuItem.CORxRecursoID,
                           q.CORxMenu.CORxMenuID));
-            return qry;
+            return qry.Distinct();
         }
 
         public MenuDataSet Execute()

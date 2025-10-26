@@ -117,16 +117,7 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class ContatoFilter : XFilter
     {
-
-        public ContatoFilter()
-        {
-        }
-
-        public ContatoFilter(String pContato)
-        {
-            Contato = pContato;
-        }
-        public String Contato {get;set;}
+        public XFilterField Contato {get;set;}
     }
     public class FRMContatoFilter : XFRMModel
     {

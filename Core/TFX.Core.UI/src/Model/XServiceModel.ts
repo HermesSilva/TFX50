@@ -10,6 +10,7 @@ interface XColumnModel
     IsFreeSearch: boolean;
     Operator: XOperator;
     MaxLenght: number;
+    Type: string;
 }
 
 interface XDataViewModel

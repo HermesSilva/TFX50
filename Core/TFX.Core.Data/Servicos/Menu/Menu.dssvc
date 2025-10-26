@@ -10,6 +10,7 @@
     <XLinkData Name="MasterTableID" ID="EF08410B-53DF-4BE7-9191-796BC9F823B9" Type="Guid" ElementID="EC4496F1-C0CC-4B95-B2F1-103F8E050CC0" Text="CORxMenuItem" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Menu" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.Core.Data" DataEx="">EC4496F1-C0CC-4B95-B2F1-103F8E050CC0</XLinkData>
     <XData Name="HasWebApi" ID="77932336-7026-4ED1-A617-480254F506FE" Type="Boolean">true</XData>
     <XData Name="DefaultRouteName" ID="018A4D89-CAEE-4610-9C6A-93D174AB5D9C" Type="String">Search</XData>
+    <XData Name="UseDistinct" ID="9EFF56C6-2660-4BC7-A928-8E670EF5946D" Type="Boolean">true</XData>
   </XValues>
   <XSVCEndPoints Name="EndPoints" ID="609B8CEA-1C22-42A0-AE38-808932DAB8EA">
     <XSVCEndPoint ID="476B20D4-5C5D-4E96-91D1-499B5542AC9F" Name="Execute">

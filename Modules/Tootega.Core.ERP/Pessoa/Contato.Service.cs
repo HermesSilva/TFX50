@@ -237,8 +237,8 @@ namespace Tootega.Core.ERP.Pessoa
 
             if (pFilter != null)
             {
-                if (!pFilter.Contato.IsEmpty())
-                    query = query.Where(q => EF.Functions.Like(q.ERPxContato.Contato, "%"+pFilter.Contato+"%"));
+                if (pFilter.Contato?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => EF.Functions.Like(q.ERPxContato.Contato, "%"+pFilter.Contato.Value+"%"));
             }
 
             if (!LoadAll)

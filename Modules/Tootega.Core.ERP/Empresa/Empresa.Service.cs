@@ -573,8 +573,7 @@ namespace Tootega.Core.ERP.Empresa
                 ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
-                    .HasDefaultValue(GetDBValue("String", null));
+                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false);
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade");
             });
@@ -695,8 +694,8 @@ namespace Tootega.Core.ERP.Empresa
 
             if (pFilter != null)
             {
-                if (!pFilter.RazaoSocial.IsEmpty())
-                    query = query.Where(q => EF.Functions.Like(q.ERPxPessoaJuridica.RazaoSocial, "%"+pFilter.RazaoSocial+"%"));
+                if (pFilter.RazaoSocial?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => EF.Functions.Like(q.ERPxPessoaJuridica.RazaoSocial, "%"+pFilter.RazaoSocial.Value+"%"));
             }
 
             if (!LoadAll)

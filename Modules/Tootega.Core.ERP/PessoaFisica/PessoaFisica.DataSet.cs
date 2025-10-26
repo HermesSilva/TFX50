@@ -29,21 +29,21 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
             SearchPath = "PessoaFisica/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CPF", Title = "CPF", Type = "String", Mask = "000.000.000-00", 
-                                                      Visible = false });
+                                                      Visible = true });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxGeneroID", Title = "Gênero", Type = "Int16", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Nascimento", Title = "Data de Nascimento", Type = "DateTime", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = true });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
                                                       Visible = true });
             DataView.Columns.Add(new XColumnModel() { Name = "Genero", Title = "Gênero", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             Forms.Add(new FRMPessoaFisicaFilter());
         }
     }
@@ -105,10 +105,8 @@ namespace Tootega.Core.ERP.PessoaFisica
 
     public class PessoaFisicaFilter : XFilter
     {
-
-        public PessoaFisicaFilter()
-        {
-        }
+        public XFilterField Genero {get;set;}
+        public XFilterField Nome {get;set;}
     }
     public class FRMPessoaFisicaFilter : XFRMModel
     {
@@ -117,10 +115,41 @@ namespace Tootega.Core.ERP.PessoaFisica
             ID = new Guid("2A6204BA-66C0-4BB5-BDF9-2F517F2B4CD1");
             Name = "PessoaFisicaFilter";
             Title = "";
-            MinRows = 0;
+            MinRows = 2;
             Style = XFRMStyle.Normal;
             Type = XFRMType.SVCFilter;
             XFRMField fld;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.Title = "Pesquisa de Pessoa Física";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 32;
+            fld.IsHidden = false;
+            fld.Location = 1;
+            fld.EditorCID = XModelEditors.XSearchBox;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 1;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XString;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetDisplayFieldID = new Guid[] {  };
+            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
         }
     }
 

@@ -108,14 +108,10 @@ namespace TFX.ESC.Core.Escritorios
 
     public class EscritorioFilter : XFilter
     {
-
-        public EscritorioFilter()
-        {
-        }
-        public String Nome {get;set;}
-        public String Localidade {get;set;}
-        public String Sigla {get;set;}
-        public String CPFCNPJ {get;set;}
+        public XFilterField Nome {get;set;}
+        public XFilterField Localidade {get;set;}
+        public XFilterField Sigla {get;set;}
+        public XFilterField CPFCNPJ {get;set;}
     }
     public class FRMEscritorioFilter : XFRMModel
     {

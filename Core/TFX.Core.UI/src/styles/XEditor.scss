@@ -247,6 +247,13 @@
     }
 }
 
+.XSearchBoxEditorButtonOptIL {
+    @extend .XSearchBoxEditorButtonOpt;
+    height: calc(100% - 28px);
+    top: 24px;
+}
+
+
 .XSearchBoxEditorButton {
     position: absolute;
     right: 3px;
@@ -262,6 +269,13 @@
     &:hover {
         background-color: var(--bg-hv-XLookupButton);
     }
+}
+
+.XSearchBoxEditorButtonIL {
+    @extend .XSearchBoxEditorButton;
+    height: calc(100% - 28px);
+    right: 32PX;
+    top: 24px;
 }
 
 .XSearchIcon {

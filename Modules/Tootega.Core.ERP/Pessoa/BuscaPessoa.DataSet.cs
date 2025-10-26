@@ -114,10 +114,6 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class BuscaPessoaFilter : XFilter
     {
-
-        public BuscaPessoaFilter()
-        {
-        }
     }
     public class FRMBuscaPessoaFilter : XFRMModel
     {

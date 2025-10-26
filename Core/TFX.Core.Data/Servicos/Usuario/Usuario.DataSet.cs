@@ -66,12 +66,8 @@ namespace TFX.Core.Data.Servicos.Usuario
 
     public class UsuarioFilter : XFilter
     {
-
-        public UsuarioFilter()
-        {
-        }
-        public String Nome {get;set;}
-        public String EMail {get;set;}
+        public XFilterField Nome {get;set;}
+        public XFilterField EMail {get;set;}
     }
     public class FRMUsuarioFilter : XFRMModel
     {

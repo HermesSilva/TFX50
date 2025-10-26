@@ -84,10 +84,6 @@ namespace Tootega.Core.ERP.Profissional
 
     public class HorariosFilter : XFilter
     {
-
-        public HorariosFilter()
-        {
-        }
     }
     public class FRMHorariosFilter : XFRMModel
     {

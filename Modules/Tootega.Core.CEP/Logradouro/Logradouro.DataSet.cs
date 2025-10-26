@@ -115,16 +115,12 @@ namespace Tootega.Core.CEP.Logradouro
 
     public class LogradouroFilter : XFilter
     {
-
-        public LogradouroFilter()
-        {
-        }
-        public String Nome {get;set;}
-        public String Sigla {get;set;}
-        public String CEP {get;set;}
-        public String NomeBairro {get;set;}
-        public String Tipo {get;set;}
-        public String NomeLocalidade {get;set;}
+        public XFilterField Nome {get;set;}
+        public XFilterField Sigla {get;set;}
+        public XFilterField CEP {get;set;}
+        public XFilterField NomeBairro {get;set;}
+        public XFilterField Tipo {get;set;}
+        public XFilterField NomeLocalidade {get;set;}
     }
     public class FRMLogradouroFilter : XFRMModel
     {

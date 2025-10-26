@@ -102,10 +102,6 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
 
     public class GerenciaEmpresaFilter : XFilter
     {
-
-        public GerenciaEmpresaFilter()
-        {
-        }
     }
     public class FRMGerenciaEmpresaFilter : XFRMModel
     {

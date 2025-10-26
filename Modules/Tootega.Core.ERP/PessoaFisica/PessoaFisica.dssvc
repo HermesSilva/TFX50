@@ -117,13 +117,28 @@
         <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
         <XData Name="ConfigID" ID="6DA01592-08F9-4CB9-A09B-14BB63FF6EAE" Type="Guid">52D22689-39F4-4425-952E-B1445A2E5393</XData>
         <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">75E9B912-13F7-49E6-A8FE-0D2DFC0B7150</XData>
-        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=965;Height=678}</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
         <XData Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" Type="Guid[]">F1D69B2E-0B3F-4A9E-B11C-84218ABA0636|D3264C34-B651-4300-80C0-DC302B3616DC</XData>
         <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
           <XLanguage IETFCode="pt-br" IsDefault="true">Pessoa Física - Filter</XLanguage>
         </XData>
         <XLinkData Name="ReferenceServiceID" ID="36E3DE6B-B217-4D43-B886-BE7B063517DE" Type="Guid" ElementID="00000000-0000-0000-0000-000000000000" Text="" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">00000000-0000-0000-0000-000000000000</XLinkData>
       </XValues>
+      <XFRMField ID="1C23913D-125C-45A2-B4DC-B9EF57D1A868" ParentID="86F19726-2A32-415E-9655-463D8796E123">
+        <XValues>
+          <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="86F19726-2A32-415E-9655-463D8796E123" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="PessoaFisica" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="" Type="Guid">86F19726-2A32-415E-9655-463D8796E123</XParentData>
+          <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+          <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">AA2A0DB9-2C59-4833-994D-3DBF2AA0CB3C</XData>
+          <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
+          <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+          <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=80}</XData>
+          <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
+            <XLanguage IETFCode="pt-br" IsDefault="true">Pesquisa de Pessoa Física</XLanguage>
+          </XData>
+        </XValues>
+      </XFRMField>
     </XFRMForm>
     <XValues>
       <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">A324C11E-C72B-45E5-8F87-032DE50BE4FB</XData>
@@ -177,19 +192,38 @@
     </XValues>
     <XSVCField ID="466940B8-191D-48D1-982D-EAF39CF8FE95" iID="590505" ParentID="3704B0EB-A7BA-41AA-B361-588DBC233749">
       <XValues>
-        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
         <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
         <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=10;Height=25}</XData>
         <XLinkData Name="MaskSourceID" ID="DA7A88D8-867A-4DB8-B9E6-AE947A41EDC1" Type="Guid" ElementID="00000000-0000-0000-0000-000000000000" Text="" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">00000000-0000-0000-0000-000000000000</XLinkData>
         <XData Name="FilterUse" ID="1B5A958E-A597-4D8A-AE71-47F59A617BC9" Type="Boolean">false</XData>
-        <XData Name="IsFreeSearch" ID="C04757A0-35BF-4BA1-97C4-A36004A6D58A" Type="Boolean">false</XData>
+        <XData Name="IsFreeSearch" ID="C04757A0-35BF-4BA1-97C4-A36004A6D58A" Type="Boolean">true</XData>
         <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="3704B0EB-A7BA-41AA-B361-588DBC233749" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="PessoaFisica" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" Text="Genero" DataEx="">3704B0EB-A7BA-41AA-B361-588DBC233749</XParentData>
       </XValues>
     </XSVCField>
     <XSVCField ID="D2358860-7ABC-49E4-B535-170ED0597B4B" ParentID="BEA4C995-5EDA-4F6E-94F1-152591C352C1">
       <XValues>
         <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="BEA4C995-5EDA-4F6E-94F1-152591C352C1" Text="CORxStatusID" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="PessoaFisica" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="">BEA4C995-5EDA-4F6E-94F1-152591C352C1</XParentData>
-        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">25</XData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="74CB15EB-8FA9-448A-A11E-C17952AC8CBE" ParentID="86F19726-2A32-415E-9655-463D8796E123">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="86F19726-2A32-415E-9655-463D8796E123" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="PessoaFisica" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="">86F19726-2A32-415E-9655-463D8796E123</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">0</XData>
+        <XData Name="IsFreeSearch" ID="C04757A0-35BF-4BA1-97C4-A36004A6D58A" Type="Boolean">true</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="096267F2-B06D-4FB9-9A9A-FE8F69CD01BE" ParentID="EEC7E7A7-2126-4A4E-BD87-E2E3308C4758">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="EEC7E7A7-2126-4A4E-BD87-E2E3308C4758" Text="CPF" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="PessoaFisica" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="">EEC7E7A7-2126-4A4E-BD87-E2E3308C4758</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+      </XValues>
+    </XSVCField>
+    <XSVCField ID="6A4843D4-1A44-4721-AE16-62D3E47CB362" ParentID="F5384E9B-B2E3-449B-808E-89BA23C566F6">
+      <XValues>
+        <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="F5384E9B-B2E3-449B-808E-89BA23C566F6" Text="Nascimento" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="PessoaFisica" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="">F5384E9B-B2E3-449B-808E-89BA23C566F6</XParentData>
+        <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
       </XValues>
     </XSVCField>
   </XSVCDataView>

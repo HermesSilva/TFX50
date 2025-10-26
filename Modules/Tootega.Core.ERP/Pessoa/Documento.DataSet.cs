@@ -91,16 +91,7 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class DocumentoFilter : XFilter
     {
-
-        public DocumentoFilter()
-        {
-        }
-
-        public DocumentoFilter(String pNumero)
-        {
-            Numero = pNumero;
-        }
-        public String Numero {get;set;}
+        public XFilterField Numero {get;set;}
     }
     public class FRMDocumentoFilter : XFRMModel
     {

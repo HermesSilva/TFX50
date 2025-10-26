@@ -90,10 +90,6 @@ namespace Tootega.Core.ERP.PessoaJuridica
 
     public class PessoaJuridicaFilter : XFilter
     {
-
-        public PessoaJuridicaFilter()
-        {
-        }
     }
     public class FRMPessoaJuridicaFilter : XFRMModel
     {

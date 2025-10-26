@@ -112,10 +112,6 @@ namespace Tootega.Core.ERP.Profissional
 
     public class ProfissionalFilter : XFilter
     {
-
-        public ProfissionalFilter()
-        {
-        }
     }
     public class FRMProfissionalFilter : XFRMModel
     {

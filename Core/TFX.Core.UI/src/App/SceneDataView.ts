@@ -10,7 +10,9 @@ class SceneDataView extends XScene
         super(pOwner);
         this.DataGrid = new MainDataGrid(this);
         this.Filter = new XFilter(this);
+        this.Filter.DoSerach = (f) => this.DoSerach(f);
     }
+
     Filter: XFilter;
     DataGrid: MainDataGrid;
     SVCModel!: XServiceModel;
@@ -25,6 +27,14 @@ class SceneDataView extends XScene
         this.Load();
     }
 
+    DoSerach(pData: any): void
+    {
+        this.Client?.SendAsync(this.SVCModel.SearchPath, {}, (pData: any) =>
+        {
+            this.DataGrid.SetDataSet(pData.Data);
+        }); 
+    }
+
     Load()
     {
         this.DataGrid.SetModel(this.SVCModel);
@@ -33,10 +43,7 @@ class SceneDataView extends XScene
             this.Filter.SetModel(fmdl, this.SVCModel);
         if (this.SVCModel?.SearchPath === undefined)
             return;
-        this.Client?.SendAsync(this.SVCModel.SearchPath, {}, (pData: any) =>
-        {
-            this.DataGrid.SetDataSet(pData.Data);
-        });
+
         this.DataGrid.HTML.style.top = this.Filter.HTML.offsetHeight + "px";
     }
 }

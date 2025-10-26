@@ -1,8 +1,6 @@
 ﻿/// <reference path="XStringEditor.ts" />
-
-class XSearchBoxEditor extends XBaseInput 
+class XSearchBoxEditor extends XBaseInput
 {
-
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner);
@@ -10,6 +8,7 @@ class XSearchBoxEditor extends XBaseInput
         this.Button = new XSVGButton(this, "XSearchBoxEditorButton");
         this.Button.SVG.className = "XSearchIcon";
         this.Button.SetIcon("svg/search.svg");
+        this.Button.OnClick = (e) => this.DoSerach(e);
         this.Option = new XSVGButton(this, "XSearchBoxEditorButtonOpt");
         this.Option.SVG.className = "XSearchIcon";
         this.Option.SetIcon("svg/option.svg");
@@ -18,11 +17,23 @@ class XSearchBoxEditor extends XBaseInput
     Button: XSVGButton;
     Option: XSVGButton;
     Columns!: XColumnModel[];
+    OnSerach?: XMethod<any>;
+
+    DoSerach(e: MouseEvent): void
+    {
+        if (this.OnSerach)
+            this.OnSerach(null);
+    }
 
     SetFields(pColumns: XColumnModel[])
     {
         this.Columns = pColumns;
-        this.Columns.ForEach((c) =>this.AddField(c));
+        this.Columns.ForEach((c) => this.AddField(c));
+        if (this.Rows == 2)
+        {
+            this.Button.HTML.className = "XSearchBoxEditorButtonIL";
+            this.Option.HTML.className = "XSearchBoxEditorButtonOptIL";
+        }
     }
 
     AddField(pColumns: XColumnModel)

@@ -115,13 +115,9 @@ namespace Tootega.Core.CEP.Localidade
 
     public class LocalidadeFilter : XFilter
     {
-
-        public LocalidadeFilter()
-        {
-        }
-        public String Sigla {get;set;}
-        public String Nome {get;set;}
-        public String CodigoIBGE {get;set;}
+        public XFilterField Sigla {get;set;}
+        public XFilterField Nome {get;set;}
+        public XFilterField CodigoIBGE {get;set;}
     }
     public class FRMLocalidadeFilter : XFRMModel
     {

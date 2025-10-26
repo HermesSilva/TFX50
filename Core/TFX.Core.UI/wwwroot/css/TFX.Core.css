@@ -509,7 +509,7 @@ th:active {
   outline: none;
 }
 
-.XSearchBoxEditorButtonOpt {
+.XSearchBoxEditorButtonOpt, .XSearchBoxEditorButtonOptIL {
   position: absolute;
   right: 3px;
   top: 23PX;
@@ -522,11 +522,16 @@ th:active {
   align-content: space-around;
   height: calc((100% - 28px) / 2);
 }
-.XSearchBoxEditorButtonOpt:hover {
+.XSearchBoxEditorButtonOpt:hover, .XSearchBoxEditorButtonOptIL:hover {
   background-color: var(--bg-hv-XLookupButton);
 }
 
-.XSearchBoxEditorButton {
+.XSearchBoxEditorButtonOptIL {
+  height: calc(100% - 28px);
+  top: 24px;
+}
+
+.XSearchBoxEditorButton, .XSearchBoxEditorButtonIL {
   position: absolute;
   right: 3px;
   bottom: 3px;
@@ -538,8 +543,14 @@ th:active {
   align-content: space-around;
   height: calc((100% - 28px) / 2);
 }
-.XSearchBoxEditorButton:hover {
+.XSearchBoxEditorButton:hover, .XSearchBoxEditorButtonIL:hover {
   background-color: var(--bg-hv-XLookupButton);
+}
+
+.XSearchBoxEditorButtonIL {
+  height: calc(100% - 28px);
+  right: 32PX;
+  top: 24px;
 }
 
 .XSearchIcon {

@@ -227,8 +227,7 @@ namespace Tootega.Core.CEP.Logradouro
                 ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
-                    .HasDefaultValue(GetDBValue("String", null));
+                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false);
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade");
                 ett.HasOne(d => d.CEPxLogradouro)
@@ -333,8 +332,8 @@ namespace Tootega.Core.CEP.Logradouro
 
             if (pFilter != null)
             {
-                if (!pFilter.Nome.IsEmpty())
-                    query = query.Where(q => q.CEPxLogradouro.Nome == pFilter.Nome);
+                if (pFilter.Nome?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLogradouro.Nome == (String)pFilter.Nome.Value);
             }
 
             if (!LoadAll)

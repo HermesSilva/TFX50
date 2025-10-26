@@ -54,7 +54,7 @@
         </XValues>
         <XFRMField ID="DA0940C4-33EE-42D9-80EF-DDEC9CB41A9F" iID="591071" ParentID="E0A591AC-DE93-4AA4-BFA3-362E02C9D99C">
           <XValues>
-            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E0A591AC-DE93-4AA4-BFA3-362E02C9D99C" Text="ERPxPessoaJuridica.RazaoSocial" DocumentID="10AC1863-69A1-4E82-9C5D-1281E5C3AE4F" DocumentName="Empresa" ModuleID="4C75A5FA-A191-404F-A9C1-B4BBC03BFA4C" ModuleName="Tootega.Core.ERP" DataEx="" Type="Guid">E0A591AC-DE93-4AA4-BFA3-362E02C9D99C</XParentData>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E0A591AC-DE93-4AA4-BFA3-362E02C9D99C" Text="ERPxPessoaJuridica.RazaoSocial" DocumentID="10AC1863-69A1-4E82-9C5D-1281E5C3AE4F" DocumentName="Empresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="" Type="Guid">E0A591AC-DE93-4AA4-BFA3-362E02C9D99C</XParentData>
             <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
             <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
             <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>

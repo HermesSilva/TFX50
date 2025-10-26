@@ -90,10 +90,6 @@ namespace Tootega.Core.ERP.ReadOnly
 
     public class ProfissionalFilter : XFilter
     {
-
-        public ProfissionalFilter()
-        {
-        }
     }
     public class FRMProfissionalFilter : XFRMModel
     {

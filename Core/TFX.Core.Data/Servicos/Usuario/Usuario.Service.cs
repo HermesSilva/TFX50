@@ -170,8 +170,8 @@ namespace TFX.Core.Data.Servicos.Usuario
 
             if (pFilter != null)
             {
-                if (!pFilter.Nome.IsEmpty())
-                    query = query.Where(q => q.CORxPessoa.Nome == pFilter.Nome);
+                if (pFilter.Nome?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxPessoa.Nome == (String)pFilter.Nome.Value);
             }
 
             if (!LoadAll)

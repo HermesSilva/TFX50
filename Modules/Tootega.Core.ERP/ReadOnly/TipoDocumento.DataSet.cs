@@ -67,16 +67,7 @@ namespace Tootega.Core.ERP.ReadOnly
 
     public class TipoDocumentoFilter : XFilter
     {
-
-        public TipoDocumentoFilter()
-        {
-        }
-
-        public TipoDocumentoFilter(String pTipo)
-        {
-            Tipo = pTipo;
-        }
-        public String Tipo {get;set;}
+        public XFilterField Tipo {get;set;}
     }
     public class FRMTipoDocumentoFilter : XFRMModel
     {

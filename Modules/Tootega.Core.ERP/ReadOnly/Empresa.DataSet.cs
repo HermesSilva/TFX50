@@ -84,10 +84,6 @@ namespace Tootega.Core.ERP.ReadOnly
 
     public class EmpresaFilter : XFilter
     {
-
-        public EmpresaFilter()
-        {
-        }
     }
     public class FRMEmpresaFilter : XFRMModel
     {
