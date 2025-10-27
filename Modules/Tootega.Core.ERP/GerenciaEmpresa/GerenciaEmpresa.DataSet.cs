@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.GerenciaEmpresa
 {
@@ -81,22 +82,40 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             CEPxLocalidadePrincipalID = new XInt32DataField();
         }
 
+
         [Display(Name = "Configuração")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XBinaryDataField Configuracao {get;set;}
+
         [Display(Name = "CNPJ")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Numero {get;set;}
+
         [Display(Name = "Formulário")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidDataField FormID {get;set;}
+
         [Display(Name = "Razão Social")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField RazaoSocial {get;set;}
+
         [Display(Name = "Última Chamada")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XDateTimeDataField UltimaChamada {get;set;}
+
         [Display(Name = "ID da Empresa")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField IDEmpresa {get;set;}
+
         [Display(Name = "Pessoa")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidNullableDataField CORxPessoaID {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Localidade")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
     }
 

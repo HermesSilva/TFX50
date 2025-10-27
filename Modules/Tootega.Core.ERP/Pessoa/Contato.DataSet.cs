@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.Pessoa
 {
@@ -93,25 +94,41 @@ namespace Tootega.Core.ERP.Pessoa
             Finalidade = new XStringDataField();
         }
 
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XBooleanDataField Validar {get;set;}
+
         [Display(Name = "E-Mail, Telefone e ETC.")]
         public XStringDataField Contato {get;set;}
+
         [Display(Name = "Meios de Contato")]
         public XGuidNullableDataField ERPxContatoID {get;set;}
+
         [Display(Name = "Tipo de Contato")]
         public XInt16DataField ERPxContatoTipoID {get;set;}
+
         public XBooleanDataField Validado {get;set;}
+
         [Display(Name = "Finalidade")]
         public XInt16DataField ERPxFinalidadeID {get;set;}
+
         [Display(Name = "Estado")]
         public XInt16DataField CORxStatusID {get;set;}
+
         [Display(Name = "Pessoas")]
         public XGuidDataField CORxPessoaID {get;set;}
+
         [Display(Name = "Observação")]
         public XStringDataField Observacao {get;set;}
+
         [Display(Name = "Máscara")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Mascara {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Tipo {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Finalidade {get;set;}
     }
 

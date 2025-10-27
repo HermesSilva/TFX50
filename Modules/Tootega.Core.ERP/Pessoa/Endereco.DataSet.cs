@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.Pessoa
 {
@@ -133,41 +134,73 @@ namespace Tootega.Core.ERP.Pessoa
             Finalidade = new XStringDataField();
         }
 
+
         [Display(Name = "Nome da Localidade")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Localidade {get;set;}
+
         [Display(Name = "Logradouro")]
         public XInt32DataField CEPxLogradouroID {get;set;}
+
         public XStringDataField Complemento {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Logradouro {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Tipo {get;set;}
+
         [DisplayFormat(DataFormatString = "00.000-000")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField CEP {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Bairro {get;set;}
+
         public XDecimalDataField Longitude {get;set;}
+
         public XDecimalDataField Latitude {get;set;}
+
         [Display(Name = "Endereço")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Endereco {get;set;}
+
         [Display(Name = "Sigla da UF")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Sigla {get;set;}
+
         [Display(Name = "Nome da UF")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField NomeUF {get;set;}
+
         [DisplayFormat(DataFormatString = "0000000")]
         [Display(Name = "Código no IBGE")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField CodigoIBGE {get;set;}
+
         [Display(Name = "Endereço")]
         public XGuidNullableDataField ERPxEnderecoID {get;set;}
+
         [Display(Name = "Finalidade")]
         public XInt16DataField ERPxFinalidadeID {get;set;}
+
         public XStringDataField Lote {get;set;}
+
         [Display(Name = "Número")]
         public XStringDataField Numero {get;set;}
+
         [Display(Name = "Observação")]
         public XStringDataField Observacao {get;set;}
+
         public XStringDataField Quadra {get;set;}
+
         [Display(Name = "Estado")]
         public XInt16DataField CORxStatusID {get;set;}
+
         [Display(Name = "Pessoas")]
         public XGuidDataField CORxPessoaID {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Finalidade {get;set;}
     }
 

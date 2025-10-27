@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace TFX.Core.Data.Servicos.Usuario
 {
@@ -57,10 +58,13 @@ namespace TFX.Core.Data.Servicos.Usuario
             Nome = new XStringDataField();
         }
 
+
         [Display(Name = "E-Mails")]
         public XStringDataField EMail {get;set;}
+
         [Display(Name = "Pessoa")]
         public XGuidNullableDataField CORxPessoaID {get;set;}
+
         public XStringDataField Nome {get;set;}
     }
 

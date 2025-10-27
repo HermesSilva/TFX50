@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.Pessoa
 {
@@ -89,26 +90,48 @@ namespace Tootega.Core.ERP.Pessoa
             Observacao = new XStringDataField();
         }
 
+
         [Display(Name = "Chave Primária")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt32DataField PrimaryKeyID {get;set;}
+
         [Display(Name = "E-Mail, Telefone e ETC.")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Contato {get;set;}
+
         [Display(Name = "Tipo de Contato")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt16DataField ERPxContatoTipoID {get;set;}
+
         [Display(Name = "Máscara")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField ContatoMascara {get;set;}
+
         [Display(Name = "Tipo Contato")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField ContatoTipo {get;set;}
+
         [Display(Name = "Tipo de Documento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt16DataField ERPxDocumentoTipoID {get;set;}
+
         [Display(Name = "Número Documento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Numero {get;set;}
+
         [Display(Name = "Máscara")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField DocumentoMascara {get;set;}
+
         [Display(Name = "Tipo Documento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField DocumentoTipo {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Finalidade {get;set;}
+
         [Display(Name = "Observação")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Observacao {get;set;}
     }
 

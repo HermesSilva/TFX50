@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.PessoaFisica
 {
@@ -64,14 +65,20 @@ namespace Tootega.Core.ERP.PessoaFisica
             CORxStatusID = new XInt16DataField();
         }
 
+
         [Display(Name = "Ligação de Pessoa Física à Tipo")]
         public XGuidNullableDataField ERPxPessoaFisicaTiposID {get;set;}
+
         [Display(Name = "Pessoa Física")]
         public XGuidDataField ERPxPessoaFisicaID {get;set;}
+
         [Display(Name = "Tipo de Pessoa Física")]
         public XInt16DataField ERPxPessoaFisicaTipoID {get;set;}
+
         [Display(Name = "Tipo de Pessoa Física")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Tipo {get;set;}
+
         [Display(Name = "Estado")]
         public XInt16DataField CORxStatusID {get;set;}
     }

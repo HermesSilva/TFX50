@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.ReadOnly
 {
@@ -73,18 +74,32 @@ namespace Tootega.Core.ERP.ReadOnly
             Genero = new XStringDataField();
         }
 
+
         [Display(Name = "Tipo de Documento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt16DataField ERPxDocumentoTipoID {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Pessoa")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidNullableDataField CORxPessoaID {get;set;}
+
         [Display(Name = "Localidade")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
+
         [Display(Name = "Número")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Numero {get;set;}
+
         [Display(Name = "Data de Nascimento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XDateTimeDataField Nascimento {get;set;}
+
         [Display(Name = "Gênero")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Genero {get;set;}
     }
 

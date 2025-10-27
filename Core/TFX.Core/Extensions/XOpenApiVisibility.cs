@@ -9,27 +9,25 @@ using Microsoft.OpenApi.Models;
 
 namespace TFX.Core.Extensions
 {
-    public enum OpenApiVisibility
+    public enum XOpenApiVisibility
     {
-        /// <summary>Padrão: visível em Request e Response</summary>
         Default = 0,
-        /// <summary>Oculto apenas no Request (payload)</summary>
         HiddenInRequest = 1,
-        /// <summary>Oculto apenas no Response (resultado)</summary>
         HiddenInResponse = 2,
-        /// <summary>Oculto em Request e Response</summary>
         Hidden = 3
     }
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public sealed class OpenApiAttribute : Attribute
+    public sealed class XOpenApiAttribute : Attribute
     {
-        public OpenApiVisibility Visibility { get; set; } = OpenApiVisibility.Default;
-        public string Description { get; set; }
+        public XOpenApiVisibility Visibility { get; set; } = XOpenApiVisibility.Default;
+        public string Description
+        {
+            get; set;
+        }
     }
 
-    // Aplica visibilidade e descrições definidas por [OpenApi] em propriedades
-    public sealed class ApplyOpenApiAttributesDocumentTransformer : IOpenApiDocumentTransformer
+    public sealed class XApplyOpenApiVisibility : IOpenApiDocumentTransformer
     {
         private Dictionary<string, OpenApiPropertyMetadata> _propertyMetadata;
 
@@ -37,9 +35,9 @@ namespace TFX.Core.Extensions
         {
             if (document?.Paths == null)
                 return Task.CompletedTask;
-            
+
             _propertyMetadata = BuildPropertyMetadata();
-            
+
             // Aplica descrições nos componentes (compartilhados)
             if (document.Components?.Schemas != null)
             {
@@ -48,7 +46,7 @@ namespace TFX.Core.Extensions
                     ApplyDescriptions(kv.Value);
                 }
             }
-            
+
             // Aplica visibilidade nos requests e responses
             foreach (var path in document.Paths.Values)
             {
@@ -66,7 +64,7 @@ namespace TFX.Core.Extensions
                             kv.Value.Schema = CloneFiltered(schema, document, visited, filterRequest: true);
                         }
                     }
-                    
+
                     // RESPONSE: oculta HiddenInResponse e Hidden
                     foreach (var response in op.Responses.Values)
                     {
@@ -90,32 +88,36 @@ namespace TFX.Core.Extensions
         private static Dictionary<string, OpenApiPropertyMetadata> BuildPropertyMetadata()
         {
             var metadata = new Dictionary<string, OpenApiPropertyMetadata>(StringComparer.OrdinalIgnoreCase);
-            
+
             foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
             {
                 Type[] types;
-                try { types = asm.GetTypes(); } catch { continue; }
-                
+                try
+                {
+                    types = asm.GetTypes();
+                }
+                catch { continue; }
+
                 foreach (var t in types)
                 {
                     if (!t.IsClass)
                         continue;
-                    
+
                     var props = t.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
                     foreach (var p in props)
                     {
-                        var attr = p.GetCustomAttributes(typeof(OpenApiAttribute), inherit: true)
-                                    .OfType<OpenApiAttribute>()
+                        var attr = p.GetCustomAttributes(typeof(XOpenApiAttribute), inherit: true)
+                                    .OfType<XOpenApiAttribute>()
                                     .FirstOrDefault();
                         if (attr == null)
                             continue;
-                        
+
                         var meta = new OpenApiPropertyMetadata
                         {
                             Visibility = attr.Visibility,
                             Description = attr.Description
                         };
-                        
+
                         // Registra tanto PascalCase quanto camelCase
                         metadata[p.Name] = meta;
                         var lowerFirst = LowerFirst(p.Name);
@@ -131,7 +133,7 @@ namespace TFX.Core.Extensions
         {
             if (schema?.Properties == null)
                 return;
-            
+
             foreach (var kv in schema.Properties)
             {
                 var propName = kv.Key;
@@ -197,28 +199,20 @@ namespace TFX.Core.Extensions
                 foreach (var kv in target.Properties)
                 {
                     var propName = kv.Key;
-                    
+
                     // Verifica se deve ocultar baseado no contexto (request ou response)
                     if (_propertyMetadata.TryGetValue(propName, out var meta))
                     {
                         bool mustHide = false;
                         if (filterRequest)
-                        {
-                            // Filtrando Request: oculta HiddenInRequest e Hidden
-                            mustHide = meta.Visibility == OpenApiVisibility.HiddenInRequest || 
-                                      meta.Visibility == OpenApiVisibility.Hidden;
-                        }
+                            mustHide = meta.Visibility == XOpenApiVisibility.HiddenInRequest || meta.Visibility == XOpenApiVisibility.Hidden;
                         else
-                        {
-                            // Filtrando Response: oculta HiddenInResponse e Hidden
-                            mustHide = meta.Visibility == OpenApiVisibility.HiddenInResponse || 
-                                      meta.Visibility == OpenApiVisibility.Hidden;
-                        }
-                        
+                            mustHide = meta.Visibility == XOpenApiVisibility.HiddenInResponse || meta.Visibility == XOpenApiVisibility.Hidden;
+
                         if (mustHide)
                             continue;
                     }
-                    
+
                     var child = CloneFiltered(kv.Value, doc, visited, filterRequest);
                     if (child != null)
                         clone.Properties[propName] = child;
@@ -234,22 +228,30 @@ namespace TFX.Core.Extensions
 
         private static string LowerFirst(string name)
         {
-            if (string.IsNullOrEmpty(name)) return name;
-            if (char.IsLower(name[0])) return name;
+            if (string.IsNullOrEmpty(name))
+                return name;
+            if (char.IsLower(name[0]))
+                return name;
             return char.ToLowerInvariant(name[0]) + name.Substring(1);
         }
-        
+
         private sealed class ReferenceEqualityComparer<T> : IEqualityComparer<T> where T : class
         {
             public static readonly ReferenceEqualityComparer<T> Instance = new ReferenceEqualityComparer<T>();
             public bool Equals(T x, T y) => ReferenceEquals(x, y);
             public int GetHashCode(T obj) => System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(obj);
         }
-        
+
         private sealed class OpenApiPropertyMetadata
         {
-            public OpenApiVisibility Visibility { get; set; }
-            public string Description { get; set; }
+            public XOpenApiVisibility Visibility
+            {
+                get; set;
+            }
+            public string Description
+            {
+                get; set;
+            }
         }
     }
 }

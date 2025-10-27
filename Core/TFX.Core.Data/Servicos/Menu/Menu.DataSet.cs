@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace TFX.Core.Data.Servicos.Menu
 {
@@ -78,15 +79,27 @@ namespace TFX.Core.Data.Servicos.Menu
             CORxMenuID = new XGuidNullableDataField();
         }
 
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Menu {get;set;}
+
         [Display(Name = "Ícone")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Icone {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Item {get;set;}
+
         [Display(Name = "Item de Menu")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidNullableDataField CORxMenuItemID {get;set;}
+
         [Display(Name = "Recurso")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidDataField CORxRecursoID {get;set;}
+
         [Display(Name = "Menu")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidNullableDataField CORxMenuID {get;set;}
     }
 

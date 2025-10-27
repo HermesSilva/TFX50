@@ -82,6 +82,7 @@ public static class XServiceExtensions
         var assemblys = AppDomain.CurrentDomain.GetAssemblies().ToList();
         var mvcBuilder = pBuilder.Services.AddControllers().AddJsonOptions(options =>
         {
+            options.JsonSerializerOptions.PropertyNamingPolicy = null; // Mantém PascalCase
             options.JsonSerializerOptions.Converters.Add(new GuidUpperCaseConverter());
         });
 
@@ -223,8 +224,15 @@ public static class XServiceExtensions
         pService.AddOpenApi(opt =>
         {
             opt.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0;
-            opt.AddDocumentTransformer(new ApplyOpenApiAttributesDocumentTransformer());
+            opt.AddDocumentTransformer(new XApplyOpenApiVisibility());
         });
+        
+        // Configura o schema para usar PascalCase (mesmo padrão do serializador)
+        pService.ConfigureHttpJsonOptions(options =>
+        {
+            options.SerializerOptions.PropertyNamingPolicy = null; // PascalCase
+        });
+        
         return pService;
     }
 

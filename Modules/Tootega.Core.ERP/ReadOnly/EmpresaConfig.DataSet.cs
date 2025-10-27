@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.ReadOnly
 {
@@ -60,12 +61,20 @@ namespace Tootega.Core.ERP.ReadOnly
             CEPxLocalidadePrincipalID = new XInt32DataField();
         }
 
+
         [Display(Name = "Número")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Numero {get;set;}
+
         [Display(Name = "Pessoa")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidNullableDataField CORxPessoaID {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Localidade")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
     }
 

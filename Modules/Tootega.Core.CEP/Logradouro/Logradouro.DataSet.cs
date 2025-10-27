@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.CEP.Logradouro
 {
@@ -89,27 +90,49 @@ namespace Tootega.Core.CEP.Logradouro
             CEPxLogradouroID = new XInt32DataField();
         }
 
+
         [DisplayFormat(DataFormatString = "00.000-000")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField CEP {get;set;}
+
         [DisplayFormat(DataFormatString = "0000000")]
         [Display(Name = "Código no IBGE")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField CodigoIBGE {get;set;}
+
         [Display(Name = "CEP Geral")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField CEPGeral {get;set;}
+
         [Display(Name = "Abreviatura")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Breviatura {get;set;}
+
         [Display(Name = "Número")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt32DataField Numero {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Tipo {get;set;}
+
         [Display(Name = "Nome do Logradouro")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Nome da Localidade")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField NomeLocalidade {get;set;}
+
         [Display(Name = "Sigla da UF")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Sigla {get;set;}
+
         [Display(Name = "Nome do Bairro")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField NomeBairro {get;set;}
+
         [Display(Name = "Logradouro")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt32DataField CEPxLogradouroID {get;set;}
     }
 

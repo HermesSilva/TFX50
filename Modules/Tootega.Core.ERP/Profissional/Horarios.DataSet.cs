@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.Profissional
 {
@@ -69,16 +70,23 @@ namespace Tootega.Core.ERP.Profissional
             Fim = new XDateTimeDataField();
         }
 
+
         [Display(Name = "Início")]
         public XDateTimeDataField Inicio {get;set;}
+
         [Display(Name = "Profissionais")]
         public XGuidDataField ERPxProfissionalID {get;set;}
+
         [Display(Name = "Tipo de Horário")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Horario {get;set;}
+
         [Display(Name = "Itens de Horário")]
         public XGuidNullableDataField ERPxProfissionalHorarioID {get;set;}
+
         [Display(Name = "Tipos de Horários")]
         public XInt16DataField ERPxProfissionalHorarioTipoID {get;set;}
+
         public XDateTimeDataField Fim {get;set;}
     }
 

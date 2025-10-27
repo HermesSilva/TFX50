@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.CEP.Localidade
 {
@@ -89,27 +90,42 @@ namespace Tootega.Core.CEP.Localidade
             UFNome = new XStringDataField();
         }
 
+
         [Display(Name = "Localidade")]
         public XInt32DataField CEPxLocalidadeID {get;set;}
+
         [Display(Name = "País")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField PaisSigla {get;set;}
+
         [Display(Name = "Tipo de Localidade")]
         public XInt16DataField CEPxLocalidadeTipoID {get;set;}
+
         [Display(Name = "CEP Geral")]
         public XStringDataField CEPGeral {get;set;}
+
         [Display(Name = "Unidade Federativa")]
         public XInt16DataField CEPxUFID {get;set;}
+
         [DisplayFormat(DataFormatString = "0000000")]
         [Display(Name = "Código no IBGE")]
         public XStringDataField CodigoIBGE {get;set;}
+
         [Display(Name = "Nome da Localidade")]
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Número")]
         public XInt32DataField Numero {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Tipo {get;set;}
+
         [Display(Name = "Sigla da UF")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Sigla {get;set;}
+
         [Display(Name = "Nome da UF")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField UFNome {get;set;}
     }
 

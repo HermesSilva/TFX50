@@ -27,94 +27,26 @@ namespace TFX.ESC.Core.Escritorios
         public EscritorioServiceModel()
         {
             SearchPath = "Escritorio/Search";
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "CPFCNPJ",
-                Title = "CPF ou CNPJ",
-                Type = "String",
-                Mask = "###.###.###-##|##.###.###/####-##",
-                Visible = true,
-                IsFreeSearch = true,
-                Operator = XOperator.LikeBegin
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "CORxStatusID",
-                Title = "Estado",
-                Type = "Int16",
-                Mask = "",
-                Visible = false
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "Nome",
-                Title = "Nome",
-                Type = "String",
-                Mask = "",
-                Visible = true,
-                IsFreeSearch = true,
-                Operator = XOperator.Like
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "CORxPessoaID",
-                Title = "Pessoa",
-                Type = "Guid",
-                Mask = "",
-                Visible = false
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "CORxAgregadoID",
-                Title = "Agregado",
-                Type = "Guid",
-                Mask = "",
-                Visible = false
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "ESCxEscritorioID",
-                Title = "Escritório",
-                Type = "Guid",
-                Mask = "",
-                Visible = false
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "Status",
-                Title = "Status",
-                Type = "String",
-                Mask = "",
-                Visible = false
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "CEPxLocalidadePrincipalID",
-                Title = "Localidade",
-                Type = "Int32",
-                Mask = "",
-                Visible = false
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "Sigla",
-                Title = "Sigla da UF",
-                Type = "String",
-                Mask = "",
-                Visible = true,
-                IsFreeSearch = true,
-                Operator = XOperator.EqualTo
-            });
-            DataView.Columns.Add(new XColumnModel()
-            {
-                Name = "Localidade",
-                Title = "Nome da Localidade",
-                Type = "String",
-                Mask = "",
-                Visible = true,
-                IsFreeSearch = true,
-                Operator = XOperator.EqualTo
-            });
+            DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String", Mask = "###.###.###-##|##.###.###/####-##", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.Like });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "CORxAgregadoID", Title = "Agregado", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "ESCxEscritorioID", Title = "Escritório", Type = "Guid", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Status", Title = "Status", Type = "String", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
+                                                      Visible = false });
+            DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+            DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             Forms.Add(new FRMEscritorioFilter());
         }
     }
@@ -154,79 +86,46 @@ namespace TFX.ESC.Core.Escritorios
             Localidade = new XStringDataField();
         }
 
+
         [DisplayFormat(DataFormatString = "###.###.###-##|##.###.###/####-##")]
         [Display(Name = "CPF ou CNPJ")]
-        public XStringDataField CPFCNPJ
-        {
-            get; set;
-        }
+        public XStringDataField CPFCNPJ {get;set;}
+
         [Display(Name = "Estado")]
-        public XInt16DataField CORxStatusID
-        {
-            get; set;
-        }
-        public XStringDataField Nome
-        {
-            get; set;
-        }
+        public XInt16DataField CORxStatusID {get;set;}
+
+        public XStringDataField Nome {get;set;}
+
         [Display(Name = "Pessoa")]
-        public XGuidNullableDataField CORxPessoaID
-        {
-            get; set;
-        }
+        public XGuidNullableDataField CORxPessoaID {get;set;}
+
         [Display(Name = "Agregado")]
-        public XGuidNullableDataField CORxAgregadoID
-        {
-            get; set;
-        }
+        public XGuidNullableDataField CORxAgregadoID {get;set;}
+
         [Display(Name = "Escritório")]
-        public XGuidNullableDataField ESCxEscritorioID
-        {
-            get; set;
-        }
-        public XStringDataField Status
-        {
-            get; set;
-        }
+        public XGuidNullableDataField ESCxEscritorioID {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
+        public XStringDataField Status {get;set;}
+
         [Display(Name = "Localidade")]
-        public XInt32DataField CEPxLocalidadePrincipalID
-        {
-            get; set;
-        }
+        public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
 
         [Display(Name = "Sigla da UF")]
-        [OpenApi(Visibility = OpenApiVisibility.HiddenInRequest, Description = "Sigla da unidade federativa (somente leitura)")]
-        public XStringDataField Sigla
-        {
-            get; set;
-        }
-        
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
+        public XStringDataField Sigla {get;set;}
+
         [Display(Name = "Nome da Localidade")]
-        [OpenApi(Visibility = OpenApiVisibility.HiddenInRequest, Description = "Nome da localidade principal (somente leitura)")]
-        public XStringDataField Localidade
-        {
-            get; set;
-        }
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
+        public XStringDataField Localidade {get;set;}
     }
 
     public class EscritorioFilter : XFilter
     {
-        public XFilterField Nome
-        {
-            get; set;
-        }
-        public XFilterField Localidade
-        {
-            get; set;
-        }
-        public XFilterField Sigla
-        {
-            get; set;
-        }
-        public XFilterField CPFCNPJ
-        {
-            get; set;
-        }
+        public XFilterField Nome {get;set;}
+        public XFilterField Localidade {get;set;}
+        public XFilterField Sigla {get;set;}
+        public XFilterField CPFCNPJ {get;set;}
     }
     public class FRMEscritorioFilter : XFRMModel
     {
@@ -260,12 +159,12 @@ namespace TFX.ESC.Core.Escritorios
             fld.Scale = -1;
             fld.Length = -1;
             fld.TypeID = XDataTypes.XString;
-            fld.AdditionalFieldsID = new Guid[] { };
-            fld.AdditionalDataFieldsID = new Guid[] { };
-            fld.TargetFilterFieldID = new Guid[] { };
-            fld.SourceFilterFieldID = new Guid[] { };
-            fld.TargetDisplayFieldID = new Guid[] { };
-            fld.SourceDisplayFieldID = new Guid[] { };
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetDisplayFieldID = new Guid[] {  };
+            fld.SourceDisplayFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
@@ -276,10 +175,7 @@ namespace TFX.ESC.Core.Escritorios
 
     public class EscritorioRequest : XRequest
     {
-        public Guid CORxPessoaID
-        {
-            get; set;
-        }
+        public Guid CORxPessoaID {get;set;}
     }
 
     public interface IEscritorioService : XIService
@@ -293,7 +189,7 @@ namespace TFX.ESC.Core.Escritorios
     public abstract class BaseEscritorioRule : XServiceRule<EscritorioTuple, EscritorioTuple>
     {
         public BaseEscritorioRule(XService pOwner)
-            : base(pOwner)
+            :base(pOwner)
         {
         }
 

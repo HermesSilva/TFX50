@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.ReadOnly
 {
@@ -57,11 +58,17 @@ namespace Tootega.Core.ERP.ReadOnly
             ERPxDocumentoTipoID = new XInt16DataField();
         }
 
+
         [Display(Name = "Máscara")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Mascara {get;set;}
+
         [Display(Name = "Tipo de Documento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Tipo {get;set;}
+
         [Display(Name = "Tipo de Documento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt16DataField ERPxDocumentoTipoID {get;set;}
     }
 

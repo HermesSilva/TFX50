@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 using Tootega.Core.ERP.Pessoa;
 
 namespace Tootega.Core.ERP.PessoaJuridica
@@ -73,14 +74,21 @@ namespace Tootega.Core.ERP.PessoaJuridica
             CEPxLocalidadePrincipalID = new XInt32DataField();
         }
 
+
         [Display(Name = "Razão Social")]
         public XStringDataField RazaoSocial {get;set;}
+
         [Display(Name = "Estado")]
         public XInt16DataField CORxStatusID {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField CNPJ {get;set;}
+
         [Display(Name = "Pessoa")]
         public XGuidNullableDataField CORxPessoaID {get;set;}
+
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Localidade")]
         public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
         public ContatoTuple[] Contato {get;set;}

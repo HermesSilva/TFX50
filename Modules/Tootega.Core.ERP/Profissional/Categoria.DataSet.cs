@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.Profissional
 {
@@ -61,11 +62,16 @@ namespace Tootega.Core.ERP.Profissional
             ERPxProfissionalID = new XGuidDataField();
         }
 
+
         [Display(Name = "Categoria de Profissional")]
         public XInt16DataField ERPxCategoriaID {get;set;}
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Categoria {get;set;}
+
         [Display(Name = "Categorias por Profissional")]
         public XGuidNullableDataField ERPxProfissionalCategoriaID {get;set;}
+
         [Display(Name = "Profissionais")]
         public XGuidDataField ERPxProfissionalID {get;set;}
     }

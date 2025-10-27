@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.Pessoa
 {
@@ -73,19 +74,28 @@ namespace Tootega.Core.ERP.Pessoa
             Tipo = new XStringDataField();
         }
 
+
         [Display(Name = "Documento")]
         public XGuidNullableDataField ERPxDocumentoID {get;set;}
+
         [Display(Name = "Tipo de Documento")]
         public XInt16DataField ERPxDocumentoTipoID {get;set;}
+
         [Display(Name = "Doc. Nº")]
         public XStringDataField Numero {get;set;}
+
         [Display(Name = "Estado")]
         public XInt16DataField CORxStatusID {get;set;}
+
         [Display(Name = "Pessoas")]
         public XGuidDataField CORxPessoaID {get;set;}
+
         [Display(Name = "Máscara")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Mascara {get;set;}
+
         [Display(Name = "Tipo de Documento")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Tipo {get;set;}
     }
 

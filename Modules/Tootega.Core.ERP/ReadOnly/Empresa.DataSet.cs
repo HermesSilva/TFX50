@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 
 namespace Tootega.Core.ERP.ReadOnly
 {
@@ -69,16 +70,28 @@ namespace Tootega.Core.ERP.ReadOnly
             RazaoSocial = new XStringDataField();
         }
 
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Pessoa")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XGuidNullableDataField CORxPessoaID {get;set;}
+
         [Display(Name = "Localidade")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
+
         [Display(Name = "Número")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Numero {get;set;}
+
         [Display(Name = "Máscara")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Mascara {get;set;}
+
         [Display(Name = "Razão Social")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField RazaoSocial {get;set;}
     }
 

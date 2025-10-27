@@ -17,6 +17,7 @@ using TFX.Core.Lzma;
 using TFX.Core.Model.FRM;
 using TFX.Core.DB;
 using TFX.Core.Model.Service;
+using TFX.Core.Extensions;
 using Tootega.Core.ERP.Pessoa;
 using Tootega.Core.ERP.PessoaFisica;
 
@@ -83,19 +84,29 @@ namespace Tootega.Core.ERP.PessoaFisica
             Genero = new XStringDataField();
         }
 
+
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField CPF {get;set;}
+
         [Display(Name = "Pessoa")]
         public XGuidNullableDataField CORxPessoaID {get;set;}
+
         public XStringDataField Nome {get;set;}
+
         [Display(Name = "Localidade")]
         public XInt32DataField CEPxLocalidadePrincipalID {get;set;}
+
         [Display(Name = "Gênero")]
         public XInt16DataField ERPxGeneroID {get;set;}
+
         [Display(Name = "Data de Nascimento")]
         public XDateTimeDataField Nascimento {get;set;}
+
         [Display(Name = "Estado")]
         public XInt16DataField CORxStatusID {get;set;}
+
         [Display(Name = "Gênero")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Genero {get;set;}
         public ContatoTuple[] Contato {get;set;}
         public DocumentoTuple[] Documento {get;set;}
