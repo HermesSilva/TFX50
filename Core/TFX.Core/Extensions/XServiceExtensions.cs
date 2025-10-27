@@ -25,6 +25,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Models;
 
+using Scalar.AspNetCore;
+
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 using TFX.Core;
@@ -77,19 +79,6 @@ public static class XServiceExtensions
     public static WebApplicationBuilder AddDependencies(this WebApplicationBuilder pBuilder)
     {
         var assemblys = AppDomain.CurrentDomain.GetAssemblies().ToList();
-        //var files = Directory.GetFiles(XDefault.AppPath, "TFX.*.dll").Where(f => !assemblys.Any(a => Path.GetFileName(a.Location) == Path.GetFileName(f))).ToList();
-        //foreach (var file in files)
-        //{
-        //    try
-        //    {
-        //        var asm = Assembly.LoadFrom(file);
-        //        assemblys.Add(asm);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //    }
-        //}
-
         var mvcBuilder = pBuilder.Services.AddControllers().AddJsonOptions(options =>
         {
             options.JsonSerializerOptions.Converters.Add(new GuidUpperCaseConverter());
@@ -139,7 +128,6 @@ public static class XServiceExtensions
 
         pServices.AddControllers();
         pServices.AddEndpointsApiExplorer();
-        pServices.AddSwaggerGen();
         pServices.AddControllers(options =>
         {
             options.Filters.Add<XResponseWrapperFilter>();
@@ -235,59 +223,6 @@ public static class XServiceExtensions
         {
             opt.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0;
         });
-        pService.AddSwaggerGen(c =>
-        {
-            c.CustomSchemaIds(type => type.FullName);
-            c.SwaggerGeneratorOptions.DescribeAllParametersInCamelCase = true;
-            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            if (File.Exists(xmlPath))
-            {
-                c.IncludeXmlComments(xmlPath);
-                c.SchemaFilter<EnumSchemaFilter>(xmlPath);
-            }
-            c.SwaggerDoc("v1", new OpenApiInfo
-            {
-                Title = AppDomain.CurrentDomain.FriendlyName,
-                Version = "v1",
-                Description = $"API {AppDomain.CurrentDomain.FriendlyName}",
-                Contact = new OpenApiContact
-                {
-                    Name = "Tootega Pesquisa e Inovação",
-                    Url = new Uri("https://github.com/Tootega/"),
-                    Email = "comercial@tootega.com.br"
-                }
-            });
-
-            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-            {
-                Description = "'Bearer' [spaço] seu token | Exemplo: Bearer ",
-                Name = "Authorization",
-                BearerFormat = "JWT",
-                In = ParameterLocation.Header,
-                Type = SecuritySchemeType.ApiKey,
-                Scheme = "Bearer"
-            });
-
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-            {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = "Bearer"
-                        },
-                        Scheme = "Bearer",
-                        Name = "Bearer",
-                        In = ParameterLocation.Header,
-                    },
-                    new string[] {}
-                }
-            });
-        });
-
         return pService;
     }
 
@@ -296,14 +231,8 @@ public static class XServiceExtensions
         if (!(pApp.Environment.IsDevelopment() || XEnvironment.AtivarScalar))
             return pApp;
 
-        pApp.UseSwagger();
-        pApp.UseScalar(options =>
-        {
-            options.RoutePrefix = "docs";
-            options.DocumentTitle = $"API ({AppDomain.CurrentDomain.FriendlyName})";
-            options.UseTheme(Theme.Mars);
-        });
         pApp.MapOpenApi();
+        pApp.MapScalarApiReference(o => o.WithTitle("Tootega ERP").WithTheme(ScalarTheme.Mars));
         return pApp;
     }
 }

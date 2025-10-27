@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Swashbuckle.AspNetCore.Annotations;
 
 using TFX.Core.DB;
 
@@ -8,6 +9,7 @@ namespace TFX.Core.Model
     public class XFilterField
     {
         [Display(Description = "Nome do campo a ser filtrado.")]
+        [SwaggerSchema(ReadOnly = true)]
         public String FieldName
         {
             get; set;
@@ -23,6 +25,7 @@ namespace TFX.Core.Model
             get; set;
         }
         [Display(Description = "Estado do campo para composição do filtro (vazio, inalterado, não vazio, modificado).")]
+        [SwaggerSchema(ReadOnly = true)]
         public XFieldState State
         {
             get; set;

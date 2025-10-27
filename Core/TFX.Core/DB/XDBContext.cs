@@ -54,7 +54,6 @@ namespace TFX.Core
 
         public void Validate(StringBuilder pBuilder)
         {
-            
             foreach (var ppt in GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.Default))
             {
                 var rq = ppt.GetCustomAttribute<RequiredAttribute>();
@@ -63,11 +62,11 @@ namespace TFX.Core
                 var vlr = ppt.GetValue(this);
                 if (rq != null)
                 {
-                    if (ppt.PropertyType == typeof(String) && vlr.AsString().IsEmpty())
+                    if ((ppt.PropertyType == typeof(String) && vlr.AsString().IsEmpty()) || object.Equals(vlr, ppt.PropertyType.DefaultValue()))
                         pBuilder.AppendLine($"Erro: O campo {disp.AsQuoted()} não pode ser nulo.");
                 }
                 if (len > 0 && vlr.AsString().SafeLength() > len)
-                    pBuilder.AppendLine($"Erro: O tamanho do conteudo do campo {disp.AsQuoted()} não pode ser maior que {len} caractéres.");
+                    pBuilder.AppendLine($"Erro: O tamanho do conteudo do campo {disp.AsQuoted()} não pode ser maior que {len:#,##0} caractéres.");
             }
         }
     }
@@ -289,7 +288,7 @@ namespace TFX.Core
             if (ConnectionString != null)
                 return ConnectionString;
             return XEnvironment.Read("SQL_SERVER_TFX", "");
-        }        
+        }
 
         public XProvider Provider
         {

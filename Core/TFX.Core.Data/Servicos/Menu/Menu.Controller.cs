@@ -41,6 +41,8 @@ namespace TFX.Core.Data.Servicos.Menu
         private readonly INFMenuControllerRule _Rule;
 
         [HttpPost("AppModel")]
+        [ProducesResponseType(typeof(ResultSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
         public IActionResult AppModel([FromBody] AppData pData)
         {
             try
@@ -55,6 +57,8 @@ namespace TFX.Core.Data.Servicos.Menu
         }
 
         [HttpPost("Search")]
+        [ProducesResponseType(typeof(MenuDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
         public IActionResult Execute()
         {
             try

@@ -11,6 +11,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace TFX.Core.Extensions
 {
+    
     public class EnumSchemaFilter : ISchemaFilter
     {
         private static XDocument _XmlComments;

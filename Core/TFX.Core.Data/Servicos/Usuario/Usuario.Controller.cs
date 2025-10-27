@@ -37,6 +37,8 @@ namespace TFX.Core.Data.Servicos.Usuario
         private readonly INFUsuarioControllerRule _Rule;
 
         [HttpPost("Search")]
+        [ProducesResponseType(typeof(UsuarioDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
         public IActionResult Execute([FromBody] UsuarioFilter pFilter)
         {
             try
@@ -51,6 +53,8 @@ namespace TFX.Core.Data.Servicos.Usuario
         }
 
         [HttpPost("Flush")]
+        [ProducesResponseType(typeof(UsuarioDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
         [XEndpointDescription(typeof(UsuarioService.CORxPessoa), typeof(UsuarioService.CORxUsuario))]
         public IActionResult Flush([FromBody] UsuarioDataSet pDataSet)
         {

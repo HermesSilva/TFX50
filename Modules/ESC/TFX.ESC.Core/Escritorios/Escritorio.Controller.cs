@@ -38,6 +38,8 @@ namespace TFX.ESC.Core.Escritorios
         private readonly INFEscritorioControllerRule _Rule;
 
         [HttpPost("Search")]
+        [ProducesResponseType(typeof(EscritorioDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
         public IActionResult Execute([FromBody] EscritorioFilter pFilter)
         {
             try
@@ -52,6 +54,8 @@ namespace TFX.ESC.Core.Escritorios
         }
 
         [HttpPost("Flush")]
+        [ProducesResponseType(typeof(EscritorioDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
         [XEndpointDescription(typeof(EscritorioService.CORxAgregado), typeof(EscritorioService.CORxPessoa), typeof(EscritorioService.ESCxEscritorio))]
         public IActionResult Flush([FromBody] EscritorioDataSet pDataSet)
         {
