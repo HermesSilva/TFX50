@@ -61,3 +61,12 @@ interface XAPPModel
     Forms: XFRMModel[];
 }
 
+interface XFilterField extends XField
+{
+    FieldName: string;
+    Operator: XOperator;
+}
+
+interface XFilter
+{
+}

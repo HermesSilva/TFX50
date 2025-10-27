@@ -20,6 +20,7 @@ interface XDataViewModel
 
 interface XServiceModel
 {
+    ID: string;
     Forms: XFRMModel[]
     DataView: XDataViewModel
     SearchPath: string

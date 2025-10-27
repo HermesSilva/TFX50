@@ -1,3 +1,12 @@
+
+enum XFieldState
+{
+    Empty = 0,
+    Unchanged = 1,
+    NotEmpty = 2,
+    Modified = 3,
+
+}
 interface XData<T>
 {
     ID: string
@@ -13,18 +22,28 @@ interface XResponse<T>
     Details?: string
 }
 
+enum XTupleState
+{
+    Detached = 0,
+    Unchanged = 1,
+    Deleted = 2,
+    Modified = 3,
+    Added = 4,
+    Insert = 5
+}
+
 interface XTuple
 {
     IsReadOnly: boolean;
     IsSelected: boolean;
     IsChecked: boolean;
-    State: number;
+    State: XTupleState;
 }
 
 interface XField
 {
     Value: string;
-    State: number;
+    State: XFieldState;
 }
 
 class XModelEditors 
@@ -75,4 +94,32 @@ class XModelEditors
     static XPanelEditor = "E939FB33-DC74-4BF1-A9B8-CDE54A2145B5"
     static XSearchDetailEditor = "C559C9FE-F950-40D8-8959-C2791775E652"
     static XToggleInativeEditor = "06A707A8-7E43-4C18-BD8D-CE6508F5FA39"
-} 
+}
+class XDataTuple implements XTuple
+{
+    State: XTupleState = XTupleState.Unchanged;
+    IsReadOnly!: boolean;
+    IsSelected!: boolean;
+    IsChecked!: boolean;
+}
+
+class XDataSet
+{
+    Tuples: XDataTuple[] = [];
+    ID!: string;
+
+    Fields(): string[]
+    {
+        if (this.Tuples.length === 0)
+            return [];
+        const keys = new Set<string>()
+        let current = this.Tuples[0];
+
+        while (current && current !== Object.prototype)
+        {
+            Object.getOwnPropertyNames(current).forEach(k => keys.add(k))
+            current = Object.getPrototypeOf(current)
+        }
+        return [...keys]
+    }
+}

@@ -20,7 +20,7 @@ class MainDataGrid extends XDataGrid
         this.Table.SetDataSet(pDataSet);
     }
 
-    OnClickRow(pRow: XTableRow): void
+    OnClickRow(pRow: XArray<XTableRow>): void
     {
     }
 }

@@ -96,7 +96,7 @@ interface XActionEvent { (pAction: XAction): void; }
 interface XFunc<T> { (pItem: T): Boolean; }
 interface XFuncEx<T> { (pItem: T[]): Boolean; }
 
-interface XFuncNumber<T> { (pItem: T): number; }
+interface XFuncNumber<T> { (pItem: T): number; } 
 
 interface XMethod<T> { (pItem: T): void; }
 interface XEvent { (): void; }

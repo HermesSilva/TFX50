@@ -12,9 +12,9 @@ class XIntegerEditor extends XBaseInput
 
         this.Init();
         this.Title = "Digite um Valor Inteiro";
+        this.Mask = "#.##0";
     }
 
-    Mask: string = "#.##0";
     AllowNegative: boolean = false;
     MaxDigits: number;
     HasSeparator: boolean;

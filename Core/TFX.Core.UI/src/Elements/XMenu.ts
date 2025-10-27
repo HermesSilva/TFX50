@@ -58,8 +58,7 @@ class XMenuItem extends XElement
     Item: XDataMenuItem | undefined;
     Title: HTMLLIElement | null = null;
     Instances: HTMLLIElement | null = null;
-    ID: string | null = null;
-
+    
     protected override CreateContainer(): HTMLElement 
     {
         return <any>null;

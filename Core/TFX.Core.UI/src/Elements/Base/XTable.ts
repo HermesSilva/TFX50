@@ -407,7 +407,7 @@ class XTable extends XDiv
     Columns: XColumnModel[] | null = null;
     protected DataSet!: XDataSet;
     private RowNumberColumn: XColumnModel;
-    OnRowClick: XMethod<XTableRow> | null = null;
+    OnRowClick: XMethod<XArray<XTableRow>> | null = null;
 
     DoSelectRow(pRow: XTableRow)
     {
@@ -416,7 +416,7 @@ class XTable extends XDiv
 
         pRow.IsSelected = true;
         if (this.OnRowClick != null)
-            this.OnRowClick.apply(this, [pRow]);
+            this.OnRowClick.apply(this, [[pRow]]);
     }
 
     override SizeChanged()
