@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 using AspNetCore.Scalar;
+using Microsoft.AspNetCore.OpenApi;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -222,6 +223,7 @@ public static class XServiceExtensions
         pService.AddOpenApi(opt =>
         {
             opt.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0;
+            opt.AddDocumentTransformer(new HideRequestIgnoredPropertiesDocumentTransformer());
         });
         return pService;
     }
