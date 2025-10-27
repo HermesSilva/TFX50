@@ -195,14 +195,14 @@ namespace TFX.ESC.Core.Escritorios
         }
 
         [Display(Name = "Sigla da UF")]
-        [OpenApi(RequestIgnore = true)]
+        [OpenApi(Visibility = OpenApiVisibility.HiddenInRequest, Description = "Sigla da unidade federativa (somente leitura)")]
         public XStringDataField Sigla
         {
             get; set;
         }
-
+        
         [Display(Name = "Nome da Localidade")]
-        [OpenApi(RequestIgnore = true)]
+        [OpenApi(Visibility = OpenApiVisibility.HiddenInRequest, Description = "Nome da localidade principal (somente leitura)")]
         public XStringDataField Localidade
         {
             get; set;

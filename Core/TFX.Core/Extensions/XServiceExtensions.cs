@@ -223,7 +223,7 @@ public static class XServiceExtensions
         pService.AddOpenApi(opt =>
         {
             opt.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0;
-            opt.AddDocumentTransformer(new HideRequestIgnoredPropertiesDocumentTransformer());
+            opt.AddDocumentTransformer(new ApplyOpenApiAttributesDocumentTransformer());
         });
         return pService;
     }
