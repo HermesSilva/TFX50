@@ -29,6 +29,13 @@ class XTagEditor extends XDiv
         this.SVG.src = "svg/closered.svg";
     }
 
+    public Clear()
+    {
+        this.Editor.Input.value = "";
+        this.Editor.RawValue = null;
+        this.OnInput();
+    }
+
     private OnInput()
     {
         var w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value);
@@ -57,7 +64,8 @@ class XEditableTag extends XDiv
         this.Columns = pColumns;
         this.Editor = new XTagEditor(this, "XTagEditor");
         this.Editor.SetModel(pColumns);
-        this.Editor.SVG.addEventListener("click", () => this.DoClick(), false);
+        // Ao clicar no ícone, apenas limpa o conteúdo do editor
+        this.Editor.SVG.addEventListener("click", () => this.Editor.Clear(), false);
     }
 
     DoClick()

@@ -20,7 +20,7 @@ class XSearchBoxEditor extends XBaseInput
     OnSerach?: XMethod<any>;
     Fields: XArray<XEditableTag> = new XArray<XEditableTag>();
 
-    DoSerach(e: MouseEvent): void
+    DoSerach(e?: Event): void
     {
         if (this.OnSerach)
             this.OnSerach(this.GetFilter());
@@ -64,6 +64,16 @@ class XSearchBoxEditor extends XBaseInput
         tag.Editor.Title.innerHTML = pColumns.Title;
         tag.OnClick = (pTag: XEditableTag) => this.Close(pTag);
         this.Fields.Add(tag);
+
+        // Dispara a pesquisa ao pressionar Enter dentro do editor do tag
+        if (tag.Editor && tag.Editor.Editor && tag.Editor.Editor.Input)
+            XEventManager.AddEvent(this, tag.Editor.Editor.Input, XEventType.KeyDown, this.OnFieldKeyDown);
+    }
+
+    private OnFieldKeyDown(e: KeyboardEvent)
+    {
+        if (e.key === "Enter")
+            this.DoSerach(e);
     }
 
     Close(pTag: XEditableTag)

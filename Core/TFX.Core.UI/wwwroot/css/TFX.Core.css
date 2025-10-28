@@ -581,8 +581,11 @@ th:active {
 .XTagEditorInput {
   border: none;
   outline: none;
-  width: 15px;
+  min-width: 10px;
+  box-shadow: 0 0 0 2px rgb(0 123 255 / 8%);
+  border-radius: 4px;
 }
+
 .XTagEditorInput:focus {
   outline: none;
   border-color: #007bff;

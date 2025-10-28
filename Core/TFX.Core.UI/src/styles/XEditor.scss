@@ -307,7 +307,7 @@
 .XTagEditorInput {
     border: none;
     outline: none;
-    width: 15px;
+    min-width: 10px;
 
     &:focus {
         outline: none;
