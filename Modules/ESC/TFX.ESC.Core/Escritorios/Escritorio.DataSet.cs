@@ -28,11 +28,11 @@ namespace TFX.ESC.Core.Escritorios
         {
             SearchPath = "Escritorio/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String", Mask = "###.###.###-##|##.###.###/####-##", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.Like });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxAgregadoID", Title = "Agregado", Type = "Guid", Mask = "", 
@@ -46,7 +46,7 @@ namespace TFX.ESC.Core.Escritorios
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
             Forms.Add(new FRMEscritorioFilter());
         }
     }

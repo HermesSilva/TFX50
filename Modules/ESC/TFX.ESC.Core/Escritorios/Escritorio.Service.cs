@@ -367,16 +367,14 @@ namespace TFX.ESC.Core.Escritorios
 
             if (pFilter != null)
             {
-                if (pFilter.Nome?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
                 if (pFilter.CPFCNPJ?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.CORxAgregado.CPFCNPJ == Convert.ToString(pFilter.CPFCNPJ.Value));
                 if (pFilter.Nome?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
+                    query = query.Where(q => EF.Functions.Like(q.CORxPessoa.Nome, pFilter.Nome.Value+"%"));
                 if (pFilter.Sigla?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.CEPxUF.Sigla == Convert.ToString(pFilter.Sigla.Value));
                 if (pFilter.Localidade?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxLocalidade.Nome == Convert.ToString(pFilter.Localidade.Value));
+                    query = query.Where(q => EF.Functions.Like(q.CEPxLocalidade.Nome, pFilter.Localidade.Value+"%"));
             }
 
             if (!LoadAll)

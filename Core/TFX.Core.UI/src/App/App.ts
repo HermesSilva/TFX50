@@ -28,6 +28,9 @@ class App extends XStageTabControlTab
         this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: XResponse<XServiceModel>) =>
         {
             this.DataView.SetModel(pData.Data);
+            if (this.DataView?.DataGrid)
+                this.DataView.DataGrid.OnSelectionChanged = (rows) => this.ButtonBar.UpdateBySelection(rows);
+            this.ButtonBar.UpdateBySelection(null);
             this.SizeChanged();
         });
         this.Prepare();

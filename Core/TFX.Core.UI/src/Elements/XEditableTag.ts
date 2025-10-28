@@ -26,7 +26,7 @@ class XTagEditor extends XDiv
         this.Editor.Mask = pColumns.Mask;
         this.Title.addEventListener('click', () => this.Editor.Input.focus(), false);
         this.SVG = XUtils.AddElement<HTMLImageElement>(this.HTML, "img", "XTagEditorSVG");
-        this.SVG.src = "svg/closered.svg";
+        this.UpdateSVGIcon();
     }
 
     public Clear()
@@ -34,12 +34,20 @@ class XTagEditor extends XDiv
         this.Editor.Input.value = "";
         this.Editor.RawValue = null;
         this.OnInput();
+        this.UpdateSVGIcon();
     }
 
     private OnInput()
     {
         var w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value);
         this.Editor.Input.style.width = w + "px";
+        this.UpdateSVGIcon();
+    }
+
+    private UpdateSVGIcon()
+    {
+        const hasContent = this.Editor?.Input?.value?.length > 0;
+        this.SVG.src = hasContent ? "svg/tinyclosebold.svg" : "svg/tinyclose.svg";
     }
 }
 
@@ -64,7 +72,6 @@ class XEditableTag extends XDiv
         this.Columns = pColumns;
         this.Editor = new XTagEditor(this, "XTagEditor");
         this.Editor.SetModel(pColumns);
-        // Ao clicar no ícone, apenas limpa o conteúdo do editor
         this.Editor.SVG.addEventListener("click", () => this.Editor.Clear(), false);
     }
 

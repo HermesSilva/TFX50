@@ -36,7 +36,7 @@ class XSearchBoxEditor extends XBaseInput
             {
                 var ffld = new Object() as XFilterField;
                 ffld.Name = fld.Columns.Name;
-                ffld.Operator = XOperator.EqualTo;
+                ffld.Operator = fld.Columns.Operator;
                 ffld.State = XFieldState.NotEmpty;
                 ffld.Value = fld.Value;
                 filter[fld.Columns.Name] = ffld;

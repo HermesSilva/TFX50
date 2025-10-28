@@ -300,7 +300,7 @@
 
 .XTagEditorTitle {
     color: #a3a3a3;
-    padding-right: 3px;
+    padding-right: 6px;
     font-size: 12px;
 }
 
@@ -308,11 +308,12 @@
     border: none;
     outline: none;
     min-width: 10px;
+    border-radius: 3px;
 
     &:focus {
         outline: none;
         border-color: #007bff;
-        box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+        box-shadow: 0 0 0 1px rgb(0 123 255 / 8%);
     }
 }
 

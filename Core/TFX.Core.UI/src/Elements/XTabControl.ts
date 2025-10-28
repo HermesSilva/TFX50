@@ -90,7 +90,7 @@ class XTabControlDropdown extends XPopupElement
             const { deltaY } = event;
             const { scrollTop, scrollHeight, clientHeight } = this;
 
-            if ((deltaY > 0 && (scrollTop + clientHeight >= scrollHeight)) || (deltaY < 0 && scrollTop <= 0))
+            if ((deltaY >0 && (scrollTop + clientHeight >= scrollHeight)) || (deltaY <0 && scrollTop <=0))
                 event.preventDefault();
         });
     }
@@ -157,8 +157,30 @@ class XTabControl extends XDiv implements XIDialogContainer
 
     CloseTab(pButton: XTabControlButton)
     {
-        pButton.Tab?.Free();
+        if (!pButton || !pButton.Tab)
+            return;
+
+        const closingTab = pButton.Tab;
+        const currentIndex = this.Tabs.indexOf(closingTab);
+        closingTab?.Free();
         pButton.Free();
+        if (currentIndex >= 0)
+            this.Tabs.splice(currentIndex,1);
+        else
+            this.Tabs.Remove(closingTab);
+
+        if (this.Tabs.length >0)
+        {
+            const nextIndex = Math.max(0, currentIndex -1);
+            const nextTab = this.Tabs[nextIndex] ?? this.Tabs[this.Tabs.length -1];
+            if (nextTab?.Button)
+                this.SelectTab(nextTab.Button);
+        }
+        else
+        {
+            this.ActiveTab = null;
+            this.Header.SelectionChanged();
+        }
     }
 
     SelectTab(pButton: XTabControlButton)
@@ -181,14 +203,14 @@ class XTabControl extends XDiv implements XIDialogContainer
         }
         var rbtn = pButton?.Tab?.Button?.HTML.getBoundingClientRect();
         var rctn = this.Header.HTML.getBoundingClientRect();
-        var offw = (<HTMLElement>pButton?.Tab?.Button?.HTML?.previousElementSibling)?.offsetWidth ?? 0;
+        var offw = (<HTMLElement>pButton?.Tab?.Button?.HTML?.previousElementSibling)?.offsetWidth ??0;
         if (rbtn != null)
         {
             if (rbtn.left < rctn.left)
                 this.Header.HTML.scrollLeft -= (rctn.left - rbtn.left) + offw;
             else
-                if (rbtn.right > rctn.right)
-                    this.Header.HTML.scrollLeft += (rbtn.right - rctn.right) + offw;
+            if (rbtn.right > rctn.right)
+                this.Header.HTML.scrollLeft += (rbtn.right - rctn.right) + offw;
         }
         this.Dropdown.IsVisible = false;
         this.ActiveTab = pButton.Tab;
