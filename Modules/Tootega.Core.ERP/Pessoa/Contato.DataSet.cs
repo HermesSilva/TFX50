@@ -134,6 +134,8 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class ContatoFilter : XFilter
     {
+        public XFilterField Finalidade {get;set;}
+        public XFilterField Tipo {get;set;}
         public XFilterField Contato {get;set;}
     }
     public class FRMContatoFilter : XFRMModel
@@ -156,7 +158,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.ColCount = 32;
             fld.IsHidden = false;
             fld.Location = 1;
-            fld.EditorCID = XModelEditors.XString;
+            fld.EditorCID = XModelEditors.XSearchBox;
             fld.Operator = XOperator.Like;
             fld.JustifyHeight = false;
             fld.AllowEmpty = true;

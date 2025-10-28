@@ -171,7 +171,11 @@ namespace TFX.Core.Data.Servicos.Usuario
             if (pFilter != null)
             {
                 if (pFilter.Nome?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CORxPessoa.Nome == (String)pFilter.Nome.Value);
+                    query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.Nome?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.EMail?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxUsuario.EMail == Convert.ToString(pFilter.EMail.Value));
             }
 
             if (!LoadAll)

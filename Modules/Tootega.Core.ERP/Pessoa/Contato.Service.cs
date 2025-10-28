@@ -239,6 +239,12 @@ namespace Tootega.Core.ERP.Pessoa
             {
                 if (pFilter.Contato?.State == XFieldState.NotEmpty)
                     query = query.Where(q => EF.Functions.Like(q.ERPxContato.Contato, "%"+pFilter.Contato.Value+"%"));
+                if (pFilter.Tipo?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxContatoTipo.Tipo == Convert.ToString(pFilter.Tipo.Value));
+                if (pFilter.Contato?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxContato.Contato == Convert.ToString(pFilter.Contato.Value));
+                if (pFilter.Finalidade?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxFinalidade.Finalidade == Convert.ToString(pFilter.Finalidade.Value));
             }
 
             if (!LoadAll)

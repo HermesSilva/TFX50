@@ -111,6 +111,11 @@ namespace Tootega.Core.CEP.ReadOnly
 
     public class LogradouroFilter : XFilter
     {
+        public XFilterField Sigla {get;set;}
+        public XFilterField Tipo {get;set;}
+        public XFilterField Bairro {get;set;}
+        public XFilterField Localidade {get;set;}
+        public XFilterField CEP {get;set;}
         public XFilterField Logradouro {get;set;}
     }
     public class FRMLogradouroFilter : XFRMModel
@@ -133,7 +138,7 @@ namespace Tootega.Core.CEP.ReadOnly
             fld.ColCount = 32;
             fld.IsHidden = false;
             fld.Location = 1;
-            fld.EditorCID = XModelEditors.XString;
+            fld.EditorCID = XModelEditors.XSearchBox;
             fld.Operator = XOperator.Like;
             fld.JustifyHeight = false;
             fld.AllowEmpty = true;

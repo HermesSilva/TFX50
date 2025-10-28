@@ -80,7 +80,7 @@ namespace Tootega.Core.CEP.ReadOnly
             [Required()]
             public Int16 CEPxLocalidadeTipoID {get; set;}
 
-            [Display(Name = "Município")]
+            [Display(Name = "Municipio")]
             [Required()]
             public Int32 CEPxMunicipioID {get; set;}
 
@@ -210,11 +210,12 @@ namespace Tootega.Core.CEP.ReadOnly
                 ett.Property(d => d.CEPxLocalidadeID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
-                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false);
+                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
+                    .HasDefaultValue(GetDBValue("String", null));
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade");
                 ett.HasOne(d => d.CEPxLogradouro)
                    .WithMany(p => p.CEPxLocalidade)
@@ -342,6 +343,18 @@ namespace Tootega.Core.CEP.ReadOnly
             {
                 if (pFilter.Logradouro?.State == XFieldState.NotEmpty)
                     query = query.Where(q => EF.Functions.Like(q.CEPxLogradouro.Nome, "%"+pFilter.Logradouro.Value+"%"));
+                if (pFilter.Sigla?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxUF.Sigla == Convert.ToString(pFilter.Sigla.Value));
+                if (pFilter.Tipo?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLogradouro.Tipo == Convert.ToString(pFilter.Tipo.Value));
+                if (pFilter.Logradouro?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLogradouro.Nome == Convert.ToString(pFilter.Logradouro.Value));
+                if (pFilter.Localidade?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLocalidade.Nome == Convert.ToString(pFilter.Localidade.Value));
+                if (pFilter.Bairro?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxBairro.Nome == Convert.ToString(pFilter.Bairro.Value));
+                if (pFilter.CEP?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLogradouro.CEP == Convert.ToString(pFilter.CEP.Value));
             }
 
             if (!LoadAll)

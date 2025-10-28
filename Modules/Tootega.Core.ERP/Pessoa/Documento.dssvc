@@ -120,7 +120,7 @@
         <XData Name="FormType" ID="94D217A8-DAE4-4871-800D-2DA83433DB24" Type="XFRMType">SVCFilter</XData>
         <XData Name="ConfigID" ID="6DA01592-08F9-4CB9-A09B-14BB63FF6EAE" Type="Guid">B4B3E485-4584-4312-A98F-EEB066E50D46</XData>
         <XData Name="ServerID" ID="5BAA4997-C2C0-4544-956B-76425D607BAB" Type="Guid">909DAC6F-9296-462A-8A01-49292DACB0FB</XData>
-        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=906;Height=50}</XData>
+        <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=20;Y=20;Width=1018;Height=696}</XData>
         <XData Name="AditionalID" ID="B99AEB21-2C40-4DE7-8E36-D5B97FB24F64" Type="Guid[]">E05F0FBE-65F2-4A67-BD45-D7ABAF0B2A1A|22703141-94B4-4842-9318-98AA6CF872DA</XData>
         <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
           <XLanguage IETFCode="pt-br" IsDefault="true">Documento - Filter</XLanguage>
@@ -131,13 +131,15 @@
           <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
           <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
           <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
-          <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+          <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">AA2A0DB9-2C59-4833-994D-3DBF2AA0CB3C</XData>
           <XData Name="Operator" ID="75AEF4FE-A2A3-4DDA-A61D-23CC8575E8A2" Type="XOperator">Like</XData>
           <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
-          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=2;Y=2;Width=1100;Height=42}</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=80}</XData>
           <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="XThickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
           <XLinkArrayData Name="AdditionalFields" ID="AD828E26-BA2E-46CC-97CF-132510C88FC6" Type="Guid[]" />
           <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="E3831372-08F5-4759-BDFD-7178540D4B90" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Documento" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" Text="Numero" DataEx="" Type="Guid">E3831372-08F5-4759-BDFD-7178540D4B90</XParentData>
+          <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+          <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
         </XValues>
       </XFRMField>
     </XFRMForm>
