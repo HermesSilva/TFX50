@@ -10,8 +10,11 @@ class XStringEditor extends XBaseInput
 
     private OnInput()
     {
+        this.RawValue = null;
         if (this.Mask)
             this.ApplyMask()
+        else
+            this.RawValue = this.Input.value;
     }
 
     protected override ApplyMask()
@@ -20,6 +23,7 @@ class XStringEditor extends XBaseInput
             return;
         
         this.Input.value = XUtils.ApplyMask(this.Input.value, this.Mask);
+        this.RawValue = XUtils.UnMask(this.Input.value, this.Mask);
     }
 
     override CreateInput(): HTMLInputElement

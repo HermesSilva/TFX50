@@ -32,7 +32,7 @@ class XTagEditor extends XDiv
     private OnInput()
     {
         var w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value);
-        this.Editor.Input.style.width = w + "px";   
+        this.Editor.Input.style.width = w + "px";
     }
 }
 
@@ -47,6 +47,10 @@ class XEditableTag extends XDiv
     Editor!: XTagEditor;
     Columns!: XColumnModel;
     OnClick!: (pTag: XEditableTag) => void;
+    get Value(): any
+    {
+        return this.Editor.Editor.RawValue;
+    }
 
     SetModel(pColumns: XColumnModel)
     {

@@ -147,7 +147,7 @@ namespace TFX.ESC.Core.Escritorios
             [Required()]
             public Int16 CEPxLocalidadeTipoID {get; set;}
 
-            [Display(Name = "Município")]
+            [Display(Name = "Municipio")]
             [Required()]
             public Int32 CEPxMunicipioID {get; set;}
 
@@ -273,11 +273,12 @@ namespace TFX.ESC.Core.Escritorios
                 ett.Property(d => d.CEPxLocalidadeID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CEPxUFID).HasColumnType(GetDBType("Int16"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 128));
-                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.Property(d => d.CodigoIBGE).HasColumnType(GetDBType("String", 7)).IsRequired(false);
                 ett.Property(d => d.CEPxLocalidadeTipoID).HasColumnType(GetDBType("Int16"));
-                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false);
+                ett.Property(d => d.CEPGeral).HasColumnType(GetDBType("String", 8)).IsRequired(false)
+                    .HasDefaultValue(GetDBValue("String", null));
                 ett.Property(d => d.Numero).HasColumnType(GetDBType("Int32"));
+                ett.Property(d => d.CEPxMunicipioID).HasColumnType(GetDBType("Int32"));
                 ett.ToTable("CEPxLocalidade");
                 ett.HasOne(d => d.CEPxUF)
                    .WithMany(p => p.CEPxLocalidade)
@@ -367,7 +368,15 @@ namespace TFX.ESC.Core.Escritorios
             if (pFilter != null)
             {
                 if (pFilter.Nome?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CORxPessoa.Nome == (String)pFilter.Nome.Value);
+                    query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.CPFCNPJ?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxAgregado.CPFCNPJ == Convert.ToString(pFilter.CPFCNPJ.Value));
+                if (pFilter.Nome?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.Sigla?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxUF.Sigla == Convert.ToString(pFilter.Sigla.Value));
+                if (pFilter.Localidade?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLocalidade.Nome == Convert.ToString(pFilter.Localidade.Value));
             }
 
             if (!LoadAll)

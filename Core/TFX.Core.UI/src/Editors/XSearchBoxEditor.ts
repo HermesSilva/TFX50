@@ -18,11 +18,32 @@ class XSearchBoxEditor extends XBaseInput
     Option: XSVGButton;
     Columns!: XColumnModel[];
     OnSerach?: XMethod<any>;
+    Fields: XArray<XEditableTag> = new XArray<XEditableTag>();
 
     DoSerach(e: MouseEvent): void
     {
         if (this.OnSerach)
-            this.OnSerach(null);
+            this.OnSerach(this.GetFilter());
+    }
+
+    GetFilter(): XFilter
+    {
+        var filter: any = new Object();
+        for (var i = 0; i < this.Fields.length; i++)
+        {
+            var fld = this.Fields[i];
+            if (fld.Value != null && fld.Value != "")
+            {
+                var ffld = new Object() as XFilterField;
+                ffld.Name = fld.Columns.Name;
+                ffld.Operator = XOperator.EqualTo;
+                ffld.State = XFieldState.NotEmpty;
+                ffld.Value = fld.Value;
+                filter[fld.Columns.Name] = ffld;
+            }
+        }
+
+        return filter;  
     }
 
     SetFields(pColumns: XColumnModel[])
@@ -42,6 +63,7 @@ class XSearchBoxEditor extends XBaseInput
         tag.SetModel(pColumns);
         tag.Editor.Title.innerHTML = pColumns.Title;
         tag.OnClick = (pTag: XEditableTag) => this.Close(pTag);
+        this.Fields.Add(tag);
     }
 
     Close(pTag: XEditableTag)

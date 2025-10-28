@@ -21,7 +21,6 @@ class XBaseInput extends XDiv implements XIEditor
     IsSelected: any;
     IsChecked: any;
     State: any;
-    Value: any;
     Type: any;
     GeneratorInfo!: XGeneratorInfo;
     DataSourceID!: string;
@@ -42,8 +41,19 @@ class XBaseInput extends XDiv implements XIEditor
     protected ELMTitle: XDiv;
     NewLine: boolean = false;
     OrderIndex: number = -1;
-
+    RawValue: any;
     private _Mask: string = '';
+    get Value(): any
+    {
+        if (this.Input && this.Input.value)
+            return this.Input.value;
+        return null;
+    }
+    set Value(pValue: any)
+    {
+        if (this.Input && this.Input.value)
+            this.Input.value = pValue;        
+    }
 
     public get Mask(): string
     {

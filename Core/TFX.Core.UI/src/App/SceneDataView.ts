@@ -29,7 +29,7 @@ class SceneDataView extends XScene
 
     DoSerach(pData: any): void
     {
-        this.Client?.SendAsync(this.SVCModel.SearchPath, {}, (pData: any) =>
+        this.Client?.SendAsync(this.SVCModel.SearchPath, pData, (pData: any) =>
         {
             this.DataGrid.SetDataSet(pData.Data);
         }); 

@@ -2,6 +2,11 @@
 {
     private static CanvasContext = document.createElement('canvas').getContext('2d')!
 
+    static UnMask(pValue: string | number, pMaskPattern: string): string
+    {
+        const CleanValue = typeof pValue === 'number' ? pValue.toString() : pValue.replace(/\D/g, '')
+        return CleanValue;
+    }
 
     static ApplyMask(pValue: string | number, pMaskPattern: string): string
     {

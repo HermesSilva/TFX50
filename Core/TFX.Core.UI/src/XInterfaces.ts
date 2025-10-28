@@ -97,6 +97,7 @@ interface XIEditor extends XIElement
     Rect: XRect;
     Input: HTMLInputElement;
     Title: string;
+    RawValue: any;
 }
 
 interface XIPopupPanel extends XIElement

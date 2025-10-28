@@ -63,7 +63,7 @@ interface XAPPModel
 
 interface XFilterField extends XField
 {
-    FieldName: string;
+    Name: string;
     Operator: XOperator;
 }
 
