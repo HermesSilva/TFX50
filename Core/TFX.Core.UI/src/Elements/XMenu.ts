@@ -46,6 +46,24 @@ class XHoverPanel extends XDiv
         headerText.textContent = pItem.Title;
     }
     Header: XDiv;
+
+    public AdjustWidth()
+    {
+        let mx = 0;
+        const els = this.HTML.querySelectorAll('.hover-item, .accordion-header');
+        for (let i = 0; i < els.length; i++)
+        {
+            const el = els[i] as HTMLElement;
+            el.style.whiteSpace = 'nowrap';
+            const w = el.scrollWidth;
+            if (w > mx) mx = w;
+        }
+        if (mx > 0)
+        {
+            const pad = 20;
+            this.HTML.style.width = (mx + pad) + 'px';
+        }
+    }
 }
 class XMenuItem extends XElement
 {
@@ -58,7 +76,7 @@ class XMenuItem extends XElement
     Item: XDataMenuItem | undefined;
     Title: HTMLLIElement | null = null;
     Instances: HTMLLIElement | null = null;
-    
+
     protected override CreateContainer(): HTMLElement 
     {
         return <any>null;
@@ -97,8 +115,8 @@ class XMenuItemGroup extends XDiv
         const headerText = XUtils.AddElement<HTMLSpanElement>(this.Header, "span", "menu-span");
         headerText.textContent = pItem.Title;
 
-        this.CreateHoverPanel();
         this.CreateItens();
+        this.CreateHoverPanel();
     }
 
     Header: XDiv;
@@ -106,6 +124,7 @@ class XMenuItemGroup extends XDiv
     DataItem: XDataMenu;
     HoverPanel: XHoverPanel | null = null;
     HoverItens = new XArray<XMenuButtonItem>();
+    SubItems = new XArray<XMenuItem>();
 
     private CreateItens()
     {
@@ -115,12 +134,13 @@ class XMenuItemGroup extends XDiv
             if (this.DataItem.Items.length > 8)
                 submenu.classList.add('has-scroll');
 
-            for (var i = 0; i < this.DataItem.Items.length; i++)
+            for (let i = 0; i < this.DataItem.Items.length; i++)
             {
-                var subitem = this.DataItem.Items[i];
+                const subitem = this.DataItem.Items[i];
                 let mi = new XMenuItem(this, submenu);
                 mi.Menu = this.Menu;
                 mi.SetData(subitem);
+                this.SubItems.Add(mi);
             };
         }
     }
@@ -131,14 +151,16 @@ class XMenuItemGroup extends XDiv
         {
             this.HoverPanel = new XHoverPanel(this, this.DataItem);
 
-            for (var i = 0; i < this.DataItem.Items.length; i++)
+            for (let i = 0; i < this.DataItem.Items.length; i++)
             {
-                var subitem = this.DataItem.Items[i];
-                var hitem = new XMenuButtonItem(this.HoverPanel, subitem);
-                XEventManager.AddEvent(this.Menu, hitem.HTML, XEventType.Click, () => this.Menu?.Launch(subitem));
+                const subitem = this.DataItem.Items[i];
+                const hitem = new XMenuButtonItem(this.HoverPanel, subitem);
 
+                XEventManager.AddEvent(this.Menu, hitem.HTML, XEventType.Click, () => this.Menu?.Launch(subitem));
                 this.HoverItens.Add(hitem);
             }
+            this.HoverPanel.AdjustWidth();
+            XEventManager.SetTiemOut(this.HoverPanel, this.HoverPanel.AdjustWidth, 0);
         }
     }
 }

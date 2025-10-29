@@ -320,7 +320,7 @@ class XTableRow extends XTableElement
         super(pOwner, "XTableRow", "tr");
         this.Body = pOwner;
         this.Table = pOwner.Table;
-        XEventManager.AddEvent(this.Table, this.HTML, XEventType.Click, () => this.Table.DoSelectRow(this));
+        XEventManager.AddEvent(this.Table, this.HTML, XEventType.Click, (pArg: MouseEvent) => this.Table.DoSelectRow(this, pArg));
     }
     Table: XTable;
     Body: XTableBody;
@@ -411,14 +411,29 @@ class XTable extends XDiv
     private RowNumberColumn: XColumnModel;
     OnRowClick: XMethod<XArray<XTableRow>> | null = null;
 
-    DoSelectRow(pRow: XTableRow)
+    DoSelectRow(pRow: XTableRow, pArg?: MouseEvent)
     {
-        for (var i = 0; i < this.Body.DataRows.length; i++)
-            this.Body.DataRows[i].IsSelected = false;
+        const isCtrl = !!pArg && (pArg.ctrlKey === true);
+        if (isCtrl)
+        {
+            const was = pRow.IsSelected;
+            pRow.IsSelected = !was;
+        }
+        else
+        {
+            for (var i = 0; i < this.Body.DataRows.length; i++)
+                this.Body.DataRows[i].IsSelected = false;
+            pRow.IsSelected = true;
+        }
 
-        pRow.IsSelected = true;
         if (this.OnRowClick != null)
-            this.OnRowClick.apply(this, [[pRow]]);
+        {
+            const slct = new XArray<XTableRow>();
+            for (var i = 0; i < this.Body.DataRows.length; i++)
+                if (this.Body.DataRows[i].IsSelected)
+                    slct.Add(this.Body.DataRows[i]);
+            this.OnRowClick.apply(this, [slct]);
+        }
     }
 
     private OnKeyDown(pArg: KeyboardEvent)
