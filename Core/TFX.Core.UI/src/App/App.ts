@@ -1,6 +1,12 @@
 ﻿/// <reference path="../Stage/XStageTabControl.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
 /// <reference path="SceneFormEditor.ts" />
+enum XAppState
+{
+    None = 0,
+    Searching = 1,
+    Editing = 2,
+}
 
 @AutoInit
 class App extends XStageTabControlTab
@@ -33,8 +39,8 @@ class App extends XStageTabControlTab
         {
             this.DataView.SetModel(pData.Data);
             if (this.DataView?.DataGrid)
-                this.DataView.DataGrid.OnSelectionChanged = (rows) => this.ButtonBar.UpdateBySelection(rows);
-            this.ButtonBar.UpdateBySelection(null);
+                this.DataView.DataGrid.OnSelectionChanged = (rows) => this.ButtonBar.UpdateState(XAppState.Searching, rows);
+            this.ButtonBar.UpdateState(XAppState.None, null);
             this.SizeChanged();
         });
         this.Prepare();
@@ -63,6 +69,20 @@ class App extends XStageTabControlTab
         }
     }
 
+    Close()
+    {
+        if (this._FormEditor != null)
+        {
+            this._FormEditor.Close();
+            this._FormEditor = null;
+            if (this.DataView)
+                this.DataView.IsVisible = true;
+            this.ButtonBar.UpdateState(XAppState.Searching, this.DataView.DataGrid.SelectedRows);
+        }
+        else
+            super.Close();
+    }
+
     private OnEdit()
     {
         if (!this.DataView || !this.DataView.DataGrid)
@@ -75,19 +95,20 @@ class App extends XStageTabControlTab
         if (this._FormEditor == null)
         {
             this._FormEditor = new SceneFormEditor(this.Scanes);
-            this._FormEditor.OnClose = (_pArg: any) =>
-            {
-                this._FormEditor = null;
-                // restore DataView expanded
-                this.DataView.HTML.style.display = "";
-            };
+            this._FormEditor.OnClose = (_pArg: any) => this.CloseEditor();
         }
 
-        // collapse DataView
-        this.DataView.HTML.style.display = "none";
-
+        this.DataView.IsVisible = false;
+        this.ButtonBar.UpdateState(XAppState.Editing, this.DataView.DataGrid.SelectedRows);
         this._FormEditor.SetModel(fmdl, this.DataView.SVCModel);
         this._FormEditor.IsVisible = true;
+    }
+
+    CloseEditor()
+    {
+        this._FormEditor = null;
+        this.DataView.IsVisible = true;
+        this.ButtonBar.UpdateState(XAppState.Searching, this.DataView.DataGrid.SelectedRows);
     }
 }
 

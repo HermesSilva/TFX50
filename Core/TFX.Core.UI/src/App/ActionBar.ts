@@ -21,6 +21,7 @@ class ActionBar extends XWrapPanel
         this.Save = new XSVGButton(this);
         this.Save.HTML.className = "XButtonBarItem";
         this.Save.SetIcon("svg/save.svg");
+        this._State = XAppState.None;
         this.SetButtonsVisible(false, false, false, false);
     }
     App: App;
@@ -28,17 +29,43 @@ class ActionBar extends XWrapPanel
     Inactive: XSVGButton;
     Active: XSVGButton;
     Save: XSVGButton;
+    private _State: XAppState;
 
-    UpdateBySelection(rows: XArray<XTableRow> | null)
+
+    public UpdateState(pState: XAppState, pRows: XArray<XTableRow> | null)
     {
-        if (rows == null || rows.length === 0)
+        this._State = pState;
+        switch (this._State)
+        {
+            case XAppState.Editing:
+                this.ApplyEditingState(pRows);
+                return;
+            case XAppState.Searching:
+                this.ApplyViewingState(pRows);
+                return;
+            case XAppState.None:
+            default:
+                this.SetButtonsVisible(false, false, false, false);
+                return;
+        }
+    }
+
+    // Backward compatibility with existing callers
+    public UpdateBySelection(rows: XArray<XTableRow> | null)
+    {
+        this.UpdateState(XAppState.Searching, rows);
+    }
+
+    private ApplyViewingState(rows: XArray<XTableRow> | null)
+    {
+        if (rows == null || rows.length ===0)
         {
             this.SetButtonsVisible(false, false, false, false);
             return;
         }
 
         // if more than one selected, hide Edit button
-        if (rows.length > 1)
+        if (rows.length >1)
         {
             this.SetButtonsVisible(false, true, true, false);
             return;
@@ -100,6 +127,11 @@ class ActionBar extends XWrapPanel
         }
 
         this.SetButtonsVisible(canEdit, showInactive, showActive, canSave);
+    }
+
+    private ApplyEditingState(_rows: XArray<XTableRow> | null)
+    {
+        this.SetButtonsVisible(false, false, false, true);
     }
 
     private SetButtonsVisible(edit: boolean, inactive: boolean, active: boolean, save: boolean)

@@ -6,10 +6,8 @@ class MainDataGrid extends XDataGrid
     constructor(pOwner: XElement)
     {
         super(pOwner, "MainDataGrid");
-        this.Table.OnRowClick = (r) => this.OnClickRow(r);
     }
 
-    OnSelectionChanged: XMethod<XArray<XTableRow>> | null = null;
 
     SetModel(pModel: XServiceModel)
     {
@@ -21,10 +19,5 @@ class MainDataGrid extends XDataGrid
         this.Table.SetDataSet(pDataSet);
     }
 
-    OnClickRow(pRow: XArray<XTableRow>): void
-    {
-        if (this.OnSelectionChanged != null)
-            this.OnSelectionChanged.apply(this, [pRow]);
-    }
 
 }
