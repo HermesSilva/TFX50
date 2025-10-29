@@ -1,0 +1,91 @@
+# General VCS
+.git/
+.gitignore
+.gitattributes
+
+# IDE/Editor
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS/Temp
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Logs
+*.log
+
+# Build outputs (.NET)
+**/bin/
+**/obj/
+**/TestResults/
+*.coverage
+*.coveragexml
+
+# Packages/cache
+**/packages/
+.nuget/
+
+# TypeScript/JS build outputs
+**/node_modules/
+**/dist/
+**/out/
+**/build/
+**/.cache/
+**/.turbo/
+**/.parcel-cache/
+
+# Frontend generated assets
+Core/TFX.Core.UI/wwwroot/**/*.js
+Core/TFX.Core.UI/wwwroot/**/*.js.map
+Core/TFX.Core.UI/wwwroot/**/*.css.map
+
+# Auto-generated C# code
+**/*.g.cs
+**/*.generated.cs
+**/*.Designer.cs
+**/ReadOnly/**/*.cs
+**/Migrations/**
+
+# Secrets/config (avoid leaking)
+**/appsettings.json
+**/appsettings.*.json
+**/*.secrets.json
+**/.env
+**/.env.*
+
+# Binary/media (not useful for LLM context)
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.bmp
+**/*.ico
+**/*.pdf
+**/*.zip
+**/*.7z
+**/*.tar
+**/*.gz
+
+# Re-include important guidance files
+!.github/
+!.github/**/*.md
+!.github/copilot-instructions.md
+
+# Keep core source code visible
+!**/*.cs
+!**/*.ts
+!**/*.tsx
+!**/*.scss
+!**/*.sass
+!**/*.css
+!**/*.html
+!**/*.md
