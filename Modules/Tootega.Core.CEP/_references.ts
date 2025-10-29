@@ -7,3 +7,7 @@
 /// <reference path="Logradouro\Logradouro.DataSet.cs" />
 /// <reference path="Logradouro\Logradouro.Rule.cs" />
 /// <reference path="Logradouro\Logradouro.Test.cs" />
+/// <reference path="Logradouro\Rules\INFLogradouroController.Rule.cs" />
+/// <reference path="Logradouro\Logradouro.Controller.cs" />
+/// <reference path="Localidade\Rules\INFLocalidadeController.Rule.cs" />
+/// <reference path="Localidade\Localidade.Controller.cs" />

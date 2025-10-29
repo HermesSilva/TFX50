@@ -10,6 +10,8 @@
 
     static ApplyMask(pValue: string | number, pMaskPattern: string): string
     {
+        if (X.IsEmpty(pValue))
+            return "";
         const CleanValue = typeof pValue === 'number' ? pValue.toString() : pValue.replace(/\D/g, '')
         const Masks = pMaskPattern.split('|').map(mask => ({ Mask: mask, Count: (mask.match(/#/g) || []).length })).OrderBy(a => a.Count)
 

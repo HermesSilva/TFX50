@@ -32,6 +32,10 @@
       <Visible>False</Visible>
       <DependentUpon>CEPx.dsorm</DependentUpon>
     </Compile>
+    <Compile Include="Localidade\Localidade.Controller.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Localidade.dssvc</DependentUpon>
+    </Compile>
     <Compile Include="Localidade\Localidade.DataSet.cs">
       <Visible>False</Visible>
       <DependentUpon>Localidade.dssvc</DependentUpon>
@@ -52,7 +56,12 @@
       <DependentUpon>Localidade.dssvc</DependentUpon>
       <Visible>False</Visible>
     </Compile>
+    <Compile Include="Localidade\Rules\INFLocalidadeController.Rule.cs" />
     <Compile Include="Localidade\Rules\INFLocalidadeService.Rule.cs" />
+    <Compile Include="Logradouro\Logradouro.Controller.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Logradouro.dssvc</DependentUpon>
+    </Compile>
     <Compile Include="Logradouro\Logradouro.DataSet.cs">
       <Visible>False</Visible>
       <DependentUpon>Logradouro.dssvc</DependentUpon>
@@ -73,6 +82,7 @@
       <DependentUpon>Logradouro.dssvc</DependentUpon>
       <Visible>False</Visible>
     </Compile>
+    <Compile Include="Logradouro\Rules\INFLogradouroController.Rule.cs" />
     <Compile Include="Logradouro\Rules\INFLogradouroService.Rule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadOnly\Logradouro.DataSet.cs">

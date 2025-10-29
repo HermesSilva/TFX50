@@ -31,20 +31,20 @@ namespace Launcher
         public static WebApplication App;
         public static bool IsAsync = false;
 
-        public static void Main(string[] args)
+        public static void Main(string[] pArgs)
         {
             var builder = WebApplication.CreateBuilder(new WebApplicationOptions
             {
-                Args = args,
+                Args = pArgs,
                 ContentRootPath = "/Tootega/Source/TFX50/Core/TFX.Core.UI"
             });
             builder.Services.UseOpenApi();
             builder.Services.ConfigureServices();
-            builder.Services.AddCors(options =>
+            builder.Services.AddCors(pOptions =>
             {
-                options.AddDefaultPolicy(policy =>
+                pOptions.AddDefaultPolicy(pOlicy =>
                 {
-                    policy.AllowAnyOrigin()
+                    pOlicy.AllowAnyOrigin()
                           .AllowAnyMethod()
                           .AllowAnyHeader();
                 });

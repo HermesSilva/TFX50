@@ -38,11 +38,11 @@ namespace Tootega.Core.CEP.Logradouro
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "Int32", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome do Logradouro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
             DataView.Columns.Add(new XColumnModel() { Name = "NomeLocalidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             DataView.Columns.Add(new XColumnModel() { Name = "NomeBairro", Title = "Nome do Bairro", Type = "String", Mask = "", 
@@ -142,7 +142,6 @@ namespace Tootega.Core.CEP.Logradouro
         public XFilterField Sigla {get;set;}
         public XFilterField CEP {get;set;}
         public XFilterField NomeBairro {get;set;}
-        public XFilterField Tipo {get;set;}
         public XFilterField NomeLocalidade {get;set;}
     }
     public class FRMLogradouroFilter : XFRMModel

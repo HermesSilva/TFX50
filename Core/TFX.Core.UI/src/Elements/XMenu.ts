@@ -155,14 +155,52 @@ class XMenuItemGroup extends XDiv
             {
                 const subitem = this.DataItem.Items[i];
                 const hitem = new XMenuButtonItem(this.HoverPanel, subitem);
-                // Call the same flow as submenu items: directly Launch on the menu
                 XEventManager.AddEvent(this.Menu, hitem.HTML, XEventType.Click, () => this.Menu?.Launch(subitem));
-
                 this.HoverItens.Add(hitem);
             }
-            // Ajusta a largura do painel para o maior item e evita quebra
+
             this.HoverPanel.AdjustWidth();
             XEventManager.SetTiemOut(this.HoverPanel, this.HoverPanel.AdjustWidth, 0);
+
+            (this as any)._hoverCloseTimer = null as any;
+
+            const cancelClose = () =>
+            {
+                if ((this as any)._hoverCloseTimer != null)
+                {
+                    window.clearTimeout((this as any)._hoverCloseTimer);
+                    (this as any)._hoverCloseTimer = null;
+                }
+            };
+
+            const scheduleClose = () =>
+            {
+                cancelClose();
+                (this as any)._hoverCloseTimer = window.setTimeout(() =>
+                {
+                        if (this.HoverPanel && this.HoverPanel.HTML)
+                            this.HoverPanel.HTML.style.display = 'none';
+                }, 300);
+            };
+
+            this.HTML.addEventListener('mouseenter', () =>
+            {
+                cancelClose();
+                if (this.Menu && this.Menu.AccordionMenu && this.Menu.AccordionMenu.HTML.classList.contains('collapsed'))
+                    if (this.HoverPanel && this.HoverPanel.HTML)
+                        this.HoverPanel.HTML.style.display = 'block';
+                    else
+                        if (this.HoverPanel && this.HoverPanel.HTML)
+                            this.HoverPanel.HTML.style.display = 'none';
+            });
+
+            this.HTML.addEventListener('mouseleave', () => scheduleClose());
+
+            if (this.HoverPanel && this.HoverPanel.HTML)
+            {
+                this.HoverPanel.HTML.addEventListener('mouseenter', () => cancelClose());
+                this.HoverPanel.HTML.addEventListener('mouseleave', () => scheduleClose());
+            }
         }
     }
 }
