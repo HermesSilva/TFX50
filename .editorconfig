@@ -1,55 +1,82 @@
-# Rules in this file were initially inferred by Visual Studio IntelliCode from the D:\Tootega\Source\TFX20 codebase based on best match to current usage at 15/04/2021
-# You can modify the rules from these initially generated values to suit your own policies
-# You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+root = true
+
+# Regras Gerais C#
 [*.cs]
 
-# CA2211: Non-constant fields should not be visible
-dotnet_diagnostic.CA2211.severity = none
+# Desabilita regra antiga de interface iniciando com I
+dotnet_naming_rule.interface_should_be_begins_with_i.severity = none
 
-# Default severity for analyzer diagnostics with category 'Performance'
-dotnet_analyzer_diagnostic.category-Performance.severity = none
-
-# IDE0059: Unnecessary assignment of a value
-csharp_style_unused_value_assignment_preference = unused_local_variable:suggestion
-
-# IDE0059: Unnecessary assignment of a value
-dotnet_diagnostic.IDE0059.severity = none
-
-# IDE0090: Use 'new(...)'
-dotnet_diagnostic.IDE0090.severity = none
-
-# IDE0025: Use block body for properties
-dotnet_diagnostic.IDE0025.severity = none
-
-# IDE0044: Add readonly modifier
-dotnet_diagnostic.IDE0044.severity = none
-
-# Default severity for analyzer diagnostics with category 'Style'
-dotnet_analyzer_diagnostic.category-Style.severity = none
-
-# IDE0052: Remove unread private members
-
-dotnet_diagnostic.IDE0052.severity = none
-csharp_new_line_before_open_brace=all
-csharp_indent_labels = one_less_than_current
-csharp_using_directive_placement = outside_namespace:silent
-csharp_prefer_simple_using_statement = true:suggestion
+# Preferir não usar chaves em blocos de uma linha; manter quando multi-linha
 csharp_prefer_braces = true:silent
-csharp_style_namespace_declarations = block_scoped:silent
-csharp_style_expression_bodied_methods = false:silent
-csharp_style_expression_bodied_constructors = false:silent
-csharp_style_expression_bodied_operators = false:silent
-csharp_style_expression_bodied_properties = true:silent
-csharp_style_expression_bodied_indexers = true:silent
-csharp_style_expression_bodied_accessors = true:silent
-csharp_style_expression_bodied_lambdas = true:silent
-csharp_style_expression_bodied_local_functions = false:silent
-csharp_style_throw_expression = true:suggestion
-csharp_style_prefer_null_check_over_type_check = true:suggestion
 
+# Preferir métodos locais nomeados em vez de funções anônimas
+csharp_style_prefer_local_over_anonymous_function = true:warning
+
+#### Naming symbols ####
+# Classes
+dotnet_naming_symbols.classes.applicable_kinds = class
+# Interfaces
+dotnet_naming_symbols.interfaces.applicable_kinds = interface
+# Métodos
+dotnet_naming_symbols.methods.applicable_kinds = method
+# Propriedades
+dotnet_naming_symbols.properties.applicable_kinds = property
+# Campos (privados/protegidos/ internos)
+dotnet_naming_symbols.fields.applicable_kinds = field
+dotnet_naming_symbols.fields.applicable_accessibilities = private, protected, internal, private_protected
+# Parâmetros
+dotnet_naming_symbols.parameters.applicable_kinds = parameter
+
+#### Naming styles ####
+# PascalCase
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+# Prefixo X + PascalCase
+dotnet_naming_style.prefix_X_pascal.required_prefix = X
+dotnet_naming_style.prefix_X_pascal.capitalization = pascal_case
+# Prefixo XI + PascalCase
+dotnet_naming_style.prefix_XI_pascal.required_prefix = XI
+dotnet_naming_style.prefix_XI_pascal.capitalization = pascal_case
+# Prefixo _ + PascalCase
+dotnet_naming_style.prefix__pascal.required_prefix = _
+dotnet_naming_style.prefix__pascal.capitalization = pascal_case
+# Prefixo p + PascalCase
+dotnet_naming_style.prefix_p_pascal.required_prefix = p
+dotnet_naming_style.prefix_p_pascal.capitalization = pascal_case
+
+#### Naming rules ####
+# Classes devem iniciar com X
+dotnet_naming_rule.classes_use_X_prefix.symbols = classes
+dotnet_naming_rule.classes_use_X_prefix.style = prefix_X_pascal
+dotnet_naming_rule.classes_use_X_prefix.severity = error
+
+# Interfaces devem iniciar com XI
+dotnet_naming_rule.interfaces_use_XI_prefix.symbols = interfaces
+dotnet_naming_rule.interfaces_use_XI_prefix.style = prefix_XI_pascal
+dotnet_naming_rule.interfaces_use_XI_prefix.severity = error
+
+# Métodos em PascalCase
+dotnet_naming_rule.methods_pascal.symbols = methods
+dotnet_naming_rule.methods_pascal.style = pascal_case
+dotnet_naming_rule.methods_pascal.severity = warning
+
+# Propriedades em PascalCase
+dotnet_naming_rule.properties_pascal.symbols = properties
+dotnet_naming_rule.properties_pascal.style = pascal_case
+dotnet_naming_rule.properties_pascal.severity = warning
+
+# Campos com _ + PascalCase
+dotnet_naming_rule.fields_use__prefix.symbols = fields
+dotnet_naming_rule.fields_use__prefix.style = prefix__pascal
+dotnet_naming_rule.fields_use__prefix.severity = error
+
+# Parâmetros com p + PascalCase
+dotnet_naming_rule.parameters_use_p_prefix.symbols = parameters
+dotnet_naming_rule.parameters_use_p_prefix.style = prefix_p_pascal
+dotnet_naming_rule.parameters_use_p_prefix.severity = error
+
+# Mantém configurações existentes inferidas
 [*.Tuple.Rule.cs]
 dotnet_diagnostic.CS1717.severity = warning
-
 
 [*.{cs,vb}]
 dotnet_style_allow_multiple_blank_lines_experimental= false:error
@@ -87,55 +114,25 @@ dotnet_style_qualification_for_property = false:silent
 dotnet_style_qualification_for_method = false:silent
 dotnet_style_qualification_for_event = false:silent
 dotnet_diagnostic.CA2000.severity = error
+
+# Estilos C# adicionais
 [*.cs]
-#### Naming styles ####
-
-# Naming rules
-
-dotnet_naming_rule.interface_should_be_begins_with_i.severity = error
-dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
-dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
-
-dotnet_naming_rule.types_should_be_pascal_case.severity = suggestion
-dotnet_naming_rule.types_should_be_pascal_case.symbols = types
-dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case
-
-dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = suggestion
-dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
-dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
-
-# Symbol specifications
-
-dotnet_naming_symbols.interface.applicable_kinds = interface
-dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal
-dotnet_naming_symbols.interface.required_modifiers = 
-
-dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
-dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal
-dotnet_naming_symbols.types.required_modifiers = 
-
-dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
-dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal
-dotnet_naming_symbols.non_field_members.required_modifiers = 
-
-# Naming styles
-
-dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix = 
-dotnet_naming_style.begins_with_i.word_separator = 
-dotnet_naming_style.begins_with_i.capitalization = pascal_case
-
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
-dotnet_naming_style.pascal_case.capitalization = pascal_case
-
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
-dotnet_naming_style.pascal_case.capitalization = pascal_case
+csharp_new_line_before_open_brace=all
+csharp_indent_labels = one_less_than_current
+csharp_using_directive_placement = outside_namespace:silent
+csharp_prefer_simple_using_statement = true:suggestion
+csharp_style_namespace_declarations = block_scoped:silent
+csharp_style_expression_bodied_methods = false:silent
+csharp_style_expression_bodied_constructors = false:silent
+csharp_style_expression_bodied_operators = false:silent
+csharp_style_expression_bodied_properties = true:silent
+csharp_style_expression_bodied_indexers = true:silent
+csharp_style_expression_bodied_accessors = true:silent
+csharp_style_expression_bodied_lambdas = true:silent
+csharp_style_expression_bodied_local_functions = false:silent
+csharp_style_throw_expression = true:suggestion
+csharp_style_prefer_null_check_over_type_check = true:suggestion
 csharp_prefer_simple_default_expression = true:suggestion
-csharp_style_prefer_local_over_anonymous_function = true:suggestion
 csharp_style_prefer_index_operator = true:suggestion
 csharp_style_prefer_range_operator = true:suggestion
 csharp_style_implicit_object_creation_when_type_is_apparent = true:suggestion
@@ -162,51 +159,12 @@ csharp_style_prefer_method_group_conversion = true:silent
 csharp_style_prefer_top_level_statements = true:silent
 csharp_style_prefer_utf8_string_literals = true:suggestion
 csharp_style_prefer_primary_constructors = true:suggestion
+csharp_prefer_system_threading_lock = true:suggestion
 
 [*.vb]
 #### Naming styles ####
 
-# Naming rules
+# Desabilita regra antiga para VB
+dotnet_naming_rule.interface_should_be_begins_with_i.severity = none
 
-dotnet_naming_rule.interface_should_be_begins_with_i.severity = suggestion
-dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
-dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
-
-dotnet_naming_rule.types_should_be_pascal_case.severity = suggestion
-dotnet_naming_rule.types_should_be_pascal_case.symbols = types
-dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case
-
-dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = suggestion
-dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
-dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
-
-# Symbol specifications
-
-dotnet_naming_symbols.interface.applicable_kinds = interface
-dotnet_naming_symbols.interface.applicable_accessibilities = public, friend, private, protected, protected_friend, private_protected
-dotnet_naming_symbols.interface.required_modifiers = 
-
-dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
-dotnet_naming_symbols.types.applicable_accessibilities = public, friend, private, protected, protected_friend, private_protected
-dotnet_naming_symbols.types.required_modifiers = 
-
-dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
-dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, friend, private, protected, protected_friend, private_protected
-dotnet_naming_symbols.non_field_members.required_modifiers = 
-
-# Naming styles
-
-dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix = 
-dotnet_naming_style.begins_with_i.word_separator = 
-dotnet_naming_style.begins_with_i.capitalization = pascal_case
-
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
-dotnet_naming_style.pascal_case.capitalization = pascal_case
-
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
-dotnet_naming_style.pascal_case.capitalization = pascal_case
+# (Mantém regras VB existentes ou ajusta conforme necessário)

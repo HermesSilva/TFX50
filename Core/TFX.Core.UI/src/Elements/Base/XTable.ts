@@ -399,6 +399,8 @@ class XTable extends XDiv
         this.Header = new XTableHeader(this.Owner, this);
         this.Body = new XTableBody(this.Container, this);
         XEventManager.AddEvent(this, this.HTML, XEventType.Scroll, this.PositioningHeader);
+        (this.HTML as HTMLElement).tabIndex = 0;
+        XEventManager.AddEvent(this, this.HTML, XEventType.KeyDown, this.OnKeyDown);
         this.RowNumberColumn = <XColumnModel>{ Name: "RowNumber", Visible: true, Width: 50 };
     }
     Container: HTMLTableElement;
@@ -417,6 +419,18 @@ class XTable extends XDiv
         pRow.IsSelected = true;
         if (this.OnRowClick != null)
             this.OnRowClick.apply(this, [[pRow]]);
+    }
+
+    private OnKeyDown(pArg: KeyboardEvent)
+    {
+        const isEsc = (pArg.key && pArg.key.toLowerCase() === 'escape') || (pArg as any).keyCode === XKey.K_ESCAPE;
+        if (!isEsc) return;
+        for (var i = 0; i < this.Body.DataRows.length; i++)
+            this.Body.DataRows[i].IsSelected = false;
+        if (this.OnRowClick != null)
+            this.OnRowClick.apply(this, [new XArray<XTableRow>()]);
+        pArg.preventDefault();
+        pArg.stopPropagation();
     }
 
     override SizeChanged()
@@ -504,7 +518,7 @@ class XTable extends XDiv
 
     CreateBody()
     {
-        
+
         this.Body.Clear();
         if (this.Columns == null)
             return;
