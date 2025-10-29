@@ -50,7 +50,6 @@ class ActionBar extends XWrapPanel
         }
     }
 
-    // Backward compatibility with existing callers
     public UpdateBySelection(rows: XArray<XTableRow> | null)
     {
         this.UpdateState(XAppState.Searching, rows);
@@ -58,14 +57,13 @@ class ActionBar extends XWrapPanel
 
     private ApplyViewingState(rows: XArray<XTableRow> | null)
     {
-        if (rows == null || rows.length ===0)
+        if (rows == null || rows.length === 0)
         {
             this.SetButtonsVisible(false, false, false, false);
             return;
         }
 
-        // if more than one selected, hide Edit button
-        if (rows.length >1)
+        if (rows.length > 1)
         {
             this.SetButtonsVisible(false, true, true, false);
             return;
@@ -119,7 +117,7 @@ class ActionBar extends XWrapPanel
                 showActive = false;
                 break;
         }
-        
+
         if (tuple && tuple.IsReadOnly === true)
         {
             canEdit = false;
