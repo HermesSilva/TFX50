@@ -1,4 +1,4 @@
-/// <reference path="../Stage/XStageTabControl.ts" />
+﻿/// <reference path="../Stage/XStageTabControl.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
 
 @AutoInit
@@ -44,13 +44,14 @@ class App extends XStageTabControlTab
 
     Prepare()
     {
-        for (var i = 0; i < this.Model.Forms.length; i++)
+        for (let i = 0; i < this.Model.Forms.length; i++)
         {
-            var fmdl = this.Model.Forms[i];
+            let fmdl = this.Model.Forms[i];
             if (fmdl.Type == XFRMType.SVCFilter)
                 continue;
-            var frm = new SceneForm(this);
+            let frm = new SceneForm(this);
             frm.SetModel(fmdl);
         }
     }
 }
+

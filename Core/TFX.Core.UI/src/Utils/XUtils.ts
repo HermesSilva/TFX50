@@ -106,10 +106,10 @@
 
     static Location(pElement: HTMLElement): XPoint
     {
-        var prect: DOMRect | any = null;
+        let prect: DOMRect | any = null;
         if (pElement.parentElement != null)
             prect = pElement.parentElement.getBoundingClientRect();
-        var rect: DOMRect = pElement.getBoundingClientRect();
+        let rect: DOMRect = pElement.getBoundingClientRect();
         if (prect != null)
             return new XPoint(rect.left - prect.left, rect.top - prect.top);
         return new XPoint(rect.left, rect.top);
@@ -130,7 +130,7 @@
     {
         if (pTag == null)
             throw new Error(`Parameter "pTag" can´t be null`);
-        var own: Element;
+        let own: Element;
         if (pOwner == null)
             own = document.body;
         else
@@ -139,7 +139,7 @@
             else
                 own = pOwner.HTML;
 
-        var elm = <Element>document.createElement(pTag);
+        let elm = <Element>document.createElement(pTag);
 
         if (pClass != null)
             elm.className = pClass;

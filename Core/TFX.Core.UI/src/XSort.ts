@@ -14,9 +14,9 @@ class XSort
     {
         do
         {
-            var i = left;
-            var j = right;
-            var elm = map[i + ((j - i) >> 1)];
+            let i = left;
+            let j = right;
+            let elm = map[i + ((j - i) >> 1)];
             do
             {
                 while (i < map.length && pComparer.call(pOwner, elm, map[i]) > 0) i++;
@@ -45,7 +45,7 @@ class XSort
 
     public static Swap<T>(pArray: Array<T>, pLeft: number, pRight: number)
     {
-        var tmp = pArray[pLeft];
+        let tmp = pArray[pLeft];
         pArray[pLeft] = pArray[pRight];
         pArray[pRight] = tmp;
     }

@@ -12,10 +12,11 @@ class XFilter extends XForm
     override SetModel(pForm: XFRMModel, pSVCModel: XServiceModel)
     {
         super.SetModel(pForm, pSVCModel)
-        var srcbox = <XSearchBoxEditor>this.Fields.FirstOrNull(f => f instanceof XSearchBoxEditor);
+        let srcbox = <XSearchBoxEditor>this.Fields.FirstOrNull(f => f instanceof XSearchBoxEditor);
         if (srcbox && this.DoSerach)
         {
             srcbox.OnSerach = this.DoSerach;
         }
     }
 }
+

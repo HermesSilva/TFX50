@@ -25,7 +25,7 @@ class XArray<T> extends Array<T>
         {
             if (pArg.length > 0)
             {
-                for (var i = 0; i < pArg.length; i++)
+                for (let i = 0; i < pArg.length; i++)
                     this[i] = pArg[i];
             }
             else
@@ -33,7 +33,7 @@ class XArray<T> extends Array<T>
                 if (pArg > 0)
                 {
                     this.length = pArg;
-                    for (var i = 0; i < this.length; i++)
+                    for (let i = 0; i < this.length; i++)
                         this[i] = <T>null;
                 }
             }
@@ -72,9 +72,9 @@ class XHashSet<T, I>
 
     Remove(pID: I)
     {
-        for (var i = 0; i < this.List.length; i++)
+        for (let i = 0; i < this.List.length; i++)
         {
-            var v = this.List[i];
+            let v = this.List[i];
             if (v.ID == pID)
             {
                 this.List.Remove(v);
@@ -135,7 +135,7 @@ class XHSLColor
 
     static StringToRGB(pColor: string): XArray<number>
     {
-        var c: any;
+        let c: any;
         if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(pColor))
         {
             c = pColor.substring(1).split('');
@@ -152,16 +152,16 @@ class XHSLColor
     static RGBToHSL(pR: number, pG: number, pB: number): XHSLColor
     {
         pR /= 255, pG /= 255, pB /= 255;
-        var max = Math.max(pR, pG, pB);
-        var min = Math.min(pR, pG, pB);
-        var h = 0;
-        var s = 0;
-        var l = (max + min) / 2;
+        let max = Math.max(pR, pG, pB);
+        let min = Math.min(pR, pG, pB);
+        let h = 0;
+        let s = 0;
+        let l = (max + min) / 2;
         if (max == min)
             h = s = 0;
         else
         {
-            var d = max - min;
+            let d = max - min;
             s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
             switch (max)
             {
@@ -182,14 +182,14 @@ class XHSLColor
 
     static HSLToRGB(pH: number, pS: number, pL: number, pA: number)
     {
-        var r = 0;
-        var g = 0;
-        var b = 0;
+        let r = 0;
+        let g = 0;
+        let b = 0;
         if (pS == 0)
             r = g = b = pL;
         else
         {
-            var hue2rgb = function hue2rgb(p: number, q: number, t: number)
+            let hue2rgb = function hue2rgb(p: number, q: number, t: number)
             {
                 if (t < 0) t += 1;
                 if (t > 1) t -= 1;
@@ -198,8 +198,8 @@ class XHSLColor
                 if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
                 return p;
             };
-            var q = pL < 0.5 ? pL * (1 + pS) : pL + pS - pL * pS;
-            var p = 2 * pL - q;
+            let q = pL < 0.5 ? pL * (1 + pS) : pL + pS - pL * pS;
+            let p = 2 * pL - q;
             r = hue2rgb(p, q, pH + 1 / 3);
             g = hue2rgb(p, q, pH);
             b = hue2rgb(p, q, pH - 1 / 3);
@@ -239,8 +239,8 @@ class XPoint
 
     LocationType(pW: number, pH: number, pSize: number = 4, pDragArea: number = 35): XDragType
     {
-        var x = this.X;
-        var y = this.Y;
+        let x = this.X;
+        let y = this.Y;
         if (x <= pSize && y <= pSize)
             return XDragType.LeftTop;
         else
@@ -307,7 +307,7 @@ class XRect
         }
         if (!XUtils.IsNumber(pLeft))
         {
-            var pts = pLeft.split(';');
+            let pts = pLeft.split(';');
             pLeft = Number.parseInt(pts[0]);
             pTop = Number.parseInt(pts[1]);
             pWidth = Number.parseInt(pts[2]);
@@ -337,7 +337,7 @@ class XRect
 
     get AsPath(): string
     {
-        var d = ["M", this.Left, this.Top, "L", this.Right, this.Top, this.Right, this.Bottom, this.Left, this.Bottom, this.Left, this.Top, "Z"].join(" ");
+        let d = ["M", this.Left, this.Top, "L", this.Right, this.Top, this.Right, this.Bottom, this.Left, this.Bottom, this.Left, this.Top, "Z"].join(" ");
         return d;
     }
 
@@ -373,10 +373,10 @@ class XRect
             this.SetValue(pRect.Left, pRect.Top, pRect.Width, pRect.Height);
             return
         }
-        var l = Math.min(this.Left, pRect.Left);
-        var t = Math.min(this.Top, pRect.Top);
-        var w = Math.max(this.Right, pRect.Right) - l;
-        var h = Math.max(this.Bottom, pRect.Bottom) - t;
+        let l = Math.min(this.Left, pRect.Left);
+        let t = Math.min(this.Top, pRect.Top);
+        let w = Math.max(this.Right, pRect.Right) - l;
+        let h = Math.max(this.Bottom, pRect.Bottom) - t;
         this.SetValue(l, t, w, h);
     }
 
@@ -393,16 +393,16 @@ class XRect
 
     Inflate(pWidth: number, pHeight: number)
     {
-        var l = this.Left - pWidth;
-        var t = this.Top - pHeight;
-        var w = this.Width + pWidth * 2;
-        var h = this.Height + pHeight * 2;
+        let l = this.Left - pWidth;
+        let t = this.Top - pHeight;
+        let w = this.Width + pWidth * 2;
+        let h = this.Height + pHeight * 2;
         this.SetValue(l, t, w, h);
     }
 
     AsSelectPath(pValue: number = 2): string
     {
-        var d = ["M", this.Left, this.Top, "L", this.Right, this.Top, this.Right, this.Bottom - pValue, this.Left, this.Bottom - pValue, "Z"].join(" ");
+        let d = ["M", this.Left, this.Top, "L", this.Right, this.Top, this.Right, this.Bottom - pValue, this.Left, this.Bottom - pValue, "Z"].join(" ");
         return d;
     }
 
@@ -441,4 +441,5 @@ class XRect
         return XDragType.Error;
     }
 }
+
 

@@ -1,4 +1,4 @@
-/// <reference path="../Elements/XMenu.ts" />
+﻿/// <reference path="../Elements/XMenu.ts" />
 
 interface MenuTuple extends XTuple
 {
@@ -20,7 +20,7 @@ class MainMenu extends XMenu
 
     Load()
     {
-        var clt = new XHttpClient();
+        let clt = new XHttpClient();
         clt.Context = this; 
         clt.OnLoad = this.LoadCallBack;
         clt.SendAsync(Paths.Menu);
@@ -44,7 +44,7 @@ class MainMenu extends XMenu
                 ID: tuple.Menu.Value,
                 Items: []
             });
-            var item = new XDataMenuItem();
+            let item = new XDataMenuItem();
             item.Title = tuple.Item.Value;
             item.ID = tuple.CORxMenuItemID.Value;
             item.ResourceID = tuple.CORxRecursoID.Value;
@@ -58,3 +58,4 @@ class MainMenu extends XMenu
         return data;
     }
 }
+

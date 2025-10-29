@@ -1,4 +1,4 @@
-/// <reference path="../Stage/XScene.ts" />
+﻿/// <reference path="../Stage/XScene.ts" />
 /// <reference path="../Reflection/XReflections.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
 
@@ -38,7 +38,7 @@ class SceneDataView extends XScene
     Load()
     {
         this.DataGrid.SetModel(this.SVCModel);
-        var fmdl = this.SVCModel.Forms.FirstOrNull(f => f.Type == XFRMType.SVCFilter);
+        let fmdl = this.SVCModel.Forms.FirstOrNull(f => f.Type == XFRMType.SVCFilter);
         if (fmdl != null)
             this.Filter.SetModel(fmdl, this.SVCModel);
         if (this.SVCModel?.SearchPath === undefined)
@@ -47,3 +47,4 @@ class SceneDataView extends XScene
         this.DataGrid.HTML.style.top = this.Filter.HTML.offsetHeight + "px";
     }
 }
+

@@ -69,13 +69,13 @@ class XEventManager
 
     static AddExecOnce(pUUID: string, pEvent: any)
     {
-        let co = new XCallOnce(pUUID, pEvent);
+        const co = new XCallOnce(pUUID, pEvent);
         XEventManager._CallOnce.Add(co);
     }
 
     static ExecOnce(pUUID: string)
     {
-        let co = XEventManager._CallOnce.FirstOrNull(c => c.UUID == pUUID);
+        const co = XEventManager._CallOnce.FirstOrNull(c => c.UUID == pUUID);
         if (co != null)
         {
             XEventManager._CallOnce.Remove(co);
@@ -102,25 +102,25 @@ class XEventManager
     {
         if (pElement.Handlers)
         {
-            for (var i = 0; i < pElement.Handlers.length; i++)
+            for (let i =0; i < pElement.Handlers.length; i++)
             {
-                var em = pElement.Handlers[i];
+                const em = pElement.Handlers[i];
                 pElement.removeEventListener(em.Event, em.Method);
             }
         }
-        for (var i = 0; i < pElement.childNodes.length; i++)
+        for (let i =0; i < pElement.childNodes.length; i++)
             this.Remove(<HTMLElement>pElement.childNodes[i])
     }
 
     static AddEvent(pContext: any, pElement: HTMLElement, pEvent: XEventType, pMethod: any, pCheckSource: boolean = false)
     {
-        var elm: any = pElement;
+        const elm: any = pElement;
         if (elm.Method == null)
             elm.Method = new Object();
         if (pElement.Handlers == null)
             pElement.Handlers = new XArray<EventMethod>();
 
-        var method = (arg: any) => XEventManager.Call(pContext, pMethod, pElement, pCheckSource, arg);
+        const method = (arg: any) => XEventManager.Call(pContext, pMethod, pElement, pCheckSource, arg);
         elm.Method[pContext.UUID + "-" + pEvent] = method;
         pElement.removeEventListener(pEvent, method);
         pElement.Handlers.Add({ Event: pEvent, Method: method });
@@ -146,14 +146,14 @@ class XEventManager
         }
     }
 
-    static DelayedEvent(pContext: any, pEvent: any, pTime: number = 100)
+    static DelayedEvent(pContext: any, pEvent: any, pTime: number =100)
     {
         if (pContext._Timer != null && pContext._Timer != -1)
             window.clearTimeout(pContext._Timer);
         pContext._Timer = setTimeout(() => pEvent.apply(pContext, []), pTime);
     }
 
-    static SetTiemOut(pContext: any, pEvent: any, pTime: number = 100)
+    static SetTiemOut(pContext: any, pEvent: any, pTime: number =100)
     {
         this.DelayedEvent(pContext, pEvent, pTime);
     }

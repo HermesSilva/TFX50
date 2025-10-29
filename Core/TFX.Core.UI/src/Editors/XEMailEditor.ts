@@ -14,7 +14,7 @@ class XEMailEditor extends XBaseInput
     {
         pArg.preventDefault(); // Impede o envio do formulário
         const email = this.Input.value;
-        var isvalid = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        let isvalid = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 
         this.Input.classList.remove('Error');
         if (isvalid)

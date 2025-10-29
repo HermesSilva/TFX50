@@ -41,7 +41,7 @@ class XForm extends XDiv
         this.SetIcon(pForm.Icon);
         for (const field of pForm.Fields)
         {
-            var editor = XEditorFactory.CreateEditor(this, field);
+            let editor = XEditorFactory.CreateEditor(this, field);
             this.Fields.Add(editor);
             if (editor instanceof XSearchBoxEditor)
             {
@@ -118,7 +118,7 @@ class XForm extends XDiv
 
                         const x = col * cellw;
                         const y = row * cellh;
-                        var r = new XRect(x, y, ccols * cellw, crows * cellh);
+                        let r = new XRect(x, y, ccols * cellw, crows * cellh);
                         r.Inflate(-2, -2);
                         child.Rect = r;
 
@@ -135,8 +135,8 @@ class XForm extends XDiv
                     break;
             }
         }
-        var tidx = 1;
-        var tabs = this.SortRectangles(this.Fields);
+        let tidx = 1;
+        let tabs = this.SortRectangles(this.Fields);
         for (const child of tabs)
             child.Input.tabIndex = tidx++;
 
@@ -167,4 +167,5 @@ class XForm extends XDiv
     }
 
 }
+
 

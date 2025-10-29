@@ -15,7 +15,7 @@ class XPopupManager
 
     static AddAutoEvent(pContext: any, pMethod: any, pOnce: boolean = true)
     {
-        var obj = { Context: pContext, Method: pMethod, Once: pOnce };
+        let obj = { Context: pContext, Method: pMethod, Once: pOnce };
         this.AutoEvent.Add(obj);
     }
 
@@ -39,19 +39,19 @@ class XPopupManager
     {
         if (pArg != null && this.UseCrl && !pArg.ctrlKey)
             return;
-        var ar = XPopupManager.AutoEvent.ToArray();
-        for (var i = 0; i < ar.length; i++)
+        let ar = XPopupManager.AutoEvent.ToArray();
+        for (let i = 0; i < ar.length; i++)
         {
-            var m = ar[i];
+            let m = ar[i];
             if (pArg != null && !m.Context.CanClose(<HTMLElement>pArg.srcElement))
                 continue;
             m.Method.apply(m.Context);
             if (m.Once)
                 XPopupManager.AutoEvent.Remove(m);
         }
-        for (var i = 0; i < XPopupManager.PopupList.length; i++)
+        for (let i = 0; i < XPopupManager.PopupList.length; i++)
         {
-            var elm = XPopupManager.PopupList[i];
+            let elm = XPopupManager.PopupList[i];
             if (!elm.IsVisible)
                 continue;
             if (pArg == null || elm.CanClose(<HTMLElement>pArg.srcElement))

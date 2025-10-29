@@ -1,4 +1,4 @@
-/// <reference path="../Stage/XStage.ts" />
+﻿/// <reference path="../Stage/XStage.ts" />
 
 class Stage extends XStage
 {
@@ -34,7 +34,7 @@ class Stage extends XStage
 
     LoadApp(pLoadApp: XAPPModel)
     {
-        var tab = <App>this.TabControl.AddTab(pLoadApp.Title);
+        let tab = <App>this.TabControl.AddTab(pLoadApp.Title);
         tab.SetModel(pLoadApp);
     }
 
@@ -45,7 +45,7 @@ class Stage extends XStage
 
     MenuResize()
     {
-        var r = this.Menu.HTML.GetRect();
+        let r = this.Menu.HTML.GetRect();
         this.TabControl.HTML.style.left = `${r.Width}px`;
         this.TabControl.HTML.style.width = `${this.Rect.Width - r.Width - 1}px`;
         this.TopBar.HTML.style.left = `${r.Width}px`;
@@ -59,3 +59,4 @@ class Stage extends XStage
         return new StageTabControl(this);
     }
 }
+

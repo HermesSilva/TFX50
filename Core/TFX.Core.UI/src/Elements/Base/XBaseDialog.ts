@@ -71,9 +71,9 @@ class XBaseDialog extends XSizeableElement implements XIDialog
 
     override StartMouseDown(pArg: MouseEvent)
     {
-        var r = this.Caption.HTML.GetRect();
-        var lb = this.HTML.StyleValue("border-left");
-        var tb = this.HTML.StyleValue("border-top");
+        let r = this.Caption.HTML.GetRect();
+        let lb = this.HTML.StyleValue("border-left");
+        let tb = this.HTML.StyleValue("border-top");
         this.DragRect = new XRect(lb, tb, r.Width, r.Height);
     }
 

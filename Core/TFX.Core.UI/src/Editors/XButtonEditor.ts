@@ -21,7 +21,7 @@ class XButtonEditor extends XBaseInput
     {
         if (this.Dialog == null)
         {
-            var con = this.GetDialogContainer();
+            let con = this.GetDialogContainer();
             this.Dialog = new XBaseDialog(<any>con);
             this.Dialog.Title = "Mostrando o Dialogo"
         }

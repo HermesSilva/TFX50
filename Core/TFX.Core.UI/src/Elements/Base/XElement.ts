@@ -55,7 +55,7 @@ class XElement implements XIElement
 
     GetOwner<T extends XIElement | null>(pPredicate: XFunc<T>): T
     {
-        var p: XElement | any = this.Owner;
+        let p: XElement | any = this.Owner;
         while (p != null)
         {
             if (pPredicate(p))
@@ -116,12 +116,12 @@ class XElement implements XIElement
 
     get IsDrawed(): boolean
     {
-        var elm: any = this.HTML;
+        let elm: any = this.HTML;
         while (elm !== null && elm !== document.body)
         {
             if (elm.parentElement == document.body)
                 return true;
-            var style = window.getComputedStyle(elm);
+            let style = window.getComputedStyle(elm);
             if (style.display == "none")
                 return false;
             elm = elm.parentElement;
@@ -141,7 +141,7 @@ class XElement implements XIElement
     {
         if (this.AutoIncZIndex)
             this.IncZIndex();
-        var old = this.IsDrawed;
+        let old = this.IsDrawed;
         this._IsVisible = pValue;
         if (pValue === true)
         {

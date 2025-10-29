@@ -155,10 +155,12 @@ class XMenuItemGroup extends XDiv
             {
                 const subitem = this.DataItem.Items[i];
                 const hitem = new XMenuButtonItem(this.HoverPanel, subitem);
-
+                // Call the same flow as submenu items: directly Launch on the menu
                 XEventManager.AddEvent(this.Menu, hitem.HTML, XEventType.Click, () => this.Menu?.Launch(subitem));
+
                 this.HoverItens.Add(hitem);
             }
+            // Ajusta a largura do painel para o maior item e evita quebra
             this.HoverPanel.AdjustWidth();
             XEventManager.SetTiemOut(this.HoverPanel, this.HoverPanel.AdjustWidth, 0);
         }
@@ -200,7 +202,7 @@ class XMenu extends XDiv
 
     UnExpand(pItem: XMenuItemGroup | null = null): boolean
     {
-        var ret = false;
+        let ret = false;
         if (pItem != null && !pItem.HTML.classList.contains('active'))
             return ret;
 
@@ -217,13 +219,14 @@ class XMenu extends XDiv
 
     SetData(pData: Array<XDataMenu>)
     {
-        for (var i = 0; i < pData.length; i++)
+        for (let i = 0; i < pData.length; i++)
         {
-            var mitem = pData[i];
-            var item = new XMenuItemGroup(this.AccordionMenu, mitem);
+            let mitem = pData[i];
+            let item = new XMenuItemGroup(this.AccordionMenu, mitem);
             this.Itens.Add(item);
         }
     }
 }
+
 
 

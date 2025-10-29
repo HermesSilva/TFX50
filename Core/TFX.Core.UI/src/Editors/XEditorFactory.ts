@@ -26,7 +26,7 @@ class XEditorFactory
     }
     static CreateEditor(pOwner: XForm, pField: XFRMField): XIEditor
     {
-        var editor: XIEditor = XEditorFactory.NewEditor(pField.EditorCID, pOwner);
+        let editor: XIEditor = XEditorFactory.NewEditor(pField.EditorCID, pOwner);
         editor.AdditionalDataFieldsID = pField.AdditionalDataFieldsID;
         editor.AdditionalFieldsID = pField.AdditionalFieldsID;
         editor.AllowEmpty = pField.AllowEmpty;
@@ -69,7 +69,7 @@ class XEditorFactory
 
     static NewEditor(pEditorCID: string, pOwner: XElement | HTMLElement | null): XIEditor
     {
-        var editor!: XIEditor;
+        let editor!: XIEditor;
         switch (pEditorCID)
         {
             case XModelEditors.XDate:

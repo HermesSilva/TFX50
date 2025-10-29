@@ -13,16 +13,16 @@ class XException extends Error
     {
         try
         {
-            var ix: any = "";
+            let ix: any = "";
             ix.dont.exist += 0;
         }
         catch (e: any)
         {
             try
             {
-                var strs = (<string>e.stack).split("\n");
-                var str = "***********************  [  Begin  ]  ***********************\n";
-                for (var i = 2; i < strs.length; i++)
+                let strs = (<string>e.stack).split("\n");
+                let str = "***********************  [  Begin  ]  ***********************\n";
+                for (let i = 2; i < strs.length; i++)
                     str = str + strs[i] + "\n";
             }
             catch (ee: any)

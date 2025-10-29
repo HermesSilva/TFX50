@@ -76,7 +76,7 @@ class XSizeableElement extends XDiv
 
     GetLineCount(pRect: XRect): number[]
     {
-        var cnt = new XArray<number>([0, 0, 0, 0, 0]);
+        let cnt = new XArray<number>([0, 0, 0, 0, 0]);
         if (cnt[0] > 0)
             cnt[0] = pRect.Height / (cnt[0] + 1);
         if (cnt[1] > 0)
@@ -115,7 +115,7 @@ class XSizeableElement extends XDiv
         if (!pArg.ctrlKey && pArg.button == 0)
         {
             XPopupManager.HideAll(pArg);
-            var rect = this.HTML.GetRect();
+            let rect = this.HTML.GetRect();
             this._Start = new XPoint(pArg.pageX - rect.Left, pArg.pageY - rect.Top);
             this._StartPos = new XPoint(pArg.pageX, pArg.pageY);
             this.DragType = this.CanExecute(this.GetLocationType(this._Start, this.HTML.offsetWidth, this.HTML.offsetHeight, this.ResizeWidth, this.DragHeight));
@@ -160,7 +160,7 @@ class XSizeableElement extends XDiv
             XEventManager.RemoveEvent(XDragUtils.HasDrag, window, XEventType.MouseUp);
             XEventManager.RemoveEvent(XDragUtils.HasDrag, document.body, XEventType.MouseMove);
             XDragUtils.HasDrag.IsCaptured = false;
-            var oldtype = XDragUtils.HasDrag.DragType;
+            let oldtype = XDragUtils.HasDrag.DragType;
             this.HTML.parentElement.style.cursor = "unset";
             XDragUtils.HasDrag = null;
             if (oldtype == XDragType.Drag)
@@ -185,8 +185,8 @@ class XSizeableElement extends XDiv
         if (pArg.target == this.HTML && XDragUtils.HasDrag == null && !pArg.ctrlKey)
         {
             pArg.stopPropagation();
-            var rect = this.HTML.GetRect();
-            var pt = new XPoint(pArg.pageX - rect.Left, pArg.pageY - rect.Top);
+            let rect = this.HTML.GetRect();
+            let pt = new XPoint(pArg.pageX - rect.Left, pArg.pageY - rect.Top);
             this.DragType = this.CanExecute(this.GetLocationType(pt, this.HTML.offsetWidth, this.HTML.offsetHeight, this.ResizeWidth, this.DragHeight));
             XUtils.SetCursor(this.HTML.parentElement, this.DragType);
             if (this.IsCaptured)
@@ -210,10 +210,10 @@ class XSizeableElement extends XDiv
         if (this.HTML.parentElement == null)
             return;
         pArg.stopPropagation();
-        var x = this.HTML.parentElement.scrollLeft;
-        var y = this.HTML.parentElement.scrollTop;
-        var mx = pArg.pageX - this._StartPos.X;
-        var my = pArg.pageY - this._StartPos.Y;
+        let x = this.HTML.parentElement.scrollLeft;
+        let y = this.HTML.parentElement.scrollTop;
+        let mx = pArg.pageX - this._StartPos.X;
+        let my = pArg.pageY - this._StartPos.Y;
         this._StartPos = new XPoint(pArg.pageX, pArg.pageY);
         switch (this.DragType)
         {

@@ -28,13 +28,13 @@ class XSearchBoxEditor extends XBaseInput
 
     GetFilter(): XFilter
     {
-        var filter: any = new Object();
-        for (var i = 0; i < this.Fields.length; i++)
+        let filter: any = new Object();
+        for (let i = 0; i < this.Fields.length; i++)
         {
-            var fld = this.Fields[i];
+            let fld = this.Fields[i];
             if (fld.Value != null && fld.Value != "")
             {
-                var ffld = new Object() as XFilterField;
+                let ffld = new Object() as XFilterField;
                 ffld.Name = fld.Columns.Name;
                 ffld.Operator = fld.Columns.Operator;
                 ffld.State = XFieldState.NotEmpty;
@@ -59,7 +59,7 @@ class XSearchBoxEditor extends XBaseInput
 
     AddField(pColumns: XColumnModel)
     {
-        var tag = new XEditableTag(this.Input);
+        let tag = new XEditableTag(this.Input);
         tag.SetModel(pColumns);
         tag.Editor.Title.innerHTML = pColumns.Title;
         tag.OnClick = (pTag: XEditableTag) => this.Close(pTag);
@@ -95,3 +95,4 @@ class XSearchBoxEditor extends XBaseInput
     {
     }
 }
+

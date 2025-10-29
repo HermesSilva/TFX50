@@ -40,7 +40,7 @@ class XSVCBroker
 {
     static Create(): XSVCBroker
     {
-        var bk = new XSVCBroker();
+        let bk = new XSVCBroker();
         return bk;
     }
 
@@ -116,7 +116,7 @@ class XAPPBroker
 {
     static Create(): XAPPBroker
     {
-        var bk = new XAPPBroker();
+        let bk = new XAPPBroker();
         return bk;
     }
 
@@ -135,7 +135,7 @@ class XServiceBroker
 
     static CreateSVCSearch(pID: string, pOwnerID: string = "", pData: any = null, pRowCount: number = 75, pLoadChildren: boolean = false, pFilterZero: boolean = true, pFilterInactive: boolean = true): XServiceBroker
     {
-        var sb = new XServiceBroker();
+        let sb = new XServiceBroker();
         sb.Path = "SVCSearch";
         sb.ID = pID;
         sb.OwnerID = pOwnerID;
@@ -219,7 +219,7 @@ class XServiceBroker
                 this.SVCBroker.SearchData["ID"] = -1;
                 this.SVCBroker.SearchData["Data"] = new XArray<any>();
             }
-            var data = <XArray<any>>this.SVCBroker.SearchData.Data;
+            let data = <XArray<any>>this.SVCBroker.SearchData.Data;
             if (pValue == null)
             {
                 data.Add(pFieldID);

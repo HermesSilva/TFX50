@@ -33,7 +33,7 @@
     static RotatePoints(pCenter: XPoint, pPoints: XPoint[], pDegree: number): XArray<XPoint>
     {
         let ret = new XArray<XPoint>();
-        for (var i = 0; i < pPoints.length; i++)
+        for (let i = 0; i < pPoints.length; i++)
             ret.Add(XMath.RotatePoint(pCenter, pPoints[i], pDegree));
         return ret;
     }
@@ -54,7 +54,7 @@
     {
         if (Number.isNaN(pValue))
             return 0;
-        var v = Math.floor(pValue / pFactor);
+        let v = Math.floor(pValue / pFactor);
         return v * pFactor;
     }
 
@@ -74,13 +74,13 @@
 
     private static LineIntersectsLine(l1p1: XPoint, l1p2: XPoint, l2p1: XPoint, l2p2: XPoint): boolean
     {
-        var q = (l1p1.Y - l2p1.Y) * (l2p2.X - l2p1.X) - (l1p1.X - l2p1.X) * (l2p2.Y - l2p1.Y);
-        var d = (l1p2.X - l1p1.X) * (l2p2.Y - l2p1.Y) - (l1p2.Y - l1p1.Y) * (l2p2.X - l2p1.X);
+        let q = (l1p1.Y - l2p1.Y) * (l2p2.X - l2p1.X) - (l1p1.X - l2p1.X) * (l2p2.Y - l2p1.Y);
+        let d = (l1p2.X - l1p1.X) * (l2p2.Y - l2p1.Y) - (l1p2.Y - l1p1.Y) * (l2p2.X - l2p1.X);
         if (d == 0)
             return false;
-        var r = q / d;
+        let r = q / d;
         q = (l1p1.Y - l2p1.Y) * (l1p2.X - l1p1.X) - (l1p1.X - l2p1.X) * (l1p2.Y - l1p1.Y);
-        var s = q / d;
+        let s = q / d;
         if (r < 0 || r > 1 || s < 0 || s > 1)
             return false;
         return true;
@@ -88,15 +88,15 @@
 
     static LineIntersection(pP1Line1: XPoint, pP2Line1: XPoint, pP1Line2: XPoint, pP2Line2: XPoint): XPoint
     {
-        var dx1 = pP2Line1.X - pP1Line1.X;
-        var dy1 = pP2Line1.Y - pP1Line1.Y;
-        var dx2 = pP2Line2.X - pP1Line2.X;
-        var dy2 = pP2Line2.Y - pP1Line2.Y;
-        var det = (dx2 * dy1) - (dy2 * dx1);
+        let dx1 = pP2Line1.X - pP1Line1.X;
+        let dy1 = pP2Line1.Y - pP1Line1.Y;
+        let dx2 = pP2Line2.X - pP1Line2.X;
+        let dy2 = pP2Line2.Y - pP1Line2.Y;
+        let det = (dx2 * dy1) - (dy2 * dx1);
         if (det == 0)
             return new XPoint(Number.NaN, Number.NaN);
-        var mu = (((pP1Line1.X - pP1Line2.X) * dy1) - ((pP1Line1.Y - pP1Line2.Y) * dx1)) / det;
-        var mu2 = (((pP1Line1.X - pP1Line2.X) * dy2) - ((pP1Line1.Y - pP1Line2.Y) * dx2)) / det;
+        let mu = (((pP1Line1.X - pP1Line2.X) * dy1) - ((pP1Line1.Y - pP1Line2.Y) * dx1)) / det;
+        let mu2 = (((pP1Line1.X - pP1Line2.X) * dy2) - ((pP1Line1.Y - pP1Line2.Y) * dx2)) / det;
         if (mu >= 0 && mu <= 1 && mu2 >= 0 && mu2 <= 1)
             return new XPoint(pP1Line2.X + (mu * dx2), pP1Line2.Y + (mu * dy2));
         return new XPoint(Number.NaN, Number.NaN);
@@ -104,7 +104,7 @@
 
     static ToPolygonEx(pRect: XRect, pInflateLine: number = 0): XArray<XArray<XPoint>>
     {
-        var list = new XArray<XArray<XPoint>>();
+        let list = new XArray<XArray<XPoint>>();
         list[0] = [new XPoint(pRect.Left - pInflateLine, pRect.Top), new XPoint(pRect.Right + pInflateLine, pRect.Top)];
         list[1] = [new XPoint(pRect.Right, pRect.Top - pInflateLine), new XPoint(pRect.Right, pRect.Bottom + pInflateLine)];
         list[2] = [new XPoint(pRect.Right + pInflateLine, pRect.Bottom), new XPoint(pRect.Left - pInflateLine, pRect.Bottom)];
@@ -117,11 +117,11 @@
         if (!pCorner.Equals(pP1) && !pCorner.Equals(pP2) && ((Math.floor(pP1.Y) == Math.floor(pCorner.Y) && Math.floor(pCorner.X) == Math.floor(pP2.X)) ||
             (Math.floor(pP1.X) == Math.floor(pCorner.X) && Math.floor(pCorner.Y) == Math.floor(pP2.Y))))
         {
-            var x1 = pCorner.X == pP1.X ? pRound * 2 : Math.abs(pCorner.X - pP1.X);
-            var y1 = pCorner.Y == pP1.Y ? pRound * 2 : Math.abs(pCorner.Y - pP1.Y);
-            var x2 = pCorner.X == pP2.X ? pRound * 2 : Math.abs(pCorner.X - pP2.X);
-            var y2 = pCorner.Y == pP2.Y ? pRound * 2 : Math.abs(pCorner.Y - pP2.Y);
-            var size = Math.min(Math.min(x1, y1), Math.min(x2, y2));
+            let x1 = pCorner.X == pP1.X ? pRound * 2 : Math.abs(pCorner.X - pP1.X);
+            let y1 = pCorner.Y == pP1.Y ? pRound * 2 : Math.abs(pCorner.Y - pP1.Y);
+            let x2 = pCorner.X == pP2.X ? pRound * 2 : Math.abs(pCorner.X - pP2.X);
+            let y2 = pCorner.Y == pP2.Y ? pRound * 2 : Math.abs(pCorner.Y - pP2.Y);
+            let size = Math.min(Math.min(x1, y1), Math.min(x2, y2));
             pRound = size / 2;
         }
         else
@@ -133,13 +133,13 @@
     {
         if (pRadiusY == -1)
             pRadiusY = pRadiusX;
-        var dg = XMath.AngleInRad(pCenter, pPoint) + Math.PI;
+        let dg = XMath.AngleInRad(pCenter, pPoint) + Math.PI;
         return new XPoint(pCenter.X - (pRadiusX * Math.sin(dg)), pCenter.Y - (pRadiusY * Math.cos(dg)));
     }
 
     static AngleInRad(pFirst: XPoint, pSecond: XPoint): number
     {
-        var degree = 0;
+        let degree = 0;
         if (pFirst.X == pSecond.X)
             if (pFirst.Y < pSecond.Y)
                 degree = Math.PI * 1.5;
@@ -155,38 +155,38 @@
 
     static PolarToCartesian(pCenter: XPoint, pRadius: number, pDegrees: number): XPoint
     {
-        var rad = (pDegrees - 90) * Math.PI / 180.0;
+        let rad = (pDegrees - 90) * Math.PI / 180.0;
         return new XPoint(pCenter.X + (pRadius * Math.cos(rad)), pCenter.Y + (pRadius * Math.sin(rad)));
     }
 
     static DonutSlice(pCenter: XPoint, pRadius: number, pStartDegrees: number, pEndDegrees: number, pWidth: number)
     {
-        var start = XMath.PolarToCartesian(pCenter, pRadius, pEndDegrees);
-        var end = XMath.PolarToCartesian(pCenter, pRadius, pStartDegrees);
-        var iradius = pRadius - pWidth;
-        var istart = XMath.PolarToCartesian(pCenter, iradius, pEndDegrees);
-        var iend = XMath.PolarToCartesian(pCenter, iradius, pStartDegrees);
-        var flag = pEndDegrees - pStartDegrees <= 180 ? "0" : "1";
-        var x = "";
-        var d = ["M", start.X, start.Y, "A", pRadius, pRadius, 0, flag, 0, end.X, end.Y, "L", iend.X, iend.Y, "A", iradius, iradius, 0, flag, 1, istart.X, istart.Y, "Z", x].join(" ");
+        let start = XMath.PolarToCartesian(pCenter, pRadius, pEndDegrees);
+        let end = XMath.PolarToCartesian(pCenter, pRadius, pStartDegrees);
+        let iradius = pRadius - pWidth;
+        let istart = XMath.PolarToCartesian(pCenter, iradius, pEndDegrees);
+        let iend = XMath.PolarToCartesian(pCenter, iradius, pStartDegrees);
+        let flag = pEndDegrees - pStartDegrees <= 180 ? "0" : "1";
+        let x = "";
+        let d = ["M", start.X, start.Y, "A", pRadius, pRadius, 0, flag, 0, end.X, end.Y, "L", iend.X, iend.Y, "A", iradius, iradius, 0, flag, 1, istart.X, istart.Y, "Z", x].join(" ");
         return d;
     }
 
     static PieSlice(pCenter: XPoint, pRadius: number, pStartDegrees: number, pEndDegrees: number)
     {
-        var start = XMath.PolarToCartesian(pCenter, pRadius, pEndDegrees);
-        var end = XMath.PolarToCartesian(pCenter, pRadius, pStartDegrees);
-        var flag = pEndDegrees - pStartDegrees <= 180 ? "0" : "1";
-        var d = ["M", pCenter.X, pCenter.Y, "L", start.X, start.Y, "A", pRadius, pRadius, 0, flag, 0, end.X, end.Y, "L", pCenter.X, pCenter.Y].join(" ");
+        let start = XMath.PolarToCartesian(pCenter, pRadius, pEndDegrees);
+        let end = XMath.PolarToCartesian(pCenter, pRadius, pStartDegrees);
+        let flag = pEndDegrees - pStartDegrees <= 180 ? "0" : "1";
+        let d = ["M", pCenter.X, pCenter.Y, "L", start.X, start.Y, "A", pRadius, pRadius, 0, flag, 0, end.X, end.Y, "L", pCenter.X, pCenter.Y].join(" ");
         return d;
     }
 
     static Arc(pCenter: XPoint, pRadius: number, pStartDegrees: number, pEndDegrees: number)
     {
-        var start = XMath.PolarToCartesian(pCenter, pRadius, pEndDegrees);
-        var end = XMath.PolarToCartesian(pCenter, pRadius, pStartDegrees);
-        var flag = pEndDegrees - pStartDegrees <= 180 ? "0" : "1";
-        var d = ["M", start.X, start.Y, "A", pRadius, pRadius, 0, flag, 0, end.X, end.Y].join(" ");
+        let start = XMath.PolarToCartesian(pCenter, pRadius, pEndDegrees);
+        let end = XMath.PolarToCartesian(pCenter, pRadius, pStartDegrees);
+        let flag = pEndDegrees - pStartDegrees <= 180 ? "0" : "1";
+        let d = ["M", start.X, start.Y, "A", pRadius, pRadius, 0, flag, 0, end.X, end.Y].join(" ");
         return d;
     }
 
@@ -202,7 +202,7 @@
     {
         XMath.m_z = (36969 * (XMath.m_z & 65535) + (XMath.m_z >> 16)) & XMath.mask;
         XMath.m_w = (18000 * (XMath.m_w & 65535) + (XMath.m_w >> 16)) & XMath.mask;
-        var result = ((XMath.m_z << 16) + (XMath.m_w & 65535)) >>> 0;
+        let result = ((XMath.m_z << 16) + (XMath.m_w & 65535)) >>> 0;
         result /= 4294967296;
         return result;
     }

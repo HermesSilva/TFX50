@@ -6,6 +6,9 @@ class XTabControlButton extends XBaseTextButton
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "XTabControlButton");
+        const button = <HTMLElement>XUtils.AddElement(this, "span", 'XTabControlButtonIcon');
+        button.innerHTML = '×';
+        XEventManager.AddEvent(this, button, XEventType.Click, () => this.TabControl?.CloseTab(this));
         XEventManager.AddEvent(this, this.HTML, XEventType.Click, () => this.TabControl?.SelectTab(this));
     }
 
@@ -39,7 +42,7 @@ class XTabControlHeader extends XDiv
         const painelRect = this.HTML.getBoundingClientRect();
         this.HTML.childNodes.forEach(item =>
         {
-            var elm = <HTMLElement>item;
+            const elm = <HTMLElement>item;
             const rect = elm.getBoundingClientRect();
 
             if (rect.left < painelRect.left || rect.right > painelRect.right)
@@ -85,7 +88,7 @@ class XTabControlDropdown extends XPopupElement
         this.HTML.addEventListener('wheel', function (event)
         {
             const { deltaY } = event;
-            const { scrollTop, scrollHeight, clientHeight } = this;
+            const { scrollTop, scrollHeight, clientHeight } = this as any;
 
             if ((deltaY >0 && (scrollTop + clientHeight >= scrollHeight)) || (deltaY <0 && scrollTop <=0))
                 event.preventDefault();
@@ -154,29 +157,21 @@ class XTabControl extends XDiv implements XIDialogContainer
 
     CloseTab(pButton: XTabControlButton)
     {
-        if (!pButton || !pButton.Tab)
-            return;
-
-        const closingTab = pButton.Tab;
-        const currentIndex = this.Tabs.indexOf(closingTab);
-        closingTab?.Free();
+        // Encontra índice antes de liberar
+        const currentIndex = this.Tabs.indexOf(pButton.Tab!);
+        pButton.Tab?.Free();
         pButton.Free();
-        if (currentIndex >= 0)
-            this.Tabs.splice(currentIndex,1);
-        else
-            this.Tabs.Remove(closingTab);
 
         if (this.Tabs.length >0)
         {
-            const nextIndex = Math.max(0, currentIndex -1);
-            const nextTab = this.Tabs[nextIndex] ?? this.Tabs[this.Tabs.length -1];
-            if (nextTab?.Button)
+            let nextTab: XTabControlTab | null = null;
+            if (currentIndex >0)
+                nextTab = this.Tabs[currentIndex -1];
+            else if (currentIndex ===0 && this.Tabs.length > currentIndex)
+                nextTab = this.Tabs[currentIndex];
+
+            if (nextTab && nextTab.Button)
                 this.SelectTab(nextTab.Button);
-        }
-        else
-        {
-            this.ActiveTab = null;
-            this.Header.SelectionChanged();
         }
     }
 
@@ -198,9 +193,9 @@ class XTabControl extends XDiv implements XIDialogContainer
             pButton.HTML.classList.add('Active');
             pButton.Tab.IsVisible = true;
         }
-        var rbtn = pButton?.Tab?.Button?.HTML.getBoundingClientRect();
-        var rctn = this.Header.HTML.getBoundingClientRect();
-        var offw = (<HTMLElement>pButton?.Tab?.Button?.HTML?.previousElementSibling)?.offsetWidth ??0;
+        const rbtn = pButton?.Tab?.Button?.HTML.getBoundingClientRect();
+        const rctn = this.Header.HTML.getBoundingClientRect();
+        const offw = (<HTMLElement>pButton?.Tab?.Button?.HTML?.previousElementSibling)?.offsetWidth ??0;
         if (rbtn != null)
         {
             if (rbtn.left < rctn.left)
@@ -216,10 +211,10 @@ class XTabControl extends XDiv implements XIDialogContainer
 
     AddTab(pTitle: string): XTabControlTab
     {
-        var btn = new XTabControlButton(this.Header);
+        const btn = new XTabControlButton(this.Header);
         btn.Title = pTitle;
         btn.TabControl = this;
-        var tab = this.CreateTab();
+        const tab = this.CreateTab();
         tab.Button = btn;
         btn.Tab = tab;
         this.Tabs.Add(tab);
@@ -230,7 +225,7 @@ class XTabControl extends XDiv implements XIDialogContainer
 
     CreateTab(): XTabControlTab
     {
-        return new XTabControlTab(this.Container);;
+        return new XTabControlTab(this.Container);
     }
 }
 

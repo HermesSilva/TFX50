@@ -17,7 +17,7 @@ class XTagEditor extends XDiv
 
     SetModel(pColumns: XColumnModel)
     {
-        var edttype = XEditorFactory.DataTypeToEditorType(pColumns.Type);
+        let edttype = XEditorFactory.DataTypeToEditorType(pColumns.Type);
         this.Editor = XEditorFactory.NewEditor(edttype, this) as XIEditor;
         this.Editor.RemoveTitle()
         this.Editor.HTML.className = "XTagEditorInput";
@@ -39,7 +39,7 @@ class XTagEditor extends XDiv
 
     private OnInput()
     {
-        var w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value);
+        let w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value);
         this.Editor.Input.style.width = w + "px";
         this.UpdateSVGIcon();
     }
