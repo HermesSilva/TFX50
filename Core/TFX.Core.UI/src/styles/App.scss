@@ -13,3 +13,7 @@
     height: calc(100% - 50px);
     overflow: hidden;
 }
+
+.SceneFormEditor {
+    @extend .Scenes;
+}

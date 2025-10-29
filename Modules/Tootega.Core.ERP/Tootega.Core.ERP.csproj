@@ -48,6 +48,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Empresa\Empresa.Controller.cs">
+      <Visible>False</Visible>
+      <DependentUpon>Empresa.dssvc</DependentUpon>
+    </Compile>
     <Compile Include="Empresa\Empresa.DataSet.cs">
       <Visible>False</Visible>
       <DependentUpon>Empresa.dssvc</DependentUpon>
@@ -62,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Empresa\Rules\INFEmpresaController.Rule.cs" />
     <Compile Include="Empresa\Rules\INFEmpresaService.Rule.cs" />
     <Compile Include="GerenciaEmpresa\ConfigITG.FRM.cs">
       <DesignTime>True</DesignTime>
@@ -95,6 +100,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="PessoaFisica\PessoaFisica.Controller.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisica.dssvc</DependentUpon>
+    </Compile>
     <Compile Include="PessoaFisica\PessoaFisica.DataSet.cs">
       <Visible>False</Visible>
       <DependentUpon>PessoaFisica.dssvc</DependentUpon>
@@ -123,6 +132,7 @@
       <DependentUpon>PessoaFisicaTipo.dssvc</DependentUpon>
       <Visible>False</Visible>
     </Compile>
+    <Compile Include="PessoaFisica\Rules\INFPessoaFisicaController.Rule.cs" />
     <Compile Include="PessoaFisica\Rules\INFPessoaFisicaService.Rule.cs" />
     <Compile Include="PessoaFisica\Rules\INFPessoaFisicaTipoService.Rule.cs" />
     <Compile Include="PessoaJuridica\PessoaJuridica.Application.cs">

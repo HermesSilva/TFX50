@@ -18,6 +18,8 @@
     </XLinkArrayData>
     <XData Name="ComponentsID" ID="B8DF7670-0524-4151-98E9-93545460C5DA" Type="Guid[]">25A4D156-A127-4412-BE08-BDA336DDE007|BDBA9072-C446-4EDB-B5C9-4707BD4F7321|EE7092AD-A07E-4E44-BB44-E9CD6CFCA83F|EFF1A7EB-7FB9-40F5-A6BD-E1534DF083DF|67C5D2C4-B7E1-482E-852F-BF52008FF7AA|EB9A30E9-8978-4BCA-8E27-762F8716C96B|A2DEF2C7-4498-4EEB-94CD-4CDBA92D5662|04F85D9B-38C6-485C-8F73-507B208D29EB|8E061EF9-BDC8-431E-8D19-FD252F1D6E6B|68AB3623-C7FE-4262-891F-91EB99CD912D</XData>
     <XLinkData Name="DBEnvVariable" ID="73A8B1B8-E1FC-4A47-8607-4A7EDE93B5B0" Type="Guid" ElementID="9CC44EEE-F51A-445B-9C7A-6B7EA3A04E66" Text="SQL_SERVER_TFX" DocumentID="558ED7DA-6600-4CFD-80E9-65D95C484373" DocumentName="EnvironmentVariables" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="" DataEx="">9CC44EEE-F51A-445B-9C7A-6B7EA3A04E66</XLinkData>
+    <XData Name="DefaultRouteName" ID="018A4D89-CAEE-4610-9C6A-93D174AB5D9C" Type="String">Search</XData>
+    <XData Name="HasWebApi" ID="77932336-7026-4ED1-A617-480254F506FE" Type="Boolean">true</XData>
   </XValues>
   <XSVCResultSet Name="ResultSet" ID="9E8C925A-4D52-4CB2-BA77-674A969F44E3" iID="591117">
     <XValues>
@@ -192,6 +194,7 @@
         <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
         <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=43;Width=10;Height=25}</XData>
         <XData Name="IsFreeSearch" ID="C04757A0-35BF-4BA1-97C4-A36004A6D58A" Type="Boolean">true</XData>
+        <XData Name="Operator" ID="294F2E91-B2F9-447A-A03E-DA8BBFCC96DA" Type="XOperator">LikeBegin</XData>
       </XValues>
     </XSVCField>
     <XSVCField ID="81BF80EB-065A-42A2-A7B7-0500CC10694B" iID="633805" ParentID="670BFB5C-16A4-4BB9-BC34-BBFECC28E97A">
@@ -202,6 +205,7 @@
         <XData Name="Title" ID="F9789344-AFE7-41A7-9D16-F4C22EAF190D" Type="String">
           <XLanguage IETFCode="pt-br" IsDefault="true">Número</XLanguage>
         </XData>
+        <XData Name="IsFreeSearch" ID="C04757A0-35BF-4BA1-97C4-A36004A6D58A" Type="Boolean">true</XData>
       </XValues>
     </XSVCField>
   </XSVCDataView>
@@ -433,6 +437,9 @@
         </XData>
         <XData Name="IsDefault" ID="2DA04072-AB74-449A-BC28-7DB5333EC830" Type="Boolean">true</XData>
       </XValues>
+      <XSVCPayloadEndPoint Name="PayloadFields" ID="C5A6117E-7DFF-466B-A486-FDF418AAD137">
+        <XValues />
+      </XSVCPayloadEndPoint>
     </XSVCEndPoint>
     <XValues />
   </XSVCEndPoints>

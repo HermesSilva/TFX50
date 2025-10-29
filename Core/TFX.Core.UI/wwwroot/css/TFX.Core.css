@@ -1185,7 +1185,7 @@ th:active {
   overflow: hidden;
 }
 
-.Scenes {
+.Scenes, .SceneFormEditor {
   position: absolute;
   top: 50px;
   width: 100%;

@@ -1,5 +1,6 @@
 ﻿/// <reference path="../Stage/XStageTabControl.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
+/// <reference path="SceneFormEditor.ts" />
 
 @AutoInit
 class App extends XStageTabControlTab
@@ -10,6 +11,8 @@ class App extends XStageTabControlTab
         this.ButtonBar = new ActionBar(this);
         this.ButtonBarR = new ActionBarR(this);
         this.Scanes = new XDiv(this, "Scenes");
+        this._FormEditor = null;
+        XEventManager.AddEvent(this, this.ButtonBar.Edit.HTML, XEventType.Click, () => this.OnEdit());
     }
 
     @Inject(XHttpClient, XLifetime.Transient)
@@ -20,6 +23,7 @@ class App extends XStageTabControlTab
     ButtonBarR: ActionBarR;
     Model!: XAPPModel;
     DataView!: SceneDataView;
+    private _FormEditor: SceneFormEditor | null;
 
     SetModel(pModel: XAPPModel)
     {
@@ -40,6 +44,11 @@ class App extends XStageTabControlTab
     {
         this.Scanes.HTML.style.top = this.ButtonBar.HTML.offsetHeight + "px";
         this.Scanes.HTML.style.height = (this.HTML.offsetHeight - this.ButtonBar.HTML.offsetHeight) + "px";
+        if (this._FormEditor)
+        {
+            this._FormEditor.HTML.style.top = this.ButtonBar.HTML.offsetHeight + "px";
+            this._FormEditor.HTML.style.height = (this.HTML.offsetHeight - this.ButtonBar.HTML.offsetHeight) + "px";
+        }
     }
 
     Prepare()
@@ -52,6 +61,33 @@ class App extends XStageTabControlTab
             let frm = new SceneForm(this);
             frm.SetModel(fmdl);
         }
+    }
+
+    private OnEdit()
+    {
+        if (!this.DataView || !this.DataView.DataGrid)
+            return;
+
+        const fmdl = this.Model.Forms.FirstOrNull(f => f.Type != XFRMType.SVCFilter) as XFRMModel | null;
+        if (!fmdl)
+            return;
+
+        if (this._FormEditor == null)
+        {
+            this._FormEditor = new SceneFormEditor(this.Scanes);
+            this._FormEditor.OnClose = (_pArg: any) =>
+            {
+                this._FormEditor = null;
+                // restore DataView expanded
+                this.DataView.HTML.style.display = "";
+            };
+        }
+
+        // collapse DataView
+        this.DataView.HTML.style.display = "none";
+
+        this._FormEditor.SetModel(fmdl, this.DataView.SVCModel);
+        this._FormEditor.IsVisible = true;
     }
 }
 

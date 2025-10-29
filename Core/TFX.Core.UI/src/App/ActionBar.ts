@@ -37,6 +37,13 @@ class ActionBar extends XWrapPanel
             return;
         }
 
+        // if more than one selected, hide Edit button
+        if (rows.length > 1)
+        {
+            this.SetButtonsVisible(false, true, true, false);
+            return;
+        }
+
         const row = rows[0];
         const tuple = row?.Tupla as XDataTuple;
         const state = tuple?.State as XTupleState | undefined;

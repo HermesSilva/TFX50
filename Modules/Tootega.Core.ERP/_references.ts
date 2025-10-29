@@ -57,3 +57,7 @@
 /// <reference path="ReadOnly\TipoDocumento.DataSet.cs" />
 /// <reference path="ReadOnly\TipoDocumento.Rule.cs" />
 /// <reference path="ReadOnly\TipoDocumento.Test.cs" />
+/// <reference path="Empresa\Rules\INFEmpresaController.Rule.cs" />
+/// <reference path="Empresa\Empresa.Controller.cs" />
+/// <reference path="PessoaFisica\Rules\INFPessoaFisicaController.Rule.cs" />
+/// <reference path="PessoaFisica\PessoaFisica.Controller.cs" />

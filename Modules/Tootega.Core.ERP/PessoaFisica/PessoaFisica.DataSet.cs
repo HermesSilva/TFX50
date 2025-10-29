@@ -34,7 +34,7 @@ namespace Tootega.Core.ERP.PessoaFisica
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxGeneroID", Title = "Gênero", Type = "Int16", Mask = "", 

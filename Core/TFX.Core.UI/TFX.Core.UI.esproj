@@ -1,16 +1,13 @@
 <Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2191419">
   <PropertyGroup>
-
     <BuildCommand>tsc</BuildCommand>
-
-    <InstallCommand></InstallCommand>
-
+    <InstallCommand>
+    </InstallCommand>
   </PropertyGroup>
   <ItemGroup>
     <None Remove=".vscode\**" />
+    <None Remove="src\Data\**" />
     <TypeScriptConfiguration Remove=".vscode\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Data\" />
+    <TypeScriptConfiguration Remove="src\Data\**" />
   </ItemGroup>
 </Project>

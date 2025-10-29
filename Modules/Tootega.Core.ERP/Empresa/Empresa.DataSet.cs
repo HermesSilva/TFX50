@@ -39,11 +39,11 @@ namespace Tootega.Core.ERP.Empresa
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
                                                       Visible = false });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "CNPJ", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
             Forms.Add(new FRMEmpresaFilter());
         }
     }
@@ -115,6 +115,7 @@ namespace Tootega.Core.ERP.Empresa
     public class EmpresaFilter : XFilter
     {
         public XFilterField RazaoSocial {get;set;}
+        public XFilterField Numero {get;set;}
     }
     public class FRMEmpresaFilter : XFRMModel
     {

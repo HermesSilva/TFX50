@@ -52,8 +52,6 @@ class Stage extends XStage
         this.TopBar.HTML.style.width = `${this.Rect.Width - r.Width - 1}px`;
     }
 
-
-
     CreateTabControl(): XStageTabControl
     {
         return new StageTabControl(this);
