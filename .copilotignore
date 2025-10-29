@@ -44,9 +44,7 @@ Thumbs.db
 **/.parcel-cache/
 
 # Frontend generated assets
-Core/TFX.Core.UI/wwwroot/**/*.js
-Core/TFX.Core.UI/wwwroot/**/*.js.map
-Core/TFX.Core.UI/wwwroot/**/*.css.map
+Core/TFX.Core.UI/wwwroot/**
 
 # Auto-generated C# code
 **/*.g.cs
