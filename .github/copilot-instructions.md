@@ -56,102 +56,116 @@ Padrões para orientar a escrita de código C# (.NET9 / C#13) e TypeScript neste
 ```csharp
 public interface XIUserRepository
 {
- IEnumerable<XUser> GetActive(Boolean pIncludeAdmins);
+	IEnumerable<XUser> GetActive(Boolean pIncludeAdmins);
 }
 
 public sealed class XUser
 {
- public Guid Id { get; }
- public String Name { get; }
- public Boolean IsActive { get; }
- public Boolean IsAdmin { get; }
 
- public XUser(Guid pId, String pName, Boolean pIsActive, Boolean pIsAdmin)
- {
- Id = pId;
- Name = pName;
- IsActive = pIsActive;
- IsAdmin = pIsAdmin;
- }
+	public XUser(Guid pId, String pName, Boolean pIsActive, Boolean pIsAdmin)
+	{
+		Id = pId;
+		Name = pName;
+		IsActive = pIsActive;
+		IsAdmin = pIsAdmin;
+	}
+	
+	public Guid Id { get; }
+	public String Name { get; }
+	public Boolean IsActive { get; }
+	public Boolean IsAdmin { get; }	
 }
 
 public sealed class XUserService
 {
- private readonly XIUserRepository _Repository;
 
- public XUserService(XIUserRepository pRepository)
- {
- _Repository = pRepository;
- }
-
- public IEnumerable<XUser> GetActiveUsers(Boolean pIncludeAdmins)
- {
- var lstua = _Repository.GetActive(pIncludeAdmins);
- if (lstua == null) return Array.Empty<XUser>();
- return FilterActive(lstua, pIncludeAdmins);
- }
-
- private static Boolean IsActive(XUser pUser)
- {
- if (!pUser.IsActive) return false;
- return true;
- }
-
- private static IEnumerable<XUser> FilterActive(IEnumerable<XUser> pUsers, Boolean pIncludeAdmins)
- {
- foreach (var usr in pUsers)
- {
- if (!IsActive(usr)) continue;
- if (!pIncludeAdmins && usr.IsAdmin) continue;
- yield return usr;
- }
- }
+	public XUserService(XIUserRepository pRepository)
+	{
+		_Repository = pRepository;
+	}	
+	private readonly XIUserRepository _Repository;
+	
+	public IEnumerable<XUser> GetActiveUsers(Boolean pIncludeAdmins)
+	{
+		var lstua = _Repository.GetActive(pIncludeAdmins);
+		if (lstua == null) 
+			return Array.Empty<XUser>();
+		return FilterActive(lstua, pIncludeAdmins);
+	}
+	
+	private static Boolean IsActive(XUser pUser)
+	{
+		if (!pUser.IsActive) 
+			return false;
+		return true;
+	}
+	
+	private static IEnumerable<XUser> FilterActive(IEnumerable<XUser> pUsers, Boolean pIncludeAdmins)
+	{
+		foreach (var usr in pUsers)
+		{
+			if (!IsActive(usr)) 
+				continue;
+			if (!pIncludeAdmins && usr.IsAdmin) 
+				continue;
+			yield return usr;
+		}
+	}
 }
 ```
 
 ## Exemplos (TypeScript)
 
 ```ts
-export interface XIUserRepository {
- GetActive(pIncludeAdmins: boolean): XUser[];
+interface XIUserRepository 
+{
+	GetActive(pIncludeAdmins: boolean): XUser[];
 }
 
-export class XUser {
- constructor(
- public readonly Id: string,
- public readonly Name: string,
- public readonly IsActive: boolean,
- public readonly IsAdmin: boolean
- ) {}
+class XUser 
+{
+	public Id: string;
+	public Name: string;
+	public IsActive: boolean,
+	public IsAdmin: boolean;
 }
 
-export class XUserService {
- private readonly _Repository: XIUserRepository;
-
- constructor(pRepository: XIUserRepository) {
- this._Repository = pRepository;
- }
-
- public GetActiveUsers(pIncludeAdmins: boolean): XUser[] {
- const lstua = this._Repository.GetActive(pIncludeAdmins);
- if (!lstua || lstua.length ===0) return [];
- return this.FilterActive(lstua, pIncludeAdmins);
- }
-
- private static IsActive(pUser: XUser): boolean {
- if (!pUser.IsActive) return false;
- return true;
- }
-
- private FilterActive(pUsers: XUser[], pIncludeAdmins: boolean): XUser[] {
- const rsl = [] as XUser[];
- for (const usr of pUsers) {
- if (!XUserService.IsActive(usr)) continue;
- if (!pIncludeAdmins && usr.IsAdmin) continue;
- rsl.push(usr);
- }
- return rsl;
- }
+class XUserService 
+{
+	constructor(pRepository: XIUserRepository) 
+	{
+		this._Repository = pRepository;
+	}
+	private readonly _Repository: XIUserRepository;
+	
+	public GetActiveUsers(pIncludeAdmins: boolean): XUser[] 
+	{
+		const lstua = this._Repository.GetActive(pIncludeAdmins);
+		if (!lstua || lstua.length ===0) 
+			return [];
+		return this.FilterActive(lstua, pIncludeAdmins);
+	}
+	
+	private static IsActive(pUser: XUser): boolean 
+	{
+		if (!pUser.IsActive) 
+			return false;
+		return true;
+	}
+	
+	private FilterActive(pUsers: XUser[], pIncludeAdmins: boolean): XUser[] 
+	{
+		const rsl = [] as XUser[];
+		for (const usr of pUsers) 
+		{
+			if (!XUserService.IsActive(usr)) 
+				continue;
+			if (!pIncludeAdmins && usr.IsAdmin) 
+				continue;
+			rsl.push(usr);
+		}
+		return rsl;
+	}
 }
 ```
 
