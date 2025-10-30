@@ -25,3 +25,26 @@
     height: calc(100% - 100px);
     width: calc(100% - 100px);
 }
+
+.SceneFormEditorTitle {
+    position: absolute;
+    width: 100%;
+    min-height: 30px;
+    padding: 8px 12px;
+    background: linear-gradient(180deg, #f6f7f9 0%, #eef1f5 100%);
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: x-large;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ScenePopupForm {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    width: calc(100% - 40px);
+    height: calc(100% - 100px);
+}

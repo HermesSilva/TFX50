@@ -100,11 +100,15 @@
 }
 
 .accordion-submenu li {
-    padding: 12px 15px 12px 40px;
+    padding: 9px 15px 5px 40px;
     list-style: none;
     border-top: 1px solid #eee;
     cursor: pointer;
     transition: background-color 0.2s;
+
+    &:hover {
+        background-color: #0062fc1a;
+    }
 }
 
 .accordion-menu.collapsed .accordion-submenu {

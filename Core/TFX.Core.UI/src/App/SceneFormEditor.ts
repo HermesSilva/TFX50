@@ -8,7 +8,9 @@ class SceneFormEditor extends XScene
     {
         super(pOwner);
         this.HTML.className = "SceneFormEditor";
+        this._TitleBar = new XDiv(this, "SceneFormEditorTitle");
         this.Form = new XForm(this);
+        this.Form.HTML.className = "ScenePopupForm";
         this.IsVisible = false;
         this.AutoIncZIndex = true;
     }
@@ -20,6 +22,7 @@ class SceneFormEditor extends XScene
     OnClose: XMethod<any> | null = null;
 
     private _DialogContainer: XIDialogContainer | null = null;
+    private _TitleBar: XDiv;
 
     SetModel(pModel: XFRMModel, pSVCModel: XServiceModel)
     {
@@ -33,24 +36,10 @@ class SceneFormEditor extends XScene
         if (!this.Form)
             return;
         this.Form.SetModel(this.Model, this.SVCModel);
+        this.UpdateTitle();
     }
 
-    private ResizeToContainer()
-    {
-        //if (this._DialogContainer == null)
-        //    return;
-        //const r = this._DialogContainer.DialogContainer.HTML.GetRect(true);
-        //const l =15;
-        //const t =15;
-        //const w = Math.max(0, r.Width -30);
-        //const h = Math.max(0, r.Height -30);
-        //this.HTML.style.left = l + "px";
-        //this.HTML.style.top = t + "px";
-        //this.HTML.style.width = w + "px";
-        //this.HTML.style.height = h + "px";
-    }
-
-    override Show(pValue: boolean = true)
+      override Show(pValue: boolean = true)
     {
         if (this._DialogContainer == null)
         {
@@ -68,13 +57,31 @@ class SceneFormEditor extends XScene
             this._DialogContainer.DialogContainer.IsVisible = pValue;
 
         if (pValue)
-            this.ResizeToContainer();
+            this.UpdateTitle();
     }
 
-    override SizeChanged()
+
+    private UpdateTitle()
     {
-        super.SizeChanged();
-        this.ResizeToContainer();
+        const at = this.App?.Model?.Title ?? "";
+        let act = "";
+        switch (this.App?.State)
+        {
+            case XAppState.Inserting:
+                act = "Incluindo";
+                break;
+            case XAppState.Editing:
+                act = "Editando";
+                break;
+            case XAppState.Searching:
+                act = "Pesquisando";
+                break;
+            default:
+                act = "";
+                break;
+        }
+        const ttl = act ? `${at} — ${act}` : at;
+        this._TitleBar.HTML.innerText = ttl;
     }
 
     Close()
