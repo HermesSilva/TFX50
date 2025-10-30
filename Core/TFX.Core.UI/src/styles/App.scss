@@ -16,4 +16,12 @@
 
 .SceneFormEditor {
     @extend .Scenes;
+    position: absolute;
+    box-shadow: 3px 3px 10px 6px rgb(2 6 5 / 27%);
+    border-radius: 8px;
+    background: white;
+    left: 50px;
+    top: 50px;
+    height: calc(100% - 100px);
+    width: calc(100% - 100px);
 }

@@ -10,4 +10,7 @@
     <TypeScriptConfiguration Remove=".vscode\**" />
     <TypeScriptConfiguration Remove="src\Data\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
 </Project>

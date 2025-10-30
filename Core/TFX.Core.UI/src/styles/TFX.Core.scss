@@ -98,12 +98,15 @@ html {
     padding: var(--ip-padding);
     height: var(--ip-height);
     border-radius: 5px;
-    border: 2px solid #74ddff;
+    border: 2px solid #3399ff40;
     outline: none;
-    /*padding-right: 32px;*/
     right: 0;
     left: 0;
     outline: none;
+
+    &:focus {
+        border: 2px solid #3399ff;
+    }
 }
 
 .XBaseButtonInput {
@@ -185,9 +188,10 @@ html {
 
 .XDialogContainer {
     position: absolute;
-    height: 100%;
+    height: calc(100% - 60px);
     width: 100%;
-    background-color: #a4891e31;
+    top: 60px;
+    background-color: rgba(164, 137, 30, 0.1921568627);
     overflow: hidden;
 }
 

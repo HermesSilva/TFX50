@@ -1,10 +1,13 @@
 ﻿[
   {
     "inputFile": "src/styles/TFX.Core.scss",
-    "outputFile": "wwwroot/css/TFX.Core.css"
+    "outputFile": "wwwroot/css/TFX.Core.css",
+    "options": {
+      "outputStyle": "compressed",
+      "sourceMap": false,
+      "precision": 5,
+      "indentType": "space",
+      "indentWidth": 2
+    }
   }
-  //{
-  //  "inputFile": "src/styles/XCalendar.scss",
-  //  "outputFile": "wwwroot/css/XCalendar.css"
-  //}
 ]

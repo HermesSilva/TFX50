@@ -50,31 +50,14 @@ class App extends XStageTabControlTab
             this.SizeChanged();
         });
         this.ButtonBar.UpdateState();
-        this.Prepare();
     }
 
     override SizeChanged()
     {
         this.Scanes.HTML.style.top = this.ButtonBar.HTML.offsetHeight + "px";
         this.Scanes.HTML.style.height = (this.HTML.offsetHeight - this.ButtonBar.HTML.offsetHeight) + "px";
-        if (this._FormEditor)
-        {
-            this._FormEditor.HTML.style.top = this.ButtonBar.HTML.offsetHeight + "px";
-            this._FormEditor.HTML.style.height = (this.HTML.offsetHeight - this.ButtonBar.HTML.offsetHeight) + "px";
-        }
     }
 
-    Prepare()
-    {
-        for (let i = 0; i < this.Model.Forms.length; i++)
-        {
-            let fmdl = this.Model.Forms[i];
-            if (fmdl.Type == XFRMType.SVCFilter)
-                continue;
-            let frm = new SceneForm(this);
-            frm.SetModel(fmdl);
-        }
-    }
 
     Close()
     {
@@ -107,7 +90,6 @@ class App extends XStageTabControlTab
             this._FormEditor.App = this;
         }
 
-        this.DataView.IsVisible = false;
         this.ButtonBar.UpdateState(this.DataView.DataGrid.SelectedRows);
         this._FormEditor.SetModel(fmdl, this.DataView.SVCModel);
         this._FormEditor.IsVisible = true;

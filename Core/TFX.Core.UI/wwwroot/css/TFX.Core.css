@@ -500,7 +500,7 @@ th:active {
   padding: var(--ip-padding);
   height: var(--ip-height);
   border-radius: 5px;
-  border: 2px solid #74ddff;
+  border: 1px solid #d7f5ff;
   outline: none;
   padding-right: 32px;
   height: calc(100% - 34px);
@@ -1193,6 +1193,17 @@ th:active {
   overflow: hidden;
 }
 
+.SceneFormEditor {
+  position: absolute;
+  box-shadow: 3px 3px 10px 6px rgba(2, 6, 5, 0.27);
+  border-radius: 8px;
+  background: white;
+  left: 50px;
+  top: 50px;
+  height: calc(100% - 100px);
+  width: calc(100% - 100px);
+}
+
 .XButtonBar {
   position: absolute;
   width: calc(100% - 120px);
@@ -1326,12 +1337,14 @@ html {
   padding: var(--ip-padding);
   height: var(--ip-height);
   border-radius: 5px;
-  border: 2px solid #74ddff;
+  border: 2px solid rgba(51, 153, 255, 0.2509803922);
   outline: none;
-  /*padding-right: 32px;*/
   right: 0;
   left: 0;
   outline: none;
+}
+.XBaseInput:focus, .XBaseButtonInput:focus {
+  border: 2px solid #3399ff;
 }
 
 .XLookupButton {
@@ -1408,8 +1421,9 @@ html {
 
 .XDialogContainer {
   position: absolute;
-  height: 100%;
+  height: calc(100% - 60px);
   width: 100%;
+  top: 60px;
   background-color: rgba(164, 137, 30, 0.1921568627);
   overflow: hidden;
 }
