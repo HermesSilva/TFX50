@@ -211,44 +211,6 @@ namespace Tootega.Core.ERP.DB
 
         #endregion _EMLxEmpresaServidor
 
-        #region _ERPxContato
-
-        public class _ERPxContato
-        {
-            [Display(Name = "E-Mail, Telefone e ETC.")]
-            [MaxLength(50)]
-            [Required()]
-            public String Contato {get; set;}
-            [Display(Name = "Pessoas")]
-            [Required()]
-            public Guid CORxPessoaID {get; set;}
-            [Display(Name = "Estado")]
-            [Required()]
-            public Int16 CORxStatusID {get; set;}
-            public Boolean IsPKEmpty => !ERPxContatoID.HasValue;
-            [Display(Name = "Meios de Contato")]
-            [Required()]
-            public Guid? ERPxContatoID {get; set;}
-            [Display(Name = "Tipo de Contato")]
-            [Required()]
-            public Int16 ERPxContatoTipoID {get; set;}
-            [Display(Name = "Finalidade")]
-            [Required()]
-            public Int16 ERPxFinalidadeID {get; set;}
-            [Display(Name = "Observação")]
-            [MaxLength(30)]
-            public String Observacao {get; set;}
-            [Required()]
-            public Boolean Validado {get; set;}
-            public _ERPxFinalidade ERPxFinalidade {get; set;}
-            public _ERPxContatoTipo ERPxContatoTipo {get; set;}
-            public _CORxStatus CORxStatus {get; set;}
-            public _CORxPessoa CORxPessoa {get; set;}
-            public List<_EMLxDestinatario> EMLxDestinatario {get; set;} = new List<_EMLxDestinatario>();
-        }
-
-        #endregion _ERPxContato
-
         #region _EMLxServidorFinalizade
 
         public class _EMLxServidorFinalizade
@@ -431,6 +393,44 @@ namespace Tootega.Core.ERP.DB
         }
 
         #endregion _ERPxEndereco
+
+        #region _ERPxContato
+
+        public class _ERPxContato
+        {
+            [Display(Name = "E-Mail, Telefone e ETC.")]
+            [MaxLength(50)]
+            [Required()]
+            public String Contato {get; set;}
+            [Display(Name = "Pessoas")]
+            [Required()]
+            public Guid CORxPessoaID {get; set;}
+            [Display(Name = "Estado")]
+            [Required()]
+            public Int16 CORxStatusID {get; set;}
+            public Boolean IsPKEmpty => !ERPxContatoID.HasValue;
+            [Display(Name = "Meios de Contato")]
+            [Required()]
+            public Guid? ERPxContatoID {get; set;}
+            [Display(Name = "Tipo de Contato")]
+            [Required()]
+            public Int16 ERPxContatoTipoID {get; set;}
+            [Display(Name = "Finalidade")]
+            [Required()]
+            public Int16 ERPxFinalidadeID {get; set;}
+            [Display(Name = "Observação")]
+            [MaxLength(30)]
+            public String Observacao {get; set;}
+            [Required()]
+            public Boolean Validado {get; set;}
+            public _ERPxFinalidade ERPxFinalidade {get; set;}
+            public _ERPxContatoTipo ERPxContatoTipo {get; set;}
+            public _CORxStatus CORxStatus {get; set;}
+            public _CORxPessoa CORxPessoa {get; set;}
+            public List<_EMLxDestinatario> EMLxDestinatario {get; set;} = new List<_EMLxDestinatario>();
+        }
+
+        #endregion _ERPxContato
 
         #region _ERPxContatoTipo
 
@@ -1198,7 +1198,7 @@ namespace Tootega.Core.ERP.DB
                 ett.Property(d => d.Validado).HasColumnType(GetDBType("Boolean"))
                     .HasDefaultValue(GetDBValue("Boolean", false));
                 ett.Property(d => d.Observacao).HasColumnType(GetDBType("String", 30)).IsRequired(false);
-                ett.ToTable("ERPxContato", t => t.ExcludeFromMigrations());
+                ett.ToTable("ERPxContato");
 
                 ett.HasOne(d => d.CORxPessoa)
                    .WithMany(p => p.ERPxContato)

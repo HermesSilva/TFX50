@@ -21,123 +21,64 @@ class ActionBar extends XWrapPanel
         this.Save = new XSVGButton(this);
         this.Save.HTML.className = "XButtonBarItem";
         this.Save.SetIcon("svg/save.svg");
-        this._State = XAppState.None;
-        this.SetButtonsVisible(false, false, false, false);
+        this.New = new XSVGButton(this);
+        this.New.HTML.className = "XButtonBarItem";
+        this.New.SetIcon("svg/new.svg");
+        this.UpdateState();
+
+        this.Edit.DisplayValue = "inline-block";
+        this.Inactive.DisplayValue = "inline-block";
+        this.Active.DisplayValue = "inline-block";
+        this.Save.DisplayValue = "inline-block";
+        this.New.DisplayValue = "inline-block";
     }
+
     App: App;
     Edit: XSVGButton;
     Inactive: XSVGButton;
     Active: XSVGButton;
     Save: XSVGButton;
-    private _State: XAppState;
+    New: XSVGButton;
 
-
-    public UpdateState(pState: XAppState, pRows: XArray<XTableRow> | null)
+    public UpdateState(pRows: XArray<XTableRow> | null = [])
     {
-        this._State = pState;
-        switch (this._State)
+        this.Edit.IsVisible = false;
+        this.Inactive.IsVisible = false;
+        this.Active.IsVisible = false;
+        this.Save.IsVisible = false;
+        this.New.IsVisible = false;
+        switch (this.App.State)
         {
+            case XAppState.Inserting:
+                this.Edit.IsVisible = false;
+                this.Inactive.IsVisible = false;
+                this.Active.IsVisible = false;
+                this.Save.IsVisible = true;
+                this.New.IsVisible = false;
+                break;
             case XAppState.Editing:
-                this.ApplyEditingState(pRows);
-                return;
+                this.Edit.IsVisible = false;
+                this.Inactive.IsVisible = false;
+                this.Active.IsVisible = false;
+                this.Save.IsVisible = true;
+                this.New.IsVisible = false;
+                break;
             case XAppState.Searching:
-                this.ApplyViewingState(pRows);
-                return;
+                this.Edit.IsVisible = true;
+                this.Inactive.IsVisible = pRows != null && pRows.Any(r => r.Tupla.State != XTupleState.Deleted);
+                this.Active.IsVisible = pRows != null && pRows.length > 0 && pRows.All(r => r.Tupla.State == XTupleState.Deleted);
+                this.Save.IsVisible = false;
+                this.New.IsVisible = true;
+                break;
             case XAppState.None:
             default:
-                this.SetButtonsVisible(false, false, false, false);
-                return;
-        }
-    }
-
-    public UpdateBySelection(rows: XArray<XTableRow> | null)
-    {
-        this.UpdateState(XAppState.Searching, rows);
-    }
-
-    private ApplyViewingState(rows: XArray<XTableRow> | null)
-    {
-        if (rows == null || rows.length === 0)
-        {
-            this.SetButtonsVisible(false, false, false, false);
-            return;
-        }
-
-        if (rows.length > 1)
-        {
-            this.SetButtonsVisible(false, true, true, false);
-            return;
-        }
-
-        const row = rows[0];
-        const tuple = row?.Tupla as XDataTuple;
-        const state = tuple?.State as XTupleState | undefined;
-
-        if (!tuple || state === undefined)
-        {
-            this.SetButtonsVisible(false, false, false, false);
-            return;
-        }
-
-        let canEdit = true;
-        let canSave = false;
-        let showInactive = true;
-        let showActive = true;
-
-        switch (state)
-        {
-            case XTupleState.Deleted:
-                canEdit = false;
-                canSave = false;
-                showInactive = false;
-                showActive = true;
-                break;
-
-            case XTupleState.Added:
-            case XTupleState.Insert:
-                canEdit = true;
-                canSave = true;
-                showInactive = false;
-                showActive = false;
-                break;
-
-            case XTupleState.Modified:
-                canEdit = true;
-                canSave = true;
-                showInactive = true;
-                showActive = true;
-                break;
-
-
-            case XTupleState.Detached:
-            case XTupleState.Unchanged:
-                canEdit = true;
-                canSave = false;
-                showInactive = true;
-                showActive = false;
+                this.Edit.IsVisible = false;
+                this.Inactive.IsVisible = false;
+                this.Active.IsVisible = false;
+                this.Save.IsVisible = false;
+                this.New.IsVisible = false;
                 break;
         }
-
-        if (tuple && tuple.IsReadOnly === true)
-        {
-            canEdit = false;
-            canSave = false;
-        }
-
-        this.SetButtonsVisible(canEdit, showInactive, showActive, canSave);
-    }
-
-    private ApplyEditingState(_rows: XArray<XTableRow> | null)
-    {
-        this.SetButtonsVisible(false, false, false, true);
-    }
-
-    private SetButtonsVisible(edit: boolean, inactive: boolean, active: boolean, save: boolean)
-    {
-        this.Edit.HTML.style.display = edit ? "" : "none";
-        this.Inactive.HTML.style.display = inactive ? "" : "none";
-        this.Active.HTML.style.display = active ? "" : "none";
-        this.Save.HTML.style.display = save ? "" : "none";
     }
 }
 

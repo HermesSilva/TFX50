@@ -51,6 +51,7 @@ class XElement implements XIElement
     Children: XArray<XElement> = new XArray<XElement>();
     AutoIncZIndex: boolean = false;
     UseVisibility: boolean = false;
+    DisplayValue: string = "block";
 
 
     GetOwner<T extends XIElement | null>(pPredicate: XFunc<T>): T
@@ -145,7 +146,7 @@ class XElement implements XIElement
         this._IsVisible = pValue;
         if (pValue === true)
         {
-            this.UseVisibility ? this.HTML.style.visibility = 'visible' : this.HTML.style.display = 'block';
+            this.UseVisibility ? this.HTML.style.visibility = 'visible' : this.HTML.style.display = this.DisplayValue;
             this.OnShow();
         }
         else

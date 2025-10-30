@@ -12,6 +12,7 @@
     KeyPress = "keypress",
     LostFocus = "focusout",
     Click = "click",
+    DblClick = "dblclick",
     FocusIn = "focusin",
     Blur = "blur",
     Scroll = "scroll",

@@ -66,11 +66,11 @@ class XTableHCell extends XTableElement
         {
             if (e.target == this.Sizer)
                 return;
-            let act =0;
+            let act = 0;
             if (e.ctrlKey)
-                act =1;
+                act = 1;
             if (e.ctrlKey && e.shiftKey)
-                act =2;
+                act = 2;
             this.Table.Body.SortData(this, act);
             this.Table.ResizeColumn(this, this.HTML.GetRect().Width);
         });
@@ -95,12 +95,12 @@ class XTableHCell extends XTableElement
                 return;
 
             const w = this.HTML.GetRect().Width;
-            if (e.offsetX <=5 || e.offsetX +6 >= w)
+            if (e.offsetX <= 5 || e.offsetX + 6 >= w)
                 return;
 
             this.HTML.classList.remove('ldrag-over');
             this.HTML.classList.remove('rdrag-over');
-            if (e.offsetX > w /2)
+            if (e.offsetX > w / 2)
                 this.HTML.classList.add('rdrag-over');
             else
                 this.HTML.classList.add('ldrag-over');
@@ -120,7 +120,7 @@ class XTableHCell extends XTableElement
             const elm = XDragUtils.GetData<XTableHCell>();
             if (this.Owner instanceof XElement && elm.UID != this.UID)
             {
-                const w = this.HTML.clientWidth /2;
+                const w = this.HTML.clientWidth / 2;
                 if (e.offsetX > w)
                     this.MoveTo(this, elm);
                 else
@@ -142,8 +142,8 @@ class XTableHCell extends XTableElement
     private ResizerEvents()
     {
         let isResizing = false;
-        let startX =0;
-        let startWidth =0;
+        let startX = 0;
+        let startWidth = 0;
 
         this.Sizer.addEventListener('mousedown', (e) =>
         {
@@ -244,7 +244,7 @@ class XTableBody extends XElement
                 this.SortCells.Remove(pCell);
                 break;
         }
-        if (!this.SortCells.Any(c => c == pCell) && pAction !=2)
+        if (!this.SortCells.Any(c => c == pCell) && pAction != 2)
             this.SortCells.Add(pCell);
         const field = pCell.Column.Name;
         this.Table.Header.Columns.ForEach(c =>
@@ -256,7 +256,7 @@ class XTableBody extends XElement
 
             }
         });
-        if (pAction !=2)
+        if (pAction != 2)
         {
             if (!X.IsEmpty(pCell.SortIcon.innerHTML))
                 pCell.SortState.Direction = pCell.SortState.Direction === 'asc' ? 'desc' : 'asc';
@@ -268,13 +268,13 @@ class XTableBody extends XElement
         this.DataRows.sort((a, b) =>
         {
 
-            for (let i =0; i < this.SortCells.length; i++)
+            for (let i = 0; i < this.SortCells.length; i++)
             {
                 let cell = this.SortCells[i];
                 if (a.Tupla[cell.Column.Name].Value > b.Tupla[cell.Column.Name].Value)
-                    return cell.SortState.Direction === 'asc' ?1 : -1;
+                    return cell.SortState.Direction === 'asc' ? 1 : -1;
                 if (a.Tupla[cell.Column.Name].Value < b.Tupla[cell.Column.Name].Value)
-                    return cell.SortState.Direction === 'asc' ? -1 :1;
+                    return cell.SortState.Direction === 'asc' ? -1 : 1;
 
             }
             return 0;
@@ -283,10 +283,10 @@ class XTableBody extends XElement
         while (this.HTML.firstChild)
             this.HTML.removeChild(this.HTML.firstChild);
 
-        for (let i =0; i < this.DataRows.length; i++)
+        for (let i = 0; i < this.DataRows.length; i++)
         {
             const row = this.DataRows[i];
-            if (i %2 !=0)
+            if (i % 2 != 0)
                 row.HTML.className = "XTableRowEven";
             else
                 row.HTML.className = "XTableRow";
@@ -321,10 +321,11 @@ class XTableRow extends XTableElement
         this.Body = pOwner;
         this.Table = pOwner.Table;
         XEventManager.AddEvent(this.Table, this.HTML, XEventType.Click, (pArg: MouseEvent) => this.Table.DoSelectRow(this, pArg));
+        XEventManager.AddEvent(this.Table, this.HTML, XEventType.DblClick, (pArg: MouseEvent) => this.Table.DoDoubleClickRow(this, pArg));
     }
     Table: XTable;
     Body: XTableBody;
-    Tupla: any;
+    Tupla: XTuple | any;
     Cells = new XArray<XTableCell>();
 
     get IsSelected(): boolean
@@ -350,7 +351,7 @@ class XTableRow extends XTableElement
     {
         if (this.Table.Columns == null)
             return;
-        for (let i =0; i < this.Table.Columns.length; i++)
+        for (let i = 0; i < this.Table.Columns.length; i++)
         {
             let cell = new XTableCell(this, "XTd");
             cell.SetData(this.Tupla[this.Table.Columns[i].Name].Value, this.Table.Header.Columns[i]);
@@ -399,9 +400,9 @@ class XTable extends XDiv
         this.Header = new XTableHeader(this.Owner, this);
         this.Body = new XTableBody(this.Container, this);
         XEventManager.AddEvent(this, this.HTML, XEventType.Scroll, this.PositioningHeader);
-        (this.HTML as HTMLElement).tabIndex =0;
+        (this.HTML as HTMLElement).tabIndex = 0;
         XEventManager.AddEvent(this, this.HTML, XEventType.KeyDown, this.OnKeyDown);
-        this.RowNumberColumn = <XColumnModel>{ Name: "RowNumber", Visible: true, Width:50 };
+        this.RowNumberColumn = <XColumnModel>{ Name: "RowNumber", Visible: true, Width: 50 };
     }
     Container: HTMLTableElement;
     Header: XTableHeader;
@@ -410,6 +411,7 @@ class XTable extends XDiv
     protected DataSet!: XDataSet;
     private RowNumberColumn: XColumnModel;
     OnRowClick: XMethod<XArray<XTableRow>> | null = null;
+    OnRowDoubleClick: XMethod<XArray<XTableRow>> | null = null;
 
     DoSelectRow(pRow: XTableRow, pArg?: MouseEvent)
     {
@@ -421,26 +423,44 @@ class XTable extends XDiv
         }
         else
         {
-            for (let i =0; i < this.Body.DataRows.length; i++)
+            for (let i = 0; i < this.Body.DataRows.length; i++)
                 this.Body.DataRows[i].IsSelected = false;
             pRow.IsSelected = true;
         }
 
         if (this.OnRowClick != null)
         {
-            const slct = new XArray<XTableRow>();
-            for (let i =0; i < this.Body.DataRows.length; i++)
-                if (this.Body.DataRows[i].IsSelected)
-                    slct.Add(this.Body.DataRows[i]);
+            const slct = this.GetSelectedRows();
             this.OnRowClick.apply(this, [slct]);
         }
+    }
+
+    DoDoubleClickRow(pRow: XTableRow, pArg?: MouseEvent)
+    {
+        if (!pRow.IsSelected)
+            this.DoSelectRow(pRow, pArg);
+
+        if (this.OnRowDoubleClick != null)
+        {
+            const slct = this.GetSelectedRows();
+            this.OnRowDoubleClick.apply(this, [slct]);
+        }
+    }
+
+    private GetSelectedRows(): XArray<XTableRow>
+    {
+        const slct = new XArray<XTableRow>();
+        for (let i = 0; i < this.Body.DataRows.length; i++)
+            if (this.Body.DataRows[i].IsSelected)
+                slct.Add(this.Body.DataRows[i]);
+        return slct;
     }
 
     private OnKeyDown(pArg: KeyboardEvent)
     {
         const isEsc = (pArg.key && pArg.key.toLowerCase() === 'escape') || (pArg as any).keyCode === XKey.K_ESCAPE;
         if (!isEsc) return;
-        for (let i =0; i < this.Body.DataRows.length; i++)
+        for (let i = 0; i < this.Body.DataRows.length; i++)
             this.Body.DataRows[i].IsSelected = false;
         if (this.OnRowClick != null)
             this.OnRowClick.apply(this, [new XArray<XTableRow>()]);
@@ -466,12 +486,12 @@ class XTable extends XDiv
         this.Container.style.width = this.HTML.clientWidth + "px";
         this.Header.HTML.style.width = `${Math.max(this.Container.clientWidth, this.HTML.clientWidth)}px`
 
-        if (this.Body.DataRows.length >0)
+        if (this.Body.DataRows.length > 0)
         {
-            for (let i =0; i < this.Body.DataRows[0].Cells.length; i++)
+            for (let i = 0; i < this.Body.DataRows[0].Cells.length; i++)
             {
                 let cell = <XTableCell>this.Body.DataRows[0].Cells[i];
-                if (cell.Content.clientWidth >0)
+                if (cell.Content.clientWidth > 0)
                     this.Header.Columns[i].Content.style.width = `${cell.Content.clientWidth}px`;
             }
         }
@@ -479,7 +499,7 @@ class XTable extends XDiv
 
     ResizeColumn(pHeaderCell: XTableHCell, pWidth: number, pCheck: boolean = false)
     {
-        if (this.Body.DataRows.length ==0)
+        if (this.Body.DataRows.length == 0)
             return;
         const dcell = this.Body.DataRows[0].Cells.FirstOrNull(c => c.HCell == pHeaderCell);
         if (dcell != null)
@@ -503,7 +523,7 @@ class XTable extends XDiv
             return;
         const left = this.Body.DataRows[0].Cells.IndexOf(c => c.HCell == pLeft);
         const right = this.Body.DataRows[0].Cells.IndexOf(c => c.HCell == pRight);
-        for (let i =0; i < this.Body.DataRows.length; i++)
+        for (let i = 0; i < this.Body.DataRows.length; i++)
         {
             const row = this.Body.DataRows[i];
             const cl = row.Cells[left];
@@ -537,22 +557,22 @@ class XTable extends XDiv
         this.Body.Clear();
         if (this.Columns == null)
             return;
-        for (let i =0; i < this.DataSet.Tuples.length; i++)
+        for (let i = 0; i < this.DataSet.Tuples.length; i++)
         {
             let row = this.Body.AddRow();
-            if (i %2 !=0)
+            if (i % 2 != 0)
                 row.HTML.className = "XTableRowEven";
             row.SetData(this.DataSet.Tuples[i]);
         }
-        XEventManager.SetTiemOut(this, this.SizeChanged,100);
+        XEventManager.SetTiemOut(this, this.SizeChanged, 100);
     }
 
     private AdjustCollumnWidth()
     {
-        if (this.Body.DataRows.length >0)
+        if (this.Body.DataRows.length > 0)
         {
             const row = this.Body.DataRows[0];
-            for (let i =0; i < row.Cells.length; i++)
+            for (let i = 0; i < row.Cells.length; i++)
             {
                 let bcell = row.Cells[i];
                 let hcell = this.Header.Columns[i];
@@ -571,7 +591,7 @@ class XTable extends XDiv
         this.Body.Clear();
         if (this.Columns == null)
             return;
-        for (let i =0; i < this.Columns.length; i++)
+        for (let i = 0; i < this.Columns.length; i++)
         {
             let col = this.Columns[i];
             let cell = this.Header.AddColumns("XTh");

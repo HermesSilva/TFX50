@@ -190,6 +190,8 @@ interface Array<T>
 
     Any(pPredicate: XFunc<T>): boolean;
 
+    All(pPredicate: XFunc<T>): boolean;
+
     IndexOf(pPredicate: XFunc<T>): number;
 
     ForEach(pPredicade: XMethod<T>): void;
@@ -345,6 +347,15 @@ Array.prototype.GetAs = function <Tx>(pIndex: number): Tx
 {
     return <Tx>this[pIndex];
 };
+
+Array.prototype.All = function <T>(pPredicade: XFunc<T>): boolean
+{
+    for (let i = 0; i < this.length; i++)
+        if (!pPredicade(this[i]))
+            return false;
+    return true;
+};
+
 Array.prototype.Any = function <T>(pPredicade: XFunc<T>): boolean
 {
     for (let i = 0; i < this.length; i++)

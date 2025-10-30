@@ -3,7 +3,6 @@
 
 class XTagEditor extends XDiv
 {
-
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null)
     {
         super(pOwner, pClass);
@@ -14,6 +13,7 @@ class XTagEditor extends XDiv
     Editor!: XIEditor;
     Title: HTMLSpanElement;
     SVG!: HTMLImageElement;
+    private _LIconSrc?: string;
 
     SetModel(pColumns: XColumnModel)
     {
@@ -47,13 +47,14 @@ class XTagEditor extends XDiv
     private UpdateSVGIcon()
     {
         const hasContent = this.Editor?.Input?.value?.length > 0;
-        this.SVG.src = hasContent ? "svg/tinyclosebold.svg" : "svg/tinyclose.svg";
+        const iconSrc = hasContent ? "svg/tinyclosebold.svg" : "svg/tinyclose.svg";
+        if (this._LIconSrc != iconSrc)
+            this.SVG.src = this._LIconSrc = iconSrc;
     }
 }
 
 class XEditableTag extends XDiv 
 {
-
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null = null)
     {
         super(pOwner, pClass ?? "XEditableTag");

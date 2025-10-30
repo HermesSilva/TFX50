@@ -11,6 +11,8 @@ namespace Tootega.Core.ERP
     {
         public override void Initialize(IServiceCollection pServices)
         {
+            pServices.AddDbContext<Tootega.Core.ERP.DB.TootegaCoreERPContext>();
+
             pServices.AddTransient<Tootega.Core.ERP.Empresa.IEmpresaService, Tootega.Core.ERP.Empresa.EmpresaService>();
             pServices.AddDbContext<Tootega.Core.ERP.Empresa.EmpresaService.DBContext>();
             XMainCache.Add<Tootega.Core.ERP.Empresa.EmpresaServiceModel>(Tootega.Core.ERP.Empresa.EmpresaServiceModel.CID);

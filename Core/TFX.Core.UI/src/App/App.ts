@@ -6,6 +6,7 @@ enum XAppState
     None = 0,
     Searching = 1,
     Editing = 2,
+    Inserting = 3,
 }
 
 @AutoInit
@@ -15,15 +16,17 @@ class App extends XStageTabControlTab
     {
         super(pOwner);
         this.ButtonBar = new ActionBar(this);
+        this.ButtonBar.App = this;
         this.ButtonBarR = new ActionBarR(this);
         this.Scanes = new XDiv(this, "Scenes");
         this._FormEditor = null;
-        XEventManager.AddEvent(this, this.ButtonBar.Edit.HTML, XEventType.Click, () => this.OnEdit());
+        XEventManager.AddEvent(this, this.ButtonBar.Edit.HTML, XEventType.Click, () => this.OnEdit(XAppState.Editing));
+        XEventManager.AddEvent(this, this.ButtonBar.New.HTML, XEventType.Click, () => this.OnEdit(XAppState.Inserting));
     }
 
     @Inject(XHttpClient, XLifetime.Transient)
     Client!: XHttpClient;
-
+    State: XAppState = XAppState.None;
     Scanes: XDiv;
     ButtonBar: ActionBar;
     ButtonBarR: ActionBarR;
@@ -33,16 +36,20 @@ class App extends XStageTabControlTab
 
     SetModel(pModel: XAPPModel)
     {
+        this.State = XAppState.Searching;
         this.Model = pModel;
         this.DataView = new SceneDataView(this.Scanes);
         this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: XResponse<XServiceModel>) =>
         {
             this.DataView.SetModel(pData.Data);
             if (this.DataView?.DataGrid)
-                this.DataView.DataGrid.OnSelectionChanged = (rows) => this.ButtonBar.UpdateState(XAppState.Searching, rows);
-            this.ButtonBar.UpdateState(XAppState.None, null);
+            {
+                this.DataView.DataGrid.OnSelectionChanged = (rows) => this.ButtonBar.UpdateState(rows);
+                this.DataView.DataGrid.OnRowDoubleClick = (rows) => this.OnEdit(XAppState.Editing);
+            }
             this.SizeChanged();
         });
+        this.ButtonBar.UpdateState();
         this.Prepare();
     }
 
@@ -77,13 +84,13 @@ class App extends XStageTabControlTab
             this._FormEditor = null;
             if (this.DataView)
                 this.DataView.IsVisible = true;
-            this.ButtonBar.UpdateState(XAppState.Searching, this.DataView.DataGrid.SelectedRows);
+            this.ButtonBar.UpdateState();
         }
         else
             super.Close();
     }
 
-    private OnEdit()
+    private OnEdit(pState: XAppState )
     {
         if (!this.DataView || !this.DataView.DataGrid)
             return;
@@ -91,24 +98,27 @@ class App extends XStageTabControlTab
         const fmdl = this.Model.Forms.FirstOrNull(f => f.Type != XFRMType.SVCFilter) as XFRMModel | null;
         if (!fmdl)
             return;
+        this.State = pState;
 
         if (this._FormEditor == null)
         {
             this._FormEditor = new SceneFormEditor(this.Scanes);
             this._FormEditor.OnClose = (_pArg: any) => this.CloseEditor();
+            this._FormEditor.App = this;
         }
 
         this.DataView.IsVisible = false;
-        this.ButtonBar.UpdateState(XAppState.Editing, this.DataView.DataGrid.SelectedRows);
+        this.ButtonBar.UpdateState(this.DataView.DataGrid.SelectedRows);
         this._FormEditor.SetModel(fmdl, this.DataView.SVCModel);
         this._FormEditor.IsVisible = true;
     }
 
     CloseEditor()
     {
+        this.State = XAppState.Searching;
         this._FormEditor = null;
         this.DataView.IsVisible = true;
-        this.ButtonBar.UpdateState(XAppState.Searching, this.DataView.DataGrid.SelectedRows);
+        this.ButtonBar.UpdateState();
     }
 }
 

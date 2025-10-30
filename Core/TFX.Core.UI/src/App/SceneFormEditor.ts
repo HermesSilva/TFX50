@@ -16,7 +16,6 @@ class SceneFormEditor extends XScene
     SVCModel!: XServiceModel;
     Model!: XFRMModel;
 
-    // callback invoked when the editor is closed
     OnClose: XMethod<any> | null = null;
 
     SetModel(pModel: XFRMModel, pSVCModel: XServiceModel)

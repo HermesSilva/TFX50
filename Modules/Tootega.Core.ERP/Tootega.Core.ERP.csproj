@@ -42,6 +42,9 @@
       <Visible>False</Visible>
       <DependentUpon>ERPx.dsorm</DependentUpon>
     </Compile>
+    <Compile Include="DB\Migrations\20251029215633_Inicial.cs" />
+    <Compile Include="DB\Migrations\20251029215633_Inicial.Designer.cs" />
+    <Compile Include="DB\Migrations\TootegaCoreERPContextModelSnapshot.cs" />
     <Compile Include="Empresa\Empresa.Application.cs">
       <Visible>False</Visible>
       <DependentUpon>Empresa.dssam</DependentUpon>
