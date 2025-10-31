@@ -23,6 +23,7 @@ interface XIElement
     IsVisible: boolean;
     OrderIndex: number;
     GetOwnerOrSelf(pContext: XIElement): XISplashable;
+    GetOwner<T extends XIElement | null>(pPredicate: XFunc<T>): T;
 }
 
 interface XIDialog

@@ -80,7 +80,7 @@ class SceneFormEditor extends XScene
                 act = "";
                 break;
         }
-        const ttl = act ? `${at} — ${act}` : at;
+        const ttl = act ? `${at} - ${act}` : at;
         this._TitleBar.HTML.innerText = ttl;
     }
 
