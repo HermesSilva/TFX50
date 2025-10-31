@@ -55,9 +55,20 @@ namespace TFX.Core.Controllers
 
         private static async Task GetIndex(HttpContext pHttpContext)
         {
-            Stream strm = XResource.GetResourceStream<XUseContext>(@"Resource.index.html");
-            strm.CopyTo(pHttpContext.Response.Body);
-            await Task.CompletedTask;
+            var idexpage = @"<!DOCTYPE html>
+<html xmlns=""http://www.w3.org/1999/xhtml"">
+<head>
+    <meta charset=""utf-8"" />
+    <title>TFX Core</title>
+    <script src=""js/TFX.Core.js""></script>
+    <link href=""css/TFX.Core.css"" rel=""stylesheet"" />
+    <link rel=""icon"" href=""svg/favicon.svg"" type=""image/svg+xml"">
+    <link rel=""shortcut icon"" href=""svg/favicon.svg"" type=""image/svg+xml"">
+</head>
+<body onload=""Stage.Run()"">
+</body>
+</html>";
+            await pHttpContext.Response.BodyWriter.WriteAsync(Encoding.UTF8.GetBytes(idexpage));
         }
     }
 }

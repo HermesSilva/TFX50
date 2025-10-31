@@ -1,5 +1,6 @@
 using System;
 using System.Configuration;
+using System.IO;
 using System.Text.Json;
 
 using Microsoft.AspNetCore.Builder;
@@ -33,10 +34,12 @@ namespace Launcher
 
         public static void Main(string[] pArgs)
         {
+            var contentRoot = !XDefault.IsDebug ? "./" : "/Tootega/Source/TFX50/Core/TFX.Core.UI"; 
+
             var builder = WebApplication.CreateBuilder(new WebApplicationOptions
             {
                 Args = pArgs,
-                ContentRootPath = "/Tootega/Source/TFX50/Core/TFX.Core.UI"
+                ContentRootPath = contentRoot
             });
             builder.Services.UseOpenApi();
             builder.Services.ConfigureServices();
