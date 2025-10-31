@@ -412,6 +412,7 @@ class XTable extends XDiv
     private RowNumberColumn: XColumnModel;
     OnRowClick: XMethod<XArray<XTableRow>> | null = null;
     OnRowDoubleClick: XMethod<XArray<XTableRow>> | null = null;
+    private _DidAutoSizeOnCreate: boolean = false;
 
     DoSelectRow(pRow: XTableRow, pArg?: MouseEvent)
     {
@@ -586,6 +587,58 @@ class XTable extends XDiv
         }
     }
 
+    private AutoSizeColumnsOnCreate()
+    {
+        if (this._DidAutoSizeOnCreate)
+            return;
+        if (this.Header.Columns.length === 0)
+            return;
+
+        const trySize = () =>
+        {
+            const aw = Math.max(this.HTML.clientWidth, this.Container.clientWidth, this.Header.HTML.clientWidth);
+            if (aw <= 0)
+            {
+                XEventManager.SetTiemOut(this, trySize, 50);
+                return;
+            }
+
+            let total = 0;
+            const weights: number[] = new Array<number>(this.Header.Columns.length);
+            for (let i = 0; i < this.Header.Columns.length; i++)
+            {
+                const hc = this.Header.Columns[i];
+                let w = 0;
+                if (hc.Column && hc.Column.Width && hc.Column.Width > 0)
+                    w = hc.Column.Width;
+                else
+                {
+                    const t = hc.Column && hc.Column.Title ? hc.Column.Title : "";
+                    w = Math.max(6, t.length);
+                }
+                weights[i] = w;
+                total += w;
+            }
+            if (total === 0)
+                return;
+
+            let remaining = aw;
+            for (let i = 0; i < this.Header.Columns.length; i++)
+            {
+                let px = Math.floor((aw * weights[i]) / total);
+                if (px < 60) px = 60;
+                if (i === this.Header.Columns.length - 1)
+                    px = Math.max(60, remaining);
+                this.Header.Columns[i].Content.style.width = `${px}px`;
+                remaining -= px;
+            }
+            this._DidAutoSizeOnCreate = true;
+            this.Sync();
+        };
+
+        XEventManager.SetTiemOut(this, trySize, 0);
+    }
+
     CreateHeader()
     {
         this.Body.Clear();
@@ -597,5 +650,6 @@ class XTable extends XDiv
             let cell = this.Header.AddColumns("XTh");
             cell.SetData(col);
         }
+        this.AutoSizeColumnsOnCreate();
     }
 }
