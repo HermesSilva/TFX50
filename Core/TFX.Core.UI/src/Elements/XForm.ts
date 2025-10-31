@@ -30,6 +30,8 @@ class XForm extends XDiv
     Fields: XArray<XIEditor> = new XArray<XIEditor>();
     Model!: XFRMModel;
     SVCModel!: XServiceModel;
+    private _FocusTarget: HTMLElement | null = null;
+    private _FocusTries: number = 0;
 
     SetModel(pForm: XFRMModel, pSVCModel: XServiceModel)
     {
@@ -49,6 +51,121 @@ class XForm extends XDiv
             }
         }
         this.ResizeChildren();
+    }
+
+    FocusFirstInput(pTries: number = 10)
+    {
+        const el = this.GetFirstFocusable();
+        if (!el)
+        {
+            if (pTries > 0)
+                XEventManager.SetTiemOut(this, () => this.FocusFirstInput(pTries - 1), 30);
+            return;
+        }
+        this._FocusTarget = el;
+        this._FocusTries = Math.max(4, pTries);
+        XEventManager.SetTiemOut(this, this.EnsureFocusTick, 0);
+    }
+
+    private EnsureFocusTick()
+    {
+        const el = this._FocusTarget;
+        if (!el)
+            return;
+        if (document.activeElement === el)
+            return;
+        this.TryFocusElement(el);
+        if (document.activeElement !== el && this._FocusTries > 0)
+        {
+            this._FocusTries--;
+            XEventManager.SetTiemOut(this, this.EnsureFocusTick, 30);
+        }
+    }
+
+    private TryFocusElement(pEl: HTMLElement)
+    {
+        try { (pEl as any).focus({ preventScroll: true }); }
+        catch { try { pEl.focus(); } catch { } }
+    }
+
+    private GetFirstFocusable(): HTMLElement | null
+    {
+        const tabs = this.SortRectangles(this.Fields);
+        for (let i = 0; i < tabs.length; i++)
+        {
+            const ed = tabs[i];
+            if (!ed)
+                continue;
+            const el = this.GetEditorFocusTarget(ed);
+            if (el)
+                return el;
+        }
+        return null;
+    }
+
+    private GetEditorFocusTarget(pEditor: XIEditor): HTMLElement | null
+    {
+        const el = pEditor.Input as any as HTMLElement;
+        if (this.IsAcceptableInput(el))
+            return el;
+        const nodes = pEditor.HTML.querySelectorAll('input,textarea,select');
+        for (let i = 0; i < nodes.length; i++)
+        {
+            const nd = nodes[i] as HTMLElement;
+            if (this.IsAcceptableInput(nd))
+                return nd;
+        }
+        return null;
+    }
+
+    private IsAcceptableInput(pEl: HTMLElement | null): boolean
+    {
+        if (!pEl)
+            return false;
+        if (!this._IsVisibleInput(pEl))
+            return false;
+        const tag = pEl.tagName ? pEl.tagName.toUpperCase() : "";
+        if (tag === 'INPUT')
+        {
+            const inp = pEl as HTMLInputElement;
+            if (inp.type === 'hidden')
+                return false;
+            if (inp.disabled)
+                return false;
+            if (inp.readOnly)
+                return false;
+            return true;
+        }
+        if (tag === 'TEXTAREA')
+        {
+            const ta = pEl as HTMLTextAreaElement;
+            if (ta.disabled)
+                return false;
+            if (ta.readOnly)
+                return false;
+            return true;
+        }
+        if (tag === 'SELECT')
+        {
+            const sl = pEl as HTMLSelectElement;
+            if (sl.disabled)
+                return false;
+            return true;
+        }
+        return false;
+    }
+
+    private _IsVisibleInput(pEl: HTMLElement): boolean
+    {
+        if (!document.body.contains(pEl))
+            return false;
+        const rects = pEl.getClientRects();
+        if (!rects || rects.length === 0)
+            return false;
+        const cs = window.getComputedStyle(pEl);
+        if (cs.visibility === 'hidden' || cs.display === 'none')
+            return false;
+        return true;
     }
 
     SetTitle(pTitle: string)
@@ -122,7 +239,6 @@ class XForm extends XDiv
                         r.Inflate(-2, -2);
                         child.Rect = r;
 
-                        // Track the bottom of the last field
                         const bottom = y + crows * cellh;
                         if (bottom > maxBottom)
                             maxBottom = bottom;
@@ -140,7 +256,6 @@ class XForm extends XDiv
         for (const child of tabs)
             child.Input.tabIndex = tidx++;
 
-        // Set form height based on positioned fields
         if (maxBottom > 0)
         {
             this.HTML.style.height = `${Math.ceil(maxBottom)}px`;
@@ -165,7 +280,6 @@ class XForm extends XDiv
             return 0;
         });
     }
-
 }
 
 

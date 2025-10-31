@@ -64,11 +64,18 @@ class SceneFormEditor extends XBaseCleanDialog
         this._TitleBar.HTML.innerText = ttl;
     }
 
-   Close()
-   {
-       if (this.OnClose)
-           this.OnClose.apply(this, [null]);
-       this.IsVisible = false;
-       this.Free();
-   }
+    override OnShow()
+    {
+        if (!this.Form)
+            return;
+        XEventManager.SetTiemOut(this.Form, this.Form.FocusFirstInput, 0);
+    }
+
+    Close()
+    {
+        if (this.OnClose)
+            this.OnClose.apply(this, [null]);
+        this.IsVisible = false;
+        this.Free();
+    }
 }

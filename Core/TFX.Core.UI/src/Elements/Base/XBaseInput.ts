@@ -13,7 +13,7 @@ class XBaseInput extends XDiv implements XIEditor
     Description!: string;
     IsNullable!: boolean;
     AllowEmpty!: boolean;
-    IsReadOnly!: boolean;
+    private _IsReadOnly: boolean = false;
     IsRequired!: boolean;
     IsFreeSearch!: boolean;
     IsFormInplace!: boolean;
@@ -43,6 +43,15 @@ class XBaseInput extends XDiv implements XIEditor
     OrderIndex: number = -1;
     RawValue: any;
     private _Mask: string = '';
+    public get IsReadOnly(): boolean
+    {
+        return this._IsReadOnly;
+    }
+    public set IsReadOnly(value: boolean)
+    {
+        this._IsReadOnly = value;
+    }
+
     get Value(): any
     {
         if (this.Input && this.Input.value)
@@ -52,7 +61,7 @@ class XBaseInput extends XDiv implements XIEditor
     set Value(pValue: any)
     {
         if (this.Input && this.Input.value)
-            this.Input.value = pValue;        
+            this.Input.value = pValue;
     }
 
     public get Mask(): string
@@ -66,7 +75,7 @@ class XBaseInput extends XDiv implements XIEditor
     }
 
     protected ApplyMask()
-    {    
+    {
     }
 
     RemoveTitle()
