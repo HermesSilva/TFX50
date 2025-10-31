@@ -1,8 +1,10 @@
 /// <reference path="../Stage/XScene.ts" />
 /// <reference path="../Reflection/XReflections.ts" />
 /// <reference path="../Net/XHttpClient.ts" />
+/// <reference path="../Elements/Base/XBaseDialog.ts" />
 
-class SceneFormEditor extends XScene
+@AutoInit
+class SceneFormEditor extends XBaseCleanDialog
 {
     constructor(pOwner: XElement)
     {
@@ -15,13 +17,13 @@ class SceneFormEditor extends XScene
         this.AutoIncZIndex = true;
     }
 
+    App: App | undefined;
     Form: XForm;
     SVCModel!: XServiceModel;
     Model!: XFRMModel;
 
     OnClose: XMethod<any> | null = null;
 
-    private _DialogContainer: XIDialogContainer | null = null;
     private _TitleBar: XDiv;
 
     SetModel(pModel: XFRMModel, pSVCModel: XServiceModel)
@@ -38,28 +40,6 @@ class SceneFormEditor extends XScene
         this.Form.SetModel(this.Model, this.SVCModel);
         this.UpdateTitle();
     }
-
-      override Show(pValue: boolean = true)
-    {
-        if (this._DialogContainer == null)
-        {
-            this._DialogContainer = this.GetDialogContainer();
-            if (this._DialogContainer && this._DialogContainer.DialogContainer && this._DialogContainer.DialogContainer.HTML !== this.HTML.parentElement)
-            {
-                this.HTML.parentElement?.removeChild(this.HTML);
-                this._DialogContainer.DialogContainer.HTML.appendChild(this.HTML);
-            }
-        }
-
-        super.Show(pValue);
-
-        if (this._DialogContainer)
-            this._DialogContainer.DialogContainer.IsVisible = pValue;
-
-        if (pValue)
-            this.UpdateTitle();
-    }
-
 
     private UpdateTitle()
     {
@@ -84,12 +64,11 @@ class SceneFormEditor extends XScene
         this._TitleBar.HTML.innerText = ttl;
     }
 
-    Close()
-    {
-        if (this._DialogContainer)
-            this._DialogContainer.DialogContainer.IsVisible = false;
-        if (this.OnClose)
-            this.OnClose.apply(this, [null]);
-        this.Free();
-    }
+   Close()
+   {
+       if (this.OnClose)
+           this.OnClose.apply(this, [null]);
+       this.IsVisible = false;
+       this.Free();
+   }
 }

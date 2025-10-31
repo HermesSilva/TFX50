@@ -31,20 +31,15 @@ class XBaseButtonBar extends XWrapPanel
     Cancel: XBaseTextButton;
 }
 
-class XBaseDialog extends XSizeableElement implements XIDialog
+class XBaseCleanDialog extends XSizeableElement implements XIDialog
 {
-    Caption: XBaseDialogCaption;
     constructor(pOwner: XElement)
     {
         super(pOwner, "XDialog");
         this.HTML.parentElement?.removeChild(this.HTML);
         this.AutoIncZIndex = true;
-        this.Caption = new XBaseDialogCaption(this, "XDialogCaption");
-        this.ButtonBar = new XBaseButtonBar(this, "XButtonBar Right");
-        XEventManager.AddEvent(this, this.ButtonBar.Cancel.HTML, XEventType.Click, this.Cancel);
     }
     IsDialog: boolean = true;
-    ButtonBar: XBaseButtonBar;
     private _DialogContainer: any;
 
     Cancel(pArg: MouseEvent)
@@ -54,27 +49,11 @@ class XBaseDialog extends XSizeableElement implements XIDialog
         this.IsVisible = false;
     }
 
-    get Title(): string
-    {
-        return this.Caption.Title;
-    }
-    set Title(pValue: string)
-    {
-        this.Caption.Title = pValue;
-    }
 
     ShowDialog()
     {
         this.IsVisible = true;
         this.StartMouseDown(<any>null);
-    }
-
-    override StartMouseDown(pArg: MouseEvent)
-    {
-        let r = this.Caption.HTML.GetRect();
-        let lb = this.HTML.StyleValue("border-left");
-        let tb = this.HTML.StyleValue("border-top");
-        this.DragRect = new XRect(lb, tb, r.Width, r.Height);
     }
 
     override IncZIndex()
@@ -96,5 +75,38 @@ class XBaseDialog extends XSizeableElement implements XIDialog
 
         super.Show(pValue);
         this._DialogContainer.DialogContainer.IsVisible = pValue;
+    }
+}
+
+class XBaseDialog extends XBaseCleanDialog
+{
+    Caption: XBaseDialogCaption;
+    constructor(pOwner: XElement)
+    {
+        super(pOwner);
+        this.HTML.parentElement?.removeChild(this.HTML);
+        this.AutoIncZIndex = true;
+        this.Caption = new XBaseDialogCaption(this, "XDialogCaption");
+        this.ButtonBar = new XBaseButtonBar(this, "XButtonBar Right");
+        XEventManager.AddEvent(this, this.ButtonBar.Cancel.HTML, XEventType.Click, this.Cancel);
+    }
+    ButtonBar: XBaseButtonBar;
+
+
+    get Title(): string
+    {
+        return this.Caption.Title;
+    }
+    set Title(pValue: string)
+    {
+        this.Caption.Title = pValue;
+    }
+
+    override StartMouseDown(pArg: MouseEvent)
+    {
+        let r = this.Caption.HTML.GetRect();
+        let lb = this.HTML.StyleValue("border-left");
+        let tb = this.HTML.StyleValue("border-top");
+        this.DragRect = new XRect(lb, tb, r.Width, r.Height);
     }
 }

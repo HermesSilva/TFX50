@@ -88,6 +88,7 @@ class App extends XStageTabControlTab
             this._FormEditor = new SceneFormEditor(this.Scanes);
             this._FormEditor.OnClose = (_pArg: any) => this.CloseEditor();
             this._FormEditor.App = this;
+            this._FormEditor.ShowDialog();
         }
 
         this.ButtonBar.UpdateState(this.DataView.DataGrid.SelectedRows);
