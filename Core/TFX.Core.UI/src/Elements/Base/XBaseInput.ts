@@ -5,10 +5,11 @@ class XBaseInput extends XDiv implements XIEditor
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "InputContainer");
-        this.Input = this.CreateInput();
         this.ELMTitle = new XDiv(this, "InputTitle");
+        this.Input = this.CreateInput();
 
     }
+
     Name!: string;
     Description!: string;
     IsNullable!: boolean;
@@ -51,7 +52,10 @@ class XBaseInput extends XDiv implements XIEditor
     {
         this._IsReadOnly = value;
     }
-
+    Clear(): void
+    {
+        this.Value = null;
+    }
     get Value(): any
     {
         if (this.Input && this.Input.value)

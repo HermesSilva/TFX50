@@ -1,24 +1,44 @@
 ﻿/// <reference path="XStringEditor.ts" />
-class XSearchBoxEditor extends XBaseInput
+class XSearchBoxEditor extends XDiv
 {
     constructor(pOwner: XElement | HTMLElement | null)
     {
-        super(pOwner);
-        this.ELMTitle.HTML.innerHTML = "Pesquisa ";
-        this.Button = new XSVGButton(this, "XSearchBoxEditorButton");
+        super(pOwner, "XFilter");
+
+        this.FTitle = XUtils.AddElement<HTMLDivElement>(this.HTML, "div", "XEditorTitle");
+        this.Title = "Pesquisa ";
+
+        this.Rail = new XDiv(this, "XFilterRail");
+        this.Container = new XDiv(this, "XFilterContainerEditor");
+
+        this.Option = new XSVGButton(this.Rail, "Search   ");
+        this.Option.SVG.className = "XSearchIcon";
+        this.Option.SetIcon("svg/option.svg");
+
+        this.Button = new XSVGButton(this.Rail, "Dots");
         this.Button.SVG.className = "XSearchIcon";
         this.Button.SetIcon("svg/search.svg");
         this.Button.OnClick = (e) => this.DoSerach(e);
-        this.Option = new XSVGButton(this, "XSearchBoxEditorButtonOpt");
-        this.Option.SVG.className = "XSearchIcon";
-        this.Option.SetIcon("svg/option.svg");
     }
 
+    FTitle: HTMLDivElement;
+    Rail: XDiv;
+    Container: XDiv;
     Button: XSVGButton;
     Option: XSVGButton;
     Columns!: XColumnModel[];
+    Form!: XFRMModel;
     OnSerach?: XMethod<any>;
     Fields: XArray<XEditableTag> = new XArray<XEditableTag>();
+    AppSVCModel?: XServiceModel;
+
+    SetModel(pSVCModel: XServiceModel, pForm: XFRMModel, pColumns: XColumnModel[])
+    {
+        this.AppSVCModel = pSVCModel;
+        this.Form = pForm;
+        this.Columns = pColumns;
+        this.SetFields(this.Columns.Where(c => c.IsFreeSearch));
+    }
 
     DoSerach(e?: Event): void
     {
@@ -43,31 +63,26 @@ class XSearchBoxEditor extends XBaseInput
             }
         }
 
-        return filter;  
+        return filter;
     }
 
     SetFields(pColumns: XColumnModel[])
     {
         this.Columns = pColumns;
         this.Columns.ForEach((c) => this.AddField(c));
-        if (this.Rows == 2)
-        {
-            this.Button.HTML.className = "XSearchBoxEditorButtonIL";
-            this.Option.HTML.className = "XSearchBoxEditorButtonOptIL";
-        }
     }
 
-    AddField(pColumns: XColumnModel)
+    AddField(pColumn: XColumnModel)
     {
-        let tag = new XEditableTag(this.Input);
-        tag.SetModel(pColumns);
-        tag.Editor.Title.innerHTML = pColumns.Title;
-        tag.OnClick = (pTag: XEditableTag) => this.Close(pTag);
+        let tag = new XEditableTag(this.Container);
+        let ffld = this.Form.Fields.FirstOrNull(f => f.TargetDisplayFieldID.Any(dfld => pColumn.FieldID == dfld));
+        ffld = ffld ?? this.Form.Fields.FirstOrNull(f => f.Name == pColumn.Name);
+        tag.SetModel(pColumn, ffld);
+        tag.Title.innerHTML = pColumn.Title;
         this.Fields.Add(tag);
 
-        // Dispara a pesquisa ao pressionar Enter dentro do editor do tag
-        if (tag.Editor && tag.Editor.Editor && tag.Editor.Editor.Input)
-            XEventManager.AddEvent(this, tag.Editor.Editor.Input, XEventType.KeyDown, this.OnFieldKeyDown);
+        if (tag.Input)
+            XEventManager.AddEvent(this, tag.Input, XEventType.KeyDown, this.OnFieldKeyDown);
     }
 
     private OnFieldKeyDown(e: KeyboardEvent)
@@ -83,16 +98,17 @@ class XSearchBoxEditor extends XBaseInput
 
     CreateInput(): HTMLInputElement
     {
-        return XUtils.AddElement<HTMLInputElement>(this.HTML, "div", "XSearchBoxEditor");
+        return <any>this.HTML;
     }
 
     get Title(): string
     {
-        return this.ELMTitle.HTML.innerHTML;
+        return this.FTitle.innerHTML;
     }
 
     set Title(pValue: string)
     {
+        this.FTitle.innerHTML = pValue;
     }
 }
 

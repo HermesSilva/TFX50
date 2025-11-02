@@ -100,6 +100,21 @@
       <Visible>False</Visible>
     </Compile>
     <Compile Include="ReadOnly\Rules\INFLogradouroService.Rule.cs" />
+    <Compile Include="Services\Rules\INFUFService.Rule.cs" />
+    <Compile Include="Services\UF.DataSet.cs">
+      <Visible>False</Visible>
+      <DependentUpon>UF.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\UF.Rule.cs">
+      <Visible>True</Visible>
+      <DependentUpon>UF.dssvc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\UF.Service.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UF.dssvc</DependentUpon>
+      <Visible>False</Visible>
+    </Compile>
     <Compile Include="Tootega.Core.CEP.Module.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -144,6 +159,10 @@
     <None Update="ReadOnly\Logradouro.dssvc">
       <Generator>XDASEGenerator</Generator>
       <LastGenOutput>Logradouro.Service.cs</LastGenOutput>
+    </None>
+    <None Update="Services\UF.dssvc">
+      <Generator>XDASEGenerator</Generator>
+      <LastGenOutput>UF.Service.cs</LastGenOutput>
     </None>
   </ItemGroup>
  

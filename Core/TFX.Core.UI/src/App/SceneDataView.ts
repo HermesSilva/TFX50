@@ -32,7 +32,7 @@ class SceneDataView extends XScene
         this.Client?.SendAsync(this.SVCModel.SearchPath, pData, (pData: any) =>
         {
             this.DataGrid.SetDataSet(pData.Data);
-        }); 
+        });
     }
 
     Load()
@@ -40,11 +40,27 @@ class SceneDataView extends XScene
         this.DataGrid.SetModel(this.SVCModel);
         let fmdl = this.SVCModel.Forms.FirstOrNull(f => f.Type == XFRMType.SVCFilter);
         if (fmdl != null)
-            this.Filter.SetModel(fmdl, this.SVCModel);
+            this.Filter.SetModel(this.SVCModel, fmdl, this.DataGrid.Table.Columns);
         if (this.SVCModel?.SearchPath === undefined)
             return;
 
-        this.DataGrid.HTML.style.top = this.Filter.HTML.offsetHeight + "px";
+        this.UpdateDataGridPosition();
+    }
+
+    override SizeChanged()
+    {
+        super.SizeChanged();
+        this.UpdateDataGridPosition();
+    }
+
+    private UpdateDataGridPosition()
+    {
+        if (this.Filter && this.DataGrid)
+        {
+            const filterHeight = this.Filter.HTML.scrollHeight;
+            this.DataGrid.HTML.style.top = (filterHeight + 10) + "px";
+            this.DataGrid.HTML.style.height = `calc(100% - ${filterHeight + 10}px)`;
+        }
     }
 }
 

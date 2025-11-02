@@ -7,10 +7,9 @@
   <ItemGroup>
     <None Remove=".vscode\**" />
     <None Remove="src\Data\**" />
+    <None Remove="wwwroot\js\src\**" />
     <TypeScriptConfiguration Remove=".vscode\**" />
     <TypeScriptConfiguration Remove="src\Data\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\css\" />
+    <TypeScriptConfiguration Remove="wwwroot\js\src\**" />
   </ItemGroup>
 </Project>

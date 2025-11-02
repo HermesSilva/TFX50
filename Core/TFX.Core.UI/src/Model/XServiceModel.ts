@@ -11,6 +11,7 @@ interface XColumnModel
     Operator: XOperator;
     MaxLenght: number;
     Type: string;
+    FieldID: string;
 }
 
 interface XDataViewModel

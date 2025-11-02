@@ -24,7 +24,7 @@ class XEditorFactory
         }
 
     }
-    static CreateEditor(pOwner: XForm, pField: XFRMField): XIEditor
+    static CreateEditor(pOwner: XElement, pField: XFRMField): XIEditor
     {
         let editor: XIEditor = XEditorFactory.NewEditor(pField.EditorCID, pOwner);
         editor.AdditionalDataFieldsID = pField.AdditionalDataFieldsID;

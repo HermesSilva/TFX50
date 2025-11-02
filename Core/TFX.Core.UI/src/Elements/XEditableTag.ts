@@ -1,85 +1,62 @@
 ﻿/// <reference path="Base/XElement.ts" />
 /// <reference path="../Reflection/XReflections.ts" />
 
-class XTagEditor extends XDiv
+class XEditableTag extends XDiv 
 {
-    constructor(pOwner: XElement | HTMLElement | null, pClass: string | null)
+
+    constructor(pOwner: XElement | HTMLElement | null)
     {
-        super(pOwner, pClass);
-        this.Title = XUtils.AddElement<HTMLSpanElement>(this.HTML, "span", "XTagEditorTitle");
-        this.Title.innerHTML = "Tag Editor";
+        super(pOwner, "XTagEditor");
+
     }
 
-    Editor!: XIEditor;
-    Title: HTMLSpanElement;
     SVG!: HTMLImageElement;
-    private _LIconSrc?: string;
-
-    SetModel(pColumns: XColumnModel)
+    Title!: HTMLSpanElement;
+    Input!: HTMLInputElement;
+    Columns!: XColumnModel;
+    Field!: XFRMField;
+    Editor!: XIEditor;
+    private _LIconSrc!: string;
+    get Value(): any
     {
-        let edttype = XEditorFactory.DataTypeToEditorType(pColumns.Type);
-        this.Editor = XEditorFactory.NewEditor(edttype, this) as XIEditor;
-        this.Editor.RemoveTitle()
-        this.Editor.HTML.className = "XTagEditorInput";
-        this.Editor.Input.className = "XTagEditorInput";
-        this.Editor.Input.addEventListener('input', () => this.OnInput(), false)
-        this.Editor.Mask = pColumns.Mask;
-        this.Title.addEventListener('click', () => this.Editor.Input.focus(), false);
-        this.SVG = XUtils.AddElement<HTMLImageElement>(this.HTML, "img", "XTagEditorSVG");
-        this.UpdateSVGIcon();
-    }
-
-    public Clear()
-    {
-        this.Editor.Input.value = "";
-        this.Editor.RawValue = null;
-        this.OnInput();
-        this.UpdateSVGIcon();
+        return "";
     }
 
     private OnInput()
     {
-        let w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value);
-        this.Editor.Input.style.width = w + "px";
+        let w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value) + this.SVG.clientWidth + this.Title.clientWidth + 50;
+        this.HTML.style.minWidth = w + "px";
         this.UpdateSVGIcon();
     }
 
     private UpdateSVGIcon()
     {
-        const hasContent = this.Editor?.Input?.value?.length > 0;
+        const hasContent = this.Input?.value?.length > 0;
         const iconSrc = hasContent ? "svg/tinyclosebold.svg" : "svg/tinyclose.svg";
         if (this._LIconSrc != iconSrc)
             this.SVG.src = this._LIconSrc = iconSrc;
     }
-}
 
-class XEditableTag extends XDiv 
-{
-    constructor(pOwner: XElement | HTMLElement | null, pClass: string | null = null)
-    {
-        super(pOwner, pClass ?? "XEditableTag");
-    }
-
-    Editor!: XTagEditor;
-    Columns!: XColumnModel;
-    OnClick!: (pTag: XEditableTag) => void;
-    get Value(): any
-    {
-        return this.Editor.Editor.RawValue;
-    }
-
-    SetModel(pColumns: XColumnModel)
+    SetModel(pColumns: XColumnModel, pField: XFRMField)
     {
         this.Columns = pColumns;
-        this.Editor = new XTagEditor(this, "XTagEditor");
-        this.Editor.SetModel(pColumns);
-        this.Editor.SVG.addEventListener("click", () => this.Editor.Clear(), false);
+        this.Field = pField;
+        this.Editor = XEditorFactory.CreateEditor(this, this.Field);
+        this.Editor.Input.parentNode?.removeChild(this.Editor.Input);
+        this.Editor.HTML.parentNode?.removeChild(this.Editor.HTML);
+        this.Input = this.Editor.Input;
+        XEventManager.AddEvent(this, this.Input, XEventType.Input, () => this.OnInput());
+        this.Title = XUtils.AddElement<HTMLSpanElement>(this.HTML, "span", "XTagTitle");
+        this.Title.innerHTML = "Tag Editor";
+        this.HTML.appendChild(this.Input);
+        this.Input.className = "XTagInput";
+        this.SVG = XUtils.AddElement<HTMLImageElement>(this.HTML, "img", "XTagClear");
+        this.SVG.addEventListener("click", () => { this.Editor.Clear(); this.OnInput() }, false);
+        this.UpdateSVGIcon();
     }
 
     DoClick()
     {
-        if (this.OnClick != null)
-            this.OnClick.apply(this, [this]);
     }
 
     protected override CreateContainer(): HTMLElement 

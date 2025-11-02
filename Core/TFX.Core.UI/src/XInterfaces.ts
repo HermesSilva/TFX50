@@ -99,6 +99,7 @@ interface XIEditor extends XIElement
     Input: HTMLInputElement;
     Title: string;
     RawValue: any;
+    Clear(): void;
 }
 
 interface XIPopupPanel extends XIElement

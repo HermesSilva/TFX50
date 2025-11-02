@@ -16,6 +16,7 @@
     FocusIn = "focusin",
     Blur = "blur",
     Scroll = "scroll",
+    Change = "change"
 }
 
 class XCallOnce

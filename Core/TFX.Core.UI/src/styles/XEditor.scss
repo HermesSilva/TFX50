@@ -217,6 +217,7 @@
 
 .XSearchBoxEditor {
     position: absolute;
+    display: inline-flex;
     padding: var(--ip-padding);
     height: var(--ip-height);
     border-radius: 5px;
@@ -283,7 +284,7 @@
     padding: 4px;
 }
 
-.XTagEditor {
+.xXTagEditor {
     display: inline-flex;
     align-items: center;
     border: 1px solid #aaa;
@@ -298,17 +299,19 @@
     }
 }
 
-.XTagEditorTitle {
+.xXTagEditorTitle {
     color: #a3a3a3;
     padding-right: 6px;
     font-size: 12px;
+    white-space: nowrap;
 }
 
-.XTagEditorInput {
+.xXTagEditorInput {
     border: none;
     outline: none;
-    min-width: 10px;
+    min-width: 30px;
     border-radius: 3px;
+    width: 30px;
 
     &:focus {
         outline: none;

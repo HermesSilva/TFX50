@@ -64,8 +64,7 @@
         if (style.boxSizing === 'content-box')
             finalWidth += pl + pr + bl + br
 
-        pInput.style.width = `${Math.ceil(finalWidth)}px`
-        return Math.ceil(finalWidth);
+        return Math.ceil(finalWidth * 1.2);
     }
 
 

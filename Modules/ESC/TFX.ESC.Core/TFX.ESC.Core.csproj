@@ -43,6 +43,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\Core\TFX.Core.Data\TFX.Core.Data.csproj" />
 	  <ProjectReference Include="..\..\..\Core\TFX.Core\TFX.Core.csproj" />
+	  <ProjectReference Include="..\..\Tootega.Core.CEP\Tootega.Core.CEP.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

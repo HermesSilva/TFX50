@@ -45,10 +45,7 @@ class XForm extends XDiv
         {
             let editor = XEditorFactory.CreateEditor(this, field);
             this.Fields.Add(editor);
-            if (editor instanceof XSearchBoxEditor)
-            {
-                editor.SetFields(pSVCModel.DataView.Columns.Where(c => c.IsFreeSearch));
-            }
+     
         }
         this.ResizeChildren();
     }

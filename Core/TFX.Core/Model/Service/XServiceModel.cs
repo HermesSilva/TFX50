@@ -56,7 +56,10 @@ namespace TFX.Core.Model.Service
         {
             get; set;
         }
-
+        public Guid FieldID
+        {
+            get; set;
+        }
     }
 
     public class XDataViewModel

@@ -28,25 +28,35 @@ namespace TFX.ESC.Core.Escritorios
         {
             SearchPath = "Escritorio/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String", Mask = "###.###.###-##|##.###.###/####-##", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("9BBA3DC6-EC85-483A-9D61-E9299BCC3FD0") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("EB48CDBE-130E-46E9-B6B7-0799B9B0D735") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
+                                                      FieldID = new Guid("4151E7DE-9879-40E9-843C-4C5020AA23B9") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("FC58075F-DA1A-47A0-B202-D777DA63AF05") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxAgregadoID", Title = "Agregado", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("373E5B49-E293-4783-97BE-65770AB2076B") });
             DataView.Columns.Add(new XColumnModel() { Name = "ESCxEscritorioID", Title = "Escritório", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("5B76BB67-2DD4-4BC4-86B0-2B96EFEF24E6") });
             DataView.Columns.Add(new XColumnModel() { Name = "Status", Title = "Status", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("179E8B2B-9472-4AF8-AF81-3B7C48C6F29B") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("02309876-104E-4755-A817-9A10CA73ED8A") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("46D1BEF5-8D47-4D1E-8632-459CAF8B601D") });
             DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
+                                                      FieldID = new Guid("62E97ECC-A7D5-4338-85FB-E3E5F5797D71") });
             Forms.Add(new FRMEscritorioFilter());
         }
     }
@@ -123,9 +133,9 @@ namespace TFX.ESC.Core.Escritorios
     public class EscritorioFilter : XFilter
     {
         public XFilterField Nome {get;set;}
-        public XFilterField Localidade {get;set;}
-        public XFilterField Sigla {get;set;}
         public XFilterField CPFCNPJ {get;set;}
+        public XFilterField? CEPxUFID {get;set;}
+        public XFilterField? CEPxLocalidadeID {get;set;}
     }
     public class FRMEscritorioFilter : XFRMModel
     {
@@ -134,20 +144,21 @@ namespace TFX.ESC.Core.Escritorios
             ID = new Guid("8EA042E6-E564-4DB1-8303-3896A1E67C3F");
             Name = "EscritorioFilter";
             Title = "";
-            MinRows = 3;
+            MinRows = 2;
             Style = XFRMStyle.Normal;
             Type = XFRMType.SVCFilter;
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Name = "Nome";
             fld.Title = "Nome";
             fld.CanInsert = true;
             fld.CanUpdate = true;
-            fld.RowCount = 3;
-            fld.ColCount = 32;
+            fld.RowCount = 2;
+            fld.ColCount = 6;
             fld.IsHidden = false;
             fld.Location = 1;
-            fld.EditorCID = XModelEditors.XSearchBox;
+            fld.EditorCID = XModelEditors.XString;
             fld.Operator = XOperator.EqualTo;
             fld.JustifyHeight = false;
             fld.AllowEmpty = true;
@@ -165,6 +176,105 @@ namespace TFX.ESC.Core.Escritorios
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] {  };
             fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+            fld = AddField(new XFRMField());
+            fld.Mask = "###.###.###-##|##.###.###/####-##";
+            fld.ForceRW = true;
+            fld.Name = "CPFCNPJ";
+            fld.Title = "CPF ou CNPJ";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 6;
+            fld.IsHidden = false;
+            fld.Location = 2;
+            fld.EditorCID = XModelEditors.XString;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 2;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XString;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetDisplayFieldID = new Guid[] {  };
+            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.Name = "CEPxUFID";
+            fld.Title = "UF";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 6;
+            fld.IsHidden = false;
+            fld.Location = 3;
+            fld.EditorCID = XModelEditors.XLookup;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 3;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XInt16;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetDisplayFieldID = new Guid[] { new Guid("46D1BEF5-8D47-4D1E-8632-459CAF8B601D") };
+            fld.SourceDisplayFieldID = new Guid[] { new Guid("3AE65011-1DED-43F4-A98B-910115BC4D33") };
+            fld.DataSourceID = new Guid("AA4F0EF5-B69B-47C7-84A5-8C5912B64037");
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.Name = "CEPxLocalidadeID";
+            fld.Title = "Localidade";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 9;
+            fld.IsHidden = false;
+            fld.Location = 4;
+            fld.EditorCID = XModelEditors.XLookup;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 4;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XInt32;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetDisplayFieldID = new Guid[] { new Guid("62E97ECC-A7D5-4338-85FB-E3E5F5797D71") };
+            fld.SourceDisplayFieldID = new Guid[] { new Guid("D1B3E21B-37C4-4F23-BD88-FA930D4D1AEC") };
+            fld.DataSourceID = new Guid("66DDFF12-6F77-49BF-AD65-C1397EDB83D3");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
