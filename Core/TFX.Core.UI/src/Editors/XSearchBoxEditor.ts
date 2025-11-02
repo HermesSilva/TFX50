@@ -9,8 +9,8 @@ class XSearchBoxEditor extends XDiv
         this.Title = "Pesquisa ";
 
         this.Rail = new XDiv(this, "XFilterRail");
-        this.Container = new XDiv(this, "XFilterContainerEditor");
-
+        this.Container = new XWrapPanelEx(this, "XFilterContainerEditor");
+        this.Container.OnResize = () => this.ChildSizeChanged();
         this.Option = new XSVGButton(this.Rail, "Search   ");
         this.Option.SVG.className = "XSearchIcon";
         this.Option.SetIcon("svg/option.svg");
@@ -21,9 +21,10 @@ class XSearchBoxEditor extends XDiv
         this.Button.OnClick = (e) => this.DoSerach(e);
     }
 
+
     FTitle: HTMLDivElement;
     Rail: XDiv;
-    Container: XDiv;
+    Container: XWrapPanelEx;
     Button: XSVGButton;
     Option: XSVGButton;
     Columns!: XColumnModel[];
@@ -31,6 +32,14 @@ class XSearchBoxEditor extends XDiv
     OnSerach?: XMethod<any>;
     Fields: XArray<XEditableTag> = new XArray<XEditableTag>();
     AppSVCModel?: XServiceModel;
+
+    ChildSizeChanged()
+    {
+        var cr = this.Container.HTML.GetRect();
+        var top = this.Container.HTML.StyleValue("top");
+        if (cr.Height > 0)
+            this.HTML.style.minHeight = (top + cr.Height + 5) + "px";
+    }
 
     SetModel(pSVCModel: XServiceModel, pForm: XFRMModel, pColumns: XColumnModel[])
     {

@@ -39,7 +39,7 @@ class XElement implements XIElement
 
     public HTML: HTMLElement;
     public Element: HTMLElement | null = null;
-    Owner: XElement | HTMLElement | null;
+    Owner!: XElement | HTMLElement;
     private _IsVisible: boolean = true;
     UID: number = 0;
     ID: string;
@@ -91,6 +91,7 @@ class XElement implements XIElement
 
     AddChildren(pElement: XElement)
     {
+        pElement.OrderIndex = this.Children.length;
         this.Children.Add(pElement);
     }
 

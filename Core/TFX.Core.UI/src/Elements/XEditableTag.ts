@@ -27,6 +27,8 @@ class XEditableTag extends XDiv
         let w = XUtils.ApplySize(this.Editor.HTML, this.Editor.Input.value) + this.SVG.clientWidth + this.Title.clientWidth + 50;
         this.HTML.style.minWidth = w + "px";
         this.UpdateSVGIcon();
+        if (this.Owner instanceof XElement)
+            this.Owner.SizeChanged();
     }
 
     private UpdateSVGIcon()

@@ -11,6 +11,7 @@ class SceneDataView extends XScene
         this.DataGrid = new MainDataGrid(this);
         this.Filter = new XFilter(this);
         this.Filter.DoSerach = (f) => this.DoSerach(f);
+        this.Filter.OnResize = () => this.UpdateDataGridPosition();
     }
 
     Filter: XFilter;

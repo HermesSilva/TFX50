@@ -546,6 +546,15 @@ Array.prototype.LastOrNull = function <T>(pPredicate?: XFunc<any>): any
     }
     return null;
 };
+
+Array.prototype.OrderByDescending = function (pOrder: any): any
+{
+    let ar = this.slice();
+    ar.Order = pOrder;
+    XSort.Sort<any>(ar, XSort.Swap, ar._ComparerD, <any>ar);
+    return ar;
+};
+
 Array.prototype.OrderBy = function (pOrder: any): any
 {
     let ar = this.slice();
