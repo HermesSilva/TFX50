@@ -1,7 +1,7 @@
 ﻿interface XMouseEvent { (pArg: MouseEvent): void; }
 interface XISplashable
 {
-    BeginWait():void;
+    BeginWait(): void;
 
     EndWait(): void;
 
@@ -99,7 +99,9 @@ interface XIEditor extends XIElement
     Input: HTMLInputElement;
     Title: string;
     RawValue: any;
+    Field: XFRMField;
     Clear(): void;
+    SetField(pField: XFRMField): void;
 }
 
 interface XIPopupPanel extends XIElement

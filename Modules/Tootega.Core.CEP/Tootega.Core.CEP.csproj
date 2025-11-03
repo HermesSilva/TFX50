@@ -100,7 +100,12 @@
       <Visible>False</Visible>
     </Compile>
     <Compile Include="ReadOnly\Rules\INFLogradouroService.Rule.cs" />
+    <Compile Include="Services\Rules\INFUFController.Rule.cs" />
     <Compile Include="Services\Rules\INFUFService.Rule.cs" />
+    <Compile Include="Services\UF.Controller.cs">
+      <Visible>False</Visible>
+      <DependentUpon>UF.dssvc</DependentUpon>
+    </Compile>
     <Compile Include="Services\UF.DataSet.cs">
       <Visible>False</Visible>
       <DependentUpon>UF.dssvc</DependentUpon>
@@ -129,6 +134,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\TFX.Core.Data\TFX.Core.Data.csproj" />
     <ProjectReference Include="..\..\Core\TFX.Core\TFX.Core.csproj" />
   </ItemGroup>
   <ItemGroup>

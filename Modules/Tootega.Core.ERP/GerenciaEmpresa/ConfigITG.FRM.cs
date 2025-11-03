@@ -18,6 +18,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             Type = XFRMType.StandAlone;
             XFRMField fld;
             fld = AddField(new XFRMField());
+            fld.Name = "Host";
             fld.Title = "Servidor Oracle";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -49,6 +50,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Porta";
             fld.Title = "Porta";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -79,6 +81,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Instancia";
             fld.Title = "Instância";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -110,6 +113,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Usuario";
             fld.Title = "Usuário";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -141,6 +145,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Senha";
             fld.Title = "Senha";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -172,6 +177,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "GrupoServico";
             fld.Title = "Grupo de Serviços";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -203,6 +209,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "GrupoVacina";
             fld.Title = "Grupo de Vacinas";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -234,6 +241,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "GrupoExame";
             fld.Title = "Grupo de Exames";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -265,6 +273,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "HostInt";
             fld.Title = "Servidor Integração";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -295,6 +304,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "UsuarioInt";
             fld.Title = "Usuario Integração";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -325,6 +335,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "SenhaInt";
             fld.Title = "Senha Integração";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -355,6 +366,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "LatenciaServico";
             fld.Title = "Latência do Serviço (s)";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -386,6 +398,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "LatenciaIntegracao";
             fld.Title = "Latência da Integração (s)";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -418,6 +431,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
             fld.Mask = "0000-0000|(00) 0000-0000|+00 (00) 0000-0000|00000-0000|(00) 00000-0000|+00 (00) 00000-0000";
+            fld.Name = "TwilioNumero";
             fld.Title = "Número para Mensagens";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -449,6 +463,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
             fld.Mask = "00";
+            fld.Name = "CodigoPais";
             fld.Title = "Código Pais (telefone)";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -480,6 +495,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
             fld.Mask = "00";
+            fld.Name = "DDD";
             fld.Title = "DDD Prefrencial";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -510,6 +526,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "FechaPedido";
             fld.Title = "Criar Pedido Fechado";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -541,6 +558,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "MigrarClientes";
             fld.Title = "Migrar Clientes";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -571,6 +589,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "IntegracaoReversa";
             fld.Title = "Usa Integração Reversa";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -601,6 +620,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "DiasAvisoVacina";
             fld.Title = "Antec. Aviso de Vacina";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -632,6 +652,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Parametros";
             fld.Title = "Outros Parâmetros";
             fld.CanInsert = true;
             fld.CanUpdate = true;

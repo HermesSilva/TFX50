@@ -24,6 +24,7 @@ namespace Tootega.Core.CEP.Logradouro
                 XFRMField fld;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "Tipo";
                 fld.Title = "Tipo";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -55,6 +56,7 @@ namespace Tootega.Core.CEP.Logradouro
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "Nome";
                 fld.Title = "Nome do Logradouro";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -86,6 +88,7 @@ namespace Tootega.Core.CEP.Logradouro
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "NomeLocalidade";
                 fld.Title = "Nome da Localidade";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -117,6 +120,7 @@ namespace Tootega.Core.CEP.Logradouro
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "NomeBairro";
                 fld.Title = "Nome do Bairro";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -148,6 +152,7 @@ namespace Tootega.Core.CEP.Logradouro
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "Breviatura";
                 fld.Title = "Abreviatura";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -179,6 +184,7 @@ namespace Tootega.Core.CEP.Logradouro
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "Sigla";
                 fld.Title = "Sigla da UF";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -210,6 +216,7 @@ namespace Tootega.Core.CEP.Logradouro
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "CEPGeral";
                 fld.Title = "CEP Geral";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -242,6 +249,7 @@ namespace Tootega.Core.CEP.Logradouro
                 fld = AddField(new XFRMField());
                 fld.Mask = "0000000";
                 fld.IsReadOnly = true;
+                fld.Name = "CodigoIBGE";
                 fld.Title = "Código no IBGE";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;

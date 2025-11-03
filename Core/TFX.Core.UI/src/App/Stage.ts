@@ -4,6 +4,22 @@ class Stage extends XStage
 {
     static Instance: Stage;
 
+    static Run()
+    {
+        window.onmousedown = (arg) => XPopupManager.HideAll(arg);
+        window.onkeydown = (a) => XHotkeyManager.OnKeyDown(a);
+        this.Instance = new Stage();
+    }
+
+    static Test()
+    {
+        window.onmousedown = (arg) => XPopupManager.HideAll(arg);
+        window.onkeydown = (a) => XHotkeyManager.OnKeyDown(a);
+        this.Instance = new Stage();
+        var tabx = this.Instance.TabControl.AddTab("Test App");
+    }
+
+
     constructor()
     {
         super();
@@ -20,12 +36,6 @@ class Stage extends XStage
         this.Menu.Load();
     }
 
-    static Run()
-    {
-        window.onmousedown = (arg) => XPopupManager.HideAll(arg);
-        window.onkeydown = (a) => XHotkeyManager.OnKeyDown(a);
-        this.Instance = new Stage();
-    }
 
     override SizeChanged()
     {

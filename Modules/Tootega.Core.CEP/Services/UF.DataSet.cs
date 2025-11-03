@@ -28,11 +28,14 @@ namespace Tootega.Core.CEP.Services
         {
             SearchPath = "UF/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxUFID", Title = "UF", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("521CBB7F-344C-452D-86F6-F2A3E3E09E21") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome da UF", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("36E2EE1B-E0C9-4A88-8F49-7EF26EF7EC26") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("3AE65011-1DED-43F4-A98B-910115BC4D33") });
         }
     }
     public class UFTuple : XServiceDataTuple

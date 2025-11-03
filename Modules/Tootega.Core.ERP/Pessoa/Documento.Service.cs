@@ -192,8 +192,6 @@ namespace Tootega.Core.ERP.Pessoa
 
             if (pFilter != null)
             {
-                if (pFilter.Numero?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => EF.Functions.Like(q.ERPxDocumento.Numero, "%"+pFilter.Numero.Value+"%"));
                 if (pFilter.Tipo?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.ERPxDocumentoTipo.Tipo == Convert.ToString(pFilter.Tipo.Value));
                 if (pFilter.Numero?.State == XFieldState.NotEmpty)

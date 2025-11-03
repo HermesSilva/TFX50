@@ -28,11 +28,14 @@ namespace TFX.Core.Data.Servicos.Usuario
         {
             SearchPath = "Usuario/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "EMail", Title = "E-Mails", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("E3B478D2-D183-45BD-8DCA-75ED81FB37B2") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("4A4DE653-7393-4F86-AFC6-512AF3531772") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("29189C0C-BE24-4106-89D9-0405693E297C") });
             Forms.Add(new FRMUsuarioFilter());
         }
     }
@@ -86,6 +89,7 @@ namespace TFX.Core.Data.Servicos.Usuario
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Name = "Nome";
             fld.Title = "Nome";
             fld.CanInsert = true;
             fld.CanUpdate = true;

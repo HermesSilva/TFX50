@@ -28,49 +28,71 @@ namespace Tootega.Core.ERP.Pessoa
         {
             SearchPath = "Endereco/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("5B1BFC07-2838-4052-A002-31B041EC4CB1") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLogradouroID", Title = "Logradouro", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("AF17380E-EBB2-4D75-A845-EE389248911D") });
             DataView.Columns.Add(new XColumnModel() { Name = "Complemento", Title = "Complemento", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("C1F86FF1-2DCB-4997-8105-ADB775B59727") });
             DataView.Columns.Add(new XColumnModel() { Name = "Logradouro", Title = "Logradouro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("726199AB-DF63-4C08-B57B-35E26D7F7C87") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("2630BB3B-209B-44DF-B808-A581674DDEAA") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEP", Title = "CEP", Type = "String", Mask = "00.000-000", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("F1086C58-5DE4-49D9-98D9-0A17729661A5") });
             DataView.Columns.Add(new XColumnModel() { Name = "Bairro", Title = "Bairro", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("58CB564D-339B-4001-BC41-44C8689CC32B") });
             DataView.Columns.Add(new XColumnModel() { Name = "Longitude", Title = "Longitude", Type = "Decimal", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("5C928A6A-453C-49C8-BDF8-C97578640B9A") });
             DataView.Columns.Add(new XColumnModel() { Name = "Latitude", Title = "Latitude", Type = "Decimal", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("083DB7A8-9337-4361-8254-1033FE392063") });
             DataView.Columns.Add(new XColumnModel() { Name = "Endereco", Title = "Endereço", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("A3B88387-A70C-4C91-B1B2-80CE9E9DF49D") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("1B19D497-DFB6-40BF-A269-612AF7AB5479") });
             DataView.Columns.Add(new XColumnModel() { Name = "NomeUF", Title = "Nome da UF", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("86C3C703-2347-40E2-A4E6-47422D2F3CFA") });
             DataView.Columns.Add(new XColumnModel() { Name = "CodigoIBGE", Title = "Código no IBGE", Type = "String", Mask = "0000000", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("F6B698F5-F537-4415-A77D-CACF795AF59E") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxEnderecoID", Title = "Endereço", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("19A5F802-8022-449B-AEB3-83051757006C") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxFinalidadeID", Title = "Finalidade", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("3E32E2DC-0DC8-4D8A-A983-125EE377821C") });
             DataView.Columns.Add(new XColumnModel() { Name = "Lote", Title = "Lote", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("B9385012-FA2E-4E6F-936F-1B46DB567498") });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("5758EA41-22BD-4AAF-AAA5-96135299A200") });
             DataView.Columns.Add(new XColumnModel() { Name = "Observacao", Title = "Observação", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("2187B9FC-971F-46E5-9020-6B626EBB910D") });
             DataView.Columns.Add(new XColumnModel() { Name = "Quadra", Title = "Quadra", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("D161CE8C-EE4A-4749-A229-9147F870015B") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("A58DB1AC-ADF5-4748-B8A6-B5966B7AD347") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoas", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("80EE4238-3BDE-47FE-A06E-95F1780B7A00") });
             DataView.Columns.Add(new XColumnModel() { Name = "Finalidade", Title = "Finalidade", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("1ED38CB7-8EEA-4C1C-8976-FF1FEE2D76BF") });
             Forms.Add(new FRMEnderecoFilter());
         }
     }

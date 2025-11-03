@@ -57,6 +57,9 @@ namespace TFX.ESC.Core.Escritorios
             DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
                                                       FieldID = new Guid("62E97ECC-A7D5-4338-85FB-E3E5F5797D71") });
+            DataView.Columns.Add(new XColumnModel() { Name = "CEPxUFID", Title = "UF", Type = "Int16", Mask = "", 
+                                                      Visible = false,
+                                                      FieldID = new Guid("DA7716E7-4D2C-4E02-9D70-C8391EB98C08") });
             Forms.Add(new FRMEscritorioFilter());
         }
     }
@@ -67,7 +70,7 @@ namespace TFX.ESC.Core.Escritorios
             Initialize();
         }
 
-        public EscritorioTuple(String pCPFCNPJ, Int16 pCORxStatusID, String pNome, Guid? pCORxPessoaID, Guid? pCORxAgregadoID, Guid? pESCxEscritorioID, String pStatus, Int32 pCEPxLocalidadePrincipalID, String pSigla, String pLocalidade)
+        public EscritorioTuple(String pCPFCNPJ, Int16 pCORxStatusID, String pNome, Guid? pCORxPessoaID, Guid? pCORxAgregadoID, Guid? pESCxEscritorioID, String pStatus, Int32 pCEPxLocalidadePrincipalID, String pSigla, String pLocalidade, Int16 pCEPxUFID)
             : this()
         {
             CPFCNPJ.Value = pCPFCNPJ;
@@ -80,6 +83,7 @@ namespace TFX.ESC.Core.Escritorios
             CEPxLocalidadePrincipalID.Value = pCEPxLocalidadePrincipalID;
             Sigla.Value = pSigla;
             Localidade.Value = pLocalidade;
+            CEPxUFID.Value = pCEPxUFID;
         }
 
         public override void Initialize()
@@ -94,6 +98,7 @@ namespace TFX.ESC.Core.Escritorios
             CEPxLocalidadePrincipalID = new XInt32DataField();
             Sigla = new XStringDataField();
             Localidade = new XStringDataField();
+            CEPxUFID = new XInt16DataField();
         }
 
 
@@ -128,6 +133,10 @@ namespace TFX.ESC.Core.Escritorios
         [Display(Name = "Nome da Localidade")]
         [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
         public XStringDataField Localidade {get;set;}
+
+        [Display(Name = "UF")]
+        [XOpenApi(Visibility = XOpenApiVisibility.HiddenInRequest)]
+        public XInt16DataField CEPxUFID {get;set;}
     }
 
     public class EscritorioFilter : XFilter
@@ -241,7 +250,7 @@ namespace TFX.ESC.Core.Escritorios
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] { new Guid("46D1BEF5-8D47-4D1E-8632-459CAF8B601D") };
             fld.SourceDisplayFieldID = new Guid[] { new Guid("3AE65011-1DED-43F4-A98B-910115BC4D33") };
-            fld.DataSourceID = new Guid("AA4F0EF5-B69B-47C7-84A5-8C5912B64037");
+            fld.DataSourceID = new Guid("59AFD485-EB75-4FAB-852C-BFE018FF575E");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
@@ -274,7 +283,7 @@ namespace TFX.ESC.Core.Escritorios
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] { new Guid("62E97ECC-A7D5-4338-85FB-E3E5F5797D71") };
             fld.SourceDisplayFieldID = new Guid[] { new Guid("D1B3E21B-37C4-4F23-BD88-FA930D4D1AEC") };
-            fld.DataSourceID = new Guid("66DDFF12-6F77-49BF-AD65-C1397EDB83D3");
+            fld.DataSourceID = new Guid("447A4B15-4C86-4FFF-B29F-8F2FFF7D7EFD");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

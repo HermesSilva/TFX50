@@ -29,17 +29,23 @@ namespace Tootega.Core.ERP.PessoaJuridica
         {
             SearchPath = "PessoaJuridica/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("E7D07C73-989C-4C2F-89EA-D9157CF05DFF") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("3D1D8867-C7A2-4921-8386-2582EF73A12B") });
             DataView.Columns.Add(new XColumnModel() { Name = "CNPJ", Title = "CNPJ", Type = "String", Mask = "00.000.000/0000-00", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("3BA43000-B027-4D09-A2BC-04C332F020FF") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("2CF861C0-F94C-4968-AF79-65772DBCFA06") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("D0F63DAF-918A-4E5D-9ADB-969B35A06CF0") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("0263D503-CC30-4ED8-B76B-4AF2A4780CAB") });
             Forms.Add(new FRMPessoaJuridicaFilter());
         }
     }

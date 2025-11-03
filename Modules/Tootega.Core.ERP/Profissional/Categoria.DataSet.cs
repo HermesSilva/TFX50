@@ -28,13 +28,17 @@ namespace Tootega.Core.ERP.Profissional
         {
             SearchPath = "Categoria/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxCategoriaID", Title = "Categoria de Profissional", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("8FF07CFA-237F-44A0-93D6-D3E296995F23") });
             DataView.Columns.Add(new XColumnModel() { Name = "Categoria", Title = "Categoria", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("960D1330-9716-4E0D-AEE8-4CB880AC9E7C") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxProfissionalCategoriaID", Title = "Categorias por Profissional", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("721A107B-41C2-4C16-B8A3-4652753D8A44") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxProfissionalID", Title = "Profissionais", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("A6828D0B-9053-403D-9BDB-5654B95CFACB") });
             Forms.Add(new FRMCategoriaFilter());
         }
     }

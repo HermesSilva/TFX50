@@ -18,6 +18,7 @@ namespace Tootega.Core.ERP.Pessoa
             Type = XFRMType.StandAlone;
             XFRMField fld;
             fld = AddField(new XFRMField());
+            fld.Name = "ERPxFinalidadeID";
             fld.Title = "Finalidade";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -44,12 +45,13 @@ namespace Tootega.Core.ERP.Pessoa
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] { new Guid("0F32B4ED-4483-4622-8A36-7506DE5D0D02") };
             fld.SourceDisplayFieldID = new Guid[] { new Guid("170ABC1E-37C6-437E-B72F-11ED8251B0D3") };
-            fld.DataSourceID = new Guid("EDAEBEDE-23A8-4408-836F-0E39FF6E6D16");
+            fld.DataSourceID = new Guid("4E22A7DA-AD65-4076-85B0-71C22F6634A6");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "ERPxContatoTipoID";
             fld.Title = "Tipo de Contato";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -76,12 +78,13 @@ namespace Tootega.Core.ERP.Pessoa
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] { new Guid("767320FE-B2B6-4B67-8DFD-0DD3930CEA27"), new Guid("BC39FC05-2AEB-423F-B6EC-E4D68B34AD7D") };
             fld.SourceDisplayFieldID = new Guid[] { new Guid("EDECF396-5C6C-4542-9DAC-40B615C431B2"), new Guid("945DC2FB-58F5-4DDF-ACBA-6F1D2A20EC31") };
-            fld.DataSourceID = new Guid("70537FEF-A33C-4A21-B3E8-B8F5BAE120A4");
+            fld.DataSourceID = new Guid("4E22A7DA-AD65-4076-85B0-71C22F6634A6");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Contato";
             fld.Title = "E-Mail, Telefone e ETC.";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -112,6 +115,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Observacao";
             fld.Title = "Observação";
             fld.CanInsert = true;
             fld.CanUpdate = true;

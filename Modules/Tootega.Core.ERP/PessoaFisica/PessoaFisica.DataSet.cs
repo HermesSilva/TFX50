@@ -30,21 +30,29 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
             SearchPath = "PessoaFisica/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CPF", Title = "CPF", Type = "String", Mask = "000.000.000-00", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("EEC7E7A7-2126-4A4E-BD87-E2E3308C4758") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("3F44FF66-EEC9-42A6-A6EA-8B636C688056") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
+                                                      FieldID = new Guid("86F19726-2A32-415E-9655-463D8796E123") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("A84395B0-A21F-457E-9906-DDAC991D5E5B") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxGeneroID", Title = "Gênero", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("12C00F80-C2FE-4A06-84FF-1EB819CBCAAD") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nascimento", Title = "Data de Nascimento", Type = "DateTime", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("F5384E9B-B2E3-449B-808E-89BA23C566F6") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("BEA4C995-5EDA-4F6E-94F1-152591C352C1") });
             DataView.Columns.Add(new XColumnModel() { Name = "Genero", Title = "Gênero", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("3704B0EB-A7BA-41AA-B361-588DBC233749") });
             Forms.Add(new FRMPessoaFisicaFilter());
         }
     }
@@ -132,6 +140,7 @@ namespace Tootega.Core.ERP.PessoaFisica
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Name = "Nome";
             fld.Title = "Pesquisa de Pessoa Física";
             fld.CanInsert = true;
             fld.CanUpdate = true;

@@ -91,8 +91,8 @@ class XEditorFactory
             case XModelEditors.XString:
                 editor = new XStringEditor(pOwner);
                 break;
-            case XModelEditors.XSearchBox:
-                editor = new XSearchBoxEditor(pOwner);
+            case XModelEditors.XLookup:
+                editor = new XDataLoockupEditor(pOwner);
                 break;
 
             case XModelEditors.XTime:

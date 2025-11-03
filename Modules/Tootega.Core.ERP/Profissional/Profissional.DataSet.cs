@@ -30,23 +30,32 @@ namespace Tootega.Core.ERP.Profissional
         {
             SearchPath = "Profissional/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CPF", Title = "CPF", Type = "String", Mask = "000.000.000-00", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("280C9420-5165-452D-8454-6827BBA8E3DA") });
             DataView.Columns.Add(new XColumnModel() { Name = "Categoria", Title = "Categoria", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("B292C191-D62D-45E5-AB6D-B0EE7F8138FA") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("95B70271-1901-4285-97C5-BD27B076032D") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("3BE7A13E-3BC4-4BEE-9958-14DDB7426EAB") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("9534C668-26EA-49DD-9EA1-56EDF622861D") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("0AA312DA-FB00-4279-A0EA-B66881C1427E") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxGeneroID", Title = "Gênero", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("849038DC-7D66-4F48-97D4-3ACCCBABA072") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nascimento", Title = "Data de Nascimento", Type = "DateTime", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("A6B62164-E597-47D5-901E-E05EC48128FE") });
             DataView.Columns.Add(new XColumnModel() { Name = "Genero", Title = "Gênero", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("46510892-C37A-485E-938F-A7B4D2603C84") });
             Forms.Add(new FRMProfissionalFilter());
         }
     }

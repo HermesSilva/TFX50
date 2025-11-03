@@ -35,7 +35,8 @@ class XPopupElement extends XSizeableElement implements XIPopupPanel
     CanClose(pElement: HTMLElement): boolean
     {
         if (this.ReferenceElement != null)
-            return !pElement.IsChildOf(this.ReferenceElement.HTML, true) && this.CheckClose(pElement) && this.IsVisible && !pElement.IsChildOf(this.HTML, true);
+            return !pElement.IsChildOf((<XElement>this.Owner).HTML, true) && !pElement.IsChildOf(this.ReferenceElement.HTML, true) &&
+                    this.CheckClose(pElement) && this.IsVisible && !pElement.IsChildOf(this.HTML, true);
         return true;
     }
 }

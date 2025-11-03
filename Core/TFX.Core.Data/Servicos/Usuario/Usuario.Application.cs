@@ -23,6 +23,7 @@ namespace TFX.Core.Data.Servicos.Usuario
                 Type = XFRMType.Activity;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
+                fld.Name = "Nome";
                 fld.Title = "Nome";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -53,6 +54,7 @@ namespace TFX.Core.Data.Servicos.Usuario
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Name = "EMail";
                 fld.Title = "E-Mails";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -83,6 +85,7 @@ namespace TFX.Core.Data.Servicos.Usuario
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Name = "Nomexxx";
                 fld.Title = "Nome";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;

@@ -28,13 +28,17 @@ namespace Tootega.Core.ERP.ReadOnly
         {
             SearchPath = "EmpresaConfig/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("B8DE681D-5698-4A15-B5B5-6265C8F0DE97") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("4F62B63E-29EA-475F-B82A-1FC23CD49E10") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("BE304706-6E7A-422F-B145-BDA15A5BB6D7") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("AC4FB686-3CCB-463B-AB8C-26C9B6F8D5BA") });
         }
     }
     public class EmpresaConfigTuple : XServiceDataTuple

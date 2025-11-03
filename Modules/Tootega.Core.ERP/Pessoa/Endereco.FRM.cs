@@ -18,6 +18,7 @@ namespace Tootega.Core.ERP.Pessoa
             Type = XFRMType.StandAlone;
             XFRMField fld;
             fld = AddField(new XFRMField());
+            fld.Name = "ERPxFinalidadeID";
             fld.Title = "Finalidade";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -44,7 +45,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] { new Guid("1ED38CB7-8EEA-4C1C-8976-FF1FEE2D76BF") };
             fld.SourceDisplayFieldID = new Guid[] { new Guid("170ABC1E-37C6-437E-B72F-11ED8251B0D3") };
-            fld.DataSourceID = new Guid("EDAEBEDE-23A8-4408-836F-0E39FF6E6D16");
+            fld.DataSourceID = new Guid("4E22A7DA-AD65-4076-85B0-71C22F6634A6");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
@@ -53,6 +54,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.Mask = "00.000-000";
             fld.IsReadOnly = true;
             fld.ForceRW = true;
+            fld.Name = "CEP";
             fld.Title = "CEP";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -78,13 +80,14 @@ namespace Tootega.Core.ERP.Pessoa
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] { new Guid("F1086C58-5DE4-49D9-98D9-0A17729661A5"), new Guid("726199AB-DF63-4C08-B57B-35E26D7F7C87"), new Guid("2630BB3B-209B-44DF-B808-A581674DDEAA"), new Guid("1B19D497-DFB6-40BF-A269-612AF7AB5479"), new Guid("58CB564D-339B-4001-BC41-44C8689CC32B"), new Guid("5B1BFC07-2838-4052-A002-31B041EC4CB1"), new Guid("AF17380E-EBB2-4D75-A845-EE389248911D") };
             fld.SourceDisplayFieldID = new Guid[] { new Guid("358E455F-477E-412D-B426-1BE2DC880409"), new Guid("63C2FC0F-B117-46A6-B1F8-A42F5F5EDC53"), new Guid("62E6788A-48D6-49E1-8526-587EC5A5AB2F"), new Guid("226BCADC-0DA6-4AD9-98B7-38D6966F8FDC"), new Guid("AB358249-4E4D-4655-8C81-35069195BA94"), new Guid("B70901C0-1293-457C-B03F-29CE9393AE57"), new Guid("AF4B1A35-4EA4-4C7C-A591-67F6C43E591D") };
-            fld.DataSourceID = new Guid("2849E44E-039E-4466-99DD-685448A23C2E");
+            fld.DataSourceID = new Guid("F7E6E0E6-49C5-41F1-AF4F-C54123E24C1E");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
             fld.IsReadOnly = true;
+            fld.Name = "Tipo";
             fld.Title = "Tipo";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -115,6 +118,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "CEPxLogradouroID";
             fld.Title = "Logradouro";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -140,12 +144,13 @@ namespace Tootega.Core.ERP.Pessoa
             fld.SourceFilterFieldID = new Guid[] {  };
             fld.TargetDisplayFieldID = new Guid[] { new Guid("726199AB-DF63-4C08-B57B-35E26D7F7C87"), new Guid("5B1BFC07-2838-4052-A002-31B041EC4CB1"), new Guid("1B19D497-DFB6-40BF-A269-612AF7AB5479"), new Guid("F1086C58-5DE4-49D9-98D9-0A17729661A5"), new Guid("58CB564D-339B-4001-BC41-44C8689CC32B") };
             fld.SourceDisplayFieldID = new Guid[] { new Guid("63C2FC0F-B117-46A6-B1F8-A42F5F5EDC53"), new Guid("B70901C0-1293-457C-B03F-29CE9393AE57"), new Guid("226BCADC-0DA6-4AD9-98B7-38D6966F8FDC"), new Guid("358E455F-477E-412D-B426-1BE2DC880409"), new Guid("AB358249-4E4D-4655-8C81-35069195BA94") };
-            fld.DataSourceID = new Guid("2849E44E-039E-4466-99DD-685448A23C2E");
+            fld.DataSourceID = new Guid("F7E6E0E6-49C5-41F1-AF4F-C54123E24C1E");
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Latitude";
             fld.Title = "Latitude";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -177,6 +182,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
             fld.IsReadOnly = true;
+            fld.Name = "Bairro";
             fld.Title = "Bairro";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -208,6 +214,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
             fld.IsReadOnly = true;
+            fld.Name = "Localidade";
             fld.Title = "Nome da Localidade";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -239,6 +246,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
             fld.IsReadOnly = true;
+            fld.Name = "Sigla";
             fld.Title = "Sigla da UF";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -269,6 +277,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Longitude";
             fld.Title = "Longitude";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -299,6 +308,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Numero";
             fld.Title = "Número";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -329,6 +339,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Quadra";
             fld.Title = "Quadra";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -359,6 +370,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Lote";
             fld.Title = "Lote";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -389,6 +401,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Complemento";
             fld.Title = "Complemento";
             fld.CanInsert = true;
             fld.CanUpdate = true;
@@ -419,6 +432,7 @@ namespace Tootega.Core.ERP.Pessoa
             fld.IsAnswer = false;
             fld.AllowMultiSelect = false;
             fld = AddField(new XFRMField());
+            fld.Name = "Observacao";
             fld.Title = "Observação";
             fld.CanInsert = true;
             fld.CanUpdate = true;

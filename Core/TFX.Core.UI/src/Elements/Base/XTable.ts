@@ -407,7 +407,7 @@ class XTable extends XDiv
     Container: HTMLTableElement;
     Header: XTableHeader;
     Body: XTableBody;
-    Columns: XColumnModel[] | null = null;
+    Columns?: XColumnModel[];
     protected DataSet!: XDataSet;
     private RowNumberColumn: XColumnModel;
     OnRowClick: XMethod<XArray<XTableRow>> | null = null;

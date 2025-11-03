@@ -28,21 +28,29 @@ namespace Tootega.Core.CEP.ReadOnly
         {
             SearchPath = "Logradouro/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("B70901C0-1293-457C-B03F-29CE9393AE57") });
             DataView.Columns.Add(new XColumnModel() { Name = "Logradouro", Title = "Logradouro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("63C2FC0F-B117-46A6-B1F8-A42F5F5EDC53") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("62E6788A-48D6-49E1-8526-587EC5A5AB2F") });
             DataView.Columns.Add(new XColumnModel() { Name = "Bairro", Title = "Bairro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("AB358249-4E4D-4655-8C81-35069195BA94") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("226BCADC-0DA6-4AD9-98B7-38D6966F8FDC") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEP", Title = "CEP", Type = "String", Mask = "00.000-000", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("358E455F-477E-412D-B426-1BE2DC880409") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLogradouroID", Title = "Logradouro", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("AF4B1A35-4EA4-4C7C-A591-67F6C43E591D") });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("70689FE7-3FEC-44B6-84A6-237F823436F4") });
             Forms.Add(new FRMLogradouroFilter());
         }
     }
@@ -131,6 +139,7 @@ namespace Tootega.Core.CEP.ReadOnly
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Name = "Logradouro";
             fld.Title = "Logradouro";
             fld.CanInsert = true;
             fld.CanUpdate = true;

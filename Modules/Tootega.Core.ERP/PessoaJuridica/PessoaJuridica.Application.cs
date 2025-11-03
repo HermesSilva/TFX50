@@ -23,6 +23,7 @@ namespace Tootega.Core.ERP.PessoaJuridica
                 Type = XFRMType.Activity;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
+                fld.Name = "RazaoSocial";
                 fld.Title = "Razão Social";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -53,6 +54,7 @@ namespace Tootega.Core.ERP.PessoaJuridica
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Name = "NewTabControl";
                 fld.Title = "New Tab Control ";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;

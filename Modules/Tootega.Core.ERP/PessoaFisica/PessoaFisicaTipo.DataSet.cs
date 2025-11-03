@@ -28,15 +28,20 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
             SearchPath = "PessoaFisicaTipo/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxPessoaFisicaTiposID", Title = "Ligação de Pessoa Física à Tipo", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("DC818014-5932-499A-9D4E-D844095D945B") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxPessoaFisicaID", Title = "Pessoa Física", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("F789370A-A024-432F-B14F-6BE177BA44F9") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxPessoaFisicaTipoID", Title = "Tipo de Pessoa Física", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("0A8569F6-1867-4BED-A4F7-30BB16B9A982") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo de Pessoa Física", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("F1151E4B-5FE7-4D35-AED0-C984BBE25CB8") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("A654D10F-DD91-44EE-8D48-7E6167E0F178") });
         }
     }
     public class PessoaFisicaTipoTuple : XServiceDataTuple

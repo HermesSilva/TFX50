@@ -23,6 +23,7 @@ namespace Tootega.Core.ERP.PessoaFisica
                 Type = XFRMType.Activity;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
+                fld.Name = "Nascimento";
                 fld.Title = "Data de Nascimento";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -53,6 +54,7 @@ namespace Tootega.Core.ERP.PessoaFisica
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Name = "ERPxGeneroID";
                 fld.Title = "Gênero";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -79,12 +81,13 @@ namespace Tootega.Core.ERP.PessoaFisica
                 fld.SourceFilterFieldID = new Guid[] {  };
                 fld.TargetDisplayFieldID = new Guid[] { new Guid("3704B0EB-A7BA-41AA-B361-588DBC233749") };
                 fld.SourceDisplayFieldID = new Guid[] { new Guid("E1C95896-5736-4247-A911-DA6300C691F9") };
-                fld.DataSourceID = new Guid("7671DC91-8953-46C6-B9C2-1AF875B1C711");
+                fld.DataSourceID = new Guid("4E22A7DA-AD65-4076-85B0-71C22F6634A6");
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Name = "TabPrincipal";
                 fld.Title = "Tab Principal";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;

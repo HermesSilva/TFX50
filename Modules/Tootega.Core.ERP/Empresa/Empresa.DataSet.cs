@@ -29,21 +29,29 @@ namespace Tootega.Core.ERP.Empresa
         {
             SearchPath = "Empresa/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Chave", Title = "Chave para Incluir Empresa", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("78EEDAD5-76B8-4064-AA6B-3AF400761D95") });
             DataView.Columns.Add(new XColumnModel() { Name = "CNPJ", Title = "CNPJ", Type = "String", Mask = "00.000.000/0000-00", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("DAD8DE4C-AB9C-4AF3-9190-875B8795254F") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("5F52705E-195B-4477-B67D-CAD8558F30CF") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("7B30D927-CEFD-4732-8EA5-42D12A7C06DB") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("6E118BAB-E84A-4466-8480-F0857E256248") });
             DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
+                                                      FieldID = new Guid("439773CF-6692-4E65-86CF-C7DF8A116F79") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("44A0F494-6C0A-4CA1-9918-8F6F613F14D7") });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "CNPJ", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("670BFB5C-16A4-4BB9-BC34-BBFECC28E97A") });
             Forms.Add(new FRMEmpresaFilter());
         }
     }
@@ -130,6 +138,7 @@ namespace Tootega.Core.ERP.Empresa
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Name = "RazaoSocial";
             fld.Title = "Razão Social";
             fld.CanInsert = true;
             fld.CanUpdate = true;

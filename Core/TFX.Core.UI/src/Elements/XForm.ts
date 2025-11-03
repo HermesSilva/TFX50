@@ -44,6 +44,7 @@ class XForm extends XDiv
         for (const field of pForm.Fields)
         {
             let editor = XEditorFactory.CreateEditor(this, field);
+            editor.SetField(field);
             this.Fields.Add(editor);
      
         }

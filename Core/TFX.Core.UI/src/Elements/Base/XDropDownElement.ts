@@ -4,6 +4,7 @@
     {
         super(pOwner, pClass);
         this.IsVisible = false;
+        this.AutoIncZIndex = true;
     }
 
     Selected()
@@ -47,7 +48,5 @@
         this.HTML.style.position = 'fixed';
         this.HTML.style.top = `${top}px`;
         this.HTML.style.left = `${left}px`;
-
     }
-
 }

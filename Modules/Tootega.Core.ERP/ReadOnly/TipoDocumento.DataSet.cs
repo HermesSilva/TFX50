@@ -28,11 +28,14 @@ namespace Tootega.Core.ERP.ReadOnly
         {
             SearchPath = "TipoDocumento/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Mascara", Title = "Máscara", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("BD2A8CAB-5356-492C-8209-73B2190B2530") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo de Documento", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("2A2C7242-E859-41DE-ABC1-350B28D5D2F6") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxDocumentoTipoID", Title = "Tipo de Documento", Type = "Int16", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("B178B5FD-30A3-40D2-BDC3-DA9493AD4C3E") });
             Forms.Add(new FRMTipoDocumentoFilter());
         }
     }
@@ -89,6 +92,7 @@ namespace Tootega.Core.ERP.ReadOnly
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Name = "Tipo";
             fld.Title = "Tipo de Documento";
             fld.CanInsert = true;
             fld.CanUpdate = true;

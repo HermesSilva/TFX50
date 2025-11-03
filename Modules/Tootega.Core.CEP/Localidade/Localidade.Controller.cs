@@ -11,7 +11,7 @@ using System.Linq;
 using TFX.Core.Data;
 using Tootega.Core.CEP.Localidade;
 using Tootega.Core.CEP.Localidade.Rules;
-using Tootega.Core.CEP.DB;
+using TFX.Core.Data.CEP;
 
 namespace Tootega.Core.CEP.Localidade
 {

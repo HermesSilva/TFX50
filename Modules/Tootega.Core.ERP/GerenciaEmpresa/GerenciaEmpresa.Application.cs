@@ -24,6 +24,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
                 XFRMField fld;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "Numero";
                 fld.Title = "CNPJ";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -55,6 +56,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "RazaoSocial";
                 fld.Title = "Razão Social";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -86,6 +88,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
                 fld.IsReadOnly = true;
+                fld.Name = "IDEmpresa";
                 fld.Title = "ID da Empresa";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;
@@ -116,6 +119,7 @@ namespace Tootega.Core.ERP.GerenciaEmpresa
                 fld.IsAnswer = false;
                 fld.AllowMultiSelect = false;
                 fld = AddField(new XFRMField());
+                fld.Name = "Configuracao";
                 fld.Title = "Configuração";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;

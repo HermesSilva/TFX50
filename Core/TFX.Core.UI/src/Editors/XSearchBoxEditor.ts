@@ -27,7 +27,7 @@ class XSearchBoxEditor extends XDiv
     Container: XWrapPanelEx;
     Button: XSVGButton;
     Option: XSVGButton;
-    Columns!: XColumnModel[];
+    Columns?: XColumnModel[];
     Form!: XFRMModel;
     OnSerach?: XMethod<any>;
     Fields: XArray<XEditableTag> = new XArray<XEditableTag>();
@@ -41,12 +41,13 @@ class XSearchBoxEditor extends XDiv
             this.HTML.style.minHeight = (top + cr.Height + 5) + "px";
     }
 
-    SetModel(pSVCModel: XServiceModel, pForm: XFRMModel, pColumns: XColumnModel[])
+    SetModel(pSVCModel: XServiceModel, pForm: XFRMModel, pColumns?: XColumnModel[])
     {
         this.AppSVCModel = pSVCModel;
         this.Form = pForm;
         this.Columns = pColumns;
-        this.SetFields(this.Columns.Where(c => c.IsFreeSearch));
+        if (this.Columns != null)
+            this.SetFields(this.Columns.Where(c => c.IsFreeSearch));
     }
 
     DoSerach(e?: Event): void

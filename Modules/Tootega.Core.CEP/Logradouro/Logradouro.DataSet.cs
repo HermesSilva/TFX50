@@ -28,27 +28,38 @@ namespace Tootega.Core.CEP.Logradouro
         {
             SearchPath = "Logradouro/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CEP", Title = "CEP", Type = "String", Mask = "00.000-000", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("B7ED4CE7-F101-4541-9C01-1D9D32F32448") });
             DataView.Columns.Add(new XColumnModel() { Name = "CodigoIBGE", Title = "Código no IBGE", Type = "String", Mask = "0000000", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("F0CAFF21-5C92-436F-93EE-2B0DDA301E45") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPGeral", Title = "CEP Geral", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("5641D530-9128-41A4-885F-9A640CD99954") });
             DataView.Columns.Add(new XColumnModel() { Name = "Breviatura", Title = "Abreviatura", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("6C881871-BB49-4BBF-B7D0-385AF1F216A5") });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("FCBD5F69-C9DF-4049-9E72-A3B57CE21C4E") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo", Type = "String", Mask = "", 
-                                                      Visible = true });
+                                                      Visible = true,
+                                                      FieldID = new Guid("FCEC0E93-2967-4769-9174-49E15E17F280") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome do Logradouro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
+                                                      FieldID = new Guid("954AC3D8-5CE8-440A-9722-E1200B7A47A1") });
             DataView.Columns.Add(new XColumnModel() { Name = "NomeLocalidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
+                                                      FieldID = new Guid("BAB82824-8CC8-4D24-8F90-E980B1852CE2") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("A85CFC80-57C0-4202-A5F1-280FEEBEBA8A") });
             DataView.Columns.Add(new XColumnModel() { Name = "NomeBairro", Title = "Nome do Bairro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo });
+                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
+                                                      FieldID = new Guid("1D66766D-693E-4760-8D8B-B13A86742778") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLogradouroID", Title = "Logradouro", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("69AEB05D-C99C-4B7D-8C8B-A2BAF289E15F") });
             Forms.Add(new FRMLogradouroFilter());
         }
     }
@@ -157,6 +168,7 @@ namespace Tootega.Core.CEP.Logradouro
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
+            fld.Name = "Nome";
             fld.Title = "Dados para Pesquisa";
             fld.CanInsert = true;
             fld.CanUpdate = true;

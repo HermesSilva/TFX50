@@ -28,17 +28,23 @@ namespace Tootega.Core.ERP.ReadOnly
         {
             SearchPath = "Empresa/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("4F832D6A-AF39-4A6E-8078-24D96BCB913D") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("13C11F50-9D55-41A5-8299-F85BCD658A0A") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("CA974B8D-9970-470C-BA9E-1381B823F539") });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("1E913989-28F2-45F5-A819-F40C48D5440E") });
             DataView.Columns.Add(new XColumnModel() { Name = "Mascara", Title = "Máscara", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("D180AE62-DCE0-4A0E-A34F-BBD2B0E35B70") });
             DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
-                                                      Visible = false });
+                                                      Visible = false,
+                                                      FieldID = new Guid("23B26E69-242E-480C-99EA-62A0B3990EFA") });
             Forms.Add(new FRMEmpresaFilter());
         }
     }

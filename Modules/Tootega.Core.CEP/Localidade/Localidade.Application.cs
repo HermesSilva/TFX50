@@ -23,6 +23,7 @@ namespace Tootega.Core.CEP.Localidade
                 Type = XFRMType.Activity;
                 XFRMField fld;
                 fld = AddField(new XFRMField());
+                fld.Name = "Nome";
                 fld.Title = "Nome da Localidade";
                 fld.CanInsert = true;
                 fld.CanUpdate = true;

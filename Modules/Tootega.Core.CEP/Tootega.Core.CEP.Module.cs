@@ -20,6 +20,9 @@ namespace Tootega.Core.CEP
             pServices.AddTransient<Tootega.Core.CEP.ReadOnly.ILogradouroService, Tootega.Core.CEP.ReadOnly.LogradouroService>();
             pServices.AddDbContext<Tootega.Core.CEP.ReadOnly.LogradouroService.DBContext>();
             XMainCache.Add<Tootega.Core.CEP.ReadOnly.LogradouroServiceModel>(Tootega.Core.CEP.ReadOnly.LogradouroServiceModel.CID);
+            pServices.AddTransient<Tootega.Core.CEP.Services.IUFService, Tootega.Core.CEP.Services.UFService>();
+            pServices.AddDbContext<Tootega.Core.CEP.Services.UFService.DBContext>();
+            XMainCache.Add<Tootega.Core.CEP.Services.UFServiceModel>(Tootega.Core.CEP.Services.UFServiceModel.CID);
             XMainCache.Add<Tootega.Core.CEP.Localidade.LocalidadeApplication>(Tootega.Core.CEP.Localidade.LocalidadeApplication.CID);
             XMainCache.Add<Tootega.Core.CEP.Logradouro.LogradouroApplication>(Tootega.Core.CEP.Logradouro.LogradouroApplication.CID);
         }

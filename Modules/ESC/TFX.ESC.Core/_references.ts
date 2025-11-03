@@ -6,3 +6,4 @@
 /// <reference path="Escritorios\Escritorio.Controller.cs" />
 /// <reference path="Escritorios\Escritorio.Test.cs" />
 /// <reference path="../../../TFX-Core/TFX.Core.Service/wwwroot/static/js/Tootega.Core.CEP.d.ts" />
+/// <reference path="DB\ESCModel.cs" />

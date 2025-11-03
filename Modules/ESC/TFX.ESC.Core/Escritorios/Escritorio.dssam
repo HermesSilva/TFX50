@@ -60,6 +60,44 @@
             <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
           </XValues>
         </XFRMField>
+        <XFRMField ID="8D278BAF-89CF-4EED-A40E-B37820D2EDD9" ParentID="095F0CE8-6280-4D8A-87CB-D578C0902903">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="095F0CE8-6280-4D8A-87CB-D578C0902903" Text="CORxPessoa.CEPxLocalidadePrincipalID" DocumentID="94D6CBB1-BC80-448E-B38D-56FA234CD41E" DocumentName="Escritorio" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.ESC.Core" DataEx="" Type="Guid">095F0CE8-6280-4D8A-87CB-D578C0902903</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">3</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">66290387-F0AD-4746-A1F7-B0D8D4C5C2EE</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">13</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=80;Width=405.84375;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="447A4B15-4C86-4FFF-B29F-8F2FFF7D7EFD" Text="Localidade - (Tootega.Core.CEP.Localidade)" DocumentID="447A4B15-4C86-4FFF-B29F-8F2FFF7D7EFD" DocumentName="Localidade" ModuleID="DD0138D6-9769-4D87-9EAF-80CDFACB3D99" ModuleName="Tootega.Core.CEP" DataEx="">447A4B15-4C86-4FFF-B29F-8F2FFF7D7EFD</XLinkData>
+            <XLinkArrayData Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5" Type="Guid[]">
+              <XLinkData ID="FB755C24-9F51-4955-9A5D-A65065C5CC51" ElementID="2900B0AC-144A-4CFA-A8BA-ADA3415AAAF4" Text="CEPxLocalidade.Nome" DocumentID="447A4B15-4C86-4FFF-B29F-8F2FFF7D7EFD" DocumentName="Localidade" ModuleID="DD0138D6-9769-4D87-9EAF-80CDFACB3D99" ModuleName="Tootega.Core.CEP" DataEx="" Order="1">2900B0AC-144A-4CFA-A8BA-ADA3415AAAF4</XLinkData>
+            </XLinkArrayData>
+            <XLinkArrayData Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497" Type="Guid[]">
+              <XLinkData ID="8FE5DAD3-602F-4D6E-B83F-8156546529BF" ElementID="C97FF2AE-1A5B-4EB2-BFB1-B0062FE63121" Text="CEPxLocalidade.Localidade" DocumentID="94D6CBB1-BC80-448E-B38D-56FA234CD41E" DocumentName="Escritorio" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.ESC.Core" DataEx="" Order="1">C97FF2AE-1A5B-4EB2-BFB1-B0062FE63121</XLinkData>
+            </XLinkArrayData>
+          </XValues>
+        </XFRMField>
+        <XFRMField ID="07D90A5C-AB85-4AAA-8168-3AC866C104C7" ParentID="EA2015EF-A8B1-4053-B2E2-1124AE6E712A">
+          <XValues>
+            <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="EA2015EF-A8B1-4053-B2E2-1124AE6E712A" Text="CEPxUF.CEPxUFID" DocumentID="94D6CBB1-BC80-448E-B38D-56FA234CD41E" DocumentName="Escritorio" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.ESC.Core" DataEx="" Type="Guid">EA2015EF-A8B1-4053-B2E2-1124AE6E712A</XParentData>
+            <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">4</XData>
+            <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">66290387-F0AD-4746-A1F7-B0D8D4C5C2EE</XData>
+            <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">6</XData>
+            <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+            <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+            <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=405.84375;Y=80;Width=187.3125;Height=80}</XData>
+            <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+            <XLinkData Name="ServiceID" ID="B3DE3666-CBF5-4613-AEAF-A220696CC838" Type="Guid" ElementID="59AFD485-EB75-4FAB-852C-BFE018FF575E" Text="UF - (Tootega.Core.CEP.Services)" DocumentID="59AFD485-EB75-4FAB-852C-BFE018FF575E" DocumentName="UF" ModuleID="DD0138D6-9769-4D87-9EAF-80CDFACB3D99" ModuleName="Tootega.Core.CEP" DataEx="">59AFD485-EB75-4FAB-852C-BFE018FF575E</XLinkData>
+            <XLinkArrayData Name="LookupDisplayFieldID" ID="17DE8607-B26E-47F9-961F-F5F6F9C497D5" Type="Guid[]">
+              <XLinkData ID="94C86DEB-A54E-4E2A-93B0-D438FDFC0C5A" ElementID="BDB30488-72FF-47F6-9D50-09785C453ACF" Text="CEPxUF.Sigla" DocumentID="59AFD485-EB75-4FAB-852C-BFE018FF575E" DocumentName="UF" ModuleID="DD0138D6-9769-4D87-9EAF-80CDFACB3D99" ModuleName="Tootega.Core.CEP" DataEx="" Order="1">BDB30488-72FF-47F6-9D50-09785C453ACF</XLinkData>
+            </XLinkArrayData>
+            <XLinkArrayData Name="DisplayFieldID" ID="A9A97E77-C6E1-45EF-AF82-5CBEC74CB497" Type="Guid[]">
+              <XLinkData ID="2967D7D9-7B7D-4A43-91EE-ACC8C4158199" ElementID="C4AA14F9-5A60-4781-8DA2-4DF874B46BE3" Text="CEPxUF.Sigla" DocumentID="94D6CBB1-BC80-448E-B38D-56FA234CD41E" DocumentName="Escritorio" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="TFX.ESC.Core" DataEx="" Order="1">C4AA14F9-5A60-4781-8DA2-4DF874B46BE3</XLinkData>
+            </XLinkArrayData>
+          </XValues>
+        </XFRMField>
       </XFRMForm>
     </XFRMDesigner>
   </XSAMActivity>

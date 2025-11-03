@@ -76,20 +76,20 @@ class XObjectCache
     private static _Providers: Record<string, XProviderEntry> = {}
     private static _Creating = new Set<Function>()
 
-    static HasProvider(pToken: Function): boolean
+    static HasProvider(pToken: Function, pLifetime: XLifetime ): boolean
     {
-        return XObjectCache._Providers["__" + pToken.name + "__"] !== undefined
+        return XObjectCache._Providers["__" + pToken.name + "__" + pLifetime] !== undefined
     }
 
     static AddProvider(pToken: new () => any, pLifetime: XLifetime = XLifetime.Transient): void
     {
-        if (!XObjectCache.HasProvider(pToken))
-            XObjectCache._Providers["__" + pToken.name + "__"] = { Token: pToken, Lifetime: pLifetime }
+        if (!XObjectCache.HasProvider(pToken, pLifetime))
+            XObjectCache._Providers["__" + pToken.name + "__" + pLifetime] = { Token: pToken, Lifetime: pLifetime }
     }
 
     static Get<T>(pToken: new () => T, pContext?: Map<Function, any>, pLifetime?: XLifetime): T
     {
-        const vProvider = XObjectCache._Providers["__" + pToken.name + "__"]
+        const vProvider = XObjectCache._Providers["__" + pToken.name + "__" + pLifetime]
 
         if (!vProvider)
             throw new Error(`Provider for "${pToken.name}" not registered.`)
@@ -144,7 +144,7 @@ class XObjectCache
             {
                 if (pInstance[vItem.Key])
                     continue
-                let key = "__" + vItem.Token.name + "__";
+                let key = "__" + vItem.Token.name + "__" + vItem.Lifetime;
                 if (vItem.Lifetime === XLifetime.Scoped)
                 {
                     if (ctx[key] == undefined)
@@ -158,15 +158,15 @@ class XObjectCache
     }
 }
 
-function Inject(pToken: new () => any, pLifetime?: XLifetime): PropertyDecorator
+function Inject(pToken: new () => any, pLifetime: XLifetime): PropertyDecorator
 {
     return function (pTarget: any, pKey: string | symbol): void
     {
         if (!pTarget.__inject__)
             pTarget.__inject__ = []
 
-        if (!XObjectCache.HasProvider(pToken))
-            XObjectCache.AddProvider(pToken, XLifetime.Scoped)
+        if (!XObjectCache.HasProvider(pToken, pLifetime))
+            XObjectCache.AddProvider(pToken, pLifetime)
 
         pTarget.__inject__.push({ Token: pToken, Key: pKey, Lifetime: pLifetime })
     }

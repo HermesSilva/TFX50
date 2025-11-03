@@ -142,8 +142,6 @@ namespace Tootega.Core.ERP.ReadOnly
             if (pFilter != null)
             {
                 if (pFilter.Tipo?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => EF.Functions.Like(q.ERPxDocumentoTipo.Tipo, "%"+pFilter.Tipo.Value+"%"));
-                if (pFilter.Tipo?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.ERPxDocumentoTipo.Tipo == Convert.ToString(pFilter.Tipo.Value));
             }
 

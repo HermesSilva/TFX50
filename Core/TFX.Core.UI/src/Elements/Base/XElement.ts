@@ -1,6 +1,7 @@
 ﻿/// <reference path="../../Reflection/XReflections.ts" />
 /// <reference path="../../Model/XAppModel.ts" />
 
+
 class XElement implements XIElement
 {
     static _ID = 0;
@@ -39,7 +40,7 @@ class XElement implements XIElement
 
     public HTML: HTMLElement;
     public Element: HTMLElement | null = null;
-    Owner!: XElement | HTMLElement;
+    Owner: XElement | HTMLElement | null = null;;
     private _IsVisible: boolean = true;
     UID: number = 0;
     ID: string;
@@ -53,6 +54,15 @@ class XElement implements XIElement
     UseVisibility: boolean = false;
     DisplayValue: string = "block";
 
+    GetOwnerField<T extends any>(pFieldName: string): any
+    {
+        if (!(this.Owner instanceof XElement))
+            return;
+        var elm = this.Owner.GetOwner<any>(c => c[pFieldName]);
+        if (elm[pFieldName])
+            return <T>elm[pFieldName];
+        return <T>null;
+    }
 
     GetOwner<T extends XIElement | null>(pPredicate: XFunc<T>): T
     {

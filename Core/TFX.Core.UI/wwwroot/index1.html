@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Demo XFilter</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="js/TFX.Core.js"></script>
     <link rel="stylesheet" href="css/TFX.Core.css">
     <style>
         /* Apenas para visual do cenário de teste */
@@ -18,48 +19,9 @@
         body {
             background: #fafafa;
             font: 14px/1.35 system-ui,Segoe UI,Roboto,Arial
-
         }
     </style>
 </head>
-<body>
-    <div class="DemoHost">
-        <!-- PAI com position:relative; o XFilter toma 100% e fica absoluto -->
-        <div class="XFilter">
-            <div class="XFilterTitle">Pesquisa</div>
-            
-            <div class="XFilterRail">
-                <button class="Dots" aria-label="opções">⋯</button>
-                <button class="Search" aria-label="buscar">🔍</button>
-            </div>
-
-            <div class="XFilterContainerEditor">
-                <!-- Cada XTagEditor comporta um “chip”/editor com Title | Input | Clear -->
-                <div class="XTagEditor">
-                    <span class="XTagTitle" title="CPF ou CNPJ">CPF ou CNPJ</span>
-                    <input class="XTagInput" placeholder="" />
-                    <button class="XTagClear" aria-label="limpar">×</button>
-                </div>
-
-                <div class="XTagEditor">
-                    <span class="XTagTitle">Nome</span>
-                    <input class="XTagInput" placeholder="" />
-                    <button class="XTagClear" aria-label="limpar">×</button>
-                </div>
-
-                <div class="XTagEditor">
-                    <span class="XTagTitle">Sigla da UF</span>
-                    <input class="XTagInput" placeholder="" />
-                    <button class="XTagClear" aria-label="limpar">×</button>
-                </div>
-
-                <div class="XTagEditor">
-                    <span class="XTagTitle">Nome da Localidade</span>
-                    <input class="XTagInput" placeholder="" />
-                    <button class="XTagClear" aria-label="limpar">×</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<body onload="Stage.Test()">
 </body>
 </html>
