@@ -50,6 +50,8 @@ class App extends XStageTabControlTab
             this.SizeChanged();
         });
         this.ButtonBar.UpdateState();
+        window.Dialog.Show();
+
     }
 
     override SizeChanged()
@@ -73,7 +75,7 @@ class App extends XStageTabControlTab
             super.Close();
     }
 
-    private OnEdit(pState: XAppState )
+    private OnEdit(pState: XAppState)
     {
         if (!this.DataView || !this.DataView.DataGrid)
             return;

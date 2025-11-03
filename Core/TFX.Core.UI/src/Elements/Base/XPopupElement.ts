@@ -8,6 +8,7 @@ class XPopupElement extends XSizeableElement implements XIPopupPanel
         this.HTML.style.display = 'none';
         this.HTML.style.zIndex = XPopupManager.ZIndex();
         XPopupManager.Add(this);
+        this.AutoIncZIndex = true;
     }
     AutoClose: boolean = false;
     OnPopupClosed: XPopupClosedEvent | null = null;

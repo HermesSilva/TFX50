@@ -17,6 +17,7 @@ class XWrapPanelEx extends XDiv
     public HorizontalSpacing: number = 4;
     public VerticalSpacing: number = 4;
     public StartSide: XWrapStartSide = XWrapStartSide.Left;
+    public StartMargin: number = 0;
 
     override SizeChanged()
     {
@@ -42,7 +43,7 @@ class XWrapPanelEx extends XDiv
 
         let colWidth = rect.Width;
         let y = 0;
-        let x = 0;
+        let x = this.StartMargin;
         let my = maxHeight;
 
         for (let i = 0; i < items.length; i++)
@@ -58,7 +59,7 @@ class XWrapPanelEx extends XDiv
             if (x + w > colWidth)
             {
                 y += h + vgap;
-                x = 0;
+                x = this.StartMargin;
             }
 
             const left = this.StartSide === XWrapStartSide.Left ? x : (colWidth - x - w);

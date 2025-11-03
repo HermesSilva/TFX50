@@ -283,5 +283,7 @@ class XSizeableElement extends XDiv
     }
 
     Draging()
-    { }
+    {
+        this.SizeChanged();
+    }
 }

@@ -56,6 +56,7 @@ interface Window
 
     InitializeMap: any;
     CITHook: any;
+    Dialog: XMessageDialog;
 }
 
 interface XIEditor extends XIElement

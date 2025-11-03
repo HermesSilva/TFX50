@@ -1,6 +1,6 @@
 ﻿/// <reference path="../Stage/XStage.ts" />
 
-class Stage extends XStage
+class Stage extends XStage implements XIDialogContainer
 {
     static Instance: Stage;
 
@@ -11,25 +11,22 @@ class Stage extends XStage
         this.Instance = new Stage();
     }
 
-    static Test()
-    {
-        window.onmousedown = (arg) => XPopupManager.HideAll(arg);
-        window.onkeydown = (a) => XHotkeyManager.OnKeyDown(a);
-        this.Instance = new Stage();
-        var tabx = this.Instance.TabControl.AddTab("Test App");
-    }
-
-
     constructor()
     {
         super();
+        this.DialogContainer = new XDialogContainer(this, "XDialogContainer");
+        window.Dialog = new XMessageDialog(this);
+        window.Dialog.HTML.setAttribute("Type", "Error");
+        this.DialogContainer.HTML.className = "XMainDialogContainer";
         this.Menu = new MainMenu(this);
         this.Menu.OnResize = () => this.MenuResize();
         this.Menu.OnLaunch = (arg: XDataMenuItem) => this.DoLounch(arg);
         this.Loaded();
     }
 
+    IsDialogContainer: boolean = true;
     Menu: MainMenu;
+    DialogContainer: XDialogContainer;
 
     Loaded()
     {

@@ -1,5 +1,6 @@
 ﻿
 /// <reference path="XSizeableElement.ts" />
+/// <reference path="../XWrapPanelEx.ts" />
 /// <reference path="../XWrapPanel.ts" />
 class XBaseDialogCaption extends XDiv
 {
@@ -20,15 +21,18 @@ class XBaseDialogCaption extends XDiv
 
 }
 
-class XBaseButtonBar extends XWrapPanel
+class XBaseButtonBar extends XWrapPanelEx
 {
     constructor(pOwner: XElement, pClass: string)
     {
         super(pOwner, pClass);
+        this.Ok = new XBaseTextButton(this, "XDialogButton");
+        this.Ok.Title = "Ok";
         this.Cancel = new XBaseTextButton(this, "XDialogButton");
         this.Cancel.Title = "Cancelar";
     }
     Cancel: XBaseTextButton;
+    Ok: XBaseTextButton;
 }
 
 class XBaseCleanDialog extends XSizeableElement implements XIDialog
@@ -39,16 +43,28 @@ class XBaseCleanDialog extends XSizeableElement implements XIDialog
         this.HTML.parentElement?.removeChild(this.HTML);
         this.AutoIncZIndex = true;
     }
+
     IsDialog: boolean = true;
-    private _DialogContainer: any;
+    DialogContainer: any;
+    AskClose!: XFunc<XBaseCleanDialog>;
 
     Cancel(pArg: MouseEvent)
     {
+        if (this.AskClose && !this.AskClose(this))
+            return;
         if (this.HTML.parentElement == null)
             return;
         this.IsVisible = false;
     }
 
+    Ok(pArg: MouseEvent)
+    {
+        if (this.AskClose && !this.AskClose(this))
+            return;
+        if (this.HTML.parentElement == null)
+            return;
+        this.IsVisible = false;
+    }
 
     ShowDialog()
     {
@@ -63,18 +79,18 @@ class XBaseCleanDialog extends XSizeableElement implements XIDialog
 
     override Show(pValue: boolean = true)
     {
-        if (this._DialogContainer == null)
+        if (this.DialogContainer == null)
         {
-            this._DialogContainer = this.GetDialogContainer();
-            if (this._DialogContainer.HTML != this.HTML)
+            this.DialogContainer = this.GetDialogContainer();
+            if (this.DialogContainer.HTML != this.HTML)
             {
                 this.HTML.parentElement?.removeChild(this.HTML);
-                this._DialogContainer.DialogContainer.HTML.appendChild(this.HTML);
+                this.DialogContainer.DialogContainer.HTML.appendChild(this.HTML);
             }
         }
 
         super.Show(pValue);
-        this._DialogContainer.DialogContainer.IsVisible = pValue;
+        this.DialogContainer.DialogContainer.IsVisible = pValue;
     }
 }
 
@@ -87,12 +103,36 @@ class XBaseDialog extends XBaseCleanDialog
         this.HTML.parentElement?.removeChild(this.HTML);
         this.AutoIncZIndex = true;
         this.Caption = new XBaseDialogCaption(this, "XDialogCaption");
-        this.ButtonBar = new XBaseButtonBar(this, "XButtonBar Right");
+        this.ButtonBar = new XBaseButtonBar(this, "XDialogButtonBar");
+        this.ButtonBar.StartSide = XWrapStartSide.Right;
+        this.ButtonBar.StartMargin = 6;
+        this._Text = XUtils.AddElement<HTMLTextAreaElement>(this, "textarea", "XDialogTextArea");
+        this._Text.setAttribute("readonly", "true");
         XEventManager.AddEvent(this, this.ButtonBar.Cancel.HTML, XEventType.Click, this.Cancel);
+        XEventManager.AddEvent(this, this.ButtonBar.Ok.HTML, XEventType.Click, this.Ok);
+        this.Title = "Dialog";
+        this.Text = "skd j lks djkl ds lk jsd kl sdj lksjdlks djlkd sj slkdl kds ljkdslks skjk sdjklds k jlsd lkj" +
+            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
+            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
+            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
+            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
+            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk";
     }
     ButtonBar: XBaseButtonBar;
-
-
+    private _Text: HTMLTextAreaElement;
+    override SizeChanged()
+    {
+        super.SizeChanged();
+        this.ButtonBar.SizeChanged();
+    }
+    get Text(): string
+    {
+        return this._Text.innerText;
+    }
+    set Text(pValue: string)
+    {
+        this._Text.innerText = pValue;
+    }
     get Title(): string
     {
         return this.Caption.Title;

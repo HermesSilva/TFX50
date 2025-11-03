@@ -4,7 +4,7 @@ class XBaseTextButton extends XBaseButton
     constructor(pOwner: XElement | HTMLElement | null, pClass: string | null)
     {
         super(pOwner, pClass);
-        this.Text = XUtils.AddElement<HTMLSpanElement>(this, "span");
+        this.Text = XUtils.AddElement<HTMLSpanElement>(this, "span", "XDialogTextButtonText");
     }
 
     protected Text: HTMLSpanElement;
