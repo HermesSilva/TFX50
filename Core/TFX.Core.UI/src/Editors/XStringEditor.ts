@@ -10,20 +10,40 @@ class XStringEditor extends XBaseInput
 
     private OnInput()
     {
-        this.RawValue = null;
         if (this.Mask)
+        {
             this.ApplyMask()
+            this.RawValue = XUtils.UnMask(this.Input.value, this.Mask);
+        }
         else
             this.RawValue = this.Input.value;
+    }
+
+    set RawValue(value: any)
+    {
+        if (this._RawValue == value)
+            return;
+        this._RawValue = value;
+        if (this.Mask)
+        {
+            this.Input.value = value;
+            this.ApplyMask();
+        }
+        else
+            if (this.Input.value != value)
+                this.Input.value = value;
     }
 
     protected override ApplyMask()
     {
         if (X.IsEmpty(this.Mask) || X.IsEmpty(this.Input.value))
             return;
-        
-        this.Input.value = XUtils.ApplyMask(this.Input.value, this.Mask);
-        this.RawValue = XUtils.UnMask(this.Input.value, this.Mask);
+        var msk = XUtils.ApplyMask(this.Input.value, this.Mask);
+        if (this.Input.value != msk)
+        {
+            this.Input.value = msk
+            this.RawValue = XUtils.UnMask(this.Input.value, this.Mask);
+        }
     }
 
     override CreateInput(): HTMLInputElement

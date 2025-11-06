@@ -102,6 +102,7 @@ interface XIEditor extends XIElement
     Title: string;
     RawValue: any;
     Field: XFRMField;
+    Tuple: XTuple;
     Clear(): void;
     SetField(pField: XFRMField): void;
 }

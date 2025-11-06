@@ -23,7 +23,7 @@ class XMenuButtonItem extends XDiv
         super(pOwner, "hover-item");
         this.HTML.textContent = pItem.Title;
         this.Instances = XUtils.AddElement<HTMLLIElement>(this.HTML, 'span', "XAppCount");
-        XEventManager.TrackChange(pItem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
+        XBinding.TrackChange(pItem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
     }
 
     Instances: HTMLLIElement;
@@ -90,7 +90,7 @@ class XMenuItem extends XElement
         this.Instances = XUtils.AddElement<HTMLLIElement>(this.HTML, 'span', "XAppCount");
         this.Title.innerText = pItem.Title;
         this.ID = pItem.ID;
-        XEventManager.TrackChange(pItem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
+        XBinding.TrackChange(pItem, "Count", (campo: any, antigo: any, novo: any) => this.Change(campo, antigo, novo));
     }
 
     Change(campo: any, antigo: any, novo: any)

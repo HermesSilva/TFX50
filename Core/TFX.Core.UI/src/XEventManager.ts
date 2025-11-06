@@ -37,37 +37,58 @@ class XCallOnce
 
 type XChangeHandler<T> = (Object: T, OldValue: any, NewValue: any) => void;
 
-class XEventManager
+class XBinding
 {
-    private static _CallOnce = new Array<XCallOnce>();
-
-    static TrackChange<T extends object, K extends keyof T>(pObjeto: T, pPropriedade: K, pOnChange: XChangeHandler<T>)
+    static Bind(pOSource: any, pOTarget: any, pPSource: string, pPTarget: string, pSendInput: boolean = false)
     {
-        const desc = Object.getOwnPropertyDescriptor(pObjeto, pPropriedade);
-        let ivlr = pObjeto[pPropriedade];
+        pOTarget[pPTarget] = pOSource[pPSource];
+        if (pSendInput && pOTarget.Input instanceof HTMLInputElement)
+            pOTarget.Input.dispatchEvent(new Event('input', { bubbles: true }));
+        XBinding.TrackChange(pOSource, pPSource, (obj, oldVal, newVal) =>
+        {
+            if (pOTarget[pPTarget] !== newVal)
+                pOTarget[pPTarget] = newVal;
+        });
+        XBinding.TrackChange(pOTarget, pPTarget, (obj, oldVal, newVal) =>
+        {
+            if (pOSource[pPSource] !== newVal)
+                pOSource[pPSource] = newVal;
+        });
+    }
 
-        Object.defineProperty(pObjeto, pPropriedade,
+    static TrackChange<T extends object, K extends keyof T>(pObjct: T, pProperty: K, pOnChange: XChangeHandler<T>)
+    {
+        const desc = Object.getOwnPropertyDescriptor(pObjct, pProperty);
+        let ivlr = pObjct[pProperty];
+
+        Object.defineProperty(pObjct, pProperty,
             {
                 configurable: true, enumerable: true,
                 get()
                 {
-                    return desc?.get ? desc.get.call(pObjeto) : ivlr;
+                    return desc?.get ? desc.get.call(pObjct) : ivlr;
                 },
                 set(nvlr: T[K])
                 {
-                    const vlr = desc?.get ? desc.get.call(pObjeto) : ivlr;
+                    const vlr = desc?.get ? desc.get.call(pObjct) : ivlr;
 
                     if (vlr !== nvlr)
                     {
-                        pOnChange(pObjeto, vlr, nvlr);
                         if (desc?.set)
-                            desc.set.call(pObjeto, nvlr);
+                            desc.set.call(pObjct, nvlr);
                         else
                             ivlr = nvlr;
+                        pOnChange(pObjct, vlr, nvlr);
                     }
                 }
             });
     }
+}
+class XEventManager
+{
+    private static _CallOnce = new Array<XCallOnce>();
+
+
 
     static AddExecOnce(pUUID: string, pEvent: any)
     {
@@ -104,13 +125,13 @@ class XEventManager
     {
         if (pElement.Handlers)
         {
-            for (let i =0; i < pElement.Handlers.length; i++)
+            for (let i = 0; i < pElement.Handlers.length; i++)
             {
                 const em = pElement.Handlers[i];
                 pElement.removeEventListener(em.Event, em.Method);
             }
         }
-        for (let i =0; i < pElement.childNodes.length; i++)
+        for (let i = 0; i < pElement.childNodes.length; i++)
             this.Remove(<HTMLElement>pElement.childNodes[i])
     }
 
@@ -148,14 +169,14 @@ class XEventManager
         }
     }
 
-    static DelayedEvent(pContext: any, pEvent: any, pTime: number =100)
+    static DelayedEvent(pContext: any, pEvent: any, pTime: number = 100)
     {
         if (pContext._Timer != null && pContext._Timer != -1)
             window.clearTimeout(pContext._Timer);
         pContext._Timer = setTimeout(() => pEvent.apply(pContext, []), pTime);
     }
 
-    static SetTiemOut(pContext: any, pEvent: any, pTime: number =100)
+    static SetTiemOut(pContext: any, pEvent: any, pTime: number = 100)
     {
         this.DelayedEvent(pContext, pEvent, pTime);
     }

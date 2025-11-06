@@ -34,6 +34,12 @@ class XForm extends XDiv
 
     SetDataSet(pDataSet: XDataSet)
     {
+        var tpl = <any>pDataSet.Tuples.FirstOrNull();
+        for (const field of this.Fields)
+        {
+            field.Tuple = tpl;
+            XBinding.Bind(tpl[field.Field.Name], field, "Value", "RawValue", true);
+        }
     }
 
     SetModel(pForm: XFRMModel, pSVCModel: XServiceModel)
@@ -49,7 +55,7 @@ class XForm extends XDiv
             let editor = XEditorFactory.CreateEditor(this, field);
             editor.SetField(field);
             this.Fields.Add(editor);
-     
+
         }
         this.ResizeChildren();
     }

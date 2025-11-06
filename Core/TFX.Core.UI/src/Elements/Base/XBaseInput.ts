@@ -1,8 +1,6 @@
 ﻿/// <reference path="../XDiv.ts" />
 class XBaseInput extends XDiv implements XIEditor
 {
-  
-
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "InputContainer");
@@ -43,13 +41,26 @@ class XBaseInput extends XDiv implements XIEditor
     protected ELMTitle: XDiv;
     NewLine: boolean = false;
     OrderIndex: number = -1;
-    RawValue: any;
+    protected _RawValue: any;
     private _Mask: string = '';
     Field!: XFRMField;
+    Tuple!: XTuple;
+    get RawValue(): any
+    {
+        return this._RawValue;
+    }
+    set RawValue(value: any)
+    {
+        this._RawValue = value;
+        if (this.Input)
+            this.Input.value = value;
+    }
+
     public get IsReadOnly(): boolean
     {
         return this._IsReadOnly;
     }
+
     public set IsReadOnly(value: boolean)
     {
         this._IsReadOnly = value;
@@ -66,7 +77,7 @@ class XBaseInput extends XDiv implements XIEditor
     }
 
     SetField(pField: XFRMField)
-    { 
+    {
         this.Field = pField;
     }
     set Value(pValue: any)
