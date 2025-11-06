@@ -212,7 +212,7 @@ namespace TFX.Core
             Provider = Enum.Parse<XProvider>(provider);
             if (SharedTransaction != null)
                 SharedTransaction.GetConnection(GetConnectionString());
-        }
+        }                                                                                                               
 
         protected virtual void CreateProcedures(DatabaseFacade pDataBase)
         {

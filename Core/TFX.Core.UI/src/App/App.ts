@@ -23,6 +23,7 @@ class App extends XStageTabControlTab
         this._FormEditor = null;
         XEventManager.AddEvent(this, this.ButtonBar.Edit.HTML, XEventType.Click, () => this.OnEdit(XAppState.Editing));
         XEventManager.AddEvent(this, this.ButtonBar.New.HTML, XEventType.Click, () => this.OnEdit(XAppState.Inserting));
+        XEventManager.AddEvent(this, this.ButtonBar.Save.HTML, XEventType.Click, () => this.DoSave());
         this.Dialog = new XMessageDialog(this);
     }
 
@@ -38,6 +39,16 @@ class App extends XStageTabControlTab
     DataView!: SceneDataView;
     SVCModel!: XServiceModel;
     private _FormEditor: SceneFormEditor | null;
+
+    DoSave()
+    {
+        if (this._FormEditor == null)
+            return;
+        this.Client?.SendAsync(this.SVCModel.FlushPath, this._FormEditor.DataSet, (pData: any) =>
+        {
+            this.Close();
+        });
+    }
 
     SetModel(pModel: XAPPModel)
     {

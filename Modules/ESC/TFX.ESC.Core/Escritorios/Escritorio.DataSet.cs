@@ -29,6 +29,7 @@ namespace TFX.ESC.Core.Escritorios
             PKFieldName = "CORxPessoaID";
             SearchPath = "Escritorio/Search";
             GetPath = "Escritorio/Get";
+            FlushPath = "Escritorio/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String", Mask = "###.###.###-##|##.###.###/####-##", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
                                                       FieldID = new Guid("9BBA3DC6-EC85-483A-9D61-E9299BCC3FD0") });

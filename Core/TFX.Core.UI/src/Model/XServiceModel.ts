@@ -24,7 +24,8 @@ interface XServiceModel
     ID: string;
     Forms: XFRMModel[];
     DataView: XDataViewModel;
+    PKFieldName: string
     SearchPath: string;
     GetPath: string;
-    PKFieldName: string
+    FlushPath: string;
 }

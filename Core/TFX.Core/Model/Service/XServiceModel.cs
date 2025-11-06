@@ -83,6 +83,11 @@ namespace TFX.Core.Model.Service
             DataView = new XDataViewModel();
             Forms = [];
         }
+        public string FlushPath
+        {
+            get;
+            set;
+        }
 
         public string PKFieldName
         {

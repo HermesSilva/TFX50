@@ -21,7 +21,7 @@ class SceneFormEditor extends XBaseCleanDialog
     Form: XForm;
     SVCModel!: XServiceModel;
     Model!: XFRMModel;
-
+    DataSet!: XDataSet;
     OnClose: XMethod<any> | null = null;
 
     private _TitleBar: XDiv;
@@ -30,6 +30,7 @@ class SceneFormEditor extends XBaseCleanDialog
     {
         this.Model = pModel;
         this.SVCModel = pSVCModel;
+        this.DataSet = pDataSet;
         this.Form.SetModel(this.Model, this.SVCModel);
         this.Form.SetDataSet(pDataSet);
         this.UpdateTitle();

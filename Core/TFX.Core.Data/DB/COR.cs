@@ -1312,6 +1312,7 @@ namespace TFX.Core.Data.DB
             pBuilder.Entity<_CORxFavorito>(ett =>
             {
                 ett.HasKey(e => e.CORxFavoritoID).HasName("PK_CORxFavorito");
+                ett.Property(e => e.CORxFavoritoID).ValueGeneratedOnAdd().UseIdentityColumn();
                 
                 ett.Property(d => d.CORxFavoritoID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.CORxMenuItemID).HasColumnType(GetDBType("Guid"));
@@ -1385,6 +1386,7 @@ namespace TFX.Core.Data.DB
             pBuilder.Entity<_CORxPessoa>(ett =>
             {
                 ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
+                ett.Property(e => e.CORxPessoaID).ValueGeneratedOnAdd().UseIdentityColumn();
                 
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));

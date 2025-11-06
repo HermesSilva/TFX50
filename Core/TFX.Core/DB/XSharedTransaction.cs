@@ -79,7 +79,7 @@ namespace TFX.Core
             {
                 _Connection = new SqlConnection(pConnectionString);
                 _Connection.Open();
-                _Transaction = _Connection.BeginTransaction();
+                //_Transaction = _Connection.BeginTransaction();
             }
             return _Connection;
         }
@@ -91,14 +91,14 @@ namespace TFX.Core
 
         public void Commit()
         {
-            if (_Transaction.Connection != null)
+            if (_Transaction?.Connection != null)
                 _Transaction.Commit();
             _Connection.Close();
         }
 
         public void Rollback()
         {
-            if (_Transaction.Connection != null)
+            if (_Transaction?.Connection != null)
                 _Transaction.Rollback();
             if (_Connection.State == ConnectionState.Closed)
                 _Connection.Close();
