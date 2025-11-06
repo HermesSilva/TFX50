@@ -84,7 +84,17 @@ namespace TFX.Core.Model.Service
             Forms = [];
         }
 
+        public string PKFieldName
+        {
+            get;
+            set;
+        }
         public string SearchPath
+        {
+            get;
+            set;
+        }        
+        public string GetPath
         {
             get;
             set;

@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.ReadOnly
         public static Guid CID = new Guid("9B992B44-13B0-4906-BDE4-B687AD9549F5");
         public ProfissionalServiceModel()
         {
+            PKFieldName = "Numero";
             SearchPath = "Profissional/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxDocumentoTipoID", Title = "Tipo de Documento", Type = "Int16", Mask = "", 
                                                       Visible = false,
@@ -112,6 +113,7 @@ namespace Tootega.Core.ERP.ReadOnly
 
     public class ProfissionalFilter : XFilter
     {
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMProfissionalFilter : XFRMModel
     {

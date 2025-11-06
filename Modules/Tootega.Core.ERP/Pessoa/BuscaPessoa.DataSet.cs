@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.Pessoa
         public static Guid CID = new Guid("A3C45B46-82AA-41EC-B62F-A58F16B71F20");
         public BuscaPessoaServiceModel()
         {
+            PKFieldName = "PrimaryKeyID";
             SearchPath = "BuscaPessoa/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "PrimaryKeyID", Title = "Chave Primária", Type = "Int32", Mask = "", 
                                                       Visible = false,
@@ -148,6 +149,7 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class BuscaPessoaFilter : XFilter
     {
+        public XFilterField PrimaryKeyID {get;set;}
     }
     public class FRMBuscaPessoaFilter : XFRMModel
     {

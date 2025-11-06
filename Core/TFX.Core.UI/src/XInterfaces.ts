@@ -35,6 +35,7 @@ interface XIDialogContainer extends XIElement
 {
     IsDialogContainer: boolean;
     DialogContainer: XDialogContainer;
+    Dialog: XMessageDialog;
 }
 
 interface Window 

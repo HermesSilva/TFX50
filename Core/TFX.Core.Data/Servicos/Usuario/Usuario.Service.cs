@@ -172,8 +172,8 @@ namespace TFX.Core.Data.Servicos.Usuario
             {
                 if (pFilter.Nome?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
-                if (pFilter.EMail?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CORxUsuario.EMail == Convert.ToString(pFilter.EMail.Value));
+                if (pFilter.CORxPessoaID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxPessoa.CORxPessoaID == new Guid(Convert.ToString(pFilter.CORxPessoaID.Value)));
             }
 
             if (!LoadAll)
@@ -194,6 +194,17 @@ namespace TFX.Core.Data.Servicos.Usuario
         }
 
         public UsuarioDataSet Execute(UsuarioFilter pFilter)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new UsuarioDataSet { Tuples = tuples };
+            return dataset;
+        }
+
+        public UsuarioDataSet InternalGet(UsuarioFilter pFilter)
         {
             _INFRule.InternalBeforeExecute();
             var qry = ExecuteQuery(pFilter);

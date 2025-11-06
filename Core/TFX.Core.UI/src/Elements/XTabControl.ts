@@ -6,6 +6,7 @@ class XTabControlButton extends XBaseTextButton
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "XTabControlButton");
+        this.Text.className = "";
         XEventManager.AddEvent(this, this.HTML, XEventType.Click, () => this.TabControl?.SelectTab(this));
     }
 

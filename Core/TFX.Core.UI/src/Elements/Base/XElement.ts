@@ -30,7 +30,12 @@ class XElement implements XIElement
                 pOwner.HTML.appendChild(this.HTML);
             if (pOwner instanceof HTMLElement)
                 pOwner.appendChild(this.HTML);
-            this._ResizeObserver = new ResizeObserver(() => this.SizeChanged());
+            this._ResizeObserver = new ResizeObserver(entries =>
+            {
+                //for (let entry of entries)
+                //    if (entry.target === this.HTML)
+                        this.SizeChanged();
+            });
             this._ResizeObserver.observe(this.HTML);
         }
         if (pOwner instanceof XElement)

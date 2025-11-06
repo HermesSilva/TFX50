@@ -696,9 +696,9 @@ namespace Tootega.Core.ERP.Empresa
             if (pFilter != null)
             {
                 if (pFilter.RazaoSocial?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => EF.Functions.Like(q.ERPxPessoaJuridica.RazaoSocial, pFilter.RazaoSocial.Value+"%"));
-                if (pFilter.Numero?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.ERPxDocumento.Numero == Convert.ToString(pFilter.Numero.Value));
+                    query = query.Where(q => q.ERPxPessoaJuridica.RazaoSocial == Convert.ToString(pFilter.RazaoSocial.Value));
+                if (pFilter.CORxPessoaID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxPessoa.CORxPessoaID == new Guid(Convert.ToString(pFilter.CORxPessoaID.Value)));
             }
 
             if (!LoadAll)
@@ -791,6 +791,17 @@ namespace Tootega.Core.ERP.Empresa
         {
             _INFRule.InternalBeforeExecute();
             var qry = ExecuteQuery(pFilter, pFull);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new EmpresaDataSet { Tuples = tuples };
+            return dataset;
+        }
+
+        public EmpresaDataSet InternalGet(EmpresaFilter pFilter, Boolean pFull)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter, true);
             var tuples = qry.ToList();
             tuples = Rule.InternalAfterSelect(tuples);
             _INFRule.InternalAfterExecute(tuples);

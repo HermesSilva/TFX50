@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.Profissional
         public static Guid CID = new Guid("59D73CAE-2254-4721-9DE0-97F54D83391E");
         public CategoriaServiceModel()
         {
+            PKFieldName = "Categoria";
             SearchPath = "Categoria/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxCategoriaID", Title = "Categoria de Profissional", Type = "Int16", Mask = "", 
                                                       Visible = false,
@@ -82,6 +83,7 @@ namespace Tootega.Core.ERP.Profissional
 
     public class CategoriaFilter : XFilter
     {
+        public XFilterField ERPxProfissionalCategoriaID {get;set;}
     }
     public class FRMCategoriaFilter : XFRMModel
     {
@@ -108,6 +110,7 @@ namespace Tootega.Core.ERP.Profissional
         object Flush(CategoriaDataSet pDataSet);
 
         CategoriaDataSet Execute(CategoriaFilter pFilter);
+        CategoriaDataSet InternalGet(CategoriaFilter pFilter);
         IQueryable<CategoriaTuple> ExecuteQuery(CategoriaFilter pFilter);
     }
 

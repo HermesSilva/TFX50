@@ -109,15 +109,9 @@ class XBaseDialog extends XBaseCleanDialog
         this._Text = XUtils.AddElement<HTMLTextAreaElement>(this, "textarea", "XDialogTextArea");
         this._Text.setAttribute("readonly", "true");
         XEventManager.AddEvent(this, this.ButtonBar.Cancel.HTML, XEventType.Click, this.Cancel);
-        XEventManager.AddEvent(this, this.ButtonBar.Ok.HTML, XEventType.Click, this.Ok);
-        this.Title = "Dialog";
-        this.Text = "skd j lks djkl ds lk jsd kl sdj lksjdlks djlkd sj slkdl kds ljkdslks skjk sdjklds k jlsd lkj" +
-            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
-            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
-            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
-            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk" +
-            "kjdfk sjdkjlkds ljk ds klj sd jklsd ljksdlk d jlksjk dlk sdlkj dslk";
+        XEventManager.AddEvent(this, this.ButtonBar.Ok.HTML, XEventType.Click, this.Ok);        
     }
+
     ButtonBar: XBaseButtonBar;
     private _Text: HTMLTextAreaElement;
     override SizeChanged()
@@ -127,11 +121,11 @@ class XBaseDialog extends XBaseCleanDialog
     }
     get Text(): string
     {
-        return this._Text.innerText;
+        return this._Text.value;
     }
     set Text(pValue: string)
     {
-        this._Text.innerText = pValue;
+        this._Text.value = pValue;
     }
     get Title(): string
     {

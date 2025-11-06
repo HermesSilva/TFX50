@@ -171,10 +171,10 @@ html {
 
 .XDialog {
     position: absolute;
-    height: 250px;
-    width: 350px;
-    left: calc((100% - 350px)/2);
-    top: calc((100% - 250px)/4);
+    height: 475px;
+    width: 600px;
+    left: calc((100% - 600px)/2);
+    top: calc((100% - 450px)/4);
     background-color: #abc;
     border: solid 3px #8eadcb;
     border-radius: 6px;
@@ -254,7 +254,7 @@ html {
     width: 80px;
     height: calc(100% - 12px);
     margin-top: 6px;
-    background: #98b7d5;
+    background: #cce2ffba;
     border: 1px solid #999;
     vertical-align: top;
     white-space: normal;
@@ -263,6 +263,7 @@ html {
 
     &:hover {
         background: #b9d1e8;
+        color: #007514;
     }
 }
 
@@ -278,7 +279,7 @@ html {
     font-size: 16px;
     border: none !important;
     outline: none !important;
-    background: transparent;
+    background: #e6f0f7;
     box-shadow: none !important;
 
     &:focus {

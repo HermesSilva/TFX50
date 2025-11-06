@@ -27,6 +27,7 @@ namespace Tootega.Core.ERP.Empresa
         public static Guid CID = new Guid("10AC1863-69A1-4E82-9C5D-1281E5C3AE4F");
         public EmpresaServiceModel()
         {
+            PKFieldName = "CORxStatusID";
             SearchPath = "Empresa/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Chave", Title = "Chave para Incluir Empresa", Type = "String", Mask = "", 
                                                       Visible = false,
@@ -123,7 +124,7 @@ namespace Tootega.Core.ERP.Empresa
     public class EmpresaFilter : XFilter
     {
         public XFilterField RazaoSocial {get;set;}
-        public XFilterField Numero {get;set;}
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMEmpresaFilter : XFRMModel
     {
@@ -182,6 +183,7 @@ namespace Tootega.Core.ERP.Empresa
         object Flush(EmpresaDataSet pDataSet);
 
         EmpresaDataSet Execute(EmpresaFilter pFilter, Boolean pFull);
+        EmpresaDataSet InternalGet(EmpresaFilter pFilter, Boolean pFull);
         IQueryable<EmpresaTuple> ExecuteQuery(EmpresaFilter pFilter, Boolean pFull);
     }
 

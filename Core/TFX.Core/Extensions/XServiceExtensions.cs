@@ -36,9 +36,9 @@ using TFX.Core.Extensions;
 using TFX.Core.Identity;
 using TFX.Core.IDs;
 using TFX.Core.Interfaces;
-public class CustomControllerFeatureProvider : IApplicationFeatureProvider<ControllerFeature>
+public class XCustomControllerFeatureProvider : IApplicationFeatureProvider<ControllerFeature>
 {
-    public void PopulateFeature(IEnumerable<ApplicationPart> parts, ControllerFeature feature)
+    public void PopulateFeature(IEnumerable<ApplicationPart> pParts, ControllerFeature pFeature)
     {
         var assemblys = AppDomain.CurrentDomain.GetAssemblies().Where(a => a.FullName.StartsWith("Sittax") || a.FullName.StartsWith("TFX")).ToList();
         foreach (var assembly in assemblys)
@@ -48,24 +48,24 @@ public class CustomControllerFeatureProvider : IApplicationFeatureProvider<Contr
 
             foreach (var controller in controllers)
             {
-                if (!feature.Controllers.Contains(controller))
+                if (!pFeature.Controllers.Contains(controller))
                 {
-                    feature.Controllers.Add(controller.GetTypeInfo());
+                    pFeature.Controllers.Add(controller.GetTypeInfo());
                 }
             }
         }
     }
 }
-public class GuidUpperCaseConverter : JsonConverter<Guid>
+public class XGuidUpperCaseConverter : JsonConverter<Guid>
 {
-    public override Guid Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override Guid Read(ref Utf8JsonReader pReader, Type pTypeToConvert, JsonSerializerOptions pOptions)
     {
-        return Guid.Parse(reader.GetString()!);
+        return Guid.Parse(pReader.GetString()!);
     }
 
-    public override void Write(Utf8JsonWriter writer, Guid value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter pWriter, Guid pValue, JsonSerializerOptions pOptions)
     {
-        writer.WriteStringValue(value.ToString().ToUpperInvariant());
+        pWriter.WriteStringValue(pValue.ToString().ToUpperInvariant());
     }
 }
 public static class XServiceExtensions
@@ -80,16 +80,16 @@ public static class XServiceExtensions
     public static WebApplicationBuilder AddDependencies(this WebApplicationBuilder pBuilder)
     {
         var assemblys = AppDomain.CurrentDomain.GetAssemblies().ToList();
-        var mvcBuilder = pBuilder.Services.AddControllers().AddJsonOptions(options =>
+        var mvcBuilder = pBuilder.Services.AddControllers().AddJsonOptions(pOptions =>
         {
-            options.JsonSerializerOptions.PropertyNamingPolicy = null; // Mantém PascalCase
-            options.JsonSerializerOptions.Converters.Add(new GuidUpperCaseConverter());
+            pOptions.JsonSerializerOptions.PropertyNamingPolicy = null; // Mantém PascalCase
+            pOptions.JsonSerializerOptions.Converters.Add(new XGuidUpperCaseConverter());
         });
 
-        mvcBuilder.ConfigureApplicationPartManager(apm =>
+        mvcBuilder.ConfigureApplicationPartManager(pApm =>
         {
-            apm.ApplicationParts.Add(new AssemblyPart(typeof(CustomControllerFeatureProvider).Assembly));
-            apm.FeatureProviders.Add(new CustomControllerFeatureProvider());
+            pApm.ApplicationParts.Add(new AssemblyPart(typeof(XCustomControllerFeatureProvider).Assembly));
+            pApm.FeatureProviders.Add(new XCustomControllerFeatureProvider());
         });
 
         foreach (var assembly in assemblys)
@@ -120,9 +120,9 @@ public static class XServiceExtensions
     public static void ConfigureServices(this IServiceCollection pServices)
     {
         pServices.AddJWT();
-        pServices.AddCors(options =>
+        pServices.AddCors(pOptions =>
         {
-            options.AddDefaultPolicy(b => b.AllowAnyOrigin()
+            pOptions.AddDefaultPolicy(b => b.AllowAnyOrigin()
                                            .AllowAnyMethod()
                                            .AllowAnyHeader()
                                            .WithExposedHeaders("*"));
@@ -130,16 +130,16 @@ public static class XServiceExtensions
 
         pServices.AddControllers();
         pServices.AddEndpointsApiExplorer();
-        pServices.AddControllers(options =>
+        pServices.AddControllers(pOptions =>
         {
-            options.Filters.Add<XResponseWrapperFilter>();
-        }).ConfigureApiBehaviorOptions(options =>
+            pOptions.Filters.Add<XResponseWrapperFilter>();
+        }).ConfigureApiBehaviorOptions(pOptions =>
         {
-            options.InvalidModelStateResponseFactory = context =>
+            pOptions.InvalidModelStateResponseFactory = pContext =>
             {
                 return new BadRequestObjectResult(XResponse.BadJSon);
             };
-        }).AddJsonOptions(options => { options.JsonSerializerOptions.PropertyNamingPolicy = null; });
+        }).AddJsonOptions(pOptions => { pOptions.JsonSerializerOptions.PropertyNamingPolicy = null; });
 
 
         pServices.AddRouting();
@@ -151,9 +151,9 @@ public static class XServiceExtensions
             o.Cookie.Name = XDefault.JWTKey;
             o.Cookie.Path = "/";
         });
-        pServices.Configure<KestrelServerOptions>(options =>
+        pServices.Configure<KestrelServerOptions>(pOptions =>
         {
-            options.AllowSynchronousIO = true;
+            pOptions.AllowSynchronousIO = true;
         });
         pServices.AddSingleton<XILoginService, XLoginService>();
         pServices.AddSingleton<XResponseWrapperFilter>();
@@ -184,7 +184,7 @@ public static class XServiceExtensions
                 ValidateLifetime = true,
                 RequireExpirationTime = true,
                 ClockSkew = TimeSpan.Zero,
-                IssuerSigningKeyResolver = (token, secutiryToken, kid, validationParameters) =>
+                IssuerSigningKeyResolver = (token, securityToken, kid, validationParameters) =>
                 {
                     SecurityKey issuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(XDefault.JWTKey));
                     return new List<SecurityKey>() { issuerSigningKey };

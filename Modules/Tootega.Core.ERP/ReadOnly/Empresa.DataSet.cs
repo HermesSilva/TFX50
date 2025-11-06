@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.ReadOnly
         public static Guid CID = new Guid("1A5539DE-36CF-4423-8CCB-952EC72F7E76");
         public EmpresaServiceModel()
         {
+            PKFieldName = "Nome";
             SearchPath = "Empresa/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
                                                       Visible = false,
@@ -103,6 +104,7 @@ namespace Tootega.Core.ERP.ReadOnly
 
     public class EmpresaFilter : XFilter
     {
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMEmpresaFilter : XFRMModel
     {

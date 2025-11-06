@@ -26,17 +26,10 @@ class SceneFormEditor extends XBaseCleanDialog
 
     private _TitleBar: XDiv;
 
-    SetModel(pModel: XFRMModel, pSVCModel: XServiceModel)
+    SetModel(pModel: XFRMModel, pSVCModel: XServiceModel, pDataSet: XDataSet)
     {
         this.Model = pModel;
         this.SVCModel = pSVCModel;
-        this.Load();
-    }
-
-    Load()
-    {
-        if (!this.Form)
-            return;
         this.Form.SetModel(this.Model, this.SVCModel);
         this.UpdateTitle();
     }

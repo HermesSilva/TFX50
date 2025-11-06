@@ -69,5 +69,21 @@ namespace TFX.Core.Data.Servicos.Usuario
                 return StatusCode(404, XEndPointMessage.Erro(pEx));
             }  
         }
+
+        [HttpPost("Get")]
+        [ProducesResponseType(typeof(UsuarioDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
+        public IActionResult Get([FromBody] UsuarioFilter pFilter)
+        {
+            try
+            {
+                var result = Service.InternalGet(pFilter);
+                return Ok(result);
+            }
+            catch (Exception pEx)
+            {
+                return StatusCode(404, XEndPointMessage.Erro(pEx));
+            }  
+        }
     }
 }

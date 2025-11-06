@@ -341,18 +341,10 @@ namespace Tootega.Core.CEP.ReadOnly
 
             if (pFilter != null)
             {
-                if (pFilter.Sigla?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxUF.Sigla == Convert.ToString(pFilter.Sigla.Value));
-                if (pFilter.Tipo?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxLogradouro.Tipo == Convert.ToString(pFilter.Tipo.Value));
-                if (pFilter.Logradouro?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxLogradouro.Nome == Convert.ToString(pFilter.Logradouro.Value));
-                if (pFilter.Localidade?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxLocalidade.Nome == Convert.ToString(pFilter.Localidade.Value));
-                if (pFilter.Bairro?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxBairro.Nome == Convert.ToString(pFilter.Bairro.Value));
-                if (pFilter.CEP?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxLogradouro.CEP == Convert.ToString(pFilter.CEP.Value));
+                //if (pFilter.Nome?.State == XFieldState.NotEmpty)
+                //    query = query.Where(q => q.CEPxLogradouro.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.CEPxLogradouroID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLogradouro.CEPxLogradouroID == Convert.ToInt32(pFilter.CEPxLogradouroID.Value));
             }
 
             if (!LoadAll)

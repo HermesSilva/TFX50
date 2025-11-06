@@ -26,7 +26,9 @@ namespace TFX.ESC.Core.Escritorios
         public static Guid CID = new Guid("94D6CBB1-BC80-448E-B38D-56FA234CD41E");
         public EscritorioServiceModel()
         {
+            PKFieldName = "CORxPessoaID";
             SearchPath = "Escritorio/Search";
+            GetPath = "Escritorio/Get";
             DataView.Columns.Add(new XColumnModel() { Name = "CPFCNPJ", Title = "CPF ou CNPJ", Type = "String", Mask = "###.###.###-##|##.###.###/####-##", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
                                                       FieldID = new Guid("9BBA3DC6-EC85-483A-9D61-E9299BCC3FD0") });
@@ -143,8 +145,9 @@ namespace TFX.ESC.Core.Escritorios
     {
         public XFilterField Nome {get;set;}
         public XFilterField CPFCNPJ {get;set;}
-        public XFilterField? CEPxUFID {get;set;}
-        public XFilterField? CEPxLocalidadeID {get;set;}
+        public XFilterField CEPxUFID {get;set;}
+        public XFilterField CEPxLocalidadeID {get;set;}
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMEscritorioFilter : XFRMModel
     {
@@ -302,6 +305,7 @@ namespace TFX.ESC.Core.Escritorios
         object Flush(EscritorioDataSet pDataSet);
 
         EscritorioDataSet Execute(EscritorioFilter pFilter);
+        EscritorioDataSet InternalGet(EscritorioFilter pFilter);
         IQueryable<EscritorioTuple> ExecuteQuery(EscritorioFilter pFilter);
     }
 

@@ -197,6 +197,17 @@ namespace Tootega.Core.ERP.Profissional
             return dataset;
         }
 
+        public CategoriaDataSet InternalGet(CategoriaFilter pFilter)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new CategoriaDataSet { Tuples = tuples };
+            return dataset;
+        }
+
         public object Flush(CategoriaDataSet pDataSet)
         {
             if (pDataSet?.Tuples.Count == 0)

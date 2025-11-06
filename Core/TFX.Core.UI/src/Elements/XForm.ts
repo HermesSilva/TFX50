@@ -21,7 +21,6 @@ class XEditPosition
 }
 class XForm extends XDiv
 {
-
     constructor(pOwner: XElement | HTMLElement | null)
     {
         super(pOwner, "XForm");
@@ -32,6 +31,10 @@ class XForm extends XDiv
     SVCModel!: XServiceModel;
     private _FocusTarget: HTMLElement | null = null;
     private _FocusTries: number = 0;
+
+    SetDataSet(pDataSet: XDataSet)
+    {
+    }
 
     SetModel(pForm: XFRMModel, pSVCModel: XServiceModel)
     {

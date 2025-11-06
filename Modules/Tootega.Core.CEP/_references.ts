@@ -17,3 +17,4 @@
 /// <reference path="Logradouro\Logradouro.Test.cs" />
 /// <reference path="Services\Rules\INFUFController.Rule.cs" />
 /// <reference path="Services\UF.Controller.cs" />
+/// <reference path="../../../TFX-Core/TFX.Core.Service/wwwroot/static/js/TFX.Core.Data.d.ts" />

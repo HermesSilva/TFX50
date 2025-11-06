@@ -70,5 +70,21 @@ namespace Tootega.Core.ERP.Empresa
                 return StatusCode(404, XEndPointMessage.Erro(pEx));
             }  
         }
+
+        [HttpPost("Get")]
+        [ProducesResponseType(typeof(EmpresaDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
+        public IActionResult Get([FromBody] EmpresaFilter pFilter)
+        {
+            try
+            {
+                //var result = Service.InternalGet(pFilter);
+                return Ok();
+            }
+            catch (Exception pEx)
+            {
+                return StatusCode(404, XEndPointMessage.Erro(pEx));
+            }  
+        }
     }
 }

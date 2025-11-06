@@ -304,9 +304,9 @@ namespace Tootega.Core.CEP.Localidade
             if (pFilter != null)
             {
                 if (pFilter.Nome?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => EF.Functions.Like(q.CEPxLocalidade.Nome, pFilter.Nome.Value+"%"));
-                if (pFilter.CodigoIBGE?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxLocalidade.CodigoIBGE == Convert.ToString(pFilter.CodigoIBGE.Value));
+                    query = query.Where(q => q.CEPxLocalidade.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.CEPxLocalidadeID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLocalidade.CEPxLocalidadeID == Convert.ToInt32(pFilter.CEPxLocalidadeID.Value));
             }
 
             if (!LoadAll)
@@ -335,6 +335,17 @@ namespace Tootega.Core.CEP.Localidade
         }
 
         public LocalidadeDataSet Execute(LocalidadeFilter pFilter)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new LocalidadeDataSet { Tuples = tuples };
+            return dataset;
+        }
+
+        public LocalidadeDataSet InternalGet(LocalidadeFilter pFilter)
         {
             _INFRule.InternalBeforeExecute();
             var qry = ExecuteQuery(pFilter);

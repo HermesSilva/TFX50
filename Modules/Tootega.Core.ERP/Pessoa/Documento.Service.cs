@@ -192,10 +192,10 @@ namespace Tootega.Core.ERP.Pessoa
 
             if (pFilter != null)
             {
-                if (pFilter.Tipo?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.ERPxDocumentoTipo.Tipo == Convert.ToString(pFilter.Tipo.Value));
                 if (pFilter.Numero?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.ERPxDocumento.Numero == Convert.ToString(pFilter.Numero.Value));
+                if (pFilter.ERPxDocumentoID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxDocumento.ERPxDocumentoID == new Guid(Convert.ToString(pFilter.ERPxDocumentoID.Value)));
             }
 
             if (!LoadAll)
@@ -220,6 +220,17 @@ namespace Tootega.Core.ERP.Pessoa
         }
 
         public DocumentoDataSet Execute(DocumentoFilter pFilter)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new DocumentoDataSet { Tuples = tuples };
+            return dataset;
+        }
+
+        public DocumentoDataSet InternalGet(DocumentoFilter pFilter)
         {
             _INFRule.InternalBeforeExecute();
             var qry = ExecuteQuery(pFilter);

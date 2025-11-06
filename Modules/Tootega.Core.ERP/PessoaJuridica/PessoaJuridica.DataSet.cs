@@ -27,6 +27,7 @@ namespace Tootega.Core.ERP.PessoaJuridica
         public static Guid CID = new Guid("7B3F7668-C970-4650-A88A-C681AA867590");
         public PessoaJuridicaServiceModel()
         {
+            PKFieldName = "RazaoSocial";
             SearchPath = "PessoaJuridica/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
@@ -104,6 +105,7 @@ namespace Tootega.Core.ERP.PessoaJuridica
 
     public class PessoaJuridicaFilter : XFilter
     {
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMPessoaJuridicaFilter : XFRMModel
     {
@@ -130,6 +132,7 @@ namespace Tootega.Core.ERP.PessoaJuridica
         object Flush(PessoaJuridicaDataSet pDataSet);
 
         PessoaJuridicaDataSet Execute(PessoaJuridicaFilter pFilter, Boolean pFull);
+        PessoaJuridicaDataSet InternalGet(PessoaJuridicaFilter pFilter, Boolean pFull);
         IQueryable<PessoaJuridicaTuple> ExecuteQuery(PessoaJuridicaFilter pFilter, Boolean pFull);
     }
 

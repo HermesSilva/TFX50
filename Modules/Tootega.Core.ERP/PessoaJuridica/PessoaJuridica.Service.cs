@@ -738,6 +738,17 @@ namespace Tootega.Core.ERP.PessoaJuridica
             return dataset;
         }
 
+        public PessoaJuridicaDataSet InternalGet(PessoaJuridicaFilter pFilter, Boolean pFull)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter, true);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new PessoaJuridicaDataSet { Tuples = tuples };
+            return dataset;
+        }
+
         public object Flush(PessoaJuridicaDataSet pDataSet)
         {
             if (pDataSet?.Tuples.Count == 0)

@@ -974,6 +974,17 @@ namespace Tootega.Core.ERP.Profissional
             return dataset;
         }
 
+        public ProfissionalDataSet InternalGet(ProfissionalFilter pFilter, Boolean pFull)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter, true);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new ProfissionalDataSet { Tuples = tuples };
+            return dataset;
+        }
+
         public object Flush(ProfissionalDataSet pDataSet)
         {
             if (pDataSet?.Tuples.Count == 0)

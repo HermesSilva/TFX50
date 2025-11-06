@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.Pessoa
         public static Guid CID = new Guid("FDEB9A57-921E-49FF-8B81-2D917798CED9");
         public EnderecoServiceModel()
         {
+            PKFieldName = "ERPxEnderecoID";
             SearchPath = "Endereco/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
@@ -228,6 +229,7 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class EnderecoFilter : XFilter
     {
+        public XFilterField ERPxEnderecoID {get;set;}
     }
     public class FRMEnderecoFilter : XFRMModel
     {
@@ -254,6 +256,7 @@ namespace Tootega.Core.ERP.Pessoa
         object Flush(EnderecoDataSet pDataSet);
 
         EnderecoDataSet Execute(EnderecoFilter pFilter);
+        EnderecoDataSet InternalGet(EnderecoFilter pFilter);
         IQueryable<EnderecoTuple> ExecuteQuery(EnderecoFilter pFilter);
     }
 

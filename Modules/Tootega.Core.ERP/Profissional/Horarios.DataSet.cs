@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.Profissional
         public static Guid CID = new Guid("C491121C-26B3-400D-8A45-7593CC13AE7E");
         public HorariosServiceModel()
         {
+            PKFieldName = "Fim";
             SearchPath = "Horarios/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Inicio", Title = "Início", Type = "DateTime", Mask = "HH:mm", 
                                                       Visible = true,
@@ -98,6 +99,7 @@ namespace Tootega.Core.ERP.Profissional
 
     public class HorariosFilter : XFilter
     {
+        public XFilterField ERPxProfissionalHorarioID {get;set;}
     }
     public class FRMHorariosFilter : XFRMModel
     {
@@ -124,6 +126,7 @@ namespace Tootega.Core.ERP.Profissional
         object Flush(HorariosDataSet pDataSet);
 
         HorariosDataSet Execute(HorariosFilter pFilter);
+        HorariosDataSet InternalGet(HorariosFilter pFilter);
         IQueryable<HorariosTuple> ExecuteQuery(HorariosFilter pFilter);
     }
 

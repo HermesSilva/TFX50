@@ -1,9 +1,10 @@
-﻿
+﻿/// <reference path="../XMessageManager.ts" />
+
 type XOnLoad = (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent | null) => void;
 
 class XHttpClient
 {
-    
+
     constructor()
     {
         this.Context = null;
@@ -21,7 +22,7 @@ class XHttpClient
     private _Timeout: number = 0;
     public Method: string;
     public OnLoad?: (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent | null) => void;
-    public OnError?: (pError: Error, pCallData: any | null, pEvent: ProgressEvent | null) => void;
+    public OnError = XMessageManager.ContexError;
     public OnProgress?: (pEvent: ProgressEvent, pCallData: any | null) => void;
 
 
@@ -65,44 +66,47 @@ class XHttpClient
             this.SetupCommonHeaders();
             this._Xhr.ontimeout = (pEvent) =>
             {
-                this.OnError?.apply(this.Context, [new Error('Request timeout'), this._CallBackData, pEvent]);
-                this.OnError = undefined;
+                this.OnError?.apply(this.Context, [this.Context, new Error('Request timeout'), this._CallBackData, pEvent]);
             }
 
             this._Xhr.onload = (pEvent) =>
             {
-                if (this._Xhr.status >= 200 && this._Xhr.status < 300)
+                try
                 {
-                    if (pOnLoad != null)
-                        pOnLoad.apply(this.Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                    if (this._Xhr.status >= 200 && this._Xhr.status < 300)
+                    {
+                        if (pOnLoad != null)
+                            pOnLoad.apply(this.Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                        else
+                            this.OnLoad?.apply(this.Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                    }
                     else
-                        this.OnLoad?.apply(this.Context, [this._Xhr.response, this._CallBackData, pEvent]);
+                        this.OnError?.apply(this.Context, [this.Context, new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
                 }
-                else
-                    this.OnError?.apply(this.Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+                catch (pError)
+                {
+                    XMessageManager.ShowGlobalError(pError);
+                }
                 this.OnLoad = undefined;
             };
 
             this._Xhr.onerror = (pEvent) =>
             {
-                this.OnError?.apply(this.Context, [new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
-                this.OnError = undefined;
+                this.OnError?.apply(this.Context, [this.Context, new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
             }
 
             if (this.OnProgress)
                 this._Xhr.onprogress = (pEvent) =>
                 {
                     this.OnProgress?.apply(this.Context, [pEvent, this._CallBackData]);
-                    this.OnProgress = undefined;
                 }
 
             this._Xhr.send(JSON.stringify(this._Data));
         }
         catch (pError)
         {
-            this.OnError?.apply(this.Context, [<Error>pError, this._CallBackData, <any>null]);
+            this.OnError?.apply(this.Context, [this.Context, <Error>pError, this._CallBackData, <any>null]);
             this.OnLoad = undefined;
-            this.OnError = undefined;
             this.OnProgress = undefined;
         }
     }
@@ -122,6 +126,6 @@ class XHttpClient
     public Abort(): void
     {
         this._Xhr.abort();
-        this.OnError?.apply(this.Context, [new Error('Request aborted'), this._Data, null]);
+        this.OnError?.apply(this.Context, [this.Context, new Error('Request aborted'), this._Data, null]);
     }
 }

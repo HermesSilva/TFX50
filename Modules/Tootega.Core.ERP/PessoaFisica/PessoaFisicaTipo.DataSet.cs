@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.PessoaFisica
         public static Guid CID = new Guid("677562A2-DE98-4BC8-AC79-02BEEF69DBDD");
         public PessoaFisicaTipoServiceModel()
         {
+            PKFieldName = "ERPxPessoaFisicaTiposID";
             SearchPath = "PessoaFisicaTipo/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxPessoaFisicaTiposID", Title = "Ligação de Pessoa Física à Tipo", Type = "Guid", Mask = "", 
                                                       Visible = false,
@@ -98,6 +99,7 @@ namespace Tootega.Core.ERP.PessoaFisica
         object Flush(PessoaFisicaTipoDataSet pDataSet);
 
         PessoaFisicaTipoDataSet Execute();
+        PessoaFisicaTipoDataSet InternalGet();
         IQueryable<PessoaFisicaTipoTuple> ExecuteQuery();
     }
 

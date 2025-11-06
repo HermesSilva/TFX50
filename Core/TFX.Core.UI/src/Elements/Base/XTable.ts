@@ -47,7 +47,7 @@ class XTableHCell extends XTableElement
     Sizer: HTMLDivElement;
     TextArea: HTMLSpanElement;
     Title: HTMLSpanElement;
-    Content: HTMLDivElement;
+    Content: HTMLDivElement; 
     SortIcon: HTMLSpanElement;
     Column!: XColumnModel;
     SortState: { Field: string; Direction: 'asc' | 'desc' };

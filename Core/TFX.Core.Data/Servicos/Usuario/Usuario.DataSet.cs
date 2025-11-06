@@ -26,6 +26,7 @@ namespace TFX.Core.Data.Servicos.Usuario
         public static Guid CID = new Guid("53F17DAC-4376-4424-8454-0866B122BFDB");
         public UsuarioServiceModel()
         {
+            PKFieldName = "EMail";
             SearchPath = "Usuario/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "EMail", Title = "E-Mails", Type = "String", Mask = "", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
@@ -74,7 +75,7 @@ namespace TFX.Core.Data.Servicos.Usuario
     public class UsuarioFilter : XFilter
     {
         public XFilterField Nome {get;set;}
-        public XFilterField EMail {get;set;}
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMUsuarioFilter : XFRMModel
     {
@@ -133,6 +134,7 @@ namespace TFX.Core.Data.Servicos.Usuario
         object Flush(UsuarioDataSet pDataSet);
 
         UsuarioDataSet Execute(UsuarioFilter pFilter);
+        UsuarioDataSet InternalGet(UsuarioFilter pFilter);
         IQueryable<UsuarioTuple> ExecuteQuery(UsuarioFilter pFilter);
     }
 

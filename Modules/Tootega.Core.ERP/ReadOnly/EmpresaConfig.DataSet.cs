@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.ReadOnly
         public static Guid CID = new Guid("44C651B9-54CB-4225-84FA-F51053C43F08");
         public EmpresaConfigServiceModel()
         {
+            PKFieldName = "Numero";
             SearchPath = "EmpresaConfig/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "String", Mask = "", 
                                                       Visible = false,

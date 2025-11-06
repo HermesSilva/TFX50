@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.Pessoa
         public static Guid CID = new Guid("34ADCC85-4724-4E28-B0AC-CE711B98DC23");
         public DocumentoServiceModel()
         {
+            PKFieldName = "Numero";
             SearchPath = "Documento/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxDocumentoID", Title = "Documento", Type = "Guid", Mask = "", 
                                                       Visible = false,
@@ -108,8 +109,8 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class DocumentoFilter : XFilter
     {
-        public XFilterField Tipo {get;set;}
         public XFilterField Numero {get;set;}
+        public XFilterField ERPxDocumentoID {get;set;}
     }
     public class FRMDocumentoFilter : XFRMModel
     {
@@ -168,6 +169,7 @@ namespace Tootega.Core.ERP.Pessoa
         object Flush(DocumentoDataSet pDataSet);
 
         DocumentoDataSet Execute(DocumentoFilter pFilter);
+        DocumentoDataSet InternalGet(DocumentoFilter pFilter);
         IQueryable<DocumentoTuple> ExecuteQuery(DocumentoFilter pFilter);
     }
 

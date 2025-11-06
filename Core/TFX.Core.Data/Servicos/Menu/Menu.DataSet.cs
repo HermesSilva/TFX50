@@ -26,6 +26,7 @@ namespace TFX.Core.Data.Servicos.Menu
         public static Guid CID = new Guid("CA94C52B-3EC3-495C-B034-B3652CED2947");
         public MenuServiceModel()
         {
+            PKFieldName = "Menu";
             SearchPath = "Menu/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Menu", Title = "Menu", Type = "String", Mask = "", 
                                                       Visible = true,

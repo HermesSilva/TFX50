@@ -28,6 +28,7 @@ namespace Tootega.Core.ERP.Profissional
         public static Guid CID = new Guid("1FE2AF42-35CF-4570-BB64-AA3B352EF067");
         public ProfissionalServiceModel()
         {
+            PKFieldName = "Genero";
             SearchPath = "Profissional/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CPF", Title = "CPF", Type = "String", Mask = "000.000.000-00", 
                                                       Visible = false,
@@ -134,6 +135,7 @@ namespace Tootega.Core.ERP.Profissional
 
     public class ProfissionalFilter : XFilter
     {
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMProfissionalFilter : XFRMModel
     {
@@ -160,6 +162,7 @@ namespace Tootega.Core.ERP.Profissional
         object Flush(ProfissionalDataSet pDataSet);
 
         ProfissionalDataSet Execute(ProfissionalFilter pFilter, Boolean pFull);
+        ProfissionalDataSet InternalGet(ProfissionalFilter pFilter, Boolean pFull);
         IQueryable<ProfissionalTuple> ExecuteQuery(ProfissionalFilter pFilter, Boolean pFull);
     }
 

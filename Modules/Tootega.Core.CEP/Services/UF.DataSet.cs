@@ -26,6 +26,7 @@ namespace Tootega.Core.CEP.Services
         public static Guid CID = new Guid("59AFD485-EB75-4FAB-852C-BFE018FF575E");
         public UFServiceModel()
         {
+            PKFieldName = "CEPxUFID";
             SearchPath = "UF/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxUFID", Title = "UF", Type = "Int16", Mask = "", 
                                                       Visible = false,

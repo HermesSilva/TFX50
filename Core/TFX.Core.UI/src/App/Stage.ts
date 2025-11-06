@@ -8,6 +8,15 @@ class Stage extends XStage implements XIDialogContainer
     {
         window.onmousedown = (arg) => XPopupManager.HideAll(arg);
         window.onkeydown = (a) => XHotkeyManager.OnKeyDown(a);
+        window.onerror = (msg: any, url, lineNo, columnNo, error) =>
+        {
+            if (msg && msg.IndexOf("ResizeObserver") != -1)
+                return;
+            if (!error)
+                XMessageManager.ShowGlobalError({ message: msg, stack: "" });
+            else
+                XMessageManager.ShowGlobalError(error);
+        }
         this.Instance = new Stage();
     }
 
@@ -16,7 +25,6 @@ class Stage extends XStage implements XIDialogContainer
         super();
         this.DialogContainer = new XDialogContainer(this, "XDialogContainer");
         window.Dialog = new XMessageDialog(this);
-        window.Dialog.HTML.setAttribute("Type", "Error");
         this.DialogContainer.HTML.className = "XMainDialogContainer";
         this.Menu = new MainMenu(this);
         this.Menu.OnResize = () => this.MenuResize();

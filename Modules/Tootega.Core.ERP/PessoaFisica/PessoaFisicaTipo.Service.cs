@@ -193,6 +193,18 @@ namespace Tootega.Core.ERP.PessoaFisica
             return dataset;
         }
 
+        public PessoaFisicaTipoDataSet InternalGet()
+        {
+            //_INFRule.InternalBeforeExecute();
+            //var qry = ExecuteQuery(pFilter);
+            //var tuples = qry.ToList();
+            //tuples = Rule.InternalAfterSelect(tuples);
+            //_INFRule.InternalAfterExecute(tuples);
+            //var dataset = new PessoaFisicaTipoDataSet { Tuples = tuples };
+            //return dataset;
+            return Execute();
+        }
+
         public object Flush(PessoaFisicaTipoDataSet pDataSet)
         {
             if (pDataSet?.Tuples.Count == 0)

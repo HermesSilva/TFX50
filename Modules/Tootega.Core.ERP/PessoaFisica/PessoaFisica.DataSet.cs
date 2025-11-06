@@ -28,6 +28,7 @@ namespace Tootega.Core.ERP.PessoaFisica
         public static Guid CID = new Guid("DF0B1AD3-584F-47FB-8418-650111A9A6D9");
         public PessoaFisicaServiceModel()
         {
+            PKFieldName = "CORxStatusID";
             SearchPath = "PessoaFisica/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CPF", Title = "CPF", Type = "String", Mask = "000.000.000-00", 
                                                       Visible = true,
@@ -124,8 +125,8 @@ namespace Tootega.Core.ERP.PessoaFisica
 
     public class PessoaFisicaFilter : XFilter
     {
-        public XFilterField Genero {get;set;}
         public XFilterField Nome {get;set;}
+        public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMPessoaFisicaFilter : XFRMModel
     {
@@ -184,6 +185,7 @@ namespace Tootega.Core.ERP.PessoaFisica
         object Flush(PessoaFisicaDataSet pDataSet);
 
         PessoaFisicaDataSet Execute(PessoaFisicaFilter pFilter, Boolean pFull);
+        PessoaFisicaDataSet InternalGet(PessoaFisicaFilter pFilter, Boolean pFull);
         IQueryable<PessoaFisicaTuple> ExecuteQuery(PessoaFisicaFilter pFilter, Boolean pFull);
     }
 

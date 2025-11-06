@@ -12,7 +12,6 @@ using TFX.Core.Exceptions;
 namespace TFX.Core.Controllers
 {
 
-
     //[XAuthorizeFilter]
     public abstract class XController : XBaseController
     {

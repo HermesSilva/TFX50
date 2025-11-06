@@ -150,9 +150,13 @@ class XObjectCache
                     if (ctx[key] == undefined)
                         ctx[key] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime)
                     pInstance[vItem.Key] = ctx[key]
+                    pInstance[vItem.Key].Context = pInstance
                 }
                 else
-                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime)
+                {
+                    pInstance[vItem.Key] = XObjectCache.Get(vItem.Token, ctx, vItem.Lifetime);
+                    pInstance[vItem.Key].Context = pInstance;
+                }
             }
         }
     }

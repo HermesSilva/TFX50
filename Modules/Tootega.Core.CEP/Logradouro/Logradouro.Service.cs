@@ -334,15 +334,9 @@ namespace Tootega.Core.CEP.Logradouro
             if (pFilter != null)
             {
                 if (pFilter.Nome?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => EF.Functions.Like(q.CEPxLogradouro.Nome, pFilter.Nome.Value+"%"));
-                if (pFilter.CEP?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxLogradouro.CEP == Convert.ToString(pFilter.CEP.Value));
-                if (pFilter.NomeLocalidade?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => EF.Functions.Like(q.CEPxLocalidade.Nome, pFilter.NomeLocalidade.Value+"%"));
-                if (pFilter.NomeBairro?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxBairro.Nome == Convert.ToString(pFilter.NomeBairro.Value));
-                if (pFilter.Sigla?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.CEPxUF.Sigla == Convert.ToString(pFilter.Sigla.Value));
+                    query = query.Where(q => q.CEPxLogradouro.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.CEPxLogradouroID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CEPxLogradouro.CEPxLogradouroID == Convert.ToInt32(pFilter.CEPxLogradouroID.Value));
             }
 
             if (!LoadAll)

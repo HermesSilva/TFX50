@@ -143,6 +143,8 @@ namespace Tootega.Core.ERP.ReadOnly
             {
                 if (pFilter.Tipo?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.ERPxDocumentoTipo.Tipo == Convert.ToString(pFilter.Tipo.Value));
+                if (pFilter.ERPxDocumentoTipoID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxDocumentoTipo.ERPxDocumentoTipoID == Convert.ToInt16(pFilter.ERPxDocumentoTipoID.Value));
             }
 
             if (!LoadAll)

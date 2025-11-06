@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.ReadOnly
         public static Guid CID = new Guid("8EF7B9BB-4F2B-4245-B181-2CA6D8399462");
         public TipoDocumentoServiceModel()
         {
+            PKFieldName = "Tipo";
             SearchPath = "TipoDocumento/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Mascara", Title = "Máscara", Type = "String", Mask = "", 
                                                       Visible = true,
@@ -78,6 +79,7 @@ namespace Tootega.Core.ERP.ReadOnly
     public class TipoDocumentoFilter : XFilter
     {
         public XFilterField Tipo {get;set;}
+        public XFilterField ERPxDocumentoTipoID {get;set;}
     }
     public class FRMTipoDocumentoFilter : XFRMModel
     {

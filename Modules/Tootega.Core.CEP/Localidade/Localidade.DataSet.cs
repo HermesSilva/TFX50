@@ -26,6 +26,7 @@ namespace Tootega.Core.CEP.Localidade
         public static Guid CID = new Guid("447A4B15-4C86-4FFF-B29F-8F2FFF7D7EFD");
         public LocalidadeServiceModel()
         {
+            PKFieldName = "CEPxLocalidadeID";
             SearchPath = "Localidade/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadeID", Title = "Localidade", Type = "Int32", Mask = "", 
                                                       Visible = false,
@@ -143,7 +144,7 @@ namespace Tootega.Core.CEP.Localidade
     public class LocalidadeFilter : XFilter
     {
         public XFilterField Nome {get;set;}
-        public XFilterField CodigoIBGE {get;set;}
+        public XFilterField CEPxLocalidadeID {get;set;}
     }
     public class FRMLocalidadeFilter : XFRMModel
     {
@@ -202,6 +203,7 @@ namespace Tootega.Core.CEP.Localidade
         object Flush(LocalidadeDataSet pDataSet);
 
         LocalidadeDataSet Execute(LocalidadeFilter pFilter);
+        LocalidadeDataSet InternalGet(LocalidadeFilter pFilter);
         IQueryable<LocalidadeTuple> ExecuteQuery(LocalidadeFilter pFilter);
     }
 

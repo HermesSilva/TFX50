@@ -42,7 +42,7 @@ interface XTuple
 
 interface XField
 {
-    Value: string;
+    Value: any;
     State: XFieldState;
 }
 

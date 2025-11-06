@@ -26,6 +26,7 @@ namespace Tootega.Core.ERP.Pessoa
         public static Guid CID = new Guid("63151C23-62E8-4BBA-9C12-FEC0708E03CF");
         public ContatoServiceModel()
         {
+            PKFieldName = "Contato";
             SearchPath = "Contato/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "Validar", Title = "Validar", Type = "Boolean", Mask = "", 
                                                       Visible = false,
@@ -146,9 +147,8 @@ namespace Tootega.Core.ERP.Pessoa
 
     public class ContatoFilter : XFilter
     {
-        public XFilterField Finalidade {get;set;}
-        public XFilterField Tipo {get;set;}
         public XFilterField Contato {get;set;}
+        public XFilterField ERPxContatoID {get;set;}
     }
     public class FRMContatoFilter : XFRMModel
     {
@@ -207,6 +207,7 @@ namespace Tootega.Core.ERP.Pessoa
         object Flush(ContatoDataSet pDataSet);
 
         ContatoDataSet Execute(ContatoFilter pFilter);
+        ContatoDataSet InternalGet(ContatoFilter pFilter);
         IQueryable<ContatoTuple> ExecuteQuery(ContatoFilter pFilter);
     }
 

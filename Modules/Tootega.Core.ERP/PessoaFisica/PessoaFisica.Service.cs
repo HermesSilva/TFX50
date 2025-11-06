@@ -757,10 +757,10 @@ namespace Tootega.Core.ERP.PessoaFisica
 
             if (pFilter != null)
             {
-                if (pFilter.Genero?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.ERPxGenero.Genero == Convert.ToString(pFilter.Genero.Value));
                 if (pFilter.Nome?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => EF.Functions.Like(q.CORxPessoa.Nome, pFilter.Nome.Value+"%"));
+                    query = query.Where(q => q.CORxPessoa.Nome == Convert.ToString(pFilter.Nome.Value));
+                if (pFilter.CORxPessoaID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.CORxPessoa.CORxPessoaID == new Guid(Convert.ToString(pFilter.CORxPessoaID.Value)));
             }
 
             if (!LoadAll)
@@ -864,6 +864,17 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
             _INFRule.InternalBeforeExecute();
             var qry = ExecuteQuery(pFilter, pFull);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new PessoaFisicaDataSet { Tuples = tuples };
+            return dataset;
+        }
+
+        public PessoaFisicaDataSet InternalGet(PessoaFisicaFilter pFilter, Boolean pFull)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter, true);
             var tuples = qry.ToList();
             tuples = Rule.InternalAfterSelect(tuples);
             _INFRule.InternalAfterExecute(tuples);

@@ -26,6 +26,7 @@ namespace Tootega.Core.CEP.Logradouro
         public static Guid CID = new Guid("B4838416-BB04-446B-B189-3D69440046A7");
         public LogradouroServiceModel()
         {
+            PKFieldName = "CEP";
             SearchPath = "Logradouro/Search";
             DataView.Columns.Add(new XColumnModel() { Name = "CEP", Title = "CEP", Type = "String", Mask = "00.000-000", 
                                                       Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
@@ -150,10 +151,7 @@ namespace Tootega.Core.CEP.Logradouro
     public class LogradouroFilter : XFilter
     {
         public XFilterField Nome {get;set;}
-        public XFilterField Sigla {get;set;}
-        public XFilterField CEP {get;set;}
-        public XFilterField NomeBairro {get;set;}
-        public XFilterField NomeLocalidade {get;set;}
+        public XFilterField CEPxLogradouroID {get;set;}
     }
     public class FRMLogradouroFilter : XFRMModel
     {

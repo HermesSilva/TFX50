@@ -22,7 +22,9 @@ interface XDataViewModel
 interface XServiceModel
 {
     ID: string;
-    Forms: XFRMModel[]
-    DataView: XDataViewModel
-    SearchPath: string
+    Forms: XFRMModel[];
+    DataView: XDataViewModel;
+    SearchPath: string;
+    GetPath: string;
+    PKFieldName: string
 }

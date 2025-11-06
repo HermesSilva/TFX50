@@ -8,12 +8,6 @@ namespace TFX.Core.Model
 {
     public class XFilterField
     {
-        [Display(Description = "Nome do campo a ser filtrado.")]
-        [SwaggerSchema(ReadOnly = true)]
-        public String FieldName
-        {
-            get; set;
-        }
         [Display(Description = "Valor utilizado na comparação do filtro.")]
         public Object Value
         {

@@ -214,6 +214,17 @@ namespace Tootega.Core.ERP.Profissional
             return dataset;
         }
 
+        public HorariosDataSet InternalGet(HorariosFilter pFilter)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new HorariosDataSet { Tuples = tuples };
+            return dataset;
+        }
+
         public object Flush(HorariosDataSet pDataSet)
         {
             if (pDataSet?.Tuples.Count == 0)

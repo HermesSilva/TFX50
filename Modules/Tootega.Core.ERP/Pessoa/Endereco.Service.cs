@@ -496,6 +496,17 @@ namespace Tootega.Core.ERP.Pessoa
             return dataset;
         }
 
+        public EnderecoDataSet InternalGet(EnderecoFilter pFilter)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new EnderecoDataSet { Tuples = tuples };
+            return dataset;
+        }
+
         public object Flush(EnderecoDataSet pDataSet)
         {
             if (pDataSet?.Tuples.Count == 0)

@@ -237,12 +237,10 @@ namespace Tootega.Core.ERP.Pessoa
 
             if (pFilter != null)
             {
-                if (pFilter.Tipo?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.ERPxContatoTipo.Tipo == Convert.ToString(pFilter.Tipo.Value));
                 if (pFilter.Contato?.State == XFieldState.NotEmpty)
                     query = query.Where(q => q.ERPxContato.Contato == Convert.ToString(pFilter.Contato.Value));
-                if (pFilter.Finalidade?.State == XFieldState.NotEmpty)
-                    query = query.Where(q => q.ERPxFinalidade.Finalidade == Convert.ToString(pFilter.Finalidade.Value));
+                if (pFilter.ERPxContatoID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxContato.ERPxContatoID == new Guid(Convert.ToString(pFilter.ERPxContatoID.Value)));
             }
 
             if (!LoadAll)
@@ -272,6 +270,17 @@ namespace Tootega.Core.ERP.Pessoa
         }
 
         public ContatoDataSet Execute(ContatoFilter pFilter)
+        {
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new ContatoDataSet { Tuples = tuples };
+            return dataset;
+        }
+
+        public ContatoDataSet InternalGet(ContatoFilter pFilter)
         {
             _INFRule.InternalBeforeExecute();
             var qry = ExecuteQuery(pFilter);
