@@ -19,14 +19,14 @@ class SceneFormEditor extends XBaseCleanDialog
 
     App: App | undefined;
     Form: XForm;
-    SVCModel!: XServiceModel;
+    SVCModel!: XIServiceModel;
     Model!: XFRMModel;
     DataSet!: XDataSet;
     OnClose: XMethod<any> | null = null;
 
     private _TitleBar: XDiv;
 
-    SetModel(pModel: XFRMModel, pSVCModel: XServiceModel, pDataSet: XDataSet)
+    SetModel(pModel: XFRMModel, pSVCModel: XIServiceModel, pDataSet: XDataSet)
     {
         this.Model = pModel;
         this.SVCModel = pSVCModel;

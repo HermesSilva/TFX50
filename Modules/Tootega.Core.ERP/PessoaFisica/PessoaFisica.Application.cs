@@ -47,8 +47,8 @@ namespace Tootega.Core.ERP.PessoaFisica
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;
@@ -79,8 +79,8 @@ namespace Tootega.Core.ERP.PessoaFisica
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] { new Guid("3704B0EB-A7BA-41AA-B361-588DBC233749") };
-                fld.SourceDisplayFieldID = new Guid[] { new Guid("E1C95896-5736-4247-A911-DA6300C691F9") };
+                fld.TargetFieldID = new Guid[] { new Guid("3704B0EB-A7BA-41AA-B361-588DBC233749") };
+                fld.SourceFieldID = new Guid[] { new Guid("E1C95896-5736-4247-A911-DA6300C691F9") };
                 fld.DataSourceID = new Guid("4E22A7DA-AD65-4076-85B0-71C22F6634A6");
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
@@ -113,8 +113,8 @@ namespace Tootega.Core.ERP.PessoaFisica
                 fld.GridFormCID = new Guid("C14F6364-7526-4C35-A8A5-91AC139C01E6");
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;

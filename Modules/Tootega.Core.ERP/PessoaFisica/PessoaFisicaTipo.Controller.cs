@@ -9,37 +9,37 @@ using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TFX.Core.Data;
-using Tootega.Core.CEP.Localidade;
-using Tootega.Core.CEP.Localidade.Rules;
-using Tootega.Core.CEP.DB;
+using Tootega.Core.ERP.PessoaFisica;
+using Tootega.Core.ERP.PessoaFisica.Rules;
+using Tootega.Core.ERP.DB;
 
-namespace Tootega.Core.CEP.Localidade
+namespace Tootega.Core.ERP.PessoaFisica
 {
-    [Route("Localidade")]
+    [Route("PessoaFisicaTipo")]
     [ApiController]
-    public class LocalidadeController : XController
+    public class PessoaFisicaTipoController : XController
     {
-        public abstract class BaseINFLocalidadeControllerRule : XControllerINFRule<LocalidadeController>
+        public abstract class BaseINFPessoaFisicaTipoControllerRule : XControllerINFRule<PessoaFisicaTipoController>
         {
-            public BaseINFLocalidadeControllerRule(LocalidadeController pController)
+            public BaseINFPessoaFisicaTipoControllerRule(PessoaFisicaTipoController pController)
                 :base(pController)
             {
             }
         }
 
-        public LocalidadeController(ILocalidadeService pService)
+        public PessoaFisicaTipoController(IPessoaFisicaTipoService pService)
         {
             Service = pService;
-            _Rule = new INFLocalidadeControllerRule(this);
+            _Rule = new INFPessoaFisicaTipoControllerRule(this);
         }
 
-        internal readonly ILocalidadeService Service;
-        private readonly INFLocalidadeControllerRule _Rule;
+        internal readonly IPessoaFisicaTipoService Service;
+        private readonly INFPessoaFisicaTipoControllerRule _Rule;
 
         [HttpPost("Search")]
-        [ProducesResponseType(typeof(LocalidadeDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PessoaFisicaTipoDataSet), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
-        public IActionResult Execute([FromBody] LocalidadeFilter pFilter)
+        public IActionResult Execute([FromBody] PessoaFisicaTipoFilter pFilter)
         {
             try
             {
@@ -53,10 +53,10 @@ namespace Tootega.Core.CEP.Localidade
         }
 
         [HttpPost("Flush")]
-        [ProducesResponseType(typeof(LocalidadeDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PessoaFisicaTipoDataSet), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
-        [XEndpointDescription(typeof(LocalidadeService.CEPxLocalidade))]
-        public IActionResult Flush([FromBody] LocalidadeDataSet pDataSet)
+        [XEndpointDescription(typeof(PessoaFisicaTipoService.ERPxPessoaFisicaTipos))]
+        public IActionResult Flush([FromBody] PessoaFisicaTipoDataSet pDataSet)
         {
             try
             {
@@ -71,9 +71,9 @@ namespace Tootega.Core.CEP.Localidade
         }
 
         [HttpPost("Get")]
-        [ProducesResponseType(typeof(LocalidadeDataSet), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PessoaFisicaTipoDataSet), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(XEndPointMessage), StatusCodes.Status404NotFound)]
-        public IActionResult Get([FromBody] LocalidadeFilter pFilter)
+        public IActionResult Get([FromBody] PessoaFisicaTipoFilter pFilter)
         {
             try
             {

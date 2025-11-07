@@ -120,11 +120,11 @@ namespace TFX.Core.Model.FRM
         {
             get; set;
         }
-        public Guid[] TargetDisplayFieldID
+        public Guid[] TargetFieldID
         {
             get; set;
         }
-        public Guid[] SourceDisplayFieldID
+        public Guid[] SourceFieldID
         {
             get; set;
         }
@@ -209,10 +209,6 @@ namespace TFX.Core.Model.FRM
             get; set;
         }
         public Guid PAMID
-        {
-            get; set;
-        }
-        public Guid SourceFieldID
         {
             get; set;
         }

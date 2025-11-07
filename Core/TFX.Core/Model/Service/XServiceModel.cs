@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore.Update.Internal;
@@ -13,6 +14,12 @@ using TFX.Core.Services;
 
 namespace TFX.Core.Model.Service
 {
+
+    public enum XColumnType
+    {
+        None = 0,
+        PK = 1,
+    }
 
     public class XColumnModel
     {
@@ -60,6 +67,18 @@ namespace TFX.Core.Model.Service
         {
             get; set;
         }
+        public Guid FieldTypeID
+        {
+            get; set;
+        }
+        public bool GridView
+        {
+            get; set;
+        }
+        public XColumnType ColumnType
+        {
+            get; set;
+        }
     }
 
     public class XDataViewModel
@@ -75,7 +94,6 @@ namespace TFX.Core.Model.Service
         }
     }
 
-
     public class XServiceModel
     {
         public XServiceModel()
@@ -83,6 +101,12 @@ namespace TFX.Core.Model.Service
             DataView = new XDataViewModel();
             Forms = [];
         }
+        public Guid ID
+        {
+            get;
+            set;
+        }
+
         public string FlushPath
         {
             get;
@@ -98,7 +122,7 @@ namespace TFX.Core.Model.Service
         {
             get;
             set;
-        }        
+        }
         public string GetPath
         {
             get;

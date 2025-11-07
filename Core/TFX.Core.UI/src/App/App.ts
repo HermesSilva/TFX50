@@ -37,7 +37,7 @@ class App extends XStageTabControlTab
     ButtonBarR: ActionBarR;
     Model!: XAPPModel;
     DataView!: SceneDataView;
-    SVCModel!: XServiceModel;
+    SVCModel!: XIServiceModel;
     private _FormEditor: SceneFormEditor | null;
 
     DoSave()
@@ -49,16 +49,16 @@ class App extends XStageTabControlTab
             this.Close();
         });
     }
-
+    
     SetModel(pModel: XAPPModel)
     {
         this.State = XAppState.Searching;
         this.Model = pModel;
         this.DataView = new SceneDataView(this.Scanes);
-        this.Client?.SendAsync(Paths.ServiceModel, { ID: pModel.SearchServiceID }, (pData: XResponse<XServiceModel>) =>
+        this.Client?.GetSVCModel(pModel.SearchServiceID, (pModel) =>
         {
-            this.SVCModel = pData.Data
-            this.DataView.SetModel(pData.Data);
+            this.SVCModel = pModel
+            this.DataView.SetModel(pModel);
             if (this.DataView?.DataGrid)
             {
                 this.DataView.DataGrid.OnSelectionChanged = (rows) => this.ButtonBar.UpdateState(rows);
@@ -98,20 +98,30 @@ class App extends XStageTabControlTab
         const fmdl = this.Model.Forms.FirstOrNull(f => f.Type != XFRMType.SVCFilter) as XFRMModel | null;
         if (!fmdl)
             return;
-        let filter: any = new Object();
-        let ffld = new Object() as XFilterField;
-        ffld.Operator = XOperator.EqualTo;
-        ffld.State = XFieldState.NotEmpty;
-        ffld.Value = this.DataView.DataGrid.SelectedRows[0].Tupla[this.SVCModel.PKFieldName].Value;
-        filter[this.SVCModel.PKFieldName] = ffld;
-
-        this.Client?.SendAsync(this.SVCModel.GetPath, filter, (pData: any) =>
+        switch (pState)
         {
-            this.ShowForm(pState, fmdl, pData.Data);
-        });
+            case XAppState.Editing:
+                let filter: any = new Object();
+                let ffld = new Object() as XFilterField;
+                ffld.Operator = XOperator.EqualTo;
+                ffld.State = XFieldState.NotEmpty;
+                ffld.Value = this.DataView.DataGrid.SelectedRows[0].Tuple[this.SVCModel.PKFieldName].Value;
+                filter[this.SVCModel.PKFieldName] = ffld;
+
+                this.Client?.SendAsync(this.SVCModel.GetPath, filter, (pData: any) =>
+                {
+                    this.ShowForm(pState, fmdl, this.SVCModel,pData.Data);
+                });
+                break;
+            case XAppState.Inserting:
+                var dst = this.SVCModel.CreateDataSet();
+                dst.Tuples = [this.SVCModel.CreateTuple()];
+                this.ShowForm(pState, fmdl, this.SVCModel, dst);
+                break;
+        }
     }
 
-    private ShowForm(pState: XAppState, pModel: XFRMModel, pDataSet: XDataSet)
+    private ShowForm(pState: XAppState, pModel: XFRMModel, pSVCModel: XIServiceModel, pDataSet: XDataSet)
     {
         this.State = pState;
 
@@ -124,7 +134,7 @@ class App extends XStageTabControlTab
         }
 
         this.ButtonBar.UpdateState(this.DataView.DataGrid.SelectedRows);
-        this._FormEditor.SetModel(pModel, this.DataView.SVCModel, pDataSet);
+        this._FormEditor.SetModel(pModel, pSVCModel, pDataSet);
         this._FormEditor.IsVisible = true;
     }
 

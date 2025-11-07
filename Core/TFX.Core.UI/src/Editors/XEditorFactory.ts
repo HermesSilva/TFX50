@@ -56,10 +56,10 @@ class XEditorFactory
         editor.ParentID = pField.ParentID;
         editor.Rows = pField.RowCount;
         editor.RowsServiceID = pField.RowsServiceID;
-        editor.SourceDisplayFieldID = pField.SourceDisplayFieldID;
+        editor.SourceDisplayFieldID = pField.SourceFieldID;
         editor.SourceFilterFieldID = pField.SourceFilterFieldID;
         editor.State = pField.State;
-        editor.TargetDisplayFieldID = pField.TargetDisplayFieldID;
+        editor.TargetDisplayFieldID = pField.TargetFieldID;
         editor.TargetFilterFieldID = pField.TargetFilterFieldID;
         editor.Title = pField.Title;
         editor.Type = pField.Type;

@@ -28,15 +28,17 @@ namespace Tootega.Core.CEP.Services
         {
             PKFieldName = "CEPxUFID";
             SearchPath = "UF/Search";
+            GetPath = "UF/Get";
+            FlushPath = "UF/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxUFID", Title = "UF", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("521CBB7F-344C-452D-86F6-F2A3E3E09E21") });
+            Visible = false, FieldID = new Guid("521CBB7F-344C-452D-86F6-F2A3E3E09E21"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome da UF", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("36E2EE1B-E0C9-4A88-8F49-7EF26EF7EC26") });
+            Visible = true, FieldID = new Guid("36E2EE1B-E0C9-4A88-8F49-7EF26EF7EC26"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("3AE65011-1DED-43F4-A98B-910115BC4D33") });
+            Visible = true, FieldID = new Guid("3AE65011-1DED-43F4-A98B-910115BC4D33"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
         }
     }
     public class UFTuple : XServiceDataTuple

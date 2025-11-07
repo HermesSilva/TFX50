@@ -24,6 +24,97 @@ using TFX.Core.IDs.Model;
 namespace TFX.Core
 {
 
+    public sealed class XGuidPKFixupInterceptor : SaveChangesInterceptor
+    {
+        public override InterceptionResult<int> SavingChanges(
+            DbContextEventData eventData, InterceptionResult<int> result)
+        {
+            var ctx = eventData.Context;
+            if (ctx is null)
+                return result;
+
+            foreach (var entry in ctx.ChangeTracker.Entries().Where(e => e.State == EntityState.Added))
+            {
+                // Para cada PK Guid não definido, gera um novo
+                var key = entry.Metadata.FindPrimaryKey();
+                if (key is null)
+                    continue;
+
+                foreach (var keyProp in key.Properties)
+                {
+                    if (keyProp.ClrType != typeof(Guid))
+                        continue;
+
+                    var v = (Guid)(entry.Property(keyProp.Name).CurrentValue ?? Guid.Empty);
+                    if (v == Guid.Empty)
+                        entry.Property(keyProp.Name).CurrentValue = Guid.NewGuid();
+                }
+            }
+
+            return result;
+        }
+    }
+    public sealed class XGuidFKFixupInterceptor : SaveChangesInterceptor
+    {
+        public override InterceptionResult<int> SavingChanges(
+            DbContextEventData eventData, InterceptionResult<int> result)
+        {
+            var ctx = eventData.Context;
+            if (ctx is null)
+                return result;
+
+            foreach (var entry in ctx.ChangeTracker.Entries()
+                         .Where(e => e.State is EntityState.Added or EntityState.Modified))
+            {
+                // Para cada FK Guid vazio, tentar copiar do principal se navegação estiver carregada
+                foreach (var fk in entry.Metadata.GetForeignKeys())
+                {
+                    // FK simples de Guid
+                    if (fk.Properties.Count != 1)
+                        continue;
+                    var fkProp = fk.Properties[0];
+                    if (fkProp.ClrType != typeof(Guid))
+                        continue;
+
+                    var fkValue = (Guid)(entry.Property(fkProp.Name).CurrentValue ?? Guid.Empty);
+                    if (fkValue != Guid.Empty)
+                        continue;
+
+                    // Tenta obter o principal via navegação
+                    var navToPrincipal = fk.DependentToPrincipal;
+                    if (navToPrincipal is null)
+                        continue;
+
+                    var principalEntry = entry.Navigation(navToPrincipal.Name).CurrentValue is null
+                        ? null
+                        : ctx.Entry(entry.Navigation(navToPrincipal.Name).CurrentValue);
+
+                    if (principalEntry is null)
+                        continue;
+
+                    var principalKey = principalEntry.Metadata.FindPrimaryKey();
+                    if (principalKey is null || principalKey.Properties.Count != 1)
+                        continue;
+
+                    var principalKeyProp = principalKey.Properties[0];
+                    if (principalKeyProp.ClrType != typeof(Guid))
+                        continue;
+
+                    var principalId = (Guid)(principalEntry.Property(principalKeyProp.Name).CurrentValue ?? Guid.Empty);
+                    if (principalId == Guid.Empty)
+                    {
+                        // Se o principal ainda não tem Id, gere aqui (mesma regra de PK)
+                        principalEntry.Property(principalKeyProp.Name).CurrentValue = Guid.NewGuid();
+                        principalId = (Guid)principalEntry.Property(principalKeyProp.Name).CurrentValue!;
+                    }
+
+                    entry.Property(fkProp.Name).CurrentValue = principalId;
+                }
+            }
+
+            return result;
+        }
+    }
     public abstract class XEntity : XIReflectable
     {
         public static StringBuilder GetRules(params Type[] pType)
@@ -130,7 +221,6 @@ namespace TFX.Core
             PrepareConnection();
         }
 
-
         public XDBContext(DbContextOptions pOptions)
                : base(pOptions)
         {
@@ -221,6 +311,8 @@ namespace TFX.Core
         protected override void OnConfiguring(DbContextOptionsBuilder pBuilder)
         {
             pBuilder.AddInterceptors(new XCommandInterceptor(null, SharedTransaction));
+            //pBuilder.AddInterceptors(new XGuidPKFixupInterceptor());
+            //pBuilder.AddInterceptors(new XGuidFKFixupInterceptor());
             SelectProvider(pBuilder);
 
 #if DEBUG

@@ -9,7 +9,7 @@ class MainDataGrid extends XDataGrid
     }
 
 
-    SetModel(pModel: XServiceModel)
+    SetModel(pModel: XIServiceModel)
     {
         this.Table.SetColumns(pModel.DataView.Columns);
     }

@@ -26,17 +26,19 @@ namespace Tootega.Core.ERP.ReadOnly
         public static Guid CID = new Guid("8EF7B9BB-4F2B-4245-B181-2CA6D8399462");
         public TipoDocumentoServiceModel()
         {
-            PKFieldName = "Tipo";
+            PKFieldName = "ERPxDocumentoTipoID";
             SearchPath = "TipoDocumento/Search";
+            GetPath = "TipoDocumento/Get";
+            FlushPath = "TipoDocumento/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "Mascara", Title = "Máscara", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("BD2A8CAB-5356-492C-8209-73B2190B2530") });
+            Visible = true, FieldID = new Guid("BD2A8CAB-5356-492C-8209-73B2190B2530"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo de Documento", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("2A2C7242-E859-41DE-ABC1-350B28D5D2F6") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("2A2C7242-E859-41DE-ABC1-350B28D5D2F6"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxDocumentoTipoID", Title = "Tipo de Documento", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("B178B5FD-30A3-40D2-BDC3-DA9493AD4C3E") });
+            Visible = false, FieldID = new Guid("B178B5FD-30A3-40D2-BDC3-DA9493AD4C3E"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB"), ColumnType = XColumnType.PK });
             Forms.Add(new FRMTipoDocumentoFilter());
         }
     }
@@ -118,8 +120,8 @@ namespace Tootega.Core.ERP.ReadOnly
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] {  };
-            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

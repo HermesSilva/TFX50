@@ -26,26 +26,28 @@ namespace TFX.Core.Data.Servicos.Menu
         public static Guid CID = new Guid("CA94C52B-3EC3-495C-B034-B3652CED2947");
         public MenuServiceModel()
         {
-            PKFieldName = "Menu";
+            PKFieldName = "CORxMenuItemID";
             SearchPath = "Menu/Search";
+            GetPath = "Menu/Get";
+            FlushPath = "Menu/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "Menu", Title = "Menu", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("83F57D29-13D6-493B-AE00-B7C231C48BDE") });
+            Visible = true, FieldID = new Guid("83F57D29-13D6-493B-AE00-B7C231C48BDE"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Icone", Title = "Ícone", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("5E190CE8-D10D-4F76-945B-8701EFEE78BB") });
+            Visible = true, FieldID = new Guid("5E190CE8-D10D-4F76-945B-8701EFEE78BB"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Item", Title = "Item", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("DFEB94E3-345C-4E9F-AE6C-ED11B60784A0") });
+            Visible = true, FieldID = new Guid("DFEB94E3-345C-4E9F-AE6C-ED11B60784A0"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxMenuItemID", Title = "Item de Menu", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("F98E6F9B-4CFD-4316-9AEA-4046DBB770DA") });
+            Visible = false, FieldID = new Guid("F98E6F9B-4CFD-4316-9AEA-4046DBB770DA"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxRecursoID", Title = "Recurso", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("89C689DB-4075-41A2-B686-6E004733D2D4") });
+            Visible = false, FieldID = new Guid("89C689DB-4075-41A2-B686-6E004733D2D4"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxMenuID", Title = "Menu", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("65E4EB95-7648-4849-A88A-1EDE3E5CCD03") });
+            Visible = false, FieldID = new Guid("65E4EB95-7648-4849-A88A-1EDE3E5CCD03"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E") });
         }
     }
     public class AppData : XEndPointData

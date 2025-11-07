@@ -43,8 +43,8 @@ namespace Tootega.Core.ERP.Pessoa
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] { new Guid("CB957AA1-665D-438D-BB90-3FEC3A7CE3F0"), new Guid("BE0F57C6-CF6C-41E4-ACA1-BAD819FEBD9D") };
-            fld.SourceDisplayFieldID = new Guid[] { new Guid("BAA71C0C-B8B9-4767-9D5B-6AB3A829A89A"), new Guid("7154AB23-E94B-48FD-9D58-F903D166D05A") };
+            fld.TargetFieldID = new Guid[] { new Guid("CB957AA1-665D-438D-BB90-3FEC3A7CE3F0"), new Guid("BE0F57C6-CF6C-41E4-ACA1-BAD819FEBD9D") };
+            fld.SourceFieldID = new Guid[] { new Guid("BAA71C0C-B8B9-4767-9D5B-6AB3A829A89A"), new Guid("7154AB23-E94B-48FD-9D58-F903D166D05A") };
             fld.DataSourceID = new Guid("4E22A7DA-AD65-4076-85B0-71C22F6634A6");
             fld.AutoLoad = false;
             fld.FilterInative = true;
@@ -75,8 +75,8 @@ namespace Tootega.Core.ERP.Pessoa
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] {  };
-            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

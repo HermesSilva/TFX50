@@ -32,12 +32,7 @@ namespace TFX.Core.Controllers
         {
             get;
             internal set;
-        }
-        public string Details
-        {
-            get;
-            internal set;
-        }
+        }       
     }
 
     public class XResponseWrapperFilter : IAsyncResultFilter

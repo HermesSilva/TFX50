@@ -28,30 +28,32 @@ namespace Tootega.Core.CEP.ReadOnly
         {
             PKFieldName = "CEPxLogradouroID";
             SearchPath = "Logradouro/Search";
+            GetPath = "Logradouro/Get";
+            FlushPath = "Logradouro/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "Localidade", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("B70901C0-1293-457C-B03F-29CE9393AE57") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("B70901C0-1293-457C-B03F-29CE9393AE57"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Logradouro", Title = "Logradouro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("63C2FC0F-B117-46A6-B1F8-A42F5F5EDC53") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("63C2FC0F-B117-46A6-B1F8-A42F5F5EDC53"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("62E6788A-48D6-49E1-8526-587EC5A5AB2F") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("62E6788A-48D6-49E1-8526-587EC5A5AB2F"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Bairro", Title = "Bairro", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("AB358249-4E4D-4655-8C81-35069195BA94") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("AB358249-4E4D-4655-8C81-35069195BA94"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("226BCADC-0DA6-4AD9-98B7-38D6966F8FDC") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("226BCADC-0DA6-4AD9-98B7-38D6966F8FDC"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEP", Title = "CEP", Type = "String", Mask = "00.000-000", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("358E455F-477E-412D-B426-1BE2DC880409") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("358E455F-477E-412D-B426-1BE2DC880409"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLogradouroID", Title = "Logradouro", Type = "Int32", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("AF4B1A35-4EA4-4C7C-A591-67F6C43E591D") });
+            Visible = false, FieldID = new Guid("AF4B1A35-4EA4-4C7C-A591-67F6C43E591D"), 
+            GridView = false, FieldTypeID = new Guid("FAADA046-C1B9-4E89-9B64-310E272FC0CC"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "Int32", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("70689FE7-3FEC-44B6-84A6-237F823436F4") });
+            Visible = false, FieldID = new Guid("70689FE7-3FEC-44B6-84A6-237F823436F4"), 
+            GridView = false, FieldTypeID = new Guid("FAADA046-C1B9-4E89-9B64-310E272FC0CC") });
             Forms.Add(new FRMLogradouroFilter());
         }
     }
@@ -120,6 +122,8 @@ namespace Tootega.Core.CEP.ReadOnly
 
     public class LogradouroFilter : XFilter
     {
+        public XFilterField Sigla {get;set;}
+        public XFilterField Localidade {get;set;}
         public XFilterField Logradouro {get;set;}
         public XFilterField CEPxLogradouroID {get;set;}
     }
@@ -136,16 +140,16 @@ namespace Tootega.Core.CEP.ReadOnly
             XFRMField fld;
             fld = AddField(new XFRMField());
             fld.ForceRW = true;
-            fld.Name = "Logradouro";
-            fld.Title = "Logradouro";
+            fld.Name = "Sigla";
+            fld.Title = "Sigla da UF";
             fld.CanInsert = true;
             fld.CanUpdate = true;
             fld.RowCount = 2;
-            fld.ColCount = 32;
+            fld.ColCount = 6;
             fld.IsHidden = false;
             fld.Location = 1;
-            fld.EditorCID = XModelEditors.XSearchBox;
-            fld.Operator = XOperator.Like;
+            fld.EditorCID = XModelEditors.XString;
+            fld.Operator = XOperator.EqualTo;
             fld.JustifyHeight = false;
             fld.AllowEmpty = true;
             fld.FontColor = "#000000";
@@ -156,12 +160,76 @@ namespace Tootega.Core.CEP.ReadOnly
             fld.Scale = -1;
             fld.Length = -1;
             fld.TypeID = XDataTypes.XString;
-            fld.AdditionalFieldsID = new Guid[] { new Guid("62E6788A-48D6-49E1-8526-587EC5A5AB2F"), new Guid("63C2FC0F-B117-46A6-B1F8-A42F5F5EDC53"), new Guid("AB358249-4E4D-4655-8C81-35069195BA94"), new Guid("B70901C0-1293-457C-B03F-29CE9393AE57"), new Guid("226BCADC-0DA6-4AD9-98B7-38D6966F8FDC"), new Guid("358E455F-477E-412D-B426-1BE2DC880409") };
+            fld.AdditionalFieldsID = new Guid[] {  };
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] {  };
-            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.Name = "Localidade";
+            fld.Title = "Nome da Localidade";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 6;
+            fld.IsHidden = false;
+            fld.Location = 2;
+            fld.EditorCID = XModelEditors.XString;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 2;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XString;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.Name = "Logradouro";
+            fld.Title = "Nome";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 7;
+            fld.IsHidden = false;
+            fld.Location = 3;
+            fld.EditorCID = XModelEditors.XString;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 3;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XString;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

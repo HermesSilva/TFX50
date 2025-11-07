@@ -40,8 +40,8 @@ dotnet_naming_style.prefix_XI_pascal.capitalization = pascal_case
 dotnet_naming_style.prefix__pascal.required_prefix = _
 dotnet_naming_style.prefix__pascal.capitalization = pascal_case
 # Prefixo p + PascalCase
-dotnet_naming_style.prefix_p_pascal.required_prefix = p
-dotnet_naming_style.prefix_p_pascal.capitalization = pascal_case
+# dotnet_naming_style.prefix_p_pascal.required_prefix = p
+# dotnet_naming_style.prefix_p_pascal.capitalization = pascal_case
 
 #### Naming rules ####
 # Classes devem iniciar com X

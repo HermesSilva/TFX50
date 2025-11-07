@@ -104,7 +104,7 @@ interface XIEditor extends XIElement
     Field: XFRMField;
     Tuple: XTuple;
     Clear(): void;
-    SetField(pField: XFRMField): void;
+    SetField(pField: XFRMField, pSVCModel: XIServiceModel): void;
 }
 
 interface XIPopupPanel extends XIElement

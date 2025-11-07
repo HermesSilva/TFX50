@@ -1,34 +1,26 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-
-using AspNetCore.Scalar;
-using Microsoft.AspNetCore.OpenApi;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Models;
 
 using Scalar.AspNetCore;
-
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 using TFX.Core;
 using TFX.Core.Controllers;
@@ -36,6 +28,7 @@ using TFX.Core.Extensions;
 using TFX.Core.Identity;
 using TFX.Core.IDs;
 using TFX.Core.Interfaces;
+
 public class XCustomControllerFeatureProvider : IApplicationFeatureProvider<ControllerFeature>
 {
     public void PopulateFeature(IEnumerable<ApplicationPart> pParts, ControllerFeature pFeature)
@@ -68,6 +61,7 @@ public class XGuidUpperCaseConverter : JsonConverter<Guid>
         pWriter.WriteStringValue(pValue.ToString().ToUpperInvariant());
     }
 }
+
 public static class XServiceExtensions
 {
 
@@ -137,10 +131,13 @@ public static class XServiceExtensions
         {
             pOptions.InvalidModelStateResponseFactory = pContext =>
             {
-                return new BadRequestObjectResult(XResponse.BadJSon);
+                var err = string.Join("\r\n", pContext.ModelState.Values.SelectMany(a => a.Errors).Select(e => e.ErrorMessage));
+                return new BadRequestObjectResult(XResponse.BadJSon + "\r\n" + err);
             };
-        }).AddJsonOptions(pOptions => { pOptions.JsonSerializerOptions.PropertyNamingPolicy = null; });
-
+        }).AddJsonOptions(pOptions =>
+        {
+            pOptions.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals;
+        });
 
         pServices.AddRouting();
         pServices.AddAuthentication(XDefault.JWTKey)
@@ -226,13 +223,13 @@ public static class XServiceExtensions
             opt.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0;
             opt.AddDocumentTransformer(new XApplyOpenApiVisibility());
         });
-        
+
         // Configura o schema para usar PascalCase (mesmo padrão do serializador)
         pService.ConfigureHttpJsonOptions(options =>
         {
             options.SerializerOptions.PropertyNamingPolicy = null; // PascalCase
         });
-        
+
         return pService;
     }
 

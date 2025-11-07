@@ -121,6 +121,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="PessoaFisica\PessoaFisicaTipo.Controller.cs">
+      <Visible>False</Visible>
+      <DependentUpon>PessoaFisicaTipo.dssvc</DependentUpon>
+    </Compile>
     <Compile Include="PessoaFisica\PessoaFisicaTipo.DataSet.cs">
       <Visible>False</Visible>
       <DependentUpon>PessoaFisicaTipo.dssvc</DependentUpon>
@@ -137,6 +141,7 @@
     </Compile>
     <Compile Include="PessoaFisica\Rules\INFPessoaFisicaController.Rule.cs" />
     <Compile Include="PessoaFisica\Rules\INFPessoaFisicaService.Rule.cs" />
+    <Compile Include="PessoaFisica\Rules\INFPessoaFisicaTipoController.Rule.cs" />
     <Compile Include="PessoaFisica\Rules\INFPessoaFisicaTipoService.Rule.cs" />
     <Compile Include="PessoaJuridica\PessoaJuridica.Application.cs">
       <Visible>False</Visible>

@@ -47,8 +47,8 @@ namespace Tootega.Core.ERP.Profissional
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;
@@ -79,8 +79,8 @@ namespace Tootega.Core.ERP.Profissional
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] { new Guid("46510892-C37A-485E-938F-A7B4D2603C84") };
-                fld.SourceDisplayFieldID = new Guid[] { new Guid("E1C95896-5736-4247-A911-DA6300C691F9") };
+                fld.TargetFieldID = new Guid[] { new Guid("46510892-C37A-485E-938F-A7B4D2603C84") };
+                fld.SourceFieldID = new Guid[] { new Guid("E1C95896-5736-4247-A911-DA6300C691F9") };
                 fld.DataSourceID = new Guid("4E22A7DA-AD65-4076-85B0-71C22F6634A6");
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
@@ -113,8 +113,8 @@ namespace Tootega.Core.ERP.Profissional
                 fld.GridFormCID = new Guid("4D454765-952F-4AFC-BD90-84090560093B");
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;

@@ -174,8 +174,8 @@ interface XFRMField extends XObject
     ColCount: number
     OwnerID: string
     ParentID: string
-    TargetDisplayFieldID: string[]
-    SourceDisplayFieldID: string[]
+    TargetFieldID: string[]
+    SourceFieldID: string[]
     TargetFilterFieldID: string[]
     SourceFilterFieldID: string[]
     GridFormCID: string
@@ -197,7 +197,6 @@ interface XFRMField extends XObject
     Length: number
     Scale: number
     PAMID: string
-    SourceFieldID: string
     AutoLoad: boolean
     RowFieldID: string
     ForceRW: boolean

@@ -27,32 +27,34 @@ namespace Tootega.Core.ERP.Empresa
         public static Guid CID = new Guid("10AC1863-69A1-4E82-9C5D-1281E5C3AE4F");
         public EmpresaServiceModel()
         {
-            PKFieldName = "CORxStatusID";
+            PKFieldName = "CORxPessoaID";
             SearchPath = "Empresa/Search";
+            GetPath = "Empresa/Get";
+            FlushPath = "Empresa/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "Chave", Title = "Chave para Incluir Empresa", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("78EEDAD5-76B8-4064-AA6B-3AF400761D95") });
+            Visible = false, FieldID = new Guid("78EEDAD5-76B8-4064-AA6B-3AF400761D95"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CNPJ", Title = "CNPJ", Type = "String", Mask = "00.000.000/0000-00", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("DAD8DE4C-AB9C-4AF3-9190-875B8795254F") });
+            Visible = false, FieldID = new Guid("DAD8DE4C-AB9C-4AF3-9190-875B8795254F"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("5F52705E-195B-4477-B67D-CAD8558F30CF") });
+            Visible = false, FieldID = new Guid("5F52705E-195B-4477-B67D-CAD8558F30CF"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("7B30D927-CEFD-4732-8EA5-42D12A7C06DB") });
+            Visible = false, FieldID = new Guid("7B30D927-CEFD-4732-8EA5-42D12A7C06DB"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("6E118BAB-E84A-4466-8480-F0857E256248") });
+            Visible = false, FieldID = new Guid("6E118BAB-E84A-4466-8480-F0857E256248"), 
+            GridView = false, FieldTypeID = new Guid("FAADA046-C1B9-4E89-9B64-310E272FC0CC") });
             DataView.Columns.Add(new XColumnModel() { Name = "RazaoSocial", Title = "Razão Social", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
-                                                      FieldID = new Guid("439773CF-6692-4E65-86CF-C7DF8A116F79") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin, FieldID = new Guid("439773CF-6692-4E65-86CF-C7DF8A116F79"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("44A0F494-6C0A-4CA1-9918-8F6F613F14D7") });
+            Visible = false, FieldID = new Guid("44A0F494-6C0A-4CA1-9918-8F6F613F14D7"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "CNPJ", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("670BFB5C-16A4-4BB9-BC34-BBFECC28E97A") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("670BFB5C-16A4-4BB9-BC34-BBFECC28E97A"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             Forms.Add(new FRMEmpresaFilter());
         }
     }
@@ -123,7 +125,8 @@ namespace Tootega.Core.ERP.Empresa
 
     public class EmpresaFilter : XFilter
     {
-        public XFilterField RazaoSocial {get;set;}
+        public XFilterField CPFCNPJ {get;set;}
+        public XFilterField Nome {get;set;}
         public XFilterField CORxPessoaID {get;set;}
     }
     public class FRMEmpresaFilter : XFRMModel
@@ -138,17 +141,18 @@ namespace Tootega.Core.ERP.Empresa
             Type = XFRMType.SVCFilter;
             XFRMField fld;
             fld = AddField(new XFRMField());
+            fld.Mask = "###.###.###-##|##.###.###/####-##";
             fld.ForceRW = true;
-            fld.Name = "RazaoSocial";
-            fld.Title = "Razão Social";
+            fld.Name = "CPFCNPJ";
+            fld.Title = "CPF ou CNPJ";
             fld.CanInsert = true;
             fld.CanUpdate = true;
             fld.RowCount = 2;
-            fld.ColCount = 32;
+            fld.ColCount = 9;
             fld.IsHidden = false;
             fld.Location = 1;
-            fld.EditorCID = XModelEditors.XSearchBox;
-            fld.Operator = XOperator.Like;
+            fld.EditorCID = XModelEditors.XString;
+            fld.Operator = XOperator.EqualTo;
             fld.JustifyHeight = false;
             fld.AllowEmpty = true;
             fld.FontColor = "#000000";
@@ -159,12 +163,44 @@ namespace Tootega.Core.ERP.Empresa
             fld.Scale = -1;
             fld.Length = -1;
             fld.TypeID = XDataTypes.XString;
-            fld.AdditionalFieldsID = new Guid[] { new Guid("3EF72D40-4115-422E-B159-17C8A4592288"), new Guid("9F6BE12B-4F78-4A37-A856-630799A8BB44") };
+            fld.AdditionalFieldsID = new Guid[] {  };
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] {  };
-            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.Name = "Nome";
+            fld.Title = "Nome";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 13;
+            fld.IsHidden = false;
+            fld.Location = 2;
+            fld.EditorCID = XModelEditors.XString;
+            fld.Operator = XOperator.LikeBegin;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 2;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XString;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

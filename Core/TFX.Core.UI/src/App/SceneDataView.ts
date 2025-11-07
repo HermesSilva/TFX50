@@ -16,13 +16,13 @@ class SceneDataView extends XScene
 
     Filter: XFilter;
     DataGrid: MainDataGrid;
-    SVCModel!: XServiceModel;
+    SVCModel!: XIServiceModel;
     Teste: string | undefined;
 
     @Inject(XHttpClient, XLifetime.Singleton)
     Client!: XHttpClient;
 
-    SetModel(pModel: XServiceModel)
+    SetModel(pModel: XIServiceModel)
     {
         this.SVCModel = pModel;
         this.Load();

@@ -1,6 +1,7 @@
 ﻿/// <reference path="../XMessageManager.ts" />
 
 type XOnLoad = (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent | null) => void;
+type XOnGetServiceModel = (pModel: XIServiceModel) => void;
 
 class XHttpClient
 {
@@ -49,6 +50,16 @@ class XHttpClient
         return this;
     }
 
+    public GetSVCModel(pModelID: string, pOnLoad: XOnGetServiceModel)
+    {
+        this.SendAsync(Paths.ServiceModel, { ID: pModelID }, (pData: XResponse<XIServiceModel>) =>
+        {
+            const svcModel = pData.Data
+            Object.setPrototypeOf(svcModel, XServiceModel.prototype);
+            pOnLoad(svcModel);
+        });
+    }
+
     public SendAsync(pPath: string, pData: any = null, pOnLoad: XOnLoad | null = null): void
     {
         if (pData != null)
@@ -81,7 +92,7 @@ class XHttpClient
                             this.OnLoad?.apply(this.Context, [this._Xhr.response, this._CallBackData, pEvent]);
                     }
                     else
-                        this.OnError?.apply(this.Context, [this.Context, new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+                        this.OnError?.apply(this.Context, [this.Context, new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response.Data.Message + "]"), this._CallBackData, pEvent]);
                 }
                 catch (pError)
                 {
@@ -92,7 +103,7 @@ class XHttpClient
 
             this._Xhr.onerror = (pEvent) =>
             {
-                this.OnError?.apply(this.Context, [this.Context, new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response + "]"), this._CallBackData, pEvent]);
+                this.OnError?.apply(this.Context, [this.Context, new Error("Error status [" + this._Xhr.status + "], Response [" + this._Xhr.response.Data.Message + "]"), this._CallBackData, pEvent]);
             }
 
             if (this.OnProgress)

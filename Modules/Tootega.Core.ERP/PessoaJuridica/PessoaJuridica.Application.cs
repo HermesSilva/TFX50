@@ -47,8 +47,8 @@ namespace Tootega.Core.ERP.PessoaJuridica
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;
@@ -80,8 +80,8 @@ namespace Tootega.Core.ERP.PessoaJuridica
                 fld.GridFormCID = new Guid("D9A25552-E8A6-41F3-9A28-BD36F401C01C");
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;

@@ -123,23 +123,29 @@
           <XLanguage IETFCode="pt-br" IsDefault="true">Empresa - Filter</XLanguage>
         </XData>
       </XValues>
-      <XFRMField ID="32B861BB-2A16-4555-86E0-82DCC2D6F763" iID="591124" ParentID="439773CF-6692-4E65-86CF-C7DF8A116F79">
+      <XFRMField ID="60275BCC-AD0C-4C17-8709-9A504576F304" ParentID="7B30D927-CEFD-4732-8EA5-42D12A7C06DB">
         <XValues>
-          <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="439773CF-6692-4E65-86CF-C7DF8A116F79" Text="RazaoSocial" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Empresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="" Type="Guid">439773CF-6692-4E65-86CF-C7DF8A116F79</XParentData>
-          <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
-          <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">32</XData>
-          <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
-          <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">AA2A0DB9-2C59-4833-994D-3DBF2AA0CB3C</XData>
-          <XLinkArrayData Type="Guid[]" Name="AdditionalFields" ID="AD828E26-BA2E-46CC-97CF-132510C88FC6">
-            <XLinkData ID="2B081B65-83CE-4329-8314-F49E4DBEC11A" ElementID="439773CF-6692-4E65-86CF-C7DF8A116F79" Text="RazaoSocial" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Empresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="" Order="1">439773CF-6692-4E65-86CF-C7DF8A116F79</XLinkData>
-            <XLinkData ID="DF3409E4-3AAF-4584-8764-769CCF1DBEED" ElementID="670BFB5C-16A4-4BB9-BC34-BBFECC28E97A" Text="Numero" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Empresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="" Order="2">670BFB5C-16A4-4BB9-BC34-BBFECC28E97A</XLinkData>
-          </XLinkArrayData>
-          <XData Name="Operator" ID="75AEF4FE-A2A3-4DDA-A61D-23CC8575E8A2" Type="XOperator">Like</XData>
-          <XData Name="TypeID" ID="244BD6B3-4873-4957-A34D-FD97F7DBD90D" Type="Guid">8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62</XData>
-          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=999;Height=80}</XData>
-          <XData Name="Margin" ID="B91A57BD-0703-451E-8A58-9C8D43F1A554" Type="Thickness">{Left=2;Top=2;Right=2;Bottom=2}</XData>
+          <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="7B30D927-CEFD-4732-8EA5-42D12A7C06DB" Text="Nome" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Empresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="" Type="Guid">7B30D927-CEFD-4732-8EA5-42D12A7C06DB</XParentData>
+          <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">2</XData>
+          <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+          <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">13</XData>
           <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
           <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=280.96875;Y=0;Width=405.84375;Height=80}</XData>
+          <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
+          <XData Name="Operator" ID="75AEF4FE-A2A3-4DDA-A61D-23CC8575E8A2" Type="XOperator">LikeBegin</XData>
+        </XValues>
+      </XFRMField>
+      <XFRMField ID="D6010E16-674D-43E8-B63E-78EE330B1CBB" ParentID="9532B7F3-59F0-4268-A722-DA6701D18477">
+        <XValues>
+          <XParentData Name="ParentID" ID="78424203-E6A4-433F-9110-7FEEE1580D68" ElementID="9532B7F3-59F0-4268-A722-DA6701D18477" Text="CPFCNPJ" DocumentID="00000000-0000-0000-0000-000000000000" DocumentName="Empresa" ModuleID="00000000-0000-0000-0000-000000000000" ModuleName="Tootega.Core.ERP" DataEx="" Type="Guid">9532B7F3-59F0-4268-A722-DA6701D18477</XParentData>
+          <XData Name="OrderIndex" ID="5469955E-340A-40D3-A1AE-9C6122EE0BF9" Type="Int32">1</XData>
+          <XData Name="EditorID" ID="CB07C69F-17A0-4068-A768-4BF4378B28FC" Type="Guid">F5982E79-BA45-40FB-85E1-9F2C8B90B6EF</XData>
+          <XData Name="ColCount" ID="6F35E6B0-9AD5-4B6B-9F16-943E2CF776D6" Type="Int32">9</XData>
+          <XData Name="VerticalAlignment" ID="C872C9D6-1DB1-4D3F-9ADB-15A74AEF927D" Type="XVerticalAlignment">None</XData>
+          <XData Name="HorizontalAlignment" ID="B1F718C2-0551-4FBD-8816-6D59450AE891" Type="XHorizontalAlignment">None</XData>
+          <XData Name="Rect" ID="F731FAEC-F42C-499C-AADB-71823B4600F3" Type="Rect">{X=0;Y=0;Width=280.96875;Height=80}</XData>
+          <XData Name="RowCount" ID="3A1EEBC7-053D-4AA7-B842-F9B6D7BC8889" Type="Int32">2</XData>
         </XValues>
       </XFRMField>
     </XFRMForm>

@@ -28,39 +28,41 @@ namespace Tootega.Core.CEP.Localidade
         {
             PKFieldName = "CEPxLocalidadeID";
             SearchPath = "Localidade/Search";
+            GetPath = "Localidade/Get";
+            FlushPath = "Localidade/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadeID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("F022EB59-F6D5-4AFC-A8AA-4B62CF3973D4") });
+            Visible = false, FieldID = new Guid("F022EB59-F6D5-4AFC-A8AA-4B62CF3973D4"), 
+            GridView = false, FieldTypeID = new Guid("FAADA046-C1B9-4E89-9B64-310E272FC0CC"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "PaisSigla", Title = "País", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("64515E95-9002-438C-BCDC-0FEF43B188B6") });
+            Visible = false, FieldID = new Guid("64515E95-9002-438C-BCDC-0FEF43B188B6"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadeTipoID", Title = "Tipo de Localidade", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("E8FCE8D3-EC9D-4139-A00A-FC66BDD0B482") });
+            Visible = false, FieldID = new Guid("E8FCE8D3-EC9D-4139-A00A-FC66BDD0B482"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPGeral", Title = "CEP Geral", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("14A00A61-9765-491F-9A6F-C6686DE57FB2") });
+            Visible = false, FieldID = new Guid("14A00A61-9765-491F-9A6F-C6686DE57FB2"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxUFID", Title = "Unidade Federativa", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("FEA7F294-BE27-4D6B-BC9C-615084E566EC") });
+            Visible = false, FieldID = new Guid("FEA7F294-BE27-4D6B-BC9C-615084E566EC"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "CodigoIBGE", Title = "Código no IBGE", Type = "String", Mask = "0000000", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("AE7859AE-9246-4399-AA6D-5EF37035150B") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("AE7859AE-9246-4399-AA6D-5EF37035150B"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome da Localidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin,
-                                                      FieldID = new Guid("D1B3E21B-37C4-4F23-BD88-FA930D4D1AEC") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.LikeBegin, FieldID = new Guid("D1B3E21B-37C4-4F23-BD88-FA930D4D1AEC"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "Int32", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("8F719236-4F5C-4072-810C-497403F53BF4") });
+            Visible = false, FieldID = new Guid("8F719236-4F5C-4072-810C-497403F53BF4"), 
+            GridView = false, FieldTypeID = new Guid("FAADA046-C1B9-4E89-9B64-310E272FC0CC") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("03182F31-65B0-45DF-A3FB-D7E76F3F812F") });
+            Visible = true, FieldID = new Guid("03182F31-65B0-45DF-A3FB-D7E76F3F812F"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Sigla", Title = "Sigla da UF", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("CB68C234-A8F7-40DA-9885-899A48616D05") });
+            Visible = true, FieldID = new Guid("CB68C234-A8F7-40DA-9885-899A48616D05"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "UFNome", Title = "Nome da UF", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("D3E86C65-A7AD-4830-B1CB-E0EC59BF91B3") });
+            Visible = true, FieldID = new Guid("D3E86C65-A7AD-4830-B1CB-E0EC59BF91B3"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             Forms.Add(new FRMLocalidadeFilter());
         }
     }
@@ -183,8 +185,8 @@ namespace Tootega.Core.CEP.Localidade
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] {  };
-            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

@@ -47,8 +47,8 @@ namespace Tootega.Core.CEP.Localidade
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;

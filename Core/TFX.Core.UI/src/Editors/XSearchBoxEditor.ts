@@ -31,7 +31,7 @@ class XSearchBoxEditor extends XDiv
     Form!: XFRMModel;
     OnSerach?: XMethod<any>;
     Fields: XArray<XEditableTag> = new XArray<XEditableTag>();
-    AppSVCModel?: XServiceModel;
+    AppSVCModel?: XIServiceModel;
 
     ChildSizeChanged()
     {
@@ -41,7 +41,7 @@ class XSearchBoxEditor extends XDiv
             this.HTML.style.minHeight = (top + cr.Height + 5) + "px";
     }
 
-    SetModel(pSVCModel: XServiceModel, pForm: XFRMModel, pColumns?: XColumnModel[])
+    SetModel(pSVCModel: XIServiceModel, pForm: XFRMModel, pColumns?: XColumnModel[])
     {
         this.AppSVCModel = pSVCModel;
         this.Form = pForm;
@@ -85,7 +85,7 @@ class XSearchBoxEditor extends XDiv
     AddField(pColumn: XColumnModel)
     {
         let tag = new XEditableTag(this.Container);
-        let ffld = this.Form.Fields.FirstOrNull(f => f.TargetDisplayFieldID.Any(dfld => pColumn.FieldID == dfld));
+        let ffld = this.Form.Fields.FirstOrNull(f => f.TargetFieldID.Any(dfld => pColumn.FieldID == dfld));
         ffld = ffld ?? this.Form.Fields.FirstOrNull(f => f.Name == pColumn.Name);
         tag.SetModel(pColumn, ffld);
         tag.Title.innerHTML = pColumn.Title;

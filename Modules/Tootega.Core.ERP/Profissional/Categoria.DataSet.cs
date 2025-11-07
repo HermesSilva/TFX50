@@ -26,20 +26,22 @@ namespace Tootega.Core.ERP.Profissional
         public static Guid CID = new Guid("59D73CAE-2254-4721-9DE0-97F54D83391E");
         public CategoriaServiceModel()
         {
-            PKFieldName = "Categoria";
+            PKFieldName = "ERPxProfissionalCategoriaID";
             SearchPath = "Categoria/Search";
+            GetPath = "Categoria/Get";
+            FlushPath = "Categoria/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxCategoriaID", Title = "Categoria de Profissional", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("8FF07CFA-237F-44A0-93D6-D3E296995F23") });
+            Visible = false, FieldID = new Guid("8FF07CFA-237F-44A0-93D6-D3E296995F23"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "Categoria", Title = "Categoria", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("960D1330-9716-4E0D-AEE8-4CB880AC9E7C") });
+            Visible = true, FieldID = new Guid("960D1330-9716-4E0D-AEE8-4CB880AC9E7C"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxProfissionalCategoriaID", Title = "Categorias por Profissional", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("721A107B-41C2-4C16-B8A3-4652753D8A44") });
+            Visible = false, FieldID = new Guid("721A107B-41C2-4C16-B8A3-4652753D8A44"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxProfissionalID", Title = "Profissionais", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("A6828D0B-9053-403D-9BDB-5654B95CFACB") });
+            Visible = false, FieldID = new Guid("A6828D0B-9053-403D-9BDB-5654B95CFACB"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E") });
             Forms.Add(new FRMCategoriaFilter());
         }
     }

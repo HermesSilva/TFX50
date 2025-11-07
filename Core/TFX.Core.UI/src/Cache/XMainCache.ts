@@ -5,7 +5,7 @@ type XAppLoad = (App: XAPPModel) => void;
 class XMainCache
 {
     private static AppCache: { [Key: string]: XAPPModel } = {}
-    private static ServiceCache: { [Key: string]: XServiceModel } = {}
+    private static ServiceCache: { [Key: string]: XIServiceModel } = {}
     private static _Client = new XHttpClient();
 
     static GetApp(AppID: string, pContex: any, pCallBack: XAppLoad | any)
@@ -33,7 +33,7 @@ class XMainCache
             return;
         }
         this._Client.SetCallBackData([pCallBack, pContex])
-        this._Client.SendAsync(Paths.AppModel, { ID: AppID }, (pData: XResponse<XServiceModel>, pCallData: any | null, pEvent: any | null) =>
+        this._Client.SendAsync(Paths.AppModel, { ID: AppID }, (pData: XResponse<XIServiceModel>, pCallData: any | null, pEvent: any | null) =>
         {
             XMainCache.ServiceCache[pData.Data.ID] = pData.Data;
             pCallData[0].apply(pCallData[1], [pData.Data]);

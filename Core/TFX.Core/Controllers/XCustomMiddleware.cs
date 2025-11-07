@@ -46,8 +46,7 @@ namespace TFX.Core.Controllers
                     Ok = false,
                     Status = pContext.Response.StatusCode,
                     Data = null,
-                    Errors = XUtils.GetExceptionMessages(pEx),
-                    Details = XUtils.GetExceptionDetails(pEx),
+                    Errors = XUtils.GetExceptionDetails(pEx),
                 };
                 await pContext.Response.WriteAsync(XUtils.SerializeString(response));
             }

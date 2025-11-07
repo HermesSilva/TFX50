@@ -26,26 +26,28 @@ namespace Tootega.Core.ERP.Profissional
         public static Guid CID = new Guid("C491121C-26B3-400D-8A45-7593CC13AE7E");
         public HorariosServiceModel()
         {
-            PKFieldName = "Fim";
+            PKFieldName = "ERPxProfissionalHorarioID";
             SearchPath = "Horarios/Search";
+            GetPath = "Horarios/Get";
+            FlushPath = "Horarios/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "Inicio", Title = "Início", Type = "DateTime", Mask = "HH:mm", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("586080AC-5F8C-4335-8A7E-7DEBC336A8A3") });
+            Visible = true, FieldID = new Guid("586080AC-5F8C-4335-8A7E-7DEBC336A8A3"), 
+            GridView = true, FieldTypeID = new Guid("424A36CB-FD57-4FF6-ABA4-8010970352CE") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxProfissionalID", Title = "Profissionais", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("53F5147C-E64E-47E1-88DF-20AC9FE5CE32") });
+            Visible = false, FieldID = new Guid("53F5147C-E64E-47E1-88DF-20AC9FE5CE32"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E") });
             DataView.Columns.Add(new XColumnModel() { Name = "Horario", Title = "Tipo de Horário", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("0D639628-AA55-4709-9874-FF21BFFF96EA") });
+            Visible = true, FieldID = new Guid("0D639628-AA55-4709-9874-FF21BFFF96EA"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxProfissionalHorarioID", Title = "Itens de Horário", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("B127615B-5110-4457-8E34-F27E51B323A8") });
+            Visible = false, FieldID = new Guid("B127615B-5110-4457-8E34-F27E51B323A8"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxProfissionalHorarioTipoID", Title = "Tipos de Horários", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("C332BFED-8F91-4485-B003-C994A2685592") });
+            Visible = false, FieldID = new Guid("C332BFED-8F91-4485-B003-C994A2685592"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "Fim", Title = "Fim", Type = "DateTime", Mask = "HH:mm", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("2EB7DC40-2C2B-40FB-8104-59A45555FDF3") });
+            Visible = true, FieldID = new Guid("2EB7DC40-2C2B-40FB-8104-59A45555FDF3"), 
+            GridView = true, FieldTypeID = new Guid("424A36CB-FD57-4FF6-ABA4-8010970352CE") });
             Forms.Add(new FRMHorariosFilter());
         }
     }

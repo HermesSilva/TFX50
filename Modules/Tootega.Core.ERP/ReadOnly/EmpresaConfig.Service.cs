@@ -106,6 +106,7 @@ namespace Tootega.Core.ERP.ReadOnly
             pBuilder.Entity<CORxPessoa>(ett =>
             {
                 ett.HasKey(e => e.CORxPessoaID).HasName("PK_CORxPessoa");
+                ett.Property(e => e.CORxPessoaID).ValueGeneratedOnAdd().HasDefaultValueSql("newsequentialid()");
 
                 ett.Property(d => d.CORxPessoaID).HasColumnType(GetDBType("Guid"));
                 ett.Property(d => d.Nome).HasColumnType(GetDBType("String", 180));

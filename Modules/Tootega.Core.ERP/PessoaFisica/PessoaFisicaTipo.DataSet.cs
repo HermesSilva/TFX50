@@ -28,21 +28,24 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
             PKFieldName = "ERPxPessoaFisicaTiposID";
             SearchPath = "PessoaFisicaTipo/Search";
+            GetPath = "PessoaFisicaTipo/Get";
+            FlushPath = "PessoaFisicaTipo/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxPessoaFisicaTiposID", Title = "Ligação de Pessoa Física à Tipo", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("DC818014-5932-499A-9D4E-D844095D945B") });
+            Visible = false, FieldID = new Guid("DC818014-5932-499A-9D4E-D844095D945B"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxPessoaFisicaID", Title = "Pessoa Física", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("F789370A-A024-432F-B14F-6BE177BA44F9") });
+            Visible = false, FieldID = new Guid("F789370A-A024-432F-B14F-6BE177BA44F9"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxPessoaFisicaTipoID", Title = "Tipo de Pessoa Física", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("0A8569F6-1867-4BED-A4F7-30BB16B9A982") });
+            Visible = false, FieldID = new Guid("0A8569F6-1867-4BED-A4F7-30BB16B9A982"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo de Pessoa Física", Type = "String", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("F1151E4B-5FE7-4D35-AED0-C984BBE25CB8") });
+            Visible = true, FieldID = new Guid("F1151E4B-5FE7-4D35-AED0-C984BBE25CB8"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("A654D10F-DD91-44EE-8D48-7E6167E0F178") });
+            Visible = true, FieldID = new Guid("A654D10F-DD91-44EE-8D48-7E6167E0F178"), 
+            GridView = true, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
+            Forms.Add(new FRMPessoaFisicaTipoFilter());
         }
     }
     public class PessoaFisicaTipoTuple : XServiceDataTuple
@@ -89,6 +92,58 @@ namespace Tootega.Core.ERP.PessoaFisica
         public XInt16DataField CORxStatusID {get;set;}
     }
 
+    public class PessoaFisicaTipoFilter : XFilter
+    {
+        public XFilterField Tipo {get;set;}
+        public XFilterField ERPxPessoaFisicaTiposID {get;set;}
+    }
+    public class FRMPessoaFisicaTipoFilter : XFRMModel
+    {
+        public FRMPessoaFisicaTipoFilter()
+        {
+            ID = new Guid("C130AA42-F38D-44A6-A2BE-75C2BF1BD46F");
+            Name = "PessoaFisicaTipoFilter";
+            Title = "";
+            MinRows = 2;
+            Style = XFRMStyle.Normal;
+            Type = XFRMType.SVCFilter;
+            XFRMField fld;
+            fld = AddField(new XFRMField());
+            fld.ForceRW = true;
+            fld.Name = "Tipo";
+            fld.Title = "Tipo de Pessoa Física";
+            fld.CanInsert = true;
+            fld.CanUpdate = true;
+            fld.RowCount = 2;
+            fld.ColCount = 8;
+            fld.IsHidden = false;
+            fld.Location = 1;
+            fld.EditorCID = XModelEditors.XString;
+            fld.Operator = XOperator.EqualTo;
+            fld.JustifyHeight = false;
+            fld.AllowEmpty = true;
+            fld.FontColor = "#000000";
+            fld.FontStyle = XFontStyle.Normal;
+            fld.ShowFooter = false;
+            fld.ViewSAM = new Guid("00000000-0000-0000-0000-000000000000");
+            fld.Order = 1;
+            fld.Scale = -1;
+            fld.Length = -1;
+            fld.TypeID = XDataTypes.XString;
+            fld.AdditionalFieldsID = new Guid[] {  };
+            fld.AdditionalDataFieldsID = new Guid[] {  };
+            fld.TargetFilterFieldID = new Guid[] {  };
+            fld.SourceFilterFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
+            fld.AutoLoad = false;
+            fld.FilterInative = true;
+            fld.IsAnswer = false;
+            fld.AllowMultiSelect = false;
+        }
+    }
+
+
     public class PessoaFisicaTipoRequest : XRequest
     {
         public Guid ERPxPessoaFisicaTiposID {get;set;}
@@ -98,9 +153,9 @@ namespace Tootega.Core.ERP.PessoaFisica
     {
         object Flush(PessoaFisicaTipoDataSet pDataSet);
 
-        PessoaFisicaTipoDataSet Execute();
-        PessoaFisicaTipoDataSet InternalGet();
-        IQueryable<PessoaFisicaTipoTuple> ExecuteQuery();
+        PessoaFisicaTipoDataSet Execute(PessoaFisicaTipoFilter pFilter);
+        PessoaFisicaTipoDataSet InternalGet(PessoaFisicaTipoFilter pFilter);
+        IQueryable<PessoaFisicaTipoTuple> ExecuteQuery(PessoaFisicaTipoFilter pFilter);
     }
 
     public abstract class BasePessoaFisicaTipoRule : XServiceRule<PessoaFisicaTipoTuple, PessoaFisicaTipoTuple>
@@ -110,8 +165,9 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
         }
 
-        public virtual void Execute()
+        public virtual PessoaFisicaTipoFilter Execute(PessoaFisicaTipoFilter pFilter)
         {
+            return pFilter;
         }
     }
 

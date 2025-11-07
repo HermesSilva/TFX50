@@ -164,7 +164,7 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
             Context.Commit();
         }
-        public IQueryable<PessoaFisicaTipoTuple> ExecuteQuery()
+        public IQueryable<PessoaFisicaTipoTuple> ExecuteQuery(PessoaFisicaTipoFilter pFilter)
         {
             var ctx = Context;
             var query =  from ERPxPessoaFisicaTipo in ctx.ERPxPessoaFisicaTipo
@@ -174,6 +174,25 @@ namespace Tootega.Core.ERP.PessoaFisica
             query = _INFRule.GetWhere(query);
 
 
+            if (pFilter != null)
+            {
+                if (pFilter.Tipo?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxPessoaFisicaTipo.Tipo == Convert.ToString(pFilter.Tipo.Value));
+                if (pFilter.ERPxPessoaFisicaTiposID?.State == XFieldState.NotEmpty)
+                    query = query.Where(q => q.ERPxPessoaFisicaTipos.ERPxPessoaFisicaTiposID == new Guid(Convert.ToString(pFilter.ERPxPessoaFisicaTiposID.Value)));
+            }
+
+            if (!LoadAll)
+            {
+                if (pFilter?.SkipRows > 0)
+                    query = query.Skip(pFilter.SkipRows.Value);
+
+                if (pFilter?.TakeRows > 0)
+                    query = query.Take(pFilter.TakeRows.Value);
+                else
+                    query = query.Take(75);
+            }
+
             var qry = query.Select(q => new PessoaFisicaTipoTuple(q.ERPxPessoaFisicaTipos.ERPxPessoaFisicaTiposID,
                                       q.ERPxPessoaFisicaTipos.ERPxPessoaFisicaID,
                                       q.ERPxPessoaFisicaTipos.ERPxPessoaFisicaTipoID,
@@ -182,10 +201,10 @@ namespace Tootega.Core.ERP.PessoaFisica
             return qry;
         }
 
-        public PessoaFisicaTipoDataSet Execute()
+        public PessoaFisicaTipoDataSet Execute(PessoaFisicaTipoFilter pFilter)
         {
             _INFRule.InternalBeforeExecute();
-            var qry = ExecuteQuery();
+            var qry = ExecuteQuery(pFilter);
             var tuples = qry.ToList();
             tuples = Rule.InternalAfterSelect(tuples);
             _INFRule.InternalAfterExecute(tuples);
@@ -193,16 +212,15 @@ namespace Tootega.Core.ERP.PessoaFisica
             return dataset;
         }
 
-        public PessoaFisicaTipoDataSet InternalGet()
+        public PessoaFisicaTipoDataSet InternalGet(PessoaFisicaTipoFilter pFilter)
         {
-            //_INFRule.InternalBeforeExecute();
-            //var qry = ExecuteQuery(pFilter);
-            //var tuples = qry.ToList();
-            //tuples = Rule.InternalAfterSelect(tuples);
-            //_INFRule.InternalAfterExecute(tuples);
-            //var dataset = new PessoaFisicaTipoDataSet { Tuples = tuples };
-            //return dataset;
-            return Execute();
+            _INFRule.InternalBeforeExecute();
+            var qry = ExecuteQuery(pFilter);
+            var tuples = qry.ToList();
+            tuples = Rule.InternalAfterSelect(tuples);
+            _INFRule.InternalAfterExecute(tuples);
+            var dataset = new PessoaFisicaTipoDataSet { Tuples = tuples };
+            return dataset;
         }
 
         public object Flush(PessoaFisicaTipoDataSet pDataSet)

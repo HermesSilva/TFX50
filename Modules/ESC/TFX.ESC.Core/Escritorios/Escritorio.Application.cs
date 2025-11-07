@@ -47,8 +47,8 @@ namespace TFX.ESC.Core.Escritorios
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;
@@ -79,8 +79,8 @@ namespace TFX.ESC.Core.Escritorios
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] {  };
-                fld.SourceDisplayFieldID = new Guid[] {  };
+                fld.TargetFieldID = new Guid[] {  };
+                fld.SourceFieldID = new Guid[] {  };
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
                 fld.IsAnswer = false;
@@ -110,8 +110,8 @@ namespace TFX.ESC.Core.Escritorios
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] { new Guid("62E97ECC-A7D5-4338-85FB-E3E5F5797D71") };
-                fld.SourceDisplayFieldID = new Guid[] { new Guid("D1B3E21B-37C4-4F23-BD88-FA930D4D1AEC") };
+                fld.TargetFieldID = new Guid[] { new Guid("62E97ECC-A7D5-4338-85FB-E3E5F5797D71"), new Guid("46D1BEF5-8D47-4D1E-8632-459CAF8B601D"), new Guid("DA7716E7-4D2C-4E02-9D70-C8391EB98C08") };
+                fld.SourceFieldID = new Guid[] { new Guid("D1B3E21B-37C4-4F23-BD88-FA930D4D1AEC"), new Guid("CB68C234-A8F7-40DA-9885-899A48616D05"), new Guid("FEA7F294-BE27-4D6B-BC9C-615084E566EC") };
                 fld.DataSourceID = new Guid("447A4B15-4C86-4FFF-B29F-8F2FFF7D7EFD");
                 fld.AutoLoad = false;
                 fld.FilterInative = true;
@@ -143,8 +143,8 @@ namespace TFX.ESC.Core.Escritorios
                 fld.AdditionalDataFieldsID = new Guid[] {  };
                 fld.TargetFilterFieldID = new Guid[] {  };
                 fld.SourceFilterFieldID = new Guid[] {  };
-                fld.TargetDisplayFieldID = new Guid[] { new Guid("46D1BEF5-8D47-4D1E-8632-459CAF8B601D") };
-                fld.SourceDisplayFieldID = new Guid[] { new Guid("3AE65011-1DED-43F4-A98B-910115BC4D33") };
+                fld.TargetFieldID = new Guid[] { new Guid("46D1BEF5-8D47-4D1E-8632-459CAF8B601D") };
+                fld.SourceFieldID = new Guid[] { new Guid("3AE65011-1DED-43F4-A98B-910115BC4D33") };
                 fld.DataSourceID = new Guid("59AFD485-EB75-4FAB-852C-BFE018FF575E");
                 fld.AutoLoad = false;
                 fld.FilterInative = true;

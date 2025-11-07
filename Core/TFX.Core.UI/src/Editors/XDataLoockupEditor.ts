@@ -8,9 +8,11 @@ class XDropDownDataGrid extends XDataGrid
         this.Editor = pOwner;
     }
     Editor: XDataLoockupEditor;
+    SVCModel!: XIServiceModel;
 
-    SetModel(pModel: XServiceModel)
+    SetModel(pModel: XIServiceModel)
     {
+        this.SVCModel = pModel;
         this.Table.SetColumns(pModel.DataView.Columns);
     }
 
@@ -35,31 +37,60 @@ class XDataLoockupEditor extends XBaseLoockupInput
     @Inject(XHttpClient, XLifetime.Transient)
     Client!: XHttpClient;
     DataGrid: XDropDownDataGrid;
-    SVCModel!: XServiceModel;
-    override SetField(pField: XFRMField)
+
+    override SetField(pField: XFRMField, pSVCModel: XIServiceModel)
     {
-        super.SetField(pField);
-        this.Client?.SendAsync(Paths.ServiceModel, { ID: this.Field.DataSourceID }, (pData: XResponse<XServiceModel>) =>
+        super.SetField(pField, pSVCModel);
+        this.Client?.GetSVCModel(this.Field.DataSourceID, (pModel) =>
         {
-            this.DataGrid.SetModel(pData.Data);
-            this.SVCModel = pData.Data;
+            this.DataGrid.SetModel(pModel);
+            this.RawValue = this._RawValue;
             this.SizeChanged();
+            this.RefreshData(this._RawValue);
         });
+    }
+
+    RefreshData(value: any)
+    {
+        this._RawValue = value;
+        if (!this.SVCModel)
+            return;
+        const sdisp = this.SVCModel.GetColumn(this.Field.TargetFieldID[0]);
+        this.Input.value = this.Tuple[sdisp.Name].Value;
+    }
+
+    override set RawValue(value: any)
+    {
+        if (this._RawValue == value)
+            return;
+        this.RefreshData(value);
     }
 
     DoSerach()
     {
-        this.Client?.SendAsync(this.SVCModel.SearchPath, {}, (pData: any) =>
+        if (!this.DataGrid.IsVisible)
+            return;
+
+        this.Client?.SendAsync(this.DataGrid.SVCModel.SearchPath, {}, (pData: any) =>
         {
             this.DataGrid.SetDataSet(pData.Data);
         });
-
-
     }
 
     OnSelected(pRows: XArray<XTableRow>)
     {
-        this.Input.value = pRows[0].Tupla.nome;
         this.DropDownContent.Selected();
+        const dgsvc = this.DataGrid.SVCModel;
+        if (X.IsEmpty(pRows) || !dgsvc)
+            return;
+        const tpl = pRows[0].Tuple;
+        for (var i = 0; i < this.Field.SourceFieldID.length; i++)    
+        {
+            const sdisp = dgsvc.GetColumn(this.Field.SourceFieldID[i]);
+            const tdisp = this.SVCModel.GetColumn(this.Field.TargetFieldID[i]);
+            this.Tuple[tdisp.Name].Value = tpl[sdisp.Name].Value;
+        }
+        const pkcol = dgsvc.PKColumn;
+        this.RefreshData(tpl[pkcol.Name].Value)
     }
 }

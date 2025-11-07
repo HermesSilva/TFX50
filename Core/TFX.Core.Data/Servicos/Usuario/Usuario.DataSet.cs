@@ -26,17 +26,19 @@ namespace TFX.Core.Data.Servicos.Usuario
         public static Guid CID = new Guid("53F17DAC-4376-4424-8454-0866B122BFDB");
         public UsuarioServiceModel()
         {
-            PKFieldName = "EMail";
+            PKFieldName = "CORxPessoaID";
             SearchPath = "Usuario/Search";
+            GetPath = "Usuario/Get";
+            FlushPath = "Usuario/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "EMail", Title = "E-Mails", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("E3B478D2-D183-45BD-8DCA-75ED81FB37B2") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("E3B478D2-D183-45BD-8DCA-75ED81FB37B2"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("4A4DE653-7393-4F86-AFC6-512AF3531772") });
+            Visible = false, FieldID = new Guid("4A4DE653-7393-4F86-AFC6-512AF3531772"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("29189C0C-BE24-4106-89D9-0405693E297C") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("29189C0C-BE24-4106-89D9-0405693E297C"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             Forms.Add(new FRMUsuarioFilter());
         }
     }
@@ -114,8 +116,8 @@ namespace TFX.Core.Data.Servicos.Usuario
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] {  };
-            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

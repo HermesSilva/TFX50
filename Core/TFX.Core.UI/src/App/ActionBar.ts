@@ -65,8 +65,8 @@ class ActionBar extends XWrapPanel
                 break;
             case XAppState.Searching:
                 this.Edit.IsVisible = pRows != null && pRows.length == 1;
-                this.Inactive.IsVisible = pRows != null && pRows.Any(r => r.Tupla.State != XTupleState.Deleted);
-                this.Active.IsVisible = pRows != null && pRows.length > 0 && pRows.All(r => r.Tupla.State == XTupleState.Deleted);
+                this.Inactive.IsVisible = pRows != null && pRows.Any(r => r.Tuple.State != XTupleState.Deleted);
+                this.Active.IsVisible = pRows != null && pRows.length > 0 && pRows.All(r => r.Tuple.State == XTupleState.Deleted);
                 this.Save.IsVisible = false;
                 this.New.IsVisible = true;
                 break;

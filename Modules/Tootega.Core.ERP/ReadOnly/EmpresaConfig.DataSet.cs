@@ -26,20 +26,22 @@ namespace Tootega.Core.ERP.ReadOnly
         public static Guid CID = new Guid("44C651B9-54CB-4225-84FA-F51053C43F08");
         public EmpresaConfigServiceModel()
         {
-            PKFieldName = "Numero";
+            PKFieldName = "CORxPessoaID";
             SearchPath = "EmpresaConfig/Search";
+            GetPath = "EmpresaConfig/Get";
+            FlushPath = "EmpresaConfig/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "Numero", Title = "Número", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("B8DE681D-5698-4A15-B5B5-6265C8F0DE97") });
+            Visible = false, FieldID = new Guid("B8DE681D-5698-4A15-B5B5-6265C8F0DE97"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoa", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("4F62B63E-29EA-475F-B82A-1FC23CD49E10") });
+            Visible = false, FieldID = new Guid("4F62B63E-29EA-475F-B82A-1FC23CD49E10"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "Nome", Title = "Nome", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("BE304706-6E7A-422F-B145-BDA15A5BB6D7") });
+            Visible = false, FieldID = new Guid("BE304706-6E7A-422F-B145-BDA15A5BB6D7"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "CEPxLocalidadePrincipalID", Title = "Localidade", Type = "Int32", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("AC4FB686-3CCB-463B-AB8C-26C9B6F8D5BA") });
+            Visible = false, FieldID = new Guid("AC4FB686-3CCB-463B-AB8C-26C9B6F8D5BA"), 
+            GridView = false, FieldTypeID = new Guid("FAADA046-C1B9-4E89-9B64-310E272FC0CC") });
         }
     }
     public class EmpresaConfigTuple : XServiceDataTuple

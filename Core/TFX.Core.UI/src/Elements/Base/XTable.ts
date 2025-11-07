@@ -271,9 +271,9 @@ class XTableBody extends XElement
             for (let i = 0; i < this.SortCells.length; i++)
             {
                 let cell = this.SortCells[i];
-                if (a.Tupla[cell.Column.Name].Value > b.Tupla[cell.Column.Name].Value)
+                if (a.Tuple[cell.Column.Name].Value > b.Tuple[cell.Column.Name].Value)
                     return cell.SortState.Direction === 'asc' ? 1 : -1;
-                if (a.Tupla[cell.Column.Name].Value < b.Tupla[cell.Column.Name].Value)
+                if (a.Tuple[cell.Column.Name].Value < b.Tuple[cell.Column.Name].Value)
                     return cell.SortState.Direction === 'asc' ? -1 : 1;
 
             }
@@ -325,7 +325,7 @@ class XTableRow extends XTableElement
     }
     Table: XTable;
     Body: XTableBody;
-    Tupla: XTuple | any;
+    Tuple: XTuple | any;
     Cells = new XArray<XTableCell>();
 
     get IsSelected(): boolean
@@ -343,7 +343,7 @@ class XTableRow extends XTableElement
 
     SetData(pTupla: XDataTuple)
     {
-        this.Tupla = pTupla;
+        this.Tuple = pTupla;
         this.CreateCell();
     }
 
@@ -354,7 +354,7 @@ class XTableRow extends XTableElement
         for (let i = 0; i < this.Table.Columns.length; i++)
         {
             let cell = new XTableCell(this, "XTd");
-            cell.SetData(this.Tupla[this.Table.Columns[i].Name].Value, this.Table.Header.Columns[i]);
+            cell.SetData(this.Tuple[this.Table.Columns[i].Name].Value, this.Table.Header.Columns[i]);
             this.Cells.Add(cell);
         }
     }

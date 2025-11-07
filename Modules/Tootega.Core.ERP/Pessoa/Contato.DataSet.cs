@@ -26,44 +26,46 @@ namespace Tootega.Core.ERP.Pessoa
         public static Guid CID = new Guid("63151C23-62E8-4BBA-9C12-FEC0708E03CF");
         public ContatoServiceModel()
         {
-            PKFieldName = "Contato";
+            PKFieldName = "ERPxContatoID";
             SearchPath = "Contato/Search";
+            GetPath = "Contato/Get";
+            FlushPath = "Contato/Flush";
             DataView.Columns.Add(new XColumnModel() { Name = "Validar", Title = "Validar", Type = "Boolean", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("08F62428-D70A-4D9D-B9C8-A0AF590D61AD") });
+            Visible = false, FieldID = new Guid("08F62428-D70A-4D9D-B9C8-A0AF590D61AD"), 
+            GridView = false, FieldTypeID = new Guid("B42D0699-00B6-4999-BD36-244B12990C2F") });
             DataView.Columns.Add(new XColumnModel() { Name = "Contato", Title = "E-Mail, Telefone e ETC.", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("74CAB761-9AA9-425F-9A39-51D984EB9780") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("74CAB761-9AA9-425F-9A39-51D984EB9780"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxContatoID", Title = "Meios de Contato", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("0130739E-8A90-4F2B-9268-408AEC5AC995") });
+            Visible = false, FieldID = new Guid("0130739E-8A90-4F2B-9268-408AEC5AC995"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E"), ColumnType = XColumnType.PK });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxContatoTipoID", Title = "Tipo de Contato", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("C94AF6E6-DD46-432B-BF78-D12C0713CC04") });
+            Visible = false, FieldID = new Guid("C94AF6E6-DD46-432B-BF78-D12C0713CC04"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "Validado", Title = "Validado", Type = "Boolean", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("11AD3FB8-FAE6-4FAE-939D-200B837092CC") });
+            Visible = false, FieldID = new Guid("11AD3FB8-FAE6-4FAE-939D-200B837092CC"), 
+            GridView = false, FieldTypeID = new Guid("B42D0699-00B6-4999-BD36-244B12990C2F") });
             DataView.Columns.Add(new XColumnModel() { Name = "ERPxFinalidadeID", Title = "Finalidade", Type = "Int16", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("44C618F9-B453-47DF-95A8-0890869D1A5F") });
+            Visible = false, FieldID = new Guid("44C618F9-B453-47DF-95A8-0890869D1A5F"), 
+            GridView = false, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxStatusID", Title = "Estado", Type = "Int16", Mask = "", 
-                                                      Visible = true,
-                                                      FieldID = new Guid("AB74E1B1-4552-4F5D-ADEE-4317E1B3C729") });
+            Visible = true, FieldID = new Guid("AB74E1B1-4552-4F5D-ADEE-4317E1B3C729"), 
+            GridView = true, FieldTypeID = new Guid("5BD72111-603B-42E5-9488-53A4299E45EB") });
             DataView.Columns.Add(new XColumnModel() { Name = "CORxPessoaID", Title = "Pessoas", Type = "Guid", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("4B60B290-C9ED-48D8-A0D3-9C3C34100AE1") });
+            Visible = false, FieldID = new Guid("4B60B290-C9ED-48D8-A0D3-9C3C34100AE1"), 
+            GridView = false, FieldTypeID = new Guid("8C5DEBC0-4165-4429-B106-1554552F802E") });
             DataView.Columns.Add(new XColumnModel() { Name = "Observacao", Title = "Observação", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("08336F1B-BBB8-4455-AAAC-208AA7ECED0F") });
+            Visible = false, FieldID = new Guid("08336F1B-BBB8-4455-AAAC-208AA7ECED0F"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Mascara", Title = "Máscara", Type = "String", Mask = "", 
-                                                      Visible = false,
-                                                      FieldID = new Guid("BC39FC05-2AEB-423F-B6EC-E4D68B34AD7D") });
+            Visible = false, FieldID = new Guid("BC39FC05-2AEB-423F-B6EC-E4D68B34AD7D"), 
+            GridView = false, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Tipo", Title = "Tipo", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("767320FE-B2B6-4B67-8DFD-0DD3930CEA27") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("767320FE-B2B6-4B67-8DFD-0DD3930CEA27"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             DataView.Columns.Add(new XColumnModel() { Name = "Finalidade", Title = "Finalidade", Type = "String", Mask = "", 
-                                                      Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo,
-                                                      FieldID = new Guid("0F32B4ED-4483-4622-8A36-7506DE5D0D02") });
+            Visible = true, IsFreeSearch = true, Operator = XOperator.EqualTo, FieldID = new Guid("0F32B4ED-4483-4622-8A36-7506DE5D0D02"), 
+            GridView = true, FieldTypeID = new Guid("8A656713-0DBB-4D25-9CF9-8DA0DBAD4E62") });
             Forms.Add(new FRMContatoFilter());
         }
     }
@@ -187,8 +189,8 @@ namespace Tootega.Core.ERP.Pessoa
             fld.AdditionalDataFieldsID = new Guid[] {  };
             fld.TargetFilterFieldID = new Guid[] {  };
             fld.SourceFilterFieldID = new Guid[] {  };
-            fld.TargetDisplayFieldID = new Guid[] {  };
-            fld.SourceDisplayFieldID = new Guid[] {  };
+            fld.TargetFieldID = new Guid[] {  };
+            fld.SourceFieldID = new Guid[] {  };
             fld.AutoLoad = false;
             fld.FilterInative = true;
             fld.IsAnswer = false;

@@ -78,8 +78,8 @@ namespace Tootega.Core.ERP.PessoaFisica
         {
             try
             {
-                //var result = Service.InternalGet(pFilter);
-                return Ok();
+                var result = Service.InternalGet(pFilter, true);
+                return Ok(result);
             }
             catch (Exception pEx)
             {

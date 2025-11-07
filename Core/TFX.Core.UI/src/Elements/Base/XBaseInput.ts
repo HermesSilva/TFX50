@@ -44,7 +44,8 @@ class XBaseInput extends XDiv implements XIEditor
     protected _RawValue: any;
     private _Mask: string = '';
     Field!: XFRMField;
-    Tuple!: XTuple;
+    Tuple!: XTuple | any;
+    SVCModel!: XIServiceModel;
     get RawValue(): any
     {
         return this._RawValue;
@@ -76,9 +77,10 @@ class XBaseInput extends XDiv implements XIEditor
         return null;
     }
 
-    SetField(pField: XFRMField)
+    SetField(pField: XFRMField, pSVCModel: XIServiceModel)
     {
         this.Field = pField;
+        this.SVCModel = pSVCModel;
     }
     set Value(pValue: any)
     {

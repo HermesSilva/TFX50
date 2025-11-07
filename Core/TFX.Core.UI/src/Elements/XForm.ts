@@ -28,7 +28,7 @@ class XForm extends XDiv
 
     Fields: XArray<XIEditor> = new XArray<XIEditor>();
     Model!: XFRMModel;
-    SVCModel!: XServiceModel;
+    SVCModel!: XIServiceModel;
     private _FocusTarget: HTMLElement | null = null;
     private _FocusTries: number = 0;
 
@@ -42,7 +42,7 @@ class XForm extends XDiv
         }
     }
 
-    SetModel(pForm: XFRMModel, pSVCModel: XServiceModel)
+    SetModel(pForm: XFRMModel, pSVCModel: XIServiceModel)
     {
         this.Model = pForm;
         this.SVCModel = pSVCModel;
@@ -53,7 +53,7 @@ class XForm extends XDiv
         for (const field of pForm.Fields)
         {
             let editor = XEditorFactory.CreateEditor(this, field);
-            editor.SetField(field);
+            editor.SetField(field, pSVCModel);
             this.Fields.Add(editor);
 
         }

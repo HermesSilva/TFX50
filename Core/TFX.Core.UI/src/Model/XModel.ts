@@ -98,9 +98,9 @@ class XModelEditors
 class XDataTuple implements XTuple
 {
     State: XTupleState = XTupleState.Unchanged;
-    IsReadOnly!: boolean;
-    IsSelected!: boolean;
-    IsChecked!: boolean;
+    IsReadOnly: boolean = false;
+    IsSelected: boolean = false;
+    IsChecked: boolean = false;
 }
 
 class XDataSet
@@ -122,4 +122,142 @@ class XDataSet
         }
         return [...keys]
     }
+}
+
+enum XColumnType
+{
+    Any = 0,
+    PK = 1,
+}
+
+interface XColumnModel
+{
+    Name: string;
+    Visible: boolean;
+    Width: number;
+    Title: string;
+    Align: XAlign;
+    Mask: string;
+    IsFreeSearch: boolean;
+    Operator: XOperator;
+    MaxLenght: number;
+    Type: string;
+    FieldID: string;
+    FieldTypeID: string;
+    GridView: boolean;
+    ColumnType: XColumnType;
+}
+
+interface XDataViewModel
+{
+    Columns: XColumnModel[]
+}
+
+interface XIServiceModel
+{
+    ID: string;
+    Forms: XFRMModel[];
+    DataView: XDataViewModel;
+    PKFieldName: string
+    SearchPath: string;
+    GetPath: string;
+    FlushPath: string;
+    CreateTuple(): XDataTuple;
+    CreateDataSet(): XDataSet;
+    ClearTuple(pTuple: XDataTuple): void;
+    GetColumn(pFieldID: string): XColumnModel;
+    PKColumn: XColumnModel;
+}
+
+class XServiceModel implements XIServiceModel
+{
+
+    ID!: string;
+    Forms!: XFRMModel[];
+    DataView!: XDataViewModel;
+    PKFieldName!: string;
+    SearchPath!: string;
+    GetPath!: string;
+    FlushPath!: string;
+    get PKColumn(): XColumnModel
+    {
+        return this.DataView.Columns.FirstOrNull(c => c.ColumnType == XColumnType.PK)!;
+    }
+
+    GetColumn(pFieldID: string): XColumnModel
+    {
+        return this.DataView.Columns.FirstOrNull(c => c.FieldID === pFieldID)!;
+    }
+
+    CreateTuple(): XDataTuple
+    {
+        var tpl: any = new XDataTuple();
+
+        for (const col of this.DataView.Columns)
+        {
+            const dvlr = this.GetDefaultValue(col);
+            tpl[col.Name] = { Value: dvlr, OldValue: dvlr, State: XFieldState.Empty };
+        }
+        return tpl;
+    }
+
+    CreateDataSet(): XDataSet
+    {
+        var ds = new XDataSet();
+        ds.ID = this.ID;
+        return ds;
+    }
+
+    ClearTuple(pTuple: XDataTuple | any): void
+    {
+        for (const col of this.DataView.Columns)
+        {
+            if (pTuple[col.Name].Value === null)
+                delete pTuple[col.Name]["Value"];
+            if (pTuple[col.Name].OldValue === null)
+                delete pTuple[col.Name]["OldValue"];
+        }
+    }
+
+    GetDefaultValue(pField: XColumnModel): any
+    {
+        switch (pField.Type)
+        {
+            case XType.Boolean:
+            case XType.Int16:
+            case XType.Int32:
+            case XType.Int64:
+            case XType.Int8:
+            case XType.Decimal:
+                return 0;
+            case XType.Binary:
+                return null;
+            case XType.Guid:
+                return "00000000-0000-0000-0000-000000000000";
+            case XType.String:
+            case XType.Time:
+                return null;
+            case XType.Date:
+            case XType.DateTime:
+            case XType.DateTimeOffset:
+                return XDefault.StrNullDate;
+        }
+    }
+}
+
+enum XType
+{
+    Boolean = "Boolean",
+    Int16 = "Int16",
+    Int32 = "Int32",
+    Int64 = "Int64",
+    Int8 = "Int8",
+    Decimal = "Decimal",
+    Binary = "Binary",
+    Guid = "Guid",
+    String = "String",
+    Time = "Time",
+    Date = "Date",
+    DateTime = "DateTime",
+    DateTimeOffset = "DateTimeOffset"
 }
