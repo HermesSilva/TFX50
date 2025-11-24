@@ -35,6 +35,7 @@ class Stage extends XStage implements XIDialogContainer
     IsDialogContainer: boolean = true;
     Menu: MainMenu;
     DialogContainer: XDialogContainer;
+    Dialog!: XMessageDialog;
 
     Loaded()
     {

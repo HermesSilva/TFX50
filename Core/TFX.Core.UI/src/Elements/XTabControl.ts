@@ -62,6 +62,7 @@ class XTabControlTab extends XDiv implements XIDialogContainer
     }
     Button: XTabControlButton | null = null;
     DialogContainer: XDialogContainer;
+    Dialog!: XMessageDialog;
     IsDialogContainer: boolean = true;
     TabControl!: XTabControl;
     Close()
@@ -88,7 +89,7 @@ class XTabControlDropdown extends XPopupElement
             const { deltaY } = event;
             const { scrollTop, scrollHeight, clientHeight } = this as any;
 
-            if ((deltaY >0 && (scrollTop + clientHeight >= scrollHeight)) || (deltaY <0 && scrollTop <=0))
+            if ((deltaY > 0 && (scrollTop + clientHeight >= scrollHeight)) || (deltaY < 0 && scrollTop <= 0))
                 event.preventDefault();
         });
     }
@@ -129,6 +130,7 @@ class XTabControl extends XDiv implements XIDialogContainer
     Dropdown: XTabControlDropdown;
     ButtonList: XTabControlButtonList;
     DialogContainer: XDialogContainer;
+    Dialog!: XMessageDialog;
     ActiveTab: XTabControlTab | null = null;
     protected Tabs: XArray<XTabControlTab> = new XArray<XTabControlTab>();
     IsDialogContainer: boolean = false;
@@ -160,12 +162,12 @@ class XTabControl extends XDiv implements XIDialogContainer
         pButton.Tab?.Free();
         pButton.Free();
 
-        if (this.Tabs.length >0)
+        if (this.Tabs.length > 0)
         {
             let nextTab: XTabControlTab | null = null;
-            if (currentIndex >0)
-                nextTab = this.Tabs[currentIndex -1];
-            else if (currentIndex ===0 && this.Tabs.length > currentIndex)
+            if (currentIndex > 0)
+                nextTab = this.Tabs[currentIndex - 1];
+            else if (currentIndex === 0 && this.Tabs.length > currentIndex)
                 nextTab = this.Tabs[currentIndex];
 
             if (nextTab && nextTab.Button)
@@ -193,14 +195,14 @@ class XTabControl extends XDiv implements XIDialogContainer
         }
         const rbtn = pButton?.Tab?.Button?.HTML.getBoundingClientRect();
         const rctn = this.Header.HTML.getBoundingClientRect();
-        const offw = (<HTMLElement>pButton?.Tab?.Button?.HTML?.previousElementSibling)?.offsetWidth ??0;
+        const offw = (<HTMLElement>pButton?.Tab?.Button?.HTML?.previousElementSibling)?.offsetWidth ?? 0;
         if (rbtn != null)
         {
             if (rbtn.left < rctn.left)
                 this.Header.HTML.scrollLeft -= (rctn.left - rbtn.left) + offw;
             else
-            if (rbtn.right > rctn.right)
-                this.Header.HTML.scrollLeft += (rbtn.right - rctn.right) + offw;
+                if (rbtn.right > rctn.right)
+                    this.Header.HTML.scrollLeft += (rbtn.right - rctn.right) + offw;
         }
         this.Dropdown.IsVisible = false;
         this.ActiveTab = pButton.Tab;

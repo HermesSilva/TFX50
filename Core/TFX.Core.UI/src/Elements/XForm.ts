@@ -38,7 +38,7 @@ class XForm extends XDiv
         for (const field of this.Fields)
         {
             field.Tuple = tpl;
-            XBinding.Bind(tpl[field.Field.Name], field, "Value", "RawValue", true);
+            XBinding.Bind(tpl[field.Field.Name], field, "Value", "RawValue");
         }
     }
 

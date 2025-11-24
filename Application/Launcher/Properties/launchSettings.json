@@ -1,14 +1,14 @@
 {
   "profiles": {
-    "http": {
+    "Launcher": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5000"
+      "applicationUrl": "http://localhost:7000"
     }
   }
 }

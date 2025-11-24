@@ -39,21 +39,74 @@ type XChangeHandler<T> = (Object: T, OldValue: any, NewValue: any) => void;
 
 class XBinding
 {
-    static Bind(pOSource: any, pOTarget: any, pPSource: string, pPTarget: string, pSendInput: boolean = false)
+    static Bind(pOSource: any, pOTarget: any, pPSource: string, pPTarget: string)
     {
-        pOTarget[pPTarget] = pOSource[pPSource];
-        if (pSendInput && pOTarget.Input instanceof HTMLInputElement)
-            pOTarget.Input.dispatchEvent(new Event('input', { bubbles: true }));
+        pOSource.TargetList = new XArray<{ Object: any, Property: any }>();
+        pOTarget.TargetList = new XArray<{ Object: any, Property: any }>();
+        XBinding.InternalBind(pOSource, pOTarget, pPSource, pPTarget);
+    }
+
+    static BindSource(pOSource: any, pOTarget: any, pPSource: string, pPTarget: string)
+    {
+        pOSource.TargetList = new XArray<{ Object: any, Property: any }>();
+        XBinding.InternalBind(pOSource, pOTarget, pPSource, pPTarget);
+    }
+
+    static BindTarget(pOSource: any, pOTarget: any, pPSource: string, pPTarget: string)
+    {
+        pOTarget.TargetList = new XArray<{ Object: any, Property: any }>();
+        XBinding.InternalBind(pOSource, pOTarget, pPSource, pPTarget);
+    }
+
+    private static InternalBind(pOSource: any, pOTarget: any, pPSource: string, pPTarget: string)
+    {
+        if (pOSource?.TargetList && pOTarget.BindNotify)
+            pOSource?.TargetList.Add({ Object: pOTarget, Property: pPTarget });
+        if (pOTarget?.TargetList && pOSource.BindNotify)
+            pOTarget?.TargetList.Add({ Object: pOSource, Property: pPSource });
+
         XBinding.TrackChange(pOSource, pPSource, (obj, oldVal, newVal) =>
         {
+            if (oldVal == newVal)
+                return;
             if (pOTarget[pPTarget] !== newVal)
+            {
                 pOTarget[pPTarget] = newVal;
+                if (pOTarget.Input instanceof HTMLInputElement)
+                    pOTarget.Input.dispatchEvent(new Event('input', { bubbles: true }));
+                if (pOTarget.TargetList)
+                {
+                    for (let i = 0; i < pOTarget.TargetList.length; i++)
+                    {
+                        const t = pOTarget.TargetList[i];
+                        if (t.Object.BindNotify)
+                            t.Object.BindNotify(obj, t.Property, newVal);
+                    }
+                }
+            }
         });
+
         XBinding.TrackChange(pOTarget, pPTarget, (obj, oldVal, newVal) =>
         {
+            if (oldVal == newVal)
+                return;
             if (pOSource[pPSource] !== newVal)
+            {
                 pOSource[pPSource] = newVal;
+                if (pOSource.Input instanceof HTMLInputElement)
+                    pOSource.Input.dispatchEvent(new Event('input', { bubbles: true }));
+                if (pOSource.TargetList)
+                {
+                    for (let i = 0; i < pOSource.TargetList.length; i++)
+                    {
+                        const t = pOSource.TargetList[i];
+                        if (t.Object.BindNotify)
+                            t.Object.BindNotify(obj, t.Property, newVal);
+                    }
+                }
+            }
         });
+        pOTarget[pPTarget] = pOSource[pPSource];
     }
 
     static TrackChange<T extends object, K extends keyof T>(pObjct: T, pProperty: K, pOnChange: XChangeHandler<T>)

@@ -159,8 +159,8 @@ namespace TFX.ESC.Core.Escritorios
         public EscritorioApplication()
         {
             ID = new Guid("1D53FAF5-831B-41E0-9A72-EAD2C0BCBF1D");
-            Name = "Escritorio";
-            Title = "Escritório";
+            Name = "Escritorio XX";
+            Title = "Escritório XX";
             SearchServiceID = EscritorioServiceModel.CID;
             SearchPath = "Escritorio/Search";
             AddForm(new FRMEscritorio());

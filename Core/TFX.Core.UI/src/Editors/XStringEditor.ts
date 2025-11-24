@@ -12,11 +12,15 @@ class XStringEditor extends XBaseInput
     {
         if (this.Mask)
         {
-            this.ApplyMask()
-            this.RawValue = XUtils.UnMask(this.Input.value, this.Mask);
+            if (!this.ApplyMask())
+                this.RawValue = XUtils.UnMask(this.Input.value, this.Mask);
         }
         else
             this.RawValue = this.Input.value;
+    }
+    get RawValue(): any
+    {
+        return this._RawValue;
     }
 
     set RawValue(value: any)
@@ -34,16 +38,17 @@ class XStringEditor extends XBaseInput
                 this.Input.value = value;
     }
 
-    protected override ApplyMask()
+    protected override ApplyMask(): boolean
     {
+        super.ApplyMask();
         if (X.IsEmpty(this.Mask) || X.IsEmpty(this.Input.value))
-            return;
+            return false;
         var msk = XUtils.ApplyMask(this.Input.value, this.Mask);
+        var unv = XUtils.UnMask(this.Input.value, this.Mask);
         if (this.Input.value != msk)
-        {
             this.Input.value = msk
-            this.RawValue = XUtils.UnMask(this.Input.value, this.Mask);
-        }
+        this.RawValue = unv;
+        return true;
     }
 
     override CreateInput(): HTMLInputElement

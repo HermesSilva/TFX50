@@ -2,6 +2,7 @@
 
 type XOnLoad = (pData: JSON | any, pCallData: any | null, pEvent: ProgressEvent | null) => void;
 type XOnGetServiceModel = (pModel: XIServiceModel) => void;
+type XOnGetData = (pModel: XDataSet) => void;
 
 class XHttpClient
 {
@@ -48,6 +49,22 @@ class XHttpClient
     {
         this._Headers[pName] = pValue;
         return this;
+    }
+
+    public GetData(pEndPoint: string, pModel: XServiceModel | any, pFilter: any, pOnLoad: XOnGetData)
+    {
+        this.SendAsync(pEndPoint, pFilter, (pData: XResponse<XDataSet>) =>
+        {
+            const dataSet = <XDataSet>pData.Data
+            Object.setPrototypeOf(dataSet, XDataSet.prototype);
+            for (const tpl of dataSet.Tuples)
+            {
+                Object.setPrototypeOf(tpl, XDataTuple.prototype);
+                //    for (const col in pModel.DataView.Columns)
+                //        Object.setPrototypeOf(   tpl[col.Name], XdataF
+            }
+            pOnLoad(dataSet);
+        });
     }
 
     public GetSVCModel(pModelID: string, pOnLoad: XOnGetServiceModel)

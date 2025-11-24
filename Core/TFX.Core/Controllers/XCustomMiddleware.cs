@@ -21,7 +21,7 @@ namespace TFX.Core.Controllers
         }
 
         public static Dictionary<string, XExecute> Paths = new Dictionary<string, XExecute>();
-
+                     private static int _Counter = 0;   
         public async Task InvokeAsync(HttpContext pContext, RequestDelegate next)
         {
             try
@@ -54,13 +54,13 @@ namespace TFX.Core.Controllers
 
         private static async Task GetIndex(HttpContext pHttpContext)
         {
-            var idexpage = @"<!DOCTYPE html>
+            var idexpage = @$"<!DOCTYPE html>
 <html xmlns=""http://www.w3.org/1999/xhtml"">
 <head>
     <meta charset=""utf-8"" />
     <title>TFX Core</title>
-    <script src=""js/TFX.Core.js""></script>
-    <link href=""css/TFX.Core.css"" rel=""stylesheet"" />
+    <script src=""js/TFX.Core.js?v={++_Counter}""></script>
+    <link href=""css/TFX.Core.css?v={_Counter}"" rel=""stylesheet"" />
     <link rel=""icon"" href=""svg/favicon.svg"" type=""image/svg+xml"">
     <link rel=""shortcut icon"" href=""svg/favicon.svg"" type=""image/svg+xml"">
 </head>

@@ -64,7 +64,7 @@ class XSearchBoxEditor extends XDiv
             let fld = this.Fields[i];
             if (fld.Value != null && fld.Value != "")
             {
-                let ffld = new Object() as XFilterField;
+                let ffld: any = new Object() as XFilterField;
                 ffld.Name = fld.Columns.Name;
                 ffld.Operator = fld.Columns.Operator;
                 ffld.State = XFieldState.NotEmpty;

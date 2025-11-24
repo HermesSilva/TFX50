@@ -19,7 +19,7 @@ class XEditableTag extends XDiv
     private _LIconSrc!: string;
     get Value(): any
     {
-        return "";
+        return this.Editor.RawValue;
     }
 
     private OnInput()

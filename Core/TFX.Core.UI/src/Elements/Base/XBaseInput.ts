@@ -6,7 +6,6 @@ class XBaseInput extends XDiv implements XIEditor
         super(pOwner, "InputContainer");
         this.ELMTitle = new XDiv(this, "InputTitle");
         this.Input = this.CreateInput();
-
     }
 
     Name!: string;
@@ -46,6 +45,17 @@ class XBaseInput extends XDiv implements XIEditor
     Field!: XFRMField;
     Tuple!: XTuple | any;
     SVCModel!: XIServiceModel;
+
+    BindNotify(pSouce: any, pField: string, pValue: any)
+    {
+        this.RefreshData(pValue)
+    }
+
+    RefreshData(pValue: any)
+    {
+        this.RawValue = pValue;
+    }
+
     get RawValue(): any
     {
         return this._RawValue;
@@ -68,6 +78,7 @@ class XBaseInput extends XDiv implements XIEditor
     }
     Clear(): void
     {
+        this._RawValue = null;
         this.Value = null;
     }
     get Value(): any
@@ -98,8 +109,9 @@ class XBaseInput extends XDiv implements XIEditor
         this.ApplyMask();
     }
 
-    protected ApplyMask()
+    protected ApplyMask(): boolean
     {
+        return false;
     }
 
     RemoveTitle()

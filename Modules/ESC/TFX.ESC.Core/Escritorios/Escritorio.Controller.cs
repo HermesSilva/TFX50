@@ -23,7 +23,7 @@ namespace TFX.ESC.Core.Escritorios
         public abstract class BaseINFEscritorioControllerRule : XControllerINFRule<EscritorioController>
         {
             public BaseINFEscritorioControllerRule(EscritorioController pController)
-                :base(pController)
+                : base(pController)
             {
             }
         }
@@ -50,7 +50,7 @@ namespace TFX.ESC.Core.Escritorios
             catch (Exception pEx)
             {
                 return StatusCode(404, XEndPointMessage.Erro(pEx));
-            }  
+            }
         }
 
         [HttpPost("Flush")]
@@ -68,7 +68,7 @@ namespace TFX.ESC.Core.Escritorios
             catch (Exception pEx)
             {
                 return StatusCode(404, XEndPointMessage.Erro(pEx));
-            }  
+            }
         }
 
         [HttpPost("Get")]
@@ -84,7 +84,7 @@ namespace TFX.ESC.Core.Escritorios
             catch (Exception pEx)
             {
                 return StatusCode(404, XEndPointMessage.Erro(pEx));
-            }  
+            }
         }
     }
 }

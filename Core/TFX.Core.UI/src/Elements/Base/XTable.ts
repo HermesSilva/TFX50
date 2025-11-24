@@ -597,7 +597,7 @@ class XTable extends XDiv
         const trySize = () =>
         {
             const aw = Math.max(this.HTML.clientWidth, this.Container.clientWidth, this.Header.HTML.clientWidth);
-            if (aw <= 0)
+            if (aw <= 0 && this.IsVisible)
             {
                 XEventManager.SetTiemOut(this, trySize, 50);
                 return;

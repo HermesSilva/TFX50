@@ -1495,6 +1495,7 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+  color: var(--fg);
 }
 
 .MainDiv {

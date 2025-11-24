@@ -90,7 +90,6 @@ class XDataLoockupEditor extends XBaseLoockupInput
             const tdisp = this.SVCModel.GetColumn(this.Field.TargetFieldID[i]);
             this.Tuple[tdisp.Name].Value = tpl[sdisp.Name].Value;
         }
-        const pkcol = dgsvc.PKColumn;
-        this.RefreshData(tpl[pkcol.Name].Value)
+        this.Tuple[this.SVCModel.PKColumn.Name].Value = tpl[dgsvc.PKColumn.Name].Value;
     }
 }
